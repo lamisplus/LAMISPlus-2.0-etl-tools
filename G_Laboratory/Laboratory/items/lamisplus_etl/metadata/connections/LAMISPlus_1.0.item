@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_GMKZ4BKfEe20h5qyoNwDwA" name="LAMISPlus" id="_GLtG4BKfEe20h5qyoNwDwA" label="LAMISPlus" dataPackage="_YwScYE-oEe2R2rCPmMi54Q" ContextMode="true" ContextId="_G0q2sBcFEe2gYNxrvaolGA" contextName="lamisplus1" DatabaseType="PostgreSQL" DriverJarPath="" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://localhost:5432/test?" dbVersionString="V9_X" Port="context.LAMISPlus_Port" Username="context.LAMISPlus_Login" Password="context.LAMISPlus_Password" ServerName="context.LAMISPlus_Server" DatasourceName="" FileFieldName="" SID="context.LAMISPlus_Database" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" DBRootPath="" AdditionalParams="context.LAMISPlus_AdditionalParams" StandardSQL="true" SQLMode="false" UiSchema="context.LAMISPlus_Schema">
+    <taggedValue xmi:id="_BH0iEQqjEe2e5vbO429KpQ" tag="Is Conn Need Reload" value="true"/>
+    <taggedValue xmi:id="_BILucAqjEe2e5vbO429KpQ" tag="package filter" value=""/>
+    <taggedValue xmi:id="_BIURUAqjEe2e5vbO429KpQ" tag="Status" value=""/>
+    <taggedValue xmi:id="_BIURUQqjEe2e5vbO429KpQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_BIURUgqjEe2e5vbO429KpQ" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_BIURUwqjEe2e5vbO429KpQ" tag="Description" value=""/>
+    <taggedValue xmi:id="_BIURVAqjEe2e5vbO429KpQ" tag="Author" value=""/>
+    <taggedValue xmi:id="_BIURVQqjEe2e5vbO429KpQ" tag="otherParameter"/>
+    <taggedValue xmi:id="_BIzZgAqjEe2e5vbO429KpQ" tag="DB ProductName" value="PostgreSQL"/>
+    <taggedValue xmi:id="_BIzZgQqjEe2e5vbO429KpQ" tag="DB ProductVersion" value="14.5"/>
+    <taggedValue xmi:id="_BIzZggqjEe2e5vbO429KpQ" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <queries xmi:id="_jaIIUBShEe2gYNxrvaolGA">
+      <query xmi:id="_jaJWcRShEe2gYNxrvaolGA" id="_jaJWcBShEe2gYNxrvaolGA" comment="This took me 2 days to figure out how to replace the facility_id in Lamis3 patient with org_unit FK from Lamisplus organisation_unit table " label="Lamis3_to_Lamisplus_patients_Migration_Complex_Queryset" value="SELECT * FROM public.dblink&#xD;&#xA;('lamis',&#xD;&#xA; 'SELECT DISTINCT ps.id,ps.hospital_num,ps.uuid,ps.surname,ps.other_names,ps.gender,&#xD;&#xA;&#x9;ps.date_birth,ps.dob_estimated,ps.education,ps.marital_status,ps.occupation,&#xD;&#xA;&#x9;ps.address,ps.phone,ps.next_of_kin,ps.next_of_kin_address,ps.next_of_kin_phone,&#xD;&#xA;&#x9;ps.next_of_kin_relationship,ps.date_registration,ps.archived,ps.last_modified,&#xD;&#xA;&#x9;ps.facility_id,fc.name AS facility_name,lg.name AS lga_name&#xD;&#xA;  FROM public.patient ps&#xD;&#xA;  INNER JOIN facility fc&#xD;&#xA;  ON ps.facility_id=fc.id&#xD;&#xA;  INNER JOIN lga lg&#xD;&#xA;  ON fc.lga_id=lg.id&#xD;&#xA; '&#xD;&#xA;) &#xD;&#xA;AS DATA(id INTEGER,hospital_num VARCHAR,uuid VARCHAR,surname VARCHAR,other_names VARCHAR,&#xD;&#xA;&#x9;gender VARCHAR,date_birth DATE,dob_estimated BOOLEAN,education VARCHAR,&#xD;&#xA;&#x9;marital_status VARCHAR,occupation VARCHAR,address VARCHAR,phone VARCHAR,&#xD;&#xA;&#x9;next_of_kin VARCHAR,next_of_kin_address VARCHAR,next_of_kin_phone VARCHAR,&#xD;&#xA;&#x9;next_of_kin_relationship VARCHAR,date_registration DATE,archived BOOLEAN,&#xD;&#xA;&#x9;last_modified DATE,facility_id INTEGER,facility_name VARCHAR,lga_name VARCHAR)&#xD;&#xA;WHERE EXISTS(&#xD;&#xA;&#x9;SELECT facility.id,facility.name,lga.name&#xD;&#xA;&#x9;FROM base_organisation_unit facility&#xD;&#xA;&#x9;JOIN base_organisation_unit lga&#xD;&#xA;&#x9;ON facility.parent_organisation_unit_id = lga.id&#xD;&#xA;&#x9;WHERE facility.organisation_unit_level_id =4&#xD;&#xA;&#x9;AND facility.name=facility_name&#xD;&#xA;&#x9;AND lga.name= lga_name&#xD;&#xA;)"/>
+    </queries>
+    <parameters xmi:id="_BH0iEgqjEe2e5vbO429KpQ" key="CONN_PARA_KEY_USERNAME" value="context.LAMISPlus_Login"/>
+    <parameters xmi:id="_XHNqMAqmEe2e5vbO429KpQ" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_YwScYE-oEe2R2rCPmMi54Q" name="test" dataManager="_GMKZ4BKfEe20h5qyoNwDwA">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_YwTDcE-oEe2R2rCPmMi54Q" name="public"/>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>
