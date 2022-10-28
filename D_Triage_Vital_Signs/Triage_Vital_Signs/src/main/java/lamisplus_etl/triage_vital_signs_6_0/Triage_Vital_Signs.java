@@ -1053,9 +1053,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					return this.person_uuid;
 				}
 				
-			    public long facility_id;
+			    public int facility_id;
 
-				public long getFacility_id () {
+				public int getFacility_id () {
 					return this.facility_id;
 				}
 				
@@ -1203,7 +1203,7 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 		
 					this.person_uuid = readString(dis);
 					
-			        this.facility_id = dis.readLong();
+			        this.facility_id = dis.readInt();
 					
 					this.encounter_date = readDate(dis);
 					
@@ -1267,9 +1267,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 				
 						writeString(this.person_uuid,dos);
 					
-					// long
+					// int
 				
-		            	dos.writeLong(this.facility_id);
+		            	dos.writeInt(this.facility_id);
 					
 					// java.util.Date
 				
@@ -1415,9 +1415,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.person_uuid;
 				}
 				
-			    public long facility_id;
+			    public int facility_id;
 
-				public long getFacility_id () {
+				public int getFacility_id () {
 					return this.facility_id;
 				}
 				
@@ -1623,7 +1623,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		
 					this.person_uuid = readString(dis);
 					
-			        this.facility_id = dis.readLong();
+			        this.facility_id = dis.readInt();
 					
 					this.encounter_date = readDate(dis);
 					
@@ -1687,9 +1687,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.person_uuid,dos);
 					
-					// long
+					// int
 				
-		            	dos.writeLong(this.facility_id);
+		            	dos.writeInt(this.facility_id);
 					
 					// java.util.Date
 				
@@ -2097,10 +2097,11 @@ extractStruct extract_tmp = new extractStruct();
 
 		    String dbquery_tDBInput_1 = "SELECT p.uuid as person_uuid, \n    c.facility_id,\n	c.date_visit as encounter_date, \n	c.last_modified as created_date"
 +", \n	c.last_modified as last_modified_date,\n	CONCAT(c.id, c.uuid)::VARCHAR as uuid,\n    c.archived::integer, \n	c.body"
-+"_weight, \n	(case when length(split_part(c.bp, '/', 1))>1 then cast(split_part(c.bp, '/', 1)as double precision) else nu"
-+"ll end) as diastolic,\n   	(case when length(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 1)as double pre"
-+"cision) else null end) as systolic, \n	c.height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient"
-+" p \n    ON p.id=c.patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id";
++"_weight, \n	NULLIF(regexp_replace((case when length(split_part(c.bp, '/', 1))>1 then cast(split_part(c.bp, '/', 1)as var"
++"char) else null end), '\\D','','g'), '')::double precision as diastolic,\n   	NULLIF(regexp_replace((case when length(sp"
++"lit_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '\\D','','g'), '')::double preci"
++"sion as systolic, \n	c.height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n    ON p.id=c"
++".patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2127,7 +2128,7 @@ extractStruct extract_tmp = new extractStruct();
 								clinic_triage.facility_id = 0;
 							} else {
 		                          
-            clinic_triage.facility_id = rs_tDBInput_1.getLong(2);
+            clinic_triage.facility_id = rs_tDBInput_1.getInt(2);
             if(rs_tDBInput_1.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
@@ -9077,6 +9078,14 @@ if(globalMap.get("tDBOutput_5_ERROR_MESSAGE") != null){
 System.out.println("Migration Error - "+globalMap.get("tDBOutput_5_ERROR_MESSAGE"));
 }
 System.out.println("Total erroneous records not migrated - "+globalMap.get("tFileOutputDelimited_5_NB_LINE"));
+
+java.time.LocalDateTime endTime = java.time.LocalDateTime.now();
+System.out.println("End time - "+ endTime);
+java.time.LocalDateTime statTime = (java.time.LocalDateTime)globalMap.get("startTime");
+
+java.time.Duration duration = java.time.Duration.between(statTime, endTime);
+System.out.println("Duration - "+ duration);
+
 System.out.println("*************TRIAGE VITAL SIGN END*****************");
 System.out.println("****************************************************************");
  
@@ -9464,6 +9473,9 @@ public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws
 
 System.out.println("*****************************************************************");
 System.out.println("***********TRIAGE VITAL SIGN MIGRATION REPORT START*****************");
+java.time.LocalDateTime startTime = java.time.LocalDateTime.now();
+globalMap.put("startTime", startTime);
+System.out.println("Start time - "+ startTime);
 
 System.out.println("Total Patient's vital stage fetched from LAMIS3 clinic - "+globalMap.get("tDBInput_1_NB_LINE"));
  
@@ -11884,6 +11896,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     311737 characters generated by Talend Open Studio for Big Data 
- *     on the October 19, 2022 2:53:15 PM WAT
+ *     312308 characters generated by Talend Open Studio for Big Data 
+ *     on the October 28, 2022 5:30:49 PM WAT
  ************************************************************************************************/
