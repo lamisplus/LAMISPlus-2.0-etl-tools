@@ -17,7 +17,8 @@ There are various migration components available here. For a new migration, it i
 - HIV_ART_Clinical Migration: This component can be found at ./E_HIV_ART_Clinical/HIV_ART_Clinical/HIV_ART_Clinical_run[.bat/.sh].
 - HIV_ART_Pharmacy Migration: This component can be found at ./F_HIV_ART_Pharmacy/HIV_ART_Pharmacy/HIV_ART_Pharmacy_run[.bat/.sh].
 - Laboratory Migration: This component can be found at ./G_Laboratory/Laboratory/Laboratory_run[.bat/.sh].
-- Biometric Migration: This component can be found at ./H_Biometric/Biometric/Biometric_run[.bat/.sh]
+- Biometric Migration: This component can be found at ./H_Biometric/Biometric/Biometric_run[.bat/.sh].
+- EAC Migration: This component can be found at ./I_EAC/EAC/EAC_run[.bat/.sh]
 
 
 ## Installation
