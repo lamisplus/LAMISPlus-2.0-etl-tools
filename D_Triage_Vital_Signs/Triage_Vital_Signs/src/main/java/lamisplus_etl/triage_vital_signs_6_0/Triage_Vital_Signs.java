@@ -618,12 +618,6 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 					return this.facility_id;
 				}
 				
-			    public java.util.Date encounter_date;
-
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
-				}
-				
 			    public java.util.Date created_date;
 
 				public java.util.Date getCreated_date () {
@@ -690,6 +684,12 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 					return this.id;
 				}
 				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
 
 
 	@Override
@@ -724,7 +724,6 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 
 		other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
 	            other.created_date = this.created_date;
 	            other.last_modified_date = this.last_modified_date;
 	            other.uuid = this.uuid;
@@ -736,6 +735,7 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 	            other.datim_id = this.datim_id;
 	            other.visit_id = this.visit_id;
 	            other.id = this.id;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
@@ -831,8 +831,6 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 					
 			        this.facility_id = dis.readLong();
 					
-					this.encounter_date = readDate(dis);
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -875,6 +873,8 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 					
 			        this.id = dis.readInt();
 					
+					this.capture_date = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -900,10 +900,6 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 					// long
 				
 		            	dos.writeLong(this.facility_id);
-					
-					// java.util.Date
-				
-						writeDate(this.encounter_date,dos);
 					
 					// java.util.Date
 				
@@ -969,6 +965,10 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 				
 		            	dos.writeInt(this.id);
 					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -984,7 +984,6 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 		sb.append("[");
 		sb.append("person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",uuid="+uuid);
@@ -996,6 +995,7 @@ public static class extractStruct implements routines.system.IPersistableRow<ext
 		sb.append(",datim_id="+datim_id);
 		sb.append(",visit_id="+visit_id);
 		sb.append(",id="+String.valueOf(id));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1053,16 +1053,16 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					return this.person_uuid;
 				}
 				
-			    public int facility_id;
+			    public long facility_id;
 
-				public int getFacility_id () {
+				public long getFacility_id () {
 					return this.facility_id;
 				}
 				
-			    public java.util.Date encounter_date;
+			    public java.util.Date capture_date;
 
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -1083,9 +1083,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					return this.uuid;
 				}
 				
-			    public Integer archived;
+			    public int archived;
 
-				public Integer getArchived () {
+				public int getArchived () {
 					return this.archived;
 				}
 				
@@ -1172,26 +1172,6 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 	    	dos.writeLong(date1.getTime());
     	}
     }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
 
     public void readData(ObjectInputStream dis) {
 
@@ -1203,9 +1183,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 		
 					this.person_uuid = readString(dis);
 					
-			        this.facility_id = dis.readInt();
+			        this.facility_id = dis.readLong();
 					
-					this.encounter_date = readDate(dis);
+					this.capture_date = readDate(dis);
 					
 					this.created_date = readDate(dis);
 					
@@ -1213,7 +1193,7 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					
 					this.uuid = readString(dis);
 					
-						this.archived = readInteger(dis);
+			        this.archived = dis.readInt();
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -1267,13 +1247,13 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 				
 						writeString(this.person_uuid,dos);
 					
-					// int
+					// long
 				
-		            	dos.writeInt(this.facility_id);
+		            	dos.writeLong(this.facility_id);
 					
 					// java.util.Date
 				
-						writeDate(this.encounter_date,dos);
+						writeDate(this.capture_date,dos);
 					
 					// java.util.Date
 				
@@ -1287,9 +1267,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 				
 						writeString(this.uuid,dos);
 					
-					// Integer
+					// int
 				
-						writeInteger(this.archived,dos);
+		            	dos.writeInt(this.archived);
 					
 					// Double
 				
@@ -1346,7 +1326,7 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 		sb.append("[");
 		sb.append("person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",uuid="+uuid);
@@ -1399,14 +1379,6 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
 
 	
 			    public String person_uuid;
@@ -1415,16 +1387,16 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.person_uuid;
 				}
 				
-			    public int facility_id;
+			    public long facility_id;
 
-				public int getFacility_id () {
+				public long getFacility_id () {
 					return this.facility_id;
 				}
 				
-			    public java.util.Date encounter_date;
+			    public java.util.Date capture_date;
 
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -1445,9 +1417,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.uuid;
 				}
 				
-			    public Integer archived;
+			    public int archived;
 
-				public Integer getArchived () {
+				public int getArchived () {
 					return this.archived;
 				}
 				
@@ -1481,64 +1453,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final after_tDBInput_1Struct other = (after_tDBInput_1Struct) obj;
-		
-						if (this.uuid == null) {
-							if (other.uuid != null)
-								return false;
-						
-						} else if (!this.uuid.equals(other.uuid))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(after_tDBInput_1Struct other) {
-
-		other.person_uuid = this.person_uuid;
-	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
-	            other.created_date = this.created_date;
-	            other.last_modified_date = this.last_modified_date;
-	            other.uuid = this.uuid;
-	            other.archived = this.archived;
-	            other.body_weight = this.body_weight;
-	            other.diastolic = this.diastolic;
-	            other.systolic = this.systolic;
-	            other.height = this.height;
-	            other.datim_id = this.datim_id;
-	            
-	}
-
-	public void copyKeysDataTo(after_tDBInput_1Struct other) {
-
-		other.uuid = this.uuid;
-	            	
-	}
-
 
 
 
@@ -1592,26 +1506,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 	    	dos.writeLong(date1.getTime());
     	}
     }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
 
     public void readData(ObjectInputStream dis) {
 
@@ -1623,9 +1517,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		
 					this.person_uuid = readString(dis);
 					
-			        this.facility_id = dis.readInt();
+			        this.facility_id = dis.readLong();
 					
-					this.encounter_date = readDate(dis);
+					this.capture_date = readDate(dis);
 					
 					this.created_date = readDate(dis);
 					
@@ -1633,7 +1527,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.uuid = readString(dis);
 					
-						this.archived = readInteger(dis);
+			        this.archived = dis.readInt();
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -1687,13 +1581,13 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.person_uuid,dos);
 					
-					// int
+					// long
 				
-		            	dos.writeInt(this.facility_id);
+		            	dos.writeLong(this.facility_id);
 					
 					// java.util.Date
 				
-						writeDate(this.encounter_date,dos);
+						writeDate(this.capture_date,dos);
 					
 					// java.util.Date
 				
@@ -1707,9 +1601,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.uuid,dos);
 					
-					// Integer
+					// int
 				
-						writeInteger(this.archived,dos);
+		            	dos.writeInt(this.archived);
 					
 					// Double
 				
@@ -1766,7 +1660,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append("[");
 		sb.append("person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",uuid="+uuid);
@@ -1788,12 +1682,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
 		int returnValue = -1;
 		
-						returnValue = checkNullsAndCompare(this.uuid, other.uuid);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
 	    return returnValue;
     }
 
@@ -1954,15 +1842,15 @@ int count_tDBOutput_1=0;
                                 }
                                 if(!whetherExist_tDBOutput_1) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
-                                        stmtCreate_tDBOutput_1.execute("CREATE TABLE \"" + tableName_tDBOutput_1 + "\"(\"person_uuid\" VARCHAR(36)  ,\"facility_id\" INT8  not null ,\"encounter_date\" DATE  not null ,\"created_date\" TIMESTAMP(29)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"uuid\" VARCHAR(50)  ,\"archived\" INT4 ,\"body_weight\" FLOAT8 ,\"diastolic\" FLOAT8 ,\"systolic\" FLOAT8 ,\"height\" FLOAT8 ,\"datim_id\" VARCHAR(32)   not null ,\"visit_id\" VARCHAR(50)   not null ,\"id\" INT4  not null ,primary key(\"id\"))");
+                                        stmtCreate_tDBOutput_1.execute("CREATE TABLE \"" + tableName_tDBOutput_1 + "\"(\"person_uuid\" VARCHAR(36)  ,\"facility_id\" INT8  not null ,\"created_date\" TIMESTAMP(29)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"uuid\" VARCHAR(50)  ,\"archived\" INT4 ,\"body_weight\" FLOAT8 ,\"diastolic\" FLOAT8 ,\"systolic\" FLOAT8 ,\"height\" FLOAT8 ,\"datim_id\" VARCHAR(32)   not null ,\"visit_id\" VARCHAR(50)   not null ,\"id\" INT4  not null ,\"capture_date\" TIMESTAMP(29)  ,primary key(\"id\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"person_uuid\",\"facility_id\",\"encounter_date\",\"created_date\",\"last_modified_date\",\"uuid\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"datim_id\",\"visit_id\",\"id\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"person_uuid\",\"facility_id\",\"created_date\",\"last_modified_date\",\"uuid\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"datim_id\",\"visit_id\",\"id\",\"capture_date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"person_uuid\" = ?,\"facility_id\" = ?,\"encounter_date\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"uuid\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"datim_id\" = ?,\"visit_id\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"person_uuid\" = ?,\"facility_id\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"uuid\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"datim_id\" = ?,\"visit_id\" = ?,\"capture_date\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 	    
@@ -2095,13 +1983,13 @@ extractStruct extract_tmp = new extractStruct();
 		    
 			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-		    String dbquery_tDBInput_1 = "SELECT p.uuid as person_uuid, \n    c.facility_id,\n	c.date_visit as encounter_date, \n	c.last_modified as created_date"
-+", \n	c.last_modified as last_modified_date,\n	CONCAT(c.id, c.uuid)::VARCHAR as uuid,\n    c.archived::integer, \n	c.body"
-+"_weight, \n	NULLIF(regexp_replace((case when length(split_part(c.bp, '/', 1))>1 then cast(split_part(c.bp, '/', 1)as var"
-+"char) else null end), '\\D','','g'), '')::double precision as diastolic,\n   	NULLIF(regexp_replace((case when length(sp"
-+"lit_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '\\D','','g'), '')::double preci"
-+"sion as systolic, \n	c.height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n    ON p.id=c"
-+".patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id";
+		    String dbquery_tDBInput_1 = "SELECT p.uuid as person_uuid, \n    c.facility_id,\n	c.date_visit::timestamp as capture_date, \n	c.last_modified as cre"
++"ated_date, \n	c.last_modified as last_modified_date,\n	CONCAT(c.id, c.uuid)::VARCHAR as uuid,\n    c.archived::integer, "
++"\n	c.body_weight, \n	NULLIF(regexp_replace((case when length(split_part(c.bp, '/', 1))>1 then cast(split_part(c.bp, '/',"
++" 1)as varchar) else null end), '\\D','','g'), '')::double precision as diastolic,\n   	NULLIF(regexp_replace((case when "
++"length(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '\\D','','g'), '')::dou"
++"ble precision as systolic, \n	c.height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n    "
++"ON p.id=c.patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2128,16 +2016,16 @@ extractStruct extract_tmp = new extractStruct();
 								clinic_triage.facility_id = 0;
 							} else {
 		                          
-            clinic_triage.facility_id = rs_tDBInput_1.getInt(2);
+            clinic_triage.facility_id = rs_tDBInput_1.getLong(2);
             if(rs_tDBInput_1.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_1 < 3) {
-								clinic_triage.encounter_date = null;
+								clinic_triage.capture_date = null;
 							} else {
 										
-			clinic_triage.encounter_date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 3);
+			clinic_triage.capture_date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 3);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 4) {
 								clinic_triage.created_date = null;
@@ -2158,12 +2046,12 @@ extractStruct extract_tmp = new extractStruct();
         	clinic_triage.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_1, 6, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 7) {
-								clinic_triage.archived = null;
+								clinic_triage.archived = 0;
 							} else {
 		                          
             clinic_triage.archived = rs_tDBInput_1.getInt(7);
             if(rs_tDBInput_1.wasNull()){
-                    clinic_triage.archived = null;
+                    throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_1 < 8) {
@@ -2308,9 +2196,9 @@ extractStruct extract_tmp = new extractStruct();
 								
                         		    		    patient_visitHashKey.person_uuid = clinic_triage.person_uuid ;
                         		    		
-                        		    		    patient_visitHashKey.visit_start_date = clinic_triage.encounter_date  == null ? null : new java.util.Date(clinic_triage.encounter_date .getTime());
+                        		    		    patient_visitHashKey.visit_start_date = clinic_triage.capture_date == null ? null : new java.util.Date(clinic_triage.capture_date.getTime());
                         		    		
-                        		    		    patient_visitHashKey.visit_end_date = clinic_triage.encounter_date  == null ? null : new java.util.Date(clinic_triage.encounter_date .getTime());
+                        		    		    patient_visitHashKey.visit_end_date = clinic_triage.capture_date == null ? null : new java.util.Date(clinic_triage.capture_date.getTime());
                         		    		
 
 								
@@ -2399,7 +2287,6 @@ extract = null;
 // # Output table : 'extract'
 extract_tmp.person_uuid = clinic_triage.person_uuid ;
 extract_tmp.facility_id = clinic_triage.facility_id ;
-extract_tmp.encounter_date = clinic_triage.encounter_date ;
 extract_tmp.created_date = clinic_triage.created_date ;
 extract_tmp.last_modified_date = clinic_triage.last_modified_date ;
 extract_tmp.uuid = clinic_triage.uuid ;
@@ -2411,6 +2298,7 @@ extract_tmp.height = clinic_triage.height ;
 extract_tmp.datim_id = clinic_triage.datim_id ;
 extract_tmp.visit_id = patient_visit.uuid;
 extract_tmp.id = Numeric.sequence("id",1,1) ;
+extract_tmp.capture_date = clinic_triage.capture_date ;
 extract = extract_tmp;
 // ###############################
 
@@ -2496,62 +2384,62 @@ pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
 
                         pstmtUpdate_tDBOutput_1.setLong(2, extract.facility_id);
 
-                        if(extract.encounter_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(3, new java.sql.Timestamp(extract.encounter_date.getTime()));
+                        if(extract.created_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(3, new java.sql.Timestamp(extract.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.TIMESTAMP);
 }
 
-                        if(extract.created_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(extract.created_date.getTime()));
+                        if(extract.last_modified_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(extract.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(extract.last_modified_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(5, new java.sql.Timestamp(extract.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.TIMESTAMP);
-}
-
                         if(extract.uuid == null) {
-pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(6, extract.uuid);
+pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(5, extract.uuid);
 }
 
                         if(extract.archived == null) {
-pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(7, extract.archived);
+pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_1.setInt(6, extract.archived);
 }
 
                         if(extract.body_weight == null) {
-pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_1.setDouble(8, extract.body_weight);
+pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_1.setDouble(7, extract.body_weight);
 }
 
                         if(extract.diastolic == null) {
-pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_1.setDouble(9, extract.diastolic);
+pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_1.setDouble(8, extract.diastolic);
 }
 
                         if(extract.systolic == null) {
-pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_1.setDouble(10, extract.systolic);
+pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_1.setDouble(9, extract.systolic);
 }
 
                         if(extract.height == null) {
-pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_1.setDouble(11, extract.height);
+pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_1.setDouble(10, extract.height);
 }
 
                         if(extract.datim_id == null) {
-pstmtUpdate_tDBOutput_1.setNull(12, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(12, extract.datim_id);
+pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(11, extract.datim_id);
 }
 
                         if(extract.visit_id == null) {
-pstmtUpdate_tDBOutput_1.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(13, extract.visit_id);
+pstmtUpdate_tDBOutput_1.setNull(12, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(12, extract.visit_id);
+}
+
+                        if(extract.capture_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(13, new java.sql.Timestamp(extract.capture_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_1.setNull(13, java.sql.Types.TIMESTAMP);
 }
 
                         pstmtUpdate_tDBOutput_1.setInt(14 + count_tDBOutput_1, extract.id);
@@ -2575,65 +2463,65 @@ pstmtInsert_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
 
                         pstmtInsert_tDBOutput_1.setLong(2, extract.facility_id);
 
-                        if(extract.encounter_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(3, new java.sql.Timestamp(extract.encounter_date.getTime()));
+                        if(extract.created_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(3, new java.sql.Timestamp(extract.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.TIMESTAMP);
 }
 
-                        if(extract.created_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(extract.created_date.getTime()));
+                        if(extract.last_modified_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(extract.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(extract.last_modified_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(5, new java.sql.Timestamp(extract.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.TIMESTAMP);
-}
-
                         if(extract.uuid == null) {
-pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(6, extract.uuid);
+pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(5, extract.uuid);
 }
 
                         if(extract.archived == null) {
-pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(7, extract.archived);
+pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_1.setInt(6, extract.archived);
 }
 
                         if(extract.body_weight == null) {
-pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_1.setDouble(8, extract.body_weight);
+pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_1.setDouble(7, extract.body_weight);
 }
 
                         if(extract.diastolic == null) {
-pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_1.setDouble(9, extract.diastolic);
+pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_1.setDouble(8, extract.diastolic);
 }
 
                         if(extract.systolic == null) {
-pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_1.setDouble(10, extract.systolic);
+pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_1.setDouble(9, extract.systolic);
 }
 
                         if(extract.height == null) {
-pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_1.setDouble(11, extract.height);
+pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_1.setDouble(10, extract.height);
 }
 
                         if(extract.datim_id == null) {
-pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(12, extract.datim_id);
+pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(11, extract.datim_id);
 }
 
                         if(extract.visit_id == null) {
-pstmtInsert_tDBOutput_1.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(13, extract.visit_id);
+pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(12, extract.visit_id);
 }
 
-                        pstmtInsert_tDBOutput_1.setInt(14, extract.id);
+                        pstmtInsert_tDBOutput_1.setInt(13, extract.id);
+
+                        if(extract.capture_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(14, new java.sql.Timestamp(extract.capture_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_1.setNull(14, java.sql.Types.TIMESTAMP);
+}
 
                 try {
 					
@@ -3110,12 +2998,6 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 					return this.facility_id;
 				}
 				
-			    public java.util.Date encounter_date;
-
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
-				}
-				
 			    public java.util.Date created_date;
 
 				public java.util.Date getCreated_date () {
@@ -3200,6 +3082,12 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 					return this.respiratory_rate;
 				}
 				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
 
 
 	@Override
@@ -3240,7 +3128,6 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
 	            other.created_date = this.created_date;
 	            other.last_modified_date = this.last_modified_date;
 	            other.created_by = this.created_by;
@@ -3255,6 +3142,7 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 	            other.temperature = this.temperature;
 	            other.pulse = this.pulse;
 	            other.respiratory_rate = this.respiratory_rate;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
@@ -3342,8 +3230,6 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
            			    	this.facility_id = dis.readLong();
            				}
 					
-					this.encounter_date = readDate(dis);
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -3407,6 +3293,8 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
            			    	this.respiratory_rate = dis.readDouble();
            				}
 					
+					this.capture_date = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -3446,10 +3334,6 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
                				dos.writeByte(0);
            			    	dos.writeLong(this.facility_id);
 		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.encounter_date,dos);
 					
 					// java.util.Date
 				
@@ -3542,6 +3426,10 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
            			    	dos.writeDouble(this.respiratory_rate);
 		            	}
 					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -3558,7 +3446,6 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
@@ -3573,6 +3460,7 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 		sb.append(",temperature="+String.valueOf(temperature));
 		sb.append(",pulse="+String.valueOf(pulse));
 		sb.append(",respiratory_rate="+String.valueOf(respiratory_rate));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3648,12 +3536,6 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
 
 				public Long getFacility_id () {
 					return this.facility_id;
-				}
-				
-			    public java.util.Date encounter_date;
-
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -3740,6 +3622,12 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
 					return this.respiratory_rate;
 				}
 				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
 
 
 	@Override
@@ -3780,7 +3668,6 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
 	            other.created_date = this.created_date;
 	            other.last_modified_date = this.last_modified_date;
 	            other.created_by = this.created_by;
@@ -3795,6 +3682,7 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
 	            other.temperature = this.temperature;
 	            other.pulse = this.pulse;
 	            other.respiratory_rate = this.respiratory_rate;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
@@ -3882,8 +3770,6 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
            			    	this.facility_id = dis.readLong();
            				}
 					
-					this.encounter_date = readDate(dis);
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -3947,6 +3833,8 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
            			    	this.respiratory_rate = dis.readDouble();
            				}
 					
+					this.capture_date = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -3986,10 +3874,6 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
                				dos.writeByte(0);
            			    	dos.writeLong(this.facility_id);
 		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.encounter_date,dos);
 					
 					// java.util.Date
 				
@@ -4082,6 +3966,10 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
            			    	dos.writeDouble(this.respiratory_rate);
 		            	}
 					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -4098,7 +3986,6 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
@@ -4113,6 +4000,7 @@ public static class Duplicate_clinicsStruct implements routines.system.IPersista
 		sb.append(",temperature="+String.valueOf(temperature));
 		sb.append(",pulse="+String.valueOf(pulse));
 		sb.append(",respiratory_rate="+String.valueOf(respiratory_rate));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -4188,12 +4076,6 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
 
 				public Long getFacility_id () {
 					return this.facility_id;
-				}
-				
-			    public java.util.Date encounter_date;
-
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -4280,6 +4162,12 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
 					return this.respiratory_rate;
 				}
 				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
 
 
 	@Override
@@ -4320,7 +4208,6 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
 	            other.created_date = this.created_date;
 	            other.last_modified_date = this.last_modified_date;
 	            other.created_by = this.created_by;
@@ -4335,6 +4222,7 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
 	            other.temperature = this.temperature;
 	            other.pulse = this.pulse;
 	            other.respiratory_rate = this.respiratory_rate;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
@@ -4422,8 +4310,6 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
            			    	this.facility_id = dis.readLong();
            				}
 					
-					this.encounter_date = readDate(dis);
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -4487,6 +4373,8 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
            			    	this.respiratory_rate = dis.readDouble();
            				}
 					
+					this.capture_date = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -4526,10 +4414,6 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
                				dos.writeByte(0);
            			    	dos.writeLong(this.facility_id);
 		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.encounter_date,dos);
 					
 					// java.util.Date
 				
@@ -4622,6 +4506,10 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
            			    	dos.writeDouble(this.respiratory_rate);
 		            	}
 					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -4638,7 +4526,6 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
@@ -4653,6 +4540,7 @@ public static class check_duplicatesStruct implements routines.system.IPersistab
 		sb.append(",temperature="+String.valueOf(temperature));
 		sb.append(",pulse="+String.valueOf(pulse));
 		sb.append(",respiratory_rate="+String.valueOf(respiratory_rate));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -4728,12 +4616,6 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
 
 				public Long getFacility_id () {
 					return this.facility_id;
-				}
-				
-			    public java.util.Date encounter_date;
-
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -4820,6 +4702,12 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
 					return this.respiratory_rate;
 				}
 				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
 
 
 	@Override
@@ -4860,7 +4748,6 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
 	            other.created_date = this.created_date;
 	            other.last_modified_date = this.last_modified_date;
 	            other.created_by = this.created_by;
@@ -4875,6 +4762,7 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
 	            other.temperature = this.temperature;
 	            other.pulse = this.pulse;
 	            other.respiratory_rate = this.respiratory_rate;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
@@ -4962,8 +4850,6 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
            			    	this.facility_id = dis.readLong();
            				}
 					
-					this.encounter_date = readDate(dis);
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -5027,6 +4913,8 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
            			    	this.respiratory_rate = dis.readDouble();
            				}
 					
+					this.capture_date = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -5066,10 +4954,6 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
                				dos.writeByte(0);
            			    	dos.writeLong(this.facility_id);
 		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.encounter_date,dos);
 					
 					// java.util.Date
 				
@@ -5162,6 +5046,10 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
            			    	dos.writeDouble(this.respiratory_rate);
 		            	}
 					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -5178,7 +5066,6 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
@@ -5193,6 +5080,7 @@ public static class OnRowsEndStructtSortRow_3 implements routines.system.IPersis
 		sb.append(",temperature="+String.valueOf(temperature));
 		sb.append(",pulse="+String.valueOf(pulse));
 		sb.append(",respiratory_rate="+String.valueOf(respiratory_rate));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -5268,12 +5156,6 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
 
 				public Long getFacility_id () {
 					return this.facility_id;
-				}
-				
-			    public java.util.Date encounter_date;
-
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -5360,6 +5242,12 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
 					return this.respiratory_rate;
 				}
 				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
 
 
 	@Override
@@ -5400,7 +5288,6 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
-	            other.encounter_date = this.encounter_date;
 	            other.created_date = this.created_date;
 	            other.last_modified_date = this.last_modified_date;
 	            other.created_by = this.created_by;
@@ -5415,6 +5302,7 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
 	            other.temperature = this.temperature;
 	            other.pulse = this.pulse;
 	            other.respiratory_rate = this.respiratory_rate;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
@@ -5502,8 +5390,6 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
            			    	this.facility_id = dis.readLong();
            				}
 					
-					this.encounter_date = readDate(dis);
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -5567,6 +5453,8 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
            			    	this.respiratory_rate = dis.readDouble();
            				}
 					
+					this.capture_date = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -5606,10 +5494,6 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
                				dos.writeByte(0);
            			    	dos.writeLong(this.facility_id);
 		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.encounter_date,dos);
 					
 					// java.util.Date
 				
@@ -5702,6 +5586,10 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
            			    	dos.writeDouble(this.respiratory_rate);
 		            	}
 					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -5718,7 +5606,6 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
@@ -5733,6 +5620,7 @@ public static class Sort_clinicsStruct implements routines.system.IPersistableRo
 		sb.append(",temperature="+String.valueOf(temperature));
 		sb.append(",pulse="+String.valueOf(pulse));
 		sb.append(",respiratory_rate="+String.valueOf(respiratory_rate));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -5796,10 +5684,10 @@ public static class extract_vistitsStruct implements routines.system.IPersistabl
 					return this.person_uuid;
 				}
 				
-			    public java.util.Date encounter_date;
+			    public java.util.Date capture_date;
 
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -5948,7 +5836,7 @@ public static class extract_vistitsStruct implements routines.system.IPersistabl
 					
 					this.person_uuid = readString(dis);
 					
-					this.encounter_date = readDate(dis);
+					this.capture_date = readDate(dis);
 					
 					this.created_date = readDate(dis);
 					
@@ -6018,7 +5906,7 @@ public static class extract_vistitsStruct implements routines.system.IPersistabl
 					
 					// java.util.Date
 				
-						writeDate(this.encounter_date,dos);
+						writeDate(this.capture_date,dos);
 					
 					// java.util.Date
 				
@@ -6095,7 +5983,7 @@ public static class extract_vistitsStruct implements routines.system.IPersistabl
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",uuid="+uuid);
@@ -6163,10 +6051,10 @@ public static class after_tDBInput_9Struct implements routines.system.IPersistab
 					return this.person_uuid;
 				}
 				
-			    public java.util.Date encounter_date;
+			    public java.util.Date capture_date;
 
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
 				}
 				
 			    public java.util.Date created_date;
@@ -6315,7 +6203,7 @@ public static class after_tDBInput_9Struct implements routines.system.IPersistab
 					
 					this.person_uuid = readString(dis);
 					
-					this.encounter_date = readDate(dis);
+					this.capture_date = readDate(dis);
 					
 					this.created_date = readDate(dis);
 					
@@ -6385,7 +6273,7 @@ public static class after_tDBInput_9Struct implements routines.system.IPersistab
 					
 					// java.util.Date
 				
-						writeDate(this.encounter_date,dos);
+						writeDate(this.capture_date,dos);
 					
 					// java.util.Date
 				
@@ -6462,7 +6350,7 @@ public static class after_tDBInput_9Struct implements routines.system.IPersistab
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
 		sb.append(",person_uuid="+person_uuid);
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",uuid="+uuid);
@@ -6723,8 +6611,8 @@ Sort_clinicsStruct Sort_clinics_tmp = new Sort_clinicsStruct();
 		    
 			java.sql.Statement stmt_tDBInput_9 = conn_tDBInput_9.createStatement();
 
-		    String dbquery_tDBInput_9 = "SELECT DISTINCT id,person_uuid, encounter_date, created_date, last_modified_date,\n    uuid, archived, body_weight, dia"
-+"stolic,  systolic,  height,  visit_id, datim_id\n FROM etl_triage_vital_sign_stage";
+		    String dbquery_tDBInput_9 = "SELECT DISTINCT id,person_uuid, capture_date, created_date, last_modified_date,\n    uuid, archived, body_weight, diast"
++"olic,  systolic,  height,  visit_id, datim_id\n FROM etl_triage_vital_sign_stage";
 			
 
             	globalMap.put("tDBInput_9_QUERY",dbquery_tDBInput_9);
@@ -6757,10 +6645,10 @@ Sort_clinicsStruct Sort_clinics_tmp = new Sort_clinicsStruct();
         	extract_vistits.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_9, 2, false);
 		                    }
 							if(colQtyInRs_tDBInput_9 < 3) {
-								extract_vistits.encounter_date = null;
+								extract_vistits.capture_date = null;
 							} else {
 										
-			extract_vistits.encounter_date = routines.system.JDBCUtil.getDate(rs_tDBInput_9, 3);
+			extract_vistits.capture_date = routines.system.JDBCUtil.getDate(rs_tDBInput_9, 3);
 		                    }
 							if(colQtyInRs_tDBInput_9 < 4) {
 								extract_vistits.created_date = null;
@@ -7025,7 +6913,6 @@ Sort_clinics = null;
 Sort_clinics_tmp.id = extract_vistits.id ;
 Sort_clinics_tmp.person_uuid = extract_vistits.person_uuid ;
 Sort_clinics_tmp.facility_id = extract_facilitis.id ;
-Sort_clinics_tmp.encounter_date = extract_vistits.encounter_date ;
 Sort_clinics_tmp.created_date = extract_vistits.created_date ;
 Sort_clinics_tmp.last_modified_date = extract_vistits.last_modified_date ;
 Sort_clinics_tmp.created_by = "ETL";
@@ -7040,6 +6927,7 @@ Sort_clinics_tmp.height = extract_vistits.height ;
 Sort_clinics_tmp.temperature = null;
 Sort_clinics_tmp.pulse = null;
 Sort_clinics_tmp.respiratory_rate = null;
+Sort_clinics_tmp.capture_date = extract_vistits.capture_date ;
 Sort_clinics = Sort_clinics_tmp;
 // ###############################
 
@@ -7115,7 +7003,6 @@ if(Sort_clinics != null) {
 	arrayRowtSortRow_3_SortOut.id = Sort_clinics.id;
 	arrayRowtSortRow_3_SortOut.person_uuid = Sort_clinics.person_uuid;
 	arrayRowtSortRow_3_SortOut.facility_id = Sort_clinics.facility_id;
-	arrayRowtSortRow_3_SortOut.encounter_date = Sort_clinics.encounter_date;
 	arrayRowtSortRow_3_SortOut.created_date = Sort_clinics.created_date;
 	arrayRowtSortRow_3_SortOut.last_modified_date = Sort_clinics.last_modified_date;
 	arrayRowtSortRow_3_SortOut.created_by = Sort_clinics.created_by;
@@ -7129,7 +7016,8 @@ if(Sort_clinics != null) {
 	arrayRowtSortRow_3_SortOut.height = Sort_clinics.height;
 	arrayRowtSortRow_3_SortOut.temperature = Sort_clinics.temperature;
 	arrayRowtSortRow_3_SortOut.pulse = Sort_clinics.pulse;
-	arrayRowtSortRow_3_SortOut.respiratory_rate = Sort_clinics.respiratory_rate;	
+	arrayRowtSortRow_3_SortOut.respiratory_rate = Sort_clinics.respiratory_rate;
+	arrayRowtSortRow_3_SortOut.capture_date = Sort_clinics.capture_date;	
 	list_tSortRow_3_SortOut.add(arrayRowtSortRow_3_SortOut);
 
  
@@ -7463,10 +7351,10 @@ String dbUser_tDBOutput_5 = null;
 int count_tDBOutput_5=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_5 = conn_tDBOutput_5.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_5 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_5", pstmt_tDBOutput_5);
-	    String insert_tDBOutput_5 = "INSERT INTO \"" + tableName_tDBOutput_5 + "\" (\"id\",\"person_uuid\",\"facility_id\",\"encounter_date\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"uuid\",\"visit_id\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"temperature\",\"pulse\",\"respiratory_rate\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_5 = "INSERT INTO \"" + tableName_tDBOutput_5 + "\" (\"id\",\"person_uuid\",\"facility_id\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"uuid\",\"visit_id\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"temperature\",\"pulse\",\"respiratory_rate\",\"capture_date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(insert_tDBOutput_5);
 	    resourceMap.put("pstmtInsert_tDBOutput_5", pstmtInsert_tDBOutput_5);
-	    String update_tDBOutput_5 = "UPDATE \"" + tableName_tDBOutput_5 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"encounter_date\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"temperature\" = ?,\"pulse\" = ?,\"respiratory_rate\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_5 = "UPDATE \"" + tableName_tDBOutput_5 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"temperature\" = ?,\"pulse\" = ?,\"respiratory_rate\" = ?,\"capture_date\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(update_tDBOutput_5);
 	    resourceMap.put("pstmtUpdate_tDBOutput_5", pstmtUpdate_tDBOutput_5);
 	    
@@ -7588,14 +7476,14 @@ int count_tDBOutput_6=0;
                                     }
                                 }
                                 try(java.sql.Statement stmtCreate_tDBOutput_6 = conn_tDBOutput_6.createStatement()) {
-                                    stmtCreate_tDBOutput_6.execute("CREATE TABLE \"" + tableName_tDBOutput_6 + "\"(\"id\" INT4 ,\"person_uuid\" VARCHAR(230)  ,\"facility_id\" INT4 ,\"encounter_date\" DATE ,\"created_date\" TIMESTAMP ,\"last_modified_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(230)  ,\"last_modified_by\" VARCHAR(239)  ,\"uuid\" VARCHAR ,\"visit_id\" VARCHAR(50)  ,\"archived\" INT4  not null ,\"body_weight\" FLOAT8 ,\"diastolic\" FLOAT8 ,\"systolic\" FLOAT8 ,\"height\" FLOAT8 ,\"temperature\" FLOAT8 ,\"pulse\" FLOAT8 ,\"respiratory_rate\" FLOAT8 ,primary key(\"id\"))");
+                                    stmtCreate_tDBOutput_6.execute("CREATE TABLE \"" + tableName_tDBOutput_6 + "\"(\"id\" INT4 ,\"person_uuid\" VARCHAR(230)  ,\"facility_id\" INT4 ,\"created_date\" TIMESTAMP ,\"last_modified_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(230)  ,\"last_modified_by\" VARCHAR(239)  ,\"uuid\" VARCHAR ,\"visit_id\" VARCHAR(50)  ,\"archived\" INT4  not null ,\"body_weight\" FLOAT8 ,\"diastolic\" FLOAT8 ,\"systolic\" FLOAT8 ,\"height\" FLOAT8 ,\"temperature\" FLOAT8 ,\"pulse\" FLOAT8 ,\"respiratory_rate\" FLOAT8 ,\"capture_date\" TIMESTAMP(13)  ,primary key(\"id\"))");
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_6 = conn_tDBOutput_6.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_6 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_6", pstmt_tDBOutput_6);
-	    String insert_tDBOutput_6 = "INSERT INTO \"" + tableName_tDBOutput_6 + "\" (\"id\",\"person_uuid\",\"facility_id\",\"encounter_date\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"uuid\",\"visit_id\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"temperature\",\"pulse\",\"respiratory_rate\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_6 = "INSERT INTO \"" + tableName_tDBOutput_6 + "\" (\"id\",\"person_uuid\",\"facility_id\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"uuid\",\"visit_id\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"temperature\",\"pulse\",\"respiratory_rate\",\"capture_date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_6 = conn_tDBOutput_6.prepareStatement(insert_tDBOutput_6);
 	    resourceMap.put("pstmtInsert_tDBOutput_6", pstmtInsert_tDBOutput_6);
-	    String update_tDBOutput_6 = "UPDATE \"" + tableName_tDBOutput_6 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"encounter_date\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"temperature\" = ?,\"pulse\" = ?,\"respiratory_rate\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_6 = "UPDATE \"" + tableName_tDBOutput_6 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"temperature\" = ?,\"pulse\" = ?,\"respiratory_rate\" = ?,\"capture_date\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_6 = conn_tDBOutput_6.prepareStatement(update_tDBOutput_6);
 	    resourceMap.put("pstmtUpdate_tDBOutput_6", pstmtUpdate_tDBOutput_6);
 	    
@@ -7729,7 +7617,6 @@ for(int i_tSortRow_3_SortIn = 0; i_tSortRow_3_SortIn < array_tSortRow_3_SortIn.l
 	check_duplicates.id = current_tSortRow_3_SortIn.id;
 	check_duplicates.person_uuid = current_tSortRow_3_SortIn.person_uuid;
 	check_duplicates.facility_id = current_tSortRow_3_SortIn.facility_id;
-	check_duplicates.encounter_date = current_tSortRow_3_SortIn.encounter_date;
 	check_duplicates.created_date = current_tSortRow_3_SortIn.created_date;
 	check_duplicates.last_modified_date = current_tSortRow_3_SortIn.last_modified_date;
 	check_duplicates.created_by = current_tSortRow_3_SortIn.created_by;
@@ -7744,6 +7631,7 @@ for(int i_tSortRow_3_SortIn = 0; i_tSortRow_3_SortIn < array_tSortRow_3_SortIn.l
 	check_duplicates.temperature = current_tSortRow_3_SortIn.temperature;
 	check_duplicates.pulse = current_tSortRow_3_SortIn.pulse;
 	check_duplicates.respiratory_rate = current_tSortRow_3_SortIn.respiratory_rate;
+	check_duplicates.capture_date = current_tSortRow_3_SortIn.capture_date;
 	// increase number of line sorted
 	nb_line_tSortRow_3_SortIn++;
 
@@ -7836,13 +7724,13 @@ if(check_duplicates.uuid == null){
 		keystUniqRow_3.add(new_tUniqRow_3);if(Unique_clinics == null){ 
 	
 	Unique_clinics = new Unique_clinicsStruct();
-}Unique_clinics.id = check_duplicates.id;			Unique_clinics.person_uuid = check_duplicates.person_uuid;			Unique_clinics.facility_id = check_duplicates.facility_id;			Unique_clinics.encounter_date = check_duplicates.encounter_date;			Unique_clinics.created_date = check_duplicates.created_date;			Unique_clinics.last_modified_date = check_duplicates.last_modified_date;			Unique_clinics.created_by = check_duplicates.created_by;			Unique_clinics.last_modified_by = check_duplicates.last_modified_by;			Unique_clinics.uuid = check_duplicates.uuid;			Unique_clinics.visit_id = check_duplicates.visit_id;			Unique_clinics.archived = check_duplicates.archived;			Unique_clinics.body_weight = check_duplicates.body_weight;			Unique_clinics.diastolic = check_duplicates.diastolic;			Unique_clinics.systolic = check_duplicates.systolic;			Unique_clinics.height = check_duplicates.height;			Unique_clinics.temperature = check_duplicates.temperature;			Unique_clinics.pulse = check_duplicates.pulse;			Unique_clinics.respiratory_rate = check_duplicates.respiratory_rate;					
+}Unique_clinics.id = check_duplicates.id;			Unique_clinics.person_uuid = check_duplicates.person_uuid;			Unique_clinics.facility_id = check_duplicates.facility_id;			Unique_clinics.created_date = check_duplicates.created_date;			Unique_clinics.last_modified_date = check_duplicates.last_modified_date;			Unique_clinics.created_by = check_duplicates.created_by;			Unique_clinics.last_modified_by = check_duplicates.last_modified_by;			Unique_clinics.uuid = check_duplicates.uuid;			Unique_clinics.visit_id = check_duplicates.visit_id;			Unique_clinics.archived = check_duplicates.archived;			Unique_clinics.body_weight = check_duplicates.body_weight;			Unique_clinics.diastolic = check_duplicates.diastolic;			Unique_clinics.systolic = check_duplicates.systolic;			Unique_clinics.height = check_duplicates.height;			Unique_clinics.temperature = check_duplicates.temperature;			Unique_clinics.pulse = check_duplicates.pulse;			Unique_clinics.respiratory_rate = check_duplicates.respiratory_rate;			Unique_clinics.capture_date = check_duplicates.capture_date;					
 		nb_uniques_tUniqRow_3++;
 	} else {
 if(Duplicate_clinics == null){ 
 	
 	Duplicate_clinics = new Duplicate_clinicsStruct();
-}				Duplicate_clinics.id = check_duplicates.id;			Duplicate_clinics.person_uuid = check_duplicates.person_uuid;			Duplicate_clinics.facility_id = check_duplicates.facility_id;			Duplicate_clinics.encounter_date = check_duplicates.encounter_date;			Duplicate_clinics.created_date = check_duplicates.created_date;			Duplicate_clinics.last_modified_date = check_duplicates.last_modified_date;			Duplicate_clinics.created_by = check_duplicates.created_by;			Duplicate_clinics.last_modified_by = check_duplicates.last_modified_by;			Duplicate_clinics.uuid = check_duplicates.uuid;			Duplicate_clinics.visit_id = check_duplicates.visit_id;			Duplicate_clinics.archived = check_duplicates.archived;			Duplicate_clinics.body_weight = check_duplicates.body_weight;			Duplicate_clinics.diastolic = check_duplicates.diastolic;			Duplicate_clinics.systolic = check_duplicates.systolic;			Duplicate_clinics.height = check_duplicates.height;			Duplicate_clinics.temperature = check_duplicates.temperature;			Duplicate_clinics.pulse = check_duplicates.pulse;			Duplicate_clinics.respiratory_rate = check_duplicates.respiratory_rate;			
+}				Duplicate_clinics.id = check_duplicates.id;			Duplicate_clinics.person_uuid = check_duplicates.person_uuid;			Duplicate_clinics.facility_id = check_duplicates.facility_id;			Duplicate_clinics.created_date = check_duplicates.created_date;			Duplicate_clinics.last_modified_date = check_duplicates.last_modified_date;			Duplicate_clinics.created_by = check_duplicates.created_by;			Duplicate_clinics.last_modified_by = check_duplicates.last_modified_by;			Duplicate_clinics.uuid = check_duplicates.uuid;			Duplicate_clinics.visit_id = check_duplicates.visit_id;			Duplicate_clinics.archived = check_duplicates.archived;			Duplicate_clinics.body_weight = check_duplicates.body_weight;			Duplicate_clinics.diastolic = check_duplicates.diastolic;			Duplicate_clinics.systolic = check_duplicates.systolic;			Duplicate_clinics.height = check_duplicates.height;			Duplicate_clinics.temperature = check_duplicates.temperature;			Duplicate_clinics.pulse = check_duplicates.pulse;			Duplicate_clinics.respiratory_rate = check_duplicates.respiratory_rate;			Duplicate_clinics.capture_date = check_duplicates.capture_date;			
 	  nb_duplicates_tUniqRow_3++;
 	}
 
@@ -7926,79 +7814,79 @@ pstmtUpdate_tDBOutput_5.setNull(3, java.sql.Types.INTEGER);
 } else {pstmtUpdate_tDBOutput_5.setLong(3, Unique_clinics.facility_id);
 }
 
-                        if(Unique_clinics.encounter_date != null) {
-pstmtUpdate_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.encounter_date.getTime()));
+                        if(Unique_clinics.created_date != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_5.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.created_date != null) {
-pstmtUpdate_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
+                        if(Unique_clinics.last_modified_date != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_5.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.last_modified_date != null) {
-pstmtUpdate_tDBOutput_5.setTimestamp(6, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_5.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
                         if(Unique_clinics.created_by == null) {
-pstmtUpdate_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_5.setString(7, Unique_clinics.created_by);
+pstmtUpdate_tDBOutput_5.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(6, Unique_clinics.created_by);
 }
 
                         if(Unique_clinics.last_modified_by == null) {
-pstmtUpdate_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_5.setString(8, Unique_clinics.last_modified_by);
+pstmtUpdate_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(7, Unique_clinics.last_modified_by);
 }
 
                         if(Unique_clinics.uuid == null) {
-pstmtUpdate_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_5.setString(9, Unique_clinics.uuid);
+pstmtUpdate_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(8, Unique_clinics.uuid);
 }
 
                         if(Unique_clinics.visit_id == null) {
-pstmtUpdate_tDBOutput_5.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_5.setString(10, Unique_clinics.visit_id);
+pstmtUpdate_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(9, Unique_clinics.visit_id);
 }
 
-                        pstmtUpdate_tDBOutput_5.setInt(11, Unique_clinics.archived);
+                        pstmtUpdate_tDBOutput_5.setInt(10, Unique_clinics.archived);
 
                         if(Unique_clinics.body_weight == null) {
-pstmtUpdate_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(12, Unique_clinics.body_weight);
+pstmtUpdate_tDBOutput_5.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(11, Unique_clinics.body_weight);
 }
 
                         if(Unique_clinics.diastolic == null) {
-pstmtUpdate_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(13, Unique_clinics.diastolic);
+pstmtUpdate_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(12, Unique_clinics.diastolic);
 }
 
                         if(Unique_clinics.systolic == null) {
-pstmtUpdate_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(14, Unique_clinics.systolic);
+pstmtUpdate_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(13, Unique_clinics.systolic);
 }
 
                         if(Unique_clinics.height == null) {
-pstmtUpdate_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(15, Unique_clinics.height);
+pstmtUpdate_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(14, Unique_clinics.height);
 }
 
                         if(Unique_clinics.temperature == null) {
-pstmtUpdate_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(16, Unique_clinics.temperature);
+pstmtUpdate_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(15, Unique_clinics.temperature);
 }
 
                         if(Unique_clinics.pulse == null) {
-pstmtUpdate_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(17, Unique_clinics.pulse);
+pstmtUpdate_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(16, Unique_clinics.pulse);
 }
 
                         if(Unique_clinics.respiratory_rate == null) {
-pstmtUpdate_tDBOutput_5.setNull(18, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_5.setDouble(18, Unique_clinics.respiratory_rate);
+pstmtUpdate_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(17, Unique_clinics.respiratory_rate);
+}
+
+                        if(Unique_clinics.capture_date != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(18, new java.sql.Timestamp(Unique_clinics.capture_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_5.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
                         if(Unique_clinics.id == null) {
@@ -8033,79 +7921,79 @@ pstmtInsert_tDBOutput_5.setNull(3, java.sql.Types.INTEGER);
 } else {pstmtInsert_tDBOutput_5.setLong(3, Unique_clinics.facility_id);
 }
 
-                        if(Unique_clinics.encounter_date != null) {
-pstmtInsert_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.encounter_date.getTime()));
+                        if(Unique_clinics.created_date != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_5.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.created_date != null) {
-pstmtInsert_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
+                        if(Unique_clinics.last_modified_date != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_5.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.last_modified_date != null) {
-pstmtInsert_tDBOutput_5.setTimestamp(6, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_5.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
                         if(Unique_clinics.created_by == null) {
-pstmtInsert_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_5.setString(7, Unique_clinics.created_by);
+pstmtInsert_tDBOutput_5.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(6, Unique_clinics.created_by);
 }
 
                         if(Unique_clinics.last_modified_by == null) {
-pstmtInsert_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_5.setString(8, Unique_clinics.last_modified_by);
+pstmtInsert_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(7, Unique_clinics.last_modified_by);
 }
 
                         if(Unique_clinics.uuid == null) {
-pstmtInsert_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_5.setString(9, Unique_clinics.uuid);
+pstmtInsert_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(8, Unique_clinics.uuid);
 }
 
                         if(Unique_clinics.visit_id == null) {
-pstmtInsert_tDBOutput_5.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_5.setString(10, Unique_clinics.visit_id);
+pstmtInsert_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(9, Unique_clinics.visit_id);
 }
 
-                        pstmtInsert_tDBOutput_5.setInt(11, Unique_clinics.archived);
+                        pstmtInsert_tDBOutput_5.setInt(10, Unique_clinics.archived);
 
                         if(Unique_clinics.body_weight == null) {
-pstmtInsert_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(12, Unique_clinics.body_weight);
+pstmtInsert_tDBOutput_5.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(11, Unique_clinics.body_weight);
 }
 
                         if(Unique_clinics.diastolic == null) {
-pstmtInsert_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(13, Unique_clinics.diastolic);
+pstmtInsert_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(12, Unique_clinics.diastolic);
 }
 
                         if(Unique_clinics.systolic == null) {
-pstmtInsert_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(14, Unique_clinics.systolic);
+pstmtInsert_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(13, Unique_clinics.systolic);
 }
 
                         if(Unique_clinics.height == null) {
-pstmtInsert_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(15, Unique_clinics.height);
+pstmtInsert_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(14, Unique_clinics.height);
 }
 
                         if(Unique_clinics.temperature == null) {
-pstmtInsert_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(16, Unique_clinics.temperature);
+pstmtInsert_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(15, Unique_clinics.temperature);
 }
 
                         if(Unique_clinics.pulse == null) {
-pstmtInsert_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(17, Unique_clinics.pulse);
+pstmtInsert_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(16, Unique_clinics.pulse);
 }
 
                         if(Unique_clinics.respiratory_rate == null) {
-pstmtInsert_tDBOutput_5.setNull(18, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_5.setDouble(18, Unique_clinics.respiratory_rate);
+pstmtInsert_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(17, Unique_clinics.respiratory_rate);
+}
+
+                        if(Unique_clinics.capture_date != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(18, new java.sql.Timestamp(Unique_clinics.capture_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_5.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
                 try {
@@ -8235,79 +8123,79 @@ pstmtUpdate_tDBOutput_6.setNull(3, java.sql.Types.INTEGER);
 } else {pstmtUpdate_tDBOutput_6.setLong(3, Duplicate_clinics.facility_id);
 }
 
-                        if(Duplicate_clinics.encounter_date != null) {
-pstmtUpdate_tDBOutput_6.setTimestamp(4, new java.sql.Timestamp(Duplicate_clinics.encounter_date.getTime()));
+                        if(Duplicate_clinics.created_date != null) {
+pstmtUpdate_tDBOutput_6.setTimestamp(4, new java.sql.Timestamp(Duplicate_clinics.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_6.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Duplicate_clinics.created_date != null) {
-pstmtUpdate_tDBOutput_6.setTimestamp(5, new java.sql.Timestamp(Duplicate_clinics.created_date.getTime()));
+                        if(Duplicate_clinics.last_modified_date != null) {
+pstmtUpdate_tDBOutput_6.setTimestamp(5, new java.sql.Timestamp(Duplicate_clinics.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_6.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Duplicate_clinics.last_modified_date != null) {
-pstmtUpdate_tDBOutput_6.setTimestamp(6, new java.sql.Timestamp(Duplicate_clinics.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_6.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
                         if(Duplicate_clinics.created_by == null) {
-pstmtUpdate_tDBOutput_6.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_6.setString(7, Duplicate_clinics.created_by);
+pstmtUpdate_tDBOutput_6.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_6.setString(6, Duplicate_clinics.created_by);
 }
 
                         if(Duplicate_clinics.last_modified_by == null) {
-pstmtUpdate_tDBOutput_6.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_6.setString(8, Duplicate_clinics.last_modified_by);
+pstmtUpdate_tDBOutput_6.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_6.setString(7, Duplicate_clinics.last_modified_by);
 }
 
                         if(Duplicate_clinics.uuid == null) {
-pstmtUpdate_tDBOutput_6.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_6.setString(9, Duplicate_clinics.uuid);
+pstmtUpdate_tDBOutput_6.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_6.setString(8, Duplicate_clinics.uuid);
 }
 
                         if(Duplicate_clinics.visit_id == null) {
-pstmtUpdate_tDBOutput_6.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_6.setString(10, Duplicate_clinics.visit_id);
+pstmtUpdate_tDBOutput_6.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_6.setString(9, Duplicate_clinics.visit_id);
 }
 
-                        pstmtUpdate_tDBOutput_6.setInt(11, Duplicate_clinics.archived);
+                        pstmtUpdate_tDBOutput_6.setInt(10, Duplicate_clinics.archived);
 
                         if(Duplicate_clinics.body_weight == null) {
-pstmtUpdate_tDBOutput_6.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(12, Duplicate_clinics.body_weight);
+pstmtUpdate_tDBOutput_6.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(11, Duplicate_clinics.body_weight);
 }
 
                         if(Duplicate_clinics.diastolic == null) {
-pstmtUpdate_tDBOutput_6.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(13, Duplicate_clinics.diastolic);
+pstmtUpdate_tDBOutput_6.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(12, Duplicate_clinics.diastolic);
 }
 
                         if(Duplicate_clinics.systolic == null) {
-pstmtUpdate_tDBOutput_6.setNull(14, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(14, Duplicate_clinics.systolic);
+pstmtUpdate_tDBOutput_6.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(13, Duplicate_clinics.systolic);
 }
 
                         if(Duplicate_clinics.height == null) {
-pstmtUpdate_tDBOutput_6.setNull(15, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(15, Duplicate_clinics.height);
+pstmtUpdate_tDBOutput_6.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(14, Duplicate_clinics.height);
 }
 
                         if(Duplicate_clinics.temperature == null) {
-pstmtUpdate_tDBOutput_6.setNull(16, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(16, Duplicate_clinics.temperature);
+pstmtUpdate_tDBOutput_6.setNull(15, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(15, Duplicate_clinics.temperature);
 }
 
                         if(Duplicate_clinics.pulse == null) {
-pstmtUpdate_tDBOutput_6.setNull(17, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(17, Duplicate_clinics.pulse);
+pstmtUpdate_tDBOutput_6.setNull(16, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(16, Duplicate_clinics.pulse);
 }
 
                         if(Duplicate_clinics.respiratory_rate == null) {
-pstmtUpdate_tDBOutput_6.setNull(18, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_6.setDouble(18, Duplicate_clinics.respiratory_rate);
+pstmtUpdate_tDBOutput_6.setNull(17, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_6.setDouble(17, Duplicate_clinics.respiratory_rate);
+}
+
+                        if(Duplicate_clinics.capture_date != null) {
+pstmtUpdate_tDBOutput_6.setTimestamp(18, new java.sql.Timestamp(Duplicate_clinics.capture_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_6.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
                         if(Duplicate_clinics.id == null) {
@@ -8342,79 +8230,79 @@ pstmtInsert_tDBOutput_6.setNull(3, java.sql.Types.INTEGER);
 } else {pstmtInsert_tDBOutput_6.setLong(3, Duplicate_clinics.facility_id);
 }
 
-                        if(Duplicate_clinics.encounter_date != null) {
-pstmtInsert_tDBOutput_6.setTimestamp(4, new java.sql.Timestamp(Duplicate_clinics.encounter_date.getTime()));
+                        if(Duplicate_clinics.created_date != null) {
+pstmtInsert_tDBOutput_6.setTimestamp(4, new java.sql.Timestamp(Duplicate_clinics.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_6.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Duplicate_clinics.created_date != null) {
-pstmtInsert_tDBOutput_6.setTimestamp(5, new java.sql.Timestamp(Duplicate_clinics.created_date.getTime()));
+                        if(Duplicate_clinics.last_modified_date != null) {
+pstmtInsert_tDBOutput_6.setTimestamp(5, new java.sql.Timestamp(Duplicate_clinics.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_6.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Duplicate_clinics.last_modified_date != null) {
-pstmtInsert_tDBOutput_6.setTimestamp(6, new java.sql.Timestamp(Duplicate_clinics.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_6.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
                         if(Duplicate_clinics.created_by == null) {
-pstmtInsert_tDBOutput_6.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_6.setString(7, Duplicate_clinics.created_by);
+pstmtInsert_tDBOutput_6.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_6.setString(6, Duplicate_clinics.created_by);
 }
 
                         if(Duplicate_clinics.last_modified_by == null) {
-pstmtInsert_tDBOutput_6.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_6.setString(8, Duplicate_clinics.last_modified_by);
+pstmtInsert_tDBOutput_6.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_6.setString(7, Duplicate_clinics.last_modified_by);
 }
 
                         if(Duplicate_clinics.uuid == null) {
-pstmtInsert_tDBOutput_6.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_6.setString(9, Duplicate_clinics.uuid);
+pstmtInsert_tDBOutput_6.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_6.setString(8, Duplicate_clinics.uuid);
 }
 
                         if(Duplicate_clinics.visit_id == null) {
-pstmtInsert_tDBOutput_6.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_6.setString(10, Duplicate_clinics.visit_id);
+pstmtInsert_tDBOutput_6.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_6.setString(9, Duplicate_clinics.visit_id);
 }
 
-                        pstmtInsert_tDBOutput_6.setInt(11, Duplicate_clinics.archived);
+                        pstmtInsert_tDBOutput_6.setInt(10, Duplicate_clinics.archived);
 
                         if(Duplicate_clinics.body_weight == null) {
-pstmtInsert_tDBOutput_6.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(12, Duplicate_clinics.body_weight);
+pstmtInsert_tDBOutput_6.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(11, Duplicate_clinics.body_weight);
 }
 
                         if(Duplicate_clinics.diastolic == null) {
-pstmtInsert_tDBOutput_6.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(13, Duplicate_clinics.diastolic);
+pstmtInsert_tDBOutput_6.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(12, Duplicate_clinics.diastolic);
 }
 
                         if(Duplicate_clinics.systolic == null) {
-pstmtInsert_tDBOutput_6.setNull(14, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(14, Duplicate_clinics.systolic);
+pstmtInsert_tDBOutput_6.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(13, Duplicate_clinics.systolic);
 }
 
                         if(Duplicate_clinics.height == null) {
-pstmtInsert_tDBOutput_6.setNull(15, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(15, Duplicate_clinics.height);
+pstmtInsert_tDBOutput_6.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(14, Duplicate_clinics.height);
 }
 
                         if(Duplicate_clinics.temperature == null) {
-pstmtInsert_tDBOutput_6.setNull(16, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(16, Duplicate_clinics.temperature);
+pstmtInsert_tDBOutput_6.setNull(15, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(15, Duplicate_clinics.temperature);
 }
 
                         if(Duplicate_clinics.pulse == null) {
-pstmtInsert_tDBOutput_6.setNull(17, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(17, Duplicate_clinics.pulse);
+pstmtInsert_tDBOutput_6.setNull(16, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(16, Duplicate_clinics.pulse);
 }
 
                         if(Duplicate_clinics.respiratory_rate == null) {
-pstmtInsert_tDBOutput_6.setNull(18, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_6.setDouble(18, Duplicate_clinics.respiratory_rate);
+pstmtInsert_tDBOutput_6.setNull(17, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_6.setDouble(17, Duplicate_clinics.respiratory_rate);
+}
+
+                        if(Duplicate_clinics.capture_date != null) {
+pstmtInsert_tDBOutput_6.setTimestamp(18, new java.sql.Timestamp(Duplicate_clinics.capture_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_6.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
                 try {
@@ -9280,6 +9168,7 @@ public void tJava_2Process(final java.util.Map<String, Object> globalMap) throws
 
 
 System.out.println("Total Patient's vital fetched from triage_vital_sign_stage - "+globalMap.get("tDBInput_9_NB_LINE"));
+System.out.println();
  
 
 
@@ -9478,6 +9367,7 @@ globalMap.put("startTime", startTime);
 System.out.println("Start time - "+ startTime);
 
 System.out.println("Total Patient's vital stage fetched from LAMIS3 clinic - "+globalMap.get("tDBInput_1_NB_LINE"));
+System.out.println();
  
 
 
@@ -11896,6 +11786,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     312308 characters generated by Talend Open Studio for Big Data 
- *     on the October 28, 2022 5:30:49 PM WAT
+ *     309239 characters generated by Talend Open Studio for Big Data 
+ *     on the November 2, 2022 10:06:39 PM WAT
  ************************************************************************************************/

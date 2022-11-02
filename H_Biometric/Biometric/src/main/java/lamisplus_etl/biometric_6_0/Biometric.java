@@ -56,8 +56,8 @@ import java.util.Comparator;
 @SuppressWarnings("unused")
 
 /**
- * Job: Biometric Purpose: Triage_VitalSigns<br>
- * Description: Triage_VitalSigns <br>
+ * Job: Biometric Purpose: Biometric<br>
+ * Description: Biometric <br>
  * @author user@talend.com
  * @version 7.3.1.20200219_1130
  * @status 
@@ -1044,12 +1044,6 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-			    public Boolean version_iso_20;
-
-				public Boolean getVersion_iso_20 () {
-					return this.version_iso_20;
-				}
-				
 
 
 
@@ -1176,13 +1170,6 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.version_iso_20 = null;
-           				} else {
-           			    	this.version_iso_20 = dis.readBoolean();
-           				}
-					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -1245,15 +1232,6 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
-					// Boolean
-				
-						if(this.version_iso_20 == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.version_iso_20);
-		            	}
-					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -1278,7 +1256,6 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",iso="+String.valueOf(iso));
 		sb.append(",datim_id="+datim_id);
-		sb.append(",version_iso_20="+String.valueOf(version_iso_20));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1398,12 +1375,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-			    public Boolean version_iso_20;
-
-				public Boolean getVersion_iso_20 () {
-					return this.version_iso_20;
-				}
-				
 
 
 	@Override
@@ -1452,7 +1423,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 	            other.archived = this.archived;
 	            other.iso = this.iso;
 	            other.datim_id = this.datim_id;
-	            other.version_iso_20 = this.version_iso_20;
 	            
 	}
 
@@ -1588,13 +1558,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.version_iso_20 = null;
-           				} else {
-           			    	this.version_iso_20 = dis.readBoolean();
-           				}
-					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -1657,15 +1620,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
-					// Boolean
-				
-						if(this.version_iso_20 == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.version_iso_20);
-		            	}
-					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -1690,7 +1644,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",iso="+String.valueOf(iso));
 		sb.append(",datim_id="+datim_id);
-		sb.append(",version_iso_20="+String.valueOf(version_iso_20));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1984,8 +1937,8 @@ extract_biometricStruct extract_biometric_tmp = new extract_biometricStruct();
 			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
 		    String dbquery_tDBInput_1 = "SELECT b.id as id, patient_id as person_uuid, facility_id, template_type,\nbiometric_type, enrollment_date, last_modifi"
-+"ed, template, archived::integer, iso, nf.datim_id, version_iso_20\n	FROM biometric b\n	INNER JOIN ndr_facility nf\n  ON "
-+"nf.id=b.facility_id";
++"ed, template, archived::integer, iso, nf.datim_id -- version_iso_20\n	FROM biometric b\n	INNER JOIN ndr_facility nf\n  O"
++"N nf.id=b.facility_id";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2079,15 +2032,6 @@ extract_biometricStruct extract_biometric_tmp = new extract_biometricStruct();
 							} else {
 	                         		
         	biometric_record.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 11, false);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 12) {
-								biometric_record.version_iso_20 = null;
-							} else {
-	                         		
-            biometric_record.version_iso_20 = rs_tDBInput_1.getBoolean(12);
-            if(rs_tDBInput_1.wasNull()){
-                    biometric_record.version_iso_20 = null;
-            }
 		                    }
 					
 
@@ -2283,9 +2227,9 @@ extract_biometric_tmp.enrollment_date = biometric_record.enrollment_date ;
 extract_biometric_tmp.created_date = biometric_record.last_modified ;
 extract_biometric_tmp.last_modified_date = biometric_record.last_modified ;
 extract_biometric_tmp.template = biometric_record.template ;
-extract_biometric_tmp.archived = biometric_record.archived ;
+extract_biometric_tmp.archived = biometric_record.archived;
 extract_biometric_tmp.iso = biometric_record.iso ;
-extract_biometric_tmp.version_iso_20 = biometric_record.version_iso_20 ;
+extract_biometric_tmp.version_iso_20 = null;
 extract_biometric_tmp.created_by = "ETL";
 extract_biometric_tmp.last_modified_by = "ETL";
 extract_biometric_tmp.device_name = null;
@@ -3036,7 +2980,13 @@ if(globalMap.get("tDBOutput_1_ERROR_MESSAGE") != null){
 System.out.println("Migration Error - "+globalMap.get("tDBOutput_1_ERROR_MESSAGE"));
 }
 System.out.println("Total erroneous records not migrated - "+globalMap.get("tFileOutputDelimited_1_NB_LINE"));
-System.out.println("End time - "+ java.time.LocalDateTime.now());
+System.out.println();
+java.time.LocalDateTime endTime = java.time.LocalDateTime.now();
+System.out.println("End time - "+ endTime);
+java.time.LocalDateTime statTime = (java.time.LocalDateTime)globalMap.get("startTime");
+
+java.time.Duration duration = java.time.Duration.between(statTime, endTime);
+System.out.println("Duration - "+ duration);
 System.out.println("*************BIOMETRIC MIGRATION REPORT END*****************");
 System.out.println("****************************************************************");
  
@@ -3232,7 +3182,9 @@ public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws
 
 System.out.println("*****************************************************************");
 System.out.println("***********BIOMETRIC MIGRATION REPORT START*****************");
-System.out.println("Start time - "+ java.time.LocalDateTime.now());
+java.time.LocalDateTime startTime = java.time.LocalDateTime.now();
+globalMap.put("startTime", startTime);
+System.out.println("Start time - "+ startTime);
 
 System.out.println("Total Biometric records fetched from LAMIS3 biometric - "+globalMap.get("tDBInput_1_NB_LINE"));
  
@@ -3784,14 +3736,8 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		    
 			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-		    String dbquery_tDBInput_2 = "SELECT facility.id,\n	facility.name,\n	orgunit.name as orgunit_name,\n	oid.code as datim_code\nFROM base_organisation_u"
-+"nit facility\nJOIN base_organisation_unit orgunit\nON facility.parent_organisation_unit_id = orgunit.id\nJOIN base_organ"
-+"isation_unit_identifier oid\nON facility.id = oid.organisation_unit_id\nWHERE facility.organisation_unit_level_id =4 AND"
-+" EXISTS(\nSELECT * FROM public.dblink\n('lamis',\n'SELECT DISTINCT \n	fc.id as id, \n	fc.name AS facility_name,\n	lg.nam"
-+"e AS lga_name, \n	nf.datim_id AS datim_id\n FROM public.patient ps\n INNER JOIN facility fc\n  ON ps.facility_id=fc.id\n"
-+" INNER JOIN lga lg\n  ON fc.lga_id=lg.id\nINNER JOIN ndr_facility nf\n  ON nf.id=ps.facility_id'\n) AS DATA(\n		id INTEG"
-+"ER,\n		facility_name VARCHAR,\n		lga_name VARCHAR,\n		datim_id VARCHAR\n	)\nWHERE oid.code=datim_id\n)\nORDER BY facilit"
-+"y.id ASC";
+		    String dbquery_tDBInput_2 = "SELECT iden.organisation_unit_id as id, ef.facility_name, ef.lga_name, ef.datim_id FROM etl_facility ef \nINNER JOIN ba"
++"se_organisation_unit_identifier iden ON iden.code = ef.datim_id";
 			
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -4627,6 +4573,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     122012 characters generated by Talend Open Studio for Big Data 
- *     on the October 28, 2022 5:34:43 PM WAT
+ *     119881 characters generated by Talend Open Studio for Big Data 
+ *     on the November 2, 2022 10:13:23 PM WAT
  ************************************************************************************************/

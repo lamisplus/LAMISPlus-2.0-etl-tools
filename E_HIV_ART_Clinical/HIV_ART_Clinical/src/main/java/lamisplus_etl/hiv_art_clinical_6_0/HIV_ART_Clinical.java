@@ -5311,7 +5311,7 @@ HIV_Art_clinicalStruct HIV_Art_clinical_tmp = new HIV_Art_clinicalStruct();
 								
                         		    		    triage_uuid_lookupHashKey.person_uuid = hiv_clinicals.person_uuid ;
                         		    		
-                        		    		    triage_uuid_lookupHashKey.encounter_date = hiv_clinicals.visit_date  == null ? null : new java.util.Date(hiv_clinicals.visit_date .getTime());
+                        		    		    triage_uuid_lookupHashKey.capture_date = hiv_clinicals.visit_date  == null ? null : new java.util.Date(hiv_clinicals.visit_date .getTime());
                         		    		
 
 								
@@ -5345,7 +5345,7 @@ HIV_Art_clinicalStruct HIV_Art_clinical_tmp = new HIV_Art_clinicalStruct();
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'triage_uuid_lookup' and it contains more one result from keys :  triage_uuid_lookup.person_uuid = '" + triage_uuid_lookupHashKey.person_uuid + "', triage_uuid_lookup.encounter_date = '" + triage_uuid_lookupHashKey.encounter_date + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'triage_uuid_lookup' and it contains more one result from keys :  triage_uuid_lookup.person_uuid = '" + triage_uuid_lookupHashKey.person_uuid + "', triage_uuid_lookup.capture_date = '" + triage_uuid_lookupHashKey.capture_date + "'");
 								} // G 071
 							
 
@@ -7485,7 +7485,7 @@ if(globalMap.get("tDBOutput_1_ERROR_MESSAGE") != null){
 System.out.println("Migration Error - "+globalMap.get("tDBOutput_1_ERROR_MESSAGE"));
 }
 System.out.println("Total erroneous records not migrated - "+globalMap.get("tFileOutputDelimited_1_NB_LINE"));
-
+System.out.println();
 java.time.LocalDateTime endTime = java.time.LocalDateTime.now();
 System.out.println("End time - "+ endTime);
 java.time.LocalDateTime statTime = (java.time.LocalDateTime)globalMap.get("startTime");
@@ -7687,6 +7687,7 @@ public void tJava_2Process(final java.util.Map<String, Object> globalMap) throws
 
 
 System.out.println("Total HIV ART Clinicans fetched from etl_hiv_art_clinical_stage - "+globalMap.get("tDBInput_2_NB_LINE"));
+System.out.println();
  
 
 
@@ -8636,10 +8637,10 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 					return this.person_uuid;
 				}
 				
-			    public java.util.Date encounter_date;
+			    public java.util.Date capture_date;
 
-				public java.util.Date getEncounter_date () {
-					return this.encounter_date;
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
 				}
 				
 
@@ -8652,7 +8653,7 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 	
 						result = prime * result + ((this.person_uuid == null) ? 0 : this.person_uuid.hashCode());
 					
-						result = prime * result + ((this.encounter_date == null) ? 0 : this.encounter_date.hashCode());
+						result = prime * result + ((this.capture_date == null) ? 0 : this.capture_date.hashCode());
 					
     		this.hashCode = result;
     		this.hashCodeDirty = false;
@@ -8675,11 +8676,11 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 						
 							return false;
 					
-						if (this.encounter_date == null) {
-							if (other.encounter_date != null)
+						if (this.capture_date == null) {
+							if (other.capture_date != null)
 								return false;
 						
-						} else if (!this.encounter_date.equals(other.encounter_date))
+						} else if (!this.capture_date.equals(other.capture_date))
 						
 							return false;
 					
@@ -8691,14 +8692,14 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 
 		other.uuid = this.uuid;
 	            other.person_uuid = this.person_uuid;
-	            other.encounter_date = this.encounter_date;
+	            other.capture_date = this.capture_date;
 	            
 	}
 
 	public void copyKeysDataTo(triage_uuid_lookupStruct other) {
 
 		other.person_uuid = this.person_uuid;
-	            	other.encounter_date = this.encounter_date;
+	            	other.capture_date = this.capture_date;
 	            	
 	}
 
@@ -8790,7 +8791,7 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 		
 					this.person_uuid = readString(dis);
 					
-					this.encounter_date = readDate(dis);
+					this.capture_date = readDate(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -8816,7 +8817,7 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 					
 					// java.util.Date
 				
-						writeDate(this.encounter_date,dos);
+						writeDate(this.capture_date,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -8871,7 +8872,7 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 		sb.append("[");
 		sb.append("uuid="+uuid);
 		sb.append(",person_uuid="+person_uuid);
-		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",capture_date="+String.valueOf(capture_date));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -8890,7 +8891,7 @@ public static class triage_uuid_lookupStruct implements routines.system.IPersist
 						}
 
 					
-						returnValue = checkNullsAndCompare(this.encounter_date, other.encounter_date);
+						returnValue = checkNullsAndCompare(this.capture_date, other.capture_date);
 						if(returnValue != 0) {
 							return returnValue;
 						}
@@ -9041,7 +9042,7 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
 		    
 			java.sql.Statement stmt_tDBInput_7 = conn_tDBInput_7.createStatement();
 
-		    String dbquery_tDBInput_7 = "SELECT DISTINCT tvs.uuid,tvs.person_uuid, tvs.encounter_date\nFROM triage_vital_sign tvs";
+		    String dbquery_tDBInput_7 = "SELECT DISTINCT tvs.uuid,tvs.person_uuid, tvs.capture_date\nFROM triage_vital_sign tvs";
 			
 
             	globalMap.put("tDBInput_7_QUERY",dbquery_tDBInput_7);
@@ -9071,10 +9072,10 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
         	triage_uuid_lookup.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 2, false);
 		                    }
 							if(colQtyInRs_tDBInput_7 < 3) {
-								triage_uuid_lookup.encounter_date = null;
+								triage_uuid_lookup.capture_date = null;
 							} else {
 										
-			triage_uuid_lookup.encounter_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 3);
+			triage_uuid_lookup.capture_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 3);
 		                    }
 					
 
@@ -9156,7 +9157,7 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
 				
 				triage_uuid_lookup_HashRow.person_uuid = triage_uuid_lookup.person_uuid;
 				
-				triage_uuid_lookup_HashRow.encounter_date = triage_uuid_lookup.encounter_date;
+				triage_uuid_lookup_HashRow.capture_date = triage_uuid_lookup.capture_date;
 				
 			tHash_Lookup_triage_uuid_lookup.put(triage_uuid_lookup_HashRow);
 			
@@ -13704,21 +13705,21 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 					return this.visit_date;
 				}
 				
-			    public double cd_4;
+			    public Double cd_4;
 
-				public double getCd_4 () {
+				public Double getCd_4 () {
 					return this.cd_4;
 				}
 				
-			    public double cd_4_percentage;
+			    public Double cd_4_percentage;
 
-				public double getCd_4_percentage () {
+				public Double getCd_4_percentage () {
 					return this.cd_4_percentage;
 				}
 				
-			    public boolean is_commencement;
+			    public Boolean is_commencement;
 
-				public boolean getIs_commencement () {
+				public Boolean getIs_commencement () {
 					return this.is_commencement;
 				}
 				
@@ -13993,11 +13994,26 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 					
 					this.visit_date = readDate(dis);
 					
-			        this.cd_4 = dis.readDouble();
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.cd_4 = null;
+           				} else {
+           			    	this.cd_4 = dis.readDouble();
+           				}
 					
-			        this.cd_4_percentage = dis.readDouble();
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.cd_4_percentage = null;
+           				} else {
+           			    	this.cd_4_percentage = dis.readDouble();
+           				}
 					
-			        this.is_commencement = dis.readBoolean();
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.is_commencement = null;
+           				} else {
+           			    	this.is_commencement = dis.readBoolean();
+           				}
 					
 					this.oi_screened = readString(dis);
 					
@@ -14079,17 +14095,32 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 				
 						writeDate(this.visit_date,dos);
 					
-					// double
+					// Double
 				
-		            	dos.writeDouble(this.cd_4);
+						if(this.cd_4 == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.cd_4);
+		            	}
 					
-					// double
+					// Double
 				
-		            	dos.writeDouble(this.cd_4_percentage);
+						if(this.cd_4_percentage == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.cd_4_percentage);
+		            	}
 					
-					// boolean
+					// Boolean
 				
-		            	dos.writeBoolean(this.is_commencement);
+						if(this.is_commencement == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.is_commencement);
+		            	}
 					
 					// String
 				
@@ -15853,7 +15884,7 @@ int count_tDBOutput_3=0;
                                 }
                                 if(!whetherExist_tDBOutput_3) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_3 = conn_tDBOutput_3.createStatement()) {
-                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"created_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(100)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR(100)  ,\"uuid\" VARCHAR(50)  ,\"archived\" INT4 ,\"visit_date\" DATE  not null ,\"cd_4\" FLOAT8  not null ,\"cd_4_percentage\" FLOAT8  not null ,\"is_commencement\" BOOL  not null ,\"oi_screened\" VARCHAR(5)   not null ,\"sti_ids\" VARCHAR(50)   not null ,\"sti_treated\" VARCHAR(5)   not null ,\"" + "opportunistic_infections" + "\" VARCHAR(50),\"adr_screened\" VARCHAR(5)   not null ,\"" + "adverse_drug_reactions" + "\" VARCHAR(50),\"adherence_level\" VARCHAR(15)   not null ,\"" + "adheres" + "\" VARCHAR(50),\"next_appointment\" DATE  not null ,\"lmp_date\" DATE  not null ,\"functional_status\" VARCHAR(15)   not null ,\"clinical_stage\" VARCHAR(15)   not null ,\"datim_id\" VARCHAR(32)  ,\"hiv_enrollment_uuid\" VARCHAR(255)  ,\"visit_id\" VARCHAR(255)  ,\"person_uuid\" VARCHAR(255)  ,\"id\" INT4 ,primary key(\"id\"))");
+                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"created_date\" TIMESTAMP(29)   not null ,\"created_by\" VARCHAR(100)  ,\"last_modified_date\" TIMESTAMP(29)   not null ,\"last_modified_by\" VARCHAR(100)  ,\"uuid\" VARCHAR(50)  ,\"archived\" INT4 ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(5)  ,\"sti_ids\" VARCHAR(50)  ,\"sti_treated\" VARCHAR(5)  ,\"" + "opportunistic_infections" + "\" VARCHAR(50),\"adr_screened\" VARCHAR(5)  ,\"" + "adverse_drug_reactions" + "\" VARCHAR(50),\"adherence_level\" VARCHAR(15)  ,\"" + "adheres" + "\" VARCHAR(50),\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"functional_status\" VARCHAR(15)  ,\"clinical_stage\" VARCHAR(15)  ,\"datim_id\" VARCHAR(32)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)   not null ,\"visit_id\" VARCHAR(255)   not null ,\"person_uuid\" VARCHAR(255)   not null ,\"id\" INT4 ,primary key(\"id\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_3 + "\" WHERE \"id\" = ?");
@@ -16789,11 +16820,20 @@ pstmtUpdate_tDBOutput_3.setTimestamp(7, new java.sql.Timestamp(clinic_stage_reco
 pstmtUpdate_tDBOutput_3.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtUpdate_tDBOutput_3.setDouble(8, clinic_stage_record.cd_4);
+                        if(clinic_stage_record.cd_4 == null) {
+pstmtUpdate_tDBOutput_3.setNull(8, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_3.setDouble(8, clinic_stage_record.cd_4);
+}
 
-                        pstmtUpdate_tDBOutput_3.setDouble(9, clinic_stage_record.cd_4_percentage);
+                        if(clinic_stage_record.cd_4_percentage == null) {
+pstmtUpdate_tDBOutput_3.setNull(9, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_3.setDouble(9, clinic_stage_record.cd_4_percentage);
+}
 
-                        pstmtUpdate_tDBOutput_3.setBoolean(10, clinic_stage_record.is_commencement);
+                        if(clinic_stage_record.is_commencement == null) {
+pstmtUpdate_tDBOutput_3.setNull(10, java.sql.Types.BOOLEAN);
+} else {pstmtUpdate_tDBOutput_3.setBoolean(10, clinic_stage_record.is_commencement);
+}
 
                         if(clinic_stage_record.oi_screened == null) {
 pstmtUpdate_tDBOutput_3.setNull(11, java.sql.Types.VARCHAR);
@@ -16932,11 +16972,20 @@ pstmtInsert_tDBOutput_3.setTimestamp(7, new java.sql.Timestamp(clinic_stage_reco
 pstmtInsert_tDBOutput_3.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtInsert_tDBOutput_3.setDouble(8, clinic_stage_record.cd_4);
+                        if(clinic_stage_record.cd_4 == null) {
+pstmtInsert_tDBOutput_3.setNull(8, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_3.setDouble(8, clinic_stage_record.cd_4);
+}
 
-                        pstmtInsert_tDBOutput_3.setDouble(9, clinic_stage_record.cd_4_percentage);
+                        if(clinic_stage_record.cd_4_percentage == null) {
+pstmtInsert_tDBOutput_3.setNull(9, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_3.setDouble(9, clinic_stage_record.cd_4_percentage);
+}
 
-                        pstmtInsert_tDBOutput_3.setBoolean(10, clinic_stage_record.is_commencement);
+                        if(clinic_stage_record.is_commencement == null) {
+pstmtInsert_tDBOutput_3.setNull(10, java.sql.Types.BOOLEAN);
+} else {pstmtInsert_tDBOutput_3.setBoolean(10, clinic_stage_record.is_commencement);
+}
 
                         if(clinic_stage_record.oi_screened == null) {
 pstmtInsert_tDBOutput_3.setNull(11, java.sql.Types.VARCHAR);
@@ -17623,6 +17672,7 @@ globalMap.put("startTime", startTime);
 System.out.println("Start time - "+ startTime);
 
 System.out.println("Total HIV ART Clinicans fetched from LAMIS3 clinic - "+globalMap.get("tDBInput_8_NB_LINE"));
+System.out.println();
  
 
 
@@ -19831,6 +19881,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     511788 characters generated by Talend Open Studio for Big Data 
- *     on the October 28, 2022 5:31:45 PM WAT
+ *     513423 characters generated by Talend Open Studio for Big Data 
+ *     on the November 2, 2022 10:08:57 PM WAT
  ************************************************************************************************/
