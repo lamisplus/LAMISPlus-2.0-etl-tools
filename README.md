@@ -19,6 +19,7 @@ There are various migration components available here. For a new migration, it i
 - Laboratory Migration: This component can be found at ./G_Laboratory/Laboratory/Laboratory_run[.bat/.sh].
 - Biometric Migration: This component can be found at ./H_Biometric/Biometric/Biometric_run[.bat/.sh].
 - EAC Migration: This component can be found at ./I_EAC/EAC/EAC_run[.bat/.sh]
+- HTS Migration: This component can be found at ./J_HTS/HTS/HTS_run[.bat/.sh]
 
 
 ## Installation
