@@ -20,6 +20,7 @@ There are various migration components available here. For a new migration, it i
 - Biometric Migration: This component can be found at ./H_Biometric/Biometric/Biometric_run[.bat/.sh].
 - EAC Migration: This component can be found at ./I_EAC/EAC/EAC_run[.bat/.sh]
 - HTS Migration: This component can be found at ./J_HTS/HTS/HTS_run[.bat/.sh]
+- HIV_Status_Tracker Migration: This component can be found at ./K_HIV_Status_Tracker/HIV_Status_Tracker/HIV_Status_Tracker_run[.bat/.sh]
 
 
 ## Installation

@@ -46,10 +46,10 @@ import java.util.Comparator;
 
 
 
-	//the import part of tJava_3
+	//the import part of tJava_2
 	//import java.util.List;
 
-	//the import part of tJava_2
+	//the import part of tJava_3
 	//import java.util.List;
 
 	//the import part of tJava_1
@@ -474,15 +474,6 @@ private class TalendException extends Exception {
 					tDBInput_9_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tJava_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tJava_3_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBOutput_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -499,6 +490,42 @@ private class TalendException extends Exception {
 				status = "failure";
 				
 					tJava_2_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_3_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_3_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_3_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tJava_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tJava_3_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -571,12 +598,17 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
 			}
-			public void tJava_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tJava_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
 			}
-			public void tJava_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tDBInput_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tJava_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -1989,7 +2021,7 @@ extractStruct extract_tmp = new extractStruct();
 +" 1)as varchar) else null end), '\\D','','g'), '')::double precision as diastolic,\n   	NULLIF(regexp_replace((case when "
 +"length(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '\\D','','g'), '')::dou"
 +"ble precision as systolic, \n	c.height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n    "
-+"ON p.id=c.patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id";
++"ON p.id=c.patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id\nWHERE p.extra->>'art'='true'";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -8008,8 +8040,6 @@ pstmtInsert_tDBOutput_5.setNull(18, java.sql.Types.TIMESTAMP);
                             System.err.print(e.getMessage());
                 }
             }
-            if(!whetherReject_tDBOutput_5) {
-            }
     		    commitCounter_tDBOutput_5++;
                 if(commitEvery_tDBOutput_5 <= commitCounter_tDBOutput_5) {
                 	conn_tDBOutput_5.commit();
@@ -8547,10 +8577,6 @@ end_Hash.put("tUniqRow_3", System.currentTimeMillis());
 ok_Hash.put("tDBOutput_5", true);
 end_Hash.put("tDBOutput_5", System.currentTimeMillis());
 
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
-				}
-				tJava_3Process(globalMap);
 
 
 
@@ -8645,6 +8671,16 @@ end_Hash.put("tDBOutput_6", System.currentTimeMillis());
 				}//end the resume
 
 				
+				    			if(resumeEntryMethodName == null || globalResumeTicket){
+				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBInput_9:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
+								}	    				    			
+					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
+								} 
+							
+							tDBInput_3Process(globalMap); 
+						
 
 
 
@@ -8912,6 +8948,1482 @@ end_Hash.put("tDBOutput_6", System.currentTimeMillis());
 	}
 	
 
+public void tJava_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tJava_2_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+
+
+	
+	/**
+	 * [tJava_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tJava_2", false);
+		start_Hash.put("tJava_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tJava_2";
+
+	
+		int tos_count_tJava_2 = 0;
+		
+
+
+System.out.println("Total Patient's vital fetched from triage_vital_sign_stage - "+globalMap.get("tDBInput_9_NB_LINE"));
+System.out.println();
+ 
+
+
+
+/**
+ * [tJava_2 begin ] stop
+ */
+	
+	/**
+	 * [tJava_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+	tos_count_tJava_2++;
+
+/**
+ * [tJava_2 main ] stop
+ */
+	
+	/**
+	 * [tJava_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tJava_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_2 process_data_end ] stop
+ */
+	
+	/**
+	 * [tJava_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+ok_Hash.put("tJava_2", true);
+end_Hash.put("tJava_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tJava_2 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tJava_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_2 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tJava_2_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class sequence_extraStruct implements routines.system.IPersistableRow<sequence_extraStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public Long sequence_count;
+
+				public Long getSequence_count () {
+					return this.sequence_count;
+				}
+				
+			    public String table_name;
+
+				public String getTable_name () {
+					return this.table_name;
+				}
+				
+			    public java.util.Date date_time;
+
+				public java.util.Date getDate_time () {
+					return this.date_time;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.sequence_count == null) ? 0 : this.sequence_count.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final sequence_extraStruct other = (sequence_extraStruct) obj;
+		
+						if (this.sequence_count == null) {
+							if (other.sequence_count != null)
+								return false;
+						
+						} else if (!this.sequence_count.equals(other.sequence_count))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(sequence_extraStruct other) {
+
+		other.sequence_count = this.sequence_count;
+	            other.table_name = this.table_name;
+	            other.date_time = this.date_time;
+	            
+	}
+
+	public void copyKeysDataTo(sequence_extraStruct other) {
+
+		other.sequence_count = this.sequence_count;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Triage_Vital_Signs) {
+
+        	try {
+
+        		int length = 0;
+		
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.sequence_count = null;
+           				} else {
+           			    	this.sequence_count = dis.readLong();
+           				}
+					
+					this.table_name = readString(dis);
+					
+					this.date_time = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Long
+				
+						if(this.sequence_count == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.sequence_count);
+		            	}
+					
+					// String
+				
+						writeString(this.table_name,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_time,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("sequence_count="+String.valueOf(sequence_count));
+		sb.append(",table_name="+table_name);
+		sb.append(",date_time="+String.valueOf(date_time));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(sequence_extraStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.sequence_count, other.sequence_count);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row6Struct implements routines.system.IPersistableRow<row6Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_Triage_Vital_Signs = new byte[0];
+
+	
+			    public Long sequence_count;
+
+				public Long getSequence_count () {
+					return this.sequence_count;
+				}
+				
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Triage_Vital_Signs) {
+
+        	try {
+
+        		int length = 0;
+		
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.sequence_count = null;
+           				} else {
+           			    	this.sequence_count = dis.readLong();
+           				}
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Long
+				
+						if(this.sequence_count == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.sequence_count);
+		            	}
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("sequence_count="+String.valueOf(sequence_count));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row6Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_3_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row6Struct row6 = new row6Struct();
+sequence_extraStruct sequence_extra = new sequence_extraStruct();
+
+
+
+
+
+	
+	/**
+	 * [tDBOutput_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBOutput_2", false);
+		start_Hash.put("tDBOutput_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBOutput_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"sequence_extra");
+					}
+				
+		int tos_count_tDBOutput_2 = 0;
+		
+
+
+
+
+
+String dbschema_tDBOutput_2 = null;
+	dbschema_tDBOutput_2 = context.LAMISPlus_Schema;
+	
+
+String tableName_tDBOutput_2 = null;
+if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+	tableName_tDBOutput_2 = ("etl_sequence");
+} else {
+	tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("etl_sequence");
+}
+
+        int updateKeyCount_tDBOutput_2 = 1;
+        if(updateKeyCount_tDBOutput_2 < 1) {
+            throw new RuntimeException("For update, Schema must have a key");
+        }
+int nb_line_tDBOutput_2 = 0;
+int nb_line_update_tDBOutput_2 = 0;
+int nb_line_inserted_tDBOutput_2 = 0;
+int nb_line_deleted_tDBOutput_2 = 0;
+int nb_line_rejected_tDBOutput_2 = 0;
+
+int deletedCount_tDBOutput_2=0;
+int updatedCount_tDBOutput_2=0;
+int insertedCount_tDBOutput_2=0;
+int rejectedCount_tDBOutput_2=0;
+
+boolean whetherReject_tDBOutput_2 = false;
+
+java.sql.Connection conn_tDBOutput_2 = null;
+String dbUser_tDBOutput_2 = null;
+
+	
+    java.lang.Class.forName("org.postgresql.Driver");
+    
+        String url_tDBOutput_2 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+    dbUser_tDBOutput_2 = context.LAMISPlus_Login;
+
+	final String decryptedPassword_tDBOutput_2 = context.LAMISPlus_Password; 
+
+    String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
+
+    conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2,dbUser_tDBOutput_2,dbPwd_tDBOutput_2);
+	
+	resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
+        conn_tDBOutput_2.setAutoCommit(false);
+        int commitEvery_tDBOutput_2 = 10000;
+        int commitCounter_tDBOutput_2 = 0;
+
+
+
+int count_tDBOutput_2=0;
+                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_2 = conn_tDBOutput_2.getMetaData();
+                                boolean whetherExist_tDBOutput_2 = false;
+                                try (java.sql.ResultSet rsTable_tDBOutput_2 = dbMetaData_tDBOutput_2.getTables(null, null, null, new String[]{"TABLE"})) {
+                                    String defaultSchema_tDBOutput_2 = "public";
+                                    if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+                                        try(java.sql.Statement stmtSchema_tDBOutput_2 = conn_tDBOutput_2.createStatement();
+                                            java.sql.ResultSet rsSchema_tDBOutput_2 = stmtSchema_tDBOutput_2.executeQuery("select current_schema() ")) {
+                                            while(rsSchema_tDBOutput_2.next()){
+                                                defaultSchema_tDBOutput_2 = rsSchema_tDBOutput_2.getString("current_schema");
+                                            }
+                                        }
+                                    }
+                                    while(rsTable_tDBOutput_2.next()) {
+                                        String table_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_NAME");
+                                        String schema_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_SCHEM");
+                                        if(table_tDBOutput_2.equals(("etl_sequence"))
+                                            && (schema_tDBOutput_2.equals(dbschema_tDBOutput_2) || ((dbschema_tDBOutput_2 ==null || dbschema_tDBOutput_2.trim().length() ==0) && defaultSchema_tDBOutput_2.equals(schema_tDBOutput_2)))) {
+                                            whetherExist_tDBOutput_2 = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if(!whetherExist_tDBOutput_2) {
+                                    try (java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
+                                        stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"sequence_count\" INT8 ,\"table_name\" VARCHAR ,\"date_time\" TIMESTAMP ,primary key(\"sequence_count\"))");
+                                    }
+                                }
+	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"sequence_count\" = ?");
+	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
+	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"sequence_count\",\"table_name\",\"date_time\") VALUES (?,?,?)";
+	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
+	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
+	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"table_name\" = ?,\"date_time\" = ? WHERE \"sequence_count\" = ?";
+	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
+	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
+	    
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_2", false);
+		start_Hash.put("tMap_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row6");
+					}
+				
+		int tos_count_tMap_2 = 0;
+		
+
+
+
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+class  Var__tMap_2__Struct  {
+}
+Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+sequence_extraStruct sequence_extra_tmp = new sequence_extraStruct();
+// ###############################
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_3", false);
+		start_Hash.put("tDBInput_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_3";
+
+	
+		int tos_count_tDBInput_3 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_3 = 0;
+		    java.sql.Connection conn_tDBInput_3 = null;
+				String driverClass_tDBInput_3 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_3 = java.lang.Class.forName(driverClass_tDBInput_3);
+				String dbUser_tDBInput_3 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_3 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
+				
+				String url_tDBInput_3 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_3 = java.sql.DriverManager.getConnection(url_tDBInput_3,dbUser_tDBInput_3,dbPwd_tDBInput_3);
+		        
+				conn_tDBInput_3.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_3 = conn_tDBInput_3.createStatement();
+
+		    String dbquery_tDBInput_3 = "SELECT pg_catalog.setval('triage_vital_sign_id_seq', (SELECT MAX(id) FROM triage_vital_sign), true);";
+			
+
+            	globalMap.put("tDBInput_3_QUERY",dbquery_tDBInput_3);
+		    java.sql.ResultSet rs_tDBInput_3 = null;
+
+		    try {
+		    	rs_tDBInput_3 = stmt_tDBInput_3.executeQuery(dbquery_tDBInput_3);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_3 = rs_tDBInput_3.getMetaData();
+		    	int colQtyInRs_tDBInput_3 = rsmd_tDBInput_3.getColumnCount();
+
+		    String tmpContent_tDBInput_3 = null;
+		    
+		    
+		    while (rs_tDBInput_3.next()) {
+		        nb_line_tDBInput_3++;
+		        
+							if(colQtyInRs_tDBInput_3 < 1) {
+								row6.sequence_count = null;
+							} else {
+		                          
+            row6.sequence_count = rs_tDBInput_3.getLong(1);
+            if(rs_tDBInput_3.wasNull()){
+                    row6.sequence_count = null;
+            }
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_3 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_3";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_3++;
+
+/**
+ * [tDBInput_3 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_3 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row6");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_2 = false;
+		  boolean mainRowRejected_tMap_2 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
+        // ###############################
+        // # Output tables
+
+sequence_extra = null;
+
+
+// # Output table : 'sequence_extra'
+sequence_extra_tmp.sequence_count = row6.sequence_count ;
+sequence_extra_tmp.table_name = "triage_vital_sign";
+sequence_extra_tmp.date_time = java.sql.Timestamp.valueOf( java.time.LocalDateTime.now() );
+sequence_extra = sequence_extra_tmp;
+// ###############################
+
+} // end of Var scope
+
+rejectedInnerJoin_tMap_2 = false;
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_2++;
+
+/**
+ * [tMap_2 main ] stop
+ */
+	
+	/**
+	 * [tMap_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_2 process_data_begin ] stop
+ */
+// Start of branch "sequence_extra"
+if(sequence_extra != null) { 
+
+
+
+	
+	/**
+	 * [tDBOutput_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"sequence_extra");
+					}
+					
+
+
+
+        whetherReject_tDBOutput_2 = false;
+                    if(sequence_extra.sequence_count == null) {
+pstmt_tDBOutput_2.setNull(1, java.sql.Types.INTEGER);
+} else {pstmt_tDBOutput_2.setLong(1, sequence_extra.sequence_count);
+}
+
+            int checkCount_tDBOutput_2 = -1;
+            try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
+                while(rs_tDBOutput_2.next()) {
+                    checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
+                }
+            }
+            if(checkCount_tDBOutput_2 > 0) {
+                        if(sequence_extra.table_name == null) {
+pstmtUpdate_tDBOutput_2.setNull(1, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(1, sequence_extra.table_name);
+}
+
+                        if(sequence_extra.date_time != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(sequence_extra.date_time.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
+}
+
+                        if(sequence_extra.sequence_count == null) {
+pstmtUpdate_tDBOutput_2.setNull(3 + count_tDBOutput_2, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setLong(3 + count_tDBOutput_2, sequence_extra.sequence_count);
+}
+
+                try {
+					
+                    updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2 + pstmtUpdate_tDBOutput_2.executeUpdate();
+                    nb_line_tDBOutput_2++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_2 = true;
+                        nb_line_tDBOutput_2++;
+                            System.err.print(e.getMessage());
+                }
+            } else {
+                        if(sequence_extra.sequence_count == null) {
+pstmtInsert_tDBOutput_2.setNull(1, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setLong(1, sequence_extra.sequence_count);
+}
+
+                        if(sequence_extra.table_name == null) {
+pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(2, sequence_extra.table_name);
+}
+
+                        if(sequence_extra.date_time != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(sequence_extra.date_time.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
+}
+
+                try {
+					
+                    insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2 + pstmtInsert_tDBOutput_2.executeUpdate();
+                    nb_line_tDBOutput_2++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_2 = true;
+                        nb_line_tDBOutput_2++;
+                            System.err.print(e.getMessage());
+                }
+            }
+            if(!whetherReject_tDBOutput_2) {
+            }
+    		    commitCounter_tDBOutput_2++;
+                if(commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
+                	conn_tDBOutput_2.commit();
+                	
+                	commitCounter_tDBOutput_2=0;
+                }
+
+ 
+
+
+	tos_count_tDBOutput_2++;
+
+/**
+ * [tDBOutput_2 main ] stop
+ */
+	
+	/**
+	 * [tDBOutput_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBOutput_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 process_data_end ] stop
+ */
+
+} // End of branch "sequence_extra"
+
+
+
+
+	
+	/**
+	 * [tMap_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_2 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_3 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_3";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_3 != null) {
+		rs_tDBInput_3.close();
+	}
+	if (stmt_tDBInput_3 != null) {
+		stmt_tDBInput_3.close();
+	}
+	if(conn_tDBInput_3 != null && !conn_tDBInput_3.isClosed()) {
+		
+			conn_tDBInput_3.commit();
+			
+		
+			conn_tDBInput_3.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_3_NB_LINE",nb_line_tDBInput_3);
+ 
+
+ok_Hash.put("tDBInput_3", true);
+end_Hash.put("tDBInput_3", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_3 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+
+
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row6");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tMap_2", true);
+end_Hash.put("tMap_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tMap_2 end ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+
+
+        if(pstmtUpdate_tDBOutput_2 != null){
+            pstmtUpdate_tDBOutput_2.close();
+            resourceMap.remove("pstmtUpdate_tDBOutput_2");
+        }
+        if(pstmtInsert_tDBOutput_2 != null){
+            pstmtInsert_tDBOutput_2.close();
+            resourceMap.remove("pstmtInsert_tDBOutput_2");
+        }
+        if(pstmt_tDBOutput_2 != null) {
+            pstmt_tDBOutput_2.close();
+            resourceMap.remove("pstmt_tDBOutput_2");
+        }
+    resourceMap.put("statementClosed_tDBOutput_2", true);
+			
+			conn_tDBOutput_2.commit();
+			
+		
+    	conn_tDBOutput_2 .close();
+    	
+    	resourceMap.put("finish_tDBOutput_2", true);
+    	
+
+	nb_line_deleted_tDBOutput_2=nb_line_deleted_tDBOutput_2+ deletedCount_tDBOutput_2;
+	nb_line_update_tDBOutput_2=nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
+	nb_line_inserted_tDBOutput_2=nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
+	nb_line_rejected_tDBOutput_2=nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
+	
+        globalMap.put("tDBOutput_2_NB_LINE",nb_line_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_UPDATED",nb_line_update_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_DELETED",nb_line_deleted_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
+    
+	
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"sequence_extra");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tDBOutput_2", true);
+end_Hash.put("tDBOutput_2", System.currentTimeMillis());
+
+				if(execStat){   
+   	 				runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
+				}
+				tJava_3Process(globalMap);
+
+
+
+/**
+ * [tDBOutput_2 end ] stop
+ */
+
+
+
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_3 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_2 finally ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+
+
+    try {
+    if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
+                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
+                if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_2")) != null) {
+                    pstmtUpdateToClose_tDBOutput_2.close();
+                }
+                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
+                if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_2")) != null) {
+                    pstmtInsertToClose_tDBOutput_2.close();
+                }
+                java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
+                if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_2")) != null) {
+                    pstmtToClose_tDBOutput_2.close();
+                }
+    }
+    } finally {
+        if(resourceMap.get("finish_tDBOutput_2") == null){
+            java.sql.Connection ctn_tDBOutput_2 = null;
+            if((ctn_tDBOutput_2 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_2")) != null){
+                try {
+                    ctn_tDBOutput_2.close();
+                } catch (java.sql.SQLException sqlEx_tDBOutput_2) {
+                    String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :" + sqlEx_tDBOutput_2.getMessage();
+                    System.err.println(errorMessage_tDBOutput_2);
+                }
+            }
+        }
+    }
+ 
+
+
+
+/**
+ * [tDBOutput_2 finally ] stop
+ */
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_3_SUBPROCESS_STATE", 1);
+	}
+	
+
 public void tJava_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
 	globalMap.put("tJava_3_SUBPROCESS_STATE", 0);
 
@@ -9119,199 +10631,6 @@ end_Hash.put("tJava_3", System.currentTimeMillis());
 		
 
 		globalMap.put("tJava_3_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tJava_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tJava_2_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tJava_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tJava_2", false);
-		start_Hash.put("tJava_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tJava_2";
-
-	
-		int tos_count_tJava_2 = 0;
-		
-
-
-System.out.println("Total Patient's vital fetched from triage_vital_sign_stage - "+globalMap.get("tDBInput_9_NB_LINE"));
-System.out.println();
- 
-
-
-
-/**
- * [tJava_2 begin ] stop
- */
-	
-	/**
-	 * [tJava_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_2";
-
-	
-
- 
-
-
-	tos_count_tJava_2++;
-
-/**
- * [tJava_2 main ] stop
- */
-	
-	/**
-	 * [tJava_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_2";
-
-	
-
- 
-
-
-
-/**
- * [tJava_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tJava_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_2";
-
-	
-
- 
-
-
-
-/**
- * [tJava_2 process_data_end ] stop
- */
-	
-	/**
-	 * [tJava_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_2";
-
-	
-
- 
-
-ok_Hash.put("tJava_2", true);
-end_Hash.put("tJava_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tJava_2 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tJava_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_2";
-
-	
-
- 
-
-
-
-/**
- * [tJava_2 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tJava_2_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -11786,6 +13105,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     309239 characters generated by Talend Open Studio for Big Data 
- *     on the November 6, 2022 1:28:08 PM WAT
+ *     341266 characters generated by Talend Open Studio for Big Data 
+ *     on the November 13, 2022 10:26:34 PM WAT
  ************************************************************************************************/

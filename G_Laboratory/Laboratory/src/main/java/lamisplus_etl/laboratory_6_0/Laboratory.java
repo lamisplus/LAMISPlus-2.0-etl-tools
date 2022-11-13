@@ -651,6 +651,33 @@ private class TalendException extends Exception {
 					tJava_8_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_10_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_10_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_7_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_10_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBOutput_5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_10_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tJava_7_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -913,6 +940,11 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tJava_8_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tDBInput_10_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -2954,7 +2986,7 @@ laboratory_order_extractStruct laboratory_order_extract_tmp = new laboratory_ord
 		    String dbquery_tDBInput_1 = "SELECT l.id, l.last_modified as create_date, l.last_modified as date_modified, \n'ETL'::VARCHAR as modified_by, 'ETL'::"
 +"VARCHAR as created_by, l.archived::integer, l.uuid, \nl.date_sample_collected as order_date, n.datim_id, p.uuid as patie"
 +"nt_uuid\n	FROM laboratory l\n	INNER JOIN patient P ON P.id = l.patient_id\n	INNER JOIN ndr_facility n ON n.id = l.facili"
-+"ty_id;";
++"ty_id\nWHERE p.extra->>'art'='true'";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -4989,6 +5021,12 @@ public static class laboratory_test_finalStruct implements routines.system.IPers
 					return this.date_modified;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 	@Override
@@ -5039,6 +5077,7 @@ public static class laboratory_test_finalStruct implements routines.system.IPers
 	            other.date_created = this.date_created;
 	            other.modified_by = this.modified_by;
 	            other.date_modified = this.date_modified;
+	            other.archived = this.archived;
 	            
 	}
 
@@ -5166,6 +5205,8 @@ public static class laboratory_test_finalStruct implements routines.system.IPers
 					
 					this.date_modified = readDate(dis);
 					
+						this.archived = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -5256,6 +5297,10 @@ public static class laboratory_test_finalStruct implements routines.system.IPers
 				
 						writeDate(this.date_modified,dos);
 					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -5287,6 +5332,7 @@ public static class laboratory_test_finalStruct implements routines.system.IPers
 		sb.append(",date_created="+String.valueOf(date_created));
 		sb.append(",modified_by="+modified_by);
 		sb.append(",date_modified="+String.valueOf(date_modified));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -6904,10 +6950,10 @@ String dbUser_tDBOutput_1 = null;
 int count_tDBOutput_1=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"description\",\"viral_load_indication\",\"lab_test_id\",\"unit_measurement\",\"lab_test_order_status\",\"order_priority\",\"lab_number\",\"lab_test_group_id\",\"patient_id\",\"lab_order_id\",\"id\",\"uuid\",\"facility_id\",\"patient_uuid\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"description\",\"viral_load_indication\",\"lab_test_id\",\"unit_measurement\",\"lab_test_order_status\",\"order_priority\",\"lab_number\",\"lab_test_group_id\",\"patient_id\",\"lab_order_id\",\"id\",\"uuid\",\"facility_id\",\"patient_uuid\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"archived\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"description\" = ?,\"viral_load_indication\" = ?,\"lab_test_id\" = ?,\"unit_measurement\" = ?,\"lab_test_order_status\" = ?,\"order_priority\" = ?,\"lab_number\" = ?,\"lab_test_group_id\" = ?,\"patient_id\" = ?,\"lab_order_id\" = ?,\"uuid\" = ?,\"facility_id\" = ?,\"patient_uuid\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"description\" = ?,\"viral_load_indication\" = ?,\"lab_test_id\" = ?,\"unit_measurement\" = ?,\"lab_test_order_status\" = ?,\"order_priority\" = ?,\"lab_number\" = ?,\"lab_test_group_id\" = ?,\"patient_id\" = ?,\"lab_order_id\" = ?,\"uuid\" = ?,\"facility_id\" = ?,\"patient_uuid\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"archived\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 	    
@@ -8169,6 +8215,7 @@ laboratory_test_final_tmp.created_by = laboratory_order_ids.created_by ;
 laboratory_test_final_tmp.date_created = laboratory_order_ids.date_created ;
 laboratory_test_final_tmp.modified_by = laboratory_order_ids.modified_by ;
 laboratory_test_final_tmp.date_modified = laboratory_order_ids.date_modified ;
+laboratory_test_final_tmp.archived = laboratory_order_ids.archived ;
 laboratory_test_final = laboratory_test_final_tmp;
 // ###############################
 
@@ -8322,7 +8369,12 @@ pstmtUpdate_tDBOutput_1.setTimestamp(17, new java.sql.Timestamp(laboratory_test_
 pstmtUpdate_tDBOutput_1.setNull(17, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtUpdate_tDBOutput_1.setInt(18 + count_tDBOutput_1, laboratory_test_final.id);
+                        if(laboratory_test_final.archived == null) {
+pstmtUpdate_tDBOutput_1.setNull(18, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_1.setInt(18, laboratory_test_final.archived);
+}
+
+                        pstmtUpdate_tDBOutput_1.setInt(19 + count_tDBOutput_1, laboratory_test_final.id);
 
                 try {
 					
@@ -8411,6 +8463,11 @@ pstmtInsert_tDBOutput_1.setNull(17, java.sql.Types.VARCHAR);
 pstmtInsert_tDBOutput_1.setTimestamp(18, new java.sql.Timestamp(laboratory_test_final.date_modified.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(18, java.sql.Types.TIMESTAMP);
+}
+
+                        if(laboratory_test_final.archived == null) {
+pstmtInsert_tDBOutput_1.setNull(19, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_1.setInt(19, laboratory_test_final.archived);
 }
 
                 try {
@@ -9450,6 +9507,12 @@ public static class laboratory_sample_finalStruct implements routines.system.IPe
 					return this.uuid;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 	@Override
@@ -9493,6 +9556,7 @@ public static class laboratory_sample_finalStruct implements routines.system.IPe
 	            other.patient_id = this.patient_id;
 	            other.test_id = this.test_id;
 	            other.uuid = this.uuid;
+	            other.archived = this.archived;
 	            
 	}
 
@@ -9606,6 +9670,8 @@ public static class laboratory_sample_finalStruct implements routines.system.IPe
 					
 					this.uuid = readString(dis);
 					
+						this.archived = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -9668,6 +9734,10 @@ public static class laboratory_sample_finalStruct implements routines.system.IPe
 				
 						writeString(this.uuid,dos);
 					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -9692,6 +9762,7 @@ public static class laboratory_sample_finalStruct implements routines.system.IPe
 		sb.append(",patient_id="+String.valueOf(patient_id));
 		sb.append(",test_id="+String.valueOf(test_id));
 		sb.append(",uuid="+uuid);
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -9797,6 +9868,12 @@ public static class laboratory_sample_orderStruct implements routines.system.IPe
 					return this.test_id;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 
@@ -9897,6 +9974,8 @@ public static class laboratory_sample_orderStruct implements routines.system.IPe
 					
 			        this.test_id = dis.readInt();
 					
+						this.archived = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -9951,6 +10030,10 @@ public static class laboratory_sample_orderStruct implements routines.system.IPe
 				
 		            	dos.writeInt(this.test_id);
 					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -9973,6 +10056,7 @@ public static class laboratory_sample_orderStruct implements routines.system.IPe
 		sb.append(",modified_by="+modified_by);
 		sb.append(",date_modified="+String.valueOf(date_modified));
 		sb.append(",test_id="+String.valueOf(test_id));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -10480,10 +10564,10 @@ String dbUser_tDBOutput_3 = null;
 int count_tDBOutput_3=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_3 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_3", pstmt_tDBOutput_3);
-	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"id\",\"patient_uuid\",\"date_sample_collected\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"patient_id\",\"test_id\",\"uuid\") VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"id\",\"patient_uuid\",\"date_sample_collected\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"patient_id\",\"test_id\",\"uuid\",\"archived\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(insert_tDBOutput_3);
 	    resourceMap.put("pstmtInsert_tDBOutput_3", pstmtInsert_tDBOutput_3);
-	    String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3 + "\" SET \"patient_uuid\" = ?,\"date_sample_collected\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"patient_id\" = ?,\"test_id\" = ?,\"uuid\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3 + "\" SET \"patient_uuid\" = ?,\"date_sample_collected\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"patient_id\" = ?,\"test_id\" = ?,\"uuid\" = ?,\"archived\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(update_tDBOutput_3);
 	    resourceMap.put("pstmtUpdate_tDBOutput_3", pstmtUpdate_tDBOutput_3);
 	    
@@ -10943,6 +11027,7 @@ laboratory_sample_order_tmp.date_created = laboratory_order_data.date_created ;
 laboratory_sample_order_tmp.modified_by = laboratory_order_data.modified_by ;
 laboratory_sample_order_tmp.date_modified = laboratory_order_data.date_modified ;
 laboratory_sample_order_tmp.test_id = laboratory_order_data.test_id ;
+laboratory_sample_order_tmp.archived = laboratory_order_data.archived ;
 laboratory_sample_order = laboratory_sample_order_tmp;
 // ###############################
 
@@ -11136,6 +11221,7 @@ laboratory_sample_final_tmp.date_modified = laboratory_sample_order.date_modifie
 laboratory_sample_final_tmp.patient_id = row2.id ;
 laboratory_sample_final_tmp.test_id = laboratory_sample_order.test_id ;
 laboratory_sample_final_tmp.uuid = java.util.UUID.randomUUID().toString() ;
+laboratory_sample_final_tmp.archived = laboratory_sample_order.archived ;
 laboratory_sample_final = laboratory_sample_final_tmp;
 // ###############################
 
@@ -11261,7 +11347,12 @@ pstmtUpdate_tDBOutput_3.setNull(10, java.sql.Types.VARCHAR);
 } else {pstmtUpdate_tDBOutput_3.setString(10, laboratory_sample_final.uuid);
 }
 
-                        pstmtUpdate_tDBOutput_3.setInt(11 + count_tDBOutput_3, laboratory_sample_final.id);
+                        if(laboratory_sample_final.archived == null) {
+pstmtUpdate_tDBOutput_3.setNull(11, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_3.setInt(11, laboratory_sample_final.archived);
+}
+
+                        pstmtUpdate_tDBOutput_3.setInt(12 + count_tDBOutput_3, laboratory_sample_final.id);
 
                 try {
 					
@@ -11322,6 +11413,11 @@ pstmtInsert_tDBOutput_3.setNull(8, java.sql.Types.TIMESTAMP);
                         if(laboratory_sample_final.uuid == null) {
 pstmtInsert_tDBOutput_3.setNull(11, java.sql.Types.VARCHAR);
 } else {pstmtInsert_tDBOutput_3.setString(11, laboratory_sample_final.uuid);
+}
+
+                        if(laboratory_sample_final.archived == null) {
+pstmtInsert_tDBOutput_3.setNull(12, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_3.setInt(12, laboratory_sample_final.archived);
 }
 
                 try {
@@ -12163,6 +12259,12 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					return this.patient_id;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 	@Override
@@ -12207,6 +12309,7 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 	            other.date_modified = this.date_modified;
 	            other.test_id = this.test_id;
 	            other.patient_id = this.patient_id;
+	            other.archived = this.archived;
 	            
 	}
 
@@ -12322,6 +12425,8 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					
 			        this.patient_id = dis.readInt();
 					
+						this.archived = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -12388,6 +12493,10 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 				
 		            	dos.writeInt(this.patient_id);
 					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -12413,6 +12522,7 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 		sb.append(",date_modified="+String.valueOf(date_modified));
 		sb.append(",test_id="+String.valueOf(test_id));
 		sb.append(",patient_id="+String.valueOf(patient_id));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -12530,6 +12640,12 @@ public static class laboratory_result_extractsStruct implements routines.system.
 					return this.test_id;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 
@@ -12634,6 +12750,8 @@ public static class laboratory_result_extractsStruct implements routines.system.
 					
 			        this.test_id = dis.readInt();
 					
+						this.archived = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -12696,6 +12814,10 @@ public static class laboratory_result_extractsStruct implements routines.system.
 				
 		            	dos.writeInt(this.test_id);
 					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -12720,6 +12842,7 @@ public static class laboratory_result_extractsStruct implements routines.system.
 		sb.append(",modified_by="+modified_by);
 		sb.append(",date_modified="+String.valueOf(date_modified));
 		sb.append(",test_id="+String.valueOf(test_id));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -13279,10 +13402,10 @@ String dbUser_tDBOutput_4 = null;
 int count_tDBOutput_4=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_4 = conn_tDBOutput_4.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_4 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_4", pstmt_tDBOutput_4);
-	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"result_reported\",\"date_result_reported\",\"patient_uuid\",\"date_assayed\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"test_id\",\"patient_id\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"result_reported\",\"date_result_reported\",\"patient_uuid\",\"date_assayed\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"test_id\",\"patient_id\",\"archived\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(insert_tDBOutput_4);
 	    resourceMap.put("pstmtInsert_tDBOutput_4", pstmtInsert_tDBOutput_4);
-	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"result_reported\" = ?,\"date_result_reported\" = ?,\"patient_uuid\" = ?,\"date_assayed\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"test_id\" = ?,\"patient_id\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"result_reported\" = ?,\"date_result_reported\" = ?,\"patient_uuid\" = ?,\"date_assayed\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"test_id\" = ?,\"patient_id\" = ?,\"archived\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(update_tDBOutput_4);
 	    resourceMap.put("pstmtUpdate_tDBOutput_4", pstmtUpdate_tDBOutput_4);
 	    
@@ -13754,6 +13877,7 @@ laboratory_result_extracts_tmp.date_created = laboratory_order_result.date_creat
 laboratory_result_extracts_tmp.modified_by = laboratory_order_result.modified_by ;
 laboratory_result_extracts_tmp.date_modified = laboratory_order_result.date_modified ;
 laboratory_result_extracts_tmp.test_id = laboratory_order_result.test_id ;
+laboratory_result_extracts_tmp.archived = laboratory_order_result.archived ;
 laboratory_result_extracts = laboratory_result_extracts_tmp;
 // ###############################
 
@@ -13948,6 +14072,7 @@ laboratory_result_final_tmp.modified_by = laboratory_result_extracts.modified_by
 laboratory_result_final_tmp.date_modified = laboratory_result_extracts.date_modified ;
 laboratory_result_final_tmp.test_id = laboratory_result_extracts.test_id ;
 laboratory_result_final_tmp.patient_id = patient_person_data.id ;
+laboratory_result_final_tmp.archived = laboratory_result_extracts.archived ;
 laboratory_result_final = laboratory_result_final_tmp;
 // ###############################
 
@@ -14079,7 +14204,12 @@ pstmtUpdate_tDBOutput_4.setNull(9, java.sql.Types.TIMESTAMP);
 
                         pstmtUpdate_tDBOutput_4.setInt(11, laboratory_result_final.patient_id);
 
-                        pstmtUpdate_tDBOutput_4.setInt(12 + count_tDBOutput_4, laboratory_result_final.id);
+                        if(laboratory_result_final.archived == null) {
+pstmtUpdate_tDBOutput_4.setNull(12, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_4.setInt(12, laboratory_result_final.archived);
+}
+
+                        pstmtUpdate_tDBOutput_4.setInt(13 + count_tDBOutput_4, laboratory_result_final.id);
 
                 try {
 					
@@ -14147,6 +14277,11 @@ pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.TIMESTAMP);
                         pstmtInsert_tDBOutput_4.setInt(11, laboratory_result_final.test_id);
 
                         pstmtInsert_tDBOutput_4.setInt(12, laboratory_result_final.patient_id);
+
+                        if(laboratory_result_final.archived == null) {
+pstmtInsert_tDBOutput_4.setNull(13, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_4.setInt(13, laboratory_result_final.archived);
+}
 
                 try {
 					
@@ -14530,6 +14665,16 @@ end_Hash.put("tDBOutput_4", System.currentTimeMillis());
 				}//end the resume
 
 				
+				    			if(resumeEntryMethodName == null || globalResumeTicket){
+				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBInput_12:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
+								}	    				    			
+					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk4", 0, "ok");
+								} 
+							
+							tDBInput_10Process(globalMap); 
+						
 
 
 
@@ -15092,6 +15237,1286 @@ end_Hash.put("tJava_8", System.currentTimeMillis());
 		
 
 		globalMap.put("tJava_8_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class sequence_extraStruct implements routines.system.IPersistableRow<sequence_extraStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Laboratory = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_Laboratory = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public Long sequence_count;
+
+				public Long getSequence_count () {
+					return this.sequence_count;
+				}
+				
+			    public String table_name;
+
+				public String getTable_name () {
+					return this.table_name;
+				}
+				
+			    public java.util.Date date_time;
+
+				public java.util.Date getDate_time () {
+					return this.date_time;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.table_name == null) ? 0 : this.table_name.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final sequence_extraStruct other = (sequence_extraStruct) obj;
+		
+						if (this.table_name == null) {
+							if (other.table_name != null)
+								return false;
+						
+						} else if (!this.table_name.equals(other.table_name))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(sequence_extraStruct other) {
+
+		other.sequence_count = this.sequence_count;
+	            other.table_name = this.table_name;
+	            other.date_time = this.date_time;
+	            
+	}
+
+	public void copyKeysDataTo(sequence_extraStruct other) {
+
+		other.table_name = this.table_name;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_Laboratory.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_Laboratory.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_Laboratory = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_Laboratory = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_Laboratory, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_Laboratory, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Laboratory) {
+
+        	try {
+
+        		int length = 0;
+		
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.sequence_count = null;
+           				} else {
+           			    	this.sequence_count = dis.readLong();
+           				}
+					
+					this.table_name = readString(dis);
+					
+					this.date_time = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Long
+				
+						if(this.sequence_count == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.sequence_count);
+		            	}
+					
+					// String
+				
+						writeString(this.table_name,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_time,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("sequence_count="+String.valueOf(sequence_count));
+		sb.append(",table_name="+table_name);
+		sb.append(",date_time="+String.valueOf(date_time));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(sequence_extraStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.table_name, other.table_name);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row6Struct implements routines.system.IPersistableRow<row6Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Laboratory = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_Laboratory = new byte[0];
+
+	
+			    public Long sequence_count;
+
+				public Long getSequence_count () {
+					return this.sequence_count;
+				}
+				
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Laboratory) {
+
+        	try {
+
+        		int length = 0;
+		
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.sequence_count = null;
+           				} else {
+           			    	this.sequence_count = dis.readLong();
+           				}
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Long
+				
+						if(this.sequence_count == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.sequence_count);
+		            	}
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("sequence_count="+String.valueOf(sequence_count));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row6Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_10Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_10_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row6Struct row6 = new row6Struct();
+sequence_extraStruct sequence_extra = new sequence_extraStruct();
+
+
+
+
+
+	
+	/**
+	 * [tDBOutput_5 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBOutput_5", false);
+		start_Hash.put("tDBOutput_5", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBOutput_5";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"sequence_extra");
+					}
+				
+		int tos_count_tDBOutput_5 = 0;
+		
+
+
+
+
+
+String dbschema_tDBOutput_5 = null;
+	dbschema_tDBOutput_5 = context.LAMISPlus_Schema;
+	
+
+String tableName_tDBOutput_5 = null;
+if(dbschema_tDBOutput_5 == null || dbschema_tDBOutput_5.trim().length() == 0) {
+	tableName_tDBOutput_5 = ("etl_sequence");
+} else {
+	tableName_tDBOutput_5 = dbschema_tDBOutput_5 + "\".\"" + ("etl_sequence");
+}
+
+        int updateKeyCount_tDBOutput_5 = 1;
+        if(updateKeyCount_tDBOutput_5 < 1) {
+            throw new RuntimeException("For update, Schema must have a key");
+        }
+int nb_line_tDBOutput_5 = 0;
+int nb_line_update_tDBOutput_5 = 0;
+int nb_line_inserted_tDBOutput_5 = 0;
+int nb_line_deleted_tDBOutput_5 = 0;
+int nb_line_rejected_tDBOutput_5 = 0;
+
+int deletedCount_tDBOutput_5=0;
+int updatedCount_tDBOutput_5=0;
+int insertedCount_tDBOutput_5=0;
+int rejectedCount_tDBOutput_5=0;
+
+boolean whetherReject_tDBOutput_5 = false;
+
+java.sql.Connection conn_tDBOutput_5 = null;
+String dbUser_tDBOutput_5 = null;
+
+	
+    java.lang.Class.forName("org.postgresql.Driver");
+    
+        String url_tDBOutput_5 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+    dbUser_tDBOutput_5 = context.LAMISPlus_Login;
+
+	final String decryptedPassword_tDBOutput_5 = context.LAMISPlus_Password; 
+
+    String dbPwd_tDBOutput_5 = decryptedPassword_tDBOutput_5;
+
+    conn_tDBOutput_5 = java.sql.DriverManager.getConnection(url_tDBOutput_5,dbUser_tDBOutput_5,dbPwd_tDBOutput_5);
+	
+	resourceMap.put("conn_tDBOutput_5", conn_tDBOutput_5);
+        conn_tDBOutput_5.setAutoCommit(false);
+        int commitEvery_tDBOutput_5 = 10000;
+        int commitCounter_tDBOutput_5 = 0;
+
+
+
+int count_tDBOutput_5=0;
+                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_5 = conn_tDBOutput_5.getMetaData();
+                                boolean whetherExist_tDBOutput_5 = false;
+                                try (java.sql.ResultSet rsTable_tDBOutput_5 = dbMetaData_tDBOutput_5.getTables(null, null, null, new String[]{"TABLE"})) {
+                                    String defaultSchema_tDBOutput_5 = "public";
+                                    if(dbschema_tDBOutput_5 == null || dbschema_tDBOutput_5.trim().length() == 0) {
+                                        try(java.sql.Statement stmtSchema_tDBOutput_5 = conn_tDBOutput_5.createStatement();
+                                            java.sql.ResultSet rsSchema_tDBOutput_5 = stmtSchema_tDBOutput_5.executeQuery("select current_schema() ")) {
+                                            while(rsSchema_tDBOutput_5.next()){
+                                                defaultSchema_tDBOutput_5 = rsSchema_tDBOutput_5.getString("current_schema");
+                                            }
+                                        }
+                                    }
+                                    while(rsTable_tDBOutput_5.next()) {
+                                        String table_tDBOutput_5 = rsTable_tDBOutput_5.getString("TABLE_NAME");
+                                        String schema_tDBOutput_5 = rsTable_tDBOutput_5.getString("TABLE_SCHEM");
+                                        if(table_tDBOutput_5.equals(("etl_sequence"))
+                                            && (schema_tDBOutput_5.equals(dbschema_tDBOutput_5) || ((dbschema_tDBOutput_5 ==null || dbschema_tDBOutput_5.trim().length() ==0) && defaultSchema_tDBOutput_5.equals(schema_tDBOutput_5)))) {
+                                            whetherExist_tDBOutput_5 = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if(!whetherExist_tDBOutput_5) {
+                                    try (java.sql.Statement stmtCreate_tDBOutput_5 = conn_tDBOutput_5.createStatement()) {
+                                        stmtCreate_tDBOutput_5.execute("CREATE TABLE \"" + tableName_tDBOutput_5 + "\"(\"sequence_count\" INT8 ,\"table_name\" VARCHAR ,\"date_time\" TIMESTAMP ,primary key(\"table_name\"))");
+                                    }
+                                }
+	    java.sql.PreparedStatement pstmt_tDBOutput_5 = conn_tDBOutput_5.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_5 + "\" WHERE \"table_name\" = ?");
+	    resourceMap.put("pstmt_tDBOutput_5", pstmt_tDBOutput_5);
+	    String insert_tDBOutput_5 = "INSERT INTO \"" + tableName_tDBOutput_5 + "\" (\"sequence_count\",\"table_name\",\"date_time\") VALUES (?,?,?)";
+	    java.sql.PreparedStatement pstmtInsert_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(insert_tDBOutput_5);
+	    resourceMap.put("pstmtInsert_tDBOutput_5", pstmtInsert_tDBOutput_5);
+	    String update_tDBOutput_5 = "UPDATE \"" + tableName_tDBOutput_5 + "\" SET \"sequence_count\" = ?,\"date_time\" = ? WHERE \"table_name\" = ?";
+	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(update_tDBOutput_5);
+	    resourceMap.put("pstmtUpdate_tDBOutput_5", pstmtUpdate_tDBOutput_5);
+	    
+
+ 
+
+
+
+/**
+ * [tDBOutput_5 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_7 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_7", false);
+		start_Hash.put("tMap_7", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_7";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row6");
+					}
+				
+		int tos_count_tMap_7 = 0;
+		
+
+
+
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+class  Var__tMap_7__Struct  {
+}
+Var__tMap_7__Struct Var__tMap_7 = new Var__tMap_7__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+sequence_extraStruct sequence_extra_tmp = new sequence_extraStruct();
+// ###############################
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_7 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_10 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_10", false);
+		start_Hash.put("tDBInput_10", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_10";
+
+	
+		int tos_count_tDBInput_10 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_10 = 0;
+		    java.sql.Connection conn_tDBInput_10 = null;
+				String driverClass_tDBInput_10 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_10 = java.lang.Class.forName(driverClass_tDBInput_10);
+				String dbUser_tDBInput_10 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_10 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_10 = decryptedPassword_tDBInput_10;
+				
+				String url_tDBInput_10 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_10 = java.sql.DriverManager.getConnection(url_tDBInput_10,dbUser_tDBInput_10,dbPwd_tDBInput_10);
+		        
+				conn_tDBInput_10.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_10 = conn_tDBInput_10.createStatement();
+
+		    String dbquery_tDBInput_10 = "SELECT (SELECT pg_catalog.setval('laboratory_order_id_seq', (SELECT MAX(id) FROM laboratory_order), true)) +\n\n(SELECT"
++" pg_catalog.setval('laboratory_test_id_seq', (SELECT MAX(id) FROM laboratory_test), true)) +\n\n(SELECT pg_catalog.setva"
++"l('laboratory_sample_id_seq', (SELECT MAX(id) FROM laboratory_sample), true)) +\n\n(SELECT pg_catalog.setval('laboratory"
++"_result_id_seq', (SELECT MAX(id) FROM laboratory_result), true)) as setval";
+			
+
+            	globalMap.put("tDBInput_10_QUERY",dbquery_tDBInput_10);
+		    java.sql.ResultSet rs_tDBInput_10 = null;
+
+		    try {
+		    	rs_tDBInput_10 = stmt_tDBInput_10.executeQuery(dbquery_tDBInput_10);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_10 = rs_tDBInput_10.getMetaData();
+		    	int colQtyInRs_tDBInput_10 = rsmd_tDBInput_10.getColumnCount();
+
+		    String tmpContent_tDBInput_10 = null;
+		    
+		    
+		    while (rs_tDBInput_10.next()) {
+		        nb_line_tDBInput_10++;
+		        
+							if(colQtyInRs_tDBInput_10 < 1) {
+								row6.sequence_count = null;
+							} else {
+		                          
+            row6.sequence_count = rs_tDBInput_10.getLong(1);
+            if(rs_tDBInput_10.wasNull()){
+                    row6.sequence_count = null;
+            }
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_10 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_10 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_10";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_10++;
+
+/**
+ * [tDBInput_10 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_10 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_10";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_10 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_7 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_7";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row6");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_7 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_7 = false;
+		  boolean mainRowRejected_tMap_7 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_7__Struct Var = Var__tMap_7;// ###############################
+        // ###############################
+        // # Output tables
+
+sequence_extra = null;
+
+
+// # Output table : 'sequence_extra'
+sequence_extra_tmp.sequence_count = row6.sequence_count ;
+sequence_extra_tmp.table_name = "laboratory";
+sequence_extra_tmp.date_time = java.sql.Timestamp.valueOf( java.time.LocalDateTime.now() );
+sequence_extra = sequence_extra_tmp;
+// ###############################
+
+} // end of Var scope
+
+rejectedInnerJoin_tMap_7 = false;
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_7++;
+
+/**
+ * [tMap_7 main ] stop
+ */
+	
+	/**
+	 * [tMap_7 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_7";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_7 process_data_begin ] stop
+ */
+// Start of branch "sequence_extra"
+if(sequence_extra != null) { 
+
+
+
+	
+	/**
+	 * [tDBOutput_5 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_5";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"sequence_extra");
+					}
+					
+
+
+
+        whetherReject_tDBOutput_5 = false;
+                    if(sequence_extra.table_name == null) {
+pstmt_tDBOutput_5.setNull(1, java.sql.Types.VARCHAR);
+} else {pstmt_tDBOutput_5.setString(1, sequence_extra.table_name);
+}
+
+            int checkCount_tDBOutput_5 = -1;
+            try (java.sql.ResultSet rs_tDBOutput_5 = pstmt_tDBOutput_5.executeQuery()) {
+                while(rs_tDBOutput_5.next()) {
+                    checkCount_tDBOutput_5 = rs_tDBOutput_5.getInt(1);
+                }
+            }
+            if(checkCount_tDBOutput_5 > 0) {
+                        if(sequence_extra.sequence_count == null) {
+pstmtUpdate_tDBOutput_5.setNull(1, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_5.setLong(1, sequence_extra.sequence_count);
+}
+
+                        if(sequence_extra.date_time != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(2, new java.sql.Timestamp(sequence_extra.date_time.getTime()));
+} else {
+pstmtUpdate_tDBOutput_5.setNull(2, java.sql.Types.TIMESTAMP);
+}
+
+                        if(sequence_extra.table_name == null) {
+pstmtUpdate_tDBOutput_5.setNull(3 + count_tDBOutput_5, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(3 + count_tDBOutput_5, sequence_extra.table_name);
+}
+
+                try {
+					
+                    updatedCount_tDBOutput_5 = updatedCount_tDBOutput_5 + pstmtUpdate_tDBOutput_5.executeUpdate();
+                    nb_line_tDBOutput_5++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_5 = true;
+                        nb_line_tDBOutput_5++;
+                            System.err.print(e.getMessage());
+                }
+            } else {
+                        if(sequence_extra.sequence_count == null) {
+pstmtInsert_tDBOutput_5.setNull(1, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_5.setLong(1, sequence_extra.sequence_count);
+}
+
+                        if(sequence_extra.table_name == null) {
+pstmtInsert_tDBOutput_5.setNull(2, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(2, sequence_extra.table_name);
+}
+
+                        if(sequence_extra.date_time != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(3, new java.sql.Timestamp(sequence_extra.date_time.getTime()));
+} else {
+pstmtInsert_tDBOutput_5.setNull(3, java.sql.Types.TIMESTAMP);
+}
+
+                try {
+					
+                    insertedCount_tDBOutput_5 = insertedCount_tDBOutput_5 + pstmtInsert_tDBOutput_5.executeUpdate();
+                    nb_line_tDBOutput_5++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_5 = true;
+                        nb_line_tDBOutput_5++;
+                            System.err.print(e.getMessage());
+                }
+            }
+    		    commitCounter_tDBOutput_5++;
+                if(commitEvery_tDBOutput_5 <= commitCounter_tDBOutput_5) {
+                	conn_tDBOutput_5.commit();
+                	
+                	commitCounter_tDBOutput_5=0;
+                }
+
+ 
+
+
+	tos_count_tDBOutput_5++;
+
+/**
+ * [tDBOutput_5 main ] stop
+ */
+	
+	/**
+	 * [tDBOutput_5 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_5 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBOutput_5 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_5 process_data_end ] stop
+ */
+
+} // End of branch "sequence_extra"
+
+
+
+
+	
+	/**
+	 * [tMap_7 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_7";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_7 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_10 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_10";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_10 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_10 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_10";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_10 != null) {
+		rs_tDBInput_10.close();
+	}
+	if (stmt_tDBInput_10 != null) {
+		stmt_tDBInput_10.close();
+	}
+	if(conn_tDBInput_10 != null && !conn_tDBInput_10.isClosed()) {
+		
+			conn_tDBInput_10.commit();
+			
+		
+			conn_tDBInput_10.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_10_NB_LINE",nb_line_tDBInput_10);
+ 
+
+ok_Hash.put("tDBInput_10", true);
+end_Hash.put("tDBInput_10", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_10 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_7 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_7";
+
+	
+
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+
+
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row6");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tMap_7", true);
+end_Hash.put("tMap_7", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tMap_7 end ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_5 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_5";
+
+	
+
+
+
+        if(pstmtUpdate_tDBOutput_5 != null){
+            pstmtUpdate_tDBOutput_5.close();
+            resourceMap.remove("pstmtUpdate_tDBOutput_5");
+        }
+        if(pstmtInsert_tDBOutput_5 != null){
+            pstmtInsert_tDBOutput_5.close();
+            resourceMap.remove("pstmtInsert_tDBOutput_5");
+        }
+        if(pstmt_tDBOutput_5 != null) {
+            pstmt_tDBOutput_5.close();
+            resourceMap.remove("pstmt_tDBOutput_5");
+        }
+    resourceMap.put("statementClosed_tDBOutput_5", true);
+			
+			conn_tDBOutput_5.commit();
+			
+		
+    	conn_tDBOutput_5 .close();
+    	
+    	resourceMap.put("finish_tDBOutput_5", true);
+    	
+
+	nb_line_deleted_tDBOutput_5=nb_line_deleted_tDBOutput_5+ deletedCount_tDBOutput_5;
+	nb_line_update_tDBOutput_5=nb_line_update_tDBOutput_5 + updatedCount_tDBOutput_5;
+	nb_line_inserted_tDBOutput_5=nb_line_inserted_tDBOutput_5 + insertedCount_tDBOutput_5;
+	nb_line_rejected_tDBOutput_5=nb_line_rejected_tDBOutput_5 + rejectedCount_tDBOutput_5;
+	
+        globalMap.put("tDBOutput_5_NB_LINE",nb_line_tDBOutput_5);
+        globalMap.put("tDBOutput_5_NB_LINE_UPDATED",nb_line_update_tDBOutput_5);
+        globalMap.put("tDBOutput_5_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_5);
+        globalMap.put("tDBOutput_5_NB_LINE_DELETED",nb_line_deleted_tDBOutput_5);
+        globalMap.put("tDBOutput_5_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_5);
+    
+	
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"sequence_extra");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tDBOutput_5", true);
+end_Hash.put("tDBOutput_5", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBOutput_5 end ] stop
+ */
+
+
+
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_10 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_10";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_10 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_7 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_7";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_7 finally ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_5 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_5";
+
+	
+
+
+
+    try {
+    if (resourceMap.get("statementClosed_tDBOutput_5") == null) {
+                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_5 = null;
+                if ((pstmtUpdateToClose_tDBOutput_5 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_5")) != null) {
+                    pstmtUpdateToClose_tDBOutput_5.close();
+                }
+                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_5 = null;
+                if ((pstmtInsertToClose_tDBOutput_5 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_5")) != null) {
+                    pstmtInsertToClose_tDBOutput_5.close();
+                }
+                java.sql.PreparedStatement pstmtToClose_tDBOutput_5 = null;
+                if ((pstmtToClose_tDBOutput_5 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_5")) != null) {
+                    pstmtToClose_tDBOutput_5.close();
+                }
+    }
+    } finally {
+        if(resourceMap.get("finish_tDBOutput_5") == null){
+            java.sql.Connection ctn_tDBOutput_5 = null;
+            if((ctn_tDBOutput_5 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_5")) != null){
+                try {
+                    ctn_tDBOutput_5.close();
+                } catch (java.sql.SQLException sqlEx_tDBOutput_5) {
+                    String errorMessage_tDBOutput_5 = "failed to close the connection in tDBOutput_5 :" + sqlEx_tDBOutput_5.getMessage();
+                    System.err.println(errorMessage_tDBOutput_5);
+                }
+            }
+        }
+    }
+ 
+
+
+
+/**
+ * [tDBOutput_5 finally ] stop
+ */
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_10_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -20048,6 +21473,12 @@ public static class laboratory_order_idsStruct implements routines.system.IPersi
 					return this.date_modified;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 	@Override
@@ -20086,6 +21517,7 @@ public static class laboratory_order_idsStruct implements routines.system.IPersi
 	            other.date_created = this.date_created;
 	            other.modified_by = this.modified_by;
 	            other.date_modified = this.date_modified;
+	            other.archived = this.archived;
 	            
 	}
 
@@ -20222,6 +21654,8 @@ public static class laboratory_order_idsStruct implements routines.system.IPersi
 					
 						this.date_modified = readDate(dis,ois);
 					
+						this.archived = readInteger(dis,ois);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -20250,6 +21684,8 @@ public static class laboratory_order_idsStruct implements routines.system.IPersi
 					
 						writeDate(this.date_modified, dos, oos);
 					
+					writeInteger(this.archived, dos, oos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         	}
@@ -20268,6 +21704,7 @@ public static class laboratory_order_idsStruct implements routines.system.IPersi
 		sb.append(",date_created="+String.valueOf(date_created));
 		sb.append(",modified_by="+modified_by);
 		sb.append(",date_modified="+String.valueOf(date_modified));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -20431,7 +21868,7 @@ public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) thr
 		    
 			java.sql.Statement stmt_tDBInput_9 = conn_tDBInput_9.createStatement();
 
-		    String dbquery_tDBInput_9 = "SELECT id, facility_id, created_by, date_created, modified_by, date_modified FROM laboratory_order";
+		    String dbquery_tDBInput_9 = "SELECT id, facility_id, created_by, date_created, modified_by, date_modified, archived FROM laboratory_order";
 			
 
             	globalMap.put("tDBInput_9_QUERY",dbquery_tDBInput_9);
@@ -20489,6 +21926,15 @@ public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) thr
 							} else {
 										
 			laboratory_order_ids.date_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_9, 6);
+		                    }
+							if(colQtyInRs_tDBInput_9 < 7) {
+								laboratory_order_ids.archived = null;
+							} else {
+		                          
+            laboratory_order_ids.archived = rs_tDBInput_9.getInt(7);
+            if(rs_tDBInput_9.wasNull()){
+                    laboratory_order_ids.archived = null;
+            }
 		                    }
 					
 
@@ -20577,6 +22023,8 @@ public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) thr
 				laboratory_order_ids_HashRow.modified_by = laboratory_order_ids.modified_by;
 				
 				laboratory_order_ids_HashRow.date_modified = laboratory_order_ids.date_modified;
+				
+				laboratory_order_ids_HashRow.archived = laboratory_order_ids.archived;
 				
 			tHash_Lookup_laboratory_order_ids.put(laboratory_order_ids_HashRow);
 			
@@ -20873,6 +22321,12 @@ public static class laboratory_order_dataStruct implements routines.system.IPers
 					return this.test_id;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 	@Override
@@ -20912,6 +22366,7 @@ public static class laboratory_order_dataStruct implements routines.system.IPers
 	            other.modified_by = this.modified_by;
 	            other.date_modified = this.date_modified;
 	            other.test_id = this.test_id;
+	            other.archived = this.archived;
 	            
 	}
 
@@ -21050,6 +22505,8 @@ public static class laboratory_order_dataStruct implements routines.system.IPers
 					
 			            this.test_id = dis.readInt();
 					
+						this.archived = readInteger(dis,ois);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -21080,6 +22537,8 @@ public static class laboratory_order_dataStruct implements routines.system.IPers
 					
 		            	dos.writeInt(this.test_id);
 					
+					writeInteger(this.archived, dos, oos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         	}
@@ -21099,6 +22558,7 @@ public static class laboratory_order_dataStruct implements routines.system.IPers
 		sb.append(",modified_by="+modified_by);
 		sb.append(",date_modified="+String.valueOf(date_modified));
 		sb.append(",test_id="+String.valueOf(test_id));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -21262,8 +22722,8 @@ public void tDBInput_14Process(final java.util.Map<String, Object> globalMap) th
 		    
 			java.sql.Statement stmt_tDBInput_14 = conn_tDBInput_14.createStatement();
 
-		    String dbquery_tDBInput_14 = "SELECT lo.id,  lo.facility_id, lo.created_by, lo.date_created, lo.modified_by, lo.date_modified, lt.id as test_id \nFRO"
-+"M laboratory_order lo\nINNER JOIN laboratory_test lt ON lt.lab_order_id=lo.id";
+		    String dbquery_tDBInput_14 = "SELECT lo.id,  lo.facility_id, lo.created_by, lo.date_created, lo.modified_by, lo.date_modified, lt.id as test_id, lo.a"
++"rchived \nFROM laboratory_order lo\nINNER JOIN laboratory_test lt ON lt.lab_order_id=lo.id";
 			
 
             	globalMap.put("tDBInput_14_QUERY",dbquery_tDBInput_14);
@@ -21329,6 +22789,15 @@ public void tDBInput_14Process(final java.util.Map<String, Object> globalMap) th
             laboratory_order_data.test_id = rs_tDBInput_14.getInt(7);
             if(rs_tDBInput_14.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_14 < 8) {
+								laboratory_order_data.archived = null;
+							} else {
+		                          
+            laboratory_order_data.archived = rs_tDBInput_14.getInt(8);
+            if(rs_tDBInput_14.wasNull()){
+                    laboratory_order_data.archived = null;
             }
 		                    }
 					
@@ -21420,6 +22889,8 @@ public void tDBInput_14Process(final java.util.Map<String, Object> globalMap) th
 				laboratory_order_data_HashRow.date_modified = laboratory_order_data.date_modified;
 				
 				laboratory_order_data_HashRow.test_id = laboratory_order_data.test_id;
+				
+				laboratory_order_data_HashRow.archived = laboratory_order_data.archived;
 				
 			tHash_Lookup_laboratory_order_data.put(laboratory_order_data_HashRow);
 			
@@ -22422,6 +23893,12 @@ public static class laboratory_order_resultStruct implements routines.system.IPe
 					return this.test_id;
 				}
 				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
 
 
 	@Override
@@ -22461,6 +23938,7 @@ public static class laboratory_order_resultStruct implements routines.system.IPe
 	            other.modified_by = this.modified_by;
 	            other.date_modified = this.date_modified;
 	            other.test_id = this.test_id;
+	            other.archived = this.archived;
 	            
 	}
 
@@ -22599,6 +24077,8 @@ public static class laboratory_order_resultStruct implements routines.system.IPe
 					
 			            this.test_id = dis.readInt();
 					
+						this.archived = readInteger(dis,ois);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -22629,6 +24109,8 @@ public static class laboratory_order_resultStruct implements routines.system.IPe
 					
 		            	dos.writeInt(this.test_id);
 					
+					writeInteger(this.archived, dos, oos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         	}
@@ -22648,6 +24130,7 @@ public static class laboratory_order_resultStruct implements routines.system.IPe
 		sb.append(",modified_by="+modified_by);
 		sb.append(",date_modified="+String.valueOf(date_modified));
 		sb.append(",test_id="+String.valueOf(test_id));
+		sb.append(",archived="+String.valueOf(archived));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -22811,8 +24294,8 @@ public void tDBInput_15Process(final java.util.Map<String, Object> globalMap) th
 		    
 			java.sql.Statement stmt_tDBInput_15 = conn_tDBInput_15.createStatement();
 
-		    String dbquery_tDBInput_15 = "SELECT lo.id,  lo.facility_id, lo.created_by, lo.date_created, lo.modified_by, lo.date_modified, lt.id as test_id \nFRO"
-+"M laboratory_order lo\nINNER JOIN laboratory_test lt ON lt.lab_order_id=lo.id";
+		    String dbquery_tDBInput_15 = "SELECT lo.id,  lo.facility_id, lo.created_by, lo.date_created, lo.modified_by, lo.date_modified, lt.id as test_id, lo.a"
++"rchived\nFROM laboratory_order lo\nINNER JOIN laboratory_test lt ON lt.lab_order_id=lo.id";
 			
 
             	globalMap.put("tDBInput_15_QUERY",dbquery_tDBInput_15);
@@ -22878,6 +24361,15 @@ public void tDBInput_15Process(final java.util.Map<String, Object> globalMap) th
             laboratory_order_result.test_id = rs_tDBInput_15.getInt(7);
             if(rs_tDBInput_15.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_15 < 8) {
+								laboratory_order_result.archived = null;
+							} else {
+		                          
+            laboratory_order_result.archived = rs_tDBInput_15.getInt(8);
+            if(rs_tDBInput_15.wasNull()){
+                    laboratory_order_result.archived = null;
             }
 		                    }
 					
@@ -22969,6 +24461,8 @@ public void tDBInput_15Process(final java.util.Map<String, Object> globalMap) th
 				laboratory_order_result_HashRow.date_modified = laboratory_order_result.date_modified;
 				
 				laboratory_order_result_HashRow.test_id = laboratory_order_result.test_id;
+				
+				laboratory_order_result_HashRow.archived = laboratory_order_result.archived;
 				
 			tHash_Lookup_laboratory_order_result.put(laboratory_order_result_HashRow);
 			
@@ -24384,6 +25878,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     568770 characters generated by Talend Open Studio for Big Data 
- *     on the November 6, 2022 1:31:54 PM WAT
+ *     606675 characters generated by Talend Open Studio for Big Data 
+ *     on the November 13, 2022 10:29:24 PM WAT
  ************************************************************************************************/
