@@ -846,6 +846,14 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 public static class Unique_enrollmentsStruct implements routines.system.IPersistableRow<Unique_enrollmentsStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
 
 	
 			    public long id;
@@ -1058,6 +1066,82 @@ public static class Unique_enrollmentsStruct implements routines.system.IPersist
 					return this.extra;
 				}
 				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final Unique_enrollmentsStruct other = (Unique_enrollmentsStruct) obj;
+		
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(Unique_enrollmentsStruct other) {
+
+		other.id = this.id;
+	            other.created_date = this.created_date;
+	            other.created_by = this.created_by;
+	            other.last_modified_date = this.last_modified_date;
+	            other.last_modified_by = this.last_modified_by;
+	            other.person_uuid = this.person_uuid;
+	            other.hiv_enrollment_uuid = this.hiv_enrollment_uuid;
+	            other.uuid = this.uuid;
+	            other.archived = this.archived;
+	            other.visit_id = this.visit_id;
+	            other.visit_date = this.visit_date;
+	            other.cd_4 = this.cd_4;
+	            other.cd_4_percentage = this.cd_4_percentage;
+	            other.is_commencement = this.is_commencement;
+	            other.oi_screened = this.oi_screened;
+	            other.sti_ids = this.sti_ids;
+	            other.sti_treated = this.sti_treated;
+	            other.opportunistic_infections = this.opportunistic_infections;
+	            other.adr_screened = this.adr_screened;
+	            other.adverse_drug_reactions = this.adverse_drug_reactions;
+	            other.adherence_level = this.adherence_level;
+	            other.adheres = this.adheres;
+	            other.next_appointment = this.next_appointment;
+	            other.lmp_date = this.lmp_date;
+	            other.facility_id = this.facility_id;
+	            other.functional_status_id = this.functional_status_id;
+	            other.clinical_stage_id = this.clinical_stage_id;
+	            other.clinical_note = this.clinical_note;
+	            other.regimen_id = this.regimen_id;
+	            other.regimen_type_id = this.regimen_type_id;
+	            other.art_status_id = this.art_status_id;
+	            other.vital_sign_uuid = this.vital_sign_uuid;
+	            other.who_staging_id = this.who_staging_id;
+	            other.tb_screen = this.tb_screen;
+	            other.extra = this.extra;
+	            
+	}
+
+	public void copyKeysDataTo(Unique_enrollmentsStruct other) {
+
+		other.id = this.id;
+	            	
+	}
+
 
 
 
@@ -1458,6 +1542,12 @@ public static class Unique_enrollmentsStruct implements routines.system.IPersist
 
 		int returnValue = -1;
 		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
 	    return returnValue;
     }
 
@@ -1489,6 +1579,14 @@ public static class Unique_enrollmentsStruct implements routines.system.IPersist
 public static class Duplicate_enrollmentsStruct implements routines.system.IPersistableRow<Duplicate_enrollmentsStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
 
 	
 			    public long id;
@@ -1701,6 +1799,82 @@ public static class Duplicate_enrollmentsStruct implements routines.system.IPers
 					return this.extra;
 				}
 				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final Duplicate_enrollmentsStruct other = (Duplicate_enrollmentsStruct) obj;
+		
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(Duplicate_enrollmentsStruct other) {
+
+		other.id = this.id;
+	            other.created_date = this.created_date;
+	            other.created_by = this.created_by;
+	            other.last_modified_date = this.last_modified_date;
+	            other.last_modified_by = this.last_modified_by;
+	            other.person_uuid = this.person_uuid;
+	            other.hiv_enrollment_uuid = this.hiv_enrollment_uuid;
+	            other.uuid = this.uuid;
+	            other.archived = this.archived;
+	            other.visit_id = this.visit_id;
+	            other.visit_date = this.visit_date;
+	            other.cd_4 = this.cd_4;
+	            other.cd_4_percentage = this.cd_4_percentage;
+	            other.is_commencement = this.is_commencement;
+	            other.oi_screened = this.oi_screened;
+	            other.sti_ids = this.sti_ids;
+	            other.sti_treated = this.sti_treated;
+	            other.opportunistic_infections = this.opportunistic_infections;
+	            other.adr_screened = this.adr_screened;
+	            other.adverse_drug_reactions = this.adverse_drug_reactions;
+	            other.adherence_level = this.adherence_level;
+	            other.adheres = this.adheres;
+	            other.next_appointment = this.next_appointment;
+	            other.lmp_date = this.lmp_date;
+	            other.facility_id = this.facility_id;
+	            other.functional_status_id = this.functional_status_id;
+	            other.clinical_stage_id = this.clinical_stage_id;
+	            other.clinical_note = this.clinical_note;
+	            other.regimen_id = this.regimen_id;
+	            other.regimen_type_id = this.regimen_type_id;
+	            other.art_status_id = this.art_status_id;
+	            other.vital_sign_uuid = this.vital_sign_uuid;
+	            other.who_staging_id = this.who_staging_id;
+	            other.tb_screen = this.tb_screen;
+	            other.extra = this.extra;
+	            
+	}
+
+	public void copyKeysDataTo(Duplicate_enrollmentsStruct other) {
+
+		other.id = this.id;
+	            	
+	}
+
 
 
 
@@ -2101,6 +2275,12 @@ public static class Duplicate_enrollmentsStruct implements routines.system.IPers
 
 		int returnValue = -1;
 		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
 	    return returnValue;
     }
 
@@ -2132,6 +2312,14 @@ public static class Duplicate_enrollmentsStruct implements routines.system.IPers
 public static class load_art_clinicalsStruct implements routines.system.IPersistableRow<load_art_clinicalsStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
 
 	
 			    public long id;
@@ -2344,6 +2532,82 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 					return this.extra;
 				}
 				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final load_art_clinicalsStruct other = (load_art_clinicalsStruct) obj;
+		
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(load_art_clinicalsStruct other) {
+
+		other.id = this.id;
+	            other.created_date = this.created_date;
+	            other.created_by = this.created_by;
+	            other.last_modified_date = this.last_modified_date;
+	            other.last_modified_by = this.last_modified_by;
+	            other.person_uuid = this.person_uuid;
+	            other.hiv_enrollment_uuid = this.hiv_enrollment_uuid;
+	            other.uuid = this.uuid;
+	            other.archived = this.archived;
+	            other.visit_id = this.visit_id;
+	            other.visit_date = this.visit_date;
+	            other.cd_4 = this.cd_4;
+	            other.cd_4_percentage = this.cd_4_percentage;
+	            other.is_commencement = this.is_commencement;
+	            other.oi_screened = this.oi_screened;
+	            other.sti_ids = this.sti_ids;
+	            other.sti_treated = this.sti_treated;
+	            other.opportunistic_infections = this.opportunistic_infections;
+	            other.adr_screened = this.adr_screened;
+	            other.adverse_drug_reactions = this.adverse_drug_reactions;
+	            other.adherence_level = this.adherence_level;
+	            other.adheres = this.adheres;
+	            other.next_appointment = this.next_appointment;
+	            other.lmp_date = this.lmp_date;
+	            other.facility_id = this.facility_id;
+	            other.functional_status_id = this.functional_status_id;
+	            other.clinical_stage_id = this.clinical_stage_id;
+	            other.clinical_note = this.clinical_note;
+	            other.regimen_id = this.regimen_id;
+	            other.regimen_type_id = this.regimen_type_id;
+	            other.art_status_id = this.art_status_id;
+	            other.vital_sign_uuid = this.vital_sign_uuid;
+	            other.who_staging_id = this.who_staging_id;
+	            other.tb_screen = this.tb_screen;
+	            other.extra = this.extra;
+	            
+	}
+
+	public void copyKeysDataTo(load_art_clinicalsStruct other) {
+
+		other.id = this.id;
+	            	
+	}
+
 
 
 
@@ -2744,6 +3008,12 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 
 		int returnValue = -1;
 		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
 	    return returnValue;
     }
 
@@ -4799,7 +5069,7 @@ int count_tDBOutput_2=0;
                                     }
                                 }
                                 try(java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
-                                    stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"id\" BIGSERIAL  not null ,\"created_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(255)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR(255)  ,\"person_uuid\" VARCHAR(50)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)  ,\"uuid\" VARCHAR(50)   not null ,\"archived\" INT4 ,\"visit_id\" VARCHAR(50)   not null ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(230)  ,\"sti_ids\" VARCHAR(230)  ,\"sti_treated\" VARCHAR(230)  ,\"opportunistic_infections\" VARCHAR(250)  ,\"adr_screened\" VARCHAR(230)  ,\"adverse_drug_reactions\" VARCHAR(250)  ,\"adherence_level\" VARCHAR(230)  ,\"adheres\" VARCHAR(250)  ,\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"facility_id\" BIGSERIAL  not null ,\"functional_status_id\" BIGSERIAL  not null ,\"clinical_stage_id\" BIGSERIAL  not null ,\"clinical_note\" VARCHAR(550)  ,\"regimen_id\" INT4 ,\"regimen_type_id\" INT4 ,\"art_status_id\" INT4 ,\"vital_sign_uuid\" VARCHAR ,\"who_staging_id\" INT4 ,\"tb_screen\" VARCHAR ,\"extra\" VARCHAR(500)  )");
+                                    stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"id\" BIGSERIAL  not null ,\"created_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(255)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR(255)  ,\"person_uuid\" VARCHAR(50)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)  ,\"uuid\" VARCHAR(50)   not null ,\"archived\" INT4 ,\"visit_id\" VARCHAR(50)   not null ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(230)  ,\"sti_ids\" VARCHAR(230)  ,\"sti_treated\" VARCHAR(230)  ,\"opportunistic_infections\" VARCHAR(250)  ,\"adr_screened\" VARCHAR(230)  ,\"adverse_drug_reactions\" VARCHAR(250)  ,\"adherence_level\" VARCHAR(230)  ,\"adheres\" VARCHAR(250)  ,\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"facility_id\" BIGSERIAL  not null ,\"functional_status_id\" BIGSERIAL  not null ,\"clinical_stage_id\" BIGSERIAL  not null ,\"clinical_note\" VARCHAR(550)  ,\"regimen_id\" INT4 ,\"regimen_type_id\" INT4 ,\"art_status_id\" INT4 ,\"vital_sign_uuid\" VARCHAR ,\"who_staging_id\" INT4 ,\"tb_screen\" VARCHAR ,\"extra\" VARCHAR(500)  ,primary key(\"id\"))");
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
@@ -5075,9 +5345,8 @@ HIV_Art_clinicalStruct HIV_Art_clinical_tmp = new HIV_Art_clinicalStruct();
 		    String dbquery_tDBInput_2 = "SELECT DISTINCT a.id,a.created_date, a.created_by, a.last_modified_date, \n    a.last_modified_by,a.person_uuid, a.uuid"
 +", a.archived, a.visit_id,\n    a.visit_date, a.cd_4, a.cd_4_percentage, a.is_commencement,a.oi_screened, \n    a.sti_ids"
 +", a.sti_treated, a.opportunistic_infections, a.adr_screened,  \n    a.adverse_drug_reactions, a.adherence_level,  a.adhe"
-+"res,  a.next_appointment,\n    a.lmp_date,  a.functional_status,  a.clinical_stage, a.datim_id,\n    h.uuid as hiv_enrol"
-+"lment_uuid, a.regimen_type_id, a.regimen_id, a.extra, a.notes\n\nFROM etl_hiv_art_clinical_stage as a\nINNER JOIN hiv_en"
-+"rollment h \n    ON a.person_uuid=h.person_uuid";
++"res,  a.next_appointment,\n    a.lmp_date,  a.functional_status,  a.clinical_stage, a.datim_id,\n    hiv_enrollment_uuid"
++", a.regimen_type_id, a.regimen_id, a.extra, a.notes\n\nFROM etl_hiv_art_clinical_stage as a";
 			
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -17819,8 +18088,8 @@ hiv_art_clinic_dataStruct hiv_art_clinic_data_tmp = new hiv_art_clinic_dataStruc
 +"t as visit_date,  c.cd4 as cd_4, c.cd4p as cd_4_percentage, c.commence as is_commencement, \nc.oi_screened, c.sti_ids,  "
 +"c.sti_treated, c.opportunistic_infections, c.adr_screened, \nc.adverse_drug_reactions, c.adherence_level, c.adheres, c.n"
 +"ext_appointment, c.lmp as lmp_date, \nc.func_status as functional_status, c.clinic_stage as clinical_stage,  n.datim_id "
-+"as datim_id, c.extra, c.notes\nFROM clinic c\n\nINNER JOIN patient p ON p.id = c.patient_id \nINNER JOIN ndr_facility n "
-+"ON n.id=p.facility_id\nINNER JOIN regimen r ON r.id = c.regimen_id\nWHERE p.extra->>'art'='true'";
++"as datim_id, c.extra, c.notes\nFROM clinic c\n\nJOIN patient p ON p.id = c.patient_id \nINNER JOIN ndr_facility n ON n.i"
++"d=p.facility_id\nLEFT JOIN regimen r ON r.id = c.regimen_id\nWHERE p.extra->>'art'='true'";
 			
 
             	globalMap.put("tDBInput_8_QUERY",dbquery_tDBInput_8);
@@ -22492,6 +22761,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     573567 characters generated by Talend Open Studio for Big Data 
- *     on the November 13, 2022 10:27:28 PM WAT
+ *     582731 characters generated by Talend Open Studio for Big Data 
+ *     on the November 16, 2022 8:13:14 PM WAT
  ************************************************************************************************/
