@@ -2021,9 +2021,9 @@ extractStruct extract_tmp = new extractStruct();
 +" 1)as varchar) else null end), '\\D','','g'), '')::double precision as systolic,\n   	NULLIF(regexp_replace((case when l"
 +"ength(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '\\D','','g'), '')::doub"
 +"le precision as diastolic, \n	  CASE\n    WHEN c.height is not null AND POSITION('.' IN c.height::VARCHAR) > 0 THEN (c.h"
-+"eight * 100)\n	WHEN  c.height is not null AND (c.height::bigint < 30) THEN (c.height * 10)\n	ELSE\n	c.height\n  END \n  "
-+"AS height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n    ON p.id=c.patient_id\n    INN"
-+"ER JOIN ndr_facility n \n    ON n.id=p.facility_id\nWHERE p.extra->>'art'='true'";
++"eight * 100)\n	ELSE\n	c.height\n  END \n  AS height,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN pat"
++"ient p \n    ON p.id=c.patient_id\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id\nWHERE p.extra->>'art'='tru"
++"e'";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -7381,13 +7381,16 @@ String dbUser_tDBOutput_5 = null;
         int commitCounter_tDBOutput_5 = 0;
 
 
-   int batchSize_tDBOutput_5 = 10000;
-   int batchSizeCounter_tDBOutput_5=0;
 
 int count_tDBOutput_5=0;
-	    String update_tDBOutput_5 = "UPDATE \"" + tableName_tDBOutput_5 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"temperature\" = ?,\"pulse\" = ?,\"respiratory_rate\" = ?,\"capture_date\" = ? WHERE \"id\" = ?";
-	    java.sql.PreparedStatement pstmt_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(update_tDBOutput_5);
+	    java.sql.PreparedStatement pstmt_tDBOutput_5 = conn_tDBOutput_5.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_5 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_5", pstmt_tDBOutput_5);
+	    String insert_tDBOutput_5 = "INSERT INTO \"" + tableName_tDBOutput_5 + "\" (\"id\",\"person_uuid\",\"facility_id\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"uuid\",\"visit_id\",\"archived\",\"body_weight\",\"diastolic\",\"systolic\",\"height\",\"temperature\",\"pulse\",\"respiratory_rate\",\"capture_date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    java.sql.PreparedStatement pstmtInsert_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(insert_tDBOutput_5);
+	    resourceMap.put("pstmtInsert_tDBOutput_5", pstmtInsert_tDBOutput_5);
+	    String update_tDBOutput_5 = "UPDATE \"" + tableName_tDBOutput_5 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"diastolic\" = ?,\"systolic\" = ?,\"height\" = ?,\"temperature\" = ?,\"pulse\" = ?,\"respiratory_rate\" = ?,\"capture_date\" = ? WHERE \"id\" = ?";
+	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_5 = conn_tDBOutput_5.prepareStatement(update_tDBOutput_5);
+	    resourceMap.put("pstmtUpdate_tDBOutput_5", pstmtUpdate_tDBOutput_5);
 	    
 
  
@@ -7823,172 +7826,224 @@ pstmt_tDBOutput_5.setNull(1, java.sql.Types.INTEGER);
 } else {pstmt_tDBOutput_5.setLong(1, Unique_clinics.id);
 }
 
-                    if(Unique_clinics.person_uuid == null) {
-pstmt_tDBOutput_5.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_5.setString(2, Unique_clinics.person_uuid);
+            int checkCount_tDBOutput_5 = -1;
+            try (java.sql.ResultSet rs_tDBOutput_5 = pstmt_tDBOutput_5.executeQuery()) {
+                while(rs_tDBOutput_5.next()) {
+                    checkCount_tDBOutput_5 = rs_tDBOutput_5.getInt(1);
+                }
+            }
+            if(checkCount_tDBOutput_5 > 0) {
+                        if(Unique_clinics.id == null) {
+pstmtUpdate_tDBOutput_5.setNull(1, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_5.setLong(1, Unique_clinics.id);
 }
 
-                    if(Unique_clinics.facility_id == null) {
-pstmt_tDBOutput_5.setNull(3, java.sql.Types.INTEGER);
-} else {pstmt_tDBOutput_5.setLong(3, Unique_clinics.facility_id);
+                        if(Unique_clinics.person_uuid == null) {
+pstmtUpdate_tDBOutput_5.setNull(2, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(2, Unique_clinics.person_uuid);
 }
 
-                    if(Unique_clinics.created_date != null) {
-pstmt_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
+                        if(Unique_clinics.facility_id == null) {
+pstmtUpdate_tDBOutput_5.setNull(3, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_5.setLong(3, Unique_clinics.facility_id);
+}
+
+                        if(Unique_clinics.created_date != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
 } else {
-pstmt_tDBOutput_5.setNull(4, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_5.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_clinics.last_modified_date != null) {
-pstmt_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
+                        if(Unique_clinics.last_modified_date != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
 } else {
-pstmt_tDBOutput_5.setNull(5, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_5.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_clinics.created_by == null) {
-pstmt_tDBOutput_5.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_5.setString(6, Unique_clinics.created_by);
+                        if(Unique_clinics.created_by == null) {
+pstmtUpdate_tDBOutput_5.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(6, Unique_clinics.created_by);
 }
 
-                    if(Unique_clinics.last_modified_by == null) {
-pstmt_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_5.setString(7, Unique_clinics.last_modified_by);
+                        if(Unique_clinics.last_modified_by == null) {
+pstmtUpdate_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(7, Unique_clinics.last_modified_by);
 }
 
-                    if(Unique_clinics.uuid == null) {
-pstmt_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_5.setString(8, Unique_clinics.uuid);
+                        if(Unique_clinics.uuid == null) {
+pstmtUpdate_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(8, Unique_clinics.uuid);
 }
 
-                    if(Unique_clinics.visit_id == null) {
-pstmt_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_5.setString(9, Unique_clinics.visit_id);
+                        if(Unique_clinics.visit_id == null) {
+pstmtUpdate_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_5.setString(9, Unique_clinics.visit_id);
 }
 
-                    pstmt_tDBOutput_5.setInt(10, Unique_clinics.archived);
+                        pstmtUpdate_tDBOutput_5.setInt(10, Unique_clinics.archived);
 
-                    if(Unique_clinics.body_weight == null) {
-pstmt_tDBOutput_5.setNull(11, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(11, Unique_clinics.body_weight);
+                        if(Unique_clinics.body_weight == null) {
+pstmtUpdate_tDBOutput_5.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(11, Unique_clinics.body_weight);
 }
 
-                    if(Unique_clinics.diastolic == null) {
-pstmt_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(12, Unique_clinics.diastolic);
+                        if(Unique_clinics.diastolic == null) {
+pstmtUpdate_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(12, Unique_clinics.diastolic);
 }
 
-                    if(Unique_clinics.systolic == null) {
-pstmt_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(13, Unique_clinics.systolic);
+                        if(Unique_clinics.systolic == null) {
+pstmtUpdate_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(13, Unique_clinics.systolic);
 }
 
-                    if(Unique_clinics.height == null) {
-pstmt_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(14, Unique_clinics.height);
+                        if(Unique_clinics.height == null) {
+pstmtUpdate_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(14, Unique_clinics.height);
 }
 
-                    if(Unique_clinics.temperature == null) {
-pstmt_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(15, Unique_clinics.temperature);
+                        if(Unique_clinics.temperature == null) {
+pstmtUpdate_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(15, Unique_clinics.temperature);
 }
 
-                    if(Unique_clinics.pulse == null) {
-pstmt_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(16, Unique_clinics.pulse);
+                        if(Unique_clinics.pulse == null) {
+pstmtUpdate_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(16, Unique_clinics.pulse);
 }
 
-                    if(Unique_clinics.respiratory_rate == null) {
-pstmt_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
-} else {pstmt_tDBOutput_5.setDouble(17, Unique_clinics.respiratory_rate);
+                        if(Unique_clinics.respiratory_rate == null) {
+pstmtUpdate_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_5.setDouble(17, Unique_clinics.respiratory_rate);
 }
 
-                    if(Unique_clinics.capture_date != null) {
-pstmt_tDBOutput_5.setTimestamp(18, new java.sql.Timestamp(Unique_clinics.capture_date.getTime()));
+                        if(Unique_clinics.capture_date != null) {
+pstmtUpdate_tDBOutput_5.setTimestamp(18, new java.sql.Timestamp(Unique_clinics.capture_date.getTime()));
 } else {
-pstmt_tDBOutput_5.setNull(18, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_5.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_clinics.id == null) {
-pstmt_tDBOutput_5.setNull(19 + count_tDBOutput_5, java.sql.Types.INTEGER);
-} else {pstmt_tDBOutput_5.setLong(19 + count_tDBOutput_5, Unique_clinics.id);
+                        if(Unique_clinics.id == null) {
+pstmtUpdate_tDBOutput_5.setNull(19 + count_tDBOutput_5, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_5.setLong(19 + count_tDBOutput_5, Unique_clinics.id);
 }
 
-
-    		pstmt_tDBOutput_5.addBatch();
-    		nb_line_tDBOutput_5++;
-    		  
-    		  
-    		  batchSizeCounter_tDBOutput_5++;
-    		  
-    			if ((batchSize_tDBOutput_5 > 0) && (batchSize_tDBOutput_5 <= batchSizeCounter_tDBOutput_5)) {
                 try {
-						int countSum_tDBOutput_5 = 0;
-						    
-						for(int countEach_tDBOutput_5: pstmt_tDBOutput_5.executeBatch()) {
-							countSum_tDBOutput_5 += (countEach_tDBOutput_5 < 0 ? 0 : countEach_tDBOutput_5);
-						}
-				    	
-				    		updatedCount_tDBOutput_5 += countSum_tDBOutput_5;
-				    	
-            	    	batchSizeCounter_tDBOutput_5 = 0;
-                }catch (java.sql.BatchUpdateException e_tDBOutput_5){
-				    	java.sql.SQLException ne_tDBOutput_5 = e_tDBOutput_5.getNextException(),sqle_tDBOutput_5=null;
-				    	String errormessage_tDBOutput_5;
-						if (ne_tDBOutput_5 != null) {
-							// build new exception to provide the original cause
-							sqle_tDBOutput_5 = new java.sql.SQLException(e_tDBOutput_5.getMessage() + "\ncaused by: " + ne_tDBOutput_5.getMessage(), ne_tDBOutput_5.getSQLState(), ne_tDBOutput_5.getErrorCode(), ne_tDBOutput_5);
-							errormessage_tDBOutput_5 = sqle_tDBOutput_5.getMessage();
-						}else{
-							errormessage_tDBOutput_5 = e_tDBOutput_5.getMessage();
-						}
-				    	
-				    	int countSum_tDBOutput_5 = 0;
-						for(int countEach_tDBOutput_5: e_tDBOutput_5.getUpdateCounts()) {
-							countSum_tDBOutput_5 += (countEach_tDBOutput_5 < 0 ? 0 : countEach_tDBOutput_5);
-						}
-						
-				    		updatedCount_tDBOutput_5 += countSum_tDBOutput_5;
-				    	
-				    	System.err.println(errormessage_tDBOutput_5);
-				    	
-					}
-    			}
-    		
+					
+                    updatedCount_tDBOutput_5 = updatedCount_tDBOutput_5 + pstmtUpdate_tDBOutput_5.executeUpdate();
+                    nb_line_tDBOutput_5++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_5 = true;
+                        nb_line_tDBOutput_5++;
+                            System.err.print(e.getMessage());
+                }
+            } else {
+                        if(Unique_clinics.id == null) {
+pstmtInsert_tDBOutput_5.setNull(1, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_5.setLong(1, Unique_clinics.id);
+}
+
+                        if(Unique_clinics.person_uuid == null) {
+pstmtInsert_tDBOutput_5.setNull(2, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(2, Unique_clinics.person_uuid);
+}
+
+                        if(Unique_clinics.facility_id == null) {
+pstmtInsert_tDBOutput_5.setNull(3, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_5.setLong(3, Unique_clinics.facility_id);
+}
+
+                        if(Unique_clinics.created_date != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_5.setNull(4, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Unique_clinics.last_modified_date != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_5.setNull(5, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Unique_clinics.created_by == null) {
+pstmtInsert_tDBOutput_5.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(6, Unique_clinics.created_by);
+}
+
+                        if(Unique_clinics.last_modified_by == null) {
+pstmtInsert_tDBOutput_5.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(7, Unique_clinics.last_modified_by);
+}
+
+                        if(Unique_clinics.uuid == null) {
+pstmtInsert_tDBOutput_5.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(8, Unique_clinics.uuid);
+}
+
+                        if(Unique_clinics.visit_id == null) {
+pstmtInsert_tDBOutput_5.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_5.setString(9, Unique_clinics.visit_id);
+}
+
+                        pstmtInsert_tDBOutput_5.setInt(10, Unique_clinics.archived);
+
+                        if(Unique_clinics.body_weight == null) {
+pstmtInsert_tDBOutput_5.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(11, Unique_clinics.body_weight);
+}
+
+                        if(Unique_clinics.diastolic == null) {
+pstmtInsert_tDBOutput_5.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(12, Unique_clinics.diastolic);
+}
+
+                        if(Unique_clinics.systolic == null) {
+pstmtInsert_tDBOutput_5.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(13, Unique_clinics.systolic);
+}
+
+                        if(Unique_clinics.height == null) {
+pstmtInsert_tDBOutput_5.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(14, Unique_clinics.height);
+}
+
+                        if(Unique_clinics.temperature == null) {
+pstmtInsert_tDBOutput_5.setNull(15, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(15, Unique_clinics.temperature);
+}
+
+                        if(Unique_clinics.pulse == null) {
+pstmtInsert_tDBOutput_5.setNull(16, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(16, Unique_clinics.pulse);
+}
+
+                        if(Unique_clinics.respiratory_rate == null) {
+pstmtInsert_tDBOutput_5.setNull(17, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_5.setDouble(17, Unique_clinics.respiratory_rate);
+}
+
+                        if(Unique_clinics.capture_date != null) {
+pstmtInsert_tDBOutput_5.setTimestamp(18, new java.sql.Timestamp(Unique_clinics.capture_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_5.setNull(18, java.sql.Types.TIMESTAMP);
+}
+
+                try {
+					
+                    insertedCount_tDBOutput_5 = insertedCount_tDBOutput_5 + pstmtInsert_tDBOutput_5.executeUpdate();
+                    nb_line_tDBOutput_5++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_5 = true;
+                        nb_line_tDBOutput_5++;
+                            System.err.print(e.getMessage());
+                }
+            }
     		    commitCounter_tDBOutput_5++;
                 if(commitEvery_tDBOutput_5 <= commitCounter_tDBOutput_5) {
-                if ((batchSize_tDBOutput_5 > 0) && (batchSizeCounter_tDBOutput_5 > 0)) {
-                try {
-                		int countSum_tDBOutput_5 = 0;
-                		    
-						for(int countEach_tDBOutput_5: pstmt_tDBOutput_5.executeBatch()) {
-							countSum_tDBOutput_5 += (countEach_tDBOutput_5 < 0 ? 0 : countEach_tDBOutput_5);
-						}
-            	    	
-            	    		updatedCount_tDBOutput_5 += countSum_tDBOutput_5;
-            	    	
-                batchSizeCounter_tDBOutput_5 = 0;
-               }catch (java.sql.BatchUpdateException e_tDBOutput_5){
-			    	java.sql.SQLException ne_tDBOutput_5 = e_tDBOutput_5.getNextException(),sqle_tDBOutput_5=null;
-			    	String errormessage_tDBOutput_5;
-					if (ne_tDBOutput_5 != null) {
-						// build new exception to provide the original cause
-						sqle_tDBOutput_5 = new java.sql.SQLException(e_tDBOutput_5.getMessage() + "\ncaused by: " + ne_tDBOutput_5.getMessage(), ne_tDBOutput_5.getSQLState(), ne_tDBOutput_5.getErrorCode(), ne_tDBOutput_5);
-						errormessage_tDBOutput_5 = sqle_tDBOutput_5.getMessage();
-					}else{
-						errormessage_tDBOutput_5 = e_tDBOutput_5.getMessage();
-					}
-			    	
-			    	int countSum_tDBOutput_5 = 0;
-					for(int countEach_tDBOutput_5: e_tDBOutput_5.getUpdateCounts()) {
-						countSum_tDBOutput_5 += (countEach_tDBOutput_5 < 0 ? 0 : countEach_tDBOutput_5);
-					}
-					
-			    		updatedCount_tDBOutput_5 += countSum_tDBOutput_5;
-			    	
-			    	System.err.println(errormessage_tDBOutput_5);
-			    	
-				}
-            }
                 	conn_tDBOutput_5.commit();
                 	
                 	commitCounter_tDBOutput_5=0;
@@ -8479,42 +8534,15 @@ end_Hash.put("tUniqRow_3", System.currentTimeMillis());
 
 
 
-	    try {
-				int countSum_tDBOutput_5 = 0;
-				if (pstmt_tDBOutput_5 != null && batchSizeCounter_tDBOutput_5 > 0) {
-						
-					for(int countEach_tDBOutput_5: pstmt_tDBOutput_5.executeBatch()) {
-						countSum_tDBOutput_5 += (countEach_tDBOutput_5 < 0 ? 0 : countEach_tDBOutput_5);
-					}
-						
-				}
-		    	
-		    		updatedCount_tDBOutput_5 += countSum_tDBOutput_5;
-		    	
-	    }catch (java.sql.BatchUpdateException e_tDBOutput_5){
-	    	java.sql.SQLException ne_tDBOutput_5 = e_tDBOutput_5.getNextException(),sqle_tDBOutput_5=null;
-	    	String errormessage_tDBOutput_5;
-			if (ne_tDBOutput_5 != null) {
-				// build new exception to provide the original cause
-				sqle_tDBOutput_5 = new java.sql.SQLException(e_tDBOutput_5.getMessage() + "\ncaused by: " + ne_tDBOutput_5.getMessage(), ne_tDBOutput_5.getSQLState(), ne_tDBOutput_5.getErrorCode(), ne_tDBOutput_5);
-				errormessage_tDBOutput_5 = sqle_tDBOutput_5.getMessage();
-			}else{
-				errormessage_tDBOutput_5 = e_tDBOutput_5.getMessage();
-			}
-	    	
-	    	int countSum_tDBOutput_5 = 0;
-			for(int countEach_tDBOutput_5: e_tDBOutput_5.getUpdateCounts()) {
-				countSum_tDBOutput_5 += (countEach_tDBOutput_5 < 0 ? 0 : countEach_tDBOutput_5);
-			}
-			
-	    		updatedCount_tDBOutput_5 += countSum_tDBOutput_5;
-	    	
-	    	System.err.println(errormessage_tDBOutput_5);
-	    	
-		}
-	    
+        if(pstmtUpdate_tDBOutput_5 != null){
+            pstmtUpdate_tDBOutput_5.close();
+            resourceMap.remove("pstmtUpdate_tDBOutput_5");
+        }
+        if(pstmtInsert_tDBOutput_5 != null){
+            pstmtInsert_tDBOutput_5.close();
+            resourceMap.remove("pstmtInsert_tDBOutput_5");
+        }
         if(pstmt_tDBOutput_5 != null) {
-        		
             pstmt_tDBOutput_5.close();
             resourceMap.remove("pstmt_tDBOutput_5");
         }
@@ -8807,6 +8835,14 @@ end_Hash.put("tDBOutput_6", System.currentTimeMillis());
 
     try {
     if (resourceMap.get("statementClosed_tDBOutput_5") == null) {
+                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_5 = null;
+                if ((pstmtUpdateToClose_tDBOutput_5 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_5")) != null) {
+                    pstmtUpdateToClose_tDBOutput_5.close();
+                }
+                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_5 = null;
+                if ((pstmtInsertToClose_tDBOutput_5 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_5")) != null) {
+                    pstmtInsertToClose_tDBOutput_5.close();
+                }
                 java.sql.PreparedStatement pstmtToClose_tDBOutput_5 = null;
                 if ((pstmtToClose_tDBOutput_5 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_5")) != null) {
                     pstmtToClose_tDBOutput_5.close();
@@ -13071,6 +13107,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     339024 characters generated by Talend Open Studio for Big Data 
- *     on the November 17, 2022 4:49:31 PM WAT
+ *     341407 characters generated by Talend Open Studio for Big Data 
+ *     on the November 20, 2022 9:43:28 PM WAT
  ************************************************************************************************/

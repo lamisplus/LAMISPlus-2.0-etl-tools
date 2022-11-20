@@ -4,20 +4,20 @@
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:UvA0Mvlq0j4N7wCtZ0oDzFNRe5RdlBFgFLgwb9Ag/TGl"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:4udmhjgo7/+y/fcji5gRgriXhGcR35VbC+wToXZldrNE"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:V8nuNtEPTLu15z8eNQxHD/R5xMjwL+HNxGLknSdJUm5g"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:Ad6RSLw0FL4ZpaJd/WceU//gU3gcLMLZlL88FBEGYCas"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Database" prompt="Lamisplus2_sinkdb_connection_Database?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="test"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Login" prompt="Lamisplus2_sinkdb_connection_Login?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Password" prompt="Lamisplus2_sinkdb_connection_Password?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_Password" value="enc:system.encryption.key.v1:Oo/oHbEvocBMxJa8+eVVY263MzxkHBqnKP3rZqCbm4WO"/>
+    <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Password" prompt="Lamisplus2_sinkdb_connection_Password?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_Password" value="enc:system.encryption.key.v1:Z287V6hjsy2GN8xFBE7WLTnX5CvHPNXpTWqwI81mlRm5"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Port" prompt="Lamisplus2_sinkdb_connection_Port?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="5432"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Schema" prompt="Lamisplus2_sinkdb_connection_Schema?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="public"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Server" prompt="Lamisplus2_sinkdb_connection_Server?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="localhost"/>
@@ -26,20 +26,20 @@
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:2zU/B5NSukQnv+c4akSigHweg6GVwhCefBDje2eqjNRL"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:NreuZOJGTFqckJgF12swvW+K+O3UTBYUyY1JWTpGPlno"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:dAldfJ2k5TWBF4Guhavr190WSwLJkYR7E24u6/qgui1Y"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:R0AHy4Lc44hNib3Z7lhTOqMKIL+uG3v5UcGzVyGd4/mj"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Database" prompt="Lamisplus2_sinkdb_connection_Database?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="test"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Login" prompt="Lamisplus2_sinkdb_connection_Login?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Password" prompt="Lamisplus2_sinkdb_connection_Password?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_Password" value="enc:system.encryption.key.v1:eGPMr5sl36d8SHpIzhx2FkDxrswvNxeR2kW1T/0JZvsV"/>
+    <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Password" prompt="Lamisplus2_sinkdb_connection_Password?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_Password" value="enc:system.encryption.key.v1:5TpPcoIuZ9yZ5OHz0LJkAIWK0Zcdg/B7qir0Ze/yefQe"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Port" prompt="Lamisplus2_sinkdb_connection_Port?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="5432"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Schema" prompt="Lamisplus2_sinkdb_connection_Schema?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="public"/>
     <contextParameter comment="" name="Lamisplus2_sinkdb_connection_Server" prompt="Lamisplus2_sinkdb_connection_Server?" promptNeeded="false" repositoryContextId="_Mhm40ENOEe2tU_X-_QVMag" type="id_String" value="localhost"/>
@@ -85,7 +85,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:X8z45v8MkzpP14bqb81wk6GwcV3JalGvfKKPnqIV" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:FFjND+03vmbAe33Trqzbp+xyL3tkEasE9ZIuBZWN" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -120,7 +120,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9cqhDcm25SKuDW2t3BoiZsK4cNjrv2x0WAVe+0Jm" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:sHms9Bas6+F3i9iPzzjPlPjwu9DcSr1r+S+XDf1w" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -163,7 +163,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0+Mcy4lg668kiOIZrYh8t9bt9clC3gM+vzQaVFgAnsbrLV6nhQHzlanIJ/9cfCBxiaq2Q0NG"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:zLG2Q9XqEEuand2PDiV5zakLVdG/9XN3JakS7dXmnpCxI6wBZ0PpYx78qxpyGoXdTjsksR8U"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -293,7 +293,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:RUyv3hbzkbiSZ7mLLk/YxOCciog7st/y9o17Pu1NRb+uKII5sT0DcUpjo6lhdF1shFNcLBVE"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:flhkLj/cZJZ4pHqQ0vv3nWOsKVVOjyDSm6ZFtu0uveVUINaOpEE/YKXJad2TH8ffAcp583W2"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -342,7 +342,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gzIarH6bfd24JXMWporTFTwsVoQC3Mjp4MqIPSCsyOs81IWQ2SmJuq2N7JhdAovwp1vjOXlA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hoOxJlg7GuQ15qYhueDeehLx4H6r1Tpsmx+m5jtq/4kNCN4h+BLXDaCMH1Ez9TyZgh3Zs2N7"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -425,7 +425,7 @@
       <column comment="" key="false" length="550" name="clinical_note" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="550" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="HIV_Art_clinical">
         <mapperTableEntries name="id" expression="hiv_clinicals.id " type="id_Long"/>
@@ -560,7 +560,7 @@
       <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_String" originalLength="500" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="load_art_clinicals">
         <mapperTableEntries name="id" expression="HIV_Art_clinical.id " type="id_Long"/>
@@ -657,7 +657,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:H1gL1L9WEwt/wbEhMQQo/5qUnRPldtG5x0m5Eu3ximM0BKz1Ba4o3ZjS4+rDcCYZiYFk1Bsr"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6zxspXJycL4PzmeVLVZusoCAhvFB/YU5T795Bl26UVrANmmJhpFRiRwLWcSb288NZhMgmmqJ"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -742,7 +742,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:305VXRUbewqZkcHD5F3E04L7xfgO9RDLuIn/GkYXaZHG1IpfUZJEh7pJYAk3LL3FQePlV0kC"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:G/o4lQWHaZqt/k31XpseGOZ6rdKpfcF23+8UzlD6F+GFWlm8rxQYEmyiGXe/AF1qSwI/8hAq"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1053,7 +1053,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ke6c78odlpk6dg7YzvuTndbG6ajaozsKPSs2b8L9nnrI+J1H47o/naPADLU7olaDAdzZNA8Y"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AUN/GzLszMpVF86KfNm8c1UfQIHkwD6vdnIr2dXwa58Ejoleg+Y9G9sI9Yq4kzo5pOhPRs2z"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hiv_art_clinical&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE_OR_INSERT"/>
@@ -1374,7 +1374,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tlM7DAU460LivwabE7symhYjtJGkS/lClFZSBg/s3/JB8hdmCGnghQBcS217Mb08+yWsEtVL"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XdGU6+MFvIo13BY6waA1EfgKDRG+5oLS30/aJWlbwDF/5ky0edfvGzXIYv5clYcqm5dZw7Qe"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_hiv_art_clinicals_duplicates&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -1669,7 +1669,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IvesRMwjCRk51D+b+UmAKa0ul6MPbmkdntnCIPIs4juABJTpFQAChbj4SvnQ3wuzvInk+/Rp"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OgiL4HGy7muDAUSJrZ2f1LVWyD7MBqo+dIU4+vYhYunMhgfJupUt2i0KOJFi4psLkd+DkzPK"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1712,7 +1712,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hB+bAOzIJxkyfOJ9tt90xZ3qm10bBLkqnzScsnX9CyKX2CeDiaNwEtYFzsdNY3TZJ1gA0lrw"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BCstvZMUF95HWttbP0SYONo63XgAofiQn3Ed0eOMoA4nGWUnfXhNc9pzWvJAXHQvtYH9iJYg"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1755,7 +1755,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tN9Gn+zzZnTjUq+eZHn7I++36j6hbqsIVjZg4lJenYBpquxiwTx20tIQyxFl7v1AeCvz"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Y4NnpcFz+Tn9Pd/bXso4KVJn3XkaELnn3OHTFv7vOTjZHiQ8m9397XWND+zfmRm7tzoV"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1846,20 +1846,20 @@
       <column comment="" defaultValue="" key="false" length="17" name="cd_4" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4_percentage" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="is_commencement" nullable="false" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="opportunistic_infections" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="opportunistic_infections" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="adverse_drug_reactions" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="adheres" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="next_appointment" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="lmp_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_Object" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="550" name="notes" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="550" usefulColumn="true"/>
     </metadata>
   </node>
@@ -1883,30 +1883,30 @@
       <column comment="" key="false" length="100" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="last_modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
-      <column comment="" key="false" length="36" name="person_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="true" length="50" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="person_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="visit_date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4_percentage" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="is_commencement" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="opportunistic_infections" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adverse_drug_reactions" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adheres" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="next_appointment" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="lmp_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="hiv_enrollment_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_type_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_Object" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="550" name="notes" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="550" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
@@ -1940,7 +1940,7 @@
         <mapperTableEntries name="hiv_enrollment_uuid" expression="hiv_enrollment.uuid " type="id_String" nullable="true"/>
         <mapperTableEntries name="regimen_id" expression="Compostion.id " type="id_Integer"/>
         <mapperTableEntries name="regimen_type_id" expression="Compostion.regimen_type_id " type="id_Integer"/>
-        <mapperTableEntries name="extra" expression="clinic.extra " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" expression="clinic.extra " type="id_String" nullable="true"/>
         <mapperTableEntries name="notes" expression="clinic.notes " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="clinic" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -1970,7 +1970,7 @@
         <mapperTableEntries name="functional_status" type="id_String" nullable="true"/>
         <mapperTableEntries name="clinical_stage" type="id_String" nullable="true"/>
         <mapperTableEntries name="datim_id" type="id_String"/>
-        <mapperTableEntries name="extra" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" type="id_String" nullable="true"/>
         <mapperTableEntries name="notes" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="hiv_enrollment" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -1998,7 +1998,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ij/anUXFXUhTXInfQUujY1lbnonGR4fKlL908dwyJJAD9PFkZ3b8H9BHv//ei/TkgkavwpTS"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:B0jYHwWCxwSGjWDTJwOOLwS1v1jpnizxXc7sLDoBMq0kwkyvb+NKff3eaJ0+124VNxhp2Nt+"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2051,32 +2051,32 @@
       <column comment="" key="false" length="100" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="last_modified_date" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="last_modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="visit_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4_percentage" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="is_commencement" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="opportunistic_infections" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adverse_drug_reactions" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adheres" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="next_appointment" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="lmp_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="hiv_enrollment_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="visit_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="person_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_type_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_Object" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="550" name="notes" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="550" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
@@ -2112,7 +2112,7 @@
         <mapperTableEntries name="id" expression="Numeric.sequence(&quot;id&quot;,1,1)" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="regimen_id" expression="hiv_art_clinic_data.regimen_id " type="id_Integer"/>
         <mapperTableEntries name="regimen_type_id" expression="hiv_art_clinic_data.regimen_type_id " type="id_Integer"/>
-        <mapperTableEntries name="extra" expression="hiv_art_clinic_data.extra " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" expression="hiv_art_clinic_data.extra " type="id_String" nullable="true"/>
         <mapperTableEntries name="notes" expression="hiv_art_clinic_data.notes " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="hiv_art_clinic_data" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -2143,7 +2143,7 @@
         <mapperTableEntries name="hiv_enrollment_uuid" type="id_String" nullable="true"/>
         <mapperTableEntries name="regimen_id" type="id_Integer"/>
         <mapperTableEntries name="regimen_type_id" type="id_Integer"/>
-        <mapperTableEntries name="extra" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" type="id_String" nullable="true"/>
         <mapperTableEntries name="notes" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="patient_visit_for_clinic" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -2166,7 +2166,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oDvCchvq0vFgOQlVUtx1jc+HZ3W4N/HMU5A9gxQbXoJYmG7TJziJytBfnDBYcNiyB5PuLIOQ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AIXwXNpmPZ/evWtCjDbF5yEaCGFwqddLuDc884OeJDugDBx0T7Io1N+oe0WDWh449cCSeWki"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2212,7 +2212,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PpGgfH+UMUuUGHU+Nt/HU1zm8VQoXDBHa/vZlDN7btYBqyXLtCcpIgrNAZ0BDlf8JNT03X73"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:k4HIT05tdyXiKFBtvciBRBnKNIt2gs6Dn2ELW5WXzoZLqxBahDczdrkqGsXZWv1KCI6JnM4f"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_hiv_art_clinical_stage&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -2233,20 +2233,25 @@
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
     <elementParameter field="TABLE" name="ADD_COLS">
       <elementValue elementRef="NAME" value="&quot;opportunistic_infections&quot;"/>
-      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(100)"/>
       <elementValue elementRef="SQL" value="&quot;?::jsonb&quot;"/>
       <elementValue elementRef="POS" value="REPLACE"/>
       <elementValue elementRef="REFCOL" value="opportunistic_infections"/>
       <elementValue elementRef="NAME" value="&quot;adverse_drug_reactions&quot;"/>
-      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(100)"/>
       <elementValue elementRef="SQL" value="&quot;?::jsonb&quot;"/>
       <elementValue elementRef="POS" value="REPLACE"/>
       <elementValue elementRef="REFCOL" value="adverse_drug_reactions"/>
       <elementValue elementRef="NAME" value="&quot;adheres&quot;"/>
-      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(100)"/>
       <elementValue elementRef="SQL" value="&quot;?::jsonb&quot;"/>
       <elementValue elementRef="POS" value="REPLACE"/>
       <elementValue elementRef="REFCOL" value="adheres"/>
+      <elementValue elementRef="NAME" value="&quot;extra&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(500)"/>
+      <elementValue elementRef="SQL" value="&quot;?::jsonb&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="extra"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
@@ -2418,32 +2423,32 @@
       <column comment="" key="false" length="100" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="last_modified_date" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="last_modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="visit_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4_percentage" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="is_commencement" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="opportunistic_infections" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adverse_drug_reactions" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adheres" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="next_appointment" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="lmp_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="hiv_enrollment_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="visit_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="person_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_type_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Object" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="550" name="notes" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="550" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
@@ -2451,32 +2456,32 @@
       <column comment="" key="false" length="100" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="last_modified_date" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="last_modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="visit_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="17" name="cd_4_percentage" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="is_commencement" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="oi_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_ids" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="sti_treated" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="opportunistic_infections" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adr_screened" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adverse_drug_reactions" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="adherence_level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="300" name="adheres" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="300" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="next_appointment" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="lmp_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="functional_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="clinical_stage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="hiv_enrollment_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="visit_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="person_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="regimen_type_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_Object" originalLength="500" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="extra" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="500" usefulColumn="true"/>
       <column comment="" key="false" length="550" name="notes" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="550" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -2495,7 +2500,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eBX3w2hI7iX8brCGasXMgPWrRH65ZEOeiURkmlEaMNIQTX72Iilb8qjFjNVe8CZBBby6/jm/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xPwjNE6vyi2a9ZFTEYuN2UyRGSWbWlwj3p1SBxLI4ZV2gQFClH3tuZudSFimZKDY8v46hK5b"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2591,7 +2596,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ttrqVe+KPS9f4MPPMIW3QMYPILFFzUDr59idfY7/umAizNgRt7+8dLv0+qoZR/1qaQH04vj8"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IpD2ynYXstXgJOstmKV5+Rfly2XmtjhsdYkTKTaCj1/AsXDqtYWDSzMQ+2xH2KedyZwlvUjr"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2664,7 +2669,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wc+pMnibSeroc5lpZIbpxjYf61X7E7wgMc4P8s6ktEMLNgCgpnE0ZCln9ClYp8dxfqxJJB7u"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IyYLk1yZjzZZPyePAkv2LEflafIsChIedq6aak9PI4dgz1vQwJKxZAgsJ1X7x9ARWRsYa2jr"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_sequence&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE_OR_INSERT"/>

@@ -15563,9 +15563,9 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 					return this.regimen_type_id;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
@@ -15807,16 +15807,13 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 					
 			        this.regimen_type_id = dis.readInt();
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
 					this.notes = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -15963,9 +15960,9 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 				
 		            	dos.writeInt(this.regimen_type_id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
 					// String
 				
@@ -16013,7 +16010,7 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 		sb.append(",id="+String.valueOf(id));
 		sb.append(",regimen_id="+String.valueOf(regimen_id));
 		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
-		sb.append(",extra="+String.valueOf(extra));
+		sb.append(",extra="+extra);
 		sb.append(",notes="+notes);
 	    sb.append("]");
 
@@ -16228,9 +16225,9 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 					return this.regimen_type_id;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
@@ -16391,16 +16388,13 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 					
 			        this.regimen_type_id = dis.readInt();
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
 					this.notes = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -16539,9 +16533,9 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 				
 		            	dos.writeInt(this.regimen_type_id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
 					// String
 				
@@ -16587,7 +16581,7 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 		sb.append(",hiv_enrollment_uuid="+hiv_enrollment_uuid);
 		sb.append(",regimen_id="+String.valueOf(regimen_id));
 		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
-		sb.append(",extra="+String.valueOf(extra));
+		sb.append(",extra="+extra);
 		sb.append(",notes="+notes);
 	    sb.append("]");
 
@@ -16790,9 +16784,9 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
 					return this.datim_id;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
@@ -16946,16 +16940,13 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
 					
 					this.datim_id = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
 					this.notes = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -17085,9 +17076,9 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
 				
 						writeString(this.datim_id,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
 					// String
 				
@@ -17132,7 +17123,7 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
 		sb.append(",functional_status="+functional_status);
 		sb.append(",clinical_stage="+clinical_stage);
 		sb.append(",datim_id="+datim_id);
-		sb.append(",extra="+String.valueOf(extra));
+		sb.append(",extra="+extra);
 		sb.append(",notes="+notes);
 	    sb.append("]");
 
@@ -17335,9 +17326,9 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
@@ -17491,16 +17482,13 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
 					this.notes = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -17630,9 +17618,9 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
 					// String
 				
@@ -17677,7 +17665,7 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
 		sb.append(",functional_status="+functional_status);
 		sb.append(",clinical_stage="+clinical_stage);
 		sb.append(",datim_id="+datim_id);
-		sb.append(",extra="+String.valueOf(extra));
+		sb.append(",extra="+extra);
 		sb.append(",notes="+notes);
 	    sb.append("]");
 
@@ -17855,15 +17843,15 @@ int count_tDBOutput_3=0;
                                 }
                                 if(!whetherExist_tDBOutput_3) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_3 = conn_tDBOutput_3.createStatement()) {
-                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"created_date\" TIMESTAMP(29)   not null ,\"created_by\" VARCHAR(100)  ,\"last_modified_date\" TIMESTAMP(29)   not null ,\"last_modified_by\" VARCHAR(100)  ,\"uuid\" VARCHAR(50)  ,\"archived\" INT4 ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(5)  ,\"sti_ids\" VARCHAR(50)  ,\"sti_treated\" VARCHAR(5)  ,\"" + "opportunistic_infections" + "\" VARCHAR(50),\"adr_screened\" VARCHAR(5)  ,\"" + "adverse_drug_reactions" + "\" VARCHAR(50),\"adherence_level\" VARCHAR(15)  ,\"" + "adheres" + "\" VARCHAR(50),\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"functional_status\" VARCHAR(15)  ,\"clinical_stage\" VARCHAR(15)  ,\"datim_id\" VARCHAR(32)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)   not null ,\"visit_id\" VARCHAR(255)   not null ,\"person_uuid\" VARCHAR(255)   not null ,\"id\" INT4 ,\"regimen_id\" BIGSERIAL  not null ,\"regimen_type_id\" INT4  not null ,\"extra\" VARCHAR(500)  ,\"notes\" VARCHAR(550)  ,primary key(\"id\"))");
+                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"created_date\" TIMESTAMP(29)   not null ,\"created_by\" VARCHAR(100)  ,\"last_modified_date\" TIMESTAMP(29)   not null ,\"last_modified_by\" VARCHAR(100)  ,\"uuid\" VARCHAR(100)  ,\"archived\" INT4 ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(100)  ,\"sti_ids\" VARCHAR(100)  ,\"sti_treated\" VARCHAR(100)  ,\"" + "opportunistic_infections" + "\" VARCHAR(100),\"adr_screened\" VARCHAR(100)  ,\"" + "adverse_drug_reactions" + "\" VARCHAR(100),\"adherence_level\" VARCHAR(100)  ,\"" + "adheres" + "\" VARCHAR(100),\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"functional_status\" VARCHAR(100)  ,\"clinical_stage\" VARCHAR(100)  ,\"datim_id\" VARCHAR(100)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)   not null ,\"visit_id\" VARCHAR(255)   not null ,\"person_uuid\" VARCHAR(255)   not null ,\"id\" INT4 ,\"regimen_id\" BIGSERIAL  not null ,\"regimen_type_id\" INT4  not null ,\"" + "extra" + "\" VARCHAR(500),\"notes\" VARCHAR(550)  ,primary key(\"id\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_3 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_3", pstmt_tDBOutput_3);
-	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"uuid\",\"archived\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"" + "opportunistic_infections" + "\",\"adr_screened\",\"" + "adverse_drug_reactions" + "\",\"adherence_level\",\"" + "adheres" + "\",\"next_appointment\",\"lmp_date\",\"functional_status\",\"clinical_stage\",\"datim_id\",\"hiv_enrollment_uuid\",\"visit_id\",\"person_uuid\",\"id\",\"regimen_id\",\"regimen_type_id\",\"extra\",\"notes\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?," + "?::jsonb" + ",?," + "?::jsonb" + ",?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"uuid\",\"archived\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"" + "opportunistic_infections" + "\",\"adr_screened\",\"" + "adverse_drug_reactions" + "\",\"adherence_level\",\"" + "adheres" + "\",\"next_appointment\",\"lmp_date\",\"functional_status\",\"clinical_stage\",\"datim_id\",\"hiv_enrollment_uuid\",\"visit_id\",\"person_uuid\",\"id\",\"regimen_id\",\"regimen_type_id\",\"" + "extra" + "\",\"notes\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?," + "?::jsonb" + ",?," + "?::jsonb" + ",?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(insert_tDBOutput_3);
 	    resourceMap.put("pstmtInsert_tDBOutput_3", pstmtInsert_tDBOutput_3);
-	    String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3 + "\" SET \"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"" + "opportunistic_infections" + "\" = " + "?::jsonb" + ",\"adr_screened\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::jsonb" + ",\"adherence_level\" = ?,\"" + "adheres" + "\" = " + "?::jsonb" + ",\"next_appointment\" = ?,\"lmp_date\" = ?,\"functional_status\" = ?,\"clinical_stage\" = ?,\"datim_id\" = ?,\"hiv_enrollment_uuid\" = ?,\"visit_id\" = ?,\"person_uuid\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"extra\" = ?,\"notes\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3 + "\" SET \"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"" + "opportunistic_infections" + "\" = " + "?::jsonb" + ",\"adr_screened\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::jsonb" + ",\"adherence_level\" = ?,\"" + "adheres" + "\" = " + "?::jsonb" + ",\"next_appointment\" = ?,\"lmp_date\" = ?,\"functional_status\" = ?,\"clinical_stage\" = ?,\"datim_id\" = ?,\"hiv_enrollment_uuid\" = ?,\"visit_id\" = ?,\"person_uuid\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"" + "extra" + "\" = " + "?::jsonb" + ",\"notes\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(update_tDBOutput_3);
 	    resourceMap.put("pstmtUpdate_tDBOutput_3", pstmtUpdate_tDBOutput_3);
 	    
@@ -18277,11 +18265,8 @@ hiv_art_clinic_dataStruct hiv_art_clinic_data_tmp = new hiv_art_clinic_dataStruc
 							if(colQtyInRs_tDBInput_8 < 27) {
 								clinic.extra = null;
 							} else {
-		                          
-            clinic.extra = rs_tDBInput_8.getObject(27);
-            if(rs_tDBInput_8.wasNull()){
-                    clinic.extra = null;
-            }
+	                         		
+        	clinic.extra = routines.system.JDBCUtil.getString(rs_tDBInput_8, 27, false);
 		                    }
 							if(colQtyInRs_tDBInput_8 < 28) {
 								clinic.notes = null;
@@ -19034,8 +19019,8 @@ pstmtUpdate_tDBOutput_3.setNull(26, java.sql.Types.VARCHAR);
                         pstmtUpdate_tDBOutput_3.setInt(28, clinic_stage_record.regimen_type_id);
 
                         if(clinic_stage_record.extra == null) {
-pstmtUpdate_tDBOutput_3.setNull(29, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_3.setObject(29, clinic_stage_record.extra);
+pstmtUpdate_tDBOutput_3.setNull(29, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_3.setString(29, clinic_stage_record.extra);
 }
 
                         if(clinic_stage_record.notes == null) {
@@ -19205,8 +19190,8 @@ pstmtInsert_tDBOutput_3.setNull(27, java.sql.Types.INTEGER);
                         pstmtInsert_tDBOutput_3.setInt(29, clinic_stage_record.regimen_type_id);
 
                         if(clinic_stage_record.extra == null) {
-pstmtInsert_tDBOutput_3.setNull(30, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_3.setObject(30, clinic_stage_record.extra);
+pstmtInsert_tDBOutput_3.setNull(30, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_3.setString(30, clinic_stage_record.extra);
 }
 
                         if(clinic_stage_record.notes == null) {
@@ -22761,6 +22746,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     582731 characters generated by Talend Open Studio for Big Data 
- *     on the November 16, 2022 8:13:14 PM WAT
+ *     582243 characters generated by Talend Open Studio for Big Data 
+ *     on the November 20, 2022 9:44:31 PM WAT
  ************************************************************************************************/

@@ -465,6 +465,15 @@ private class TalendException extends Exception {
 					tDBInput_17_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tMap_9_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_17_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -25802,7 +25811,7 @@ end_Hash.put("tJava_5", System.currentTimeMillis());
 	
 
 
-public static class Unique_PatientsStruct implements routines.system.IPersistableRow<Unique_PatientsStruct> {
+public static class final_mapperStruct implements routines.system.IPersistableRow<final_mapperStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Patient_Person = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_Patient_Person = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -25983,6 +25992,12 @@ public static class Unique_PatientsStruct implements routines.system.IPersistabl
 					return this.sex;
 				}
 				
+			    public String full_name;
+
+				public String getFull_name () {
+					return this.full_name;
+				}
+				
 
 
 	@Override
@@ -26006,7 +26021,7 @@ public static class Unique_PatientsStruct implements routines.system.IPersistabl
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final Unique_PatientsStruct other = (Unique_PatientsStruct) obj;
+		final final_mapperStruct other = (final_mapperStruct) obj;
 		
 						if (this.id != other.id)
 							return false;
@@ -26023,7 +26038,7 @@ public static class Unique_PatientsStruct implements routines.system.IPersistabl
 		return true;
     }
 
-	public void copyDataTo(Unique_PatientsStruct other) {
+	public void copyDataTo(final_mapperStruct other) {
 
 		other.id = this.id;
 	            other.hospital_number = this.hospital_number;
@@ -26053,16 +26068,578 @@ public static class Unique_PatientsStruct implements routines.system.IPersistabl
 	            other.facility_id = this.facility_id;
 	            other.organization = this.organization;
 	            other.sex = this.sex;
+	            other.full_name = this.full_name;
 	            
 	}
 
-	public void copyKeysDataTo(Unique_PatientsStruct other) {
+	public void copyKeysDataTo(final_mapperStruct other) {
 
 		other.id = this.id;
 	            	other.sex = this.sex;
 	            	
 	}
 
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_Patient_Person.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_Patient_Person.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_Patient_Person = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_Patient_Person = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_Patient_Person, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_Patient_Person, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Patient_Person) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.id = dis.readInt();
+					
+					this.hospital_number = readString(dis);
+					
+					this.uuid = readString(dis);
+					
+					this.first_name = readString(dis);
+					
+					this.surname = readString(dis);
+					
+					this.other_name = readString(dis);
+					
+					this.gender = readString(dis);
+					
+					this.date_of_birth = readDate(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.is_date_of_birth_estimated = null;
+           				} else {
+           			    	this.is_date_of_birth_estimated = dis.readBoolean();
+           				}
+					
+					this.education = readString(dis);
+					
+					this.marital_status = readString(dis);
+					
+					this.employment_status = readString(dis);
+					
+					this.address = readString(dis);
+					
+					this.contact_point = readString(dis);
+					
+					this.contact = readString(dis);
+					
+					this.date_of_registration = readDate(dis);
+					
+						this.archived = readInteger(dis);
+					
+			        this.active = dis.readBoolean();
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.deceased = null;
+           				} else {
+           			    	this.deceased = dis.readBoolean();
+           				}
+					
+					this.deceased_date_time = readDate(dis);
+					
+					this.created_date = readDate(dis);
+					
+					this.last_modified_date = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.last_modified_by = readString(dis);
+					
+					this.identifier = readString(dis);
+					
+			        this.facility_id = dis.readLong();
+					
+					this.organization = readString(dis);
+					
+					this.sex = readString(dis);
+					
+					this.full_name = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.id);
+					
+					// String
+				
+						writeString(this.hospital_number,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// String
+				
+						writeString(this.first_name,dos);
+					
+					// String
+				
+						writeString(this.surname,dos);
+					
+					// String
+				
+						writeString(this.other_name,dos);
+					
+					// String
+				
+						writeString(this.gender,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_of_birth,dos);
+					
+					// Boolean
+				
+						if(this.is_date_of_birth_estimated == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.is_date_of_birth_estimated);
+		            	}
+					
+					// String
+				
+						writeString(this.education,dos);
+					
+					// String
+				
+						writeString(this.marital_status,dos);
+					
+					// String
+				
+						writeString(this.employment_status,dos);
+					
+					// String
+				
+						writeString(this.address,dos);
+					
+					// String
+				
+						writeString(this.contact_point,dos);
+					
+					// String
+				
+						writeString(this.contact,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_of_registration,dos);
+					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
+					// boolean
+				
+		            	dos.writeBoolean(this.active);
+					
+					// Boolean
+				
+						if(this.deceased == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.deceased);
+		            	}
+					
+					// java.util.Date
+				
+						writeDate(this.deceased_date_time,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.created_date,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.last_modified_date,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// String
+				
+						writeString(this.last_modified_by,dos);
+					
+					// String
+				
+						writeString(this.identifier,dos);
+					
+					// long
+				
+		            	dos.writeLong(this.facility_id);
+					
+					// String
+				
+						writeString(this.organization,dos);
+					
+					// String
+				
+						writeString(this.sex,dos);
+					
+					// String
+				
+						writeString(this.full_name,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",hospital_number="+hospital_number);
+		sb.append(",uuid="+uuid);
+		sb.append(",first_name="+first_name);
+		sb.append(",surname="+surname);
+		sb.append(",other_name="+other_name);
+		sb.append(",gender="+gender);
+		sb.append(",date_of_birth="+String.valueOf(date_of_birth));
+		sb.append(",is_date_of_birth_estimated="+String.valueOf(is_date_of_birth_estimated));
+		sb.append(",education="+education);
+		sb.append(",marital_status="+marital_status);
+		sb.append(",employment_status="+employment_status);
+		sb.append(",address="+address);
+		sb.append(",contact_point="+contact_point);
+		sb.append(",contact="+contact);
+		sb.append(",date_of_registration="+String.valueOf(date_of_registration));
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",active="+String.valueOf(active));
+		sb.append(",deceased="+String.valueOf(deceased));
+		sb.append(",deceased_date_time="+String.valueOf(deceased_date_time));
+		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
+		sb.append(",created_by="+created_by);
+		sb.append(",last_modified_by="+last_modified_by);
+		sb.append(",identifier="+identifier);
+		sb.append(",facility_id="+String.valueOf(facility_id));
+		sb.append(",organization="+organization);
+		sb.append(",sex="+sex);
+		sb.append(",full_name="+full_name);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(final_mapperStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.sex, other.sex);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class Unique_PatientsStruct implements routines.system.IPersistableRow<Unique_PatientsStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Patient_Person = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_Patient_Person = new byte[0];
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public String hospital_number;
+
+				public String getHospital_number () {
+					return this.hospital_number;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public String first_name;
+
+				public String getFirst_name () {
+					return this.first_name;
+				}
+				
+			    public String surname;
+
+				public String getSurname () {
+					return this.surname;
+				}
+				
+			    public String other_name;
+
+				public String getOther_name () {
+					return this.other_name;
+				}
+				
+			    public String gender;
+
+				public String getGender () {
+					return this.gender;
+				}
+				
+			    public java.util.Date date_of_birth;
+
+				public java.util.Date getDate_of_birth () {
+					return this.date_of_birth;
+				}
+				
+			    public Boolean is_date_of_birth_estimated;
+
+				public Boolean getIs_date_of_birth_estimated () {
+					return this.is_date_of_birth_estimated;
+				}
+				
+			    public String education;
+
+				public String getEducation () {
+					return this.education;
+				}
+				
+			    public String marital_status;
+
+				public String getMarital_status () {
+					return this.marital_status;
+				}
+				
+			    public String employment_status;
+
+				public String getEmployment_status () {
+					return this.employment_status;
+				}
+				
+			    public String address;
+
+				public String getAddress () {
+					return this.address;
+				}
+				
+			    public String contact_point;
+
+				public String getContact_point () {
+					return this.contact_point;
+				}
+				
+			    public String contact;
+
+				public String getContact () {
+					return this.contact;
+				}
+				
+			    public java.util.Date date_of_registration;
+
+				public java.util.Date getDate_of_registration () {
+					return this.date_of_registration;
+				}
+				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
+			    public boolean active;
+
+				public boolean getActive () {
+					return this.active;
+				}
+				
+			    public Boolean deceased;
+
+				public Boolean getDeceased () {
+					return this.deceased;
+				}
+				
+			    public java.util.Date deceased_date_time;
+
+				public java.util.Date getDeceased_date_time () {
+					return this.deceased_date_time;
+				}
+				
+			    public java.util.Date created_date;
+
+				public java.util.Date getCreated_date () {
+					return this.created_date;
+				}
+				
+			    public java.util.Date last_modified_date;
+
+				public java.util.Date getLast_modified_date () {
+					return this.last_modified_date;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public String last_modified_by;
+
+				public String getLast_modified_by () {
+					return this.last_modified_by;
+				}
+				
+			    public String identifier;
+
+				public String getIdentifier () {
+					return this.identifier;
+				}
+				
+			    public long facility_id;
+
+				public long getFacility_id () {
+					return this.facility_id;
+				}
+				
+			    public String organization;
+
+				public String getOrganization () {
+					return this.organization;
+				}
+				
+			    public String sex;
+
+				public String getSex () {
+					return this.sex;
+				}
+				
 
 
 
@@ -26404,18 +26981,6 @@ public static class Unique_PatientsStruct implements routines.system.IPersistabl
 
 		int returnValue = -1;
 		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-						returnValue = checkNullsAndCompare(this.sex, other.sex);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
 	    return returnValue;
     }
 
@@ -29435,7 +30000,9 @@ public void tWriteJSONField_5_InProcess(final java.util.Map<String, Object> glob
 Check_duplicatsStruct Check_duplicats = new Check_duplicatsStruct();
 row1Struct row1 = new row1Struct();
 Unique_PatientsStruct Unique_Patients = new Unique_PatientsStruct();
+final_mapperStruct final_mapper = new final_mapperStruct();
 Duplicate_PatientsStruct Duplicate_Patients = new Duplicate_PatientsStruct();
+
 
 
 
@@ -29460,7 +30027,7 @@ Duplicate_PatientsStruct Duplicate_Patients = new Duplicate_PatientsStruct();
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Unique_Patients");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"final_mapper");
 					}
 				
 		int tos_count_tDBOutput_1 = 0;
@@ -29545,15 +30112,15 @@ int count_tDBOutput_1=0;
                                 }
                                 if(!whetherExist_tDBOutput_1) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
-                                        stmtCreate_tDBOutput_1.execute("CREATE TABLE \"" + tableName_tDBOutput_1 + "\"(\"id\" SERIAL  not null ,\"hospital_number\" VARCHAR(25)   not null ,\"uuid\" VARCHAR(36)  ,\"first_name\" VARCHAR(230)  ,\"surname\" VARCHAR(45)  ,\"other_name\" VARCHAR(75)  ,\"" + "gender" + "\" VARCHAR(50),\"date_of_birth\" DATE ,\"is_date_of_birth_estimated\" BOOL ,\"" + "education" + "\" VARCHAR(50),\"" + "marital_status" + "\" VARCHAR(50),\"" + "employment_status" + "\" VARCHAR(50),\"" + "address" + "\" VARCHAR(50),\"" + "contact_point" + "\" VARCHAR(50),\"" + "contact" + "\" VARCHAR(50),\"date_of_registration\" DATE  not null ,\"archived\" INT4 ,\"active\" BOOL default true  not null ,\"deceased\" BOOL ,\"deceased_date_time\" TIMESTAMP ,\"created_date\" TIMESTAMP ,\"last_modified_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR ,\"last_modified_by\" VARCHAR ,\"" + "identifier" + "\" VARCHAR(50),\"facility_id\" INT8  not null ,\"" + "organization" + "\" VARCHAR(50),\"sex\" TEXT ,primary key(\"id\"))");
+                                        stmtCreate_tDBOutput_1.execute("CREATE TABLE \"" + tableName_tDBOutput_1 + "\"(\"id\" SERIAL  not null ,\"hospital_number\" VARCHAR(25)   not null ,\"uuid\" VARCHAR(36)  ,\"first_name\" VARCHAR(230)  ,\"surname\" VARCHAR(45)  ,\"other_name\" VARCHAR(75)  ,\"" + "gender" + "\" VARCHAR(50),\"date_of_birth\" DATE ,\"is_date_of_birth_estimated\" BOOL ,\"" + "education" + "\" VARCHAR(50),\"" + "marital_status" + "\" VARCHAR(50),\"" + "employment_status" + "\" VARCHAR(50),\"" + "address" + "\" VARCHAR(50),\"" + "contact_point" + "\" VARCHAR(50),\"" + "contact" + "\" VARCHAR(50),\"date_of_registration\" DATE  not null ,\"archived\" INT4 ,\"active\" BOOL default true  not null ,\"deceased\" BOOL ,\"deceased_date_time\" TIMESTAMP ,\"created_date\" TIMESTAMP ,\"last_modified_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR ,\"last_modified_by\" VARCHAR ,\"" + "identifier" + "\" VARCHAR(50),\"facility_id\" INT8  not null ,\"" + "organization" + "\" VARCHAR(50),\"sex\" TEXT ,\"full_name\" VARCHAR(100)  ,primary key(\"id\",\"sex\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ? AND \"uuid\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"hospital_number\",\"uuid\",\"first_name\",\"surname\",\"other_name\",\"" + "gender" + "\",\"date_of_birth\",\"is_date_of_birth_estimated\",\"" + "education" + "\",\"" + "marital_status" + "\",\"" + "employment_status" + "\",\"" + "address" + "\",\"" + "contact_point" + "\",\"" + "contact" + "\",\"date_of_registration\",\"archived\",\"active\",\"deceased\",\"deceased_date_time\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"" + "identifier" + "\",\"facility_id\",\"" + "organization" + "\",\"sex\") VALUES (?,?,?,?,?,?," + "?::json" + ",?,?," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?,?,?,?,?," + "?::json" + ",?," + "?::json" + ",?)";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"hospital_number\",\"uuid\",\"first_name\",\"surname\",\"other_name\",\"" + "gender" + "\",\"date_of_birth\",\"is_date_of_birth_estimated\",\"" + "education" + "\",\"" + "marital_status" + "\",\"" + "employment_status" + "\",\"" + "address" + "\",\"" + "contact_point" + "\",\"" + "contact" + "\",\"date_of_registration\",\"archived\",\"active\",\"deceased\",\"deceased_date_time\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"" + "identifier" + "\",\"facility_id\",\"" + "organization" + "\",\"sex\",\"full_name\") VALUES (?,?,?,?,?,?," + "?::json" + ",?,?," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?,?,?,?,?," + "?::json" + ",?," + "?::json" + ",?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"hospital_number\" = ?,\"uuid\" = ?,\"first_name\" = ?,\"surname\" = ?,\"other_name\" = ?,\"" + "gender" + "\" = " + "?::json" + ",\"date_of_birth\" = ?,\"is_date_of_birth_estimated\" = ?,\"" + "education" + "\" = " + "?::json" + ",\"" + "marital_status" + "\" = " + "?::json" + ",\"" + "employment_status" + "\" = " + "?::json" + ",\"" + "address" + "\" = " + "?::json" + ",\"" + "contact_point" + "\" = " + "?::json" + ",\"" + "contact" + "\" = " + "?::json" + ",\"date_of_registration\" = ?,\"archived\" = ?,\"active\" = ?,\"deceased\" = ?,\"deceased_date_time\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"" + "identifier" + "\" = " + "?::json" + ",\"facility_id\" = ?,\"" + "organization" + "\" = " + "?::json" + ",\"sex\" = ? WHERE \"id\" = ? AND \"uuid\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"hospital_number\" = ?,\"uuid\" = ?,\"first_name\" = ?,\"surname\" = ?,\"other_name\" = ?,\"" + "gender" + "\" = " + "?::json" + ",\"date_of_birth\" = ?,\"is_date_of_birth_estimated\" = ?,\"" + "education" + "\" = " + "?::json" + ",\"" + "marital_status" + "\" = " + "?::json" + ",\"" + "employment_status" + "\" = " + "?::json" + ",\"" + "address" + "\" = " + "?::json" + ",\"" + "contact_point" + "\" = " + "?::json" + ",\"" + "contact" + "\" = " + "?::json" + ",\"date_of_registration\" = ?,\"archived\" = ?,\"active\" = ?,\"deceased\" = ?,\"deceased_date_time\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"" + "identifier" + "\" = " + "?::json" + ",\"facility_id\" = ?,\"" + "organization" + "\" = " + "?::json" + ",\"sex\" = ?,\"full_name\" = ? WHERE \"id\" = ? AND \"uuid\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 	    
@@ -29564,6 +30131,73 @@ int count_tDBOutput_1=0;
 
 /**
  * [tDBOutput_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_9 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_9", false);
+		start_Hash.put("tMap_9", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_9";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Unique_Patients");
+					}
+				
+		int tos_count_tMap_9 = 0;
+		
+
+
+
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+class  Var__tMap_9__Struct  {
+}
+Var__tMap_9__Struct Var__tMap_9 = new Var__tMap_9__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+final_mapperStruct final_mapper_tmp = new final_mapperStruct();
+// ###############################
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_9 begin ] stop
  */
 
 
@@ -30866,6 +31500,124 @@ if(Unique_Patients != null) {
 
 	
 	/**
+	 * [tMap_9 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_9";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Unique_Patients");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_9 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_9 = false;
+		  boolean mainRowRejected_tMap_9 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_9__Struct Var = Var__tMap_9;// ###############################
+        // ###############################
+        // # Output tables
+
+final_mapper = null;
+
+
+// # Output table : 'final_mapper'
+final_mapper_tmp.id = Unique_Patients.id ;
+final_mapper_tmp.hospital_number = Unique_Patients.hospital_number ;
+final_mapper_tmp.uuid = Unique_Patients.uuid ;
+final_mapper_tmp.first_name = Unique_Patients.first_name ;
+final_mapper_tmp.surname = Unique_Patients.surname ;
+final_mapper_tmp.other_name = Unique_Patients.other_name ;
+final_mapper_tmp.gender = Unique_Patients.gender ;
+final_mapper_tmp.date_of_birth = Unique_Patients.date_of_birth ;
+final_mapper_tmp.is_date_of_birth_estimated = Unique_Patients.is_date_of_birth_estimated ;
+final_mapper_tmp.education = Unique_Patients.education ;
+final_mapper_tmp.marital_status = Unique_Patients.marital_status ;
+final_mapper_tmp.employment_status = Unique_Patients.employment_status ;
+final_mapper_tmp.address = Unique_Patients.address ;
+final_mapper_tmp.contact_point = Unique_Patients.contact_point ;
+final_mapper_tmp.contact = Unique_Patients.contact ;
+final_mapper_tmp.date_of_registration = Unique_Patients.date_of_registration ;
+final_mapper_tmp.archived = Unique_Patients.archived ;
+final_mapper_tmp.active = Unique_Patients.active ;
+final_mapper_tmp.deceased = Unique_Patients.deceased ;
+final_mapper_tmp.deceased_date_time = Unique_Patients.deceased_date_time ;
+final_mapper_tmp.created_date = Unique_Patients.created_date ;
+final_mapper_tmp.last_modified_date = Unique_Patients.last_modified_date ;
+final_mapper_tmp.created_by = Unique_Patients.created_by ;
+final_mapper_tmp.last_modified_by = Unique_Patients.last_modified_by ;
+final_mapper_tmp.identifier = Unique_Patients.identifier ;
+final_mapper_tmp.facility_id = Unique_Patients.facility_id ;
+final_mapper_tmp.organization = Unique_Patients.organization ;
+final_mapper_tmp.sex = Unique_Patients.sex ;
+final_mapper_tmp.full_name = Unique_Patients.first_name + Unique_Patients.surname ;
+final_mapper = final_mapper_tmp;
+// ###############################
+
+} // end of Var scope
+
+rejectedInnerJoin_tMap_9 = false;
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_9++;
+
+/**
+ * [tMap_9 main ] stop
+ */
+	
+	/**
+	 * [tMap_9 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_9";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_9 process_data_begin ] stop
+ */
+// Start of branch "final_mapper"
+if(final_mapper != null) { 
+
+
+
+	
+	/**
 	 * [tDBOutput_1 main ] start
 	 */
 
@@ -30877,18 +31629,18 @@ if(Unique_Patients != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Unique_Patients");
+						runStat.updateStatOnConnection(iterateId,1,1,"final_mapper");
 					}
 					
 
 
 
         whetherReject_tDBOutput_1 = false;
-                    pstmt_tDBOutput_1.setInt(1, Unique_Patients.id);
+                    pstmt_tDBOutput_1.setInt(1, final_mapper.id);
 
-                    if(Unique_Patients.uuid == null) {
+                    if(final_mapper.uuid == null) {
 pstmt_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(2, Unique_Patients.uuid);
+} else {pstmt_tDBOutput_1.setString(2, final_mapper.uuid);
 }
 
             int checkCount_tDBOutput_1 = -1;
@@ -30898,147 +31650,152 @@ pstmt_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
                 }
             }
             if(checkCount_tDBOutput_1 > 0) {
-                        pstmtUpdate_tDBOutput_1.setInt(1, Unique_Patients.id);
+                        pstmtUpdate_tDBOutput_1.setInt(1, final_mapper.id);
 
-                        if(Unique_Patients.hospital_number == null) {
+                        if(final_mapper.hospital_number == null) {
 pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(2, Unique_Patients.hospital_number);
+} else {pstmtUpdate_tDBOutput_1.setString(2, final_mapper.hospital_number);
 }
 
-                        if(Unique_Patients.uuid == null) {
+                        if(final_mapper.uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(3, Unique_Patients.uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(3, final_mapper.uuid);
 }
 
-                        if(Unique_Patients.first_name == null) {
+                        if(final_mapper.first_name == null) {
 pstmtUpdate_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(4, Unique_Patients.first_name);
+} else {pstmtUpdate_tDBOutput_1.setString(4, final_mapper.first_name);
 }
 
-                        if(Unique_Patients.surname == null) {
+                        if(final_mapper.surname == null) {
 pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(5, Unique_Patients.surname);
+} else {pstmtUpdate_tDBOutput_1.setString(5, final_mapper.surname);
 }
 
-                        if(Unique_Patients.other_name == null) {
+                        if(final_mapper.other_name == null) {
 pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(6, Unique_Patients.other_name);
+} else {pstmtUpdate_tDBOutput_1.setString(6, final_mapper.other_name);
 }
 
-                        if(Unique_Patients.gender == null) {
+                        if(final_mapper.gender == null) {
 pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(7, Unique_Patients.gender);
+} else {pstmtUpdate_tDBOutput_1.setString(7, final_mapper.gender);
 }
 
-                        if(Unique_Patients.date_of_birth != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(8, new java.sql.Timestamp(Unique_Patients.date_of_birth.getTime()));
+                        if(final_mapper.date_of_birth != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(8, new java.sql.Timestamp(final_mapper.date_of_birth.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.is_date_of_birth_estimated == null) {
+                        if(final_mapper.is_date_of_birth_estimated == null) {
 pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(9, Unique_Patients.is_date_of_birth_estimated);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(9, final_mapper.is_date_of_birth_estimated);
 }
 
-                        if(Unique_Patients.education == null) {
+                        if(final_mapper.education == null) {
 pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(10, Unique_Patients.education);
+} else {pstmtUpdate_tDBOutput_1.setString(10, final_mapper.education);
 }
 
-                        if(Unique_Patients.marital_status == null) {
+                        if(final_mapper.marital_status == null) {
 pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(11, Unique_Patients.marital_status);
+} else {pstmtUpdate_tDBOutput_1.setString(11, final_mapper.marital_status);
 }
 
-                        if(Unique_Patients.employment_status == null) {
+                        if(final_mapper.employment_status == null) {
 pstmtUpdate_tDBOutput_1.setNull(12, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(12, Unique_Patients.employment_status);
+} else {pstmtUpdate_tDBOutput_1.setString(12, final_mapper.employment_status);
 }
 
-                        if(Unique_Patients.address == null) {
+                        if(final_mapper.address == null) {
 pstmtUpdate_tDBOutput_1.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(13, Unique_Patients.address);
+} else {pstmtUpdate_tDBOutput_1.setString(13, final_mapper.address);
 }
 
-                        if(Unique_Patients.contact_point == null) {
+                        if(final_mapper.contact_point == null) {
 pstmtUpdate_tDBOutput_1.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(14, Unique_Patients.contact_point);
+} else {pstmtUpdate_tDBOutput_1.setString(14, final_mapper.contact_point);
 }
 
-                        if(Unique_Patients.contact == null) {
+                        if(final_mapper.contact == null) {
 pstmtUpdate_tDBOutput_1.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(15, Unique_Patients.contact);
+} else {pstmtUpdate_tDBOutput_1.setString(15, final_mapper.contact);
 }
 
-                        if(Unique_Patients.date_of_registration != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(16, new java.sql.Timestamp(Unique_Patients.date_of_registration.getTime()));
+                        if(final_mapper.date_of_registration != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(16, new java.sql.Timestamp(final_mapper.date_of_registration.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(16, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.archived == null) {
+                        if(final_mapper.archived == null) {
 pstmtUpdate_tDBOutput_1.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(17, Unique_Patients.archived);
+} else {pstmtUpdate_tDBOutput_1.setInt(17, final_mapper.archived);
 }
 
-                        pstmtUpdate_tDBOutput_1.setBoolean(18, Unique_Patients.active);
+                        pstmtUpdate_tDBOutput_1.setBoolean(18, final_mapper.active);
 
-                        if(Unique_Patients.deceased == null) {
+                        if(final_mapper.deceased == null) {
 pstmtUpdate_tDBOutput_1.setNull(19, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(19, Unique_Patients.deceased);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(19, final_mapper.deceased);
 }
 
-                        if(Unique_Patients.deceased_date_time != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(20, new java.sql.Timestamp(Unique_Patients.deceased_date_time.getTime()));
+                        if(final_mapper.deceased_date_time != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(20, new java.sql.Timestamp(final_mapper.deceased_date_time.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(20, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.created_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(21, new java.sql.Timestamp(Unique_Patients.created_date.getTime()));
+                        if(final_mapper.created_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(21, new java.sql.Timestamp(final_mapper.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.last_modified_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(22, new java.sql.Timestamp(Unique_Patients.last_modified_date.getTime()));
+                        if(final_mapper.last_modified_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(22, new java.sql.Timestamp(final_mapper.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(22, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.created_by == null) {
+                        if(final_mapper.created_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(23, Unique_Patients.created_by);
+} else {pstmtUpdate_tDBOutput_1.setString(23, final_mapper.created_by);
 }
 
-                        if(Unique_Patients.last_modified_by == null) {
+                        if(final_mapper.last_modified_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(24, Unique_Patients.last_modified_by);
+} else {pstmtUpdate_tDBOutput_1.setString(24, final_mapper.last_modified_by);
 }
 
-                        if(Unique_Patients.identifier == null) {
+                        if(final_mapper.identifier == null) {
 pstmtUpdate_tDBOutput_1.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(25, Unique_Patients.identifier);
+} else {pstmtUpdate_tDBOutput_1.setString(25, final_mapper.identifier);
 }
 
-                        pstmtUpdate_tDBOutput_1.setLong(26, Unique_Patients.facility_id);
+                        pstmtUpdate_tDBOutput_1.setLong(26, final_mapper.facility_id);
 
-                        if(Unique_Patients.organization == null) {
+                        if(final_mapper.organization == null) {
 pstmtUpdate_tDBOutput_1.setNull(27, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(27, Unique_Patients.organization);
+} else {pstmtUpdate_tDBOutput_1.setString(27, final_mapper.organization);
 }
 
-                        if(Unique_Patients.sex == null) {
+                        if(final_mapper.sex == null) {
 pstmtUpdate_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(28, Unique_Patients.sex);
+} else {pstmtUpdate_tDBOutput_1.setString(28, final_mapper.sex);
 }
 
-                        pstmtUpdate_tDBOutput_1.setInt(29 + count_tDBOutput_1, Unique_Patients.id);
+                        if(final_mapper.full_name == null) {
+pstmtUpdate_tDBOutput_1.setNull(29, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(29, final_mapper.full_name);
+}
 
-                        if(Unique_Patients.uuid == null) {
-pstmtUpdate_tDBOutput_1.setNull(30 + count_tDBOutput_1, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(30 + count_tDBOutput_1, Unique_Patients.uuid);
+                        pstmtUpdate_tDBOutput_1.setInt(30 + count_tDBOutput_1, final_mapper.id);
+
+                        if(final_mapper.uuid == null) {
+pstmtUpdate_tDBOutput_1.setNull(31 + count_tDBOutput_1, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(31 + count_tDBOutput_1, final_mapper.uuid);
 }
 
                 try {
@@ -31053,140 +31810,145 @@ pstmtUpdate_tDBOutput_1.setNull(30 + count_tDBOutput_1, java.sql.Types.VARCHAR);
                             System.err.print(e.getMessage());
                 }
             } else {
-                        pstmtInsert_tDBOutput_1.setInt(1, Unique_Patients.id);
+                        pstmtInsert_tDBOutput_1.setInt(1, final_mapper.id);
 
-                        if(Unique_Patients.hospital_number == null) {
+                        if(final_mapper.hospital_number == null) {
 pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(2, Unique_Patients.hospital_number);
+} else {pstmtInsert_tDBOutput_1.setString(2, final_mapper.hospital_number);
 }
 
-                        if(Unique_Patients.uuid == null) {
+                        if(final_mapper.uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(3, Unique_Patients.uuid);
+} else {pstmtInsert_tDBOutput_1.setString(3, final_mapper.uuid);
 }
 
-                        if(Unique_Patients.first_name == null) {
+                        if(final_mapper.first_name == null) {
 pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(4, Unique_Patients.first_name);
+} else {pstmtInsert_tDBOutput_1.setString(4, final_mapper.first_name);
 }
 
-                        if(Unique_Patients.surname == null) {
+                        if(final_mapper.surname == null) {
 pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(5, Unique_Patients.surname);
+} else {pstmtInsert_tDBOutput_1.setString(5, final_mapper.surname);
 }
 
-                        if(Unique_Patients.other_name == null) {
+                        if(final_mapper.other_name == null) {
 pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(6, Unique_Patients.other_name);
+} else {pstmtInsert_tDBOutput_1.setString(6, final_mapper.other_name);
 }
 
-                        if(Unique_Patients.gender == null) {
+                        if(final_mapper.gender == null) {
 pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(7, Unique_Patients.gender);
+} else {pstmtInsert_tDBOutput_1.setString(7, final_mapper.gender);
 }
 
-                        if(Unique_Patients.date_of_birth != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(8, new java.sql.Timestamp(Unique_Patients.date_of_birth.getTime()));
+                        if(final_mapper.date_of_birth != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(8, new java.sql.Timestamp(final_mapper.date_of_birth.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.is_date_of_birth_estimated == null) {
+                        if(final_mapper.is_date_of_birth_estimated == null) {
 pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(9, Unique_Patients.is_date_of_birth_estimated);
+} else {pstmtInsert_tDBOutput_1.setBoolean(9, final_mapper.is_date_of_birth_estimated);
 }
 
-                        if(Unique_Patients.education == null) {
+                        if(final_mapper.education == null) {
 pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(10, Unique_Patients.education);
+} else {pstmtInsert_tDBOutput_1.setString(10, final_mapper.education);
 }
 
-                        if(Unique_Patients.marital_status == null) {
+                        if(final_mapper.marital_status == null) {
 pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(11, Unique_Patients.marital_status);
+} else {pstmtInsert_tDBOutput_1.setString(11, final_mapper.marital_status);
 }
 
-                        if(Unique_Patients.employment_status == null) {
+                        if(final_mapper.employment_status == null) {
 pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(12, Unique_Patients.employment_status);
+} else {pstmtInsert_tDBOutput_1.setString(12, final_mapper.employment_status);
 }
 
-                        if(Unique_Patients.address == null) {
+                        if(final_mapper.address == null) {
 pstmtInsert_tDBOutput_1.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(13, Unique_Patients.address);
+} else {pstmtInsert_tDBOutput_1.setString(13, final_mapper.address);
 }
 
-                        if(Unique_Patients.contact_point == null) {
+                        if(final_mapper.contact_point == null) {
 pstmtInsert_tDBOutput_1.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(14, Unique_Patients.contact_point);
+} else {pstmtInsert_tDBOutput_1.setString(14, final_mapper.contact_point);
 }
 
-                        if(Unique_Patients.contact == null) {
+                        if(final_mapper.contact == null) {
 pstmtInsert_tDBOutput_1.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(15, Unique_Patients.contact);
+} else {pstmtInsert_tDBOutput_1.setString(15, final_mapper.contact);
 }
 
-                        if(Unique_Patients.date_of_registration != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(16, new java.sql.Timestamp(Unique_Patients.date_of_registration.getTime()));
+                        if(final_mapper.date_of_registration != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(16, new java.sql.Timestamp(final_mapper.date_of_registration.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(16, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.archived == null) {
+                        if(final_mapper.archived == null) {
 pstmtInsert_tDBOutput_1.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(17, Unique_Patients.archived);
+} else {pstmtInsert_tDBOutput_1.setInt(17, final_mapper.archived);
 }
 
-                        pstmtInsert_tDBOutput_1.setBoolean(18, Unique_Patients.active);
+                        pstmtInsert_tDBOutput_1.setBoolean(18, final_mapper.active);
 
-                        if(Unique_Patients.deceased == null) {
+                        if(final_mapper.deceased == null) {
 pstmtInsert_tDBOutput_1.setNull(19, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(19, Unique_Patients.deceased);
+} else {pstmtInsert_tDBOutput_1.setBoolean(19, final_mapper.deceased);
 }
 
-                        if(Unique_Patients.deceased_date_time != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(20, new java.sql.Timestamp(Unique_Patients.deceased_date_time.getTime()));
+                        if(final_mapper.deceased_date_time != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(20, new java.sql.Timestamp(final_mapper.deceased_date_time.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(20, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.created_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(21, new java.sql.Timestamp(Unique_Patients.created_date.getTime()));
+                        if(final_mapper.created_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(21, new java.sql.Timestamp(final_mapper.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.last_modified_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(22, new java.sql.Timestamp(Unique_Patients.last_modified_date.getTime()));
+                        if(final_mapper.last_modified_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(22, new java.sql.Timestamp(final_mapper.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(22, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_Patients.created_by == null) {
+                        if(final_mapper.created_by == null) {
 pstmtInsert_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(23, Unique_Patients.created_by);
+} else {pstmtInsert_tDBOutput_1.setString(23, final_mapper.created_by);
 }
 
-                        if(Unique_Patients.last_modified_by == null) {
+                        if(final_mapper.last_modified_by == null) {
 pstmtInsert_tDBOutput_1.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(24, Unique_Patients.last_modified_by);
+} else {pstmtInsert_tDBOutput_1.setString(24, final_mapper.last_modified_by);
 }
 
-                        if(Unique_Patients.identifier == null) {
+                        if(final_mapper.identifier == null) {
 pstmtInsert_tDBOutput_1.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(25, Unique_Patients.identifier);
+} else {pstmtInsert_tDBOutput_1.setString(25, final_mapper.identifier);
 }
 
-                        pstmtInsert_tDBOutput_1.setLong(26, Unique_Patients.facility_id);
+                        pstmtInsert_tDBOutput_1.setLong(26, final_mapper.facility_id);
 
-                        if(Unique_Patients.organization == null) {
+                        if(final_mapper.organization == null) {
 pstmtInsert_tDBOutput_1.setNull(27, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(27, Unique_Patients.organization);
+} else {pstmtInsert_tDBOutput_1.setString(27, final_mapper.organization);
 }
 
-                        if(Unique_Patients.sex == null) {
+                        if(final_mapper.sex == null) {
 pstmtInsert_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(28, Unique_Patients.sex);
+} else {pstmtInsert_tDBOutput_1.setString(28, final_mapper.sex);
+}
+
+                        if(final_mapper.full_name == null) {
+pstmtInsert_tDBOutput_1.setNull(29, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(29, final_mapper.full_name);
 }
 
                 try {
@@ -31255,6 +32017,32 @@ pstmtInsert_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
 
 /**
  * [tDBOutput_1 process_data_end ] stop
+ */
+
+} // End of branch "final_mapper"
+
+
+
+
+	
+	/**
+	 * [tMap_9 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_9";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_9 process_data_end ] stop
  */
 
 } // End of branch "Unique_Patients"
@@ -31894,6 +32682,44 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 	
 	/**
+	 * [tMap_9 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_9";
+
+	
+
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+
+
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Unique_Patients");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tMap_9", true);
+end_Hash.put("tMap_9", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tMap_9 end ] stop
+ */
+
+	
+	/**
 	 * [tDBOutput_1 end ] start
 	 */
 
@@ -31944,7 +32770,7 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Unique_Patients");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"final_mapper");
 			  	}
 			  	
  
@@ -31958,6 +32784,9 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 /**
  * [tDBOutput_1 end ] stop
  */
+
+
+
 
 
 
@@ -32151,6 +32980,27 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 
 	
 	/**
+	 * [tMap_9 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_9";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_9 finally ] stop
+ */
+
+	
+	/**
 	 * [tDBOutput_1 finally ] start
 	 */
 
@@ -32199,6 +33049,9 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 /**
  * [tDBOutput_1 finally ] stop
  */
+
+
+
 
 
 
@@ -32747,6 +33600,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     845877 characters generated by Talend Open Studio for Big Data 
- *     on the November 13, 2022 10:22:37 PM WAT
+ *     864489 characters generated by Talend Open Studio for Big Data 
+ *     on the November 20, 2022 9:40:05 PM WAT
  ************************************************************************************************/
