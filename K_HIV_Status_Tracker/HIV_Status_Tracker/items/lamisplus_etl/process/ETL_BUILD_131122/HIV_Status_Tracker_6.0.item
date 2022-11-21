@@ -6,13 +6,13 @@
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:vCDJXkRaF1uDfuiMxO6dmtpMs+Kf1edDnU+D+VF8FZfX"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:aDj7to1CutYoIvJ8qr+olxxey47J8UmyQVt5T1zdePXB"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:/0iUDs3LyU8M/g4w5DPZfEM3P4qt4USP6+fHlMTMprYk"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:BpbIgOl1jjXN2/UfkAI/xHWmdtM1T+3PqUKB2Kt9ASG3"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
   </context>
@@ -21,7 +21,7 @@
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:0XdRUwD6roqRa6SYJT25hNh8igfLOKx/GQPuW4ZAnLxZ"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:2ERiDCClO4o0foEsJbmEhL8E8M8cF42dvslMvr4DBCqy"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
@@ -29,11 +29,11 @@
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:7uiDue27tU7D+PmlsTXgcALy+PSCTIkGudujuc2ACNHS"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:+IMkWmfcpdxGvVfIibPzs1DJcQ5jjqHdxI78/B/Rb5/l"/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
   </context>
   <parameters>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="96" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="64" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -73,7 +73,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:hX4byCcIOMppXfc9vZxveMyUh+RRt0GTOrLsEF01" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:uimBE3cO3jvBPKMzqdGPu0DDOnWdL9Ie1sB0DJzj" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -108,7 +108,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5T2vVU7LcQ4cE8VVs4XG+NoEEQ35kghseKopzvvg" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lhY3QSEmndj1C8CUeOB3YPrg7oxO0ysvO352Tpvm" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -137,569 +137,6 @@
     <routinesParameter id="_wbRbUA0KEe2Nluvz7ECU2w" name="TalendStringUtil"/>
     <routinesParameter id="_wbHqUA0KEe2Nluvz7ECU2w" name="TalendString"/>
   </parameters>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="1312">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_11" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
-    <elementParameter field="TEXT" name="HOST" value="context.LAMISPlus_Server"/>
-    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.LAMISPlus_Port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
-    <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:TCWTyUsOd/Cog/FC59/EH0ideIuwy7ZQE9TjAAXQ8TGUl7t2A+9t39E0YPzLT6SXDh5FMXd/"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT * FROM public.dblink&#xD;&#xA;('lamis',&#xD;&#xA; 'SELECT DISTINCT pc.id,ps.uuid,pc.facility_id,pc.date_visit,pc.archived,&#xD;&#xA;&#x9;pc.last_modified,fc.name AS facility_name,lg.name AS lga_name&#xD;&#xA;FROM public.clinic pc&#xD;&#xA;INNER JOIN patient ps&#xD;&#xA;&#x9;ON pc.patient_id = ps.id&#xD;&#xA;INNER JOIN facility fc&#xD;&#xA;&#x9;ON pc.facility_id=fc.id&#xD;&#xA;  INNER JOIN lga lg&#xD;&#xA;  ON fc.lga_id=lg.id&#xD;&#xA; '&#xD;&#xA;) &#xD;&#xA;AS DATA(id INTEGER,uuid VARCHAR,facility_id INTEGER,date_visit DATE,&#xD;&#xA;&#x9;archived BOOLEAN,last_modified TIMESTAMP,facility_name VARCHAR,&#xD;&#xA;&#x9;lga_name VARCHAR)&#xD;&#xA;WHERE EXISTS(&#xD;&#xA;&#x9;SELECT facility.id,facility.name,lga.name&#xD;&#xA;&#x9;FROM base_organisation_unit facility&#xD;&#xA;&#x9;JOIN base_organisation_unit lga&#xD;&#xA;&#x9;ON facility.parent_organisation_unit_id = lga.id&#xD;&#xA;&#x9;WHERE facility.organisation_unit_level_id =4&#xD;&#xA;&#x9;AND facility.name=facility_name&#xD;&#xA;&#x9;AND lga.name= lga_name&#xD;&#xA;)&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="context.LAMISPlus_AdditionalParams"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
-    <elementParameter field="TEXT" name="CURSOR_SIZE" value="1000" show="false"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="uuid"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_id"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="date_visit"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="archived"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_name"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="lga_name"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="Patient_clinics"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_11">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="date_visit" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="1472">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_12" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
-    <elementParameter field="TEXT" name="HOST" value="context.LAMISPlus_Server"/>
-    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.LAMISPlus_Port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
-    <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZTOlcmXmFUdOu/e/iG1u0pRCXU/bANF4urHvQhL44D9D0gd62VquOJ23APj+oL2a5uFGbAsk"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT facility.id,facility.name,orgunit.name as orgunit_name&#xD;&#xA;FROM base_organisation_unit facility&#xD;&#xA;JOIN base_organisation_unit orgunit&#xD;&#xA;ON facility.parent_organisation_unit_id = orgunit.id&#xD;&#xA;WHERE facility.organisation_unit_level_id =4 AND EXISTS(&#xD;&#xA;SELECT * FROM public.dblink&#xD;&#xA;('lamis',&#xD;&#xA; 'SELECT DISTINCT f.id,f.name as facility,l.name as orgunit_name &#xD;&#xA;  FROM public.facility f&#xD;&#xA;  INNER JOIN lga l&#xD;&#xA;  ON f.lga_id=l.id&#xD;&#xA; '&#xD;&#xA;) AS DATA(id INTEGER,facility VARCHAR,orgunit_name VARCHAR)&#xD;&#xA;WHERE facility.name=facility&#xD;&#xA;AND orgunit.name= orgunit_name&#xD;&#xA;)&#xD;&#xA;ORDER BY facility.id ASC&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="context.LAMISPlus_AdditionalParams"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
-    <elementParameter field="TEXT" name="CURSOR_SIZE" value="1000" show="false"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="orgunit_name"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="Facilities_filtered"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_12">
-      <column comment="" defaultValue="" key="true" length="19" name="id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="orgunit_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="256" posY="1376">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_6" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_L0qnsF9EEe2shsWFuhW0xw-tMap_6-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
-    <elementParameter field="TEXT" name="JACCARD" value="0" show="false"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="LABEL" value="Map_JSONFiled"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="schema_create_transform_jsonfield" name="copyOfSort_clinics">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
-      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
-      <outputTables sizeState="INTERMEDIATE" name="copyOfSort_clinics">
-        <mapperTableEntries name="id" expression="row5.id " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="patient_uuid" expression="row5.uuid " type="id_String" nullable="true"/>
-        <mapperTableEntries name="facility_id" expression="row6.id " type="id_Long" nullable="true"/>
-        <mapperTableEntries name="visit_start_date" expression="row5.date_visit " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="visit_end_date" expression="row5.date_visit " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="archived" expression="row5.archived " type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="created_date" expression="row5.last_modified " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="last_modified_date" expression="row5.last_modified " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="created_by" expression="&quot;Lamis3&quot;" type="id_String" nullable="true"/>
-        <mapperTableEntries name="last_modified_by" expression="&quot;Lamis3&quot;" type="id_String" nullable="true"/>
-        <mapperTableEntries name="facility_name" expression="row5.facility_name " type="id_String" nullable="true"/>
-        <mapperTableEntries name="lga_name" expression="row5.lga_name " type="id_String" nullable="true"/>
-      </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row5" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="id" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="uuid" type="id_String" nullable="true"/>
-        <mapperTableEntries name="facility_id" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="date_visit" type="id_Date" nullable="true"/>
-        <mapperTableEntries name="archived" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="last_modified" type="id_Date" nullable="true"/>
-        <mapperTableEntries name="facility_name" type="id_String" nullable="true"/>
-        <mapperTableEntries name="lga_name" type="id_String" nullable="true"/>
-      </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row6" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="id" expression="" type="id_Long"/>
-        <mapperTableEntries name="name" expression="row5.facility_name " type="id_String" nullable="true" operator="="/>
-        <mapperTableEntries name="orgunit_name" expression="row5.lga_name " type="id_String" nullable="true" operator="="/>
-      </inputTables>
-    </nodeData>
-  </node>
-  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="1376">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSortRow_4" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TABLE" name="CRITERIA">
-      <elementValue elementRef="COLNAME" value="id"/>
-      <elementValue elementRef="SORT" value="num"/>
-      <elementValue elementRef="ORDER" value="asc"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="EXTERNAL" value="false"/>
-    <elementParameter field="DIRECTORY" name="TEMPFILE" value="&quot;C:/Talend_OS73/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/temp&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CREATEDIR" value="true" show="false"/>
-    <elementParameter field="TEXT" name="EXTERNAL_SORT_BUFFERSIZE" value="1000000" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="sort_clinic_records"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="schema_create_transform_jsonfield" name="tSortRow_4">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="1376">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_4" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TABLE" name="UNIQUE_KEY">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="patient_uuid"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_id"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="visit_start_date"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="visit_end_date"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="archived"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="created_date"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified_date"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="created_by"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified_by"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_name"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="lga_name"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="false"/>
-    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="false"/>
-    <elementParameter field="OPENED_LIST" name="BUFFER_SIZE" value="M" show="false"/>
-    <elementParameter field="DIRECTORY" name="TEMP_DIRECTORY" value="" show="false"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="Deduplication"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="schema_create_transform_jsonfield" name="tUniqRow_4">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="UNIQUE" label="schema_create_transform_jsonfield" name="UNIQUE">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="DUPLICATE" label="schema_create_transform_jsonfield" name="DUPLICATE">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="1312">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_7" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
-    <elementParameter field="TEXT" name="HOST" value="context.LAMISPlus_Server"/>
-    <elementParameter field="TEXT" name="PORT" value="context.LAMISPlus_Port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
-    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
-    <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:QUI+16+6RNCgzRY2lFVp4B07yczVeySeF/Fe8O//amgDGPOpFTMKixE0iE8lY76+085514J0"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;patient_visit_test&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
-    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
-    <elementParameter field="CHECK" name="SPATIAL_INDEX" value="false" show="false"/>
-    <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" value="false" show="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
-    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false" show="false"/>
-    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="context.LAMISPlus_AdditionalParams"/>
-    <elementParameter field="CHECK" name="SAVE_POINT" value="false" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="true"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="UPDATE_KEY" value="true"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="patient_uuid"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_id"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="visit_start_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="visit_end_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="archived"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="created_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="created_by"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified_by"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_name"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="lga_name"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="Patient_clinic_Lamisplus"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="schema_create_transform_jsonfield" name="tDBOutput_7">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="schema_create_transform_jsonfield" name="REJECT">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="1440">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_8" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_wHSmsBNdEe27hPNVYSp0PA" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
-    <elementParameter field="TEXT" name="HOST" value="context.LAMIS3_Server"/>
-    <elementParameter field="TEXT" name="PORT" value="context.LAMIS3_Port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
-    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
-    <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:adk3KgFLSrbbCyjTvSnuH4SRmv9NX+k4OWBOPnb1mFKCbQVs1yikXqiDC0Pnmp2Q2lKL"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;patient_visit_duplicates&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
-    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
-    <elementParameter field="CHECK" name="SPATIAL_INDEX" value="false" show="false"/>
-    <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" value="false" show="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
-    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false" show="false"/>
-    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="context.LAMIS3_AdditionalParams"/>
-    <elementParameter field="CHECK" name="SAVE_POINT" value="false" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="true"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="UPDATE_KEY" value="true"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="patient_uuid"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_id"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="visit_start_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="visit_end_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="archived"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="created_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified_date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="created_by"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="last_modified_by"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="facility_name"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="lga_name"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="Duplicate_patient-visits"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="schema_create_transform_jsonfield" name="tDBOutput_8">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="schema_create_transform_jsonfield" name="REJECT">
-      <column comment="" defaultValue="" key="true" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="patient_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="visit_start_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="visit_end_date" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="archived" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="created_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="last_modified_date" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="created_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="239" name="last_modified_by" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="239" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="facility_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column comment="" key="false" length="230" name="lga_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="230" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
   <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
@@ -713,13 +150,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tiiqUURycqBGPBwVBL1zhhiX5vP9yGxK7VGtb2Zki2bnLVCJ9R20ArkFnbn0kIw7HACZ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/Z+M037H3N0YqoitW4ZPEKizMp17RKgWIF80wOsFxm1pWmxoBZi5Au8mwASn/CjO6HoV"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;biometric&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT s.id, s.last_modified as created_date, 'ETL' as created_by, &#xD;&#xA;s.last_modified as last_modified_date,'ETL' as last_modified_by,&#xD;&#xA;p.uuid as person_id, s.status as hiv_status, s.date_status as status_date,&#xD;&#xA;s.outcome as tracking_outcome, s.date_tracked as track_date, s.agreed_date,&#xD;&#xA;s.reason_for_interruption, s.cause_of_death, s.auto, s.uuid,&#xD;&#xA;s.archived::integer as archived, nf.datim_id&#xD;&#xA;FROM status_history s&#xD;&#xA;INNER JOIN patient p ON s.patient_id = p.id&#xD;&#xA;INNER JOIN ndr_facility nf ON s.facility_id = nf.id&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT sh1.id, sh1.last_modified as created_date, 'ETL' as created_by, &#xD;&#xA;sh1.last_modified as last_modified_date,'ETL' as last_modified_by,&#xD;&#xA;p.uuid as person_id, sh1.status as hiv_status, sh1.date_status as status_date,&#xD;&#xA;sh1.outcome as tracking_outcome, sh1.date_tracked as track_date, sh1.agreed_date,&#xD;&#xA;sh1.reason_for_interruption, sh1.cause_of_death, sh1.auto, sh1.uuid,&#xD;&#xA;sh1.archived::integer as archived, nf.datim_id&#xD;&#xA;FROM status_history sh1&#xD;&#xA;INNER JOIN &#xD;&#xA;(&#xD;&#xA;   SELECT patient_id as p_id, MAX(id) AS MAXID&#xD;&#xA;   FROM status_history&#xD;&#xA;   GROUP BY patient_id&#xD;&#xA;ORDER BY patient_id ASC&#xD;&#xA;) sh2 ON sh1.patient_id = sh2.p_id AND sh1.id = sh2.MAXID&#xD;&#xA;INNER JOIN patient p ON sh1.patient_id = p.id&#xD;&#xA;INNER JOIN ndr_facility nf ON sh1.facility_id = nf.id&#xD;&#xA;ORDER BY sh1.patient_id ASC&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -884,7 +321,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:JNuJ1jmyJQgDjRcQ/JlpoUGQuelUxg7tfVVI1efOh3bfSObftyCRa8E0lbolUPuoaQrLrxRS"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bRmUkI03roBfknEmvlqCn05QlRAjQfA2ib6mOvfcY9dJZbdOQI4ON+zalph8idHCGD8fYWHC"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -933,7 +370,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Aqg0mq8183Enk39eb+AmvgTV3c43JHDnhi1JVJEdM3M/it09NuucS6wnom3xHAPwYJ5jxWs/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lN2i4rbehPthoxejG0FveQ3nmA/iPRPM1rAS2cG1/iQyRtpZFHxjzfjAEoSNBRlrCgQUED5m"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hiv_status_tracker&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -1089,9 +526,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="64">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;*****************************************************************&quot;);&#xA;System.out.println(&quot;***********HIV_STATUS_TRACKER MIGRATION REPORT START*****************&quot;);&#xA;java.time.LocalDateTime startTime = java.time.LocalDateTime.now();&#xA;globalMap.put(&quot;startTime&quot;, startTime);&#xA;System.out.println(&quot;Start time - &quot;+ startTime);&#xA;&#xA;System.out.println(&quot;Total status tracker records fetched from LAMIS3 status_tracker - &quot;+globalMap.get(&quot;tDBInput_1_NB_LINE&quot;));"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;*****************************************************************&quot;);&#xA;System.out.println(&quot;***********HIV_STATUS_TRACKER MIGRATION REPORT START*****************&quot;);&#xA;java.time.LocalDateTime startTime = java.time.LocalDateTime.now();&#xA;globalMap.put(&quot;startTime&quot;, startTime);&#xA;System.out.println(&quot;Start time - &quot;+ startTime);&#xA;&#xA;System.out.println(&quot;Total latest patients records fetched from LAMIS3 status_tracker - &quot;+globalMap.get(&quot;tDBInput_1_NB_LINE&quot;));"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
@@ -1145,7 +582,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HXTQL1yo/2siGfAbTNj5PCwYb4xd1/xlwzH7tmi6NJK23Alu8BzYlELTXalMtdABtCTT+Tyk"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LpWFtXLnUg6lEOrxubeANwnsj0QxytgNRH63FfZSauaYjNQFKz/FmkTZY7nSKKEl1uEPTXzI"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1193,7 +630,7 @@
       <column comment="" key="false" length="-1" name="date_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="sequence_extra">
         <mapperTableEntries name="sequence_count" expression="row1.sequence_count " type="id_Long" nullable="true"/>
@@ -1218,7 +655,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MswR/cAc1AIu5BIhtHnFSmLDiWsMonM4KAVejp3FFel32fUAK2+Z7i4VpFTlrLYzN8tagXhK"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+P67XQ7ptDLz4/fT247OXPNqI6Diy1rUV+QwmF1FATOk3cZKPSlGVwZOII823dum7mXatI6j"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_sequence&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -1276,61 +713,6 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tDBInput_11" offsetLabelX="0" offsetLabelY="0" source="tDBInput_11" target="tMap_6">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="tb_status"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row6" lineStyle="8" metaname="tDBInput_12" offsetLabelX="0" offsetLabelY="0" source="tDBInput_12" target="tMap_6">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="copyOfSort_clinics" lineStyle="0" metaname="copyOfSort_clinics" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tSortRow_4">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="lga_name"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="date_visit"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="last_modified_date"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="patient_uuid"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="visit_start_date"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="visit_end_date"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="copyOfSort_clinics" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tSortRow_4" offsetLabelX="0" offsetLabelY="0" source="tSortRow_4" target="tUniqRow_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
-  </connection>
-  <connection connectorName="DUPLICATE" label="row8" lineStyle="0" metaname="tUniqRow_4" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tUniqRow_4" target="tDBOutput_8">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row8" show="false"/>
-  </connection>
-  <connection connectorName="UNIQUE" label="row9" lineStyle="0" metaname="tUniqRow_4" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tUniqRow_4" target="tDBOutput_7">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row9" show="false"/>
-  </connection>
   <connection connectorName="FLOW" label="status_history_extract" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="status_history_extract" show="false"/>
@@ -1371,11 +753,6 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tJava_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_11" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
