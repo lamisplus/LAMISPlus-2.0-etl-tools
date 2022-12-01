@@ -18467,6 +18467,8 @@ hiv_art_clinic_dataStruct hiv_art_clinic_data_tmp = new hiv_art_clinic_dataStruc
 								
 								hasCasePrimitiveKeyWithNull_tMap_5 = false;
 								
+                        		    		    CompostionHashKey.description = clinic.description ;
+                        		    		
                         		    		    CompostionHashKey.composition = clinic.composition ;
                         		    		
 
@@ -18501,7 +18503,7 @@ hiv_art_clinic_dataStruct hiv_art_clinic_data_tmp = new hiv_art_clinic_dataStruc
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'Compostion' and it contains more one result from keys :  Compostion.composition = '" + CompostionHashKey.composition + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'Compostion' and it contains more one result from keys :  Compostion.description = '" + CompostionHashKey.description + "', Compostion.composition = '" + CompostionHashKey.composition + "'");
 								} // G 071
 							
 
@@ -21536,6 +21538,12 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 					return this.regimen_type_id;
 				}
 				
+			    public String description;
+
+				public String getDescription () {
+					return this.description;
+				}
+				
 			    public String composition;
 
 				public String getComposition () {
@@ -21550,6 +21558,8 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 			final int prime = PRIME;
 			int result = DEFAULT_HASHCODE;
 	
+						result = prime * result + ((this.description == null) ? 0 : this.description.hashCode());
+					
 						result = prime * result + ((this.composition == null) ? 0 : this.composition.hashCode());
 					
     		this.hashCode = result;
@@ -21565,6 +21575,14 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 		if (getClass() != obj.getClass()) return false;
 		final CompostionStruct other = (CompostionStruct) obj;
 		
+						if (this.description == null) {
+							if (other.description != null)
+								return false;
+						
+						} else if (!this.description.equals(other.description))
+						
+							return false;
+					
 						if (this.composition == null) {
 							if (other.composition != null)
 								return false;
@@ -21581,13 +21599,15 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 
 		other.id = this.id;
 	            other.regimen_type_id = this.regimen_type_id;
+	            other.description = this.description;
 	            other.composition = this.composition;
 	            
 	}
 
 	public void copyKeysDataTo(CompostionStruct other) {
 
-		other.composition = this.composition;
+		other.description = this.description;
+	            	other.composition = this.composition;
 	            	
 	}
 
@@ -21632,6 +21652,8 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 
         		int length = 0;
 		
+					this.description = readString(dis);
+					
 					this.composition = readString(dis);
 					
         	} catch (IOException e) {
@@ -21652,6 +21674,10 @@ public static class CompostionStruct implements routines.system.IPersistableComp
         try {
 
 		
+					// String
+				
+						writeString(this.description,dos);
+					
 					// String
 				
 						writeString(this.composition,dos);
@@ -21713,6 +21739,7 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
 		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
+		sb.append(",description="+description);
 		sb.append(",composition="+composition);
 	    sb.append("]");
 
@@ -21726,6 +21753,12 @@ public static class CompostionStruct implements routines.system.IPersistableComp
 
 		int returnValue = -1;
 		
+						returnValue = checkNullsAndCompare(this.description, other.description);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
 						returnValue = checkNullsAndCompare(this.composition, other.composition);
 						if(returnValue != 0) {
 							return returnValue;
@@ -21877,7 +21910,8 @@ public void tDBInput_11Process(final java.util.Map<String, Object> globalMap) th
 		    
 			java.sql.Statement stmt_tDBInput_11 = conn_tDBInput_11.createStatement();
 
-		    String dbquery_tDBInput_11 = "SELECT r.id, r.regimen_type_id, trim(r.composition) as composition from hiv_regimen r";
+		    String dbquery_tDBInput_11 = "SELECT r.id, r.regimen_type_id, trim(r.description) as description, trim(r.composition) as composition  from hiv_regime"
++"n r";
 			
 
             	globalMap.put("tDBInput_11_QUERY",dbquery_tDBInput_11);
@@ -21913,10 +21947,16 @@ public void tDBInput_11Process(final java.util.Map<String, Object> globalMap) th
             }
 		                    }
 							if(colQtyInRs_tDBInput_11 < 3) {
+								Compostion.description = null;
+							} else {
+	                         		
+        	Compostion.description = routines.system.JDBCUtil.getString(rs_tDBInput_11, 3, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 4) {
 								Compostion.composition = null;
 							} else {
 	                         		
-        	Compostion.composition = routines.system.JDBCUtil.getString(rs_tDBInput_11, 3, false);
+        	Compostion.composition = routines.system.JDBCUtil.getString(rs_tDBInput_11, 4, false);
 		                    }
 					
 
@@ -21997,6 +22037,8 @@ public void tDBInput_11Process(final java.util.Map<String, Object> globalMap) th
 				Compostion_HashRow.id = Compostion.id;
 				
 				Compostion_HashRow.regimen_type_id = Compostion.regimen_type_id;
+				
+				Compostion_HashRow.description = Compostion.description;
 				
 				Compostion_HashRow.composition = Compostion.composition;
 				
@@ -22746,6 +22788,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     582243 characters generated by Talend Open Studio for Big Data 
- *     on the November 30, 2022 9:59:20 AM WAT
+ *     583649 characters generated by Talend Open Studio for Big Data 
+ *     on the December 1, 2022 11:28:01 AM WAT
  ************************************************************************************************/
