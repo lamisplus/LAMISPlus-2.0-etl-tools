@@ -7415,13 +7415,17 @@ int totalMigrated = globalMap.get("tDBOutput_2_NB_LINE_UPDATED") != null ? (Inte
 System.out.println("Total EAC 1 session already migrated "+totalMigrated);
 
 System.out.println("Total new records migrated - "+globalMap.get("tDBOutput_2_NB_LINE_INSERTED"));
+
+int eacCount = totalMigrated == 0 ? (Integer)globalMap.get("tDBOutput_2_NB_LINE_INSERTED") : totalMigrated;
+
+globalMap.put("eacCount", eacCount);
+
 if(globalMap.get("tDBOutput_2_ERROR_MESSAGE") != null){
 System.out.println("Migration Error - "+globalMap.get("tDBOutput_2_ERROR_MESSAGE"));
 }
 System.out.println("Total erroneous records not migrated - "+globalMap.get("tFileOutputDelimited_2_NB_LINE"));
 System.out.println("*************EAC 1 SESSION MIGRATION REPORT END*****************");
 System.out.println();
-
  
 
 
@@ -8283,12 +8287,6 @@ public static class eac2_extractStruct implements routines.system.IPersistableRo
     static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
 
 	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
 			    public java.util.Date created_date;
 
 				public java.util.Date getCreated_date () {
@@ -8437,8 +8435,6 @@ public static class eac2_extractStruct implements routines.system.IPersistableRo
 
         		int length = 0;
 		
-			        this.id = dis.readInt();
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -8479,10 +8475,6 @@ public static class eac2_extractStruct implements routines.system.IPersistableRo
         try {
 
 		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
 					// java.util.Date
 				
 						writeDate(this.created_date,dos);
@@ -8540,8 +8532,7 @@ public static class eac2_extractStruct implements routines.system.IPersistableRo
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append("created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
 		sb.append(",last_modified_by="+last_modified_by);
@@ -8595,22 +8586,8 @@ public static class eac2_extractStruct implements routines.system.IPersistableRo
 public static class after_tDBInput_10Struct implements routines.system.IPersistableRow<after_tDBInput_10Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_EAC = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
 
 	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
 			    public java.util.Date created_date;
 
 				public java.util.Date getCreated_date () {
@@ -8677,59 +8654,6 @@ public static class after_tDBInput_10Struct implements routines.system.IPersista
 					return this.datim_id;
 				}
 				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.id;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final after_tDBInput_10Struct other = (after_tDBInput_10Struct) obj;
-		
-						if (this.id != other.id)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(after_tDBInput_10Struct other) {
-
-		other.id = this.id;
-	            other.created_date = this.created_date;
-	            other.last_modified_date = this.last_modified_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_by = this.last_modified_by;
-	            other.eac_id = this.eac_id;
-	            other.archived = this.archived;
-	            other.status = this.status;
-	            other.uuid = this.uuid;
-	            other.eac_session_date = this.eac_session_date;
-	            other.person_uuid = this.person_uuid;
-	            other.datim_id = this.datim_id;
-	            
-	}
-
-	public void copyKeysDataTo(after_tDBInput_10Struct other) {
-
-		other.id = this.id;
-	            	
-	}
-
 
 
 
@@ -8812,8 +8736,6 @@ public static class after_tDBInput_10Struct implements routines.system.IPersista
 
         		int length = 0;
 		
-			        this.id = dis.readInt();
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -8854,10 +8776,6 @@ public static class after_tDBInput_10Struct implements routines.system.IPersista
         try {
 
 		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
 					// java.util.Date
 				
 						writeDate(this.created_date,dos);
@@ -8915,8 +8833,7 @@ public static class after_tDBInput_10Struct implements routines.system.IPersista
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append("created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
 		sb.append(",last_modified_by="+last_modified_by);
@@ -8939,12 +8856,6 @@ public static class after_tDBInput_10Struct implements routines.system.IPersista
 
 		int returnValue = -1;
 		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
 	    return returnValue;
     }
 
@@ -9299,10 +9210,10 @@ eac2_facility_extractStruct eac2_facility_extract_tmp = new eac2_facility_extrac
 		    
 			java.sql.Statement stmt_tDBInput_10 = conn_tDBInput_10.createStatement();
 
-		    String dbquery_tDBInput_10 = "SELECT e.id, e.last_modified as created_date, e.last_modified as last_modified_date,\n'ETL' as created_by, 'ETL' as las"
-+"t_modified_by, \ne.uuid as eac_id, e.archived::INTEGER,\n'SECOND  EAC' as status, '' as uuid, e.date_eac2 eac_session_da"
-+"te,\n  p.uuid as person_uuid,\nn.datim_id FROM eac e\n    INNER JOIN patient p ON p.id = e.patient_id\n    INNER JOIN nd"
-+"r_facility n ON n.id=e.facility_id\n	WHERE e.date_eac2 is not null AND p.extra->>'art'='true'";
+		    String dbquery_tDBInput_10 = "SELECT e.last_modified as created_date, e.last_modified as last_modified_date,\n'ETL' as created_by, 'ETL' as last_modi"
++"fied_by, \ne.uuid as eac_id, e.archived::INTEGER,\n'SECOND  EAC' as status, '' as uuid, e.date_eac2 eac_session_date,\n "
++" p.uuid as person_uuid,\nn.datim_id FROM eac e\n    INNER JOIN patient p ON p.id = e.patient_id\n    INNER JOIN ndr_faci"
++"lity n ON n.id=e.facility_id\n	WHERE e.date_eac2 is not null AND p.extra->>'art'='true'";
 			
 
             	globalMap.put("tDBInput_10_QUERY",dbquery_tDBInput_10);
@@ -9320,82 +9231,73 @@ eac2_facility_extractStruct eac2_facility_extract_tmp = new eac2_facility_extrac
 		        nb_line_tDBInput_10++;
 		        
 							if(colQtyInRs_tDBInput_10 < 1) {
-								eac2_extract.id = 0;
-							} else {
-		                          
-            eac2_extract.id = rs_tDBInput_10.getInt(1);
-            if(rs_tDBInput_10.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_10 < 2) {
 								eac2_extract.created_date = null;
 							} else {
 										
-			eac2_extract.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_10, 2);
+			eac2_extract.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_10, 1);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 3) {
+							if(colQtyInRs_tDBInput_10 < 2) {
 								eac2_extract.last_modified_date = null;
 							} else {
 										
-			eac2_extract.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_10, 3);
+			eac2_extract.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_10, 2);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 4) {
+							if(colQtyInRs_tDBInput_10 < 3) {
 								eac2_extract.created_by = null;
 							} else {
 	                         		
-        	eac2_extract.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_10, 4, false);
+        	eac2_extract.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_10, 3, false);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 5) {
+							if(colQtyInRs_tDBInput_10 < 4) {
 								eac2_extract.last_modified_by = null;
 							} else {
 	                         		
-        	eac2_extract.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_10, 5, false);
+        	eac2_extract.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_10, 4, false);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 6) {
+							if(colQtyInRs_tDBInput_10 < 5) {
 								eac2_extract.eac_id = null;
 							} else {
 	                         		
-        	eac2_extract.eac_id = routines.system.JDBCUtil.getString(rs_tDBInput_10, 6, false);
+        	eac2_extract.eac_id = routines.system.JDBCUtil.getString(rs_tDBInput_10, 5, false);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 7) {
+							if(colQtyInRs_tDBInput_10 < 6) {
 								eac2_extract.archived = null;
 							} else {
 		                          
-            eac2_extract.archived = rs_tDBInput_10.getInt(7);
+            eac2_extract.archived = rs_tDBInput_10.getInt(6);
             if(rs_tDBInput_10.wasNull()){
                     eac2_extract.archived = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 8) {
+							if(colQtyInRs_tDBInput_10 < 7) {
 								eac2_extract.status = null;
 							} else {
 	                         		
-        	eac2_extract.status = routines.system.JDBCUtil.getString(rs_tDBInput_10, 8, false);
+        	eac2_extract.status = routines.system.JDBCUtil.getString(rs_tDBInput_10, 7, false);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 9) {
+							if(colQtyInRs_tDBInput_10 < 8) {
 								eac2_extract.uuid = null;
 							} else {
 	                         		
-        	eac2_extract.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_10, 9, false);
+        	eac2_extract.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_10, 8, false);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 10) {
+							if(colQtyInRs_tDBInput_10 < 9) {
 								eac2_extract.eac_session_date = null;
 							} else {
 										
-			eac2_extract.eac_session_date = routines.system.JDBCUtil.getDate(rs_tDBInput_10, 10);
+			eac2_extract.eac_session_date = routines.system.JDBCUtil.getDate(rs_tDBInput_10, 9);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 11) {
+							if(colQtyInRs_tDBInput_10 < 10) {
 								eac2_extract.person_uuid = null;
 							} else {
 	                         		
-        	eac2_extract.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_10, 11, false);
+        	eac2_extract.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_10, 10, false);
 		                    }
-							if(colQtyInRs_tDBInput_10 < 12) {
+							if(colQtyInRs_tDBInput_10 < 11) {
 								eac2_extract.datim_id = null;
 							} else {
 	                         		
-        	eac2_extract.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_10, 12, false);
+        	eac2_extract.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_10, 11, false);
 		                    }
 					
 
@@ -9582,7 +9484,7 @@ eac2_facility_extract = null;
 
 
 // # Output table : 'eac2_facility_extract'
-eac2_facility_extract_tmp.id = Numeric.sequence("id",1,1) ;
+eac2_facility_extract_tmp.id = Numeric.sequence("id",(Integer)globalMap.get("eacCount"),1) ;
 eac2_facility_extract_tmp.created_date = eac2_extract.created_date ;
 eac2_facility_extract_tmp.last_modified_date = eac2_extract.last_modified_date ;
 eac2_facility_extract_tmp.created_by = eac2_extract.created_by ;
@@ -10608,13 +10510,19 @@ int totalMigrated = globalMap.get("tDBOutput_3_NB_LINE_UPDATED") != null ? (Inte
 System.out.println("Total EAC 2 session already migrated "+totalMigrated);
 
 System.out.println("Total new records migrated - "+globalMap.get("tDBOutput_4_NB_LINE_INSERTED"));
+
+int eacCount = totalMigrated == 0 ? (Integer)globalMap.get("tDBOutput_4_NB_LINE_INSERTED") : totalMigrated;
+
+eacCount = (Integer)globalMap.put("eacCount", eacCount) + eacCount;
+
+globalMap.put("eacCount", eacCount);
+
 if(globalMap.get("tDBOutput_4_ERROR_MESSAGE") != null){
 System.out.println("Migration Error - "+globalMap.get("tDBOutput_4_ERROR_MESSAGE"));
 }
 System.out.println("Total erroneous records not migrated - "+globalMap.get("tFileOutputDelimited_4_NB_LINE"));
 System.out.println("*************EAC 2 SESSION MIGRATION REPORT END*****************");
 System.out.println();
-
  
 
 
@@ -11476,12 +11384,6 @@ public static class eac3_extractStruct implements routines.system.IPersistableRo
     static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
 
 	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
 			    public java.util.Date created_date;
 
 				public java.util.Date getCreated_date () {
@@ -11630,8 +11532,6 @@ public static class eac3_extractStruct implements routines.system.IPersistableRo
 
         		int length = 0;
 		
-			        this.id = dis.readInt();
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -11672,10 +11572,6 @@ public static class eac3_extractStruct implements routines.system.IPersistableRo
         try {
 
 		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
 					// java.util.Date
 				
 						writeDate(this.created_date,dos);
@@ -11733,8 +11629,7 @@ public static class eac3_extractStruct implements routines.system.IPersistableRo
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append("created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
 		sb.append(",last_modified_by="+last_modified_by);
@@ -11788,22 +11683,8 @@ public static class eac3_extractStruct implements routines.system.IPersistableRo
 public static class after_tDBInput_7Struct implements routines.system.IPersistableRow<after_tDBInput_7Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_EAC = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
 
 	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
 			    public java.util.Date created_date;
 
 				public java.util.Date getCreated_date () {
@@ -11870,59 +11751,6 @@ public static class after_tDBInput_7Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.id;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final after_tDBInput_7Struct other = (after_tDBInput_7Struct) obj;
-		
-						if (this.id != other.id)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(after_tDBInput_7Struct other) {
-
-		other.id = this.id;
-	            other.created_date = this.created_date;
-	            other.last_modified_date = this.last_modified_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_by = this.last_modified_by;
-	            other.eac_id = this.eac_id;
-	            other.archived = this.archived;
-	            other.status = this.status;
-	            other.uuid = this.uuid;
-	            other.eac_session_date = this.eac_session_date;
-	            other.person_uuid = this.person_uuid;
-	            other.datim_id = this.datim_id;
-	            
-	}
-
-	public void copyKeysDataTo(after_tDBInput_7Struct other) {
-
-		other.id = this.id;
-	            	
-	}
-
 
 
 
@@ -12005,8 +11833,6 @@ public static class after_tDBInput_7Struct implements routines.system.IPersistab
 
         		int length = 0;
 		
-			        this.id = dis.readInt();
-					
 					this.created_date = readDate(dis);
 					
 					this.last_modified_date = readDate(dis);
@@ -12047,10 +11873,6 @@ public static class after_tDBInput_7Struct implements routines.system.IPersistab
         try {
 
 		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
 					// java.util.Date
 				
 						writeDate(this.created_date,dos);
@@ -12108,8 +11930,7 @@ public static class after_tDBInput_7Struct implements routines.system.IPersistab
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append("created_date="+String.valueOf(created_date));
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
 		sb.append(",created_by="+created_by);
 		sb.append(",last_modified_by="+last_modified_by);
@@ -12132,12 +11953,6 @@ public static class after_tDBInput_7Struct implements routines.system.IPersistab
 
 		int returnValue = -1;
 		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
 	    return returnValue;
     }
 
@@ -12492,10 +12307,10 @@ eac3_facilityStruct eac3_facility_tmp = new eac3_facilityStruct();
 		    
 			java.sql.Statement stmt_tDBInput_7 = conn_tDBInput_7.createStatement();
 
-		    String dbquery_tDBInput_7 = "SELECT e.id, e.last_modified as created_date, e.last_modified as last_modified_date,\n'ETL' as created_by, 'ETL' as las"
-+"t_modified_by, \ne.uuid as eac_id, e.archived::INTEGER,\n'THIRD EAC' as status, '' as uuid, e.date_eac3 eac_session_date"
-+",\n  p.uuid as person_uuid,\nn.datim_id FROM eac e\n    INNER JOIN patient p ON p.id = e.patient_id\n    INNER JOIN ndr_"
-+"facility n ON n.id=e.facility_id\n	WHERE e.date_eac3 is not null AND p.extra->>'art'='true'";
+		    String dbquery_tDBInput_7 = "SELECT e.last_modified as created_date, e.last_modified as last_modified_date,\n'ETL' as created_by, 'ETL' as last_modi"
++"fied_by, \ne.uuid as eac_id, e.archived::INTEGER,\n'THIRD EAC' as status, '' as uuid, e.date_eac3 eac_session_date,\n  p"
++".uuid as person_uuid,\nn.datim_id FROM eac e\n    INNER JOIN patient p ON p.id = e.patient_id\n    INNER JOIN ndr_facili"
++"ty n ON n.id=e.facility_id\n	WHERE e.date_eac3 is not null AND p.extra->>'art'='true'";
 			
 
             	globalMap.put("tDBInput_7_QUERY",dbquery_tDBInput_7);
@@ -12513,82 +12328,73 @@ eac3_facilityStruct eac3_facility_tmp = new eac3_facilityStruct();
 		        nb_line_tDBInput_7++;
 		        
 							if(colQtyInRs_tDBInput_7 < 1) {
-								eac3_extract.id = 0;
-							} else {
-		                          
-            eac3_extract.id = rs_tDBInput_7.getInt(1);
-            if(rs_tDBInput_7.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_7 < 2) {
 								eac3_extract.created_date = null;
 							} else {
 										
-			eac3_extract.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 2);
+			eac3_extract.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 1);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 3) {
+							if(colQtyInRs_tDBInput_7 < 2) {
 								eac3_extract.last_modified_date = null;
 							} else {
 										
-			eac3_extract.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 3);
+			eac3_extract.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 2);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 4) {
+							if(colQtyInRs_tDBInput_7 < 3) {
 								eac3_extract.created_by = null;
 							} else {
 	                         		
-        	eac3_extract.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_7, 4, false);
+        	eac3_extract.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_7, 3, false);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 5) {
+							if(colQtyInRs_tDBInput_7 < 4) {
 								eac3_extract.last_modified_by = null;
 							} else {
 	                         		
-        	eac3_extract.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_7, 5, false);
+        	eac3_extract.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_7, 4, false);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 6) {
+							if(colQtyInRs_tDBInput_7 < 5) {
 								eac3_extract.eac_id = null;
 							} else {
 	                         		
-        	eac3_extract.eac_id = routines.system.JDBCUtil.getString(rs_tDBInput_7, 6, false);
+        	eac3_extract.eac_id = routines.system.JDBCUtil.getString(rs_tDBInput_7, 5, false);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 7) {
+							if(colQtyInRs_tDBInput_7 < 6) {
 								eac3_extract.archived = null;
 							} else {
 		                          
-            eac3_extract.archived = rs_tDBInput_7.getInt(7);
+            eac3_extract.archived = rs_tDBInput_7.getInt(6);
             if(rs_tDBInput_7.wasNull()){
                     eac3_extract.archived = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_7 < 8) {
+							if(colQtyInRs_tDBInput_7 < 7) {
 								eac3_extract.status = null;
 							} else {
 	                         		
-        	eac3_extract.status = routines.system.JDBCUtil.getString(rs_tDBInput_7, 8, false);
+        	eac3_extract.status = routines.system.JDBCUtil.getString(rs_tDBInput_7, 7, false);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 9) {
+							if(colQtyInRs_tDBInput_7 < 8) {
 								eac3_extract.uuid = null;
 							} else {
 	                         		
-        	eac3_extract.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 9, false);
+        	eac3_extract.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 8, false);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 10) {
+							if(colQtyInRs_tDBInput_7 < 9) {
 								eac3_extract.eac_session_date = null;
 							} else {
 										
-			eac3_extract.eac_session_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 10);
+			eac3_extract.eac_session_date = routines.system.JDBCUtil.getDate(rs_tDBInput_7, 9);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 11) {
+							if(colQtyInRs_tDBInput_7 < 10) {
 								eac3_extract.person_uuid = null;
 							} else {
 	                         		
-        	eac3_extract.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 11, false);
+        	eac3_extract.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 10, false);
 		                    }
-							if(colQtyInRs_tDBInput_7 < 12) {
+							if(colQtyInRs_tDBInput_7 < 11) {
 								eac3_extract.datim_id = null;
 							} else {
 	                         		
-        	eac3_extract.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_7, 12, false);
+        	eac3_extract.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_7, 11, false);
 		                    }
 					
 
@@ -12775,7 +12581,7 @@ eac3_facility = null;
 
 
 // # Output table : 'eac3_facility'
-eac3_facility_tmp.id = Numeric.sequence("s1",1,1) ;
+eac3_facility_tmp.id = Numeric.sequence("s1",(Integer)globalMap.get("eacCount"),1) ;
 eac3_facility_tmp.created_date = eac3_extract.created_date ;
 eac3_facility_tmp.last_modified_date = eac3_extract.last_modified_date ;
 eac3_facility_tmp.created_by = eac3_extract.created_by ;
@@ -27291,6 +27097,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     626088 characters generated by Talend Open Studio for Big Data 
- *     on the November 13, 2022 10:31:11 PM WAT
+ *     621354 characters generated by Talend Open Studio for Big Data 
+ *     on the December 2, 2022 10:14:20 AM WAT
  ************************************************************************************************/
