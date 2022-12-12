@@ -565,25 +565,7 @@ private class TalendException extends Exception {
 					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tUniqRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -6538,9 +6520,9 @@ String dbschema_tDBOutput_4 = null;
 
 String tableName_tDBOutput_4 = null;
 if(dbschema_tDBOutput_4 == null || dbschema_tDBOutput_4.trim().length() == 0) {
-	tableName_tDBOutput_4 = ("etl_hiv_enrollment_duplicates");
+	tableName_tDBOutput_4 = ("etl_hiv_enrollment_stage_duplicates");
 } else {
-	tableName_tDBOutput_4 = dbschema_tDBOutput_4 + "\".\"" + ("etl_hiv_enrollment_duplicates");
+	tableName_tDBOutput_4 = dbschema_tDBOutput_4 + "\".\"" + ("etl_hiv_enrollment_stage_duplicates");
 }
 
         int updateKeyCount_tDBOutput_4 = 1;
@@ -6598,7 +6580,7 @@ int count_tDBOutput_4=0;
                                     while(rsTable_tDBOutput_4.next()) {
                                         String table_tDBOutput_4 = rsTable_tDBOutput_4.getString("TABLE_NAME");
                                         String schema_tDBOutput_4 = rsTable_tDBOutput_4.getString("TABLE_SCHEM");
-                                        if(table_tDBOutput_4.equals(("etl_hiv_enrollment_duplicates"))
+                                        if(table_tDBOutput_4.equals(("etl_hiv_enrollment_stage_duplicates"))
                                             && (schema_tDBOutput_4.equals(dbschema_tDBOutput_4) || ((dbschema_tDBOutput_4 ==null || dbschema_tDBOutput_4.trim().length() ==0) && defaultSchema_tDBOutput_4.equals(schema_tDBOutput_4)))) {
                                             whetherExist_tDBOutput_4 = true;
                                             break;
@@ -8558,1444 +8540,6 @@ end_Hash.put("tJava_4", System.currentTimeMillis());
 	}
 	
 
-
-public static class Unique_enrollmentsStruct implements routines.system.IPersistableRow<Unique_enrollmentsStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public String unique_id;
-
-				public String getUnique_id () {
-					return this.unique_id;
-				}
-				
-			    public Long entry_point_id;
-
-				public Long getEntry_point_id () {
-					return this.entry_point_id;
-				}
-				
-			    public Long target_group_id;
-
-				public Long getTarget_group_id () {
-					return this.target_group_id;
-				}
-				
-			    public java.util.Date date_confirmed_hiv;
-
-				public java.util.Date getDate_confirmed_hiv () {
-					return this.date_confirmed_hiv;
-				}
-				
-			    public java.util.Date date_enrolled_pmtct;
-
-				public java.util.Date getDate_enrolled_pmtct () {
-					return this.date_enrolled_pmtct;
-				}
-				
-			    public Long source_of_referrer_id;
-
-				public Long getSource_of_referrer_id () {
-					return this.source_of_referrer_id;
-				}
-				
-			    public java.util.Date time_hiv_diagnosis;
-
-				public java.util.Date getTime_hiv_diagnosis () {
-					return this.time_hiv_diagnosis;
-				}
-				
-			    public Boolean pregnant;
-
-				public Boolean getPregnant () {
-					return this.pregnant;
-				}
-				
-			    public Boolean breastfeeding;
-
-				public Boolean getBreastfeeding () {
-					return this.breastfeeding;
-				}
-				
-			    public java.util.Date date_of_registration;
-
-				public java.util.Date getDate_of_registration () {
-					return this.date_of_registration;
-				}
-				
-			    public Long status_at_registration_id;
-
-				public Long getStatus_at_registration_id () {
-					return this.status_at_registration_id;
-				}
-				
-			    public Long enrollment_setting_id;
-
-				public Long getEnrollment_setting_id () {
-					return this.enrollment_setting_id;
-				}
-				
-			    public java.util.Date date_started;
-
-				public java.util.Date getDate_started () {
-					return this.date_started;
-				}
-				
-			    public Boolean send_message;
-
-				public Boolean getSend_message () {
-					return this.send_message;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public Integer facility_id;
-
-				public Integer getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public String visit_id;
-
-				public String getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public Integer archived;
-
-				public Integer getArchived () {
-					return this.archived;
-				}
-				
-			    public String facility_name;
-
-				public String getFacility_name () {
-					return this.facility_name;
-				}
-				
-			    public String ovc_number;
-
-				public String getOvc_number () {
-					return this.ovc_number;
-				}
-				
-			    public java.util.Date date_of_lpm;
-
-				public java.util.Date getDate_of_lpm () {
-					return this.date_of_lpm;
-				}
-				
-			    public Long pregnancy_status_id;
-
-				public Long getPregnancy_status_id () {
-					return this.pregnancy_status_id;
-				}
-				
-			    public Long tb_status_id;
-
-				public Long getTb_status_id () {
-					return this.tb_status_id;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.id;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final Unique_enrollmentsStruct other = (Unique_enrollmentsStruct) obj;
-		
-						if (this.id != other.id)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(Unique_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            other.created_date = this.created_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_date = this.last_modified_date;
-	            other.last_modified_by = this.last_modified_by;
-	            other.unique_id = this.unique_id;
-	            other.entry_point_id = this.entry_point_id;
-	            other.target_group_id = this.target_group_id;
-	            other.date_confirmed_hiv = this.date_confirmed_hiv;
-	            other.date_enrolled_pmtct = this.date_enrolled_pmtct;
-	            other.source_of_referrer_id = this.source_of_referrer_id;
-	            other.time_hiv_diagnosis = this.time_hiv_diagnosis;
-	            other.pregnant = this.pregnant;
-	            other.breastfeeding = this.breastfeeding;
-	            other.date_of_registration = this.date_of_registration;
-	            other.status_at_registration_id = this.status_at_registration_id;
-	            other.enrollment_setting_id = this.enrollment_setting_id;
-	            other.date_started = this.date_started;
-	            other.send_message = this.send_message;
-	            other.person_uuid = this.person_uuid;
-	            other.facility_id = this.facility_id;
-	            other.visit_id = this.visit_id;
-	            other.uuid = this.uuid;
-	            other.archived = this.archived;
-	            other.facility_name = this.facility_name;
-	            other.ovc_number = this.ovc_number;
-	            other.date_of_lpm = this.date_of_lpm;
-	            other.pregnancy_status_id = this.pregnancy_status_id;
-	            other.tb_status_id = this.tb_status_id;
-	            
-	}
-
-	public void copyKeysDataTo(Unique_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.id = dis.readInt();
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.unique_id = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.entry_point_id = null;
-           				} else {
-           			    	this.entry_point_id = dis.readLong();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.target_group_id = null;
-           				} else {
-           			    	this.target_group_id = dis.readLong();
-           				}
-					
-					this.date_confirmed_hiv = readDate(dis);
-					
-					this.date_enrolled_pmtct = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.source_of_referrer_id = null;
-           				} else {
-           			    	this.source_of_referrer_id = dis.readLong();
-           				}
-					
-					this.time_hiv_diagnosis = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.pregnant = null;
-           				} else {
-           			    	this.pregnant = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.breastfeeding = null;
-           				} else {
-           			    	this.breastfeeding = dis.readBoolean();
-           				}
-					
-					this.date_of_registration = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.status_at_registration_id = null;
-           				} else {
-           			    	this.status_at_registration_id = dis.readLong();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.enrollment_setting_id = null;
-           				} else {
-           			    	this.enrollment_setting_id = dis.readLong();
-           				}
-					
-					this.date_started = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.send_message = null;
-           				} else {
-           			    	this.send_message = dis.readBoolean();
-           				}
-					
-					this.person_uuid = readString(dis);
-					
-						this.facility_id = readInteger(dis);
-					
-					this.visit_id = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-						this.archived = readInteger(dis);
-					
-					this.facility_name = readString(dis);
-					
-					this.ovc_number = readString(dis);
-					
-					this.date_of_lpm = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.pregnancy_status_id = null;
-           				} else {
-           			    	this.pregnancy_status_id = dis.readLong();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.tb_status_id = null;
-           				} else {
-           			    	this.tb_status_id = dis.readLong();
-           				}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// String
-				
-						writeString(this.unique_id,dos);
-					
-					// Long
-				
-						if(this.entry_point_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.entry_point_id);
-		            	}
-					
-					// Long
-				
-						if(this.target_group_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.target_group_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.date_confirmed_hiv,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_enrolled_pmtct,dos);
-					
-					// Long
-				
-						if(this.source_of_referrer_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.source_of_referrer_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.time_hiv_diagnosis,dos);
-					
-					// Boolean
-				
-						if(this.pregnant == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.pregnant);
-		            	}
-					
-					// Boolean
-				
-						if(this.breastfeeding == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.breastfeeding);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_registration,dos);
-					
-					// Long
-				
-						if(this.status_at_registration_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.status_at_registration_id);
-		            	}
-					
-					// Long
-				
-						if(this.enrollment_setting_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.enrollment_setting_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.date_started,dos);
-					
-					// Boolean
-				
-						if(this.send_message == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.send_message);
-		            	}
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.facility_id,dos);
-					
-					// String
-				
-						writeString(this.visit_id,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.archived,dos);
-					
-					// String
-				
-						writeString(this.facility_name,dos);
-					
-					// String
-				
-						writeString(this.ovc_number,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_lpm,dos);
-					
-					// Long
-				
-						if(this.pregnancy_status_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.pregnancy_status_id);
-		            	}
-					
-					// Long
-				
-						if(this.tb_status_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.tb_status_id);
-		            	}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",unique_id="+unique_id);
-		sb.append(",entry_point_id="+String.valueOf(entry_point_id));
-		sb.append(",target_group_id="+String.valueOf(target_group_id));
-		sb.append(",date_confirmed_hiv="+String.valueOf(date_confirmed_hiv));
-		sb.append(",date_enrolled_pmtct="+String.valueOf(date_enrolled_pmtct));
-		sb.append(",source_of_referrer_id="+String.valueOf(source_of_referrer_id));
-		sb.append(",time_hiv_diagnosis="+String.valueOf(time_hiv_diagnosis));
-		sb.append(",pregnant="+String.valueOf(pregnant));
-		sb.append(",breastfeeding="+String.valueOf(breastfeeding));
-		sb.append(",date_of_registration="+String.valueOf(date_of_registration));
-		sb.append(",status_at_registration_id="+String.valueOf(status_at_registration_id));
-		sb.append(",enrollment_setting_id="+String.valueOf(enrollment_setting_id));
-		sb.append(",date_started="+String.valueOf(date_started));
-		sb.append(",send_message="+String.valueOf(send_message));
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",visit_id="+visit_id);
-		sb.append(",uuid="+uuid);
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",facility_name="+facility_name);
-		sb.append(",ovc_number="+ovc_number);
-		sb.append(",date_of_lpm="+String.valueOf(date_of_lpm));
-		sb.append(",pregnancy_status_id="+String.valueOf(pregnancy_status_id));
-		sb.append(",tb_status_id="+String.valueOf(tb_status_id));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Unique_enrollmentsStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class Duplicate_enrollmentsStruct implements routines.system.IPersistableRow<Duplicate_enrollmentsStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public String unique_id;
-
-				public String getUnique_id () {
-					return this.unique_id;
-				}
-				
-			    public Long entry_point_id;
-
-				public Long getEntry_point_id () {
-					return this.entry_point_id;
-				}
-				
-			    public Long target_group_id;
-
-				public Long getTarget_group_id () {
-					return this.target_group_id;
-				}
-				
-			    public java.util.Date date_confirmed_hiv;
-
-				public java.util.Date getDate_confirmed_hiv () {
-					return this.date_confirmed_hiv;
-				}
-				
-			    public java.util.Date date_enrolled_pmtct;
-
-				public java.util.Date getDate_enrolled_pmtct () {
-					return this.date_enrolled_pmtct;
-				}
-				
-			    public Long source_of_referrer_id;
-
-				public Long getSource_of_referrer_id () {
-					return this.source_of_referrer_id;
-				}
-				
-			    public java.util.Date time_hiv_diagnosis;
-
-				public java.util.Date getTime_hiv_diagnosis () {
-					return this.time_hiv_diagnosis;
-				}
-				
-			    public Boolean pregnant;
-
-				public Boolean getPregnant () {
-					return this.pregnant;
-				}
-				
-			    public Boolean breastfeeding;
-
-				public Boolean getBreastfeeding () {
-					return this.breastfeeding;
-				}
-				
-			    public java.util.Date date_of_registration;
-
-				public java.util.Date getDate_of_registration () {
-					return this.date_of_registration;
-				}
-				
-			    public Long status_at_registration_id;
-
-				public Long getStatus_at_registration_id () {
-					return this.status_at_registration_id;
-				}
-				
-			    public Long enrollment_setting_id;
-
-				public Long getEnrollment_setting_id () {
-					return this.enrollment_setting_id;
-				}
-				
-			    public java.util.Date date_started;
-
-				public java.util.Date getDate_started () {
-					return this.date_started;
-				}
-				
-			    public Boolean send_message;
-
-				public Boolean getSend_message () {
-					return this.send_message;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public Integer facility_id;
-
-				public Integer getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public String visit_id;
-
-				public String getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public Integer archived;
-
-				public Integer getArchived () {
-					return this.archived;
-				}
-				
-			    public String facility_name;
-
-				public String getFacility_name () {
-					return this.facility_name;
-				}
-				
-			    public String ovc_number;
-
-				public String getOvc_number () {
-					return this.ovc_number;
-				}
-				
-			    public java.util.Date date_of_lpm;
-
-				public java.util.Date getDate_of_lpm () {
-					return this.date_of_lpm;
-				}
-				
-			    public Long pregnancy_status_id;
-
-				public Long getPregnancy_status_id () {
-					return this.pregnancy_status_id;
-				}
-				
-			    public Long tb_status_id;
-
-				public Long getTb_status_id () {
-					return this.tb_status_id;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.id;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final Duplicate_enrollmentsStruct other = (Duplicate_enrollmentsStruct) obj;
-		
-						if (this.id != other.id)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(Duplicate_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            other.created_date = this.created_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_date = this.last_modified_date;
-	            other.last_modified_by = this.last_modified_by;
-	            other.unique_id = this.unique_id;
-	            other.entry_point_id = this.entry_point_id;
-	            other.target_group_id = this.target_group_id;
-	            other.date_confirmed_hiv = this.date_confirmed_hiv;
-	            other.date_enrolled_pmtct = this.date_enrolled_pmtct;
-	            other.source_of_referrer_id = this.source_of_referrer_id;
-	            other.time_hiv_diagnosis = this.time_hiv_diagnosis;
-	            other.pregnant = this.pregnant;
-	            other.breastfeeding = this.breastfeeding;
-	            other.date_of_registration = this.date_of_registration;
-	            other.status_at_registration_id = this.status_at_registration_id;
-	            other.enrollment_setting_id = this.enrollment_setting_id;
-	            other.date_started = this.date_started;
-	            other.send_message = this.send_message;
-	            other.person_uuid = this.person_uuid;
-	            other.facility_id = this.facility_id;
-	            other.visit_id = this.visit_id;
-	            other.uuid = this.uuid;
-	            other.archived = this.archived;
-	            other.facility_name = this.facility_name;
-	            other.ovc_number = this.ovc_number;
-	            other.date_of_lpm = this.date_of_lpm;
-	            other.pregnancy_status_id = this.pregnancy_status_id;
-	            other.tb_status_id = this.tb_status_id;
-	            
-	}
-
-	public void copyKeysDataTo(Duplicate_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.id = dis.readInt();
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.unique_id = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.entry_point_id = null;
-           				} else {
-           			    	this.entry_point_id = dis.readLong();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.target_group_id = null;
-           				} else {
-           			    	this.target_group_id = dis.readLong();
-           				}
-					
-					this.date_confirmed_hiv = readDate(dis);
-					
-					this.date_enrolled_pmtct = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.source_of_referrer_id = null;
-           				} else {
-           			    	this.source_of_referrer_id = dis.readLong();
-           				}
-					
-					this.time_hiv_diagnosis = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.pregnant = null;
-           				} else {
-           			    	this.pregnant = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.breastfeeding = null;
-           				} else {
-           			    	this.breastfeeding = dis.readBoolean();
-           				}
-					
-					this.date_of_registration = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.status_at_registration_id = null;
-           				} else {
-           			    	this.status_at_registration_id = dis.readLong();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.enrollment_setting_id = null;
-           				} else {
-           			    	this.enrollment_setting_id = dis.readLong();
-           				}
-					
-					this.date_started = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.send_message = null;
-           				} else {
-           			    	this.send_message = dis.readBoolean();
-           				}
-					
-					this.person_uuid = readString(dis);
-					
-						this.facility_id = readInteger(dis);
-					
-					this.visit_id = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-						this.archived = readInteger(dis);
-					
-					this.facility_name = readString(dis);
-					
-					this.ovc_number = readString(dis);
-					
-					this.date_of_lpm = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.pregnancy_status_id = null;
-           				} else {
-           			    	this.pregnancy_status_id = dis.readLong();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.tb_status_id = null;
-           				} else {
-           			    	this.tb_status_id = dis.readLong();
-           				}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// String
-				
-						writeString(this.unique_id,dos);
-					
-					// Long
-				
-						if(this.entry_point_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.entry_point_id);
-		            	}
-					
-					// Long
-				
-						if(this.target_group_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.target_group_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.date_confirmed_hiv,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_enrolled_pmtct,dos);
-					
-					// Long
-				
-						if(this.source_of_referrer_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.source_of_referrer_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.time_hiv_diagnosis,dos);
-					
-					// Boolean
-				
-						if(this.pregnant == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.pregnant);
-		            	}
-					
-					// Boolean
-				
-						if(this.breastfeeding == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.breastfeeding);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_registration,dos);
-					
-					// Long
-				
-						if(this.status_at_registration_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.status_at_registration_id);
-		            	}
-					
-					// Long
-				
-						if(this.enrollment_setting_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.enrollment_setting_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.date_started,dos);
-					
-					// Boolean
-				
-						if(this.send_message == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.send_message);
-		            	}
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.facility_id,dos);
-					
-					// String
-				
-						writeString(this.visit_id,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.archived,dos);
-					
-					// String
-				
-						writeString(this.facility_name,dos);
-					
-					// String
-				
-						writeString(this.ovc_number,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_lpm,dos);
-					
-					// Long
-				
-						if(this.pregnancy_status_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.pregnancy_status_id);
-		            	}
-					
-					// Long
-				
-						if(this.tb_status_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.tb_status_id);
-		            	}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",unique_id="+unique_id);
-		sb.append(",entry_point_id="+String.valueOf(entry_point_id));
-		sb.append(",target_group_id="+String.valueOf(target_group_id));
-		sb.append(",date_confirmed_hiv="+String.valueOf(date_confirmed_hiv));
-		sb.append(",date_enrolled_pmtct="+String.valueOf(date_enrolled_pmtct));
-		sb.append(",source_of_referrer_id="+String.valueOf(source_of_referrer_id));
-		sb.append(",time_hiv_diagnosis="+String.valueOf(time_hiv_diagnosis));
-		sb.append(",pregnant="+String.valueOf(pregnant));
-		sb.append(",breastfeeding="+String.valueOf(breastfeeding));
-		sb.append(",date_of_registration="+String.valueOf(date_of_registration));
-		sb.append(",status_at_registration_id="+String.valueOf(status_at_registration_id));
-		sb.append(",enrollment_setting_id="+String.valueOf(enrollment_setting_id));
-		sb.append(",date_started="+String.valueOf(date_started));
-		sb.append(",send_message="+String.valueOf(send_message));
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",visit_id="+visit_id);
-		sb.append(",uuid="+uuid);
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",facility_name="+facility_name);
-		sb.append(",ovc_number="+ovc_number);
-		sb.append(",date_of_lpm="+String.valueOf(date_of_lpm));
-		sb.append(",pregnancy_status_id="+String.valueOf(pregnancy_status_id));
-		sb.append(",tb_status_id="+String.valueOf(tb_status_id));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Duplicate_enrollmentsStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class copyOfexampleStruct implements routines.system.IPersistableRow<copyOfexampleStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
@@ -12940,9 +11484,6 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 Entry_pointStruct Entry_point = new Entry_pointStruct();
 map_to_clinicsStruct map_to_clinics = new map_to_clinicsStruct();
 copyOfexampleStruct copyOfexample = new copyOfexampleStruct();
-Unique_enrollmentsStruct Unique_enrollments = new Unique_enrollmentsStruct();
-Duplicate_enrollmentsStruct Duplicate_enrollments = new Duplicate_enrollmentsStruct();
-
 
 
 
@@ -12967,7 +11508,7 @@ Duplicate_enrollmentsStruct Duplicate_enrollments = new Duplicate_enrollmentsStr
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Unique_enrollments");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"copyOfexample");
 					}
 				
 		int tos_count_tDBOutput_1 = 0;
@@ -13042,218 +11583,6 @@ int count_tDBOutput_1=0;
 
 /**
  * [tDBOutput_1 begin ] stop
- */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBOutput_2", false);
-		start_Hash.put("tDBOutput_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tDBOutput_2";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Duplicate_enrollments");
-					}
-				
-		int tos_count_tDBOutput_2 = 0;
-		
-
-
-
-
-
-String dbschema_tDBOutput_2 = null;
-	dbschema_tDBOutput_2 = context.LAMISPlus_Schema;
-	
-
-String tableName_tDBOutput_2 = null;
-if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-	tableName_tDBOutput_2 = ("patient_hivenrol_duplicates");
-} else {
-	tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("patient_hivenrol_duplicates");
-}
-
-        int updateKeyCount_tDBOutput_2 = 1;
-        if(updateKeyCount_tDBOutput_2 < 1) {
-            throw new RuntimeException("For update, Schema must have a key");
-        }
-int nb_line_tDBOutput_2 = 0;
-int nb_line_update_tDBOutput_2 = 0;
-int nb_line_inserted_tDBOutput_2 = 0;
-int nb_line_deleted_tDBOutput_2 = 0;
-int nb_line_rejected_tDBOutput_2 = 0;
-
-int deletedCount_tDBOutput_2=0;
-int updatedCount_tDBOutput_2=0;
-int insertedCount_tDBOutput_2=0;
-int rejectedCount_tDBOutput_2=0;
-
-boolean whetherReject_tDBOutput_2 = false;
-
-java.sql.Connection conn_tDBOutput_2 = null;
-String dbUser_tDBOutput_2 = null;
-
-	
-    java.lang.Class.forName("org.postgresql.Driver");
-    
-        String url_tDBOutput_2 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
-    dbUser_tDBOutput_2 = context.LAMISPlus_Login;
-
-	final String decryptedPassword_tDBOutput_2 = context.LAMISPlus_Password; 
-
-    String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
-
-    conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2,dbUser_tDBOutput_2,dbPwd_tDBOutput_2);
-	
-	resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
-        conn_tDBOutput_2.setAutoCommit(false);
-        int commitEvery_tDBOutput_2 = 10000;
-        int commitCounter_tDBOutput_2 = 0;
-
-
-
-int count_tDBOutput_2=0;
-                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_2 = conn_tDBOutput_2.getMetaData();
-                                boolean whetherExist_tDBOutput_2 = false;
-                                try (java.sql.ResultSet rsTable_tDBOutput_2 = dbMetaData_tDBOutput_2.getTables(null, null, null, new String[]{"TABLE"})) {
-                                    String defaultSchema_tDBOutput_2 = "public";
-                                    if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-                                        try(java.sql.Statement stmtSchema_tDBOutput_2 = conn_tDBOutput_2.createStatement();
-                                            java.sql.ResultSet rsSchema_tDBOutput_2 = stmtSchema_tDBOutput_2.executeQuery("select current_schema() ")) {
-                                            while(rsSchema_tDBOutput_2.next()){
-                                                defaultSchema_tDBOutput_2 = rsSchema_tDBOutput_2.getString("current_schema");
-                                            }
-                                        }
-                                    }
-                                    while(rsTable_tDBOutput_2.next()) {
-                                        String table_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_NAME");
-                                        String schema_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_SCHEM");
-                                        if(table_tDBOutput_2.equals(("patient_hivenrol_duplicates"))
-                                            && (schema_tDBOutput_2.equals(dbschema_tDBOutput_2) || ((dbschema_tDBOutput_2 ==null || dbschema_tDBOutput_2.trim().length() ==0) && defaultSchema_tDBOutput_2.equals(schema_tDBOutput_2)))) {
-                                            whetherExist_tDBOutput_2 = true;
-                                            break;
-                                        }
-                                    }
-                                }
-                                if(!whetherExist_tDBOutput_2) {
-                                    try (java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
-                                        stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"id\" INT4  not null ,\"created_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(230)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR(230)  ,\"unique_id\" VARCHAR(230)  ,\"entry_point_id\" BIGSERIAL ,\"target_group_id\" BIGSERIAL ,\"date_confirmed_hiv\" DATE ,\"date_enrolled_pmtct\" DATE ,\"source_of_referrer_id\" BIGSERIAL ,\"time_hiv_diagnosis\" TIMESTAMP(13)  ,\"pregnant\" BOOL ,\"breastfeeding\" BOOL ,\"date_of_registration\" DATE ,\"status_at_registration_id\" BIGSERIAL ,\"enrollment_setting_id\" BIGSERIAL ,\"date_started\" DATE ,\"send_message\" BOOL ,\"person_uuid\" VARCHAR(50)  ,\"facility_id\" INT4 ,\"visit_id\" VARCHAR(19)  ,\"uuid\" VARCHAR(50)  ,\"archived\" INT4 ,\"facility_name\" VARCHAR(230)  ,\"ovc_number\" VARCHAR(230)  ,\"date_of_lpm\" TIMESTAMP(29)  ,\"pregnancy_status_id\" INT8 ,\"tb_status_id\" BIGSERIAL ,primary key(\"id\"))");
-                                    }
-                                }
-	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
-	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
-	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"unique_id\",\"entry_point_id\",\"target_group_id\",\"date_confirmed_hiv\",\"date_enrolled_pmtct\",\"source_of_referrer_id\",\"time_hiv_diagnosis\",\"pregnant\",\"breastfeeding\",\"date_of_registration\",\"status_at_registration_id\",\"enrollment_setting_id\",\"date_started\",\"send_message\",\"person_uuid\",\"facility_id\",\"visit_id\",\"uuid\",\"archived\",\"facility_name\",\"ovc_number\",\"date_of_lpm\",\"pregnancy_status_id\",\"tb_status_id\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
-	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
-	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"unique_id\" = ?,\"entry_point_id\" = ?,\"target_group_id\" = ?,\"date_confirmed_hiv\" = ?,\"date_enrolled_pmtct\" = ?,\"source_of_referrer_id\" = ?,\"time_hiv_diagnosis\" = ?,\"pregnant\" = ?,\"breastfeeding\" = ?,\"date_of_registration\" = ?,\"status_at_registration_id\" = ?,\"enrollment_setting_id\" = ?,\"date_started\" = ?,\"send_message\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"visit_id\" = ?,\"uuid\" = ?,\"archived\" = ?,\"facility_name\" = ?,\"ovc_number\" = ?,\"date_of_lpm\" = ?,\"pregnancy_status_id\" = ?,\"tb_status_id\" = ? WHERE \"id\" = ?";
-	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
-	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
-	    
-
- 
-
-
-
-/**
- * [tDBOutput_2 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tUniqRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tUniqRow_1", false);
-		start_Hash.put("tUniqRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"copyOfexample");
-					}
-				
-		int tos_count_tUniqRow_1 = 0;
-		
-
-	
-		class KeyStruct_tUniqRow_1 {
-	
-			private static final int DEFAULT_HASHCODE = 1;
-		    private static final int PRIME = 31;
-		    private int hashCode = DEFAULT_HASHCODE;
-		    public boolean hashCodeDirty = true;
-	
-	        
-					String uuid;        
-	        
-		    @Override
-			public int hashCode() {
-				if (this.hashCodeDirty) {
-					final int prime = PRIME;
-					int result = DEFAULT_HASHCODE;
-			
-								result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
-								
-		    		this.hashCode = result;
-		    		this.hashCodeDirty = false;		
-				}
-				return this.hashCode;
-			}
-			
-			@Override
-			public boolean equals(Object obj) {
-				if (this == obj) return true;
-				if (obj == null) return false;
-				if (getClass() != obj.getClass()) return false;
-				final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
-				
-									if (this.uuid == null) {
-										if (other.uuid != null) 
-											return false;
-								
-									} else if (!this.uuid.equals(other.uuid))
-								 
-										return false;
-								
-				
-				return true;
-			}
-	  
-	        
-		}
-
-	
-int nb_uniques_tUniqRow_1 = 0;
-int nb_duplicates_tUniqRow_1 = 0;
-KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>(); 
-
- 
-
-
-
-/**
- * [tUniqRow_1 begin ] stop
  */
 
 
@@ -14827,85 +13156,6 @@ if(copyOfexample != null) {
 
 	
 	/**
-	 * [tUniqRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"copyOfexample");
-					}
-					
-Duplicate_enrollments = null;			Unique_enrollments = null;			
-if(copyOfexample.uuid == null){
-	finder_tUniqRow_1.uuid = null;
-}else{
-	finder_tUniqRow_1.uuid = copyOfexample.uuid.toLowerCase();
-}	
-finder_tUniqRow_1.hashCodeDirty = true;
-if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-
-		
-if(copyOfexample.uuid == null){
-	new_tUniqRow_1.uuid = null;
-}else{
-	new_tUniqRow_1.uuid = copyOfexample.uuid.toLowerCase();
-}
-		
-		keystUniqRow_1.add(new_tUniqRow_1);if(Unique_enrollments == null){ 
-	
-	Unique_enrollments = new Unique_enrollmentsStruct();
-}Unique_enrollments.id = copyOfexample.id;			Unique_enrollments.created_date = copyOfexample.created_date;			Unique_enrollments.created_by = copyOfexample.created_by;			Unique_enrollments.last_modified_date = copyOfexample.last_modified_date;			Unique_enrollments.last_modified_by = copyOfexample.last_modified_by;			Unique_enrollments.unique_id = copyOfexample.unique_id;			Unique_enrollments.entry_point_id = copyOfexample.entry_point_id;			Unique_enrollments.target_group_id = copyOfexample.target_group_id;			Unique_enrollments.date_confirmed_hiv = copyOfexample.date_confirmed_hiv;			Unique_enrollments.date_enrolled_pmtct = copyOfexample.date_enrolled_pmtct;			Unique_enrollments.source_of_referrer_id = copyOfexample.source_of_referrer_id;			Unique_enrollments.time_hiv_diagnosis = copyOfexample.time_hiv_diagnosis;			Unique_enrollments.pregnant = copyOfexample.pregnant;			Unique_enrollments.breastfeeding = copyOfexample.breastfeeding;			Unique_enrollments.date_of_registration = copyOfexample.date_of_registration;			Unique_enrollments.status_at_registration_id = copyOfexample.status_at_registration_id;			Unique_enrollments.enrollment_setting_id = copyOfexample.enrollment_setting_id;			Unique_enrollments.date_started = copyOfexample.date_started;			Unique_enrollments.send_message = copyOfexample.send_message;			Unique_enrollments.person_uuid = copyOfexample.person_uuid;			Unique_enrollments.facility_id = copyOfexample.facility_id;			Unique_enrollments.visit_id = copyOfexample.visit_id;			Unique_enrollments.uuid = copyOfexample.uuid;			Unique_enrollments.archived = copyOfexample.archived;			Unique_enrollments.facility_name = copyOfexample.facility_name;			Unique_enrollments.ovc_number = copyOfexample.ovc_number;			Unique_enrollments.date_of_lpm = copyOfexample.date_of_lpm;			Unique_enrollments.pregnancy_status_id = copyOfexample.pregnancy_status_id;			Unique_enrollments.tb_status_id = copyOfexample.tb_status_id;					
-		nb_uniques_tUniqRow_1++;
-	} else {
-if(Duplicate_enrollments == null){ 
-	
-	Duplicate_enrollments = new Duplicate_enrollmentsStruct();
-}				Duplicate_enrollments.id = copyOfexample.id;			Duplicate_enrollments.created_date = copyOfexample.created_date;			Duplicate_enrollments.created_by = copyOfexample.created_by;			Duplicate_enrollments.last_modified_date = copyOfexample.last_modified_date;			Duplicate_enrollments.last_modified_by = copyOfexample.last_modified_by;			Duplicate_enrollments.unique_id = copyOfexample.unique_id;			Duplicate_enrollments.entry_point_id = copyOfexample.entry_point_id;			Duplicate_enrollments.target_group_id = copyOfexample.target_group_id;			Duplicate_enrollments.date_confirmed_hiv = copyOfexample.date_confirmed_hiv;			Duplicate_enrollments.date_enrolled_pmtct = copyOfexample.date_enrolled_pmtct;			Duplicate_enrollments.source_of_referrer_id = copyOfexample.source_of_referrer_id;			Duplicate_enrollments.time_hiv_diagnosis = copyOfexample.time_hiv_diagnosis;			Duplicate_enrollments.pregnant = copyOfexample.pregnant;			Duplicate_enrollments.breastfeeding = copyOfexample.breastfeeding;			Duplicate_enrollments.date_of_registration = copyOfexample.date_of_registration;			Duplicate_enrollments.status_at_registration_id = copyOfexample.status_at_registration_id;			Duplicate_enrollments.enrollment_setting_id = copyOfexample.enrollment_setting_id;			Duplicate_enrollments.date_started = copyOfexample.date_started;			Duplicate_enrollments.send_message = copyOfexample.send_message;			Duplicate_enrollments.person_uuid = copyOfexample.person_uuid;			Duplicate_enrollments.facility_id = copyOfexample.facility_id;			Duplicate_enrollments.visit_id = copyOfexample.visit_id;			Duplicate_enrollments.uuid = copyOfexample.uuid;			Duplicate_enrollments.archived = copyOfexample.archived;			Duplicate_enrollments.facility_name = copyOfexample.facility_name;			Duplicate_enrollments.ovc_number = copyOfexample.ovc_number;			Duplicate_enrollments.date_of_lpm = copyOfexample.date_of_lpm;			Duplicate_enrollments.pregnancy_status_id = copyOfexample.pregnancy_status_id;			Duplicate_enrollments.tb_status_id = copyOfexample.tb_status_id;			
-	  nb_duplicates_tUniqRow_1++;
-	}
-
- 
-
-
-	tos_count_tUniqRow_1++;
-
-/**
- * [tUniqRow_1 main ] stop
- */
-	
-	/**
-	 * [tUniqRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_begin ] stop
- */
-// Start of branch "Unique_enrollments"
-if(Unique_enrollments != null) { 
-
-
-
-	
-	/**
 	 * [tDBOutput_1 main ] start
 	 */
 
@@ -14917,7 +13167,7 @@ if(Unique_enrollments != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Unique_enrollments");
+						runStat.updateStatOnConnection(iterateId,1,1,"copyOfexample");
 					}
 					
 
@@ -14925,160 +13175,160 @@ if(Unique_enrollments != null) {
 
         whetherReject_tDBOutput_1 = false;
             int updateFlag_tDBOutput_1=0;
-                    pstmtUpdate_tDBOutput_1.setInt(1, Unique_enrollments.id);
+                    pstmtUpdate_tDBOutput_1.setInt(1, copyOfexample.id);
 
-                    if(Unique_enrollments.created_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Unique_enrollments.created_date.getTime()));
+                    if(copyOfexample.created_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(copyOfexample.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.created_by == null) {
+                    if(copyOfexample.created_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(3, Unique_enrollments.created_by);
+} else {pstmtUpdate_tDBOutput_1.setString(3, copyOfexample.created_by);
 }
 
-                    if(Unique_enrollments.last_modified_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Unique_enrollments.last_modified_date.getTime()));
+                    if(copyOfexample.last_modified_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(copyOfexample.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.last_modified_by == null) {
+                    if(copyOfexample.last_modified_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(5, Unique_enrollments.last_modified_by);
+} else {pstmtUpdate_tDBOutput_1.setString(5, copyOfexample.last_modified_by);
 }
 
-                    if(Unique_enrollments.unique_id == null) {
+                    if(copyOfexample.unique_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(6, Unique_enrollments.unique_id);
+} else {pstmtUpdate_tDBOutput_1.setString(6, copyOfexample.unique_id);
 }
 
-                    if(Unique_enrollments.entry_point_id == null) {
+                    if(copyOfexample.entry_point_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(7, Unique_enrollments.entry_point_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(7, copyOfexample.entry_point_id);
 }
 
-                    if(Unique_enrollments.target_group_id == null) {
+                    if(copyOfexample.target_group_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(8, Unique_enrollments.target_group_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(8, copyOfexample.target_group_id);
 }
 
-                    if(Unique_enrollments.date_confirmed_hiv != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(9, new java.sql.Timestamp(Unique_enrollments.date_confirmed_hiv.getTime()));
+                    if(copyOfexample.date_confirmed_hiv != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(9, new java.sql.Timestamp(copyOfexample.date_confirmed_hiv.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.date_enrolled_pmtct != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(10, new java.sql.Timestamp(Unique_enrollments.date_enrolled_pmtct.getTime()));
+                    if(copyOfexample.date_enrolled_pmtct != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(10, new java.sql.Timestamp(copyOfexample.date_enrolled_pmtct.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.source_of_referrer_id == null) {
+                    if(copyOfexample.source_of_referrer_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(11, Unique_enrollments.source_of_referrer_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(11, copyOfexample.source_of_referrer_id);
 }
 
-                    if(Unique_enrollments.time_hiv_diagnosis != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(12, new java.sql.Timestamp(Unique_enrollments.time_hiv_diagnosis.getTime()));
+                    if(copyOfexample.time_hiv_diagnosis != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(12, new java.sql.Timestamp(copyOfexample.time_hiv_diagnosis.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(12, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.pregnant == null) {
+                    if(copyOfexample.pregnant == null) {
 pstmtUpdate_tDBOutput_1.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(13, Unique_enrollments.pregnant);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(13, copyOfexample.pregnant);
 }
 
-                    if(Unique_enrollments.breastfeeding == null) {
+                    if(copyOfexample.breastfeeding == null) {
 pstmtUpdate_tDBOutput_1.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(14, Unique_enrollments.breastfeeding);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(14, copyOfexample.breastfeeding);
 }
 
-                    if(Unique_enrollments.date_of_registration != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(15, new java.sql.Timestamp(Unique_enrollments.date_of_registration.getTime()));
+                    if(copyOfexample.date_of_registration != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(15, new java.sql.Timestamp(copyOfexample.date_of_registration.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(15, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.status_at_registration_id == null) {
+                    if(copyOfexample.status_at_registration_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(16, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(16, Unique_enrollments.status_at_registration_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(16, copyOfexample.status_at_registration_id);
 }
 
-                    if(Unique_enrollments.enrollment_setting_id == null) {
+                    if(copyOfexample.enrollment_setting_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(17, Unique_enrollments.enrollment_setting_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(17, copyOfexample.enrollment_setting_id);
 }
 
-                    if(Unique_enrollments.date_started != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(18, new java.sql.Timestamp(Unique_enrollments.date_started.getTime()));
+                    if(copyOfexample.date_started != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(18, new java.sql.Timestamp(copyOfexample.date_started.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.send_message == null) {
+                    if(copyOfexample.send_message == null) {
 pstmtUpdate_tDBOutput_1.setNull(19, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(19, Unique_enrollments.send_message);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(19, copyOfexample.send_message);
 }
 
-                    if(Unique_enrollments.person_uuid == null) {
+                    if(copyOfexample.person_uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(20, Unique_enrollments.person_uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(20, copyOfexample.person_uuid);
 }
 
-                    if(Unique_enrollments.facility_id == null) {
+                    if(copyOfexample.facility_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(21, Unique_enrollments.facility_id);
+} else {pstmtUpdate_tDBOutput_1.setInt(21, copyOfexample.facility_id);
 }
 
-                    if(Unique_enrollments.visit_id == null) {
+                    if(copyOfexample.visit_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(22, Unique_enrollments.visit_id);
+} else {pstmtUpdate_tDBOutput_1.setString(22, copyOfexample.visit_id);
 }
 
-                    if(Unique_enrollments.uuid == null) {
+                    if(copyOfexample.uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(23, Unique_enrollments.uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(23, copyOfexample.uuid);
 }
 
-                    if(Unique_enrollments.archived == null) {
+                    if(copyOfexample.archived == null) {
 pstmtUpdate_tDBOutput_1.setNull(24, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(24, Unique_enrollments.archived);
+} else {pstmtUpdate_tDBOutput_1.setInt(24, copyOfexample.archived);
 }
 
-                    if(Unique_enrollments.facility_name == null) {
+                    if(copyOfexample.facility_name == null) {
 pstmtUpdate_tDBOutput_1.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(25, Unique_enrollments.facility_name);
+} else {pstmtUpdate_tDBOutput_1.setString(25, copyOfexample.facility_name);
 }
 
-                    if(Unique_enrollments.ovc_number == null) {
+                    if(copyOfexample.ovc_number == null) {
 pstmtUpdate_tDBOutput_1.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(26, Unique_enrollments.ovc_number);
+} else {pstmtUpdate_tDBOutput_1.setString(26, copyOfexample.ovc_number);
 }
 
-                    if(Unique_enrollments.date_of_lpm != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(27, new java.sql.Timestamp(Unique_enrollments.date_of_lpm.getTime()));
+                    if(copyOfexample.date_of_lpm != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(27, new java.sql.Timestamp(copyOfexample.date_of_lpm.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(27, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.pregnancy_status_id == null) {
+                    if(copyOfexample.pregnancy_status_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(28, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(28, Unique_enrollments.pregnancy_status_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(28, copyOfexample.pregnancy_status_id);
 }
 
-                    if(Unique_enrollments.tb_status_id == null) {
+                    if(copyOfexample.tb_status_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(29, Unique_enrollments.tb_status_id);
+} else {pstmtUpdate_tDBOutput_1.setLong(29, copyOfexample.tb_status_id);
 }
 
 
-                    if(Unique_enrollments.uuid == null) {
+                    if(copyOfexample.uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(30 + count_tDBOutput_1, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(30 + count_tDBOutput_1, Unique_enrollments.uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(30 + count_tDBOutput_1, copyOfexample.uuid);
 }
 
 
@@ -15089,154 +13339,154 @@ pstmtUpdate_tDBOutput_1.setNull(30 + count_tDBOutput_1, java.sql.Types.VARCHAR);
 				
             if(updateFlag_tDBOutput_1 == 0) {
             	
-                        pstmtInsert_tDBOutput_1.setInt(1, Unique_enrollments.id);
+                        pstmtInsert_tDBOutput_1.setInt(1, copyOfexample.id);
 
-                        if(Unique_enrollments.created_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Unique_enrollments.created_date.getTime()));
+                        if(copyOfexample.created_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(copyOfexample.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.created_by == null) {
+                        if(copyOfexample.created_by == null) {
 pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(3, Unique_enrollments.created_by);
+} else {pstmtInsert_tDBOutput_1.setString(3, copyOfexample.created_by);
 }
 
-                        if(Unique_enrollments.last_modified_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Unique_enrollments.last_modified_date.getTime()));
+                        if(copyOfexample.last_modified_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(copyOfexample.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.last_modified_by == null) {
+                        if(copyOfexample.last_modified_by == null) {
 pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(5, Unique_enrollments.last_modified_by);
+} else {pstmtInsert_tDBOutput_1.setString(5, copyOfexample.last_modified_by);
 }
 
-                        if(Unique_enrollments.unique_id == null) {
+                        if(copyOfexample.unique_id == null) {
 pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(6, Unique_enrollments.unique_id);
+} else {pstmtInsert_tDBOutput_1.setString(6, copyOfexample.unique_id);
 }
 
-                        if(Unique_enrollments.entry_point_id == null) {
+                        if(copyOfexample.entry_point_id == null) {
 pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(7, Unique_enrollments.entry_point_id);
+} else {pstmtInsert_tDBOutput_1.setLong(7, copyOfexample.entry_point_id);
 }
 
-                        if(Unique_enrollments.target_group_id == null) {
+                        if(copyOfexample.target_group_id == null) {
 pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(8, Unique_enrollments.target_group_id);
+} else {pstmtInsert_tDBOutput_1.setLong(8, copyOfexample.target_group_id);
 }
 
-                        if(Unique_enrollments.date_confirmed_hiv != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(9, new java.sql.Timestamp(Unique_enrollments.date_confirmed_hiv.getTime()));
+                        if(copyOfexample.date_confirmed_hiv != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(9, new java.sql.Timestamp(copyOfexample.date_confirmed_hiv.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.date_enrolled_pmtct != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(10, new java.sql.Timestamp(Unique_enrollments.date_enrolled_pmtct.getTime()));
+                        if(copyOfexample.date_enrolled_pmtct != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(10, new java.sql.Timestamp(copyOfexample.date_enrolled_pmtct.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.source_of_referrer_id == null) {
+                        if(copyOfexample.source_of_referrer_id == null) {
 pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(11, Unique_enrollments.source_of_referrer_id);
+} else {pstmtInsert_tDBOutput_1.setLong(11, copyOfexample.source_of_referrer_id);
 }
 
-                        if(Unique_enrollments.time_hiv_diagnosis != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(12, new java.sql.Timestamp(Unique_enrollments.time_hiv_diagnosis.getTime()));
+                        if(copyOfexample.time_hiv_diagnosis != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(12, new java.sql.Timestamp(copyOfexample.time_hiv_diagnosis.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.pregnant == null) {
+                        if(copyOfexample.pregnant == null) {
 pstmtInsert_tDBOutput_1.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(13, Unique_enrollments.pregnant);
+} else {pstmtInsert_tDBOutput_1.setBoolean(13, copyOfexample.pregnant);
 }
 
-                        if(Unique_enrollments.breastfeeding == null) {
+                        if(copyOfexample.breastfeeding == null) {
 pstmtInsert_tDBOutput_1.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(14, Unique_enrollments.breastfeeding);
+} else {pstmtInsert_tDBOutput_1.setBoolean(14, copyOfexample.breastfeeding);
 }
 
-                        if(Unique_enrollments.date_of_registration != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(15, new java.sql.Timestamp(Unique_enrollments.date_of_registration.getTime()));
+                        if(copyOfexample.date_of_registration != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(15, new java.sql.Timestamp(copyOfexample.date_of_registration.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(15, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.status_at_registration_id == null) {
+                        if(copyOfexample.status_at_registration_id == null) {
 pstmtInsert_tDBOutput_1.setNull(16, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(16, Unique_enrollments.status_at_registration_id);
+} else {pstmtInsert_tDBOutput_1.setLong(16, copyOfexample.status_at_registration_id);
 }
 
-                        if(Unique_enrollments.enrollment_setting_id == null) {
+                        if(copyOfexample.enrollment_setting_id == null) {
 pstmtInsert_tDBOutput_1.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(17, Unique_enrollments.enrollment_setting_id);
+} else {pstmtInsert_tDBOutput_1.setLong(17, copyOfexample.enrollment_setting_id);
 }
 
-                        if(Unique_enrollments.date_started != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(18, new java.sql.Timestamp(Unique_enrollments.date_started.getTime()));
+                        if(copyOfexample.date_started != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(18, new java.sql.Timestamp(copyOfexample.date_started.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.send_message == null) {
+                        if(copyOfexample.send_message == null) {
 pstmtInsert_tDBOutput_1.setNull(19, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(19, Unique_enrollments.send_message);
+} else {pstmtInsert_tDBOutput_1.setBoolean(19, copyOfexample.send_message);
 }
 
-                        if(Unique_enrollments.person_uuid == null) {
+                        if(copyOfexample.person_uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(20, Unique_enrollments.person_uuid);
+} else {pstmtInsert_tDBOutput_1.setString(20, copyOfexample.person_uuid);
 }
 
-                        if(Unique_enrollments.facility_id == null) {
+                        if(copyOfexample.facility_id == null) {
 pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(21, Unique_enrollments.facility_id);
+} else {pstmtInsert_tDBOutput_1.setInt(21, copyOfexample.facility_id);
 }
 
-                        if(Unique_enrollments.visit_id == null) {
+                        if(copyOfexample.visit_id == null) {
 pstmtInsert_tDBOutput_1.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(22, Unique_enrollments.visit_id);
+} else {pstmtInsert_tDBOutput_1.setString(22, copyOfexample.visit_id);
 }
 
-                        if(Unique_enrollments.uuid == null) {
+                        if(copyOfexample.uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(23, Unique_enrollments.uuid);
+} else {pstmtInsert_tDBOutput_1.setString(23, copyOfexample.uuid);
 }
 
-                        if(Unique_enrollments.archived == null) {
+                        if(copyOfexample.archived == null) {
 pstmtInsert_tDBOutput_1.setNull(24, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(24, Unique_enrollments.archived);
+} else {pstmtInsert_tDBOutput_1.setInt(24, copyOfexample.archived);
 }
 
-                        if(Unique_enrollments.facility_name == null) {
+                        if(copyOfexample.facility_name == null) {
 pstmtInsert_tDBOutput_1.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(25, Unique_enrollments.facility_name);
+} else {pstmtInsert_tDBOutput_1.setString(25, copyOfexample.facility_name);
 }
 
-                        if(Unique_enrollments.ovc_number == null) {
+                        if(copyOfexample.ovc_number == null) {
 pstmtInsert_tDBOutput_1.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(26, Unique_enrollments.ovc_number);
+} else {pstmtInsert_tDBOutput_1.setString(26, copyOfexample.ovc_number);
 }
 
-                        if(Unique_enrollments.date_of_lpm != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(27, new java.sql.Timestamp(Unique_enrollments.date_of_lpm.getTime()));
+                        if(copyOfexample.date_of_lpm != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(27, new java.sql.Timestamp(copyOfexample.date_of_lpm.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(27, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.pregnancy_status_id == null) {
+                        if(copyOfexample.pregnancy_status_id == null) {
 pstmtInsert_tDBOutput_1.setNull(28, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(28, Unique_enrollments.pregnancy_status_id);
+} else {pstmtInsert_tDBOutput_1.setLong(28, copyOfexample.pregnancy_status_id);
 }
 
-                        if(Unique_enrollments.tb_status_id == null) {
+                        if(copyOfexample.tb_status_id == null) {
 pstmtInsert_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(29, Unique_enrollments.tb_status_id);
+} else {pstmtInsert_tDBOutput_1.setLong(29, copyOfexample.tb_status_id);
 }
 
 					
@@ -15308,453 +13558,6 @@ pstmtInsert_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
 
 /**
  * [tDBOutput_1 process_data_end ] stop
- */
-
-} // End of branch "Unique_enrollments"
-
-
-
-
-// Start of branch "Duplicate_enrollments"
-if(Duplicate_enrollments != null) { 
-
-
-
-	
-	/**
-	 * [tDBOutput_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Duplicate_enrollments");
-					}
-					
-
-
-
-        whetherReject_tDBOutput_2 = false;
-                    pstmt_tDBOutput_2.setInt(1, Duplicate_enrollments.id);
-
-            int checkCount_tDBOutput_2 = -1;
-            try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
-                while(rs_tDBOutput_2.next()) {
-                    checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
-                }
-            }
-            if(checkCount_tDBOutput_2 > 0) {
-                        pstmtUpdate_tDBOutput_2.setInt(1, Duplicate_enrollments.id);
-
-                        if(Duplicate_enrollments.created_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Duplicate_enrollments.created_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.created_by == null) {
-pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(3, Duplicate_enrollments.created_by);
-}
-
-                        if(Duplicate_enrollments.last_modified_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Duplicate_enrollments.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.last_modified_by == null) {
-pstmtUpdate_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(5, Duplicate_enrollments.last_modified_by);
-}
-
-                        if(Duplicate_enrollments.unique_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(6, Duplicate_enrollments.unique_id);
-}
-
-                        if(Duplicate_enrollments.entry_point_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(7, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(7, Duplicate_enrollments.entry_point_id);
-}
-
-                        if(Duplicate_enrollments.target_group_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(8, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(8, Duplicate_enrollments.target_group_id);
-}
-
-                        if(Duplicate_enrollments.date_confirmed_hiv != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(9, new java.sql.Timestamp(Duplicate_enrollments.date_confirmed_hiv.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(9, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.date_enrolled_pmtct != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(10, new java.sql.Timestamp(Duplicate_enrollments.date_enrolled_pmtct.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(10, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.source_of_referrer_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(11, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(11, Duplicate_enrollments.source_of_referrer_id);
-}
-
-                        if(Duplicate_enrollments.time_hiv_diagnosis != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(12, new java.sql.Timestamp(Duplicate_enrollments.time_hiv_diagnosis.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(12, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.pregnant == null) {
-pstmtUpdate_tDBOutput_2.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(13, Duplicate_enrollments.pregnant);
-}
-
-                        if(Duplicate_enrollments.breastfeeding == null) {
-pstmtUpdate_tDBOutput_2.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(14, Duplicate_enrollments.breastfeeding);
-}
-
-                        if(Duplicate_enrollments.date_of_registration != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(15, new java.sql.Timestamp(Duplicate_enrollments.date_of_registration.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(15, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.status_at_registration_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(16, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(16, Duplicate_enrollments.status_at_registration_id);
-}
-
-                        if(Duplicate_enrollments.enrollment_setting_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(17, Duplicate_enrollments.enrollment_setting_id);
-}
-
-                        if(Duplicate_enrollments.date_started != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(18, new java.sql.Timestamp(Duplicate_enrollments.date_started.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(18, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.send_message == null) {
-pstmtUpdate_tDBOutput_2.setNull(19, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(19, Duplicate_enrollments.send_message);
-}
-
-                        if(Duplicate_enrollments.person_uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(20, Duplicate_enrollments.person_uuid);
-}
-
-                        if(Duplicate_enrollments.facility_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(21, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(21, Duplicate_enrollments.facility_id);
-}
-
-                        if(Duplicate_enrollments.visit_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(22, Duplicate_enrollments.visit_id);
-}
-
-                        if(Duplicate_enrollments.uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(23, Duplicate_enrollments.uuid);
-}
-
-                        if(Duplicate_enrollments.archived == null) {
-pstmtUpdate_tDBOutput_2.setNull(24, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(24, Duplicate_enrollments.archived);
-}
-
-                        if(Duplicate_enrollments.facility_name == null) {
-pstmtUpdate_tDBOutput_2.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(25, Duplicate_enrollments.facility_name);
-}
-
-                        if(Duplicate_enrollments.ovc_number == null) {
-pstmtUpdate_tDBOutput_2.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(26, Duplicate_enrollments.ovc_number);
-}
-
-                        if(Duplicate_enrollments.date_of_lpm != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(27, new java.sql.Timestamp(Duplicate_enrollments.date_of_lpm.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(27, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.pregnancy_status_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(28, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(28, Duplicate_enrollments.pregnancy_status_id);
-}
-
-                        if(Duplicate_enrollments.tb_status_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setLong(29, Duplicate_enrollments.tb_status_id);
-}
-
-                        pstmtUpdate_tDBOutput_2.setInt(30 + count_tDBOutput_2, Duplicate_enrollments.id);
-
-                try {
-					
-                    updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2 + pstmtUpdate_tDBOutput_2.executeUpdate();
-                    nb_line_tDBOutput_2++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_2 = true;
-                        nb_line_tDBOutput_2++;
-                            System.err.print(e.getMessage());
-                }
-            } else {
-                        pstmtInsert_tDBOutput_2.setInt(1, Duplicate_enrollments.id);
-
-                        if(Duplicate_enrollments.created_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Duplicate_enrollments.created_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.created_by == null) {
-pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(3, Duplicate_enrollments.created_by);
-}
-
-                        if(Duplicate_enrollments.last_modified_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Duplicate_enrollments.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.last_modified_by == null) {
-pstmtInsert_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(5, Duplicate_enrollments.last_modified_by);
-}
-
-                        if(Duplicate_enrollments.unique_id == null) {
-pstmtInsert_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(6, Duplicate_enrollments.unique_id);
-}
-
-                        if(Duplicate_enrollments.entry_point_id == null) {
-pstmtInsert_tDBOutput_2.setNull(7, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(7, Duplicate_enrollments.entry_point_id);
-}
-
-                        if(Duplicate_enrollments.target_group_id == null) {
-pstmtInsert_tDBOutput_2.setNull(8, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(8, Duplicate_enrollments.target_group_id);
-}
-
-                        if(Duplicate_enrollments.date_confirmed_hiv != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(9, new java.sql.Timestamp(Duplicate_enrollments.date_confirmed_hiv.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(9, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.date_enrolled_pmtct != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(10, new java.sql.Timestamp(Duplicate_enrollments.date_enrolled_pmtct.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(10, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.source_of_referrer_id == null) {
-pstmtInsert_tDBOutput_2.setNull(11, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(11, Duplicate_enrollments.source_of_referrer_id);
-}
-
-                        if(Duplicate_enrollments.time_hiv_diagnosis != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(12, new java.sql.Timestamp(Duplicate_enrollments.time_hiv_diagnosis.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(12, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.pregnant == null) {
-pstmtInsert_tDBOutput_2.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(13, Duplicate_enrollments.pregnant);
-}
-
-                        if(Duplicate_enrollments.breastfeeding == null) {
-pstmtInsert_tDBOutput_2.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(14, Duplicate_enrollments.breastfeeding);
-}
-
-                        if(Duplicate_enrollments.date_of_registration != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(15, new java.sql.Timestamp(Duplicate_enrollments.date_of_registration.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(15, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.status_at_registration_id == null) {
-pstmtInsert_tDBOutput_2.setNull(16, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(16, Duplicate_enrollments.status_at_registration_id);
-}
-
-                        if(Duplicate_enrollments.enrollment_setting_id == null) {
-pstmtInsert_tDBOutput_2.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(17, Duplicate_enrollments.enrollment_setting_id);
-}
-
-                        if(Duplicate_enrollments.date_started != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(18, new java.sql.Timestamp(Duplicate_enrollments.date_started.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(18, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.send_message == null) {
-pstmtInsert_tDBOutput_2.setNull(19, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(19, Duplicate_enrollments.send_message);
-}
-
-                        if(Duplicate_enrollments.person_uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(20, Duplicate_enrollments.person_uuid);
-}
-
-                        if(Duplicate_enrollments.facility_id == null) {
-pstmtInsert_tDBOutput_2.setNull(21, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(21, Duplicate_enrollments.facility_id);
-}
-
-                        if(Duplicate_enrollments.visit_id == null) {
-pstmtInsert_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(22, Duplicate_enrollments.visit_id);
-}
-
-                        if(Duplicate_enrollments.uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(23, Duplicate_enrollments.uuid);
-}
-
-                        if(Duplicate_enrollments.archived == null) {
-pstmtInsert_tDBOutput_2.setNull(24, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(24, Duplicate_enrollments.archived);
-}
-
-                        if(Duplicate_enrollments.facility_name == null) {
-pstmtInsert_tDBOutput_2.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(25, Duplicate_enrollments.facility_name);
-}
-
-                        if(Duplicate_enrollments.ovc_number == null) {
-pstmtInsert_tDBOutput_2.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(26, Duplicate_enrollments.ovc_number);
-}
-
-                        if(Duplicate_enrollments.date_of_lpm != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(27, new java.sql.Timestamp(Duplicate_enrollments.date_of_lpm.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(27, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.pregnancy_status_id == null) {
-pstmtInsert_tDBOutput_2.setNull(28, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(28, Duplicate_enrollments.pregnancy_status_id);
-}
-
-                        if(Duplicate_enrollments.tb_status_id == null) {
-pstmtInsert_tDBOutput_2.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setLong(29, Duplicate_enrollments.tb_status_id);
-}
-
-                try {
-					
-                    insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2 + pstmtInsert_tDBOutput_2.executeUpdate();
-                    nb_line_tDBOutput_2++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_2 = true;
-                        nb_line_tDBOutput_2++;
-                            System.err.print(e.getMessage());
-                }
-            }
-    		    commitCounter_tDBOutput_2++;
-                if(commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
-                	conn_tDBOutput_2.commit();
-                	
-                	commitCounter_tDBOutput_2=0;
-                }
-
- 
-
-
-	tos_count_tDBOutput_2++;
-
-/**
- * [tDBOutput_2 main ] stop
- */
-	
-	/**
-	 * [tDBOutput_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tDBOutput_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_2 process_data_end ] stop
- */
-
-} // End of branch "Duplicate_enrollments"
-
-
-
-
-	
-	/**
-	 * [tUniqRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_end ] stop
  */
 
 } // End of branch "copyOfexample"
@@ -16093,38 +13896,6 @@ end_Hash.put("tMap_9", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
-globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
-globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"copyOfexample");
-			  	}
-			  	
- 
-
-ok_Hash.put("tUniqRow_1", true);
-end_Hash.put("tUniqRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tUniqRow_1 end ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_1 end ] start
 	 */
 
@@ -16171,7 +13942,7 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Unique_enrollments");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"copyOfexample");
 			  	}
 			  	
  
@@ -16185,79 +13956,6 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 /**
  * [tDBOutput_1 end ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
-
-
-        if(pstmtUpdate_tDBOutput_2 != null){
-            pstmtUpdate_tDBOutput_2.close();
-            resourceMap.remove("pstmtUpdate_tDBOutput_2");
-        }
-        if(pstmtInsert_tDBOutput_2 != null){
-            pstmtInsert_tDBOutput_2.close();
-            resourceMap.remove("pstmtInsert_tDBOutput_2");
-        }
-        if(pstmt_tDBOutput_2 != null) {
-            pstmt_tDBOutput_2.close();
-            resourceMap.remove("pstmt_tDBOutput_2");
-        }
-    resourceMap.put("statementClosed_tDBOutput_2", true);
-			
-			conn_tDBOutput_2.commit();
-			
-		
-    	conn_tDBOutput_2 .close();
-    	
-    	resourceMap.put("finish_tDBOutput_2", true);
-    	
-
-	nb_line_deleted_tDBOutput_2=nb_line_deleted_tDBOutput_2+ deletedCount_tDBOutput_2;
-	nb_line_update_tDBOutput_2=nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
-	nb_line_inserted_tDBOutput_2=nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
-	nb_line_rejected_tDBOutput_2=nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
-	
-        globalMap.put("tDBOutput_2_NB_LINE",nb_line_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_UPDATED",nb_line_update_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_DELETED",nb_line_deleted_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
-    
-	
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Duplicate_enrollments");
-			  	}
-			  	
- 
-
-ok_Hash.put("tDBOutput_2", true);
-end_Hash.put("tDBOutput_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tDBOutput_2 end ] stop
- */
-
-
-
 
 
 
@@ -16408,27 +14106,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 finally ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_1 finally ] start
 	 */
 
@@ -16473,63 +14150,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 /**
  * [tDBOutput_1 finally ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
-
-
-    try {
-    if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
-                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
-                if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_2")) != null) {
-                    pstmtUpdateToClose_tDBOutput_2.close();
-                }
-                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
-                if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_2")) != null) {
-                    pstmtInsertToClose_tDBOutput_2.close();
-                }
-                java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
-                if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_2")) != null) {
-                    pstmtToClose_tDBOutput_2.close();
-                }
-    }
-    } finally {
-        if(resourceMap.get("finish_tDBOutput_2") == null){
-            java.sql.Connection ctn_tDBOutput_2 = null;
-            if((ctn_tDBOutput_2 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_2")) != null){
-                try {
-                    ctn_tDBOutput_2.close();
-                } catch (java.sql.SQLException sqlEx_tDBOutput_2) {
-                    String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :" + sqlEx_tDBOutput_2.getMessage();
-                    System.err.println(errorMessage_tDBOutput_2);
-                }
-            }
-        }
-    }
- 
-
-
-
-/**
- * [tDBOutput_2 finally ] stop
- */
-
-
-
 
 
 
@@ -33195,6 +30815,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     833635 characters generated by Talend Open Studio for Big Data 
- *     on the November 20, 2022 9:42:36 PM WAT
+ *     757923 characters generated by Talend Open Studio for Big Data 
+ *     on the December 12, 2022 7:56:26 PM WAT
  ************************************************************************************************/

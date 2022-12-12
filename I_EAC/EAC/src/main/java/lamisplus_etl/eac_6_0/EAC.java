@@ -783,6 +783,15 @@ private class TalendException extends Exception {
 					tDBInput_7_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_18_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_7_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_13_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -793,6 +802,15 @@ private class TalendException extends Exception {
 			}
 			
 			public void tDBInput_14_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_10_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_17_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -873,6 +891,15 @@ private class TalendException extends Exception {
 					tDBInput_7_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tAdvancedHash_row5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_7_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tAdvancedHash_facility2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -883,6 +910,15 @@ private class TalendException extends Exception {
 			}
 			
 			public void tAdvancedHash_row3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_10_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_row1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -8907,6 +8943,7 @@ public void tDBInput_10Process(final java.util.Map<String, Object> globalMap) th
 
 		tDBInput_13Process(globalMap);
 		tDBInput_14Process(globalMap);
+		tDBInput_17Process(globalMap);
 
 		eac2_extractStruct eac2_extract = new eac2_extractStruct();
 eac2_facility_extractStruct eac2_facility_extract = new eac2_facility_extractStruct();
@@ -9130,6 +9167,18 @@ copyOfeac2_visitStruct copyOfeac2_visit_tmp = new copyOfeac2_visitStruct();
 
 facility2Struct facility2HashKey = new facility2Struct();
 facility2Struct facility2Default = new facility2Struct();
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct> tHash_Lookup_row1 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct>) 
+					globalMap.get( "tHash_Lookup_row1" ))
+					;					
+					
+	
+		tHash_Lookup_row1.initGet();
+	
+
+row1Struct row1HashKey = new row1Struct();
+row1Struct row1Default = new row1Struct();
 // ###############################        
 
 // ###############################
@@ -9469,6 +9518,116 @@ eac2_facility_extractStruct eac2_facility_extract_tmp = new eac2_facility_extrac
 	                    		  	
 		                    
 	            	
+	           	
+	            	
+	            	
+	            
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row1" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLooprow1 = false;
+       		  	    	
+       		  	    	
+ 							row1Struct row1ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_8) { // G_TM_M_020
+
+								
+
+								
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row1.lookup( row1HashKey );
+
+	  							
+
+	  							
+
+ 								
+								  
+								  if(!tHash_Lookup_row1.hasNext()) { // G_TM_M_090
+
+  								
+		  				
+	  								
+						
+									
+	
+		  								forceLooprow1 = true;
+	  					
+  									
+  									  		
+ 								
+								  
+								  } // G_TM_M_090
+
+  								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+								
+								else { // G 20 - G 21
+   									forceLooprow1 = true;
+			           		  	} // G 21
+                    		  	
+                    		
+
+							row1Struct row1 = null;
+                    		  	 
+							
+
+								while ((tHash_Lookup_row1 != null && tHash_Lookup_row1.hasNext()) || forceLooprow1) { // G_TM_M_043
+
+								
+									 // CALL close loop of lookup 'row1'
+									
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row1Struct fromLookup_row1 = null;
+							row1 = row1Default;
+										 
+							
+								
+								if(!forceLooprow1) { // G 46
+								
+							
+								 
+							
+								
+								fromLookup_row1 = tHash_Lookup_row1.next();
+
+							
+
+							if(fromLookup_row1 != null) {
+								row1 = fromLookup_row1;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	                    	
+	                    		} // G 46
+	                    		  	
+								forceLooprow1 = false;
+									 	
+							
+	            	
 	            	
 	            // ###############################
         { // start of Var scope
@@ -9484,7 +9643,7 @@ eac2_facility_extract = null;
 
 
 // # Output table : 'eac2_facility_extract'
-eac2_facility_extract_tmp.id = Numeric.sequence("id",(Integer)globalMap.get("eacCount"),1) ;
+eac2_facility_extract_tmp.id = Numeric.sequence("id",(Integer)row1.eacone,1) ;
 eac2_facility_extract_tmp.created_date = eac2_extract.created_date ;
 eac2_facility_extract_tmp.last_modified_date = eac2_extract.last_modified_date ;
 eac2_facility_extract_tmp.created_by = eac2_extract.created_by ;
@@ -10009,7 +10168,9 @@ pstmtInsert_tDBOutput_4.setNull(13, java.sql.Types.VARCHAR);
 
 
 
-
+	
+		} // close loop of lookup 'row1' // G_TM_M_043
+	
 	
 	/**
 	 * [tMap_8 process_data_end ] start
@@ -10137,6 +10298,14 @@ end_Hash.put("tDBInput_10", System.currentTimeMillis());
 						tHash_Lookup_facility2.endGet();
 					}
 					globalMap.remove( "tHash_Lookup_facility2" );
+
+					
+					
+				
+					if(tHash_Lookup_row1 != null) {
+						tHash_Lookup_row1.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row1" );
 
 					
 					
@@ -10322,6 +10491,9 @@ end_Hash.put("tDBOutput_4", System.currentTimeMillis());
 				     			
 					     			//free memory for "tMap_8"
 					     			globalMap.remove("tHash_Lookup_facility2"); 
+				     			
+					     			//free memory for "tMap_8"
+					     			globalMap.remove("tHash_Lookup_row1"); 
 				     			
 				try{
 					
@@ -12004,6 +12176,7 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
 
 		tDBInput_8Process(globalMap);
 		tDBInput_9Process(globalMap);
+		tDBInput_18Process(globalMap);
 
 		eac3_extractStruct eac3_extract = new eac3_extractStruct();
 eac3_facilityStruct eac3_facility = new eac3_facilityStruct();
@@ -12227,6 +12400,18 @@ eac3_visitStruct eac3_visit_tmp = new eac3_visitStruct();
 
 facility_eac3Struct facility_eac3HashKey = new facility_eac3Struct();
 facility_eac3Struct facility_eac3Default = new facility_eac3Struct();
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) 
+					globalMap.get( "tHash_Lookup_row5" ))
+					;					
+					
+	
+		tHash_Lookup_row5.initGet();
+	
+
+row5Struct row5HashKey = new row5Struct();
+row5Struct row5Default = new row5Struct();
 // ###############################        
 
 // ###############################
@@ -12566,6 +12751,116 @@ eac3_facilityStruct eac3_facility_tmp = new eac3_facilityStruct();
 	                    		  	
 		                    
 	            	
+	           	
+	            	
+	            	
+	            
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row5" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLooprow5 = false;
+       		  	    	
+       		  	    	
+ 							row5Struct row5ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_5) { // G_TM_M_020
+
+								
+
+								
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row5.lookup( row5HashKey );
+
+	  							
+
+	  							
+
+ 								
+								  
+								  if(!tHash_Lookup_row5.hasNext()) { // G_TM_M_090
+
+  								
+		  				
+	  								
+						
+									
+	
+		  								forceLooprow5 = true;
+	  					
+  									
+  									  		
+ 								
+								  
+								  } // G_TM_M_090
+
+  								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+								
+								else { // G 20 - G 21
+   									forceLooprow5 = true;
+			           		  	} // G 21
+                    		  	
+                    		
+
+							row5Struct row5 = null;
+                    		  	 
+							
+
+								while ((tHash_Lookup_row5 != null && tHash_Lookup_row5.hasNext()) || forceLooprow5) { // G_TM_M_043
+
+								
+									 // CALL close loop of lookup 'row5'
+									
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row5Struct fromLookup_row5 = null;
+							row5 = row5Default;
+										 
+							
+								
+								if(!forceLooprow5) { // G 46
+								
+							
+								 
+							
+								
+								fromLookup_row5 = tHash_Lookup_row5.next();
+
+							
+
+							if(fromLookup_row5 != null) {
+								row5 = fromLookup_row5;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	                    	
+	                    		} // G 46
+	                    		  	
+								forceLooprow5 = false;
+									 	
+							
+	            	
 	            	
 	            // ###############################
         { // start of Var scope
@@ -12581,7 +12876,7 @@ eac3_facility = null;
 
 
 // # Output table : 'eac3_facility'
-eac3_facility_tmp.id = Numeric.sequence("s1",(Integer)globalMap.get("eacCount"),1) ;
+eac3_facility_tmp.id = Numeric.sequence("s1",(Integer)row5.eactwo ,1) ;
 eac3_facility_tmp.created_date = eac3_extract.created_date ;
 eac3_facility_tmp.last_modified_date = eac3_extract.last_modified_date ;
 eac3_facility_tmp.created_by = eac3_extract.created_by ;
@@ -13106,7 +13401,9 @@ pstmtInsert_tDBOutput_3.setNull(13, java.sql.Types.VARCHAR);
 
 
 
-
+	
+		} // close loop of lookup 'row5' // G_TM_M_043
+	
 	
 	/**
 	 * [tMap_5 process_data_end ] start
@@ -13234,6 +13531,14 @@ end_Hash.put("tDBInput_7", System.currentTimeMillis());
 						tHash_Lookup_facility_eac3.endGet();
 					}
 					globalMap.remove( "tHash_Lookup_facility_eac3" );
+
+					
+					
+				
+					if(tHash_Lookup_row5 != null) {
+						tHash_Lookup_row5.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row5" );
 
 					
 					
@@ -13419,6 +13724,9 @@ end_Hash.put("tDBOutput_3", System.currentTimeMillis());
 				     			
 					     			//free memory for "tMap_5"
 					     			globalMap.remove("tHash_Lookup_facility_eac3"); 
+				     			
+					     			//free memory for "tMap_5"
+					     			globalMap.remove("tHash_Lookup_row5"); 
 				     			
 				try{
 					
@@ -22292,7 +22600,7 @@ public void tDBInput_8Process(final java.util.Map<String, Object> globalMap) thr
 
 			   		// connection name:facility_eac3
 			   		// source node:tDBInput_8 - inputs:(after_tDBInput_7) outputs:(facility_eac3,facility_eac3) | target node:tAdvancedHash_facility_eac3 - inputs:(facility_eac3) outputs:()
-			   		// linked node: tMap_5 - inputs:(eac3_extract,facility_eac3) outputs:(eac3_facility)
+			   		// linked node: tMap_5 - inputs:(eac3_extract,facility_eac3,row5) outputs:(eac3_facility)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_facility_eac3 = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -23513,6 +23821,587 @@ end_Hash.put("tAdvancedHash_visit3", System.currentTimeMillis());
 	
 
 
+public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_EAC = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
+
+	
+			    public Integer eactwo;
+
+				public Integer getEactwo () {
+					return this.eactwo;
+				}
+				
+
+
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_EAC) {
+
+        	try {
+
+        		int length = 0;
+		
+						this.eactwo = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Integer
+				
+						writeInteger(this.eactwo,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("eactwo="+String.valueOf(eactwo));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row5Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_18Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_18_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row5Struct row5 = new row5Struct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_row5 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_row5", false);
+		start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row5";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row5");
+					}
+				
+		int tos_count_tAdvancedHash_row5 = 0;
+		
+
+			   		// connection name:row5
+			   		// source node:tDBInput_18 - inputs:(after_tDBInput_7) outputs:(row5,row5) | target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
+			   		// linked node: tMap_5 - inputs:(eac3_extract,facility_eac3,row5) outputs:(eac3_facility)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_ROWS;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row5Struct>getLookup(matchingModeEnum_row5);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row5 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_18 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_18", false);
+		start_Hash.put("tDBInput_18", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_18";
+
+	
+		int tos_count_tDBInput_18 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_18 = 0;
+		    java.sql.Connection conn_tDBInput_18 = null;
+				String driverClass_tDBInput_18 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_18 = java.lang.Class.forName(driverClass_tDBInput_18);
+				String dbUser_tDBInput_18 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_18 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_18 = decryptedPassword_tDBInput_18;
+				
+				String url_tDBInput_18 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_18 = java.sql.DriverManager.getConnection(url_tDBInput_18,dbUser_tDBInput_18,dbPwd_tDBInput_18);
+		        
+				conn_tDBInput_18.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_18 = conn_tDBInput_18.createStatement();
+
+		    String dbquery_tDBInput_18 = "SELECT (MAX(id) + 1) as eactwo FROM hiv_eac_session";
+			
+
+            	globalMap.put("tDBInput_18_QUERY",dbquery_tDBInput_18);
+		    java.sql.ResultSet rs_tDBInput_18 = null;
+
+		    try {
+		    	rs_tDBInput_18 = stmt_tDBInput_18.executeQuery(dbquery_tDBInput_18);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_18 = rs_tDBInput_18.getMetaData();
+		    	int colQtyInRs_tDBInput_18 = rsmd_tDBInput_18.getColumnCount();
+
+		    String tmpContent_tDBInput_18 = null;
+		    
+		    
+		    while (rs_tDBInput_18.next()) {
+		        nb_line_tDBInput_18++;
+		        
+							if(colQtyInRs_tDBInput_18 < 1) {
+								row5.eactwo = null;
+							} else {
+		                          
+            row5.eactwo = rs_tDBInput_18.getInt(1);
+            if(rs_tDBInput_18.wasNull()){
+                    row5.eactwo = null;
+            }
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_18 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_18 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_18++;
+
+/**
+ * [tDBInput_18 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_18 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_18 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row5 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row5";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row5");
+					}
+					
+
+
+			   
+			   
+
+					row5Struct row5_HashRow = new row5Struct();
+		   	   	   
+				
+				row5_HashRow.eactwo = row5.eactwo;
+				
+			tHash_Lookup_row5.put(row5_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_row5++;
+
+/**
+ * [tAdvancedHash_row5 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row5 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row5";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row5 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row5 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row5";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row5 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_18 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_18 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_18 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_18 != null) {
+		rs_tDBInput_18.close();
+	}
+	if (stmt_tDBInput_18 != null) {
+		stmt_tDBInput_18.close();
+	}
+	if(conn_tDBInput_18 != null && !conn_tDBInput_18.isClosed()) {
+		
+			conn_tDBInput_18.commit();
+			
+		
+			conn_tDBInput_18.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_18_NB_LINE",nb_line_tDBInput_18);
+ 
+
+ok_Hash.put("tDBInput_18", true);
+end_Hash.put("tDBInput_18", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_18 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row5 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row5";
+
+	
+
+tHash_Lookup_row5.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row5");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_row5", true);
+end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row5 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_18 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_18 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row5 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row5";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row5 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_18_SUBPROCESS_STATE", 1);
+	}
+	
+
+
 public static class facility2Struct implements routines.system.IPersistableComparableLookupRow<facility2Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_EAC = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
@@ -23850,7 +24739,7 @@ public void tDBInput_13Process(final java.util.Map<String, Object> globalMap) th
 
 			   		// connection name:facility2
 			   		// source node:tDBInput_13 - inputs:(after_tDBInput_10) outputs:(facility2,facility2) | target node:tAdvancedHash_facility2 - inputs:(facility2) outputs:()
-			   		// linked node: tMap_8 - inputs:(eac2_extract,facility2) outputs:(eac2_facility_extract)
+			   		// linked node: tMap_8 - inputs:(eac2_extract,facility2,row1) outputs:(eac2_facility_extract)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_facility2 = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -25067,6 +25956,587 @@ end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
 		
 
 		globalMap.put("tDBInput_14_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_EAC = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_EAC = new byte[0];
+
+	
+			    public Integer eacone;
+
+				public Integer getEacone () {
+					return this.eacone;
+				}
+				
+
+
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_EAC) {
+
+        	try {
+
+        		int length = 0;
+		
+						this.eacone = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Integer
+				
+						writeInteger(this.eacone,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("eacone="+String.valueOf(eacone));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_17Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_17_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row1Struct row1 = new row1Struct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_row1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_row1", false);
+		start_Hash.put("tAdvancedHash_row1", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
+		int tos_count_tAdvancedHash_row1 = 0;
+		
+
+			   		// connection name:row1
+			   		// source node:tDBInput_17 - inputs:(after_tDBInput_10) outputs:(row1,row1) | target node:tAdvancedHash_row1 - inputs:(row1) outputs:()
+			   		// linked node: tMap_8 - inputs:(eac2_extract,facility2,row1) outputs:(eac2_facility_extract)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row1 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_ROWS;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct> tHash_Lookup_row1 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row1Struct>getLookup(matchingModeEnum_row1);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row1", tHash_Lookup_row1);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_17 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_17", false);
+		start_Hash.put("tDBInput_17", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_17";
+
+	
+		int tos_count_tDBInput_17 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_17 = 0;
+		    java.sql.Connection conn_tDBInput_17 = null;
+				String driverClass_tDBInput_17 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_17 = java.lang.Class.forName(driverClass_tDBInput_17);
+				String dbUser_tDBInput_17 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_17 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_17 = decryptedPassword_tDBInput_17;
+				
+				String url_tDBInput_17 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_17 = java.sql.DriverManager.getConnection(url_tDBInput_17,dbUser_tDBInput_17,dbPwd_tDBInput_17);
+		        
+				conn_tDBInput_17.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_17 = conn_tDBInput_17.createStatement();
+
+		    String dbquery_tDBInput_17 = "SELECT(MAX(id) + 1) as eacone FROM hiv_eac_session";
+			
+
+            	globalMap.put("tDBInput_17_QUERY",dbquery_tDBInput_17);
+		    java.sql.ResultSet rs_tDBInput_17 = null;
+
+		    try {
+		    	rs_tDBInput_17 = stmt_tDBInput_17.executeQuery(dbquery_tDBInput_17);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_17 = rs_tDBInput_17.getMetaData();
+		    	int colQtyInRs_tDBInput_17 = rsmd_tDBInput_17.getColumnCount();
+
+		    String tmpContent_tDBInput_17 = null;
+		    
+		    
+		    while (rs_tDBInput_17.next()) {
+		        nb_line_tDBInput_17++;
+		        
+							if(colQtyInRs_tDBInput_17 < 1) {
+								row1.eacone = null;
+							} else {
+		                          
+            row1.eacone = rs_tDBInput_17.getInt(1);
+            if(rs_tDBInput_17.wasNull()){
+                    row1.eacone = null;
+            }
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_17 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_17 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_17";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_17++;
+
+/**
+ * [tDBInput_17 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_17 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_17";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_17 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
+
+
+			   
+			   
+
+					row1Struct row1_HashRow = new row1Struct();
+		   	   	   
+				
+				row1_HashRow.eacone = row1.eacone;
+				
+			tHash_Lookup_row1.put(row1_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_row1++;
+
+/**
+ * [tAdvancedHash_row1 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_17 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_17";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_17 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_17 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_17";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_17 != null) {
+		rs_tDBInput_17.close();
+	}
+	if (stmt_tDBInput_17 != null) {
+		stmt_tDBInput_17.close();
+	}
+	if(conn_tDBInput_17 != null && !conn_tDBInput_17.isClosed()) {
+		
+			conn_tDBInput_17.commit();
+			
+		
+			conn_tDBInput_17.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_17_NB_LINE",nb_line_tDBInput_17);
+ 
+
+ok_Hash.put("tDBInput_17", true);
+end_Hash.put("tDBInput_17", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_17 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+tHash_Lookup_row1.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_row1", true);
+end_Hash.put("tAdvancedHash_row1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row1 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_17 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_17";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_17 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_17_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -27097,6 +28567,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     621354 characters generated by Talend Open Studio for Big Data 
- *     on the December 2, 2022 10:14:20 AM WAT
+ *     649461 characters generated by Talend Open Studio for Big Data 
+ *     on the December 12, 2022 8:03:10 PM WAT
  ************************************************************************************************/
