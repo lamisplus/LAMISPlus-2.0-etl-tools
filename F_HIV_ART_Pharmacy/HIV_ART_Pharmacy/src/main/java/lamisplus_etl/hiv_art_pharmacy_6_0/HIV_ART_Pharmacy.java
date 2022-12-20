@@ -4426,7 +4426,8 @@ HIV_Art_Pharmacy_tmp.person_uuid = hiv_pharmacy.person_uuid ;
 HIV_Art_Pharmacy_tmp.uuid = java.util.UUID.randomUUID().toString() ;
 HIV_Art_Pharmacy_tmp.facility_id = facilities_lookup.id ;
 HIV_Art_Pharmacy_tmp.is_devolve = null;
-HIV_Art_Pharmacy_tmp.refill_period = row4.refill_period.matches("[0-9.]+")? Integer.valueOf(row4.refill_period):null ;
+HIV_Art_Pharmacy_tmp.refill_period = (row4.refill_period != null && row4.refill_period.matches("[0-9.]+"))
+? Integer.valueOf(row4.refill_period) : null ;
 HIV_Art_Pharmacy_tmp.delivery_point = null;
 HIV_Art_Pharmacy_tmp.dsd_model = null;
 HIV_Art_Pharmacy_tmp.archived = hiv_pharmacy.archived ;
@@ -6709,34 +6710,16 @@ public static class Pharm_LinesStruct implements routines.system.IPersistableRow
 					return this.patient_id;
 				}
 				
-			    public String morning;
-
-				public String getMorning () {
-					return this.morning;
-				}
-				
 			    public Integer duration;
 
 				public Integer getDuration () {
 					return this.duration;
 				}
 				
-			    public String afternoon;
-
-				public String getAfternoon () {
-					return this.afternoon;
-				}
-				
 			    public String regimen_id;
 
 				public String getRegimen_id () {
 					return this.regimen_id;
-				}
-				
-			    public String regimen_drug_id;
-
-				public String getRegimen_drug_id () {
-					return this.regimen_drug_id;
 				}
 				
 			    public String regimen_type_id;
@@ -6798,6 +6781,26 @@ public static class Pharm_LinesStruct implements routines.system.IPersistableRow
 	    	dos.writeLong(date1.getTime());
     	}
     }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
@@ -6828,26 +6831,6 @@ public static class Pharm_LinesStruct implements routines.system.IPersistableRow
 			dos.write(byteArray);
     	}
     }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
 
     public void readData(ObjectInputStream dis) {
 
@@ -6863,15 +6846,9 @@ public static class Pharm_LinesStruct implements routines.system.IPersistableRow
 					
 			        this.patient_id = dis.readLong();
 					
-					this.morning = readString(dis);
-					
 						this.duration = readInteger(dis);
 					
-					this.afternoon = readString(dis);
-					
 					this.regimen_id = readString(dis);
-					
-					this.regimen_drug_id = readString(dis);
 					
 					this.regimen_type_id = readString(dis);
 					
@@ -6915,25 +6892,13 @@ public static class Pharm_LinesStruct implements routines.system.IPersistableRow
 				
 		            	dos.writeLong(this.patient_id);
 					
-					// String
-				
-						writeString(this.morning,dos);
-					
 					// Integer
 				
 						writeInteger(this.duration,dos);
 					
 					// String
 				
-						writeString(this.afternoon,dos);
-					
-					// String
-				
 						writeString(this.regimen_id,dos);
-					
-					// String
-				
-						writeString(this.regimen_drug_id,dos);
 					
 					// String
 				
@@ -6975,11 +6940,8 @@ public static class Pharm_LinesStruct implements routines.system.IPersistableRow
 		sb.append("id="+String.valueOf(id));
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",patient_id="+String.valueOf(patient_id));
-		sb.append(",morning="+morning);
 		sb.append(",duration="+String.valueOf(duration));
-		sb.append(",afternoon="+afternoon);
 		sb.append(",regimen_id="+regimen_id);
-		sb.append(",regimen_drug_id="+regimen_drug_id);
 		sb.append(",regimen_type_id="+regimen_type_id);
 		sb.append(",regimen_description="+regimen_description);
 		sb.append(",regimen_compostion="+regimen_compostion);
@@ -7057,34 +7019,16 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 					return this.patient_id;
 				}
 				
-			    public String morning;
-
-				public String getMorning () {
-					return this.morning;
-				}
-				
 			    public Integer duration;
 
 				public Integer getDuration () {
 					return this.duration;
 				}
 				
-			    public String afternoon;
-
-				public String getAfternoon () {
-					return this.afternoon;
-				}
-				
 			    public String regimen_id;
 
 				public String getRegimen_id () {
 					return this.regimen_id;
-				}
-				
-			    public String regimen_drug_id;
-
-				public String getRegimen_drug_id () {
-					return this.regimen_drug_id;
 				}
 				
 			    public String regimen_type_id;
@@ -7158,11 +7102,8 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 		other.id = this.id;
 	            other.date_visit = this.date_visit;
 	            other.patient_id = this.patient_id;
-	            other.morning = this.morning;
 	            other.duration = this.duration;
-	            other.afternoon = this.afternoon;
 	            other.regimen_id = this.regimen_id;
-	            other.regimen_drug_id = this.regimen_drug_id;
 	            other.regimen_type_id = this.regimen_type_id;
 	            other.regimen_description = this.regimen_description;
 	            other.regimen_compostion = this.regimen_compostion;
@@ -7201,6 +7142,26 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 	    	dos.writeLong(date1.getTime());
     	}
     }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
@@ -7231,26 +7192,6 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 			dos.write(byteArray);
     	}
     }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
 
     public void readData(ObjectInputStream dis) {
 
@@ -7266,15 +7207,9 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 					
 			        this.patient_id = dis.readLong();
 					
-					this.morning = readString(dis);
-					
 						this.duration = readInteger(dis);
 					
-					this.afternoon = readString(dis);
-					
 					this.regimen_id = readString(dis);
-					
-					this.regimen_drug_id = readString(dis);
 					
 					this.regimen_type_id = readString(dis);
 					
@@ -7318,25 +7253,13 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 				
 		            	dos.writeLong(this.patient_id);
 					
-					// String
-				
-						writeString(this.morning,dos);
-					
 					// Integer
 				
 						writeInteger(this.duration,dos);
 					
 					// String
 				
-						writeString(this.afternoon,dos);
-					
-					// String
-				
 						writeString(this.regimen_id,dos);
-					
-					// String
-				
-						writeString(this.regimen_drug_id,dos);
 					
 					// String
 				
@@ -7378,11 +7301,8 @@ public static class after_tDBInput_4Struct implements routines.system.IPersistab
 		sb.append("id="+String.valueOf(id));
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",patient_id="+String.valueOf(patient_id));
-		sb.append(",morning="+morning);
 		sb.append(",duration="+String.valueOf(duration));
-		sb.append(",afternoon="+afternoon);
 		sb.append(",regimen_id="+regimen_id);
-		sb.append(",regimen_drug_id="+regimen_drug_id);
 		sb.append(",regimen_type_id="+regimen_type_id);
 		sb.append(",regimen_description="+regimen_description);
 		sb.append(",regimen_compostion="+regimen_compostion);
@@ -7788,16 +7708,14 @@ Load_pharmlinesStruct Load_pharmlines_tmp = new Load_pharmlinesStruct();
 		    
 			java.sql.Statement stmt_tDBInput_4 = conn_tDBInput_4.createStatement();
 
-		    String dbquery_tDBInput_4 = "SELECT result.id, result.date_visit, result.patient_id, result.morning::VARCHAR, result.afternoon::VARCHAR, \nresult.du"
-+"ration::INTEGER, result.regimen_id::BIGINT, result.regimen_drug_id::BIGINT,\nresult.regimen_type_id::BIGINT,r.descriptio"
-+"n as regimen_description, r.composition as regimen_compostion,\nrt.description as regimen_type_description,p.uuid as per"
-+"son_uuid,date_visit as visit_date\nFROM (SELECT pharmacy.id, pharmacy.date_visit,pharmacy.patient_id,\npharmacy_object -"
-+">> 'morning' as morning, pharmacy_object ->> 'duration'::VARCHAR as duration, \npharmacy_object ->> 'afternoon'::VARCHAR"
-+" as afternoon, \npharmacy_object ->>'regimen_id'::VARCHAR as regimen_id, \npharmacy_object ->>'regimen_drug_id'::VARCHAR"
-+" as regimen_drug_id, \npharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pharmacy,\njsonb_array_ele"
-+"ments(lines) with ordinality p(pharmacy_object)) as result\nINNER JOIN regimen r ON result.regimen_id::bigint=r.id\nINNE"
-+"R JOIN regimen_drug rd ON result.regimen_drug_id::bigint = rd.id\nINNER JOIN regimen_type rt ON result.regimen_type_id::"
-+"bigint = rt.id\nINNER JOIN patient p ON p.id = result.patient_id\nWHERE p.extra->>'art'='true'";
+		    String dbquery_tDBInput_4 = "SELECT DISTINCT result.id, result.date_visit, result.patient_id, \nresult.duration::INTEGER, result.regimen_id::BIGINT,"
++"\nresult.regimen_type_id::BIGINT,r.description as regimen_description, r.composition as regimen_compostion,\nrt.descript"
++"ion as regimen_type_description,p.uuid as person_uuid,date_visit as visit_date\nFROM (SELECT DISTINCT pharmacy.id, pharm"
++"acy.date_visit,pharmacy.patient_id,\npharmacy_object ->> 'duration'::VARCHAR as duration, \npharmacy_object ->>'regimen_"
++"id'::VARCHAR as regimen_id,  \npharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pharmacy,\njsonb_a"
++"rray_elements(lines) with ordinality p(pharmacy_object)) as result\nINNER JOIN regimen r ON result.regimen_id::bigint=r."
++"id\nINNER JOIN regimen_type rt ON result.regimen_type_id::bigint = rt.id\nINNER JOIN patient p ON p.id = result.patient_"
++"id\nWHERE p.extra->>'art'='true'";
 			
 
             	globalMap.put("tDBInput_4_QUERY",dbquery_tDBInput_4);
@@ -7839,73 +7757,55 @@ Load_pharmlinesStruct Load_pharmlines_tmp = new Load_pharmlinesStruct();
             }
 		                    }
 							if(colQtyInRs_tDBInput_4 < 4) {
-								Pharm_Lines.morning = null;
-							} else {
-	                         		
-        	Pharm_Lines.morning = routines.system.JDBCUtil.getString(rs_tDBInput_4, 4, false);
-		                    }
-							if(colQtyInRs_tDBInput_4 < 5) {
 								Pharm_Lines.duration = null;
 							} else {
 		                          
-            Pharm_Lines.duration = rs_tDBInput_4.getInt(5);
+            Pharm_Lines.duration = rs_tDBInput_4.getInt(4);
             if(rs_tDBInput_4.wasNull()){
                     Pharm_Lines.duration = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 6) {
-								Pharm_Lines.afternoon = null;
-							} else {
-	                         		
-        	Pharm_Lines.afternoon = routines.system.JDBCUtil.getString(rs_tDBInput_4, 6, false);
-		                    }
-							if(colQtyInRs_tDBInput_4 < 7) {
+							if(colQtyInRs_tDBInput_4 < 5) {
 								Pharm_Lines.regimen_id = null;
 							} else {
 	                         		
-        	Pharm_Lines.regimen_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 7, false);
+        	Pharm_Lines.regimen_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 5, false);
 		                    }
-							if(colQtyInRs_tDBInput_4 < 8) {
-								Pharm_Lines.regimen_drug_id = null;
-							} else {
-	                         		
-        	Pharm_Lines.regimen_drug_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 8, false);
-		                    }
-							if(colQtyInRs_tDBInput_4 < 9) {
+							if(colQtyInRs_tDBInput_4 < 6) {
 								Pharm_Lines.regimen_type_id = null;
 							} else {
 	                         		
-        	Pharm_Lines.regimen_type_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 9, false);
+        	Pharm_Lines.regimen_type_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 6, false);
 		                    }
-							if(colQtyInRs_tDBInput_4 < 10) {
+							if(colQtyInRs_tDBInput_4 < 7) {
 								Pharm_Lines.regimen_description = null;
 							} else {
 	                         		
-        	Pharm_Lines.regimen_description = routines.system.JDBCUtil.getString(rs_tDBInput_4, 10, false);
+        	Pharm_Lines.regimen_description = routines.system.JDBCUtil.getString(rs_tDBInput_4, 7, false);
 		                    }
-							if(colQtyInRs_tDBInput_4 < 11) {
+							if(colQtyInRs_tDBInput_4 < 8) {
 								Pharm_Lines.regimen_compostion = null;
 							} else {
 	                         		
-        	Pharm_Lines.regimen_compostion = routines.system.JDBCUtil.getString(rs_tDBInput_4, 11, false);
+        	Pharm_Lines.regimen_compostion = routines.system.JDBCUtil.getString(rs_tDBInput_4, 8, false);
 		                    }
-							if(colQtyInRs_tDBInput_4 < 12) {
+							if(colQtyInRs_tDBInput_4 < 9) {
 								Pharm_Lines.regimen_type_description = null;
 							} else {
 	                         		
-        	Pharm_Lines.regimen_type_description = routines.system.JDBCUtil.getString(rs_tDBInput_4, 12, false);
+        	Pharm_Lines.regimen_type_description = routines.system.JDBCUtil.getString(rs_tDBInput_4, 9, false);
 		                    }
-							if(colQtyInRs_tDBInput_4 < 13) {
+							if(colQtyInRs_tDBInput_4 < 10) {
 								Pharm_Lines.person_uuid = null;
 							} else {
 	                         		
-        	Pharm_Lines.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_4, 13, false);
+        	Pharm_Lines.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_4, 10, false);
 		                    }
-							if(colQtyInRs_tDBInput_4 < 14) {
+							if(colQtyInRs_tDBInput_4 < 11) {
 								Pharm_Lines.visit_date = null;
 							} else {
 										
-			Pharm_Lines.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_4, 14);
+			Pharm_Lines.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_4, 11);
 		                    }
 					
 
@@ -13146,8 +13046,8 @@ public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) thr
 		    
 			java.sql.Statement stmt_tDBInput_9 = conn_tDBInput_9.createStatement();
 
-		    String dbquery_tDBInput_9 = "SELECT id, arr.line->>'duration'::VARCHAR as refill_period\nFROM pharmacy,\njsonb_array_elements(lines) with ordinality"
-+" arr(line, position) \nWHERE arr.position=1";
+		    String dbquery_tDBInput_9 = "SELECT DISTINCT id, arr.line->>'duration'::VARCHAR as refill_period\nFROM pharmacy,\njsonb_array_elements(lines) with o"
++"rdinality arr(line, position) \nWHERE arr.line->>'regimen_type_id'::VARCHAR IN ('1','2','3','4','14')";
 			
 
             	globalMap.put("tDBInput_9_QUERY",dbquery_tDBInput_9);
@@ -13858,14 +13758,14 @@ public void tDBInput_10Process(final java.util.Map<String, Object> globalMap) th
 +"name',pharm.regimen_description,\n						   'regimenName',pharm.regimen_description, 'dispense', pharm.duration,\n							"
 +"'freqency', '',\n							'prescribed', '',\n							'dosage', ''))) as extra\nFROM (SELECT DISTINCT result.id, result.pati"
 +"ent_id, \nresult.duration::INTEGER, r.description as regimen_description, r.composition as regimen_compostion,\nrt.descr"
-+"iption as regimen_type_description,p.uuid as person_uuid\nFROM (SELECT pharmacy.id, pharmacy.date_visit,pharmacy.patient"
-+"_id,\npharmacy_object ->> 'morning' as morning, pharmacy_object ->> 'duration'::VARCHAR as duration, \npharmacy_object -"
-+">> 'afternoon'::VARCHAR as afternoon, \npharmacy_object ->>'regimen_id'::VARCHAR as regimen_id, \npharmacy_object ->>'re"
-+"gimen_drug_id'::VARCHAR as regimen_drug_id, \npharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pha"
-+"rmacy,\njsonb_array_elements(lines) with ordinality p(pharmacy_object)) as result\nINNER JOIN regimen r ON result.regime"
-+"n_id::bigint=r.id\nINNER JOIN regimen_drug rd ON result.regimen_drug_id::bigint = rd.id\nINNER JOIN regimen_type rt ON r"
-+"esult.regimen_type_id::bigint = rt.id\nINNER JOIN patient p ON p.id = result.patient_id\nWHERE p.extra->>'art'='true'\nO"
-+"RDER BY result.id ASC) pharm GROUP BY id, person_uuid";
++"iption as regimen_type_description,p.uuid as person_uuid\nFROM (SELECT DISTINCT pharmacy.id, pharmacy.date_visit,pharmac"
++"y.patient_id,\npharmacy_object ->> 'morning' as morning, pharmacy_object ->> 'duration'::VARCHAR as duration, \npharmacy"
++"_object ->> 'afternoon'::VARCHAR as afternoon, \npharmacy_object ->>'regimen_id'::VARCHAR as regimen_id, \npharmacy_obje"
++"ct ->>'regimen_drug_id'::VARCHAR as regimen_drug_id, \npharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id"
++" FROM pharmacy,\njsonb_array_elements(lines) with ordinality p(pharmacy_object)) as result\nINNER JOIN regimen r ON resu"
++"lt.regimen_id::bigint=r.id\nINNER JOIN regimen_drug rd ON result.regimen_drug_id::bigint = rd.id\nINNER JOIN regimen_typ"
++"e rt ON result.regimen_type_id::bigint = rt.id\nINNER JOIN patient p ON p.id = result.patient_id\nWHERE p.extra->>'art'="
++"'true'\nORDER BY result.id ASC) pharm GROUP BY id, person_uuid";
 			
 
             	globalMap.put("tDBInput_10_QUERY",dbquery_tDBInput_10);
@@ -16188,6 +16088,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     391871 characters generated by Talend Open Studio for Big Data 
- *     on the November 13, 2022 10:28:30 PM WAT
+ *     389090 characters generated by Talend Open Studio for Big Data 
+ *     on the December 20, 2022 6:57:53 PM WAT
  ************************************************************************************************/

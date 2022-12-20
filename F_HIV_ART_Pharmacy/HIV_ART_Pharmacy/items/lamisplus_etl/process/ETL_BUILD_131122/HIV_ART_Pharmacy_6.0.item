@@ -6,12 +6,12 @@
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:ddWpa5treu/8cS4FiXX3EceU80vmPQ4408SfI7R2TG2O"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:fpzUPxBts71vD+6oyVbdJzT+/oWhLlbzWM3uTj0Wri4n"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
+    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="lamis"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:k+Itqgzjimas1/IMxp9M2IKwadZj507f4bDXlaMqdmUA"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:WjGsBt8qi/gLWUB4T2+ucYiGFJe1ZWjbMUz4tJOHpsNy"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
@@ -22,12 +22,12 @@
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:8+BipoolTgPeFZ8i4yWEIXbKWyyIBacMBVF1LB7G/5Pj"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:71U17v0Oqw3gX+6+gvnTVJ7XVwFtoKNHgUiItbzttbCh"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
+    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="lamis"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:ZayDycaalrY6Bd1/uDN24GEiAUzBGK0G95sT4atQ6baX"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:ctcoEvVnjwk3lc4Eun6zMGgxzG5PQKinBbhTU0zlEEcM"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
@@ -73,7 +73,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:RdPhEjdpw3iTBq6ODocpm9ynGC84/IyfDzXJGSou" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:mIX6A9Vh5fDgd/SGkvGAy7QyHMu/GwljEWh+9UL2" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -108,7 +108,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:R5qVqPgjjPnUfQR0sbS9nH6qljCsbow20KwJg0Wy" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:alYIPobEzjTz4VlydAUit9UlBiGCEYU6QD8WePPQ" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -151,7 +151,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gN/ry/lsILtXVkGlrmZlyfPuIuW1xehIwkBzdWmdhLAsKmnfrEKQFE13olh2J73C9G3p"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fuWPQ8XhECtM0bOdFyeHrrJfoE9DfUDNIvY84GwgofUsmgGWkK1F6FvcYflJ5SihN3vo"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -230,7 +230,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:qNvwUrE97GU8213Ky4WBf0Ab/ZlBeuM844t8Ry2NtE+O7GY1A8LSaDVpaRF2XnriC4JiGYL2"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:U7EwIwmu9Dx4yryFZEq3eaDhO/Riy8T5F8SPysvPcNCp7ig2Y2F1ES79AtqvVQQIw2/nd7Go"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -325,7 +325,7 @@
         <mapperTableEntries name="uuid" expression="java.util.UUID.randomUUID().toString() " type="id_String"/>
         <mapperTableEntries name="facility_id" expression="facilities_lookup.id " type="id_Long"/>
         <mapperTableEntries name="is_devolve" expression="null" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="refill_period" expression="row4.refill_period.matches(&quot;[0-9.]+&quot;)? Integer.valueOf(row4.refill_period):null " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="refill_period" expression="(row4.refill_period != null &amp;&amp; row4.refill_period.matches(&quot;[0-9.]+&quot;))&#xD;&#xA;? Integer.valueOf(row4.refill_period) : null " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="delivery_point" expression="null" type="id_String" nullable="true"/>
         <mapperTableEntries name="dsd_model" expression="null" type="id_String" nullable="true"/>
         <mapperTableEntries name="archived" expression="hiv_pharmacy.archived " type="id_Integer"/>
@@ -397,7 +397,7 @@
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="Pharmacy_visit_map">
         <mapperTableEntries name="id" expression="HIV_Art_Pharmacy.id " type="id_Integer"/>
@@ -471,7 +471,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:px4OD5K1Eyp2hBc5TrV9IzMvVwX0vQHpYJKgbvdTtZVmapEET3S+1aaa+9j1dYQkZ3rZuYKF"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ElBJ2i/kAL+EQP2/h25EjAP9g3VT2i9rreSu77R/WVYp278MVh25DH5hjBADAgb4Qow46R2t"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -667,7 +667,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:V3m9sJwr767d9BaxezuHRxYwPR5f2WSRehXU/8ivJB+1rmd0Gagohj851IWy2CE8rZSaHveo"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:S88gWXWjYwaC1uAr389XAG2mc2jXqvOR+tqyc/h1QzhncUezkMA7IwBraiEsn0WCoidGpISS"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hiv_art_pharmacy&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -882,7 +882,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZVYB/7Z43xJ6RLZ7xvDF2dBAxTFhP1//stk7uHnU7vi4adyZ2jjXxU9XcUQ69jgV/aRHOYRs"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:YVcGYUievBBYxGFu4NoGlW29kOT5KpeRcdvsuEqmhcWuk1YHCpdaKmgAbI8aHuFz8PFUI7Pg"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hiv_art_pharmacy_duplicates&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -1086,13 +1086,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:KSjhScLzyJe0PwrRCyTfE+NNRPkvp/kwziBcHHh15ig7SDKg/thmRpO9WQ7K/3zrPScq"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9W6V+HVuyb0aaoB8UM86l9yBl02jMiOLTleQLN9DYf3URDmnreHcjnP+xo5t2E3qr2eM"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT id, arr.line->>'duration'::VARCHAR as refill_period&#xD;&#xA;FROM pharmacy,&#xD;&#xA;jsonb_array_elements(lines) with ordinality arr(line, position) &#xD;&#xA;WHERE arr.position=1&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT DISTINCT id, arr.line->>'duration'::VARCHAR as refill_period&#xD;&#xA;FROM pharmacy,&#xD;&#xA;jsonb_array_elements(lines) with ordinality arr(line, position) &#xD;&#xA;WHERE arr.line->>'regimen_type_id'::VARCHAR IN ('1','2','3','4','14')&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -1129,13 +1129,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:y1+NhMO4dEzEyPLdT1o7s3ZcKKepAYosin91RTD1dYMXbe5uSeQyHao9kaKnGxY35z1m"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:V4xNNyhuZl8O4ZXfKy/WHn+bV6ESri2YlEa2G2KMg4wTHkrCIHXPyIoJ5+qp0RqE7t2K"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT pharm.id,pharm.person_uuid,&#xD;&#xA;json_build_object('regimens',json_agg(json_build_object('duration',pharm.duration,'name',pharm.regimen_description,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   'regimenName',pharm.regimen_description, 'dispense', pharm.duration,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'freqency', '',&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'prescribed', '',&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'dosage', ''))) as extra&#xD;&#xA;FROM (SELECT DISTINCT result.id, result.patient_id, &#xD;&#xA;result.duration::INTEGER, r.description as regimen_description, r.composition as regimen_compostion,&#xD;&#xA;rt.description as regimen_type_description,p.uuid as person_uuid&#xD;&#xA;FROM (SELECT pharmacy.id, pharmacy.date_visit,pharmacy.patient_id,&#xD;&#xA;pharmacy_object ->> 'morning' as morning, pharmacy_object ->> 'duration'::VARCHAR as duration, &#xD;&#xA;pharmacy_object ->> 'afternoon'::VARCHAR as afternoon, &#xD;&#xA;pharmacy_object ->>'regimen_id'::VARCHAR as regimen_id, &#xD;&#xA;pharmacy_object ->>'regimen_drug_id'::VARCHAR as regimen_drug_id, &#xD;&#xA;pharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pharmacy,&#xD;&#xA;jsonb_array_elements(lines) with ordinality p(pharmacy_object)) as result&#xD;&#xA;INNER JOIN regimen r ON result.regimen_id::bigint=r.id&#xD;&#xA;INNER JOIN regimen_drug rd ON result.regimen_drug_id::bigint = rd.id&#xD;&#xA;INNER JOIN regimen_type rt ON result.regimen_type_id::bigint = rt.id&#xD;&#xA;INNER JOIN patient p ON p.id = result.patient_id&#xD;&#xA;WHERE p.extra->>'art'='true'&#xD;&#xA;ORDER BY result.id ASC) pharm GROUP BY id, person_uuid&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT pharm.id,pharm.person_uuid,&#xD;&#xA;json_build_object('regimens',json_agg(json_build_object('duration',pharm.duration,'name',pharm.regimen_description,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   'regimenName',pharm.regimen_description, 'dispense', pharm.duration,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'freqency', '',&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'prescribed', '',&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'dosage', ''))) as extra&#xD;&#xA;FROM (SELECT DISTINCT result.id, result.patient_id, &#xD;&#xA;result.duration::INTEGER, r.description as regimen_description, r.composition as regimen_compostion,&#xD;&#xA;rt.description as regimen_type_description,p.uuid as person_uuid&#xD;&#xA;FROM (SELECT DISTINCT pharmacy.id, pharmacy.date_visit,pharmacy.patient_id,&#xD;&#xA;pharmacy_object ->> 'morning' as morning, pharmacy_object ->> 'duration'::VARCHAR as duration, &#xD;&#xA;pharmacy_object ->> 'afternoon'::VARCHAR as afternoon, &#xD;&#xA;pharmacy_object ->>'regimen_id'::VARCHAR as regimen_id, &#xD;&#xA;pharmacy_object ->>'regimen_drug_id'::VARCHAR as regimen_drug_id, &#xD;&#xA;pharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pharmacy,&#xD;&#xA;jsonb_array_elements(lines) with ordinality p(pharmacy_object)) as result&#xD;&#xA;INNER JOIN regimen r ON result.regimen_id::bigint=r.id&#xD;&#xA;INNER JOIN regimen_drug rd ON result.regimen_drug_id::bigint = rd.id&#xD;&#xA;INNER JOIN regimen_type rt ON result.regimen_type_id::bigint = rt.id&#xD;&#xA;INNER JOIN patient p ON p.id = result.patient_id&#xD;&#xA;WHERE p.extra->>'art'='true'&#xD;&#xA;ORDER BY result.id ASC) pharm GROUP BY id, person_uuid&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -1162,7 +1162,7 @@
       <column comment="" key="false" length="2147483647" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="608">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_4" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_wHSmsBNdEe27hPNVYSp0PA" show="false"/>
@@ -1175,13 +1175,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:1RK5B9FzeYmTjjG3EYBL8EreEH49CcByFOMiNFypAQKgzLFDlEYpQrVhxCvnsAZQjz34"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:rFGEHiFfc+Hngos1fTaQB+MI/fVQo9SH0T9hKijZWnOmfrQm/piCMPHXRisKsXSzusHY"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT result.id, result.date_visit, result.patient_id, result.morning::VARCHAR, result.afternoon::VARCHAR, &#xD;&#xA;result.duration::INTEGER, result.regimen_id::BIGINT, result.regimen_drug_id::BIGINT,&#xD;&#xA;result.regimen_type_id::BIGINT,r.description as regimen_description, r.composition as regimen_compostion,&#xD;&#xA;rt.description as regimen_type_description,p.uuid as person_uuid,date_visit as visit_date&#xD;&#xA;FROM (SELECT pharmacy.id, pharmacy.date_visit,pharmacy.patient_id,&#xD;&#xA;pharmacy_object ->> 'morning' as morning, pharmacy_object ->> 'duration'::VARCHAR as duration, &#xD;&#xA;pharmacy_object ->> 'afternoon'::VARCHAR as afternoon, &#xD;&#xA;pharmacy_object ->>'regimen_id'::VARCHAR as regimen_id, &#xD;&#xA;pharmacy_object ->>'regimen_drug_id'::VARCHAR as regimen_drug_id, &#xD;&#xA;pharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pharmacy,&#xD;&#xA;jsonb_array_elements(lines) with ordinality p(pharmacy_object)) as result&#xD;&#xA;INNER JOIN regimen r ON result.regimen_id::bigint=r.id&#xD;&#xA;INNER JOIN regimen_drug rd ON result.regimen_drug_id::bigint = rd.id&#xD;&#xA;INNER JOIN regimen_type rt ON result.regimen_type_id::bigint = rt.id&#xD;&#xA;INNER JOIN patient p ON p.id = result.patient_id&#xD;&#xA;WHERE p.extra->>'art'='true'&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT DISTINCT result.id, result.date_visit, result.patient_id, &#xD;&#xA;result.duration::INTEGER, result.regimen_id::BIGINT,&#xD;&#xA;result.regimen_type_id::BIGINT,r.description as regimen_description, r.composition as regimen_compostion,&#xD;&#xA;rt.description as regimen_type_description,p.uuid as person_uuid,date_visit as visit_date&#xD;&#xA;FROM (SELECT DISTINCT pharmacy.id, pharmacy.date_visit,pharmacy.patient_id,&#xD;&#xA;pharmacy_object ->> 'duration'::VARCHAR as duration, &#xD;&#xA;pharmacy_object ->>'regimen_id'::VARCHAR as regimen_id,  &#xD;&#xA;pharmacy_object ->>'regimen_type_id' ::VARCHAR as regimen_type_id FROM pharmacy,&#xD;&#xA;jsonb_array_elements(lines) with ordinality p(pharmacy_object)) as result&#xD;&#xA;INNER JOIN regimen r ON result.regimen_id::bigint=r.id&#xD;&#xA;INNER JOIN regimen_type rt ON result.regimen_type_id::bigint = rt.id&#xD;&#xA;INNER JOIN patient p ON p.id = result.patient_id&#xD;&#xA;WHERE p.extra->>'art'='true'&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -1199,15 +1199,9 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="patient_id"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="morning"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="duration"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="afternoon"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="regimen_id"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="regimen_drug_id"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="regimen_type_id"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -1228,11 +1222,8 @@
       <column comment="" defaultValue="" key="true" length="19" name="id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="patient_id" nullable="false" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="morning" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="duration" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="afternoon" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="regimen_id" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="19" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="regimen_drug_id" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="19" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="regimen_type_id" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="19" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="regimen_description" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="regimen_compostion" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -1241,7 +1232,7 @@
       <column comment="" key="false" length="13" name="visit_date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="512">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_3" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
@@ -1254,7 +1245,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oFFqCRsVwkdrJFdh2L01YVtzV4rO03vHSbebzr15Bsj5uT5vrTiLADZ/znC1vO1E1dbSaQHl"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eE8XYe+Lk7h9BV5+gMrX3ruQNsTRzqaol9WmW/TsiyN3SB4ciS57rFJ7hVkjsXVQHrKVwohP"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1287,7 +1278,7 @@
       <column comment="" defaultValue="" key="false" length="19" name="regimen_type_id" nullable="false" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="576">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_2" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1317,7 +1308,7 @@
       <column comment="" defaultValue="" key="true" length="19" name="id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="Load_pharmlines">
         <mapperTableEntries name="patient_id" expression="Pharm_Lines.patient_id " type="id_Long"/>
@@ -1337,11 +1328,8 @@
         <mapperTableEntries name="id" type="id_Integer"/>
         <mapperTableEntries name="date_visit" type="id_Date"/>
         <mapperTableEntries name="patient_id" type="id_Long"/>
-        <mapperTableEntries name="morning" type="id_String" nullable="true"/>
         <mapperTableEntries name="duration" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="afternoon" type="id_String" nullable="true"/>
         <mapperTableEntries name="regimen_id" type="id_String" nullable="true"/>
-        <mapperTableEntries name="regimen_drug_id" type="id_String" nullable="true"/>
         <mapperTableEntries name="regimen_type_id" type="id_String" nullable="true"/>
         <mapperTableEntries name="regimen_description" type="id_String"/>
         <mapperTableEntries name="regimen_compostion" type="id_String" nullable="true"/>
@@ -1356,7 +1344,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="608">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_3" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1401,7 +1389,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="704">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_5" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
@@ -1414,7 +1402,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aPCVqWPFxEuHv2t8RpHJ6IvMm2O7uqn4QnzdY5CucQSwmZzTK7fHzbPuspjj8Gp5dFMzQaxe"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CYpmeZAWYP/mYugYv48DVOGs8TPMfmTaUuTE6N9MZD8vjzpJvXLthMF3WwA0P/RS9ASn10lh"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1447,7 +1435,7 @@
       <column comment="" key="false" length="13" name="visit_date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="608">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_3" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
@@ -1460,7 +1448,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nJrsmtexMFlURzW7yzH1OJkBgUclfi9qjN6DvLG1K0na85wZ2i0kEe0/HdJj62/1+SaGWQze"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nzRfisD3LUky+hKQPiwCZbQwusQZTZNQQY8T2VzZNMVQFzdQe+/MLAE00FY0kDxH+O0p9Tvw"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hiv_art_pharmacy_regimens&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -1532,7 +1520,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_2"/>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="800">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="int totalMigrated = globalMap.get(&quot;tDBOutput_6_NB_LINE_UPDATED&quot;) != null ? (Integer)globalMap.get(&quot;tDBOutput_6_NB_LINE_UPDATED&quot;) : 0;&#xA;&#xA;System.out.println(&quot;Total hiv_art_pharmacy already migrated &quot;+totalMigrated);&#xA;&#xA;System.out.println(&quot;Total new records migrated - &quot;+globalMap.get(&quot;tDBOutput_6_NB_LINE_INSERTED&quot;));&#xA;if(globalMap.get(&quot;tDBOutput_6_ERROR_MESSAGE&quot;) != null){&#xA;System.out.println(&quot;Migration Error - &quot;+globalMap.get(&quot;tDBOutput_6_ERROR_MESSAGE&quot;));&#xA;}&#xA;System.out.println(&quot;Total erroneous records not migrated - &quot;+globalMap.get(&quot;tFileOutputDelimited_6_NB_LINE&quot;));&#xA;System.out.println();&#xA;java.time.LocalDateTime endTime = java.time.LocalDateTime.now();&#xA;System.out.println(&quot;End time - &quot;+ endTime);&#xA;java.time.LocalDateTime statTime = (java.time.LocalDateTime)globalMap.get(&quot;startTime&quot;);&#xA;&#xA;java.time.Duration duration = java.time.Duration.between(statTime, endTime);&#xA;System.out.println(&quot;Duration - &quot;+ duration);&#xA;&#xA;System.out.println(&quot;*************HIV_ART_PHARMACY MIGRATION REPORT END*****************&quot;);&#xA;System.out.println(&quot;****************************************************************&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -1611,7 +1599,7 @@
       <column comment="" key="false" length="230" name="sex" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="230" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="800">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_7" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
@@ -1624,7 +1612,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZcwL0ENIzNW3ERv2QZvZSlVjhaBA+BbzBiyZbdG63SJ2Wb4LJk/Tpyvskuhq/dtMG6/yKeZO"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZENmP1RbeoA3i/NuBpVp+zzQXFMnqxc4HyU2JUt8N5zCJdB0wPrc4r9JuD8cN90Au/lMLtys"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1651,7 +1639,7 @@
       <column comment="" defaultValue="" key="false" length="19" name="sequence_count" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="800">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_6" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1684,7 +1672,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="800">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_5" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
@@ -1697,7 +1685,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:N+iSBgi2u1WfJGXR42dpq0F4OCTphXu8xUhThLJLD2bgOETSwmTdFPUDVwZblEoM6rV7KpYw"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MQuQgRdpLfl06p/Cgql6bslK25JMnMyd8SrbZuhfzSqXOENcFse1G3T1La8QjRBZrmLV6eEg"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_sequence&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
