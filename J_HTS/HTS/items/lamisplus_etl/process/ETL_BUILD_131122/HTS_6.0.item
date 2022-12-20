@@ -6,22 +6,22 @@
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:30EMPM94rKhpmcKKe42lGFJbgJwjyaGbLuYReDDwBz/s"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:J/ppYZjWU1JmbgNerJqKdg7/LZvfDXc2mkZDlV6Y0V27"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:GrM9C/9/5W1HcKpzAcaBC5NjA+2a/kLkBsN0yDyuglBH"/>
+    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="lamis"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:J+E9FX2kueBIMY4Mi+4jA8r0iqPpXI0H6vFjfMy6ckch"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
   </context>
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="bauchi-gh"/>
+    <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="lamis"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:e6DsfOIy+osp1Kge25nPfEccPnGcKqxjFaMKG74m9/Cu"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:qQIGPUlLqcVWHVisVwcJn+ks7Ey8Sxs9aCmc8CW3sElj"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
@@ -29,11 +29,11 @@
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:432eBXxU/5hzu4UR7Npt0bBlLGlxvbXRbk524yMQzWf6"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:Acnm2QMYGQpmJvYX/gQNmZku/PQb4zc6X77B17dZg7nJ"/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
   </context>
   <parameters>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="64" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="1302" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="128" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -73,7 +73,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:HqGFcVlM+LkKdCxKrdXiv8ZUWdY4Zy9ex6S5094U" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:U2T/XA43OEqXvGL+JHzLC9zOze9P6GuQfE0heide" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -108,7 +108,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2QvJ7GeDZEX//cOS3ZOzc/6PqcE75r9tD6tzH1Sx" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+9S6ysVR88tfPoi0hs29LdnvQ4TjjHMll/yJ9jDi" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -150,7 +150,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:m2V0aiPYVyENFQ2QfvFuEkoqTwoLI0wxKpnSV45w0lJY2rvz1SMX+Lw2eIyBI2SNFqIV"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kQ046ThzWiF+5aaxWYlVsr7KBK4aTlS1OX72EihrzqEMYM2wbTvAYs9sGESeyuMj00rC"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hts_new&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -235,9 +235,9 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
       <column comment="" defaultValue="" key="false" length="10" name="id" nullable="false" pattern="" precision="0" sourceType="SERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
@@ -248,8 +248,8 @@
       <column comment="" key="false" length="36" name="uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="previously_tested" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="index_testing" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="first_time_visit" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="index_client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -257,13 +257,13 @@
       <column comment="" key="false" length="50" name="referred_from" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="testing_setting" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
@@ -284,9 +284,9 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="hts_target_group_setting_map">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="client_code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
@@ -298,31 +298,31 @@
       <column comment="" key="false" length="36" name="uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="previously_tested" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="index_testing" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="first_time_visit" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="index_client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="referred_from" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="testing_setting" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="datim_id" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="recency" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_String" originalLength="600" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="hts_target_group_setting_map">
         <mapperTableEntries name="id" expression="hts_extract.id " type="id_Integer"/>
-        <mapperTableEntries name="test1" expression="hts_extract.test1 " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="confirmatory_test" expression="hts_extract.confirmatory_test " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tie_breaker_test" expression="hts_extract.tie_breaker_test " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="test1" expression="hts_extract.test1 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="confirmatory_test" expression="hts_extract.confirmatory_test " type="id_String" nullable="true"/>
+        <mapperTableEntries name="tie_breaker_test" expression="hts_extract.tie_breaker_test " type="id_String" nullable="true"/>
         <mapperTableEntries name="client_code" expression="hts_extract.client_code " type="id_String"/>
         <mapperTableEntries name="date_visit" expression="hts_extract.date_visit " type="id_Date"/>
         <mapperTableEntries name="archived" expression="hts_extract.archived " type="id_Integer" nullable="true"/>
@@ -334,28 +334,28 @@
         <mapperTableEntries name="uuid" expression="hts_extract.uuid " type="id_String"/>
         <mapperTableEntries name="previously_tested" expression="hts_extract.previously_tested " type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_testing" expression="hts_extract.index_testing " type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="num_children" expression="hts_extract.num_children " type="id_Long" nullable="true"/>
-        <mapperTableEntries name="num_wives" expression="hts_extract.num_wives " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="num_children" expression="hts_extract.num_children " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="num_wives" expression="hts_extract.num_wives " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="first_time_visit" expression="hts_extract.first_time_visit " type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_client_code" expression="hts_extract.index_client_code " type="id_String" nullable="true"/>
         <mapperTableEntries name="type_counseling" expression="hts_extract.type_counseling " type="id_String" nullable="true"/>
         <mapperTableEntries name="referred_from" expression="hts_extract.referred_from " type="id_String" nullable="true"/>
-        <mapperTableEntries name="extra" expression="hts_extract.extra " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="post_test_counseling" expression="hts_extract.post_test_counseling " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="knowledge_assessment" expression="hts_extract.knowledge_assessment " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tb_screening" expression="hts_extract.tb_screening " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="sti_screening" expression="hts_extract.sti_screening " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="risk_assessment" expression="hts_extract.risk_assessment " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" expression="hts_extract.extra " type="id_String" nullable="true"/>
+        <mapperTableEntries name="post_test_counseling" expression="hts_extract.post_test_counseling " type="id_String" nullable="true"/>
+        <mapperTableEntries name="knowledge_assessment" expression="hts_extract.knowledge_assessment " type="id_String" nullable="true"/>
+        <mapperTableEntries name="tb_screening" expression="hts_extract.tb_screening " type="id_String" nullable="true"/>
+        <mapperTableEntries name="sti_screening" expression="hts_extract.sti_screening " type="id_String" nullable="true"/>
+        <mapperTableEntries name="risk_assessment" expression="hts_extract.risk_assessment " type="id_String" nullable="true"/>
         <mapperTableEntries name="target_group" expression="Target_Group_Codeset.code " type="id_String" nullable="true"/>
         <mapperTableEntries name="testing_setting" expression="Testing_Setting_Codeset.code " type="id_String" nullable="true"/>
         <mapperTableEntries name="datim_id" expression="hts_extract.datim_id " type="id_String"/>
-        <mapperTableEntries name="recency" expression="hts_extract.recency " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="recency" expression="hts_extract.recency " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="hts_extract" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_Integer"/>
-        <mapperTableEntries name="test1" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="confirmatory_test" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tie_breaker_test" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="test1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="confirmatory_test" type="id_String" nullable="true"/>
+        <mapperTableEntries name="tie_breaker_test" type="id_String" nullable="true"/>
         <mapperTableEntries name="date_visit" type="id_Date"/>
         <mapperTableEntries name="archived" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="date_created" type="id_Date"/>
@@ -366,8 +366,8 @@
         <mapperTableEntries name="uuid" type="id_String"/>
         <mapperTableEntries name="previously_tested" type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_testing" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="num_children" type="id_Long" nullable="true"/>
-        <mapperTableEntries name="num_wives" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="num_children" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="num_wives" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="first_time_visit" type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="client_code" type="id_String" nullable="true"/>
         <mapperTableEntries name="index_client_code" type="id_String" nullable="true"/>
@@ -375,13 +375,13 @@
         <mapperTableEntries name="referred_from" type="id_String" nullable="true"/>
         <mapperTableEntries name="testing_setting" type="id_String" nullable="true"/>
         <mapperTableEntries name="target_group" type="id_String" nullable="true"/>
-        <mapperTableEntries name="extra" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="post_test_counseling" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="knowledge_assessment" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tb_screening" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="sti_screening" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="risk_assessment" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="recency" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" type="id_String" nullable="true"/>
+        <mapperTableEntries name="post_test_counseling" type="id_String" nullable="true"/>
+        <mapperTableEntries name="knowledge_assessment" type="id_String" nullable="true"/>
+        <mapperTableEntries name="tb_screening" type="id_String" nullable="true"/>
+        <mapperTableEntries name="sti_screening" type="id_String" nullable="true"/>
+        <mapperTableEntries name="risk_assessment" type="id_String" nullable="true"/>
+        <mapperTableEntries name="recency" type="id_String" nullable="true"/>
         <mapperTableEntries name="datim_id" type="id_String"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="Target_Group_Codeset" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -411,7 +411,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xG8g+5Q7DRiaUlOu3YtfPQrV7VQ4oC2VstiB2jl+qINqcTXC+eKhifZbFRugOlFdWfIgwIat"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5amJrfsc8llXfhk0TDzo5FAMsDQHi0DXXdMbSF0nb2iLlgmQstfPnC1IrWoxQAopYB0Yvi48"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -460,7 +460,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NX+JoaQdGkcey5z5J+qQu5F6fgyhFTxbL0DbjG+ro8PndODjNZCu0v35jfaVadgfGd9iacQP"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IfHk4I+Ajq3lEFhilbr/IrfXOTf0DR+cPoa+kYyzsJy0RyESpX33IH7t2SRFN6RAS2dA0h0M"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -513,9 +513,9 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="hts_extract_before_final">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="client_code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
@@ -527,31 +527,31 @@
       <column comment="" key="false" length="36" name="uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="previously_tested" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="index_testing" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="first_time_visit" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="index_client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="testing_setting" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="datim_id" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="recency" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="-1" sourceType="POINT" type="id_String" originalLength="600" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="hts_extract_before_final">
         <mapperTableEntries name="id" expression="hts_target_group_setting_map.id " type="id_Integer"/>
-        <mapperTableEntries name="test1" expression="hts_target_group_setting_map.test1 " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="confirmatory_test" expression="hts_target_group_setting_map.confirmatory_test " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tie_breaker_test" expression="hts_target_group_setting_map.tie_breaker_test " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="test1" expression="hts_target_group_setting_map.test1 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="confirmatory_test" expression="hts_target_group_setting_map.confirmatory_test " type="id_String" nullable="true"/>
+        <mapperTableEntries name="tie_breaker_test" expression="hts_target_group_setting_map.tie_breaker_test " type="id_String" nullable="true"/>
         <mapperTableEntries name="client_code" expression="hts_target_group_setting_map.client_code " type="id_String"/>
         <mapperTableEntries name="date_visit" expression="hts_target_group_setting_map.date_visit " type="id_Date"/>
         <mapperTableEntries name="archived" expression="hts_target_group_setting_map.archived " type="id_Integer" nullable="true"/>
@@ -563,28 +563,28 @@
         <mapperTableEntries name="uuid" expression="hts_target_group_setting_map.uuid " type="id_String"/>
         <mapperTableEntries name="previously_tested" expression="hts_target_group_setting_map.previously_tested " type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_testing" expression="hts_target_group_setting_map.index_testing " type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="num_children" expression="hts_target_group_setting_map.num_children " type="id_Long" nullable="true"/>
-        <mapperTableEntries name="num_wives" expression="hts_target_group_setting_map.num_wives " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="num_children" expression="hts_target_group_setting_map.num_children " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="num_wives" expression="hts_target_group_setting_map.num_wives " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="first_time_visit" expression="hts_target_group_setting_map.first_time_visit " type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_client_code" expression="hts_target_group_setting_map.index_client_code " type="id_String" nullable="true"/>
-        <mapperTableEntries name="extra" expression="hts_target_group_setting_map.extra " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="post_test_counseling" expression="hts_target_group_setting_map.post_test_counseling " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="knowledge_assessment" expression="hts_target_group_setting_map.knowledge_assessment " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tb_screening" expression="hts_target_group_setting_map.tb_screening " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="sti_screening" expression="hts_target_group_setting_map.sti_screening " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="risk_assessment" expression="hts_target_group_setting_map.risk_assessment " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" expression="hts_target_group_setting_map.extra " type="id_String" nullable="true"/>
+        <mapperTableEntries name="post_test_counseling" expression="hts_target_group_setting_map.post_test_counseling " type="id_String" nullable="true"/>
+        <mapperTableEntries name="knowledge_assessment" expression="hts_target_group_setting_map.knowledge_assessment " type="id_String" nullable="true"/>
+        <mapperTableEntries name="tb_screening" expression="hts_target_group_setting_map.tb_screening " type="id_String" nullable="true"/>
+        <mapperTableEntries name="sti_screening" expression="hts_target_group_setting_map.sti_screening " type="id_String" nullable="true"/>
+        <mapperTableEntries name="risk_assessment" expression="hts_target_group_setting_map.risk_assessment " type="id_String" nullable="true"/>
         <mapperTableEntries name="target_group" expression="hts_target_group_setting_map.target_group " type="id_String" nullable="true"/>
         <mapperTableEntries name="testing_setting" expression="hts_target_group_setting_map.testing_setting " type="id_String" nullable="true"/>
         <mapperTableEntries name="referred_from" expression="referred_from_codeset.codeset_id " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="type_counseling" expression="row1.codeset_id " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="datim_id" expression="hts_target_group_setting_map.datim_id " type="id_String"/>
-        <mapperTableEntries name="recency" expression="hts_target_group_setting_map.recency " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="recency" expression="hts_target_group_setting_map.recency " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="hts_target_group_setting_map" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_Integer"/>
-        <mapperTableEntries name="test1" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="confirmatory_test" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tie_breaker_test" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="test1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="confirmatory_test" type="id_String" nullable="true"/>
+        <mapperTableEntries name="tie_breaker_test" type="id_String" nullable="true"/>
         <mapperTableEntries name="client_code" type="id_String"/>
         <mapperTableEntries name="date_visit" type="id_Date"/>
         <mapperTableEntries name="archived" type="id_Integer" nullable="true"/>
@@ -596,22 +596,22 @@
         <mapperTableEntries name="uuid" type="id_String"/>
         <mapperTableEntries name="previously_tested" type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_testing" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="num_children" type="id_Long" nullable="true"/>
-        <mapperTableEntries name="num_wives" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="num_children" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="num_wives" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="first_time_visit" type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_client_code" type="id_String" nullable="true"/>
         <mapperTableEntries name="type_counseling" type="id_String" nullable="true"/>
         <mapperTableEntries name="referred_from" type="id_String" nullable="true"/>
-        <mapperTableEntries name="extra" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="post_test_counseling" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="knowledge_assessment" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tb_screening" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="sti_screening" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="risk_assessment" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" type="id_String" nullable="true"/>
+        <mapperTableEntries name="post_test_counseling" type="id_String" nullable="true"/>
+        <mapperTableEntries name="knowledge_assessment" type="id_String" nullable="true"/>
+        <mapperTableEntries name="tb_screening" type="id_String" nullable="true"/>
+        <mapperTableEntries name="sti_screening" type="id_String" nullable="true"/>
+        <mapperTableEntries name="risk_assessment" type="id_String" nullable="true"/>
         <mapperTableEntries name="target_group" type="id_String" nullable="true"/>
         <mapperTableEntries name="testing_setting" type="id_String" nullable="true"/>
         <mapperTableEntries name="datim_id" type="id_String"/>
-        <mapperTableEntries name="recency" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="recency" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="referred_from_codeset" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="codeset_id" type="id_Integer"/>
@@ -640,7 +640,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Yy+4sB10l1vZKZAwYgBA96j2cyuYZWi9CGWWCae7S/3z15QInrVTquLkXklxMuvECXoWP2uK"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HFLJTdj4XBy24MwLr8I3722/Zy+jXwALbUfKm8qyUZguUqqqzjXvM8P7Y+A/Fz45/Mxdr7zV"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -689,7 +689,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NM2HhXGgKyfZsK26uHSPNFD0kEowTyEnsqMsbD8fd2Z2F0bKpzva/KEwDiptEcEPDbBfb5d0"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AY/YZSzu2MtyhW2Lt3du9CkQPqeV4oCr30bW+0GpXbEfRtJ1zJr4Gw92dQUVt/aJEG60AvVJ"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -741,46 +741,46 @@
     <elementParameter field="TEXT" name="LABEL" value="Hts_Facility_Map"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="hts_final">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="client_code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="150" name="captured_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="previously_tested" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="index_client" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="first_time_visit" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="index_client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="testing_setting" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_String" originalLength="600" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="hts_final">
-        <mapperTableEntries name="id" expression="hts_extract_before_final.id " type="id_Integer"/>
-        <mapperTableEntries name="test1" expression="hts_extract_before_final.test1 " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="confirmatory_test" expression="hts_extract_before_final.confirmatory_test " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tie_breaker_test" expression="hts_extract_before_final.tie_breaker_test " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="id" expression="hts_extract_before_final.id " type="id_Long"/>
+        <mapperTableEntries name="test1" expression="hts_extract_before_final.test1 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="confirmatory_test" expression="hts_extract_before_final.confirmatory_test " type="id_String" nullable="true"/>
+        <mapperTableEntries name="tie_breaker_test" expression="hts_extract_before_final.tie_breaker_test " type="id_String" nullable="true"/>
         <mapperTableEntries name="client_code" expression="hts_extract_before_final.client_code " type="id_String"/>
         <mapperTableEntries name="date_visit" expression="hts_extract_before_final.date_visit " type="id_Date"/>
         <mapperTableEntries name="archived" expression="hts_extract_before_final.archived " type="id_Integer"/>
@@ -792,28 +792,28 @@
         <mapperTableEntries name="uuid" expression="hts_extract_before_final.uuid " type="id_String"/>
         <mapperTableEntries name="previously_tested" expression="hts_extract_before_final.previously_tested " type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_client" expression="hts_extract_before_final.index_testing " type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="num_children" expression="hts_extract_before_final.num_children " type="id_Long" nullable="true"/>
-        <mapperTableEntries name="num_wives" expression="hts_extract_before_final.num_wives " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="num_children" expression="hts_extract_before_final.num_children " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="num_wives" expression="hts_extract_before_final.num_wives " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="first_time_visit" expression="hts_extract_before_final.first_time_visit " type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_client_code" expression="hts_extract_before_final.index_client_code " type="id_String" nullable="true"/>
-        <mapperTableEntries name="extra" expression="hts_extract_before_final.extra " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="post_test_counseling" expression="hts_extract_before_final.post_test_counseling " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="knowledge_assessment" expression="hts_extract_before_final.knowledge_assessment " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tb_screening" expression="hts_extract_before_final.tb_screening " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="sti_screening" expression="hts_extract_before_final.sti_screening " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="risk_assessment" expression="hts_extract_before_final.risk_assessment " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" expression="hts_extract_before_final.extra " type="id_String" nullable="true"/>
+        <mapperTableEntries name="post_test_counseling" expression="hts_extract_before_final.post_test_counseling " type="id_String" nullable="true"/>
+        <mapperTableEntries name="knowledge_assessment" expression="hts_extract_before_final.knowledge_assessment " type="id_String" nullable="true"/>
+        <mapperTableEntries name="tb_screening" expression="hts_extract_before_final.tb_screening " type="id_String" nullable="true"/>
+        <mapperTableEntries name="sti_screening" expression="hts_extract_before_final.sti_screening " type="id_String" nullable="true"/>
+        <mapperTableEntries name="risk_assessment" expression="hts_extract_before_final.risk_assessment " type="id_String" nullable="true"/>
         <mapperTableEntries name="target_group" expression="hts_extract_before_final.target_group " type="id_String" nullable="true"/>
         <mapperTableEntries name="testing_setting" expression="hts_extract_before_final.testing_setting " type="id_String" nullable="true"/>
         <mapperTableEntries name="referred_from" expression="(hts_extract_before_final.referred_from==null ||hts_extract_before_final.referred_from==0) ? null: hts_extract_before_final.referred_from; " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="type_counseling" expression="(hts_extract_before_final.type_counseling==0)?null: hts_extract_before_final.type_counseling; " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="facility_id" expression="(row3.id==null)?0:row3.id " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="recency" expression="hts_extract_before_final.recency " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="recency" expression="hts_extract_before_final.recency " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="hts_extract_before_final" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_Integer"/>
-        <mapperTableEntries name="test1" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="confirmatory_test" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tie_breaker_test" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="test1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="confirmatory_test" type="id_String" nullable="true"/>
+        <mapperTableEntries name="tie_breaker_test" type="id_String" nullable="true"/>
         <mapperTableEntries name="client_code" type="id_String"/>
         <mapperTableEntries name="date_visit" type="id_Date"/>
         <mapperTableEntries name="archived" type="id_Integer" nullable="true"/>
@@ -825,22 +825,22 @@
         <mapperTableEntries name="uuid" type="id_String"/>
         <mapperTableEntries name="previously_tested" type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_testing" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="num_children" type="id_Long" nullable="true"/>
-        <mapperTableEntries name="num_wives" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="num_children" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="num_wives" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="first_time_visit" type="id_Boolean" nullable="true"/>
         <mapperTableEntries name="index_client_code" type="id_String" nullable="true"/>
-        <mapperTableEntries name="extra" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="post_test_counseling" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="knowledge_assessment" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="tb_screening" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="sti_screening" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="risk_assessment" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="extra" type="id_String" nullable="true"/>
+        <mapperTableEntries name="post_test_counseling" type="id_String" nullable="true"/>
+        <mapperTableEntries name="knowledge_assessment" type="id_String" nullable="true"/>
+        <mapperTableEntries name="tb_screening" type="id_String" nullable="true"/>
+        <mapperTableEntries name="sti_screening" type="id_String" nullable="true"/>
+        <mapperTableEntries name="risk_assessment" type="id_String" nullable="true"/>
         <mapperTableEntries name="target_group" type="id_String" nullable="true"/>
         <mapperTableEntries name="testing_setting" type="id_String" nullable="true"/>
         <mapperTableEntries name="referred_from" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="type_counseling" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="datim_id" type="id_String"/>
-        <mapperTableEntries name="recency" type="id_Object" nullable="true"/>
+        <mapperTableEntries name="recency" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="row3" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_Integer" nullable="true"/>
@@ -863,7 +863,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:7LZ5KTJObYIcfRE8Ztul4zXcqH6dJdzxLZHl44n9bGzeB3pFSoElanabKPE/uk2zrnpTnUkp"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PkbnOkN0YUVJjjVIDNBqn7nlimkuF566voxMPIhBAJRl/5Lwi7vF05E/Z983a2CaL/BRmO4Y"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -912,7 +912,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Mr0OAFR6AzAw6DwKoxMWWGmLPYF81BwEtjfKVvgWqdFEsAlX4sQltwmtbxtB3/15uAagfRPQ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dfMNe3Y/k61lnQRx6u7MM9thcdcoYiWh7vhKJsaD43nPdGckwuPFpVYreG+6YZ0YG3dBA2Xj"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;hts_client&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -931,7 +931,58 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="TABLE" name="ADD_COLS">
+      <elementValue elementRef="NAME" value="&quot;extra&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="extra"/>
+      <elementValue elementRef="NAME" value="&quot;test1&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="test1"/>
+      <elementValue elementRef="NAME" value="&quot;confirmatory_test&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="confirmatory_test"/>
+      <elementValue elementRef="NAME" value="&quot;tie_breaker_test&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="tie_breaker_test"/>
+      <elementValue elementRef="NAME" value="&quot;knowledge_assessment&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="knowledge_assessment"/>
+      <elementValue elementRef="NAME" value="&quot;risk_assessment&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="risk_assessment"/>
+      <elementValue elementRef="NAME" value="&quot;tb_screening&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="tb_screening"/>
+      <elementValue elementRef="NAME" value="&quot;sti_screening&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="sti_screening"/>
+      <elementValue elementRef="NAME" value="&quot;recency&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="recency"/>
+      <elementValue elementRef="NAME" value="&quot;post_test_counseling&quot;"/>
+      <elementValue elementRef="DATATYPE" value="VARCHAR(50)"/>
+      <elementValue elementRef="SQL" value="&quot;?::json&quot;"/>
+      <elementValue elementRef="POS" value="REPLACE"/>
+      <elementValue elementRef="REFCOL" value="post_test_counseling"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
@@ -1098,70 +1149,70 @@
     <elementParameter field="TEXT" name="LABEL" value="Hts_Client"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="test1" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="client_code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="150" name="captured_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="previously_tested" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="index_client" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="first_time_visit" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="index_client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="testing_setting" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="test1" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
-      <column comment="" key="false" length="600" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="BIGSERIAL" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="test1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="confirmatory_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tie_breaker_test" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="client_code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_visit" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="50" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="created_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="modified_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="150" name="captured_by" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="previously_tested" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="index_client" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_children" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="num_wives" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="1" name="first_time_visit" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="index_client_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="post_test_counseling" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="knowledge_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="tb_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="sti_screening" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="risk_assessment" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="1000" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="testing_setting" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="POINT" type="id_Object" originalLength="600" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="referred_from" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="type_counseling" nullable="true" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="50" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="recency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
@@ -1229,7 +1280,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Ya4s+doHh5iIUi4dJSEvVjKTxq82f3+wXEWaBkQ9XaGB08ec0Bvei+v8S0paWi/zVDt/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DrDVH+qHzepKJJtsOV3sI7dUlscmud8gR4ytWFlvXEAil+fmTh8Ts2Te5uRL8uwsp3I4"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1278,7 +1329,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:8XQmqKxEYChTBn8+BkyXx5AkdOb9Fs05C0npBdi58HQi71/7lvt2YHBwLqocBT+EWg77NVRm"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:SLJe8+RdaqRxyE7fsjiu8BoSpGPjfVbJ03bcQYLVgLjFBVr2zPk68uS1fgSamvJ18/4PhsyF"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_facility&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -1356,7 +1407,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BasZ+7Sw6PZx+VlxZRUGNZCgYSvV9qsMpUQYzRD3EkQmDdunphZP2e0fKWtJVLL2hAqyW/hE"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6sEgKiOVMTwWPQxTnFW2S19UedsaJBGtjkkjzzEGm9D8EQRolivL55H8Ur2e0sJJVuvnlFZa"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1404,7 +1455,7 @@
       <column comment="" key="false" length="-1" name="date_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="sequence_extra">
         <mapperTableEntries name="sequence_count" expression="row6.sequence_count " type="id_Long" nullable="true"/>
@@ -1429,7 +1480,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:c6yPYEB/sn1lm2by83FYO2+EOUlu820wzKcQlqPWak5ay3fRFBzeMlPIfsY3S2ffuUE7h9yA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WcTvzDIEDveLeb+sN3uhjikX5Ste2njbTM9AEE4ktNknQyN+wvSrd4a+eLpIoiUgB+Au2ahP"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_sequence&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>

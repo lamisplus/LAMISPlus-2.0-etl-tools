@@ -46,10 +46,13 @@ import java.util.Comparator;
 
 
 
-	//the import part of tJava_1
+	//the import part of tJava_2
 	//import java.util.List;
 
-	//the import part of tJava_2
+	//the import part of tJava_3
+	//import java.util.List;
+
+	//the import part of tJava_1
 	//import java.util.List;
 
 
@@ -426,7 +429,7 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tBufferOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -435,13 +438,13 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
 				status = "failure";
 				
-					tJava_1_onSubJobError(exception, errorComponent, globalMap);
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tDBInput_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -480,6 +483,15 @@ private class TalendException extends Exception {
 					tJava_2_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tJava_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tJava_3_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -487,6 +499,15 @@ private class TalendException extends Exception {
 				status = "failure";
 				
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tJava_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tAdvancedHash_facility_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -503,11 +524,6 @@ private class TalendException extends Exception {
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
 			}
-			public void tJava_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
 			public void tDBInput_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -518,12 +534,480 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
 			}
+			public void tJava_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tJava_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
 	
 
 
 
 
 
+
+public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Status_Tracker = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public java.util.Date created_date;
+
+				public java.util.Date getCreated_date () {
+					return this.created_date;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public java.util.Date last_modified_date;
+
+				public java.util.Date getLast_modified_date () {
+					return this.last_modified_date;
+				}
+				
+			    public String last_modified_by;
+
+				public String getLast_modified_by () {
+					return this.last_modified_by;
+				}
+				
+			    public String person_id;
+
+				public String getPerson_id () {
+					return this.person_id;
+				}
+				
+			    public String hiv_status;
+
+				public String getHiv_status () {
+					return this.hiv_status;
+				}
+				
+			    public java.util.Date status_date;
+
+				public java.util.Date getStatus_date () {
+					return this.status_date;
+				}
+				
+			    public String tracking_outcome;
+
+				public String getTracking_outcome () {
+					return this.tracking_outcome;
+				}
+				
+			    public java.util.Date track_date;
+
+				public java.util.Date getTrack_date () {
+					return this.track_date;
+				}
+				
+			    public java.util.Date agreed_date;
+
+				public java.util.Date getAgreed_date () {
+					return this.agreed_date;
+				}
+				
+			    public String reason_for_interruption;
+
+				public String getReason_for_interruption () {
+					return this.reason_for_interruption;
+				}
+				
+			    public String cause_of_death;
+
+				public String getCause_of_death () {
+					return this.cause_of_death;
+				}
+				
+			    public Boolean auto;
+
+				public Boolean getAuto () {
+					return this.auto;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public int archived;
+
+				public int getArchived () {
+					return this.archived;
+				}
+				
+			    public long facility_id;
+
+				public long getFacility_id () {
+					return this.facility_id;
+				}
+				
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
+					
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row2Struct other = (row2Struct) obj;
+		
+						if (this.uuid == null) {
+							if (other.uuid != null)
+								return false;
+						
+						} else if (!this.uuid.equals(other.uuid))
+						
+							return false;
+					
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(row2Struct other) {
+
+		other.created_date = this.created_date;
+	            other.created_by = this.created_by;
+	            other.last_modified_date = this.last_modified_date;
+	            other.last_modified_by = this.last_modified_by;
+	            other.person_id = this.person_id;
+	            other.hiv_status = this.hiv_status;
+	            other.status_date = this.status_date;
+	            other.tracking_outcome = this.tracking_outcome;
+	            other.track_date = this.track_date;
+	            other.agreed_date = this.agreed_date;
+	            other.reason_for_interruption = this.reason_for_interruption;
+	            other.cause_of_death = this.cause_of_death;
+	            other.auto = this.auto;
+	            other.uuid = this.uuid;
+	            other.archived = this.archived;
+	            other.facility_id = this.facility_id;
+	            other.id = this.id;
+	            
+	}
+
+	public void copyKeysDataTo(row2Struct other) {
+
+		other.uuid = this.uuid;
+	            	other.id = this.id;
+	            	
+	}
+
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_Status_Tracker, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_Status_Tracker) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.created_date = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.last_modified_date = readDate(dis);
+					
+					this.last_modified_by = readString(dis);
+					
+					this.person_id = readString(dis);
+					
+					this.hiv_status = readString(dis);
+					
+					this.status_date = readDate(dis);
+					
+					this.tracking_outcome = readString(dis);
+					
+					this.track_date = readDate(dis);
+					
+					this.agreed_date = readDate(dis);
+					
+					this.reason_for_interruption = readString(dis);
+					
+					this.cause_of_death = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.auto = null;
+           				} else {
+           			    	this.auto = dis.readBoolean();
+           				}
+					
+					this.uuid = readString(dis);
+					
+			        this.archived = dis.readInt();
+					
+			        this.facility_id = dis.readLong();
+					
+			        this.id = dis.readInt();
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.created_date,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.last_modified_date,dos);
+					
+					// String
+				
+						writeString(this.last_modified_by,dos);
+					
+					// String
+				
+						writeString(this.person_id,dos);
+					
+					// String
+				
+						writeString(this.hiv_status,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.status_date,dos);
+					
+					// String
+				
+						writeString(this.tracking_outcome,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.track_date,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.agreed_date,dos);
+					
+					// String
+				
+						writeString(this.reason_for_interruption,dos);
+					
+					// String
+				
+						writeString(this.cause_of_death,dos);
+					
+					// Boolean
+				
+						if(this.auto == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.auto);
+		            	}
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// int
+				
+		            	dos.writeInt(this.archived);
+					
+					// long
+				
+		            	dos.writeLong(this.facility_id);
+					
+					// int
+				
+		            	dos.writeInt(this.id);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("created_date="+String.valueOf(created_date));
+		sb.append(",created_by="+created_by);
+		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
+		sb.append(",last_modified_by="+last_modified_by);
+		sb.append(",person_id="+person_id);
+		sb.append(",hiv_status="+hiv_status);
+		sb.append(",status_date="+String.valueOf(status_date));
+		sb.append(",tracking_outcome="+tracking_outcome);
+		sb.append(",track_date="+String.valueOf(track_date));
+		sb.append(",agreed_date="+String.valueOf(agreed_date));
+		sb.append(",reason_for_interruption="+reason_for_interruption);
+		sb.append(",cause_of_death="+cause_of_death);
+		sb.append(",auto="+String.valueOf(auto));
+		sb.append(",uuid="+uuid);
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",facility_id="+String.valueOf(facility_id));
+		sb.append(",id="+String.valueOf(id));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row2Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.uuid, other.uuid);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
 
 public static class final_extractStruct implements routines.system.IPersistableRow<final_extractStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Status_Tracker = new byte[0];
@@ -1818,6 +2302,8 @@ public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) thr
 
 		status_history_extractStruct status_history_extract = new status_history_extractStruct();
 final_extractStruct final_extract = new final_extractStruct();
+final_extractStruct row2 = final_extract;
+
 
 
 
@@ -1840,7 +2326,7 @@ final_extractStruct final_extract = new final_extractStruct();
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"final_extract");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
 					}
 				
 		int tos_count_tDBOutput_2 = 0;
@@ -1911,6 +2397,39 @@ int count_tDBOutput_2=0;
 
 /**
  * [tDBOutput_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tBufferOutput_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tBufferOutput_1", false);
+		start_Hash.put("tBufferOutput_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tBufferOutput_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"final_extract");
+					}
+				
+		int tos_count_tBufferOutput_1 = 0;
+		
+
+ 
+
+
+
+/**
+ * [tBufferOutput_1 begin ] stop
  */
 
 
@@ -2037,9 +2556,9 @@ final_extractStruct final_extract_tmp = new final_extractStruct();
 +"as last_modified_by,\np.uuid as person_id, sh1.status as hiv_status, sh1.date_status as status_date,\nsh1.outcome as tra"
 +"cking_outcome, sh1.date_tracked as track_date, sh1.agreed_date,\nsh1.reason_for_interruption, sh1.cause_of_death, sh1.au"
 +"to, sh1.uuid,\nsh1.archived::integer as archived, nf.datim_id\nFROM status_history sh1\nINNER JOIN \n(\n   SELECT patien"
-+"t_id as p_id, MAX(id) AS MAXID\n   FROM status_history\n   GROUP BY patient_id\nORDER BY patient_id ASC\n) sh2 ON sh1.pa"
-+"tient_id = sh2.p_id AND sh1.id = sh2.MAXID\nINNER JOIN patient p ON sh1.patient_id = p.id\nINNER JOIN ndr_facility nf ON"
-+" sh1.facility_id = nf.id\nORDER BY sh1.patient_id ASC";
++"t_id as p_id, MAX(date_status) AS MAXDATE\n   FROM status_history\n   GROUP BY patient_id\nORDER BY patient_id ASC\n) sh"
++"2 ON sh1.patient_id = sh2.p_id AND sh1.date_status = sh2.MAXDATE\nINNER JOIN patient p ON sh1.patient_id = p.id\nINNER J"
++"OIN ndr_facility nf ON sh1.facility_id = nf.id\nORDER BY sh1.patient_id ASC";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2420,6 +2939,162 @@ if(final_extract != null) {
 
 	
 	/**
+	 * [tBufferOutput_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tBufferOutput_1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"final_extract");
+					}
+					
+
+
+
+String[] row_tBufferOutput_1=new String[]{"","","","","","","","","","","","","","","","","",};		
+	    if(final_extract.created_date != null){
+	        
+	            row_tBufferOutput_1[0] = FormatterUtils.format_Date(final_extract.created_date, "yyyy-MM-dd HH:mm:ss");
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[0] = null;
+	    }
+	    if(final_extract.created_by != null){
+	        
+	            row_tBufferOutput_1[1] = final_extract.created_by;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[1] = null;
+	    }
+	    if(final_extract.last_modified_date != null){
+	        
+	            row_tBufferOutput_1[2] = FormatterUtils.format_Date(final_extract.last_modified_date, "yyyy-MM-dd HH:mm:ss");
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[2] = null;
+	    }
+	    if(final_extract.last_modified_by != null){
+	        
+	            row_tBufferOutput_1[3] = final_extract.last_modified_by;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[3] = null;
+	    }
+	    if(final_extract.person_id != null){
+	        
+	            row_tBufferOutput_1[4] = final_extract.person_id;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[4] = null;
+	    }
+	    if(final_extract.hiv_status != null){
+	        
+	            row_tBufferOutput_1[5] = final_extract.hiv_status;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[5] = null;
+	    }
+	    if(final_extract.status_date != null){
+	        
+	            row_tBufferOutput_1[6] = FormatterUtils.format_Date(final_extract.status_date, "yyyy-MM-dd");
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[6] = null;
+	    }
+	    if(final_extract.tracking_outcome != null){
+	        
+	            row_tBufferOutput_1[7] = final_extract.tracking_outcome;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[7] = null;
+	    }
+	    if(final_extract.track_date != null){
+	        
+	            row_tBufferOutput_1[8] = FormatterUtils.format_Date(final_extract.track_date, "yyyy-MM-dd");
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[8] = null;
+	    }
+	    if(final_extract.agreed_date != null){
+	        
+	            row_tBufferOutput_1[9] = FormatterUtils.format_Date(final_extract.agreed_date, "yyyy-MM-dd");
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[9] = null;
+	    }
+	    if(final_extract.reason_for_interruption != null){
+	        
+	            row_tBufferOutput_1[10] = final_extract.reason_for_interruption;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[10] = null;
+	    }
+	    if(final_extract.cause_of_death != null){
+	        
+	            row_tBufferOutput_1[11] = final_extract.cause_of_death;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[11] = null;
+	    }
+	    if(final_extract.auto != null){
+	        
+	            row_tBufferOutput_1[12] = String.valueOf(final_extract.auto);
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[12] = null;
+	    }
+	    if(final_extract.uuid != null){
+	        
+	            row_tBufferOutput_1[13] = final_extract.uuid;
+	                        			    
+	    }else{
+	    	row_tBufferOutput_1[13] = null;
+	    }
+	    row_tBufferOutput_1[14] = String.valueOf(final_extract.archived); 
+	    
+	    row_tBufferOutput_1[15] = String.valueOf(final_extract.facility_id); 
+	    
+	    row_tBufferOutput_1[16] = String.valueOf(final_extract.id); 
+	    
+	globalBuffer.add(row_tBufferOutput_1);	
+	
+ 
+     row2 = final_extract;
+
+
+	tos_count_tBufferOutput_1++;
+
+/**
+ * [tBufferOutput_1 main ] stop
+ */
+	
+	/**
+	 * [tBufferOutput_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tBufferOutput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tBufferOutput_1 process_data_begin ] stop
+ */
+
+	
+	/**
 	 * [tDBOutput_2 main ] start
 	 */
 
@@ -2431,93 +3106,93 @@ if(final_extract != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"final_extract");
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
 					}
 					
 
 
 
         whetherReject_tDBOutput_2 = false;
-                    if(final_extract.created_date != null) {
-pstmt_tDBOutput_2.setTimestamp(1, new java.sql.Timestamp(final_extract.created_date.getTime()));
+                    if(row2.created_date != null) {
+pstmt_tDBOutput_2.setTimestamp(1, new java.sql.Timestamp(row2.created_date.getTime()));
 } else {
 pstmt_tDBOutput_2.setNull(1, java.sql.Types.TIMESTAMP);
 }
 
-                    if(final_extract.created_by == null) {
+                    if(row2.created_by == null) {
 pstmt_tDBOutput_2.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(2, final_extract.created_by);
+} else {pstmt_tDBOutput_2.setString(2, row2.created_by);
 }
 
-                    if(final_extract.last_modified_date != null) {
-pstmt_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(final_extract.last_modified_date.getTime()));
+                    if(row2.last_modified_date != null) {
+pstmt_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(row2.last_modified_date.getTime()));
 } else {
 pstmt_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
 }
 
-                    if(final_extract.last_modified_by == null) {
+                    if(row2.last_modified_by == null) {
 pstmt_tDBOutput_2.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(4, final_extract.last_modified_by);
+} else {pstmt_tDBOutput_2.setString(4, row2.last_modified_by);
 }
 
-                    if(final_extract.person_id == null) {
+                    if(row2.person_id == null) {
 pstmt_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(5, final_extract.person_id);
+} else {pstmt_tDBOutput_2.setString(5, row2.person_id);
 }
 
-                    if(final_extract.hiv_status == null) {
+                    if(row2.hiv_status == null) {
 pstmt_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(6, final_extract.hiv_status);
+} else {pstmt_tDBOutput_2.setString(6, row2.hiv_status);
 }
 
-                    if(final_extract.status_date != null) {
-pstmt_tDBOutput_2.setTimestamp(7, new java.sql.Timestamp(final_extract.status_date.getTime()));
+                    if(row2.status_date != null) {
+pstmt_tDBOutput_2.setTimestamp(7, new java.sql.Timestamp(row2.status_date.getTime()));
 } else {
 pstmt_tDBOutput_2.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                    if(final_extract.tracking_outcome == null) {
+                    if(row2.tracking_outcome == null) {
 pstmt_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(8, final_extract.tracking_outcome);
+} else {pstmt_tDBOutput_2.setString(8, row2.tracking_outcome);
 }
 
-                    if(final_extract.track_date != null) {
-pstmt_tDBOutput_2.setTimestamp(9, new java.sql.Timestamp(final_extract.track_date.getTime()));
+                    if(row2.track_date != null) {
+pstmt_tDBOutput_2.setTimestamp(9, new java.sql.Timestamp(row2.track_date.getTime()));
 } else {
 pstmt_tDBOutput_2.setNull(9, java.sql.Types.TIMESTAMP);
 }
 
-                    if(final_extract.agreed_date != null) {
-pstmt_tDBOutput_2.setTimestamp(10, new java.sql.Timestamp(final_extract.agreed_date.getTime()));
+                    if(row2.agreed_date != null) {
+pstmt_tDBOutput_2.setTimestamp(10, new java.sql.Timestamp(row2.agreed_date.getTime()));
 } else {
 pstmt_tDBOutput_2.setNull(10, java.sql.Types.TIMESTAMP);
 }
 
-                    if(final_extract.reason_for_interruption == null) {
+                    if(row2.reason_for_interruption == null) {
 pstmt_tDBOutput_2.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(11, final_extract.reason_for_interruption);
+} else {pstmt_tDBOutput_2.setString(11, row2.reason_for_interruption);
 }
 
-                    if(final_extract.cause_of_death == null) {
+                    if(row2.cause_of_death == null) {
 pstmt_tDBOutput_2.setNull(12, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(12, final_extract.cause_of_death);
+} else {pstmt_tDBOutput_2.setString(12, row2.cause_of_death);
 }
 
-                    if(final_extract.auto == null) {
+                    if(row2.auto == null) {
 pstmt_tDBOutput_2.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmt_tDBOutput_2.setBoolean(13, final_extract.auto);
+} else {pstmt_tDBOutput_2.setBoolean(13, row2.auto);
 }
 
-                    if(final_extract.uuid == null) {
+                    if(row2.uuid == null) {
 pstmt_tDBOutput_2.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_2.setString(14, final_extract.uuid);
+} else {pstmt_tDBOutput_2.setString(14, row2.uuid);
 }
 
-                    pstmt_tDBOutput_2.setInt(15, final_extract.archived);
+                    pstmt_tDBOutput_2.setInt(15, row2.archived);
 
-                    pstmt_tDBOutput_2.setLong(16, final_extract.facility_id);
+                    pstmt_tDBOutput_2.setLong(16, row2.facility_id);
 
-                    pstmt_tDBOutput_2.setInt(17, final_extract.id);
+                    pstmt_tDBOutput_2.setInt(17, row2.id);
 
 			
     		pstmt_tDBOutput_2.addBatch();
@@ -2649,6 +3324,29 @@ pstmt_tDBOutput_2.setNull(14, java.sql.Types.VARCHAR);
  * [tDBOutput_2 process_data_end ] stop
  */
 
+
+
+	
+	/**
+	 * [tBufferOutput_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tBufferOutput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tBufferOutput_1 process_data_end ] stop
+ */
+
 } // End of branch "final_extract"
 
 
@@ -2743,15 +3441,15 @@ end_Hash.put("tDBInput_1", System.currentTimeMillis());
    			if (globalMap.get("tDBInput_1_NB_LINE") != null) {
    				
 					if(execStat){
-   	 					runStat.updateStatOnConnection("If1", 0, "true");
+   	 					runStat.updateStatOnConnection("If2", 0, "true");
 					}
-				tJava_1Process(globalMap);
+				tJava_3Process(globalMap);
 			}
 
 			   
    				else{
 					if(execStat){   
-   	 					runStat.updateStatOnConnection("If1", 0, "false");
+   	 					runStat.updateStatOnConnection("If2", 0, "false");
 					}   	 
    				}
 
@@ -2805,6 +3503,35 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 
 /**
  * [tMap_1 end ] stop
+ */
+
+	
+	/**
+	 * [tBufferOutput_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tBufferOutput_1";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"final_extract");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tBufferOutput_1", true);
+end_Hash.put("tBufferOutput_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tBufferOutput_1 end ] stop
  */
 
 	
@@ -2886,7 +3613,7 @@ end_Hash.put("tMap_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"final_extract");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
 			  	}
 			  	
  
@@ -2900,6 +3627,9 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 /**
  * [tDBOutput_2 end ] stop
  */
+
+
+
 
 
 
@@ -2984,6 +3714,27 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 
 	
 	/**
+	 * [tBufferOutput_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tBufferOutput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tBufferOutput_1 finally ] stop
+ */
+
+	
+	/**
 	 * [tDBOutput_2 finally ] start
 	 */
 
@@ -3030,6 +3781,9 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 
 
 
+
+
+
 				}catch(java.lang.Exception e){	
 					//ignore
 				}catch(java.lang.Error error){
@@ -3040,204 +3794,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 		
 
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tJava_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tJava_1", false);
-		start_Hash.put("tJava_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tJava_1";
-
-	
-		int tos_count_tJava_1 = 0;
-		
-
-
-System.out.println("*****************************************************************");
-System.out.println("***********HIV_STATUS_TRACKER MIGRATION REPORT START*****************");
-java.time.LocalDateTime startTime = java.time.LocalDateTime.now();
-globalMap.put("startTime", startTime);
-System.out.println("Start time - "+ startTime);
-
-System.out.println("Total latest patients records fetched from LAMIS3 status_tracker - "+globalMap.get("tDBInput_1_NB_LINE"));
- 
-
-
-
-/**
- * [tJava_1 begin ] stop
- */
-	
-	/**
-	 * [tJava_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-	tos_count_tJava_1++;
-
-/**
- * [tJava_1 main ] stop
- */
-	
-	/**
-	 * [tJava_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tJava_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tJava_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-ok_Hash.put("tJava_1", true);
-end_Hash.put("tJava_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tJava_1 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tJava_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -4733,6 +5289,198 @@ end_Hash.put("tJava_2", System.currentTimeMillis());
 	}
 	
 
+public void tJava_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tJava_3_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+
+
+	
+	/**
+	 * [tJava_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tJava_3", false);
+		start_Hash.put("tJava_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tJava_3";
+
+	
+		int tos_count_tJava_3 = 0;
+		
+
+
+System.out.println("Total latest patients records fetched from LAMIS3 status_tracker - "+globalMap.get("tDBInput_1_NB_LINE"));
+ 
+
+
+
+/**
+ * [tJava_3 begin ] stop
+ */
+	
+	/**
+	 * [tJava_3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_3";
+
+	
+
+ 
+
+
+	tos_count_tJava_3++;
+
+/**
+ * [tJava_3 main ] stop
+ */
+	
+	/**
+	 * [tJava_3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_3 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tJava_3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_3 process_data_end ] stop
+ */
+	
+	/**
+	 * [tJava_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_3";
+
+	
+
+ 
+
+ok_Hash.put("tJava_3", true);
+end_Hash.put("tJava_3", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tJava_3 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tJava_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_3 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tJava_3_SUBPROCESS_STATE", 1);
+	}
+	
+
 
 public static class facilityStruct implements routines.system.IPersistableComparableLookupRow<facilityStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Status_Tracker = new byte[0];
@@ -5070,7 +5818,7 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		
 
 			   		// connection name:facility
-			   		// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(facility,facility) | target node:tAdvancedHash_facility - inputs:(facility) outputs:()
+			   		// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(facility,If,facility) | target node:tAdvancedHash_facility - inputs:(facility) outputs:()
 			   		// linked node: tMap_1 - inputs:(status_history_extract,facility) outputs:(final_extract)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_facility = 
@@ -5386,6 +6134,20 @@ globalMap.put("tDBInput_2_NB_LINE",nb_line_tDBInput_2);
 ok_Hash.put("tDBInput_2", true);
 end_Hash.put("tDBInput_2", System.currentTimeMillis());
 
+   			if (globalMap.get("tDBInput_2_NB_LINE") != null) {
+   				
+					if(execStat){
+   	 					runStat.updateStatOnConnection("If1", 0, "true");
+					}
+				tJava_1Process(globalMap);
+			}
+
+			   
+   				else{
+					if(execStat){   
+   	 					runStat.updateStatOnConnection("If1", 0, "false");
+					}   	 
+   				}
 
 
 
@@ -5503,6 +6265,202 @@ end_Hash.put("tAdvancedHash_facility", System.currentTimeMillis());
 		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 1);
 	}
 	
+
+public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+
+
+	
+	/**
+	 * [tJava_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tJava_1", false);
+		start_Hash.put("tJava_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tJava_1";
+
+	
+		int tos_count_tJava_1 = 0;
+		
+
+
+System.out.println("*****************************************************************");
+System.out.println("***********HIV_STATUS_TRACKER MIGRATION REPORT START*****************");
+java.time.LocalDateTime startTime = java.time.LocalDateTime.now();
+globalMap.put("startTime", startTime);
+System.out.println("Start time - "+ startTime);
+ 
+
+
+
+/**
+ * [tJava_1 begin ] stop
+ */
+	
+	/**
+	 * [tJava_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+	tos_count_tJava_1++;
+
+/**
+ * [tJava_1 main ] stop
+ */
+	
+	/**
+	 * [tJava_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tJava_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tJava_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+ok_Hash.put("tJava_1", true);
+end_Hash.put("tJava_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tJava_1 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tJava_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_1 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
+	}
+	
     public String resuming_logs_dir_path = null;
     public String resuming_checkpoint_path = null;
     public String parent_part_launcher = null;
@@ -5557,13 +6515,15 @@ end_Hash.put("tAdvancedHash_facility", System.currentTimeMillis());
     public String[][] runJob(String[] args) {
 
         int exitCode = runJobInTOS(args);
-        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+        String[][] bufferValue = (String[][])globalBuffer.toArray(new String[globalBuffer.size()][]);
 
         return bufferValue;
     }
 
     public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
+    	
+        		hastBufferOutput = true;
     	
         return hastBufferOutput;
     }
@@ -5973,6 +6933,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     153056 characters generated by Talend Open Studio for Big Data 
- *     on the November 21, 2022 12:11:12 PM WAT
+ *     173451 characters generated by Talend Open Studio for Big Data 
+ *     on the December 20, 2022 10:44:45 AM WAT
  ************************************************************************************************/

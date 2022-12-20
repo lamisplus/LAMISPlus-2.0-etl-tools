@@ -1115,9 +1115,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					return this.uuid;
 				}
 				
-			    public int archived;
+			    public Integer archived;
 
-				public int getArchived () {
+				public Integer getArchived () {
 					return this.archived;
 				}
 				
@@ -1127,16 +1127,16 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					return this.body_weight;
 				}
 				
-			    public Double diastolic;
-
-				public Double getDiastolic () {
-					return this.diastolic;
-				}
-				
 			    public Double systolic;
 
 				public Double getSystolic () {
 					return this.systolic;
+				}
+				
+			    public Double diastolic;
+
+				public Double getDiastolic () {
+					return this.diastolic;
 				}
 				
 			    public Double height;
@@ -1204,6 +1204,26 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 	    	dos.writeLong(date1.getTime());
     	}
     }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
     public void readData(ObjectInputStream dis) {
 
@@ -1225,7 +1245,7 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					
 					this.uuid = readString(dis);
 					
-			        this.archived = dis.readInt();
+						this.archived = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -1236,16 +1256,16 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					
 			            length = dis.readByte();
            				if (length == -1) {
-           	    			this.diastolic = null;
+           	    			this.systolic = null;
            				} else {
-           			    	this.diastolic = dis.readDouble();
+           			    	this.systolic = dis.readDouble();
            				}
 					
 			            length = dis.readByte();
            				if (length == -1) {
-           	    			this.systolic = null;
+           	    			this.diastolic = null;
            				} else {
-           			    	this.systolic = dis.readDouble();
+           			    	this.diastolic = dis.readDouble();
            				}
 					
 			            length = dis.readByte();
@@ -1299,9 +1319,9 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 				
 						writeString(this.uuid,dos);
 					
-					// int
+					// Integer
 				
-		            	dos.writeInt(this.archived);
+						writeInteger(this.archived,dos);
 					
 					// Double
 				
@@ -1314,20 +1334,20 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 					
 					// Double
 				
-						if(this.diastolic == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeDouble(this.diastolic);
-		            	}
-					
-					// Double
-				
 						if(this.systolic == null) {
 			                dos.writeByte(-1);
 						} else {
                				dos.writeByte(0);
            			    	dos.writeDouble(this.systolic);
+		            	}
+					
+					// Double
+				
+						if(this.diastolic == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.diastolic);
 		            	}
 					
 					// Double
@@ -1364,8 +1384,8 @@ public static class clinic_triageStruct implements routines.system.IPersistableR
 		sb.append(",uuid="+uuid);
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",body_weight="+String.valueOf(body_weight));
-		sb.append(",diastolic="+String.valueOf(diastolic));
 		sb.append(",systolic="+String.valueOf(systolic));
+		sb.append(",diastolic="+String.valueOf(diastolic));
 		sb.append(",height="+String.valueOf(height));
 		sb.append(",datim_id="+datim_id);
 	    sb.append("]");
@@ -1449,9 +1469,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.uuid;
 				}
 				
-			    public int archived;
+			    public Integer archived;
 
-				public int getArchived () {
+				public Integer getArchived () {
 					return this.archived;
 				}
 				
@@ -1461,16 +1481,16 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.body_weight;
 				}
 				
-			    public Double diastolic;
-
-				public Double getDiastolic () {
-					return this.diastolic;
-				}
-				
 			    public Double systolic;
 
 				public Double getSystolic () {
 					return this.systolic;
+				}
+				
+			    public Double diastolic;
+
+				public Double getDiastolic () {
+					return this.diastolic;
 				}
 				
 			    public Double height;
@@ -1538,6 +1558,26 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 	    	dos.writeLong(date1.getTime());
     	}
     }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
     public void readData(ObjectInputStream dis) {
 
@@ -1559,7 +1599,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.uuid = readString(dis);
 					
-			        this.archived = dis.readInt();
+						this.archived = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -1570,16 +1610,16 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 			            length = dis.readByte();
            				if (length == -1) {
-           	    			this.diastolic = null;
+           	    			this.systolic = null;
            				} else {
-           			    	this.diastolic = dis.readDouble();
+           			    	this.systolic = dis.readDouble();
            				}
 					
 			            length = dis.readByte();
            				if (length == -1) {
-           	    			this.systolic = null;
+           	    			this.diastolic = null;
            				} else {
-           			    	this.systolic = dis.readDouble();
+           			    	this.diastolic = dis.readDouble();
            				}
 					
 			            length = dis.readByte();
@@ -1633,9 +1673,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.uuid,dos);
 					
-					// int
+					// Integer
 				
-		            	dos.writeInt(this.archived);
+						writeInteger(this.archived,dos);
 					
 					// Double
 				
@@ -1648,20 +1688,20 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					// Double
 				
-						if(this.diastolic == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeDouble(this.diastolic);
-		            	}
-					
-					// Double
-				
 						if(this.systolic == null) {
 			                dos.writeByte(-1);
 						} else {
                				dos.writeByte(0);
            			    	dos.writeDouble(this.systolic);
+		            	}
+					
+					// Double
+				
+						if(this.diastolic == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.diastolic);
 		            	}
 					
 					// Double
@@ -1698,8 +1738,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",uuid="+uuid);
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",body_weight="+String.valueOf(body_weight));
-		sb.append(",diastolic="+String.valueOf(diastolic));
 		sb.append(",systolic="+String.valueOf(systolic));
+		sb.append(",diastolic="+String.valueOf(diastolic));
 		sb.append(",height="+String.valueOf(height));
 		sb.append(",datim_id="+datim_id);
 	    sb.append("]");
@@ -2080,12 +2120,12 @@ extractStruct extract_tmp = new extractStruct();
         	clinic_triage.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_1, 6, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 7) {
-								clinic_triage.archived = 0;
+								clinic_triage.archived = null;
 							} else {
 		                          
             clinic_triage.archived = rs_tDBInput_1.getInt(7);
             if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
+                    clinic_triage.archived = null;
             }
 		                    }
 							if(colQtyInRs_tDBInput_1 < 8) {
@@ -2098,21 +2138,21 @@ extractStruct extract_tmp = new extractStruct();
             }
 		                    }
 							if(colQtyInRs_tDBInput_1 < 9) {
-								clinic_triage.diastolic = null;
-							} else {
-	                         		
-            clinic_triage.diastolic = rs_tDBInput_1.getDouble(9);
-            if(rs_tDBInput_1.wasNull()){
-                    clinic_triage.diastolic = null;
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 10) {
 								clinic_triage.systolic = null;
 							} else {
 	                         		
-            clinic_triage.systolic = rs_tDBInput_1.getDouble(10);
+            clinic_triage.systolic = rs_tDBInput_1.getDouble(9);
             if(rs_tDBInput_1.wasNull()){
                     clinic_triage.systolic = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 10) {
+								clinic_triage.diastolic = null;
+							} else {
+	                         		
+            clinic_triage.diastolic = rs_tDBInput_1.getDouble(10);
+            if(rs_tDBInput_1.wasNull()){
+                    clinic_triage.diastolic = null;
             }
 		                    }
 							if(colQtyInRs_tDBInput_1 < 11) {
@@ -13107,6 +13147,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     341407 characters generated by Talend Open Studio for Big Data 
- *     on the November 20, 2022 9:43:28 PM WAT
+ *     342378 characters generated by Talend Open Studio for Big Data 
+ *     on the December 20, 2022 11:27:49 AM WAT
  ************************************************************************************************/

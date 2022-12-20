@@ -1809,27 +1809,27 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 
 
 	
-			    public int id;
+			    public long id;
 
-				public int getId () {
+				public long getId () {
 					return this.id;
 				}
 				
-			    public Object test1;
+			    public String test1;
 
-				public Object getTest1 () {
+				public String getTest1 () {
 					return this.test1;
 				}
 				
-			    public Object confirmatory_test;
+			    public String confirmatory_test;
 
-				public Object getConfirmatory_test () {
+				public String getConfirmatory_test () {
 					return this.confirmatory_test;
 				}
 				
-			    public Object tie_breaker_test;
+			    public String tie_breaker_test;
 
-				public Object getTie_breaker_test () {
+				public String getTie_breaker_test () {
 					return this.tie_breaker_test;
 				}
 				
@@ -1899,15 +1899,15 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					return this.index_client;
 				}
 				
-			    public Long num_children;
+			    public Integer num_children;
 
-				public Long getNum_children () {
+				public Integer getNum_children () {
 					return this.num_children;
 				}
 				
-			    public Long num_wives;
+			    public Integer num_wives;
 
-				public Long getNum_wives () {
+				public Integer getNum_wives () {
 					return this.num_wives;
 				}
 				
@@ -1923,39 +1923,39 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					return this.index_client_code;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
-			    public Object post_test_counseling;
+			    public String post_test_counseling;
 
-				public Object getPost_test_counseling () {
+				public String getPost_test_counseling () {
 					return this.post_test_counseling;
 				}
 				
-			    public Object knowledge_assessment;
+			    public String knowledge_assessment;
 
-				public Object getKnowledge_assessment () {
+				public String getKnowledge_assessment () {
 					return this.knowledge_assessment;
 				}
 				
-			    public Object tb_screening;
+			    public String tb_screening;
 
-				public Object getTb_screening () {
+				public String getTb_screening () {
 					return this.tb_screening;
 				}
 				
-			    public Object sti_screening;
+			    public String sti_screening;
 
-				public Object getSti_screening () {
+				public String getSti_screening () {
 					return this.sti_screening;
 				}
 				
-			    public Object risk_assessment;
+			    public String risk_assessment;
 
-				public Object getRisk_assessment () {
+				public String getRisk_assessment () {
 					return this.risk_assessment;
 				}
 				
@@ -1989,9 +1989,9 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					return this.facility_id;
 				}
 				
-			    public Object recency;
+			    public String recency;
 
-				public Object getRecency () {
+				public String getRecency () {
 					return this.recency;
 				}
 				
@@ -2149,13 +2149,13 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 
         		int length = 0;
 		
-			        this.id = dis.readInt();
+			        this.id = dis.readLong();
 					
-						this.test1 = (Object) dis.readObject();
+					this.test1 = readString(dis);
 					
-						this.confirmatory_test = (Object) dis.readObject();
+					this.confirmatory_test = readString(dis);
 					
-						this.tie_breaker_test = (Object) dis.readObject();
+					this.tie_breaker_test = readString(dis);
 					
 					this.client_code = readString(dis);
 					
@@ -2189,19 +2189,9 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
            			    	this.index_client = dis.readBoolean();
            				}
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_children = null;
-           				} else {
-           			    	this.num_children = dis.readLong();
-           				}
+						this.num_children = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_wives = null;
-           				} else {
-           			    	this.num_wives = dis.readLong();
-           				}
+						this.num_wives = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -2212,17 +2202,17 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					
 					this.index_client_code = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
-						this.post_test_counseling = (Object) dis.readObject();
+					this.post_test_counseling = readString(dis);
 					
-						this.knowledge_assessment = (Object) dis.readObject();
+					this.knowledge_assessment = readString(dis);
 					
-						this.tb_screening = (Object) dis.readObject();
+					this.tb_screening = readString(dis);
 					
-						this.sti_screening = (Object) dis.readObject();
+					this.sti_screening = readString(dis);
 					
-						this.risk_assessment = (Object) dis.readObject();
+					this.risk_assessment = readString(dis);
 					
 					this.target_group = readString(dis);
 					
@@ -2234,14 +2224,11 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					
 						this.facility_id = readInteger(dis);
 					
-						this.recency = (Object) dis.readObject();
+					this.recency = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -2257,21 +2244,21 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
         try {
 
 		
-					// int
+					// long
 				
-		            	dos.writeInt(this.id);
+		            	dos.writeLong(this.id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.test1);
+						writeString(this.test1,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.confirmatory_test);
+						writeString(this.confirmatory_test,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tie_breaker_test);
+						writeString(this.tie_breaker_test,dos);
 					
 					// String
 				
@@ -2327,23 +2314,13 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
            			    	dos.writeBoolean(this.index_client);
 		            	}
 					
-					// Long
+					// Integer
 				
-						if(this.num_children == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_children);
-		            	}
+						writeInteger(this.num_children,dos);
 					
-					// Long
+					// Integer
 				
-						if(this.num_wives == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_wives);
-		            	}
+						writeInteger(this.num_wives,dos);
 					
 					// Boolean
 				
@@ -2358,29 +2335,29 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 				
 						writeString(this.index_client_code,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.post_test_counseling);
+						writeString(this.post_test_counseling,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.knowledge_assessment);
+						writeString(this.knowledge_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tb_screening);
+						writeString(this.tb_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.sti_screening);
+						writeString(this.sti_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.risk_assessment);
+						writeString(this.risk_assessment,dos);
 					
 					// String
 				
@@ -2402,9 +2379,9 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 				
 						writeInteger(this.facility_id,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.recency);
+						writeString(this.recency,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2420,9 +2397,9 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",test1="+String.valueOf(test1));
-		sb.append(",confirmatory_test="+String.valueOf(confirmatory_test));
-		sb.append(",tie_breaker_test="+String.valueOf(tie_breaker_test));
+		sb.append(",test1="+test1);
+		sb.append(",confirmatory_test="+confirmatory_test);
+		sb.append(",tie_breaker_test="+tie_breaker_test);
 		sb.append(",client_code="+client_code);
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",archived="+String.valueOf(archived));
@@ -2438,18 +2415,18 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 		sb.append(",num_wives="+String.valueOf(num_wives));
 		sb.append(",first_time_visit="+String.valueOf(first_time_visit));
 		sb.append(",index_client_code="+index_client_code);
-		sb.append(",extra="+String.valueOf(extra));
-		sb.append(",post_test_counseling="+String.valueOf(post_test_counseling));
-		sb.append(",knowledge_assessment="+String.valueOf(knowledge_assessment));
-		sb.append(",tb_screening="+String.valueOf(tb_screening));
-		sb.append(",sti_screening="+String.valueOf(sti_screening));
-		sb.append(",risk_assessment="+String.valueOf(risk_assessment));
+		sb.append(",extra="+extra);
+		sb.append(",post_test_counseling="+post_test_counseling);
+		sb.append(",knowledge_assessment="+knowledge_assessment);
+		sb.append(",tb_screening="+tb_screening);
+		sb.append(",sti_screening="+sti_screening);
+		sb.append(",risk_assessment="+risk_assessment);
 		sb.append(",target_group="+target_group);
 		sb.append(",testing_setting="+testing_setting);
 		sb.append(",referred_from="+String.valueOf(referred_from));
 		sb.append(",type_counseling="+String.valueOf(type_counseling));
 		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",recency="+String.valueOf(recency));
+		sb.append(",recency="+recency);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2507,21 +2484,21 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					return this.id;
 				}
 				
-			    public Object test1;
+			    public String test1;
 
-				public Object getTest1 () {
+				public String getTest1 () {
 					return this.test1;
 				}
 				
-			    public Object confirmatory_test;
+			    public String confirmatory_test;
 
-				public Object getConfirmatory_test () {
+				public String getConfirmatory_test () {
 					return this.confirmatory_test;
 				}
 				
-			    public Object tie_breaker_test;
+			    public String tie_breaker_test;
 
-				public Object getTie_breaker_test () {
+				public String getTie_breaker_test () {
 					return this.tie_breaker_test;
 				}
 				
@@ -2591,15 +2568,15 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					return this.index_testing;
 				}
 				
-			    public Long num_children;
+			    public Integer num_children;
 
-				public Long getNum_children () {
+				public Integer getNum_children () {
 					return this.num_children;
 				}
 				
-			    public Long num_wives;
+			    public Integer num_wives;
 
-				public Long getNum_wives () {
+				public Integer getNum_wives () {
 					return this.num_wives;
 				}
 				
@@ -2615,39 +2592,39 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					return this.index_client_code;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
-			    public Object post_test_counseling;
+			    public String post_test_counseling;
 
-				public Object getPost_test_counseling () {
+				public String getPost_test_counseling () {
 					return this.post_test_counseling;
 				}
 				
-			    public Object knowledge_assessment;
+			    public String knowledge_assessment;
 
-				public Object getKnowledge_assessment () {
+				public String getKnowledge_assessment () {
 					return this.knowledge_assessment;
 				}
 				
-			    public Object tb_screening;
+			    public String tb_screening;
 
-				public Object getTb_screening () {
+				public String getTb_screening () {
 					return this.tb_screening;
 				}
 				
-			    public Object sti_screening;
+			    public String sti_screening;
 
-				public Object getSti_screening () {
+				public String getSti_screening () {
 					return this.sti_screening;
 				}
 				
-			    public Object risk_assessment;
+			    public String risk_assessment;
 
-				public Object getRisk_assessment () {
+				public String getRisk_assessment () {
 					return this.risk_assessment;
 				}
 				
@@ -2681,9 +2658,9 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					return this.datim_id;
 				}
 				
-			    public Object recency;
+			    public String recency;
 
-				public Object getRecency () {
+				public String getRecency () {
 					return this.recency;
 				}
 				
@@ -2771,11 +2748,11 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 		
 			        this.id = dis.readInt();
 					
-						this.test1 = (Object) dis.readObject();
+					this.test1 = readString(dis);
 					
-						this.confirmatory_test = (Object) dis.readObject();
+					this.confirmatory_test = readString(dis);
 					
-						this.tie_breaker_test = (Object) dis.readObject();
+					this.tie_breaker_test = readString(dis);
 					
 					this.client_code = readString(dis);
 					
@@ -2809,19 +2786,9 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
            			    	this.index_testing = dis.readBoolean();
            				}
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_children = null;
-           				} else {
-           			    	this.num_children = dis.readLong();
-           				}
+						this.num_children = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_wives = null;
-           				} else {
-           			    	this.num_wives = dis.readLong();
-           				}
+						this.num_wives = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -2832,17 +2799,17 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					
 					this.index_client_code = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
-						this.post_test_counseling = (Object) dis.readObject();
+					this.post_test_counseling = readString(dis);
 					
-						this.knowledge_assessment = (Object) dis.readObject();
+					this.knowledge_assessment = readString(dis);
 					
-						this.tb_screening = (Object) dis.readObject();
+					this.tb_screening = readString(dis);
 					
-						this.sti_screening = (Object) dis.readObject();
+					this.sti_screening = readString(dis);
 					
-						this.risk_assessment = (Object) dis.readObject();
+					this.risk_assessment = readString(dis);
 					
 					this.target_group = readString(dis);
 					
@@ -2854,14 +2821,11 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					
 					this.datim_id = readString(dis);
 					
-						this.recency = (Object) dis.readObject();
+					this.recency = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -2881,17 +2845,17 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 				
 		            	dos.writeInt(this.id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.test1);
+						writeString(this.test1,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.confirmatory_test);
+						writeString(this.confirmatory_test,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tie_breaker_test);
+						writeString(this.tie_breaker_test,dos);
 					
 					// String
 				
@@ -2947,23 +2911,13 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
            			    	dos.writeBoolean(this.index_testing);
 		            	}
 					
-					// Long
+					// Integer
 				
-						if(this.num_children == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_children);
-		            	}
+						writeInteger(this.num_children,dos);
 					
-					// Long
+					// Integer
 				
-						if(this.num_wives == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_wives);
-		            	}
+						writeInteger(this.num_wives,dos);
 					
 					// Boolean
 				
@@ -2978,29 +2932,29 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 				
 						writeString(this.index_client_code,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.post_test_counseling);
+						writeString(this.post_test_counseling,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.knowledge_assessment);
+						writeString(this.knowledge_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tb_screening);
+						writeString(this.tb_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.sti_screening);
+						writeString(this.sti_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.risk_assessment);
+						writeString(this.risk_assessment,dos);
 					
 					// String
 				
@@ -3022,9 +2976,9 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 				
 						writeString(this.datim_id,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.recency);
+						writeString(this.recency,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -3040,9 +2994,9 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",test1="+String.valueOf(test1));
-		sb.append(",confirmatory_test="+String.valueOf(confirmatory_test));
-		sb.append(",tie_breaker_test="+String.valueOf(tie_breaker_test));
+		sb.append(",test1="+test1);
+		sb.append(",confirmatory_test="+confirmatory_test);
+		sb.append(",tie_breaker_test="+tie_breaker_test);
 		sb.append(",client_code="+client_code);
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",archived="+String.valueOf(archived));
@@ -3058,18 +3012,18 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 		sb.append(",num_wives="+String.valueOf(num_wives));
 		sb.append(",first_time_visit="+String.valueOf(first_time_visit));
 		sb.append(",index_client_code="+index_client_code);
-		sb.append(",extra="+String.valueOf(extra));
-		sb.append(",post_test_counseling="+String.valueOf(post_test_counseling));
-		sb.append(",knowledge_assessment="+String.valueOf(knowledge_assessment));
-		sb.append(",tb_screening="+String.valueOf(tb_screening));
-		sb.append(",sti_screening="+String.valueOf(sti_screening));
-		sb.append(",risk_assessment="+String.valueOf(risk_assessment));
+		sb.append(",extra="+extra);
+		sb.append(",post_test_counseling="+post_test_counseling);
+		sb.append(",knowledge_assessment="+knowledge_assessment);
+		sb.append(",tb_screening="+tb_screening);
+		sb.append(",sti_screening="+sti_screening);
+		sb.append(",risk_assessment="+risk_assessment);
 		sb.append(",target_group="+target_group);
 		sb.append(",testing_setting="+testing_setting);
 		sb.append(",referred_from="+String.valueOf(referred_from));
 		sb.append(",type_counseling="+String.valueOf(type_counseling));
 		sb.append(",datim_id="+datim_id);
-		sb.append(",recency="+String.valueOf(recency));
+		sb.append(",recency="+recency);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3121,21 +3075,21 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					return this.id;
 				}
 				
-			    public Object test1;
+			    public String test1;
 
-				public Object getTest1 () {
+				public String getTest1 () {
 					return this.test1;
 				}
 				
-			    public Object confirmatory_test;
+			    public String confirmatory_test;
 
-				public Object getConfirmatory_test () {
+				public String getConfirmatory_test () {
 					return this.confirmatory_test;
 				}
 				
-			    public Object tie_breaker_test;
+			    public String tie_breaker_test;
 
-				public Object getTie_breaker_test () {
+				public String getTie_breaker_test () {
 					return this.tie_breaker_test;
 				}
 				
@@ -3205,15 +3159,15 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					return this.index_testing;
 				}
 				
-			    public Long num_children;
+			    public Integer num_children;
 
-				public Long getNum_children () {
+				public Integer getNum_children () {
 					return this.num_children;
 				}
 				
-			    public Long num_wives;
+			    public Integer num_wives;
 
-				public Long getNum_wives () {
+				public Integer getNum_wives () {
 					return this.num_wives;
 				}
 				
@@ -3241,39 +3195,39 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					return this.referred_from;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
-			    public Object post_test_counseling;
+			    public String post_test_counseling;
 
-				public Object getPost_test_counseling () {
+				public String getPost_test_counseling () {
 					return this.post_test_counseling;
 				}
 				
-			    public Object knowledge_assessment;
+			    public String knowledge_assessment;
 
-				public Object getKnowledge_assessment () {
+				public String getKnowledge_assessment () {
 					return this.knowledge_assessment;
 				}
 				
-			    public Object tb_screening;
+			    public String tb_screening;
 
-				public Object getTb_screening () {
+				public String getTb_screening () {
 					return this.tb_screening;
 				}
 				
-			    public Object sti_screening;
+			    public String sti_screening;
 
-				public Object getSti_screening () {
+				public String getSti_screening () {
 					return this.sti_screening;
 				}
 				
-			    public Object risk_assessment;
+			    public String risk_assessment;
 
-				public Object getRisk_assessment () {
+				public String getRisk_assessment () {
 					return this.risk_assessment;
 				}
 				
@@ -3295,9 +3249,9 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					return this.datim_id;
 				}
 				
-			    public Object recency;
+			    public String recency;
 
-				public Object getRecency () {
+				public String getRecency () {
 					return this.recency;
 				}
 				
@@ -3385,11 +3339,11 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 		
 			        this.id = dis.readInt();
 					
-						this.test1 = (Object) dis.readObject();
+					this.test1 = readString(dis);
 					
-						this.confirmatory_test = (Object) dis.readObject();
+					this.confirmatory_test = readString(dis);
 					
-						this.tie_breaker_test = (Object) dis.readObject();
+					this.tie_breaker_test = readString(dis);
 					
 					this.client_code = readString(dis);
 					
@@ -3423,19 +3377,9 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
            			    	this.index_testing = dis.readBoolean();
            				}
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_children = null;
-           				} else {
-           			    	this.num_children = dis.readLong();
-           				}
+						this.num_children = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_wives = null;
-           				} else {
-           			    	this.num_wives = dis.readLong();
-           				}
+						this.num_wives = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -3450,17 +3394,17 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					
 					this.referred_from = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
-						this.post_test_counseling = (Object) dis.readObject();
+					this.post_test_counseling = readString(dis);
 					
-						this.knowledge_assessment = (Object) dis.readObject();
+					this.knowledge_assessment = readString(dis);
 					
-						this.tb_screening = (Object) dis.readObject();
+					this.tb_screening = readString(dis);
 					
-						this.sti_screening = (Object) dis.readObject();
+					this.sti_screening = readString(dis);
 					
-						this.risk_assessment = (Object) dis.readObject();
+					this.risk_assessment = readString(dis);
 					
 					this.target_group = readString(dis);
 					
@@ -3468,14 +3412,11 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					
 					this.datim_id = readString(dis);
 					
-						this.recency = (Object) dis.readObject();
+					this.recency = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -3495,17 +3436,17 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 				
 		            	dos.writeInt(this.id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.test1);
+						writeString(this.test1,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.confirmatory_test);
+						writeString(this.confirmatory_test,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tie_breaker_test);
+						writeString(this.tie_breaker_test,dos);
 					
 					// String
 				
@@ -3561,23 +3502,13 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
            			    	dos.writeBoolean(this.index_testing);
 		            	}
 					
-					// Long
+					// Integer
 				
-						if(this.num_children == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_children);
-		            	}
+						writeInteger(this.num_children,dos);
 					
-					// Long
+					// Integer
 				
-						if(this.num_wives == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_wives);
-		            	}
+						writeInteger(this.num_wives,dos);
 					
 					// Boolean
 				
@@ -3600,29 +3531,29 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 				
 						writeString(this.referred_from,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.post_test_counseling);
+						writeString(this.post_test_counseling,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.knowledge_assessment);
+						writeString(this.knowledge_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tb_screening);
+						writeString(this.tb_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.sti_screening);
+						writeString(this.sti_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.risk_assessment);
+						writeString(this.risk_assessment,dos);
 					
 					// String
 				
@@ -3636,9 +3567,9 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 				
 						writeString(this.datim_id,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.recency);
+						writeString(this.recency,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -3654,9 +3585,9 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",test1="+String.valueOf(test1));
-		sb.append(",confirmatory_test="+String.valueOf(confirmatory_test));
-		sb.append(",tie_breaker_test="+String.valueOf(tie_breaker_test));
+		sb.append(",test1="+test1);
+		sb.append(",confirmatory_test="+confirmatory_test);
+		sb.append(",tie_breaker_test="+tie_breaker_test);
 		sb.append(",client_code="+client_code);
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",archived="+String.valueOf(archived));
@@ -3674,16 +3605,16 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 		sb.append(",index_client_code="+index_client_code);
 		sb.append(",type_counseling="+type_counseling);
 		sb.append(",referred_from="+referred_from);
-		sb.append(",extra="+String.valueOf(extra));
-		sb.append(",post_test_counseling="+String.valueOf(post_test_counseling));
-		sb.append(",knowledge_assessment="+String.valueOf(knowledge_assessment));
-		sb.append(",tb_screening="+String.valueOf(tb_screening));
-		sb.append(",sti_screening="+String.valueOf(sti_screening));
-		sb.append(",risk_assessment="+String.valueOf(risk_assessment));
+		sb.append(",extra="+extra);
+		sb.append(",post_test_counseling="+post_test_counseling);
+		sb.append(",knowledge_assessment="+knowledge_assessment);
+		sb.append(",tb_screening="+tb_screening);
+		sb.append(",sti_screening="+sti_screening);
+		sb.append(",risk_assessment="+risk_assessment);
 		sb.append(",target_group="+target_group);
 		sb.append(",testing_setting="+testing_setting);
 		sb.append(",datim_id="+datim_id);
-		sb.append(",recency="+String.valueOf(recency));
+		sb.append(",recency="+recency);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3735,21 +3666,21 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 					return this.id;
 				}
 				
-			    public Object test1;
+			    public String test1;
 
-				public Object getTest1 () {
+				public String getTest1 () {
 					return this.test1;
 				}
 				
-			    public Object confirmatory_test;
+			    public String confirmatory_test;
 
-				public Object getConfirmatory_test () {
+				public String getConfirmatory_test () {
 					return this.confirmatory_test;
 				}
 				
-			    public Object tie_breaker_test;
+			    public String tie_breaker_test;
 
-				public Object getTie_breaker_test () {
+				public String getTie_breaker_test () {
 					return this.tie_breaker_test;
 				}
 				
@@ -3813,15 +3744,15 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 					return this.index_testing;
 				}
 				
-			    public Long num_children;
+			    public Integer num_children;
 
-				public Long getNum_children () {
+				public Integer getNum_children () {
 					return this.num_children;
 				}
 				
-			    public Long num_wives;
+			    public Integer num_wives;
 
-				public Long getNum_wives () {
+				public Integer getNum_wives () {
 					return this.num_wives;
 				}
 				
@@ -3867,45 +3798,45 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 					return this.target_group;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
-			    public Object post_test_counseling;
+			    public String post_test_counseling;
 
-				public Object getPost_test_counseling () {
+				public String getPost_test_counseling () {
 					return this.post_test_counseling;
 				}
 				
-			    public Object knowledge_assessment;
+			    public String knowledge_assessment;
 
-				public Object getKnowledge_assessment () {
+				public String getKnowledge_assessment () {
 					return this.knowledge_assessment;
 				}
 				
-			    public Object tb_screening;
+			    public String tb_screening;
 
-				public Object getTb_screening () {
+				public String getTb_screening () {
 					return this.tb_screening;
 				}
 				
-			    public Object sti_screening;
+			    public String sti_screening;
 
-				public Object getSti_screening () {
+				public String getSti_screening () {
 					return this.sti_screening;
 				}
 				
-			    public Object risk_assessment;
+			    public String risk_assessment;
 
-				public Object getRisk_assessment () {
+				public String getRisk_assessment () {
 					return this.risk_assessment;
 				}
 				
-			    public Object recency;
+			    public String recency;
 
-				public Object getRecency () {
+				public String getRecency () {
 					return this.recency;
 				}
 				
@@ -3917,6 +3848,36 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 				
 
 
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HTS.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HTS.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HTS, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HTS, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
 	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
 		java.util.Date dateReturn = null;
@@ -3959,36 +3920,6 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
     	}
 	}
 
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HTS.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HTS.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HTS, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HTS, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
     public void readData(ObjectInputStream dis) {
 
 		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HTS) {
@@ -3999,11 +3930,11 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 		
 			        this.id = dis.readInt();
 					
-						this.test1 = (Object) dis.readObject();
+					this.test1 = readString(dis);
 					
-						this.confirmatory_test = (Object) dis.readObject();
+					this.confirmatory_test = readString(dis);
 					
-						this.tie_breaker_test = (Object) dis.readObject();
+					this.tie_breaker_test = readString(dis);
 					
 					this.date_visit = readDate(dis);
 					
@@ -4035,19 +3966,9 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
            			    	this.index_testing = dis.readBoolean();
            				}
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_children = null;
-           				} else {
-           			    	this.num_children = dis.readLong();
-           				}
+						this.num_children = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_wives = null;
-           				} else {
-           			    	this.num_wives = dis.readLong();
-           				}
+						this.num_wives = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -4068,28 +3989,25 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 					
 					this.target_group = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
-						this.post_test_counseling = (Object) dis.readObject();
+					this.post_test_counseling = readString(dis);
 					
-						this.knowledge_assessment = (Object) dis.readObject();
+					this.knowledge_assessment = readString(dis);
 					
-						this.tb_screening = (Object) dis.readObject();
+					this.tb_screening = readString(dis);
 					
-						this.sti_screening = (Object) dis.readObject();
+					this.sti_screening = readString(dis);
 					
-						this.risk_assessment = (Object) dis.readObject();
+					this.risk_assessment = readString(dis);
 					
-						this.recency = (Object) dis.readObject();
+					this.recency = readString(dis);
 					
 					this.datim_id = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -4109,17 +4027,17 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 				
 		            	dos.writeInt(this.id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.test1);
+						writeString(this.test1,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.confirmatory_test);
+						writeString(this.confirmatory_test,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tie_breaker_test);
+						writeString(this.tie_breaker_test,dos);
 					
 					// java.util.Date
 				
@@ -4171,23 +4089,13 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
            			    	dos.writeBoolean(this.index_testing);
 		            	}
 					
-					// Long
+					// Integer
 				
-						if(this.num_children == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_children);
-		            	}
+						writeInteger(this.num_children,dos);
 					
-					// Long
+					// Integer
 				
-						if(this.num_wives == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_wives);
-		            	}
+						writeInteger(this.num_wives,dos);
 					
 					// Boolean
 				
@@ -4222,33 +4130,33 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 				
 						writeString(this.target_group,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.post_test_counseling);
+						writeString(this.post_test_counseling,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.knowledge_assessment);
+						writeString(this.knowledge_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tb_screening);
+						writeString(this.tb_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.sti_screening);
+						writeString(this.sti_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.risk_assessment);
+						writeString(this.risk_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.recency);
+						writeString(this.recency,dos);
 					
 					// String
 				
@@ -4268,9 +4176,9 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",test1="+String.valueOf(test1));
-		sb.append(",confirmatory_test="+String.valueOf(confirmatory_test));
-		sb.append(",tie_breaker_test="+String.valueOf(tie_breaker_test));
+		sb.append(",test1="+test1);
+		sb.append(",confirmatory_test="+confirmatory_test);
+		sb.append(",tie_breaker_test="+tie_breaker_test);
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",date_created="+String.valueOf(date_created));
@@ -4290,13 +4198,13 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 		sb.append(",referred_from="+referred_from);
 		sb.append(",testing_setting="+testing_setting);
 		sb.append(",target_group="+target_group);
-		sb.append(",extra="+String.valueOf(extra));
-		sb.append(",post_test_counseling="+String.valueOf(post_test_counseling));
-		sb.append(",knowledge_assessment="+String.valueOf(knowledge_assessment));
-		sb.append(",tb_screening="+String.valueOf(tb_screening));
-		sb.append(",sti_screening="+String.valueOf(sti_screening));
-		sb.append(",risk_assessment="+String.valueOf(risk_assessment));
-		sb.append(",recency="+String.valueOf(recency));
+		sb.append(",extra="+extra);
+		sb.append(",post_test_counseling="+post_test_counseling);
+		sb.append(",knowledge_assessment="+knowledge_assessment);
+		sb.append(",tb_screening="+tb_screening);
+		sb.append(",sti_screening="+sti_screening);
+		sb.append(",risk_assessment="+risk_assessment);
+		sb.append(",recency="+recency);
 		sb.append(",datim_id="+datim_id);
 	    sb.append("]");
 
@@ -4349,21 +4257,21 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.id;
 				}
 				
-			    public Object test1;
+			    public String test1;
 
-				public Object getTest1 () {
+				public String getTest1 () {
 					return this.test1;
 				}
 				
-			    public Object confirmatory_test;
+			    public String confirmatory_test;
 
-				public Object getConfirmatory_test () {
+				public String getConfirmatory_test () {
 					return this.confirmatory_test;
 				}
 				
-			    public Object tie_breaker_test;
+			    public String tie_breaker_test;
 
-				public Object getTie_breaker_test () {
+				public String getTie_breaker_test () {
 					return this.tie_breaker_test;
 				}
 				
@@ -4427,15 +4335,15 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.index_testing;
 				}
 				
-			    public Long num_children;
+			    public Integer num_children;
 
-				public Long getNum_children () {
+				public Integer getNum_children () {
 					return this.num_children;
 				}
 				
-			    public Long num_wives;
+			    public Integer num_wives;
 
-				public Long getNum_wives () {
+				public Integer getNum_wives () {
 					return this.num_wives;
 				}
 				
@@ -4481,45 +4389,45 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.target_group;
 				}
 				
-			    public Object extra;
+			    public String extra;
 
-				public Object getExtra () {
+				public String getExtra () {
 					return this.extra;
 				}
 				
-			    public Object post_test_counseling;
+			    public String post_test_counseling;
 
-				public Object getPost_test_counseling () {
+				public String getPost_test_counseling () {
 					return this.post_test_counseling;
 				}
 				
-			    public Object knowledge_assessment;
+			    public String knowledge_assessment;
 
-				public Object getKnowledge_assessment () {
+				public String getKnowledge_assessment () {
 					return this.knowledge_assessment;
 				}
 				
-			    public Object tb_screening;
+			    public String tb_screening;
 
-				public Object getTb_screening () {
+				public String getTb_screening () {
 					return this.tb_screening;
 				}
 				
-			    public Object sti_screening;
+			    public String sti_screening;
 
-				public Object getSti_screening () {
+				public String getSti_screening () {
 					return this.sti_screening;
 				}
 				
-			    public Object risk_assessment;
+			    public String risk_assessment;
 
-				public Object getRisk_assessment () {
+				public String getRisk_assessment () {
 					return this.risk_assessment;
 				}
 				
-			    public Object recency;
+			    public String recency;
 
-				public Object getRecency () {
+				public String getRecency () {
 					return this.recency;
 				}
 				
@@ -4531,6 +4439,36 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 
 
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HTS.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HTS.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HTS, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HTS, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
 	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
 		java.util.Date dateReturn = null;
@@ -4573,36 +4511,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
     	}
 	}
 
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HTS.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HTS.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HTS = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HTS, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HTS, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
     public void readData(ObjectInputStream dis) {
 
 		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HTS) {
@@ -4613,11 +4521,11 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		
 			        this.id = dis.readInt();
 					
-						this.test1 = (Object) dis.readObject();
+					this.test1 = readString(dis);
 					
-						this.confirmatory_test = (Object) dis.readObject();
+					this.confirmatory_test = readString(dis);
 					
-						this.tie_breaker_test = (Object) dis.readObject();
+					this.tie_breaker_test = readString(dis);
 					
 					this.date_visit = readDate(dis);
 					
@@ -4649,19 +4557,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
            			    	this.index_testing = dis.readBoolean();
            				}
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_children = null;
-           				} else {
-           			    	this.num_children = dis.readLong();
-           				}
+						this.num_children = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.num_wives = null;
-           				} else {
-           			    	this.num_wives = dis.readLong();
-           				}
+						this.num_wives = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -4682,28 +4580,25 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.target_group = readString(dis);
 					
-						this.extra = (Object) dis.readObject();
+					this.extra = readString(dis);
 					
-						this.post_test_counseling = (Object) dis.readObject();
+					this.post_test_counseling = readString(dis);
 					
-						this.knowledge_assessment = (Object) dis.readObject();
+					this.knowledge_assessment = readString(dis);
 					
-						this.tb_screening = (Object) dis.readObject();
+					this.tb_screening = readString(dis);
 					
-						this.sti_screening = (Object) dis.readObject();
+					this.sti_screening = readString(dis);
 					
-						this.risk_assessment = (Object) dis.readObject();
+					this.risk_assessment = readString(dis);
 					
-						this.recency = (Object) dis.readObject();
+					this.recency = readString(dis);
 					
 					this.datim_id = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -4723,17 +4618,17 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 		            	dos.writeInt(this.id);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.test1);
+						writeString(this.test1,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.confirmatory_test);
+						writeString(this.confirmatory_test,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tie_breaker_test);
+						writeString(this.tie_breaker_test,dos);
 					
 					// java.util.Date
 				
@@ -4785,23 +4680,13 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
            			    	dos.writeBoolean(this.index_testing);
 		            	}
 					
-					// Long
+					// Integer
 				
-						if(this.num_children == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_children);
-		            	}
+						writeInteger(this.num_children,dos);
 					
-					// Long
+					// Integer
 				
-						if(this.num_wives == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.num_wives);
-		            	}
+						writeInteger(this.num_wives,dos);
 					
 					// Boolean
 				
@@ -4836,33 +4721,33 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.target_group,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.extra);
+						writeString(this.extra,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.post_test_counseling);
+						writeString(this.post_test_counseling,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.knowledge_assessment);
+						writeString(this.knowledge_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.tb_screening);
+						writeString(this.tb_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.sti_screening);
+						writeString(this.sti_screening,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.risk_assessment);
+						writeString(this.risk_assessment,dos);
 					
-					// Object
+					// String
 				
-       			    	dos.writeObject(this.recency);
+						writeString(this.recency,dos);
 					
 					// String
 				
@@ -4882,9 +4767,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",test1="+String.valueOf(test1));
-		sb.append(",confirmatory_test="+String.valueOf(confirmatory_test));
-		sb.append(",tie_breaker_test="+String.valueOf(tie_breaker_test));
+		sb.append(",test1="+test1);
+		sb.append(",confirmatory_test="+confirmatory_test);
+		sb.append(",tie_breaker_test="+tie_breaker_test);
 		sb.append(",date_visit="+String.valueOf(date_visit));
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",date_created="+String.valueOf(date_created));
@@ -4904,13 +4789,13 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",referred_from="+referred_from);
 		sb.append(",testing_setting="+testing_setting);
 		sb.append(",target_group="+target_group);
-		sb.append(",extra="+String.valueOf(extra));
-		sb.append(",post_test_counseling="+String.valueOf(post_test_counseling));
-		sb.append(",knowledge_assessment="+String.valueOf(knowledge_assessment));
-		sb.append(",tb_screening="+String.valueOf(tb_screening));
-		sb.append(",sti_screening="+String.valueOf(sti_screening));
-		sb.append(",risk_assessment="+String.valueOf(risk_assessment));
-		sb.append(",recency="+String.valueOf(recency));
+		sb.append(",extra="+extra);
+		sb.append(",post_test_counseling="+post_test_counseling);
+		sb.append(",knowledge_assessment="+knowledge_assessment);
+		sb.append(",tb_screening="+tb_screening);
+		sb.append(",sti_screening="+sti_screening);
+		sb.append(",risk_assessment="+risk_assessment);
+		sb.append(",recency="+recency);
 		sb.append(",datim_id="+datim_id);
 	    sb.append("]");
 
@@ -5070,10 +4955,10 @@ String dbUser_tDBOutput_1 = null;
 int count_tDBOutput_1=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"test1\",\"confirmatory_test\",\"tie_breaker_test\",\"client_code\",\"date_visit\",\"archived\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"captured_by\",\"uuid\",\"previously_tested\",\"index_client\",\"num_children\",\"num_wives\",\"first_time_visit\",\"index_client_code\",\"extra\",\"post_test_counseling\",\"knowledge_assessment\",\"tb_screening\",\"sti_screening\",\"risk_assessment\",\"target_group\",\"testing_setting\",\"referred_from\",\"type_counseling\",\"facility_id\",\"recency\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"" + "test1" + "\",\"" + "confirmatory_test" + "\",\"" + "tie_breaker_test" + "\",\"client_code\",\"date_visit\",\"archived\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"captured_by\",\"uuid\",\"previously_tested\",\"index_client\",\"num_children\",\"num_wives\",\"first_time_visit\",\"index_client_code\",\"" + "extra" + "\",\"" + "post_test_counseling" + "\",\"" + "knowledge_assessment" + "\",\"" + "tb_screening" + "\",\"" + "sti_screening" + "\",\"" + "risk_assessment" + "\",\"target_group\",\"testing_setting\",\"referred_from\",\"type_counseling\",\"facility_id\",\"" + "recency" + "\") VALUES (?," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?," + "?::json" + ")";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"test1\" = ?,\"confirmatory_test\" = ?,\"tie_breaker_test\" = ?,\"client_code\" = ?,\"date_visit\" = ?,\"archived\" = ?,\"date_created\" = ?,\"date_modified\" = ?,\"created_by\" = ?,\"modified_by\" = ?,\"captured_by\" = ?,\"uuid\" = ?,\"previously_tested\" = ?,\"index_client\" = ?,\"num_children\" = ?,\"num_wives\" = ?,\"first_time_visit\" = ?,\"index_client_code\" = ?,\"extra\" = ?,\"post_test_counseling\" = ?,\"knowledge_assessment\" = ?,\"tb_screening\" = ?,\"sti_screening\" = ?,\"risk_assessment\" = ?,\"target_group\" = ?,\"testing_setting\" = ?,\"referred_from\" = ?,\"type_counseling\" = ?,\"facility_id\" = ?,\"recency\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"" + "test1" + "\" = " + "?::json" + ",\"" + "confirmatory_test" + "\" = " + "?::json" + ",\"" + "tie_breaker_test" + "\" = " + "?::json" + ",\"client_code\" = ?,\"date_visit\" = ?,\"archived\" = ?,\"date_created\" = ?,\"date_modified\" = ?,\"created_by\" = ?,\"modified_by\" = ?,\"captured_by\" = ?,\"uuid\" = ?,\"previously_tested\" = ?,\"index_client\" = ?,\"num_children\" = ?,\"num_wives\" = ?,\"first_time_visit\" = ?,\"index_client_code\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"" + "post_test_counseling" + "\" = " + "?::json" + ",\"" + "knowledge_assessment" + "\" = " + "?::json" + ",\"" + "tb_screening" + "\" = " + "?::json" + ",\"" + "sti_screening" + "\" = " + "?::json" + ",\"" + "risk_assessment" + "\" = " + "?::json" + ",\"target_group\" = ?,\"testing_setting\" = ?,\"referred_from\" = ?,\"type_counseling\" = ?,\"facility_id\" = ?,\"" + "recency" + "\" = " + "?::json" + " WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 	    
@@ -5479,29 +5364,20 @@ hts_target_group_setting_mapStruct hts_target_group_setting_map_tmp = new hts_ta
 							if(colQtyInRs_tDBInput_1 < 2) {
 								hts_extract.test1 = null;
 							} else {
-		                          
-            hts_extract.test1 = rs_tDBInput_1.getObject(2);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.test1 = null;
-            }
+	                         		
+        	hts_extract.test1 = routines.system.JDBCUtil.getString(rs_tDBInput_1, 2, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 3) {
 								hts_extract.confirmatory_test = null;
 							} else {
-		                          
-            hts_extract.confirmatory_test = rs_tDBInput_1.getObject(3);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.confirmatory_test = null;
-            }
+	                         		
+        	hts_extract.confirmatory_test = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 4) {
 								hts_extract.tie_breaker_test = null;
 							} else {
-		                          
-            hts_extract.tie_breaker_test = rs_tDBInput_1.getObject(4);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.tie_breaker_test = null;
-            }
+	                         		
+        	hts_extract.tie_breaker_test = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 5) {
 								hts_extract.date_visit = null;
@@ -5576,7 +5452,7 @@ hts_target_group_setting_mapStruct hts_target_group_setting_map_tmp = new hts_ta
 								hts_extract.num_children = null;
 							} else {
 		                          
-            hts_extract.num_children = rs_tDBInput_1.getLong(15);
+            hts_extract.num_children = rs_tDBInput_1.getInt(15);
             if(rs_tDBInput_1.wasNull()){
                     hts_extract.num_children = null;
             }
@@ -5585,7 +5461,7 @@ hts_target_group_setting_mapStruct hts_target_group_setting_map_tmp = new hts_ta
 								hts_extract.num_wives = null;
 							} else {
 		                          
-            hts_extract.num_wives = rs_tDBInput_1.getLong(16);
+            hts_extract.num_wives = rs_tDBInput_1.getInt(16);
             if(rs_tDBInput_1.wasNull()){
                     hts_extract.num_wives = null;
             }
@@ -5638,65 +5514,44 @@ hts_target_group_setting_mapStruct hts_target_group_setting_map_tmp = new hts_ta
 							if(colQtyInRs_tDBInput_1 < 24) {
 								hts_extract.extra = null;
 							} else {
-		                          
-            hts_extract.extra = rs_tDBInput_1.getObject(24);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.extra = null;
-            }
+	                         		
+        	hts_extract.extra = routines.system.JDBCUtil.getString(rs_tDBInput_1, 24, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 25) {
 								hts_extract.post_test_counseling = null;
 							} else {
-		                          
-            hts_extract.post_test_counseling = rs_tDBInput_1.getObject(25);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.post_test_counseling = null;
-            }
+	                         		
+        	hts_extract.post_test_counseling = routines.system.JDBCUtil.getString(rs_tDBInput_1, 25, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 26) {
 								hts_extract.knowledge_assessment = null;
 							} else {
-		                          
-            hts_extract.knowledge_assessment = rs_tDBInput_1.getObject(26);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.knowledge_assessment = null;
-            }
+	                         		
+        	hts_extract.knowledge_assessment = routines.system.JDBCUtil.getString(rs_tDBInput_1, 26, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 27) {
 								hts_extract.tb_screening = null;
 							} else {
-		                          
-            hts_extract.tb_screening = rs_tDBInput_1.getObject(27);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.tb_screening = null;
-            }
+	                         		
+        	hts_extract.tb_screening = routines.system.JDBCUtil.getString(rs_tDBInput_1, 27, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 28) {
 								hts_extract.sti_screening = null;
 							} else {
-		                          
-            hts_extract.sti_screening = rs_tDBInput_1.getObject(28);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.sti_screening = null;
-            }
+	                         		
+        	hts_extract.sti_screening = routines.system.JDBCUtil.getString(rs_tDBInput_1, 28, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 29) {
 								hts_extract.risk_assessment = null;
 							} else {
-		                          
-            hts_extract.risk_assessment = rs_tDBInput_1.getObject(29);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.risk_assessment = null;
-            }
+	                         		
+        	hts_extract.risk_assessment = routines.system.JDBCUtil.getString(rs_tDBInput_1, 29, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 30) {
 								hts_extract.recency = null;
 							} else {
-		                          
-            hts_extract.recency = rs_tDBInput_1.getObject(30);
-            if(rs_tDBInput_1.wasNull()){
-                    hts_extract.recency = null;
-            }
+	                         		
+        	hts_extract.recency = routines.system.JDBCUtil.getString(rs_tDBInput_1, 30, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 31) {
 								hts_extract.datim_id = null;
@@ -6605,7 +6460,7 @@ if(hts_final != null) {
 
 
         whetherReject_tDBOutput_1 = false;
-                    pstmt_tDBOutput_1.setInt(1, hts_final.id);
+                    pstmt_tDBOutput_1.setLong(1, hts_final.id);
 
             int checkCount_tDBOutput_1 = -1;
             try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1.executeQuery()) {
@@ -6615,18 +6470,18 @@ if(hts_final != null) {
             }
             if(checkCount_tDBOutput_1 > 0) {
                         if(hts_final.test1 == null) {
-pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(1, hts_final.test1);
+pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(1, hts_final.test1);
 }
 
                         if(hts_final.confirmatory_test == null) {
-pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(2, hts_final.confirmatory_test);
+pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(2, hts_final.confirmatory_test);
 }
 
                         if(hts_final.tie_breaker_test == null) {
-pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(3, hts_final.tie_breaker_test);
+pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(3, hts_final.tie_breaker_test);
 }
 
                         if(hts_final.client_code == null) {
@@ -6686,12 +6541,12 @@ pstmtUpdate_tDBOutput_1.setNull(14, java.sql.Types.BOOLEAN);
 
                         if(hts_final.num_children == null) {
 pstmtUpdate_tDBOutput_1.setNull(15, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(15, hts_final.num_children);
+} else {pstmtUpdate_tDBOutput_1.setInt(15, hts_final.num_children);
 }
 
                         if(hts_final.num_wives == null) {
 pstmtUpdate_tDBOutput_1.setNull(16, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setLong(16, hts_final.num_wives);
+} else {pstmtUpdate_tDBOutput_1.setInt(16, hts_final.num_wives);
 }
 
                         if(hts_final.first_time_visit == null) {
@@ -6705,33 +6560,33 @@ pstmtUpdate_tDBOutput_1.setNull(18, java.sql.Types.VARCHAR);
 }
 
                         if(hts_final.extra == null) {
-pstmtUpdate_tDBOutput_1.setNull(19, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(19, hts_final.extra);
+pstmtUpdate_tDBOutput_1.setNull(19, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(19, hts_final.extra);
 }
 
                         if(hts_final.post_test_counseling == null) {
-pstmtUpdate_tDBOutput_1.setNull(20, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(20, hts_final.post_test_counseling);
+pstmtUpdate_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(20, hts_final.post_test_counseling);
 }
 
                         if(hts_final.knowledge_assessment == null) {
-pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(21, hts_final.knowledge_assessment);
+pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(21, hts_final.knowledge_assessment);
 }
 
                         if(hts_final.tb_screening == null) {
-pstmtUpdate_tDBOutput_1.setNull(22, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(22, hts_final.tb_screening);
+pstmtUpdate_tDBOutput_1.setNull(22, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(22, hts_final.tb_screening);
 }
 
                         if(hts_final.sti_screening == null) {
-pstmtUpdate_tDBOutput_1.setNull(23, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(23, hts_final.sti_screening);
+pstmtUpdate_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(23, hts_final.sti_screening);
 }
 
                         if(hts_final.risk_assessment == null) {
-pstmtUpdate_tDBOutput_1.setNull(24, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(24, hts_final.risk_assessment);
+pstmtUpdate_tDBOutput_1.setNull(24, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(24, hts_final.risk_assessment);
 }
 
                         if(hts_final.target_group == null) {
@@ -6760,11 +6615,11 @@ pstmtUpdate_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
 }
 
                         if(hts_final.recency == null) {
-pstmtUpdate_tDBOutput_1.setNull(30, java.sql.Types.OTHER);
-} else {pstmtUpdate_tDBOutput_1.setObject(30, hts_final.recency);
+pstmtUpdate_tDBOutput_1.setNull(30, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(30, hts_final.recency);
 }
 
-                        pstmtUpdate_tDBOutput_1.setInt(31 + count_tDBOutput_1, hts_final.id);
+                        pstmtUpdate_tDBOutput_1.setLong(31 + count_tDBOutput_1, hts_final.id);
 
                 try {
 					
@@ -6778,21 +6633,21 @@ pstmtUpdate_tDBOutput_1.setNull(30, java.sql.Types.OTHER);
                             System.err.print(e.getMessage());
                 }
             } else {
-                        pstmtInsert_tDBOutput_1.setInt(1, hts_final.id);
+                        pstmtInsert_tDBOutput_1.setLong(1, hts_final.id);
 
                         if(hts_final.test1 == null) {
-pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(2, hts_final.test1);
+pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(2, hts_final.test1);
 }
 
                         if(hts_final.confirmatory_test == null) {
-pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(3, hts_final.confirmatory_test);
+pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(3, hts_final.confirmatory_test);
 }
 
                         if(hts_final.tie_breaker_test == null) {
-pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(4, hts_final.tie_breaker_test);
+pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(4, hts_final.tie_breaker_test);
 }
 
                         if(hts_final.client_code == null) {
@@ -6852,12 +6707,12 @@ pstmtInsert_tDBOutput_1.setNull(15, java.sql.Types.BOOLEAN);
 
                         if(hts_final.num_children == null) {
 pstmtInsert_tDBOutput_1.setNull(16, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(16, hts_final.num_children);
+} else {pstmtInsert_tDBOutput_1.setInt(16, hts_final.num_children);
 }
 
                         if(hts_final.num_wives == null) {
 pstmtInsert_tDBOutput_1.setNull(17, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setLong(17, hts_final.num_wives);
+} else {pstmtInsert_tDBOutput_1.setInt(17, hts_final.num_wives);
 }
 
                         if(hts_final.first_time_visit == null) {
@@ -6871,33 +6726,33 @@ pstmtInsert_tDBOutput_1.setNull(19, java.sql.Types.VARCHAR);
 }
 
                         if(hts_final.extra == null) {
-pstmtInsert_tDBOutput_1.setNull(20, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(20, hts_final.extra);
+pstmtInsert_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(20, hts_final.extra);
 }
 
                         if(hts_final.post_test_counseling == null) {
-pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(21, hts_final.post_test_counseling);
+pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(21, hts_final.post_test_counseling);
 }
 
                         if(hts_final.knowledge_assessment == null) {
-pstmtInsert_tDBOutput_1.setNull(22, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(22, hts_final.knowledge_assessment);
+pstmtInsert_tDBOutput_1.setNull(22, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(22, hts_final.knowledge_assessment);
 }
 
                         if(hts_final.tb_screening == null) {
-pstmtInsert_tDBOutput_1.setNull(23, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(23, hts_final.tb_screening);
+pstmtInsert_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(23, hts_final.tb_screening);
 }
 
                         if(hts_final.sti_screening == null) {
-pstmtInsert_tDBOutput_1.setNull(24, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(24, hts_final.sti_screening);
+pstmtInsert_tDBOutput_1.setNull(24, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(24, hts_final.sti_screening);
 }
 
                         if(hts_final.risk_assessment == null) {
-pstmtInsert_tDBOutput_1.setNull(25, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(25, hts_final.risk_assessment);
+pstmtInsert_tDBOutput_1.setNull(25, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(25, hts_final.risk_assessment);
 }
 
                         if(hts_final.target_group == null) {
@@ -6926,8 +6781,8 @@ pstmtInsert_tDBOutput_1.setNull(30, java.sql.Types.INTEGER);
 }
 
                         if(hts_final.recency == null) {
-pstmtInsert_tDBOutput_1.setNull(31, java.sql.Types.OTHER);
-} else {pstmtInsert_tDBOutput_1.setObject(31, hts_final.recency);
+pstmtInsert_tDBOutput_1.setNull(31, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(31, hts_final.recency);
 }
 
                 try {
@@ -13630,6 +13485,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     346833 characters generated by Talend Open Studio for Big Data 
- *     on the November 13, 2022 10:32:14 PM WAT
+ *     341080 characters generated by Talend Open Studio for Big Data 
+ *     on the December 20, 2022 1:16:25 PM WAT
  ************************************************************************************************/
