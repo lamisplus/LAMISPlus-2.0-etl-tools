@@ -445,25 +445,7 @@ private class TalendException extends Exception {
 					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tUniqRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -735,974 +717,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
-public static class Unique_pharmStruct implements routines.system.IPersistableRow<Unique_pharmStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
-
-	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public java.util.Date next_appointment;
-
-				public java.util.Date getNext_appointment () {
-					return this.next_appointment;
-				}
-				
-			    public java.util.Date visit_date;
-
-				public java.util.Date getVisit_date () {
-					return this.visit_date;
-				}
-				
-			    public Boolean ard_screened;
-
-				public Boolean getArd_screened () {
-					return this.ard_screened;
-				}
-				
-			    public Boolean adherence;
-
-				public Boolean getAdherence () {
-					return this.adherence;
-				}
-				
-			    public String adverse_drug_reactions;
-
-				public String getAdverse_drug_reactions () {
-					return this.adverse_drug_reactions;
-				}
-				
-			    public String mmd_type;
-
-				public String getMmd_type () {
-					return this.mmd_type;
-				}
-				
-			    public Boolean prescription_error;
-
-				public Boolean getPrescription_error () {
-					return this.prescription_error;
-				}
-				
-			    public String extra;
-
-				public String getExtra () {
-					return this.extra;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public String visit_id;
-
-				public String getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public long facility_id;
-
-				public long getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public Boolean is_devolve;
-
-				public Boolean getIs_devolve () {
-					return this.is_devolve;
-				}
-				
-			    public Integer refill_period;
-
-				public Integer getRefill_period () {
-					return this.refill_period;
-				}
-				
-			    public String delivery_point;
-
-				public String getDelivery_point () {
-					return this.delivery_point;
-				}
-				
-			    public String dsd_model;
-
-				public String getDsd_model () {
-					return this.dsd_model;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public int archived;
-
-				public int getArchived () {
-					return this.archived;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.id = dis.readInt();
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.next_appointment = readDate(dis);
-					
-					this.visit_date = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.ard_screened = null;
-           				} else {
-           			    	this.ard_screened = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.adherence = null;
-           				} else {
-           			    	this.adherence = dis.readBoolean();
-           				}
-					
-					this.adverse_drug_reactions = readString(dis);
-					
-					this.mmd_type = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.prescription_error = null;
-           				} else {
-           			    	this.prescription_error = dis.readBoolean();
-           				}
-					
-					this.extra = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-					this.visit_id = readString(dis);
-					
-			        this.facility_id = dis.readLong();
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.is_devolve = null;
-           				} else {
-           			    	this.is_devolve = dis.readBoolean();
-           				}
-					
-						this.refill_period = readInteger(dis);
-					
-					this.delivery_point = readString(dis);
-					
-					this.dsd_model = readString(dis);
-					
-					this.person_uuid = readString(dis);
-					
-			        this.archived = dis.readInt();
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.next_appointment,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.visit_date,dos);
-					
-					// Boolean
-				
-						if(this.ard_screened == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.ard_screened);
-		            	}
-					
-					// Boolean
-				
-						if(this.adherence == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.adherence);
-		            	}
-					
-					// String
-				
-						writeString(this.adverse_drug_reactions,dos);
-					
-					// String
-				
-						writeString(this.mmd_type,dos);
-					
-					// Boolean
-				
-						if(this.prescription_error == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.prescription_error);
-		            	}
-					
-					// String
-				
-						writeString(this.extra,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// String
-				
-						writeString(this.visit_id,dos);
-					
-					// long
-				
-		            	dos.writeLong(this.facility_id);
-					
-					// Boolean
-				
-						if(this.is_devolve == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.is_devolve);
-		            	}
-					
-					// Integer
-				
-						writeInteger(this.refill_period,dos);
-					
-					// String
-				
-						writeString(this.delivery_point,dos);
-					
-					// String
-				
-						writeString(this.dsd_model,dos);
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// int
-				
-		            	dos.writeInt(this.archived);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",next_appointment="+String.valueOf(next_appointment));
-		sb.append(",visit_date="+String.valueOf(visit_date));
-		sb.append(",ard_screened="+String.valueOf(ard_screened));
-		sb.append(",adherence="+String.valueOf(adherence));
-		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
-		sb.append(",mmd_type="+mmd_type);
-		sb.append(",prescription_error="+String.valueOf(prescription_error));
-		sb.append(",extra="+extra);
-		sb.append(",uuid="+uuid);
-		sb.append(",visit_id="+visit_id);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",is_devolve="+String.valueOf(is_devolve));
-		sb.append(",refill_period="+String.valueOf(refill_period));
-		sb.append(",delivery_point="+delivery_point);
-		sb.append(",dsd_model="+dsd_model);
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",archived="+String.valueOf(archived));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Unique_pharmStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class Duplicate_pharmStruct implements routines.system.IPersistableRow<Duplicate_pharmStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
-
-	
-			    public int id;
-
-				public int getId () {
-					return this.id;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public java.util.Date next_appointment;
-
-				public java.util.Date getNext_appointment () {
-					return this.next_appointment;
-				}
-				
-			    public java.util.Date visit_date;
-
-				public java.util.Date getVisit_date () {
-					return this.visit_date;
-				}
-				
-			    public Boolean ard_screened;
-
-				public Boolean getArd_screened () {
-					return this.ard_screened;
-				}
-				
-			    public Boolean adherence;
-
-				public Boolean getAdherence () {
-					return this.adherence;
-				}
-				
-			    public String adverse_drug_reactions;
-
-				public String getAdverse_drug_reactions () {
-					return this.adverse_drug_reactions;
-				}
-				
-			    public String mmd_type;
-
-				public String getMmd_type () {
-					return this.mmd_type;
-				}
-				
-			    public Boolean prescription_error;
-
-				public Boolean getPrescription_error () {
-					return this.prescription_error;
-				}
-				
-			    public String extra;
-
-				public String getExtra () {
-					return this.extra;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public String visit_id;
-
-				public String getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public long facility_id;
-
-				public long getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public Boolean is_devolve;
-
-				public Boolean getIs_devolve () {
-					return this.is_devolve;
-				}
-				
-			    public Integer refill_period;
-
-				public Integer getRefill_period () {
-					return this.refill_period;
-				}
-				
-			    public String delivery_point;
-
-				public String getDelivery_point () {
-					return this.delivery_point;
-				}
-				
-			    public String dsd_model;
-
-				public String getDsd_model () {
-					return this.dsd_model;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public int archived;
-
-				public int getArchived () {
-					return this.archived;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.id = dis.readInt();
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.next_appointment = readDate(dis);
-					
-					this.visit_date = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.ard_screened = null;
-           				} else {
-           			    	this.ard_screened = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.adherence = null;
-           				} else {
-           			    	this.adherence = dis.readBoolean();
-           				}
-					
-					this.adverse_drug_reactions = readString(dis);
-					
-					this.mmd_type = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.prescription_error = null;
-           				} else {
-           			    	this.prescription_error = dis.readBoolean();
-           				}
-					
-					this.extra = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-					this.visit_id = readString(dis);
-					
-			        this.facility_id = dis.readLong();
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.is_devolve = null;
-           				} else {
-           			    	this.is_devolve = dis.readBoolean();
-           				}
-					
-						this.refill_period = readInteger(dis);
-					
-					this.delivery_point = readString(dis);
-					
-					this.dsd_model = readString(dis);
-					
-					this.person_uuid = readString(dis);
-					
-			        this.archived = dis.readInt();
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.id);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.next_appointment,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.visit_date,dos);
-					
-					// Boolean
-				
-						if(this.ard_screened == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.ard_screened);
-		            	}
-					
-					// Boolean
-				
-						if(this.adherence == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.adherence);
-		            	}
-					
-					// String
-				
-						writeString(this.adverse_drug_reactions,dos);
-					
-					// String
-				
-						writeString(this.mmd_type,dos);
-					
-					// Boolean
-				
-						if(this.prescription_error == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.prescription_error);
-		            	}
-					
-					// String
-				
-						writeString(this.extra,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// String
-				
-						writeString(this.visit_id,dos);
-					
-					// long
-				
-		            	dos.writeLong(this.facility_id);
-					
-					// Boolean
-				
-						if(this.is_devolve == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.is_devolve);
-		            	}
-					
-					// Integer
-				
-						writeInteger(this.refill_period,dos);
-					
-					// String
-				
-						writeString(this.delivery_point,dos);
-					
-					// String
-				
-						writeString(this.dsd_model,dos);
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// int
-				
-		            	dos.writeInt(this.archived);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",next_appointment="+String.valueOf(next_appointment));
-		sb.append(",visit_date="+String.valueOf(visit_date));
-		sb.append(",ard_screened="+String.valueOf(ard_screened));
-		sb.append(",adherence="+String.valueOf(adherence));
-		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
-		sb.append(",mmd_type="+mmd_type);
-		sb.append(",prescription_error="+String.valueOf(prescription_error));
-		sb.append(",extra="+extra);
-		sb.append(",uuid="+uuid);
-		sb.append(",visit_id="+visit_id);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",is_devolve="+String.valueOf(is_devolve));
-		sb.append(",refill_period="+String.valueOf(refill_period));
-		sb.append(",delivery_point="+delivery_point);
-		sb.append(",dsd_model="+dsd_model);
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",archived="+String.valueOf(archived));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Duplicate_pharmStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
 public static class Pharmacy_visit_mapStruct implements routines.system.IPersistableRow<Pharmacy_visit_mapStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
@@ -1840,6 +854,12 @@ public static class Pharmacy_visit_mapStruct implements routines.system.IPersist
 					return this.archived;
 				}
 				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
 
 
 
@@ -1986,6 +1006,8 @@ public static class Pharmacy_visit_mapStruct implements routines.system.IPersist
 					
 			        this.archived = dis.readInt();
 					
+					this.ipt = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -2112,6 +1134,10 @@ public static class Pharmacy_visit_mapStruct implements routines.system.IPersist
 				
 		            	dos.writeInt(this.archived);
 					
+					// String
+				
+						writeString(this.ipt,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -2147,6 +1173,7 @@ public static class Pharmacy_visit_mapStruct implements routines.system.IPersist
 		sb.append(",dsd_model="+dsd_model);
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",ipt="+ipt);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2318,6 +1345,12 @@ public static class HIV_Art_PharmacyStruct implements routines.system.IPersistab
 					return this.archived;
 				}
 				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
 
 
 
@@ -2462,6 +1495,8 @@ public static class HIV_Art_PharmacyStruct implements routines.system.IPersistab
 					
 			        this.archived = dis.readInt();
 					
+					this.ipt = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -2584,6 +1619,10 @@ public static class HIV_Art_PharmacyStruct implements routines.system.IPersistab
 				
 		            	dos.writeInt(this.archived);
 					
+					// String
+				
+						writeString(this.ipt,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -2618,6 +1657,7 @@ public static class HIV_Art_PharmacyStruct implements routines.system.IPersistab
 		sb.append(",delivery_point="+delivery_point);
 		sb.append(",dsd_model="+dsd_model);
 		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",ipt="+ipt);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2747,6 +1787,12 @@ public static class hiv_pharmacyStruct implements routines.system.IPersistableRo
 					return this.datim_id;
 				}
 				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
 
 
 
@@ -2852,6 +1898,8 @@ public static class hiv_pharmacyStruct implements routines.system.IPersistableRo
 					
 					this.datim_id = readString(dis);
 					
+					this.ipt = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -2941,6 +1989,10 @@ public static class hiv_pharmacyStruct implements routines.system.IPersistableRo
 				
 						writeString(this.datim_id,dos);
 					
+					// String
+				
+						writeString(this.ipt,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -2968,6 +2020,7 @@ public static class hiv_pharmacyStruct implements routines.system.IPersistableRo
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",uuid="+uuid);
 		sb.append(",datim_id="+datim_id);
+		sb.append(",ipt="+ipt);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3105,6 +2158,12 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
 
 
 	@Override
@@ -3151,6 +2210,7 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 	            other.person_uuid = this.person_uuid;
 	            other.uuid = this.uuid;
 	            other.datim_id = this.datim_id;
+	            other.ipt = this.ipt;
 	            
 	}
 
@@ -3265,6 +2325,8 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
+					this.ipt = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -3354,6 +2416,10 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
+					// String
+				
+						writeString(this.ipt,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -3381,6 +2447,7 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",uuid="+uuid);
 		sb.append(",datim_id="+datim_id);
+		sb.append(",ipt="+ipt);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3456,9 +2523,6 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		hiv_pharmacyStruct hiv_pharmacy = new hiv_pharmacyStruct();
 HIV_Art_PharmacyStruct HIV_Art_Pharmacy = new HIV_Art_PharmacyStruct();
 Pharmacy_visit_mapStruct Pharmacy_visit_map = new Pharmacy_visit_mapStruct();
-Unique_pharmStruct Unique_pharm = new Unique_pharmStruct();
-Duplicate_pharmStruct Duplicate_pharm = new Duplicate_pharmStruct();
-
 
 
 
@@ -3482,7 +2546,7 @@ Duplicate_pharmStruct Duplicate_pharm = new Duplicate_pharmStruct();
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Unique_pharm");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Pharmacy_visit_map");
 					}
 				
 		int tos_count_tDBOutput_1 = 0;
@@ -3545,10 +2609,10 @@ String dbUser_tDBOutput_1 = null;
 int count_tDBOutput_1=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"next_appointment\",\"visit_date\",\"ard_screened\",\"adherence\",\"" + "adverse_drug_reactions" + "\",\"mmd_type\",\"prescription_error\",\"" + "extra" + "\",\"uuid\",\"visit_id\",\"facility_id\",\"is_devolve\",\"refill_period\",\"delivery_point\",\"dsd_model\",\"person_uuid\",\"archived\") VALUES (?,?,?,?,?,?,?,?,?," + "?::json" + ",?,?," + "?::json" + ",?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"next_appointment\",\"visit_date\",\"ard_screened\",\"adherence\",\"" + "adverse_drug_reactions" + "\",\"mmd_type\",\"prescription_error\",\"" + "extra" + "\",\"uuid\",\"visit_id\",\"facility_id\",\"is_devolve\",\"refill_period\",\"delivery_point\",\"dsd_model\",\"person_uuid\",\"archived\",\"" + "ipt" + "\") VALUES (?,?,?,?,?,?,?,?,?," + "?::json" + ",?,?," + "?::json" + ",?,?,?,?,?,?,?,?,?," + "?::json" + ")";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"next_appointment\" = ?,\"visit_date\" = ?,\"ard_screened\" = ?,\"adherence\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::json" + ",\"mmd_type\" = ?,\"prescription_error\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"uuid\" = ?,\"visit_id\" = ?,\"facility_id\" = ?,\"is_devolve\" = ?,\"refill_period\" = ?,\"delivery_point\" = ?,\"dsd_model\" = ?,\"person_uuid\" = ?,\"archived\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"next_appointment\" = ?,\"visit_date\" = ?,\"ard_screened\" = ?,\"adherence\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::json" + ",\"mmd_type\" = ?,\"prescription_error\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"uuid\" = ?,\"visit_id\" = ?,\"facility_id\" = ?,\"is_devolve\" = ?,\"refill_period\" = ?,\"delivery_point\" = ?,\"dsd_model\" = ?,\"person_uuid\" = ?,\"archived\" = ?,\"" + "ipt" + "\" = " + "?::json" + " WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 	    
@@ -3559,224 +2623,6 @@ int count_tDBOutput_1=0;
 
 /**
  * [tDBOutput_1 begin ] stop
- */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBOutput_2", false);
-		start_Hash.put("tDBOutput_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tDBOutput_2";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Duplicate_pharm");
-					}
-				
-		int tos_count_tDBOutput_2 = 0;
-		
-
-
-
-
-
-String dbschema_tDBOutput_2 = null;
-	dbschema_tDBOutput_2 = context.LAMISPlus_Schema;
-	
-
-String tableName_tDBOutput_2 = null;
-if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-	tableName_tDBOutput_2 = ("hiv_art_pharmacy_duplicates");
-} else {
-	tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("hiv_art_pharmacy_duplicates");
-}
-
-        int updateKeyCount_tDBOutput_2 = 1;
-        if(updateKeyCount_tDBOutput_2 < 1) {
-            throw new RuntimeException("For update, Schema must have a key");
-        }
-int nb_line_tDBOutput_2 = 0;
-int nb_line_update_tDBOutput_2 = 0;
-int nb_line_inserted_tDBOutput_2 = 0;
-int nb_line_deleted_tDBOutput_2 = 0;
-int nb_line_rejected_tDBOutput_2 = 0;
-
-int deletedCount_tDBOutput_2=0;
-int updatedCount_tDBOutput_2=0;
-int insertedCount_tDBOutput_2=0;
-int rejectedCount_tDBOutput_2=0;
-
-boolean whetherReject_tDBOutput_2 = false;
-
-java.sql.Connection conn_tDBOutput_2 = null;
-String dbUser_tDBOutput_2 = null;
-
-	
-    java.lang.Class.forName("org.postgresql.Driver");
-    
-        String url_tDBOutput_2 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
-    dbUser_tDBOutput_2 = context.LAMISPlus_Login;
-
-	final String decryptedPassword_tDBOutput_2 = context.LAMISPlus_Password; 
-
-    String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
-
-    conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2,dbUser_tDBOutput_2,dbPwd_tDBOutput_2);
-	
-	resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
-        conn_tDBOutput_2.setAutoCommit(false);
-        int commitEvery_tDBOutput_2 = 10000;
-        int commitCounter_tDBOutput_2 = 0;
-
-
-
-int count_tDBOutput_2=0;
-                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_2 = conn_tDBOutput_2.getMetaData();
-                                boolean whetherExist_tDBOutput_2 = false;
-                                try (java.sql.ResultSet rsTable_tDBOutput_2 = dbMetaData_tDBOutput_2.getTables(null, null, null, new String[]{"TABLE"})) {
-                                    String defaultSchema_tDBOutput_2 = "public";
-                                    if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-                                        try(java.sql.Statement stmtSchema_tDBOutput_2 = conn_tDBOutput_2.createStatement();
-                                            java.sql.ResultSet rsSchema_tDBOutput_2 = stmtSchema_tDBOutput_2.executeQuery("select current_schema() ")) {
-                                            while(rsSchema_tDBOutput_2.next()){
-                                                defaultSchema_tDBOutput_2 = rsSchema_tDBOutput_2.getString("current_schema");
-                                            }
-                                        }
-                                    }
-                                    while(rsTable_tDBOutput_2.next()) {
-                                        String table_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_NAME");
-                                        String schema_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_SCHEM");
-                                        if(table_tDBOutput_2.equals(("hiv_art_pharmacy_duplicates"))
-                                            && (schema_tDBOutput_2.equals(dbschema_tDBOutput_2) || ((dbschema_tDBOutput_2 ==null || dbschema_tDBOutput_2.trim().length() ==0) && defaultSchema_tDBOutput_2.equals(schema_tDBOutput_2)))) {
-                                            whetherExist_tDBOutput_2 = true;
-                                            break;
-                                        }
-                                    }
-                                }
-                                if(!whetherExist_tDBOutput_2) {
-                                    try (java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
-                                        stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"id\" BIGSERIAL  not null ,\"created_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(255)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR(255)  ,\"next_appointment\" DATE ,\"visit_date\" DATE ,\"ard_screened\" BOOL ,\"adherence\" BOOL ,\"adverse_drug_reactions\" VARCHAR(250)  ,\"mmd_type\" VARCHAR(500)  ,\"prescription_error\" BOOL ,\"extra\" VARCHAR(500)  ,\"uuid\" VARCHAR(50)   not null ,\"visit_id\" VARCHAR(50)   not null ,\"facility_id\" BIGSERIAL  not null ,\"is_devolve\" BOOL ,\"refill_period\" INT4 ,\"delivery_point\" VARCHAR ,\"dsd_model\" VARCHAR ,\"person_uuid\" VARCHAR(255)   not null ,\"archived\" INT4  not null )");
-                                    }
-                                }
-	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
-	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
-	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"next_appointment\",\"visit_date\",\"ard_screened\",\"adherence\",\"adverse_drug_reactions\",\"mmd_type\",\"prescription_error\",\"extra\",\"uuid\",\"visit_id\",\"facility_id\",\"is_devolve\",\"refill_period\",\"delivery_point\",\"dsd_model\",\"person_uuid\",\"archived\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
-	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
-	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"next_appointment\" = ?,\"visit_date\" = ?,\"ard_screened\" = ?,\"adherence\" = ?,\"adverse_drug_reactions\" = ?,\"mmd_type\" = ?,\"prescription_error\" = ?,\"extra\" = ?,\"uuid\" = ?,\"visit_id\" = ?,\"facility_id\" = ?,\"is_devolve\" = ?,\"refill_period\" = ?,\"delivery_point\" = ?,\"dsd_model\" = ?,\"person_uuid\" = ?,\"archived\" = ? WHERE \"id\" = ?";
-	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
-	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
-	    
-
- 
-
-
-
-/**
- * [tDBOutput_2 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tUniqRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tUniqRow_1", false);
-		start_Hash.put("tUniqRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Pharmacy_visit_map");
-					}
-				
-		int tos_count_tUniqRow_1 = 0;
-		
-
-	
-		class KeyStruct_tUniqRow_1 {
-	
-			private static final int DEFAULT_HASHCODE = 1;
-		    private static final int PRIME = 31;
-		    private int hashCode = DEFAULT_HASHCODE;
-		    public boolean hashCodeDirty = true;
-	
-	        
-					int id;
-					String uuid;        
-	        
-		    @Override
-			public int hashCode() {
-				if (this.hashCodeDirty) {
-					final int prime = PRIME;
-					int result = DEFAULT_HASHCODE;
-			
-									result = prime * result + (int) this.id;
-									
-								result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
-								
-		    		this.hashCode = result;
-		    		this.hashCodeDirty = false;		
-				}
-				return this.hashCode;
-			}
-			
-			@Override
-			public boolean equals(Object obj) {
-				if (this == obj) return true;
-				if (obj == null) return false;
-				if (getClass() != obj.getClass()) return false;
-				final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
-				
-									if (this.id != other.id) 
-										return false;
-								
-									if (this.uuid == null) {
-										if (other.uuid != null) 
-											return false;
-								
-									} else if (!this.uuid.equals(other.uuid))
-								 
-										return false;
-								
-				
-				return true;
-			}
-	  
-	        
-		}
-
-	
-int nb_uniques_tUniqRow_1 = 0;
-int nb_duplicates_tUniqRow_1 = 0;
-KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>(); 
-
- 
-
-
-
-/**
- * [tUniqRow_1 begin ] stop
  */
 
 
@@ -3996,11 +2842,13 @@ HIV_Art_PharmacyStruct HIV_Art_Pharmacy_tmp = new HIV_Art_PharmacyStruct();
 		    
 			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-		    String dbquery_tDBInput_2 = "SELECT DISTINCT phar.id, phar.last_modified, phar.next_appointment, phar.date_visit, \n        phar.adr_screened, phar."
-+"adherence, phar.adverse_drug_reactions, \n        phar.mmd_type, phar.prescription_error,phar.archived::integer, \n     "
-+"   phar.extra, p.uuid as person_uuid, ''::VARCHAR as uuid, \n        nf.datim_id\n    FROM pharmacy as phar\n    INNER J"
-+"OIN patient p \n    ON p.id=phar.patient_id\n    INNER JOIN ndr_facility nf\n    ON nf.id=phar.facility_id\nWHERE p.extr"
-+"a->>'art'='true'\nORDER BY id ASC";
+		    String dbquery_tDBInput_2 = "SELECT phar.id, phar.last_modified, phar.next_appointment, phar.date_visit, \n        phar.adr_screened, phar.adherence"
++", phar.adverse_drug_reactions, \n        phar.mmd_type, phar.prescription_error,phar.archived::integer, \n        phar.e"
++"xtra, p.uuid as person_uuid, ''::VARCHAR as uuid, \n        nf.datim_id,\n		(CASE\n			WHEN phar.extra ->'ipt'->>'type' i"
++"s null \n		 AND phar.extra ->'ipt'->>'dateCompleted' is null THEN null\n			ELSE\n			json_build_object('type', phar.extra"
++"->'ipt'->>'type',\n		'dateCompleted',phar.extra->'ipt'->>'dateCompleted')\n		  END) ipt\n    FROM pharmacy as phar\n    "
++"INNER JOIN patient p \n    ON p.id=phar.patient_id\n    INNER JOIN ndr_facility nf\n    ON nf.id=phar.facility_id\nWHERE"
++" p.extra->>'art'='true'\nORDER BY id ASC";
 			
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -4115,6 +2963,12 @@ HIV_Art_PharmacyStruct HIV_Art_Pharmacy_tmp = new HIV_Art_PharmacyStruct();
 							} else {
 	                         		
         	hiv_pharmacy.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 14, false);
+		                    }
+							if(colQtyInRs_tDBInput_2 < 15) {
+								hiv_pharmacy.ipt = null;
+							} else {
+	                         		
+        	hiv_pharmacy.ipt = routines.system.JDBCUtil.getString(rs_tDBInput_2, 15, false);
 		                    }
 					
 
@@ -4431,6 +3285,7 @@ HIV_Art_Pharmacy_tmp.refill_period = (row4.refill_period != null && row4.refill_
 HIV_Art_Pharmacy_tmp.delivery_point = null;
 HIV_Art_Pharmacy_tmp.dsd_model = null;
 HIV_Art_Pharmacy_tmp.archived = hiv_pharmacy.archived ;
+HIV_Art_Pharmacy_tmp.ipt = hiv_pharmacy.ipt ;
 HIV_Art_Pharmacy = HIV_Art_Pharmacy_tmp;
 // ###############################
 
@@ -4745,6 +3600,7 @@ Pharmacy_visit_map_tmp.delivery_point = HIV_Art_Pharmacy.delivery_point ;
 Pharmacy_visit_map_tmp.dsd_model = HIV_Art_Pharmacy.dsd_model ;
 Pharmacy_visit_map_tmp.person_uuid = row1.person_uuid ;
 Pharmacy_visit_map_tmp.archived = HIV_Art_Pharmacy.archived ;
+Pharmacy_visit_map_tmp.ipt = HIV_Art_Pharmacy.ipt ;
 Pharmacy_visit_map = Pharmacy_visit_map_tmp;
 // ###############################
 
@@ -4796,87 +3652,6 @@ if(Pharmacy_visit_map != null) {
 
 	
 	/**
-	 * [tUniqRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Pharmacy_visit_map");
-					}
-					
-Duplicate_pharm = null;			Unique_pharm = null;			
-finder_tUniqRow_1.id = Pharmacy_visit_map.id;
-if(Pharmacy_visit_map.uuid == null){
-	finder_tUniqRow_1.uuid = null;
-}else{
-	finder_tUniqRow_1.uuid = Pharmacy_visit_map.uuid.toLowerCase();
-}	
-finder_tUniqRow_1.hashCodeDirty = true;
-if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-
-		
-new_tUniqRow_1.id = Pharmacy_visit_map.id;
-if(Pharmacy_visit_map.uuid == null){
-	new_tUniqRow_1.uuid = null;
-}else{
-	new_tUniqRow_1.uuid = Pharmacy_visit_map.uuid.toLowerCase();
-}
-		
-		keystUniqRow_1.add(new_tUniqRow_1);if(Unique_pharm == null){ 
-	
-	Unique_pharm = new Unique_pharmStruct();
-}Unique_pharm.id = Pharmacy_visit_map.id;			Unique_pharm.created_date = Pharmacy_visit_map.created_date;			Unique_pharm.created_by = Pharmacy_visit_map.created_by;			Unique_pharm.last_modified_date = Pharmacy_visit_map.last_modified_date;			Unique_pharm.last_modified_by = Pharmacy_visit_map.last_modified_by;			Unique_pharm.next_appointment = Pharmacy_visit_map.next_appointment;			Unique_pharm.visit_date = Pharmacy_visit_map.visit_date;			Unique_pharm.ard_screened = Pharmacy_visit_map.ard_screened;			Unique_pharm.adherence = Pharmacy_visit_map.adherence;			Unique_pharm.adverse_drug_reactions = Pharmacy_visit_map.adverse_drug_reactions;			Unique_pharm.mmd_type = Pharmacy_visit_map.mmd_type;			Unique_pharm.prescription_error = Pharmacy_visit_map.prescription_error;			Unique_pharm.extra = Pharmacy_visit_map.extra;			Unique_pharm.uuid = Pharmacy_visit_map.uuid;			Unique_pharm.visit_id = Pharmacy_visit_map.visit_id;			Unique_pharm.facility_id = Pharmacy_visit_map.facility_id;			Unique_pharm.is_devolve = Pharmacy_visit_map.is_devolve;			Unique_pharm.refill_period = Pharmacy_visit_map.refill_period;			Unique_pharm.delivery_point = Pharmacy_visit_map.delivery_point;			Unique_pharm.dsd_model = Pharmacy_visit_map.dsd_model;			Unique_pharm.person_uuid = Pharmacy_visit_map.person_uuid;			Unique_pharm.archived = Pharmacy_visit_map.archived;					
-		nb_uniques_tUniqRow_1++;
-	} else {
-if(Duplicate_pharm == null){ 
-	
-	Duplicate_pharm = new Duplicate_pharmStruct();
-}				Duplicate_pharm.id = Pharmacy_visit_map.id;			Duplicate_pharm.created_date = Pharmacy_visit_map.created_date;			Duplicate_pharm.created_by = Pharmacy_visit_map.created_by;			Duplicate_pharm.last_modified_date = Pharmacy_visit_map.last_modified_date;			Duplicate_pharm.last_modified_by = Pharmacy_visit_map.last_modified_by;			Duplicate_pharm.next_appointment = Pharmacy_visit_map.next_appointment;			Duplicate_pharm.visit_date = Pharmacy_visit_map.visit_date;			Duplicate_pharm.ard_screened = Pharmacy_visit_map.ard_screened;			Duplicate_pharm.adherence = Pharmacy_visit_map.adherence;			Duplicate_pharm.adverse_drug_reactions = Pharmacy_visit_map.adverse_drug_reactions;			Duplicate_pharm.mmd_type = Pharmacy_visit_map.mmd_type;			Duplicate_pharm.prescription_error = Pharmacy_visit_map.prescription_error;			Duplicate_pharm.extra = Pharmacy_visit_map.extra;			Duplicate_pharm.uuid = Pharmacy_visit_map.uuid;			Duplicate_pharm.visit_id = Pharmacy_visit_map.visit_id;			Duplicate_pharm.facility_id = Pharmacy_visit_map.facility_id;			Duplicate_pharm.is_devolve = Pharmacy_visit_map.is_devolve;			Duplicate_pharm.refill_period = Pharmacy_visit_map.refill_period;			Duplicate_pharm.delivery_point = Pharmacy_visit_map.delivery_point;			Duplicate_pharm.dsd_model = Pharmacy_visit_map.dsd_model;			Duplicate_pharm.person_uuid = Pharmacy_visit_map.person_uuid;			Duplicate_pharm.archived = Pharmacy_visit_map.archived;			
-	  nb_duplicates_tUniqRow_1++;
-	}
-
- 
-
-
-	tos_count_tUniqRow_1++;
-
-/**
- * [tUniqRow_1 main ] stop
- */
-	
-	/**
-	 * [tUniqRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_begin ] stop
- */
-// Start of branch "Unique_pharm"
-if(Unique_pharm != null) { 
-
-
-
-	
-	/**
 	 * [tDBOutput_1 main ] start
 	 */
 
@@ -4888,14 +3663,14 @@ if(Unique_pharm != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Unique_pharm");
+						runStat.updateStatOnConnection(iterateId,1,1,"Pharmacy_visit_map");
 					}
 					
 
 
 
         whetherReject_tDBOutput_1 = false;
-                    pstmt_tDBOutput_1.setInt(1, Unique_pharm.id);
+                    pstmt_tDBOutput_1.setInt(1, Pharmacy_visit_map.id);
 
             int checkCount_tDBOutput_1 = -1;
             try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1.executeQuery()) {
@@ -4904,112 +3679,117 @@ if(Unique_pharm != null) {
                 }
             }
             if(checkCount_tDBOutput_1 > 0) {
-                        pstmtUpdate_tDBOutput_1.setInt(1, Unique_pharm.id);
+                        pstmtUpdate_tDBOutput_1.setInt(1, Pharmacy_visit_map.id);
 
-                        if(Unique_pharm.created_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Unique_pharm.created_date.getTime()));
+                        if(Pharmacy_visit_map.created_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Pharmacy_visit_map.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.created_by == null) {
+                        if(Pharmacy_visit_map.created_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(3, Unique_pharm.created_by);
+} else {pstmtUpdate_tDBOutput_1.setString(3, Pharmacy_visit_map.created_by);
 }
 
-                        if(Unique_pharm.last_modified_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Unique_pharm.last_modified_date.getTime()));
+                        if(Pharmacy_visit_map.last_modified_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Pharmacy_visit_map.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.last_modified_by == null) {
+                        if(Pharmacy_visit_map.last_modified_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(5, Unique_pharm.last_modified_by);
+} else {pstmtUpdate_tDBOutput_1.setString(5, Pharmacy_visit_map.last_modified_by);
 }
 
-                        if(Unique_pharm.next_appointment != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(6, new java.sql.Timestamp(Unique_pharm.next_appointment.getTime()));
+                        if(Pharmacy_visit_map.next_appointment != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(6, new java.sql.Timestamp(Pharmacy_visit_map.next_appointment.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.visit_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(7, new java.sql.Timestamp(Unique_pharm.visit_date.getTime()));
+                        if(Pharmacy_visit_map.visit_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(7, new java.sql.Timestamp(Pharmacy_visit_map.visit_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.ard_screened == null) {
+                        if(Pharmacy_visit_map.ard_screened == null) {
 pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(8, Unique_pharm.ard_screened);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(8, Pharmacy_visit_map.ard_screened);
 }
 
-                        if(Unique_pharm.adherence == null) {
+                        if(Pharmacy_visit_map.adherence == null) {
 pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(9, Unique_pharm.adherence);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(9, Pharmacy_visit_map.adherence);
 }
 
-                        if(Unique_pharm.adverse_drug_reactions == null) {
+                        if(Pharmacy_visit_map.adverse_drug_reactions == null) {
 pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(10, Unique_pharm.adverse_drug_reactions);
+} else {pstmtUpdate_tDBOutput_1.setString(10, Pharmacy_visit_map.adverse_drug_reactions);
 }
 
-                        if(Unique_pharm.mmd_type == null) {
+                        if(Pharmacy_visit_map.mmd_type == null) {
 pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(11, Unique_pharm.mmd_type);
+} else {pstmtUpdate_tDBOutput_1.setString(11, Pharmacy_visit_map.mmd_type);
 }
 
-                        if(Unique_pharm.prescription_error == null) {
+                        if(Pharmacy_visit_map.prescription_error == null) {
 pstmtUpdate_tDBOutput_1.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(12, Unique_pharm.prescription_error);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(12, Pharmacy_visit_map.prescription_error);
 }
 
-                        if(Unique_pharm.extra == null) {
+                        if(Pharmacy_visit_map.extra == null) {
 pstmtUpdate_tDBOutput_1.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(13, Unique_pharm.extra);
+} else {pstmtUpdate_tDBOutput_1.setString(13, Pharmacy_visit_map.extra);
 }
 
-                        if(Unique_pharm.uuid == null) {
+                        if(Pharmacy_visit_map.uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(14, Unique_pharm.uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(14, Pharmacy_visit_map.uuid);
 }
 
-                        if(Unique_pharm.visit_id == null) {
+                        if(Pharmacy_visit_map.visit_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(15, Unique_pharm.visit_id);
+} else {pstmtUpdate_tDBOutput_1.setString(15, Pharmacy_visit_map.visit_id);
 }
 
-                        pstmtUpdate_tDBOutput_1.setLong(16, Unique_pharm.facility_id);
+                        pstmtUpdate_tDBOutput_1.setLong(16, Pharmacy_visit_map.facility_id);
 
-                        if(Unique_pharm.is_devolve == null) {
+                        if(Pharmacy_visit_map.is_devolve == null) {
 pstmtUpdate_tDBOutput_1.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(17, Unique_pharm.is_devolve);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(17, Pharmacy_visit_map.is_devolve);
 }
 
-                        if(Unique_pharm.refill_period == null) {
+                        if(Pharmacy_visit_map.refill_period == null) {
 pstmtUpdate_tDBOutput_1.setNull(18, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(18, Unique_pharm.refill_period);
+} else {pstmtUpdate_tDBOutput_1.setInt(18, Pharmacy_visit_map.refill_period);
 }
 
-                        if(Unique_pharm.delivery_point == null) {
+                        if(Pharmacy_visit_map.delivery_point == null) {
 pstmtUpdate_tDBOutput_1.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(19, Unique_pharm.delivery_point);
+} else {pstmtUpdate_tDBOutput_1.setString(19, Pharmacy_visit_map.delivery_point);
 }
 
-                        if(Unique_pharm.dsd_model == null) {
+                        if(Pharmacy_visit_map.dsd_model == null) {
 pstmtUpdate_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(20, Unique_pharm.dsd_model);
+} else {pstmtUpdate_tDBOutput_1.setString(20, Pharmacy_visit_map.dsd_model);
 }
 
-                        if(Unique_pharm.person_uuid == null) {
+                        if(Pharmacy_visit_map.person_uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(21, Unique_pharm.person_uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(21, Pharmacy_visit_map.person_uuid);
 }
 
-                        pstmtUpdate_tDBOutput_1.setInt(22, Unique_pharm.archived);
+                        pstmtUpdate_tDBOutput_1.setInt(22, Pharmacy_visit_map.archived);
 
-                        pstmtUpdate_tDBOutput_1.setInt(23 + count_tDBOutput_1, Unique_pharm.id);
+                        if(Pharmacy_visit_map.ipt == null) {
+pstmtUpdate_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(23, Pharmacy_visit_map.ipt);
+}
+
+                        pstmtUpdate_tDBOutput_1.setInt(24 + count_tDBOutput_1, Pharmacy_visit_map.id);
 
                 try {
 					
@@ -5023,110 +3803,115 @@ pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
                             System.err.print(e.getMessage());
                 }
             } else {
-                        pstmtInsert_tDBOutput_1.setInt(1, Unique_pharm.id);
+                        pstmtInsert_tDBOutput_1.setInt(1, Pharmacy_visit_map.id);
 
-                        if(Unique_pharm.created_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Unique_pharm.created_date.getTime()));
+                        if(Pharmacy_visit_map.created_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Pharmacy_visit_map.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.created_by == null) {
+                        if(Pharmacy_visit_map.created_by == null) {
 pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(3, Unique_pharm.created_by);
+} else {pstmtInsert_tDBOutput_1.setString(3, Pharmacy_visit_map.created_by);
 }
 
-                        if(Unique_pharm.last_modified_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Unique_pharm.last_modified_date.getTime()));
+                        if(Pharmacy_visit_map.last_modified_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Pharmacy_visit_map.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.last_modified_by == null) {
+                        if(Pharmacy_visit_map.last_modified_by == null) {
 pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(5, Unique_pharm.last_modified_by);
+} else {pstmtInsert_tDBOutput_1.setString(5, Pharmacy_visit_map.last_modified_by);
 }
 
-                        if(Unique_pharm.next_appointment != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(6, new java.sql.Timestamp(Unique_pharm.next_appointment.getTime()));
+                        if(Pharmacy_visit_map.next_appointment != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(6, new java.sql.Timestamp(Pharmacy_visit_map.next_appointment.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.visit_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(7, new java.sql.Timestamp(Unique_pharm.visit_date.getTime()));
+                        if(Pharmacy_visit_map.visit_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(7, new java.sql.Timestamp(Pharmacy_visit_map.visit_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_pharm.ard_screened == null) {
+                        if(Pharmacy_visit_map.ard_screened == null) {
 pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(8, Unique_pharm.ard_screened);
+} else {pstmtInsert_tDBOutput_1.setBoolean(8, Pharmacy_visit_map.ard_screened);
 }
 
-                        if(Unique_pharm.adherence == null) {
+                        if(Pharmacy_visit_map.adherence == null) {
 pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(9, Unique_pharm.adherence);
+} else {pstmtInsert_tDBOutput_1.setBoolean(9, Pharmacy_visit_map.adherence);
 }
 
-                        if(Unique_pharm.adverse_drug_reactions == null) {
+                        if(Pharmacy_visit_map.adverse_drug_reactions == null) {
 pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(10, Unique_pharm.adverse_drug_reactions);
+} else {pstmtInsert_tDBOutput_1.setString(10, Pharmacy_visit_map.adverse_drug_reactions);
 }
 
-                        if(Unique_pharm.mmd_type == null) {
+                        if(Pharmacy_visit_map.mmd_type == null) {
 pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(11, Unique_pharm.mmd_type);
+} else {pstmtInsert_tDBOutput_1.setString(11, Pharmacy_visit_map.mmd_type);
 }
 
-                        if(Unique_pharm.prescription_error == null) {
+                        if(Pharmacy_visit_map.prescription_error == null) {
 pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(12, Unique_pharm.prescription_error);
+} else {pstmtInsert_tDBOutput_1.setBoolean(12, Pharmacy_visit_map.prescription_error);
 }
 
-                        if(Unique_pharm.extra == null) {
+                        if(Pharmacy_visit_map.extra == null) {
 pstmtInsert_tDBOutput_1.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(13, Unique_pharm.extra);
+} else {pstmtInsert_tDBOutput_1.setString(13, Pharmacy_visit_map.extra);
 }
 
-                        if(Unique_pharm.uuid == null) {
+                        if(Pharmacy_visit_map.uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(14, Unique_pharm.uuid);
+} else {pstmtInsert_tDBOutput_1.setString(14, Pharmacy_visit_map.uuid);
 }
 
-                        if(Unique_pharm.visit_id == null) {
+                        if(Pharmacy_visit_map.visit_id == null) {
 pstmtInsert_tDBOutput_1.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(15, Unique_pharm.visit_id);
+} else {pstmtInsert_tDBOutput_1.setString(15, Pharmacy_visit_map.visit_id);
 }
 
-                        pstmtInsert_tDBOutput_1.setLong(16, Unique_pharm.facility_id);
+                        pstmtInsert_tDBOutput_1.setLong(16, Pharmacy_visit_map.facility_id);
 
-                        if(Unique_pharm.is_devolve == null) {
+                        if(Pharmacy_visit_map.is_devolve == null) {
 pstmtInsert_tDBOutput_1.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(17, Unique_pharm.is_devolve);
+} else {pstmtInsert_tDBOutput_1.setBoolean(17, Pharmacy_visit_map.is_devolve);
 }
 
-                        if(Unique_pharm.refill_period == null) {
+                        if(Pharmacy_visit_map.refill_period == null) {
 pstmtInsert_tDBOutput_1.setNull(18, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(18, Unique_pharm.refill_period);
+} else {pstmtInsert_tDBOutput_1.setInt(18, Pharmacy_visit_map.refill_period);
 }
 
-                        if(Unique_pharm.delivery_point == null) {
+                        if(Pharmacy_visit_map.delivery_point == null) {
 pstmtInsert_tDBOutput_1.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(19, Unique_pharm.delivery_point);
+} else {pstmtInsert_tDBOutput_1.setString(19, Pharmacy_visit_map.delivery_point);
 }
 
-                        if(Unique_pharm.dsd_model == null) {
+                        if(Pharmacy_visit_map.dsd_model == null) {
 pstmtInsert_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(20, Unique_pharm.dsd_model);
+} else {pstmtInsert_tDBOutput_1.setString(20, Pharmacy_visit_map.dsd_model);
 }
 
-                        if(Unique_pharm.person_uuid == null) {
+                        if(Pharmacy_visit_map.person_uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(21, Unique_pharm.person_uuid);
+} else {pstmtInsert_tDBOutput_1.setString(21, Pharmacy_visit_map.person_uuid);
 }
 
-                        pstmtInsert_tDBOutput_1.setInt(22, Unique_pharm.archived);
+                        pstmtInsert_tDBOutput_1.setInt(22, Pharmacy_visit_map.archived);
+
+                        if(Pharmacy_visit_map.ipt == null) {
+pstmtInsert_tDBOutput_1.setNull(23, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(23, Pharmacy_visit_map.ipt);
+}
 
                 try {
 					
@@ -5194,363 +3979,6 @@ pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
 
 /**
  * [tDBOutput_1 process_data_end ] stop
- */
-
-} // End of branch "Unique_pharm"
-
-
-
-
-// Start of branch "Duplicate_pharm"
-if(Duplicate_pharm != null) { 
-
-
-
-	
-	/**
-	 * [tDBOutput_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Duplicate_pharm");
-					}
-					
-
-
-
-        whetherReject_tDBOutput_2 = false;
-                    pstmt_tDBOutput_2.setInt(1, Duplicate_pharm.id);
-
-            int checkCount_tDBOutput_2 = -1;
-            try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
-                while(rs_tDBOutput_2.next()) {
-                    checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
-                }
-            }
-            if(checkCount_tDBOutput_2 > 0) {
-                        pstmtUpdate_tDBOutput_2.setInt(1, Duplicate_pharm.id);
-
-                        if(Duplicate_pharm.created_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Duplicate_pharm.created_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.created_by == null) {
-pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(3, Duplicate_pharm.created_by);
-}
-
-                        if(Duplicate_pharm.last_modified_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Duplicate_pharm.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.last_modified_by == null) {
-pstmtUpdate_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(5, Duplicate_pharm.last_modified_by);
-}
-
-                        if(Duplicate_pharm.next_appointment != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(6, new java.sql.Timestamp(Duplicate_pharm.next_appointment.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.visit_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(7, new java.sql.Timestamp(Duplicate_pharm.visit_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(7, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.ard_screened == null) {
-pstmtUpdate_tDBOutput_2.setNull(8, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(8, Duplicate_pharm.ard_screened);
-}
-
-                        if(Duplicate_pharm.adherence == null) {
-pstmtUpdate_tDBOutput_2.setNull(9, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(9, Duplicate_pharm.adherence);
-}
-
-                        if(Duplicate_pharm.adverse_drug_reactions == null) {
-pstmtUpdate_tDBOutput_2.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(10, Duplicate_pharm.adverse_drug_reactions);
-}
-
-                        if(Duplicate_pharm.mmd_type == null) {
-pstmtUpdate_tDBOutput_2.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(11, Duplicate_pharm.mmd_type);
-}
-
-                        if(Duplicate_pharm.prescription_error == null) {
-pstmtUpdate_tDBOutput_2.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(12, Duplicate_pharm.prescription_error);
-}
-
-                        if(Duplicate_pharm.extra == null) {
-pstmtUpdate_tDBOutput_2.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(13, Duplicate_pharm.extra);
-}
-
-                        if(Duplicate_pharm.uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(14, Duplicate_pharm.uuid);
-}
-
-                        if(Duplicate_pharm.visit_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(15, Duplicate_pharm.visit_id);
-}
-
-                        pstmtUpdate_tDBOutput_2.setLong(16, Duplicate_pharm.facility_id);
-
-                        if(Duplicate_pharm.is_devolve == null) {
-pstmtUpdate_tDBOutput_2.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(17, Duplicate_pharm.is_devolve);
-}
-
-                        if(Duplicate_pharm.refill_period == null) {
-pstmtUpdate_tDBOutput_2.setNull(18, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(18, Duplicate_pharm.refill_period);
-}
-
-                        if(Duplicate_pharm.delivery_point == null) {
-pstmtUpdate_tDBOutput_2.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(19, Duplicate_pharm.delivery_point);
-}
-
-                        if(Duplicate_pharm.dsd_model == null) {
-pstmtUpdate_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(20, Duplicate_pharm.dsd_model);
-}
-
-                        if(Duplicate_pharm.person_uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(21, Duplicate_pharm.person_uuid);
-}
-
-                        pstmtUpdate_tDBOutput_2.setInt(22, Duplicate_pharm.archived);
-
-                        pstmtUpdate_tDBOutput_2.setInt(23 + count_tDBOutput_2, Duplicate_pharm.id);
-
-                try {
-					
-                    updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2 + pstmtUpdate_tDBOutput_2.executeUpdate();
-                    nb_line_tDBOutput_2++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_2 = true;
-                        nb_line_tDBOutput_2++;
-                            System.err.print(e.getMessage());
-                }
-            } else {
-                        pstmtInsert_tDBOutput_2.setInt(1, Duplicate_pharm.id);
-
-                        if(Duplicate_pharm.created_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Duplicate_pharm.created_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.created_by == null) {
-pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(3, Duplicate_pharm.created_by);
-}
-
-                        if(Duplicate_pharm.last_modified_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Duplicate_pharm.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.last_modified_by == null) {
-pstmtInsert_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(5, Duplicate_pharm.last_modified_by);
-}
-
-                        if(Duplicate_pharm.next_appointment != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(6, new java.sql.Timestamp(Duplicate_pharm.next_appointment.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.visit_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(7, new java.sql.Timestamp(Duplicate_pharm.visit_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(7, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_pharm.ard_screened == null) {
-pstmtInsert_tDBOutput_2.setNull(8, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(8, Duplicate_pharm.ard_screened);
-}
-
-                        if(Duplicate_pharm.adherence == null) {
-pstmtInsert_tDBOutput_2.setNull(9, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(9, Duplicate_pharm.adherence);
-}
-
-                        if(Duplicate_pharm.adverse_drug_reactions == null) {
-pstmtInsert_tDBOutput_2.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(10, Duplicate_pharm.adverse_drug_reactions);
-}
-
-                        if(Duplicate_pharm.mmd_type == null) {
-pstmtInsert_tDBOutput_2.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(11, Duplicate_pharm.mmd_type);
-}
-
-                        if(Duplicate_pharm.prescription_error == null) {
-pstmtInsert_tDBOutput_2.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(12, Duplicate_pharm.prescription_error);
-}
-
-                        if(Duplicate_pharm.extra == null) {
-pstmtInsert_tDBOutput_2.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(13, Duplicate_pharm.extra);
-}
-
-                        if(Duplicate_pharm.uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(14, Duplicate_pharm.uuid);
-}
-
-                        if(Duplicate_pharm.visit_id == null) {
-pstmtInsert_tDBOutput_2.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(15, Duplicate_pharm.visit_id);
-}
-
-                        pstmtInsert_tDBOutput_2.setLong(16, Duplicate_pharm.facility_id);
-
-                        if(Duplicate_pharm.is_devolve == null) {
-pstmtInsert_tDBOutput_2.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(17, Duplicate_pharm.is_devolve);
-}
-
-                        if(Duplicate_pharm.refill_period == null) {
-pstmtInsert_tDBOutput_2.setNull(18, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(18, Duplicate_pharm.refill_period);
-}
-
-                        if(Duplicate_pharm.delivery_point == null) {
-pstmtInsert_tDBOutput_2.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(19, Duplicate_pharm.delivery_point);
-}
-
-                        if(Duplicate_pharm.dsd_model == null) {
-pstmtInsert_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(20, Duplicate_pharm.dsd_model);
-}
-
-                        if(Duplicate_pharm.person_uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(21, Duplicate_pharm.person_uuid);
-}
-
-                        pstmtInsert_tDBOutput_2.setInt(22, Duplicate_pharm.archived);
-
-                try {
-					
-                    insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2 + pstmtInsert_tDBOutput_2.executeUpdate();
-                    nb_line_tDBOutput_2++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_2 = true;
-                        nb_line_tDBOutput_2++;
-                            System.err.print(e.getMessage());
-                }
-            }
-    		    commitCounter_tDBOutput_2++;
-                if(commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
-                	conn_tDBOutput_2.commit();
-                	
-                	commitCounter_tDBOutput_2=0;
-                }
-
- 
-
-
-	tos_count_tDBOutput_2++;
-
-/**
- * [tDBOutput_2 main ] stop
- */
-	
-	/**
-	 * [tDBOutput_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tDBOutput_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_2 process_data_end ] stop
- */
-
-} // End of branch "Duplicate_pharm"
-
-
-
-
-	
-	/**
-	 * [tUniqRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_end ] stop
  */
 
 } // End of branch "Pharmacy_visit_map"
@@ -5801,38 +4229,6 @@ end_Hash.put("tMap_5", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
-globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
-globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Pharmacy_visit_map");
-			  	}
-			  	
- 
-
-ok_Hash.put("tUniqRow_1", true);
-end_Hash.put("tUniqRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tUniqRow_1 end ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_1 end ] start
 	 */
 
@@ -5883,7 +4279,7 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Unique_pharm");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Pharmacy_visit_map");
 			  	}
 			  	
  
@@ -5897,79 +4293,6 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 /**
  * [tDBOutput_1 end ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
-
-
-        if(pstmtUpdate_tDBOutput_2 != null){
-            pstmtUpdate_tDBOutput_2.close();
-            resourceMap.remove("pstmtUpdate_tDBOutput_2");
-        }
-        if(pstmtInsert_tDBOutput_2 != null){
-            pstmtInsert_tDBOutput_2.close();
-            resourceMap.remove("pstmtInsert_tDBOutput_2");
-        }
-        if(pstmt_tDBOutput_2 != null) {
-            pstmt_tDBOutput_2.close();
-            resourceMap.remove("pstmt_tDBOutput_2");
-        }
-    resourceMap.put("statementClosed_tDBOutput_2", true);
-			
-			conn_tDBOutput_2.commit();
-			
-		
-    	conn_tDBOutput_2 .close();
-    	
-    	resourceMap.put("finish_tDBOutput_2", true);
-    	
-
-	nb_line_deleted_tDBOutput_2=nb_line_deleted_tDBOutput_2+ deletedCount_tDBOutput_2;
-	nb_line_update_tDBOutput_2=nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
-	nb_line_inserted_tDBOutput_2=nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
-	nb_line_rejected_tDBOutput_2=nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
-	
-        globalMap.put("tDBOutput_2_NB_LINE",nb_line_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_UPDATED",nb_line_update_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_DELETED",nb_line_deleted_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
-    
-	
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Duplicate_pharm");
-			  	}
-			  	
- 
-
-ok_Hash.put("tDBOutput_2", true);
-end_Hash.put("tDBOutput_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tDBOutput_2 end ] stop
- */
-
-
-
 
 
 
@@ -6087,27 +4410,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 finally ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_1 finally ] start
 	 */
 
@@ -6156,63 +4458,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 /**
  * [tDBOutput_1 finally ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
-
-
-    try {
-    if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
-                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
-                if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_2")) != null) {
-                    pstmtUpdateToClose_tDBOutput_2.close();
-                }
-                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
-                if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_2")) != null) {
-                    pstmtInsertToClose_tDBOutput_2.close();
-                }
-                java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
-                if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_2")) != null) {
-                    pstmtToClose_tDBOutput_2.close();
-                }
-    }
-    } finally {
-        if(resourceMap.get("finish_tDBOutput_2") == null){
-            java.sql.Connection ctn_tDBOutput_2 = null;
-            if((ctn_tDBOutput_2 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_2")) != null){
-                try {
-                    ctn_tDBOutput_2.close();
-                } catch (java.sql.SQLException sqlEx_tDBOutput_2) {
-                    String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :" + sqlEx_tDBOutput_2.getMessage();
-                    System.err.println(errorMessage_tDBOutput_2);
-                }
-            }
-        }
-    }
- 
-
-
-
-/**
- * [tDBOutput_2 finally ] stop
- */
-
-
-
 
 
 
@@ -16088,6 +14333,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     389090 characters generated by Talend Open Studio for Big Data 
- *     on the December 20, 2022 6:57:53 PM WAT
+ *     337986 characters generated by Talend Open Studio for Big Data 
+ *     on the January 4, 2023 4:40:32 PM WAT
  ************************************************************************************************/
