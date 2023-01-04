@@ -18,9 +18,11 @@ There are various migration components available here. For a new migration, it i
 - HIV_ART_Pharmacy Migration: This component can be found at ./F_HIV_ART_Pharmacy/HIV_ART_Pharmacy/HIV_ART_Pharmacy_run[.bat/.sh].
 - Laboratory Migration: This component can be found at ./G_Laboratory/Laboratory/Laboratory_run[.bat/.sh].
 - Biometric Migration: This component can be found at ./H_Biometric/Biometric/Biometric_run[.bat/.sh].
+- Biometric Migration Version 2.0 (for Neurotech): This component can be found at ./H_Biometric_Version_20/Biometric_Version_20/Biometric_Version_20_run[.bat/.sh].
 - EAC Migration: This component can be found at ./I_EAC/EAC/EAC_run[.bat/.sh]
 - HTS Migration: This component can be found at ./J_HTS/HTS/HTS_run[.bat/.sh]
 - HIV_Status_Tracker Migration: This component can be found at ./K_HIV_Status_Tracker/HIV_Status_Tracker/HIV_Status_Tracker_run[.bat/.sh]
+- Cervical_Cancer Migration: This component can be found at ./L_Cervical_Cancer/Cervical_Cancer/Cervical_Cancer_run[.bat/.sh]
 
 
 ## Installation
