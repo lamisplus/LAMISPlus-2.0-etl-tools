@@ -493,15 +493,6 @@ private class TalendException extends Exception {
 					tDBInput_16_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tUniqRow_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_16_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBOutput_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -518,15 +509,6 @@ private class TalendException extends Exception {
 				status = "failure";
 				
 					tJava_4_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBOutput_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_16_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tDBInput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -808,6 +790,15 @@ private class TalendException extends Exception {
 					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_18_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tAdvancedHash_facility_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -934,6 +925,15 @@ private class TalendException extends Exception {
 					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tAdvancedHash_ovc_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tSortRow_1_SortOut_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 							tSortRow_1_SortIn_error(exception, errorComponent, globalMap);
@@ -1021,7 +1021,7 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
-public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -1235,7 +1235,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row4Struct other = (row4Struct) obj;
+		final row1Struct other = (row1Struct) obj;
 		
 						if (this.id == null) {
 							if (other.id != null)
@@ -1249,7 +1249,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
 		return true;
     }
 
-	public void copyDataTo(row4Struct other) {
+	public void copyDataTo(row1Struct other) {
 
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
@@ -1284,7 +1284,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
 	            
 	}
 
-	public void copyKeysDataTo(row4Struct other) {
+	public void copyKeysDataTo(row1Struct other) {
 
 		other.id = this.id;
 	            	
@@ -1661,1363 +1661,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
     /**
      * Compare keys
      */
-    public int compareTo(row4Struct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public Integer id;
-
-				public Integer getId () {
-					return this.id;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public String unique_id;
-
-				public String getUnique_id () {
-					return this.unique_id;
-				}
-				
-			    public String entry_point_id;
-
-				public String getEntry_point_id () {
-					return this.entry_point_id;
-				}
-				
-			    public String target_group_id;
-
-				public String getTarget_group_id () {
-					return this.target_group_id;
-				}
-				
-			    public java.util.Date date_confirmed_hiv;
-
-				public java.util.Date getDate_confirmed_hiv () {
-					return this.date_confirmed_hiv;
-				}
-				
-			    public java.util.Date date_enrolled_pmtct;
-
-				public java.util.Date getDate_enrolled_pmtct () {
-					return this.date_enrolled_pmtct;
-				}
-				
-			    public java.util.Date time_hiv_diagnosis;
-
-				public java.util.Date getTime_hiv_diagnosis () {
-					return this.time_hiv_diagnosis;
-				}
-				
-			    public java.util.Date date_of_registration;
-
-				public java.util.Date getDate_of_registration () {
-					return this.date_of_registration;
-				}
-				
-			    public java.util.Date date_started;
-
-				public java.util.Date getDate_started () {
-					return this.date_started;
-				}
-				
-			    public String source_of_referrer_id;
-
-				public String getSource_of_referrer_id () {
-					return this.source_of_referrer_id;
-				}
-				
-			    public Boolean pregnant;
-
-				public Boolean getPregnant () {
-					return this.pregnant;
-				}
-				
-			    public Boolean breastfeeding;
-
-				public Boolean getBreastfeeding () {
-					return this.breastfeeding;
-				}
-				
-			    public String status_at_registration_id;
-
-				public String getStatus_at_registration_id () {
-					return this.status_at_registration_id;
-				}
-				
-			    public String enrollment_setting_id;
-
-				public String getEnrollment_setting_id () {
-					return this.enrollment_setting_id;
-				}
-				
-			    public Boolean send_message;
-
-				public Boolean getSend_message () {
-					return this.send_message;
-				}
-				
-			    public Boolean archived;
-
-				public Boolean getArchived () {
-					return this.archived;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public Integer facility_id;
-
-				public Integer getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public String facility_name;
-
-				public String getFacility_name () {
-					return this.facility_name;
-				}
-				
-			    public String lga_name;
-
-				public String getLga_name () {
-					return this.lga_name;
-				}
-				
-			    public Integer visit_id;
-
-				public Integer getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public String ovc_number;
-
-				public String getOvc_number () {
-					return this.ovc_number;
-				}
-				
-			    public java.util.Date date_of_lpm;
-
-				public java.util.Date getDate_of_lpm () {
-					return this.date_of_lpm;
-				}
-				
-			    public String pregnancy_status_id;
-
-				public String getPregnancy_status_id () {
-					return this.pregnancy_status_id;
-				}
-				
-			    public String tb_status_id;
-
-				public String getTb_status_id () {
-					return this.tb_status_id;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final row5Struct other = (row5Struct) obj;
-		
-						if (this.id == null) {
-							if (other.id != null)
-								return false;
-						
-						} else if (!this.id.equals(other.id))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(row5Struct other) {
-
-		other.id = this.id;
-	            other.person_uuid = this.person_uuid;
-	            other.unique_id = this.unique_id;
-	            other.entry_point_id = this.entry_point_id;
-	            other.target_group_id = this.target_group_id;
-	            other.date_confirmed_hiv = this.date_confirmed_hiv;
-	            other.date_enrolled_pmtct = this.date_enrolled_pmtct;
-	            other.time_hiv_diagnosis = this.time_hiv_diagnosis;
-	            other.date_of_registration = this.date_of_registration;
-	            other.date_started = this.date_started;
-	            other.source_of_referrer_id = this.source_of_referrer_id;
-	            other.pregnant = this.pregnant;
-	            other.breastfeeding = this.breastfeeding;
-	            other.status_at_registration_id = this.status_at_registration_id;
-	            other.enrollment_setting_id = this.enrollment_setting_id;
-	            other.send_message = this.send_message;
-	            other.archived = this.archived;
-	            other.created_date = this.created_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_date = this.last_modified_date;
-	            other.last_modified_by = this.last_modified_by;
-	            other.facility_id = this.facility_id;
-	            other.facility_name = this.facility_name;
-	            other.lga_name = this.lga_name;
-	            other.visit_id = this.visit_id;
-	            other.uuid = this.uuid;
-	            other.ovc_number = this.ovc_number;
-	            other.date_of_lpm = this.date_of_lpm;
-	            other.pregnancy_status_id = this.pregnancy_status_id;
-	            other.tb_status_id = this.tb_status_id;
-	            
-	}
-
-	public void copyKeysDataTo(row5Struct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment) {
-
-        	try {
-
-        		int length = 0;
-		
-						this.id = readInteger(dis);
-					
-					this.person_uuid = readString(dis);
-					
-					this.unique_id = readString(dis);
-					
-					this.entry_point_id = readString(dis);
-					
-					this.target_group_id = readString(dis);
-					
-					this.date_confirmed_hiv = readDate(dis);
-					
-					this.date_enrolled_pmtct = readDate(dis);
-					
-					this.time_hiv_diagnosis = readDate(dis);
-					
-					this.date_of_registration = readDate(dis);
-					
-					this.date_started = readDate(dis);
-					
-					this.source_of_referrer_id = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.pregnant = null;
-           				} else {
-           			    	this.pregnant = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.breastfeeding = null;
-           				} else {
-           			    	this.breastfeeding = dis.readBoolean();
-           				}
-					
-					this.status_at_registration_id = readString(dis);
-					
-					this.enrollment_setting_id = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.send_message = null;
-           				} else {
-           			    	this.send_message = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.archived = null;
-           				} else {
-           			    	this.archived = dis.readBoolean();
-           				}
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-						this.facility_id = readInteger(dis);
-					
-					this.facility_name = readString(dis);
-					
-					this.lga_name = readString(dis);
-					
-						this.visit_id = readInteger(dis);
-					
-					this.uuid = readString(dis);
-					
-					this.ovc_number = readString(dis);
-					
-					this.date_of_lpm = readDate(dis);
-					
-					this.pregnancy_status_id = readString(dis);
-					
-					this.tb_status_id = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// Integer
-				
-						writeInteger(this.id,dos);
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// String
-				
-						writeString(this.unique_id,dos);
-					
-					// String
-				
-						writeString(this.entry_point_id,dos);
-					
-					// String
-				
-						writeString(this.target_group_id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_confirmed_hiv,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_enrolled_pmtct,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.time_hiv_diagnosis,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_registration,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_started,dos);
-					
-					// String
-				
-						writeString(this.source_of_referrer_id,dos);
-					
-					// Boolean
-				
-						if(this.pregnant == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.pregnant);
-		            	}
-					
-					// Boolean
-				
-						if(this.breastfeeding == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.breastfeeding);
-		            	}
-					
-					// String
-				
-						writeString(this.status_at_registration_id,dos);
-					
-					// String
-				
-						writeString(this.enrollment_setting_id,dos);
-					
-					// Boolean
-				
-						if(this.send_message == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.send_message);
-		            	}
-					
-					// Boolean
-				
-						if(this.archived == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.archived);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// Integer
-				
-						writeInteger(this.facility_id,dos);
-					
-					// String
-				
-						writeString(this.facility_name,dos);
-					
-					// String
-				
-						writeString(this.lga_name,dos);
-					
-					// Integer
-				
-						writeInteger(this.visit_id,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// String
-				
-						writeString(this.ovc_number,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_lpm,dos);
-					
-					// String
-				
-						writeString(this.pregnancy_status_id,dos);
-					
-					// String
-				
-						writeString(this.tb_status_id,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",unique_id="+unique_id);
-		sb.append(",entry_point_id="+entry_point_id);
-		sb.append(",target_group_id="+target_group_id);
-		sb.append(",date_confirmed_hiv="+String.valueOf(date_confirmed_hiv));
-		sb.append(",date_enrolled_pmtct="+String.valueOf(date_enrolled_pmtct));
-		sb.append(",time_hiv_diagnosis="+String.valueOf(time_hiv_diagnosis));
-		sb.append(",date_of_registration="+String.valueOf(date_of_registration));
-		sb.append(",date_started="+String.valueOf(date_started));
-		sb.append(",source_of_referrer_id="+source_of_referrer_id);
-		sb.append(",pregnant="+String.valueOf(pregnant));
-		sb.append(",breastfeeding="+String.valueOf(breastfeeding));
-		sb.append(",status_at_registration_id="+status_at_registration_id);
-		sb.append(",enrollment_setting_id="+enrollment_setting_id);
-		sb.append(",send_message="+String.valueOf(send_message));
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",facility_name="+facility_name);
-		sb.append(",lga_name="+lga_name);
-		sb.append(",visit_id="+String.valueOf(visit_id));
-		sb.append(",uuid="+uuid);
-		sb.append(",ovc_number="+ovc_number);
-		sb.append(",date_of_lpm="+String.valueOf(date_of_lpm));
-		sb.append(",pregnancy_status_id="+pregnancy_status_id);
-		sb.append(",tb_status_id="+tb_status_id);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row5Struct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public Integer id;
-
-				public Integer getId () {
-					return this.id;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public String unique_id;
-
-				public String getUnique_id () {
-					return this.unique_id;
-				}
-				
-			    public String entry_point_id;
-
-				public String getEntry_point_id () {
-					return this.entry_point_id;
-				}
-				
-			    public String target_group_id;
-
-				public String getTarget_group_id () {
-					return this.target_group_id;
-				}
-				
-			    public java.util.Date date_confirmed_hiv;
-
-				public java.util.Date getDate_confirmed_hiv () {
-					return this.date_confirmed_hiv;
-				}
-				
-			    public java.util.Date date_enrolled_pmtct;
-
-				public java.util.Date getDate_enrolled_pmtct () {
-					return this.date_enrolled_pmtct;
-				}
-				
-			    public java.util.Date time_hiv_diagnosis;
-
-				public java.util.Date getTime_hiv_diagnosis () {
-					return this.time_hiv_diagnosis;
-				}
-				
-			    public java.util.Date date_of_registration;
-
-				public java.util.Date getDate_of_registration () {
-					return this.date_of_registration;
-				}
-				
-			    public java.util.Date date_started;
-
-				public java.util.Date getDate_started () {
-					return this.date_started;
-				}
-				
-			    public String source_of_referrer_id;
-
-				public String getSource_of_referrer_id () {
-					return this.source_of_referrer_id;
-				}
-				
-			    public Boolean pregnant;
-
-				public Boolean getPregnant () {
-					return this.pregnant;
-				}
-				
-			    public Boolean breastfeeding;
-
-				public Boolean getBreastfeeding () {
-					return this.breastfeeding;
-				}
-				
-			    public String status_at_registration_id;
-
-				public String getStatus_at_registration_id () {
-					return this.status_at_registration_id;
-				}
-				
-			    public String enrollment_setting_id;
-
-				public String getEnrollment_setting_id () {
-					return this.enrollment_setting_id;
-				}
-				
-			    public Boolean send_message;
-
-				public Boolean getSend_message () {
-					return this.send_message;
-				}
-				
-			    public Boolean archived;
-
-				public Boolean getArchived () {
-					return this.archived;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public Integer facility_id;
-
-				public Integer getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public String facility_name;
-
-				public String getFacility_name () {
-					return this.facility_name;
-				}
-				
-			    public String lga_name;
-
-				public String getLga_name () {
-					return this.lga_name;
-				}
-				
-			    public Integer visit_id;
-
-				public Integer getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public String ovc_number;
-
-				public String getOvc_number () {
-					return this.ovc_number;
-				}
-				
-			    public java.util.Date date_of_lpm;
-
-				public java.util.Date getDate_of_lpm () {
-					return this.date_of_lpm;
-				}
-				
-			    public String pregnancy_status_id;
-
-				public String getPregnancy_status_id () {
-					return this.pregnancy_status_id;
-				}
-				
-			    public String tb_status_id;
-
-				public String getTb_status_id () {
-					return this.tb_status_id;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final row3Struct other = (row3Struct) obj;
-		
-						if (this.id == null) {
-							if (other.id != null)
-								return false;
-						
-						} else if (!this.id.equals(other.id))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(row3Struct other) {
-
-		other.id = this.id;
-	            other.person_uuid = this.person_uuid;
-	            other.unique_id = this.unique_id;
-	            other.entry_point_id = this.entry_point_id;
-	            other.target_group_id = this.target_group_id;
-	            other.date_confirmed_hiv = this.date_confirmed_hiv;
-	            other.date_enrolled_pmtct = this.date_enrolled_pmtct;
-	            other.time_hiv_diagnosis = this.time_hiv_diagnosis;
-	            other.date_of_registration = this.date_of_registration;
-	            other.date_started = this.date_started;
-	            other.source_of_referrer_id = this.source_of_referrer_id;
-	            other.pregnant = this.pregnant;
-	            other.breastfeeding = this.breastfeeding;
-	            other.status_at_registration_id = this.status_at_registration_id;
-	            other.enrollment_setting_id = this.enrollment_setting_id;
-	            other.send_message = this.send_message;
-	            other.archived = this.archived;
-	            other.created_date = this.created_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_date = this.last_modified_date;
-	            other.last_modified_by = this.last_modified_by;
-	            other.facility_id = this.facility_id;
-	            other.facility_name = this.facility_name;
-	            other.lga_name = this.lga_name;
-	            other.visit_id = this.visit_id;
-	            other.uuid = this.uuid;
-	            other.ovc_number = this.ovc_number;
-	            other.date_of_lpm = this.date_of_lpm;
-	            other.pregnancy_status_id = this.pregnancy_status_id;
-	            other.tb_status_id = this.tb_status_id;
-	            
-	}
-
-	public void copyKeysDataTo(row3Struct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment) {
-
-        	try {
-
-        		int length = 0;
-		
-						this.id = readInteger(dis);
-					
-					this.person_uuid = readString(dis);
-					
-					this.unique_id = readString(dis);
-					
-					this.entry_point_id = readString(dis);
-					
-					this.target_group_id = readString(dis);
-					
-					this.date_confirmed_hiv = readDate(dis);
-					
-					this.date_enrolled_pmtct = readDate(dis);
-					
-					this.time_hiv_diagnosis = readDate(dis);
-					
-					this.date_of_registration = readDate(dis);
-					
-					this.date_started = readDate(dis);
-					
-					this.source_of_referrer_id = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.pregnant = null;
-           				} else {
-           			    	this.pregnant = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.breastfeeding = null;
-           				} else {
-           			    	this.breastfeeding = dis.readBoolean();
-           				}
-					
-					this.status_at_registration_id = readString(dis);
-					
-					this.enrollment_setting_id = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.send_message = null;
-           				} else {
-           			    	this.send_message = dis.readBoolean();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.archived = null;
-           				} else {
-           			    	this.archived = dis.readBoolean();
-           				}
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-						this.facility_id = readInteger(dis);
-					
-					this.facility_name = readString(dis);
-					
-					this.lga_name = readString(dis);
-					
-						this.visit_id = readInteger(dis);
-					
-					this.uuid = readString(dis);
-					
-					this.ovc_number = readString(dis);
-					
-					this.date_of_lpm = readDate(dis);
-					
-					this.pregnancy_status_id = readString(dis);
-					
-					this.tb_status_id = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// Integer
-				
-						writeInteger(this.id,dos);
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// String
-				
-						writeString(this.unique_id,dos);
-					
-					// String
-				
-						writeString(this.entry_point_id,dos);
-					
-					// String
-				
-						writeString(this.target_group_id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_confirmed_hiv,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_enrolled_pmtct,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.time_hiv_diagnosis,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_registration,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_started,dos);
-					
-					// String
-				
-						writeString(this.source_of_referrer_id,dos);
-					
-					// Boolean
-				
-						if(this.pregnant == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.pregnant);
-		            	}
-					
-					// Boolean
-				
-						if(this.breastfeeding == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.breastfeeding);
-		            	}
-					
-					// String
-				
-						writeString(this.status_at_registration_id,dos);
-					
-					// String
-				
-						writeString(this.enrollment_setting_id,dos);
-					
-					// Boolean
-				
-						if(this.send_message == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.send_message);
-		            	}
-					
-					// Boolean
-				
-						if(this.archived == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.archived);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// Integer
-				
-						writeInteger(this.facility_id,dos);
-					
-					// String
-				
-						writeString(this.facility_name,dos);
-					
-					// String
-				
-						writeString(this.lga_name,dos);
-					
-					// Integer
-				
-						writeInteger(this.visit_id,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// String
-				
-						writeString(this.ovc_number,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_of_lpm,dos);
-					
-					// String
-				
-						writeString(this.pregnancy_status_id,dos);
-					
-					// String
-				
-						writeString(this.tb_status_id,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",unique_id="+unique_id);
-		sb.append(",entry_point_id="+entry_point_id);
-		sb.append(",target_group_id="+target_group_id);
-		sb.append(",date_confirmed_hiv="+String.valueOf(date_confirmed_hiv));
-		sb.append(",date_enrolled_pmtct="+String.valueOf(date_enrolled_pmtct));
-		sb.append(",time_hiv_diagnosis="+String.valueOf(time_hiv_diagnosis));
-		sb.append(",date_of_registration="+String.valueOf(date_of_registration));
-		sb.append(",date_started="+String.valueOf(date_started));
-		sb.append(",source_of_referrer_id="+source_of_referrer_id);
-		sb.append(",pregnant="+String.valueOf(pregnant));
-		sb.append(",breastfeeding="+String.valueOf(breastfeeding));
-		sb.append(",status_at_registration_id="+status_at_registration_id);
-		sb.append(",enrollment_setting_id="+enrollment_setting_id);
-		sb.append(",send_message="+String.valueOf(send_message));
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",facility_name="+facility_name);
-		sb.append(",lga_name="+lga_name);
-		sb.append(",visit_id="+String.valueOf(visit_id));
-		sb.append(",uuid="+uuid);
-		sb.append(",ovc_number="+ovc_number);
-		sb.append(",date_of_lpm="+String.valueOf(date_of_lpm));
-		sb.append(",pregnancy_status_id="+pregnancy_status_id);
-		sb.append(",tb_status_id="+tb_status_id);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3Struct other) {
+    public int compareTo(row1Struct other) {
 
 		int returnValue = -1;
 		
@@ -5431,9 +4075,7 @@ public void tDBInput_16Process(final java.util.Map<String, Object> globalMap) th
 
 		row2Struct row2 = new row2Struct();
 copyOfCreate_HIV_JSONStringStruct copyOfCreate_HIV_JSONString = new copyOfCreate_HIV_JSONStringStruct();
-row3Struct row3 = new row3Struct();
-row4Struct row4 = new row4Struct();
-row5Struct row5 = new row5Struct();
+row1Struct row1 = new row1Struct();
 
 
 
@@ -6362,7 +5004,6 @@ end_Hash.put("tSortRow_1_SortOut", System.currentTimeMillis());
  */
 
 
-
 	
 	/**
 	 * [tDBOutput_3 begin ] start
@@ -6380,7 +5021,7 @@ end_Hash.put("tSortRow_1_SortOut", System.currentTimeMillis());
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
 					}
 				
 		int tos_count_tDBOutput_3 = 0;
@@ -6486,240 +5127,6 @@ int count_tDBOutput_3=0;
 
 
 
-
-	
-	/**
-	 * [tDBOutput_4 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBOutput_4", false);
-		start_Hash.put("tDBOutput_4", System.currentTimeMillis());
-		
-	
-	currentComponent="tDBOutput_4";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row5");
-					}
-				
-		int tos_count_tDBOutput_4 = 0;
-		
-
-
-
-
-
-String dbschema_tDBOutput_4 = null;
-	dbschema_tDBOutput_4 = context.LAMISPlus_Schema;
-	
-
-String tableName_tDBOutput_4 = null;
-if(dbschema_tDBOutput_4 == null || dbschema_tDBOutput_4.trim().length() == 0) {
-	tableName_tDBOutput_4 = ("etl_hiv_enrollment_stage_duplicates");
-} else {
-	tableName_tDBOutput_4 = dbschema_tDBOutput_4 + "\".\"" + ("etl_hiv_enrollment_stage_duplicates");
-}
-
-        int updateKeyCount_tDBOutput_4 = 1;
-        if(updateKeyCount_tDBOutput_4 < 1) {
-            throw new RuntimeException("For update, Schema must have a key");
-        }
-int nb_line_tDBOutput_4 = 0;
-int nb_line_update_tDBOutput_4 = 0;
-int nb_line_inserted_tDBOutput_4 = 0;
-int nb_line_deleted_tDBOutput_4 = 0;
-int nb_line_rejected_tDBOutput_4 = 0;
-
-int deletedCount_tDBOutput_4=0;
-int updatedCount_tDBOutput_4=0;
-int insertedCount_tDBOutput_4=0;
-int rejectedCount_tDBOutput_4=0;
-
-boolean whetherReject_tDBOutput_4 = false;
-
-java.sql.Connection conn_tDBOutput_4 = null;
-String dbUser_tDBOutput_4 = null;
-
-	
-    java.lang.Class.forName("org.postgresql.Driver");
-    
-        String url_tDBOutput_4 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
-    dbUser_tDBOutput_4 = context.LAMISPlus_Login;
-
-	final String decryptedPassword_tDBOutput_4 = context.LAMISPlus_Password; 
-
-    String dbPwd_tDBOutput_4 = decryptedPassword_tDBOutput_4;
-
-    conn_tDBOutput_4 = java.sql.DriverManager.getConnection(url_tDBOutput_4,dbUser_tDBOutput_4,dbPwd_tDBOutput_4);
-	
-	resourceMap.put("conn_tDBOutput_4", conn_tDBOutput_4);
-        conn_tDBOutput_4.setAutoCommit(false);
-        int commitEvery_tDBOutput_4 = 10000;
-        int commitCounter_tDBOutput_4 = 0;
-
-
-
-int count_tDBOutput_4=0;
-                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_4 = conn_tDBOutput_4.getMetaData();
-                                boolean whetherExist_tDBOutput_4 = false;
-                                try (java.sql.ResultSet rsTable_tDBOutput_4 = dbMetaData_tDBOutput_4.getTables(null, null, null, new String[]{"TABLE"})) {
-                                    String defaultSchema_tDBOutput_4 = "public";
-                                    if(dbschema_tDBOutput_4 == null || dbschema_tDBOutput_4.trim().length() == 0) {
-                                        try(java.sql.Statement stmtSchema_tDBOutput_4 = conn_tDBOutput_4.createStatement();
-                                            java.sql.ResultSet rsSchema_tDBOutput_4 = stmtSchema_tDBOutput_4.executeQuery("select current_schema() ")) {
-                                            while(rsSchema_tDBOutput_4.next()){
-                                                defaultSchema_tDBOutput_4 = rsSchema_tDBOutput_4.getString("current_schema");
-                                            }
-                                        }
-                                    }
-                                    while(rsTable_tDBOutput_4.next()) {
-                                        String table_tDBOutput_4 = rsTable_tDBOutput_4.getString("TABLE_NAME");
-                                        String schema_tDBOutput_4 = rsTable_tDBOutput_4.getString("TABLE_SCHEM");
-                                        if(table_tDBOutput_4.equals(("etl_hiv_enrollment_stage_duplicates"))
-                                            && (schema_tDBOutput_4.equals(dbschema_tDBOutput_4) || ((dbschema_tDBOutput_4 ==null || dbschema_tDBOutput_4.trim().length() ==0) && defaultSchema_tDBOutput_4.equals(schema_tDBOutput_4)))) {
-                                            whetherExist_tDBOutput_4 = true;
-                                            break;
-                                        }
-                                    }
-                                }
-                                if(!whetherExist_tDBOutput_4) {
-                                    try (java.sql.Statement stmtCreate_tDBOutput_4 = conn_tDBOutput_4.createStatement()) {
-                                        stmtCreate_tDBOutput_4.execute("CREATE TABLE \"" + tableName_tDBOutput_4 + "\"(\"id\" INT4 ,\"person_uuid\" VARCHAR(50)  ,\"unique_id\" VARCHAR(230)  ,\"entry_point_id\" VARCHAR(230)  ,\"target_group_id\" VARCHAR(230)  ,\"date_confirmed_hiv\" DATE ,\"date_enrolled_pmtct\" DATE ,\"time_hiv_diagnosis\" TIMESTAMP(230)  ,\"date_of_registration\" DATE ,\"date_started\" DATE ,\"source_of_referrer_id\" VARCHAR(230)  ,\"pregnant\" BOOL ,\"breastfeeding\" BOOL ,\"status_at_registration_id\" VARCHAR(230)  ,\"enrollment_setting_id\" VARCHAR(230)  ,\"send_message\" BOOL ,\"archived\" BOOL ,\"created_date\" TIMESTAMP ,\"created_by\" VARCHAR ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR ,\"facility_id\" INT4 ,\"facility_name\" VARCHAR(230)  ,\"lga_name\" VARCHAR(230)  ,\"visit_id\" INT4 ,\"uuid\" VARCHAR(50)  ,\"ovc_number\" VARCHAR(230)  ,\"date_of_lpm\" TIMESTAMP ,\"pregnancy_status_id\" VARCHAR ,\"tb_status_id\" VARCHAR ,primary key(\"id\"))");
-                                    }
-                                }
-	    java.sql.PreparedStatement pstmt_tDBOutput_4 = conn_tDBOutput_4.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_4 + "\" WHERE \"id\" = ?");
-	    resourceMap.put("pstmt_tDBOutput_4", pstmt_tDBOutput_4);
-	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"person_uuid\",\"unique_id\",\"entry_point_id\",\"target_group_id\",\"date_confirmed_hiv\",\"date_enrolled_pmtct\",\"time_hiv_diagnosis\",\"date_of_registration\",\"date_started\",\"source_of_referrer_id\",\"pregnant\",\"breastfeeding\",\"status_at_registration_id\",\"enrollment_setting_id\",\"send_message\",\"archived\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"facility_id\",\"facility_name\",\"lga_name\",\"visit_id\",\"uuid\",\"ovc_number\",\"date_of_lpm\",\"pregnancy_status_id\",\"tb_status_id\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	    java.sql.PreparedStatement pstmtInsert_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(insert_tDBOutput_4);
-	    resourceMap.put("pstmtInsert_tDBOutput_4", pstmtInsert_tDBOutput_4);
-	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"unique_id\" = ?,\"entry_point_id\" = ?,\"target_group_id\" = ?,\"date_confirmed_hiv\" = ?,\"date_enrolled_pmtct\" = ?,\"time_hiv_diagnosis\" = ?,\"date_of_registration\" = ?,\"date_started\" = ?,\"source_of_referrer_id\" = ?,\"pregnant\" = ?,\"breastfeeding\" = ?,\"status_at_registration_id\" = ?,\"enrollment_setting_id\" = ?,\"send_message\" = ?,\"archived\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"facility_id\" = ?,\"facility_name\" = ?,\"lga_name\" = ?,\"visit_id\" = ?,\"uuid\" = ?,\"ovc_number\" = ?,\"date_of_lpm\" = ?,\"pregnancy_status_id\" = ?,\"tb_status_id\" = ? WHERE \"id\" = ?";
-	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(update_tDBOutput_4);
-	    resourceMap.put("pstmtUpdate_tDBOutput_4", pstmtUpdate_tDBOutput_4);
-	    
-
- 
-
-
-
-/**
- * [tDBOutput_4 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tUniqRow_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tUniqRow_2", false);
-		start_Hash.put("tUniqRow_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tUniqRow_2";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
-					}
-				
-		int tos_count_tUniqRow_2 = 0;
-		
-
-	
-		class KeyStruct_tUniqRow_2 {
-	
-			private static final int DEFAULT_HASHCODE = 1;
-		    private static final int PRIME = 31;
-		    private int hashCode = DEFAULT_HASHCODE;
-		    public boolean hashCodeDirty = true;
-	
-	        
-					Integer id;
-					String person_uuid;
-					String uuid;        
-	        
-		    @Override
-			public int hashCode() {
-				if (this.hashCodeDirty) {
-					final int prime = PRIME;
-					int result = DEFAULT_HASHCODE;
-			
-								result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-								
-								result = prime * result + ((this.person_uuid == null) ? 0 : this.person_uuid.hashCode());
-								
-								result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
-								
-		    		this.hashCode = result;
-		    		this.hashCodeDirty = false;		
-				}
-				return this.hashCode;
-			}
-			
-			@Override
-			public boolean equals(Object obj) {
-				if (this == obj) return true;
-				if (obj == null) return false;
-				if (getClass() != obj.getClass()) return false;
-				final KeyStruct_tUniqRow_2 other = (KeyStruct_tUniqRow_2) obj;
-				
-									if (this.id == null) {
-										if (other.id != null) 
-											return false;
-								
-									} else if (!this.id.equals(other.id))
-								 
-										return false;
-								
-									if (this.person_uuid == null) {
-										if (other.person_uuid != null) 
-											return false;
-								
-									} else if (!this.person_uuid.equals(other.person_uuid))
-								 
-										return false;
-								
-									if (this.uuid == null) {
-										if (other.uuid != null) 
-											return false;
-								
-									} else if (!this.uuid.equals(other.uuid))
-								 
-										return false;
-								
-				
-				return true;
-			}
-	  
-	        
-		}
-
-	
-int nb_uniques_tUniqRow_2 = 0;
-int nb_duplicates_tUniqRow_2 = 0;
-KeyStruct_tUniqRow_2 finder_tUniqRow_2 = new KeyStruct_tUniqRow_2();
-java.util.Set<KeyStruct_tUniqRow_2> keystUniqRow_2 = new java.util.HashSet<KeyStruct_tUniqRow_2>(); 
-
- 
-
-
-
-/**
- * [tUniqRow_2 begin ] stop
- */
-
-
-
 	
 	/**
 	 * [tSortRow_1_SortIn begin ] start
@@ -6750,36 +5157,36 @@ copyOfCreate_HIV_JSONStringStruct current_tSortRow_1_SortIn = null;
 
 for(int i_tSortRow_1_SortIn = 0; i_tSortRow_1_SortIn < array_tSortRow_1_SortIn.length; i_tSortRow_1_SortIn++){
 	current_tSortRow_1_SortIn = array_tSortRow_1_SortIn[i_tSortRow_1_SortIn];
-	row3.id = current_tSortRow_1_SortIn.id;
-	row3.person_uuid = current_tSortRow_1_SortIn.person_uuid;
-	row3.unique_id = current_tSortRow_1_SortIn.unique_id;
-	row3.entry_point_id = current_tSortRow_1_SortIn.entry_point_id;
-	row3.target_group_id = current_tSortRow_1_SortIn.target_group_id;
-	row3.date_confirmed_hiv = current_tSortRow_1_SortIn.date_confirmed_hiv;
-	row3.date_enrolled_pmtct = current_tSortRow_1_SortIn.date_enrolled_pmtct;
-	row3.time_hiv_diagnosis = current_tSortRow_1_SortIn.time_hiv_diagnosis;
-	row3.date_of_registration = current_tSortRow_1_SortIn.date_of_registration;
-	row3.date_started = current_tSortRow_1_SortIn.date_started;
-	row3.source_of_referrer_id = current_tSortRow_1_SortIn.source_of_referrer_id;
-	row3.pregnant = current_tSortRow_1_SortIn.pregnant;
-	row3.breastfeeding = current_tSortRow_1_SortIn.breastfeeding;
-	row3.status_at_registration_id = current_tSortRow_1_SortIn.status_at_registration_id;
-	row3.enrollment_setting_id = current_tSortRow_1_SortIn.enrollment_setting_id;
-	row3.send_message = current_tSortRow_1_SortIn.send_message;
-	row3.archived = current_tSortRow_1_SortIn.archived;
-	row3.created_date = current_tSortRow_1_SortIn.created_date;
-	row3.created_by = current_tSortRow_1_SortIn.created_by;
-	row3.last_modified_date = current_tSortRow_1_SortIn.last_modified_date;
-	row3.last_modified_by = current_tSortRow_1_SortIn.last_modified_by;
-	row3.facility_id = current_tSortRow_1_SortIn.facility_id;
-	row3.facility_name = current_tSortRow_1_SortIn.facility_name;
-	row3.lga_name = current_tSortRow_1_SortIn.lga_name;
-	row3.visit_id = current_tSortRow_1_SortIn.visit_id;
-	row3.uuid = current_tSortRow_1_SortIn.uuid;
-	row3.ovc_number = current_tSortRow_1_SortIn.ovc_number;
-	row3.date_of_lpm = current_tSortRow_1_SortIn.date_of_lpm;
-	row3.pregnancy_status_id = current_tSortRow_1_SortIn.pregnancy_status_id;
-	row3.tb_status_id = current_tSortRow_1_SortIn.tb_status_id;
+	row1.id = current_tSortRow_1_SortIn.id;
+	row1.person_uuid = current_tSortRow_1_SortIn.person_uuid;
+	row1.unique_id = current_tSortRow_1_SortIn.unique_id;
+	row1.entry_point_id = current_tSortRow_1_SortIn.entry_point_id;
+	row1.target_group_id = current_tSortRow_1_SortIn.target_group_id;
+	row1.date_confirmed_hiv = current_tSortRow_1_SortIn.date_confirmed_hiv;
+	row1.date_enrolled_pmtct = current_tSortRow_1_SortIn.date_enrolled_pmtct;
+	row1.time_hiv_diagnosis = current_tSortRow_1_SortIn.time_hiv_diagnosis;
+	row1.date_of_registration = current_tSortRow_1_SortIn.date_of_registration;
+	row1.date_started = current_tSortRow_1_SortIn.date_started;
+	row1.source_of_referrer_id = current_tSortRow_1_SortIn.source_of_referrer_id;
+	row1.pregnant = current_tSortRow_1_SortIn.pregnant;
+	row1.breastfeeding = current_tSortRow_1_SortIn.breastfeeding;
+	row1.status_at_registration_id = current_tSortRow_1_SortIn.status_at_registration_id;
+	row1.enrollment_setting_id = current_tSortRow_1_SortIn.enrollment_setting_id;
+	row1.send_message = current_tSortRow_1_SortIn.send_message;
+	row1.archived = current_tSortRow_1_SortIn.archived;
+	row1.created_date = current_tSortRow_1_SortIn.created_date;
+	row1.created_by = current_tSortRow_1_SortIn.created_by;
+	row1.last_modified_date = current_tSortRow_1_SortIn.last_modified_date;
+	row1.last_modified_by = current_tSortRow_1_SortIn.last_modified_by;
+	row1.facility_id = current_tSortRow_1_SortIn.facility_id;
+	row1.facility_name = current_tSortRow_1_SortIn.facility_name;
+	row1.lga_name = current_tSortRow_1_SortIn.lga_name;
+	row1.visit_id = current_tSortRow_1_SortIn.visit_id;
+	row1.uuid = current_tSortRow_1_SortIn.uuid;
+	row1.ovc_number = current_tSortRow_1_SortIn.ovc_number;
+	row1.date_of_lpm = current_tSortRow_1_SortIn.date_of_lpm;
+	row1.pregnancy_status_id = current_tSortRow_1_SortIn.pregnancy_status_id;
+	row1.tb_status_id = current_tSortRow_1_SortIn.tb_status_id;
 	// increase number of line sorted
 	nb_line_tSortRow_1_SortIn++;
 
@@ -6838,97 +5245,6 @@ for(int i_tSortRow_1_SortIn = 0; i_tSortRow_1_SortIn < array_tSortRow_1_SortIn.l
 
 	
 	/**
-	 * [tUniqRow_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_2";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row3");
-					}
-					
-row5 = null;			row4 = null;			
-finder_tUniqRow_2.id = row3.id;
-if(row3.person_uuid == null){
-	finder_tUniqRow_2.person_uuid = null;
-}else{
-	finder_tUniqRow_2.person_uuid = row3.person_uuid.toLowerCase();
-}
-if(row3.uuid == null){
-	finder_tUniqRow_2.uuid = null;
-}else{
-	finder_tUniqRow_2.uuid = row3.uuid.toLowerCase();
-}	
-finder_tUniqRow_2.hashCodeDirty = true;
-if (!keystUniqRow_2.contains(finder_tUniqRow_2)) {
-		KeyStruct_tUniqRow_2 new_tUniqRow_2 = new KeyStruct_tUniqRow_2();
-
-		
-new_tUniqRow_2.id = row3.id;
-if(row3.person_uuid == null){
-	new_tUniqRow_2.person_uuid = null;
-}else{
-	new_tUniqRow_2.person_uuid = row3.person_uuid.toLowerCase();
-}
-if(row3.uuid == null){
-	new_tUniqRow_2.uuid = null;
-}else{
-	new_tUniqRow_2.uuid = row3.uuid.toLowerCase();
-}
-		
-		keystUniqRow_2.add(new_tUniqRow_2);if(row4 == null){ 
-	
-	row4 = new row4Struct();
-}row4.id = row3.id;			row4.person_uuid = row3.person_uuid;			row4.unique_id = row3.unique_id;			row4.entry_point_id = row3.entry_point_id;			row4.target_group_id = row3.target_group_id;			row4.date_confirmed_hiv = row3.date_confirmed_hiv;			row4.date_enrolled_pmtct = row3.date_enrolled_pmtct;			row4.time_hiv_diagnosis = row3.time_hiv_diagnosis;			row4.date_of_registration = row3.date_of_registration;			row4.date_started = row3.date_started;			row4.source_of_referrer_id = row3.source_of_referrer_id;			row4.pregnant = row3.pregnant;			row4.breastfeeding = row3.breastfeeding;			row4.status_at_registration_id = row3.status_at_registration_id;			row4.enrollment_setting_id = row3.enrollment_setting_id;			row4.send_message = row3.send_message;			row4.archived = row3.archived;			row4.created_date = row3.created_date;			row4.created_by = row3.created_by;			row4.last_modified_date = row3.last_modified_date;			row4.last_modified_by = row3.last_modified_by;			row4.facility_id = row3.facility_id;			row4.facility_name = row3.facility_name;			row4.lga_name = row3.lga_name;			row4.visit_id = row3.visit_id;			row4.uuid = row3.uuid;			row4.ovc_number = row3.ovc_number;			row4.date_of_lpm = row3.date_of_lpm;			row4.pregnancy_status_id = row3.pregnancy_status_id;			row4.tb_status_id = row3.tb_status_id;					
-		nb_uniques_tUniqRow_2++;
-	} else {
-if(row5 == null){ 
-	
-	row5 = new row5Struct();
-}				row5.id = row3.id;			row5.person_uuid = row3.person_uuid;			row5.unique_id = row3.unique_id;			row5.entry_point_id = row3.entry_point_id;			row5.target_group_id = row3.target_group_id;			row5.date_confirmed_hiv = row3.date_confirmed_hiv;			row5.date_enrolled_pmtct = row3.date_enrolled_pmtct;			row5.time_hiv_diagnosis = row3.time_hiv_diagnosis;			row5.date_of_registration = row3.date_of_registration;			row5.date_started = row3.date_started;			row5.source_of_referrer_id = row3.source_of_referrer_id;			row5.pregnant = row3.pregnant;			row5.breastfeeding = row3.breastfeeding;			row5.status_at_registration_id = row3.status_at_registration_id;			row5.enrollment_setting_id = row3.enrollment_setting_id;			row5.send_message = row3.send_message;			row5.archived = row3.archived;			row5.created_date = row3.created_date;			row5.created_by = row3.created_by;			row5.last_modified_date = row3.last_modified_date;			row5.last_modified_by = row3.last_modified_by;			row5.facility_id = row3.facility_id;			row5.facility_name = row3.facility_name;			row5.lga_name = row3.lga_name;			row5.visit_id = row3.visit_id;			row5.uuid = row3.uuid;			row5.ovc_number = row3.ovc_number;			row5.date_of_lpm = row3.date_of_lpm;			row5.pregnancy_status_id = row3.pregnancy_status_id;			row5.tb_status_id = row3.tb_status_id;			
-	  nb_duplicates_tUniqRow_2++;
-	}
-
- 
-
-
-	tos_count_tUniqRow_2++;
-
-/**
- * [tUniqRow_2 main ] stop
- */
-	
-	/**
-	 * [tUniqRow_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_2 process_data_begin ] stop
- */
-// Start of branch "row4"
-if(row4 != null) { 
-
-
-
-	
-	/**
 	 * [tDBOutput_3 main ] start
 	 */
 
@@ -6940,7 +5256,7 @@ if(row4 != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
 					}
 					
 
@@ -6948,164 +5264,164 @@ if(row4 != null) {
 
         whetherReject_tDBOutput_3 = false;
             int updateFlag_tDBOutput_3=0;
-                    if(row4.unique_id == null) {
+                    if(row1.unique_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(1, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(1, row4.unique_id);
+} else {pstmtUpdate_tDBOutput_3.setString(1, row1.unique_id);
 }
 
-                    if(row4.entry_point_id == null) {
+                    if(row1.entry_point_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(2, row4.entry_point_id);
+} else {pstmtUpdate_tDBOutput_3.setString(2, row1.entry_point_id);
 }
 
-                    if(row4.target_group_id == null) {
+                    if(row1.target_group_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(3, row4.target_group_id);
+} else {pstmtUpdate_tDBOutput_3.setString(3, row1.target_group_id);
 }
 
-                    if(row4.date_confirmed_hiv != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(4, new java.sql.Timestamp(row4.date_confirmed_hiv.getTime()));
+                    if(row1.date_confirmed_hiv != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(4, new java.sql.Timestamp(row1.date_confirmed_hiv.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.date_enrolled_pmtct != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(5, new java.sql.Timestamp(row4.date_enrolled_pmtct.getTime()));
+                    if(row1.date_enrolled_pmtct != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(5, new java.sql.Timestamp(row1.date_enrolled_pmtct.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.time_hiv_diagnosis != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(6, new java.sql.Timestamp(row4.time_hiv_diagnosis.getTime()));
+                    if(row1.time_hiv_diagnosis != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(6, new java.sql.Timestamp(row1.time_hiv_diagnosis.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(6, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.date_of_registration != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(7, new java.sql.Timestamp(row4.date_of_registration.getTime()));
+                    if(row1.date_of_registration != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(7, new java.sql.Timestamp(row1.date_of_registration.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.date_started != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(8, new java.sql.Timestamp(row4.date_started.getTime()));
+                    if(row1.date_started != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(8, new java.sql.Timestamp(row1.date_started.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.source_of_referrer_id == null) {
+                    if(row1.source_of_referrer_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(9, row4.source_of_referrer_id);
+} else {pstmtUpdate_tDBOutput_3.setString(9, row1.source_of_referrer_id);
 }
 
-                    if(row4.pregnant == null) {
+                    if(row1.pregnant == null) {
 pstmtUpdate_tDBOutput_3.setNull(10, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_3.setBoolean(10, row4.pregnant);
+} else {pstmtUpdate_tDBOutput_3.setBoolean(10, row1.pregnant);
 }
 
-                    if(row4.breastfeeding == null) {
+                    if(row1.breastfeeding == null) {
 pstmtUpdate_tDBOutput_3.setNull(11, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_3.setBoolean(11, row4.breastfeeding);
+} else {pstmtUpdate_tDBOutput_3.setBoolean(11, row1.breastfeeding);
 }
 
-                    if(row4.status_at_registration_id == null) {
+                    if(row1.status_at_registration_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(12, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(12, row4.status_at_registration_id);
+} else {pstmtUpdate_tDBOutput_3.setString(12, row1.status_at_registration_id);
 }
 
-                    if(row4.enrollment_setting_id == null) {
+                    if(row1.enrollment_setting_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(13, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(13, row4.enrollment_setting_id);
+} else {pstmtUpdate_tDBOutput_3.setString(13, row1.enrollment_setting_id);
 }
 
-                    if(row4.send_message == null) {
+                    if(row1.send_message == null) {
 pstmtUpdate_tDBOutput_3.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_3.setBoolean(14, row4.send_message);
+} else {pstmtUpdate_tDBOutput_3.setBoolean(14, row1.send_message);
 }
 
-                    if(row4.archived == null) {
+                    if(row1.archived == null) {
 pstmtUpdate_tDBOutput_3.setNull(15, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_3.setBoolean(15, row4.archived);
+} else {pstmtUpdate_tDBOutput_3.setBoolean(15, row1.archived);
 }
 
-                    if(row4.created_date != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(16, new java.sql.Timestamp(row4.created_date.getTime()));
+                    if(row1.created_date != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(16, new java.sql.Timestamp(row1.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(16, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.created_by == null) {
+                    if(row1.created_by == null) {
 pstmtUpdate_tDBOutput_3.setNull(17, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(17, row4.created_by);
+} else {pstmtUpdate_tDBOutput_3.setString(17, row1.created_by);
 }
 
-                    if(row4.last_modified_date != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(18, new java.sql.Timestamp(row4.last_modified_date.getTime()));
+                    if(row1.last_modified_date != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(18, new java.sql.Timestamp(row1.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.last_modified_by == null) {
+                    if(row1.last_modified_by == null) {
 pstmtUpdate_tDBOutput_3.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(19, row4.last_modified_by);
+} else {pstmtUpdate_tDBOutput_3.setString(19, row1.last_modified_by);
 }
 
-                    if(row4.facility_id == null) {
+                    if(row1.facility_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(20, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_3.setInt(20, row4.facility_id);
+} else {pstmtUpdate_tDBOutput_3.setInt(20, row1.facility_id);
 }
 
-                    if(row4.facility_name == null) {
+                    if(row1.facility_name == null) {
 pstmtUpdate_tDBOutput_3.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(21, row4.facility_name);
+} else {pstmtUpdate_tDBOutput_3.setString(21, row1.facility_name);
 }
 
-                    if(row4.lga_name == null) {
+                    if(row1.lga_name == null) {
 pstmtUpdate_tDBOutput_3.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(22, row4.lga_name);
+} else {pstmtUpdate_tDBOutput_3.setString(22, row1.lga_name);
 }
 
-                    if(row4.visit_id == null) {
+                    if(row1.visit_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(23, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_3.setInt(23, row4.visit_id);
+} else {pstmtUpdate_tDBOutput_3.setInt(23, row1.visit_id);
 }
 
-                    if(row4.uuid == null) {
+                    if(row1.uuid == null) {
 pstmtUpdate_tDBOutput_3.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(24, row4.uuid);
+} else {pstmtUpdate_tDBOutput_3.setString(24, row1.uuid);
 }
 
-                    if(row4.ovc_number == null) {
+                    if(row1.ovc_number == null) {
 pstmtUpdate_tDBOutput_3.setNull(25, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(25, row4.ovc_number);
+} else {pstmtUpdate_tDBOutput_3.setString(25, row1.ovc_number);
 }
 
-                    if(row4.date_of_lpm != null) {
-pstmtUpdate_tDBOutput_3.setTimestamp(26, new java.sql.Timestamp(row4.date_of_lpm.getTime()));
+                    if(row1.date_of_lpm != null) {
+pstmtUpdate_tDBOutput_3.setTimestamp(26, new java.sql.Timestamp(row1.date_of_lpm.getTime()));
 } else {
 pstmtUpdate_tDBOutput_3.setNull(26, java.sql.Types.TIMESTAMP);
 }
 
-                    if(row4.pregnancy_status_id == null) {
+                    if(row1.pregnancy_status_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(27, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(27, row4.pregnancy_status_id);
+} else {pstmtUpdate_tDBOutput_3.setString(27, row1.pregnancy_status_id);
 }
 
-                    if(row4.tb_status_id == null) {
+                    if(row1.tb_status_id == null) {
 pstmtUpdate_tDBOutput_3.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(28, row4.tb_status_id);
+} else {pstmtUpdate_tDBOutput_3.setString(28, row1.tb_status_id);
 }
 
 
-                    if(row4.id == null) {
+                    if(row1.id == null) {
 pstmtUpdate_tDBOutput_3.setNull(29 + count_tDBOutput_3, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_3.setInt(29 + count_tDBOutput_3, row4.id);
+} else {pstmtUpdate_tDBOutput_3.setInt(29 + count_tDBOutput_3, row1.id);
 }
 
 
-                    if(row4.person_uuid == null) {
+                    if(row1.person_uuid == null) {
 pstmtUpdate_tDBOutput_3.setNull(30 + count_tDBOutput_3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_3.setString(30 + count_tDBOutput_3, row4.person_uuid);
+} else {pstmtUpdate_tDBOutput_3.setString(30 + count_tDBOutput_3, row1.person_uuid);
 }
 
 
@@ -7116,162 +5432,162 @@ pstmtUpdate_tDBOutput_3.setNull(30 + count_tDBOutput_3, java.sql.Types.VARCHAR);
 				
             if(updateFlag_tDBOutput_3 == 0) {
             	
-                        if(row4.id == null) {
+                        if(row1.id == null) {
 pstmtInsert_tDBOutput_3.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_3.setInt(1, row4.id);
+} else {pstmtInsert_tDBOutput_3.setInt(1, row1.id);
 }
 
-                        if(row4.person_uuid == null) {
+                        if(row1.person_uuid == null) {
 pstmtInsert_tDBOutput_3.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(2, row4.person_uuid);
+} else {pstmtInsert_tDBOutput_3.setString(2, row1.person_uuid);
 }
 
-                        if(row4.unique_id == null) {
+                        if(row1.unique_id == null) {
 pstmtInsert_tDBOutput_3.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(3, row4.unique_id);
+} else {pstmtInsert_tDBOutput_3.setString(3, row1.unique_id);
 }
 
-                        if(row4.entry_point_id == null) {
+                        if(row1.entry_point_id == null) {
 pstmtInsert_tDBOutput_3.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(4, row4.entry_point_id);
+} else {pstmtInsert_tDBOutput_3.setString(4, row1.entry_point_id);
 }
 
-                        if(row4.target_group_id == null) {
+                        if(row1.target_group_id == null) {
 pstmtInsert_tDBOutput_3.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(5, row4.target_group_id);
+} else {pstmtInsert_tDBOutput_3.setString(5, row1.target_group_id);
 }
 
-                        if(row4.date_confirmed_hiv != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(6, new java.sql.Timestamp(row4.date_confirmed_hiv.getTime()));
+                        if(row1.date_confirmed_hiv != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(6, new java.sql.Timestamp(row1.date_confirmed_hiv.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(6, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.date_enrolled_pmtct != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(7, new java.sql.Timestamp(row4.date_enrolled_pmtct.getTime()));
+                        if(row1.date_enrolled_pmtct != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(7, new java.sql.Timestamp(row1.date_enrolled_pmtct.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.time_hiv_diagnosis != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(8, new java.sql.Timestamp(row4.time_hiv_diagnosis.getTime()));
+                        if(row1.time_hiv_diagnosis != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(8, new java.sql.Timestamp(row1.time_hiv_diagnosis.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.date_of_registration != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(9, new java.sql.Timestamp(row4.date_of_registration.getTime()));
+                        if(row1.date_of_registration != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(9, new java.sql.Timestamp(row1.date_of_registration.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(9, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.date_started != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(10, new java.sql.Timestamp(row4.date_started.getTime()));
+                        if(row1.date_started != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(10, new java.sql.Timestamp(row1.date_started.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(10, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.source_of_referrer_id == null) {
+                        if(row1.source_of_referrer_id == null) {
 pstmtInsert_tDBOutput_3.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(11, row4.source_of_referrer_id);
+} else {pstmtInsert_tDBOutput_3.setString(11, row1.source_of_referrer_id);
 }
 
-                        if(row4.pregnant == null) {
+                        if(row1.pregnant == null) {
 pstmtInsert_tDBOutput_3.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_3.setBoolean(12, row4.pregnant);
+} else {pstmtInsert_tDBOutput_3.setBoolean(12, row1.pregnant);
 }
 
-                        if(row4.breastfeeding == null) {
+                        if(row1.breastfeeding == null) {
 pstmtInsert_tDBOutput_3.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_3.setBoolean(13, row4.breastfeeding);
+} else {pstmtInsert_tDBOutput_3.setBoolean(13, row1.breastfeeding);
 }
 
-                        if(row4.status_at_registration_id == null) {
+                        if(row1.status_at_registration_id == null) {
 pstmtInsert_tDBOutput_3.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(14, row4.status_at_registration_id);
+} else {pstmtInsert_tDBOutput_3.setString(14, row1.status_at_registration_id);
 }
 
-                        if(row4.enrollment_setting_id == null) {
+                        if(row1.enrollment_setting_id == null) {
 pstmtInsert_tDBOutput_3.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(15, row4.enrollment_setting_id);
+} else {pstmtInsert_tDBOutput_3.setString(15, row1.enrollment_setting_id);
 }
 
-                        if(row4.send_message == null) {
+                        if(row1.send_message == null) {
 pstmtInsert_tDBOutput_3.setNull(16, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_3.setBoolean(16, row4.send_message);
+} else {pstmtInsert_tDBOutput_3.setBoolean(16, row1.send_message);
 }
 
-                        if(row4.archived == null) {
+                        if(row1.archived == null) {
 pstmtInsert_tDBOutput_3.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_3.setBoolean(17, row4.archived);
+} else {pstmtInsert_tDBOutput_3.setBoolean(17, row1.archived);
 }
 
-                        if(row4.created_date != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(18, new java.sql.Timestamp(row4.created_date.getTime()));
+                        if(row1.created_date != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(18, new java.sql.Timestamp(row1.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(18, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.created_by == null) {
+                        if(row1.created_by == null) {
 pstmtInsert_tDBOutput_3.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(19, row4.created_by);
+} else {pstmtInsert_tDBOutput_3.setString(19, row1.created_by);
 }
 
-                        if(row4.last_modified_date != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(20, new java.sql.Timestamp(row4.last_modified_date.getTime()));
+                        if(row1.last_modified_date != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(20, new java.sql.Timestamp(row1.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(20, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.last_modified_by == null) {
+                        if(row1.last_modified_by == null) {
 pstmtInsert_tDBOutput_3.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(21, row4.last_modified_by);
+} else {pstmtInsert_tDBOutput_3.setString(21, row1.last_modified_by);
 }
 
-                        if(row4.facility_id == null) {
+                        if(row1.facility_id == null) {
 pstmtInsert_tDBOutput_3.setNull(22, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_3.setInt(22, row4.facility_id);
+} else {pstmtInsert_tDBOutput_3.setInt(22, row1.facility_id);
 }
 
-                        if(row4.facility_name == null) {
+                        if(row1.facility_name == null) {
 pstmtInsert_tDBOutput_3.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(23, row4.facility_name);
+} else {pstmtInsert_tDBOutput_3.setString(23, row1.facility_name);
 }
 
-                        if(row4.lga_name == null) {
+                        if(row1.lga_name == null) {
 pstmtInsert_tDBOutput_3.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(24, row4.lga_name);
+} else {pstmtInsert_tDBOutput_3.setString(24, row1.lga_name);
 }
 
-                        if(row4.visit_id == null) {
+                        if(row1.visit_id == null) {
 pstmtInsert_tDBOutput_3.setNull(25, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_3.setInt(25, row4.visit_id);
+} else {pstmtInsert_tDBOutput_3.setInt(25, row1.visit_id);
 }
 
-                        if(row4.uuid == null) {
+                        if(row1.uuid == null) {
 pstmtInsert_tDBOutput_3.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(26, row4.uuid);
+} else {pstmtInsert_tDBOutput_3.setString(26, row1.uuid);
 }
 
-                        if(row4.ovc_number == null) {
+                        if(row1.ovc_number == null) {
 pstmtInsert_tDBOutput_3.setNull(27, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(27, row4.ovc_number);
+} else {pstmtInsert_tDBOutput_3.setString(27, row1.ovc_number);
 }
 
-                        if(row4.date_of_lpm != null) {
-pstmtInsert_tDBOutput_3.setTimestamp(28, new java.sql.Timestamp(row4.date_of_lpm.getTime()));
+                        if(row1.date_of_lpm != null) {
+pstmtInsert_tDBOutput_3.setTimestamp(28, new java.sql.Timestamp(row1.date_of_lpm.getTime()));
 } else {
 pstmtInsert_tDBOutput_3.setNull(28, java.sql.Types.TIMESTAMP);
 }
 
-                        if(row4.pregnancy_status_id == null) {
+                        if(row1.pregnancy_status_id == null) {
 pstmtInsert_tDBOutput_3.setNull(29, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(29, row4.pregnancy_status_id);
+} else {pstmtInsert_tDBOutput_3.setString(29, row1.pregnancy_status_id);
 }
 
-                        if(row4.tb_status_id == null) {
+                        if(row1.tb_status_id == null) {
 pstmtInsert_tDBOutput_3.setNull(30, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_3.setString(30, row4.tb_status_id);
+} else {pstmtInsert_tDBOutput_3.setString(30, row1.tb_status_id);
 }
 
 					
@@ -7347,475 +5663,6 @@ pstmtInsert_tDBOutput_3.setNull(30, java.sql.Types.VARCHAR);
  * [tDBOutput_3 process_data_end ] stop
  */
 
-} // End of branch "row4"
-
-
-
-
-// Start of branch "row5"
-if(row5 != null) { 
-
-
-
-	
-	/**
-	 * [tDBOutput_4 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_4";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row5");
-					}
-					
-
-
-
-        whetherReject_tDBOutput_4 = false;
-                    if(row5.id == null) {
-pstmt_tDBOutput_4.setNull(1, java.sql.Types.INTEGER);
-} else {pstmt_tDBOutput_4.setInt(1, row5.id);
-}
-
-            int checkCount_tDBOutput_4 = -1;
-            try (java.sql.ResultSet rs_tDBOutput_4 = pstmt_tDBOutput_4.executeQuery()) {
-                while(rs_tDBOutput_4.next()) {
-                    checkCount_tDBOutput_4 = rs_tDBOutput_4.getInt(1);
-                }
-            }
-            if(checkCount_tDBOutput_4 > 0) {
-                        if(row5.id == null) {
-pstmtUpdate_tDBOutput_4.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_4.setInt(1, row5.id);
-}
-
-                        if(row5.person_uuid == null) {
-pstmtUpdate_tDBOutput_4.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(2, row5.person_uuid);
-}
-
-                        if(row5.unique_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(3, row5.unique_id);
-}
-
-                        if(row5.entry_point_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(4, row5.entry_point_id);
-}
-
-                        if(row5.target_group_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(5, row5.target_group_id);
-}
-
-                        if(row5.date_confirmed_hiv != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(6, new java.sql.Timestamp(row5.date_confirmed_hiv.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.date_enrolled_pmtct != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(7, new java.sql.Timestamp(row5.date_enrolled_pmtct.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(7, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.time_hiv_diagnosis != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(8, new java.sql.Timestamp(row5.time_hiv_diagnosis.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(8, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.date_of_registration != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(9, new java.sql.Timestamp(row5.date_of_registration.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(9, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.date_started != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(10, new java.sql.Timestamp(row5.date_started.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(10, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.source_of_referrer_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(11, row5.source_of_referrer_id);
-}
-
-                        if(row5.pregnant == null) {
-pstmtUpdate_tDBOutput_4.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_4.setBoolean(12, row5.pregnant);
-}
-
-                        if(row5.breastfeeding == null) {
-pstmtUpdate_tDBOutput_4.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_4.setBoolean(13, row5.breastfeeding);
-}
-
-                        if(row5.status_at_registration_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(14, row5.status_at_registration_id);
-}
-
-                        if(row5.enrollment_setting_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(15, row5.enrollment_setting_id);
-}
-
-                        if(row5.send_message == null) {
-pstmtUpdate_tDBOutput_4.setNull(16, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_4.setBoolean(16, row5.send_message);
-}
-
-                        if(row5.archived == null) {
-pstmtUpdate_tDBOutput_4.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_4.setBoolean(17, row5.archived);
-}
-
-                        if(row5.created_date != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(18, new java.sql.Timestamp(row5.created_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(18, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.created_by == null) {
-pstmtUpdate_tDBOutput_4.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(19, row5.created_by);
-}
-
-                        if(row5.last_modified_date != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(20, new java.sql.Timestamp(row5.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(20, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.last_modified_by == null) {
-pstmtUpdate_tDBOutput_4.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(21, row5.last_modified_by);
-}
-
-                        if(row5.facility_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(22, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_4.setInt(22, row5.facility_id);
-}
-
-                        if(row5.facility_name == null) {
-pstmtUpdate_tDBOutput_4.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(23, row5.facility_name);
-}
-
-                        if(row5.lga_name == null) {
-pstmtUpdate_tDBOutput_4.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(24, row5.lga_name);
-}
-
-                        if(row5.visit_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(25, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_4.setInt(25, row5.visit_id);
-}
-
-                        if(row5.uuid == null) {
-pstmtUpdate_tDBOutput_4.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(26, row5.uuid);
-}
-
-                        if(row5.ovc_number == null) {
-pstmtUpdate_tDBOutput_4.setNull(27, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(27, row5.ovc_number);
-}
-
-                        if(row5.date_of_lpm != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(28, new java.sql.Timestamp(row5.date_of_lpm.getTime()));
-} else {
-pstmtUpdate_tDBOutput_4.setNull(28, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.pregnancy_status_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(29, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(29, row5.pregnancy_status_id);
-}
-
-                        if(row5.tb_status_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(30, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(30, row5.tb_status_id);
-}
-
-                        if(row5.id == null) {
-pstmtUpdate_tDBOutput_4.setNull(31 + count_tDBOutput_4, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_4.setInt(31 + count_tDBOutput_4, row5.id);
-}
-
-                try {
-					
-                    updatedCount_tDBOutput_4 = updatedCount_tDBOutput_4 + pstmtUpdate_tDBOutput_4.executeUpdate();
-                    nb_line_tDBOutput_4++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_4 = true;
-                        nb_line_tDBOutput_4++;
-                            System.err.print(e.getMessage());
-                }
-            } else {
-                        if(row5.id == null) {
-pstmtInsert_tDBOutput_4.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_4.setInt(1, row5.id);
-}
-
-                        if(row5.person_uuid == null) {
-pstmtInsert_tDBOutput_4.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(2, row5.person_uuid);
-}
-
-                        if(row5.unique_id == null) {
-pstmtInsert_tDBOutput_4.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(3, row5.unique_id);
-}
-
-                        if(row5.entry_point_id == null) {
-pstmtInsert_tDBOutput_4.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(4, row5.entry_point_id);
-}
-
-                        if(row5.target_group_id == null) {
-pstmtInsert_tDBOutput_4.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(5, row5.target_group_id);
-}
-
-                        if(row5.date_confirmed_hiv != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(6, new java.sql.Timestamp(row5.date_confirmed_hiv.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(6, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.date_enrolled_pmtct != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(7, new java.sql.Timestamp(row5.date_enrolled_pmtct.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(7, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.time_hiv_diagnosis != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(8, new java.sql.Timestamp(row5.time_hiv_diagnosis.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(8, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.date_of_registration != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(9, new java.sql.Timestamp(row5.date_of_registration.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(9, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.date_started != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(10, new java.sql.Timestamp(row5.date_started.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.source_of_referrer_id == null) {
-pstmtInsert_tDBOutput_4.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(11, row5.source_of_referrer_id);
-}
-
-                        if(row5.pregnant == null) {
-pstmtInsert_tDBOutput_4.setNull(12, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_4.setBoolean(12, row5.pregnant);
-}
-
-                        if(row5.breastfeeding == null) {
-pstmtInsert_tDBOutput_4.setNull(13, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_4.setBoolean(13, row5.breastfeeding);
-}
-
-                        if(row5.status_at_registration_id == null) {
-pstmtInsert_tDBOutput_4.setNull(14, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(14, row5.status_at_registration_id);
-}
-
-                        if(row5.enrollment_setting_id == null) {
-pstmtInsert_tDBOutput_4.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(15, row5.enrollment_setting_id);
-}
-
-                        if(row5.send_message == null) {
-pstmtInsert_tDBOutput_4.setNull(16, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_4.setBoolean(16, row5.send_message);
-}
-
-                        if(row5.archived == null) {
-pstmtInsert_tDBOutput_4.setNull(17, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_4.setBoolean(17, row5.archived);
-}
-
-                        if(row5.created_date != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(18, new java.sql.Timestamp(row5.created_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(18, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.created_by == null) {
-pstmtInsert_tDBOutput_4.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(19, row5.created_by);
-}
-
-                        if(row5.last_modified_date != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(20, new java.sql.Timestamp(row5.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(20, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.last_modified_by == null) {
-pstmtInsert_tDBOutput_4.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(21, row5.last_modified_by);
-}
-
-                        if(row5.facility_id == null) {
-pstmtInsert_tDBOutput_4.setNull(22, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_4.setInt(22, row5.facility_id);
-}
-
-                        if(row5.facility_name == null) {
-pstmtInsert_tDBOutput_4.setNull(23, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(23, row5.facility_name);
-}
-
-                        if(row5.lga_name == null) {
-pstmtInsert_tDBOutput_4.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(24, row5.lga_name);
-}
-
-                        if(row5.visit_id == null) {
-pstmtInsert_tDBOutput_4.setNull(25, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_4.setInt(25, row5.visit_id);
-}
-
-                        if(row5.uuid == null) {
-pstmtInsert_tDBOutput_4.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(26, row5.uuid);
-}
-
-                        if(row5.ovc_number == null) {
-pstmtInsert_tDBOutput_4.setNull(27, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(27, row5.ovc_number);
-}
-
-                        if(row5.date_of_lpm != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(28, new java.sql.Timestamp(row5.date_of_lpm.getTime()));
-} else {
-pstmtInsert_tDBOutput_4.setNull(28, java.sql.Types.TIMESTAMP);
-}
-
-                        if(row5.pregnancy_status_id == null) {
-pstmtInsert_tDBOutput_4.setNull(29, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(29, row5.pregnancy_status_id);
-}
-
-                        if(row5.tb_status_id == null) {
-pstmtInsert_tDBOutput_4.setNull(30, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(30, row5.tb_status_id);
-}
-
-                try {
-					
-                    insertedCount_tDBOutput_4 = insertedCount_tDBOutput_4 + pstmtInsert_tDBOutput_4.executeUpdate();
-                    nb_line_tDBOutput_4++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_4 = true;
-                        nb_line_tDBOutput_4++;
-                            System.err.print(e.getMessage());
-                }
-            }
-    		    commitCounter_tDBOutput_4++;
-                if(commitEvery_tDBOutput_4 <= commitCounter_tDBOutput_4) {
-                	conn_tDBOutput_4.commit();
-                	
-                	commitCounter_tDBOutput_4=0;
-                }
-
- 
-
-
-	tos_count_tDBOutput_4++;
-
-/**
- * [tDBOutput_4 main ] stop
- */
-	
-	/**
-	 * [tDBOutput_4 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_4";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_4 process_data_begin ] stop
- */
-	
-	/**
-	 * [tDBOutput_4 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_4";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_4 process_data_end ] stop
- */
-
-} // End of branch "row5"
-
-
-
-
-	
-	/**
-	 * [tUniqRow_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_2 process_data_end ] stop
- */
-
 
 
 	
@@ -7874,38 +5721,6 @@ end_Hash.put("tSortRow_1_SortIn", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_2";
-
-	
-
-globalMap.put("tUniqRow_2_NB_UNIQUES",nb_uniques_tUniqRow_2);
-globalMap.put("tUniqRow_2_NB_DUPLICATES",nb_duplicates_tUniqRow_2);
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
-			  	}
-			  	
- 
-
-ok_Hash.put("tUniqRow_2", true);
-end_Hash.put("tUniqRow_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tUniqRow_2 end ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_3 end ] start
 	 */
 
@@ -7952,7 +5767,7 @@ end_Hash.put("tUniqRow_2", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
 			  	}
 			  	
  
@@ -7980,79 +5795,6 @@ end_Hash.put("tDBOutput_3", System.currentTimeMillis());
 /**
  * [tDBOutput_3 end ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_4 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_4";
-
-	
-
-
-
-        if(pstmtUpdate_tDBOutput_4 != null){
-            pstmtUpdate_tDBOutput_4.close();
-            resourceMap.remove("pstmtUpdate_tDBOutput_4");
-        }
-        if(pstmtInsert_tDBOutput_4 != null){
-            pstmtInsert_tDBOutput_4.close();
-            resourceMap.remove("pstmtInsert_tDBOutput_4");
-        }
-        if(pstmt_tDBOutput_4 != null) {
-            pstmt_tDBOutput_4.close();
-            resourceMap.remove("pstmt_tDBOutput_4");
-        }
-    resourceMap.put("statementClosed_tDBOutput_4", true);
-			
-			conn_tDBOutput_4.commit();
-			
-		
-    	conn_tDBOutput_4 .close();
-    	
-    	resourceMap.put("finish_tDBOutput_4", true);
-    	
-
-	nb_line_deleted_tDBOutput_4=nb_line_deleted_tDBOutput_4+ deletedCount_tDBOutput_4;
-	nb_line_update_tDBOutput_4=nb_line_update_tDBOutput_4 + updatedCount_tDBOutput_4;
-	nb_line_inserted_tDBOutput_4=nb_line_inserted_tDBOutput_4 + insertedCount_tDBOutput_4;
-	nb_line_rejected_tDBOutput_4=nb_line_rejected_tDBOutput_4 + rejectedCount_tDBOutput_4;
-	
-        globalMap.put("tDBOutput_4_NB_LINE",nb_line_tDBOutput_4);
-        globalMap.put("tDBOutput_4_NB_LINE_UPDATED",nb_line_update_tDBOutput_4);
-        globalMap.put("tDBOutput_4_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_4);
-        globalMap.put("tDBOutput_4_NB_LINE_DELETED",nb_line_deleted_tDBOutput_4);
-        globalMap.put("tDBOutput_4_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_4);
-    
-	
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row5");
-			  	}
-			  	
- 
-
-ok_Hash.put("tDBOutput_4", true);
-end_Hash.put("tDBOutput_4", System.currentTimeMillis());
-
-
-
-
-/**
- * [tDBOutput_4 end ] stop
- */
-
-
-
 
 
 
@@ -8194,27 +5936,6 @@ end_Hash.put("tDBOutput_4", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_2 finally ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_3 finally ] start
 	 */
 
@@ -8259,63 +5980,6 @@ end_Hash.put("tDBOutput_4", System.currentTimeMillis());
 /**
  * [tDBOutput_3 finally ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_4 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_4";
-
-	
-
-
-
-    try {
-    if (resourceMap.get("statementClosed_tDBOutput_4") == null) {
-                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_4 = null;
-                if ((pstmtUpdateToClose_tDBOutput_4 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_4")) != null) {
-                    pstmtUpdateToClose_tDBOutput_4.close();
-                }
-                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_4 = null;
-                if ((pstmtInsertToClose_tDBOutput_4 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_4")) != null) {
-                    pstmtInsertToClose_tDBOutput_4.close();
-                }
-                java.sql.PreparedStatement pstmtToClose_tDBOutput_4 = null;
-                if ((pstmtToClose_tDBOutput_4 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_4")) != null) {
-                    pstmtToClose_tDBOutput_4.close();
-                }
-    }
-    } finally {
-        if(resourceMap.get("finish_tDBOutput_4") == null){
-            java.sql.Connection ctn_tDBOutput_4 = null;
-            if((ctn_tDBOutput_4 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_4")) != null){
-                try {
-                    ctn_tDBOutput_4.close();
-                } catch (java.sql.SQLException sqlEx_tDBOutput_4) {
-                    String errorMessage_tDBOutput_4 = "failed to close the connection in tDBOutput_4 :" + sqlEx_tDBOutput_4.getMessage();
-                    System.err.println(errorMessage_tDBOutput_4);
-                }
-            }
-        }
-    }
- 
-
-
-
-/**
- * [tDBOutput_4 finally ] stop
- */
-
-
-
 
 
 
@@ -8728,6 +6392,30 @@ public static class copyOfexampleStruct implements routines.system.IPersistableR
 					return this.tb_status_id;
 				}
 				
+			    public String referred_to_ovcpartner;
+
+				public String getReferred_to_ovcpartner () {
+					return this.referred_to_ovcpartner;
+				}
+				
+			    public java.util.Date date_referred_to_ovcpartner;
+
+				public java.util.Date getDate_referred_to_ovcpartner () {
+					return this.date_referred_to_ovcpartner;
+				}
+				
+			    public java.util.Date date_referred_from_ovcpartner;
+
+				public java.util.Date getDate_referred_from_ovcpartner () {
+					return this.date_referred_from_ovcpartner;
+				}
+				
+			    public String house_hold_number;
+
+				public String getHouse_hold_number () {
+					return this.house_hold_number;
+				}
+				
 
 
 	@Override
@@ -8789,6 +6477,10 @@ public static class copyOfexampleStruct implements routines.system.IPersistableR
 	            other.date_of_lpm = this.date_of_lpm;
 	            other.pregnancy_status_id = this.pregnancy_status_id;
 	            other.tb_status_id = this.tb_status_id;
+	            other.referred_to_ovcpartner = this.referred_to_ovcpartner;
+	            other.date_referred_to_ovcpartner = this.date_referred_to_ovcpartner;
+	            other.date_referred_from_ovcpartner = this.date_referred_from_ovcpartner;
+	            other.house_hold_number = this.house_hold_number;
 	            
 	}
 
@@ -8988,6 +6680,14 @@ public static class copyOfexampleStruct implements routines.system.IPersistableR
            			    	this.tb_status_id = dis.readLong();
            				}
 					
+					this.referred_to_ovcpartner = readString(dis);
+					
+					this.date_referred_to_ovcpartner = readDate(dis);
+					
+					this.date_referred_from_ovcpartner = readDate(dis);
+					
+					this.house_hold_number = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -9172,6 +6872,22 @@ public static class copyOfexampleStruct implements routines.system.IPersistableR
            			    	dos.writeLong(this.tb_status_id);
 		            	}
 					
+					// String
+				
+						writeString(this.referred_to_ovcpartner,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_referred_to_ovcpartner,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_referred_from_ovcpartner,dos);
+					
+					// String
+				
+						writeString(this.house_hold_number,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -9214,6 +6930,10 @@ public static class copyOfexampleStruct implements routines.system.IPersistableR
 		sb.append(",date_of_lpm="+String.valueOf(date_of_lpm));
 		sb.append(",pregnancy_status_id="+String.valueOf(pregnancy_status_id));
 		sb.append(",tb_status_id="+String.valueOf(tb_status_id));
+		sb.append(",referred_to_ovcpartner="+referred_to_ovcpartner);
+		sb.append(",date_referred_to_ovcpartner="+String.valueOf(date_referred_to_ovcpartner));
+		sb.append(",date_referred_from_ovcpartner="+String.valueOf(date_referred_from_ovcpartner));
+		sb.append(",house_hold_number="+house_hold_number);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -11479,6 +9199,7 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		tDBInput_12Process(globalMap);
 		tDBInput_14Process(globalMap);
 		tDBInput_6Process(globalMap);
+		tDBInput_18Process(globalMap);
 
 		entry_points_patientStruct entry_points_patient = new entry_points_patientStruct();
 Entry_pointStruct Entry_point = new Entry_pointStruct();
@@ -11569,10 +9290,10 @@ String dbUser_tDBOutput_1 = null;
 
 
 int count_tDBOutput_1=0;
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"unique_id\" = ?,\"entry_point_id\" = ?,\"target_group_id\" = ?,\"date_confirmed_hiv\" = ?,\"date_enrolled_pmtct\" = ?,\"source_of_referrer_id\" = ?,\"time_hiv_diagnosis\" = ?,\"pregnant\" = ?,\"breastfeeding\" = ?,\"date_of_registration\" = ?,\"status_at_registration_id\" = ?,\"enrollment_setting_id\" = ?,\"date_started\" = ?,\"send_message\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"visit_id\" = ?,\"uuid\" = ?,\"archived\" = ?,\"facility_name\" = ?,\"ovc_number\" = ?,\"date_of_lpm\" = ?,\"pregnancy_status_id\" = ?,\"tb_status_id\" = ? WHERE \"uuid\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"unique_id\" = ?,\"entry_point_id\" = ?,\"target_group_id\" = ?,\"date_confirmed_hiv\" = ?,\"date_enrolled_pmtct\" = ?,\"source_of_referrer_id\" = ?,\"time_hiv_diagnosis\" = ?,\"pregnant\" = ?,\"breastfeeding\" = ?,\"date_of_registration\" = ?,\"status_at_registration_id\" = ?,\"enrollment_setting_id\" = ?,\"date_started\" = ?,\"send_message\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"visit_id\" = ?,\"uuid\" = ?,\"archived\" = ?,\"facility_name\" = ?,\"ovc_number\" = ?,\"date_of_lpm\" = ?,\"pregnancy_status_id\" = ?,\"tb_status_id\" = ?,\"referred_to_ovcpartner\" = ?,\"date_referred_to_ovcpartner\" = ?,\"date_referred_from_ovcpartner\" = ?,\"house_hold_number\" = ? WHERE \"uuid\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"unique_id\",\"entry_point_id\",\"target_group_id\",\"date_confirmed_hiv\",\"date_enrolled_pmtct\",\"source_of_referrer_id\",\"time_hiv_diagnosis\",\"pregnant\",\"breastfeeding\",\"date_of_registration\",\"status_at_registration_id\",\"enrollment_setting_id\",\"date_started\",\"send_message\",\"person_uuid\",\"facility_id\",\"visit_id\",\"uuid\",\"archived\",\"facility_name\",\"ovc_number\",\"date_of_lpm\",\"pregnancy_status_id\",\"tb_status_id\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"unique_id\",\"entry_point_id\",\"target_group_id\",\"date_confirmed_hiv\",\"date_enrolled_pmtct\",\"source_of_referrer_id\",\"time_hiv_diagnosis\",\"pregnant\",\"breastfeeding\",\"date_of_registration\",\"status_at_registration_id\",\"enrollment_setting_id\",\"date_started\",\"send_message\",\"person_uuid\",\"facility_id\",\"visit_id\",\"uuid\",\"archived\",\"facility_name\",\"ovc_number\",\"date_of_lpm\",\"pregnancy_status_id\",\"tb_status_id\",\"referred_to_ovcpartner\",\"date_referred_to_ovcpartner\",\"date_referred_from_ovcpartner\",\"house_hold_number\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
 	    
@@ -11615,6 +9336,16 @@ int count_tDBOutput_1=0;
 
 // ###############################
 // # Lookup's keys initialization
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ovcStruct> tHash_Lookup_ovc = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ovcStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ovcStruct>) 
+					globalMap.get( "tHash_Lookup_ovc" ))
+					;					
+					
+	
+
+ovcStruct ovcHashKey = new ovcStruct();
+ovcStruct ovcDefault = new ovcStruct();
 // ###############################        
 
 // ###############################
@@ -13062,7 +10793,100 @@ if(map_to_clinics != null) {
 		  boolean rejectedInnerJoin_tMap_9 = false;
 		  boolean mainRowRejected_tMap_9 = false;
             				    								  
-		// ###############################
+		
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "ovc" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLoopovc = false;
+       		  	    	
+       		  	    	
+ 							ovcStruct ovcObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_9) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_9 = false;
+								
+                        		    		    ovcHashKey.person_uuid = map_to_clinics.person_uuid ;
+                        		    		
+
+								
+		                        	ovcHashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_ovc.lookup( ovcHashKey );
+
+	  							
+
+	  							
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_ovc != null && tHash_Lookup_ovc.getCount(ovcHashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'ovc' and it contains more one result from keys :  ovc.person_uuid = '" + ovcHashKey.person_uuid + "'");
+								} // G 071
+							
+
+							ovcStruct ovc = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	ovcStruct fromLookup_ovc = null;
+							ovc = ovcDefault;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_ovc !=null && tHash_Lookup_ovc.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_ovc = tHash_Lookup_ovc.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_ovc != null) {
+								ovc = fromLookup_ovc;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	            	
+	            // ###############################
         { // start of Var scope
         
 	        // ###############################
@@ -13105,6 +10929,10 @@ copyOfexample_tmp.ovc_number = map_to_clinics.ovc_number ;
 copyOfexample_tmp.date_of_lpm = map_to_clinics.date_of_lpm ;
 copyOfexample_tmp.pregnancy_status_id = map_to_clinics.pregnancy_status_id ;
 copyOfexample_tmp.tb_status_id = map_to_clinics.tb_status_id ;
+copyOfexample_tmp.referred_to_ovcpartner = ovc.referred_to_ovcpartner ;
+copyOfexample_tmp.date_referred_to_ovcpartner = ovc.date_referred_to_ovcpartner ;
+copyOfexample_tmp.date_referred_from_ovcpartner = ovc.date_referred_from_ovcpartner ;
+copyOfexample_tmp.house_hold_number = ovc.house_hold_number ;
 copyOfexample = copyOfexample_tmp;
 // ###############################
 
@@ -13325,10 +11153,32 @@ pstmtUpdate_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
 } else {pstmtUpdate_tDBOutput_1.setLong(29, copyOfexample.tb_status_id);
 }
 
+                    if(copyOfexample.referred_to_ovcpartner == null) {
+pstmtUpdate_tDBOutput_1.setNull(30, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(30, copyOfexample.referred_to_ovcpartner);
+}
+
+                    if(copyOfexample.date_referred_to_ovcpartner != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(31, new java.sql.Timestamp(copyOfexample.date_referred_to_ovcpartner.getTime()));
+} else {
+pstmtUpdate_tDBOutput_1.setNull(31, java.sql.Types.TIMESTAMP);
+}
+
+                    if(copyOfexample.date_referred_from_ovcpartner != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(32, new java.sql.Timestamp(copyOfexample.date_referred_from_ovcpartner.getTime()));
+} else {
+pstmtUpdate_tDBOutput_1.setNull(32, java.sql.Types.TIMESTAMP);
+}
+
+                    if(copyOfexample.house_hold_number == null) {
+pstmtUpdate_tDBOutput_1.setNull(33, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(33, copyOfexample.house_hold_number);
+}
+
 
                     if(copyOfexample.uuid == null) {
-pstmtUpdate_tDBOutput_1.setNull(30 + count_tDBOutput_1, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(30 + count_tDBOutput_1, copyOfexample.uuid);
+pstmtUpdate_tDBOutput_1.setNull(34 + count_tDBOutput_1, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(34 + count_tDBOutput_1, copyOfexample.uuid);
 }
 
 
@@ -13487,6 +11337,28 @@ pstmtInsert_tDBOutput_1.setNull(28, java.sql.Types.INTEGER);
                         if(copyOfexample.tb_status_id == null) {
 pstmtInsert_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
 } else {pstmtInsert_tDBOutput_1.setLong(29, copyOfexample.tb_status_id);
+}
+
+                        if(copyOfexample.referred_to_ovcpartner == null) {
+pstmtInsert_tDBOutput_1.setNull(30, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(30, copyOfexample.referred_to_ovcpartner);
+}
+
+                        if(copyOfexample.date_referred_to_ovcpartner != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(31, new java.sql.Timestamp(copyOfexample.date_referred_to_ovcpartner.getTime()));
+} else {
+pstmtInsert_tDBOutput_1.setNull(31, java.sql.Types.TIMESTAMP);
+}
+
+                        if(copyOfexample.date_referred_from_ovcpartner != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(32, new java.sql.Timestamp(copyOfexample.date_referred_from_ovcpartner.getTime()));
+} else {
+pstmtInsert_tDBOutput_1.setNull(32, java.sql.Types.TIMESTAMP);
+}
+
+                        if(copyOfexample.house_hold_number == null) {
+pstmtInsert_tDBOutput_1.setNull(33, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(33, copyOfexample.house_hold_number);
 }
 
 					
@@ -13872,6 +11744,14 @@ end_Hash.put("tMap_4", System.currentTimeMillis());
 
 // ###############################
 // # Lookup hashes releasing
+					if(tHash_Lookup_ovc != null) {
+						tHash_Lookup_ovc.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_ovc" );
+
+					
+					
+				
 // ###############################      
 
 
@@ -13997,6 +11877,9 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 				throw error;
 			}finally{
 				
+					     			//free memory for "tMap_9"
+					     			globalMap.remove("tHash_Lookup_ovc"); 
+				     			
 					     			//free memory for "tMap_4"
 					     			globalMap.remove("tHash_Lookup_Enrollment_settings"); 
 				     			
@@ -30307,6 +28190,817 @@ end_Hash.put("tAdvancedHash_load_pregancy_data", System.currentTimeMillis());
 		globalMap.put("tDBInput_6_SUBPROCESS_STATE", 1);
 	}
 	
+
+
+public static class ovcStruct implements routines.system.IPersistableComparableLookupRow<ovcStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public String referred_to_ovcpartner;
+
+				public String getReferred_to_ovcpartner () {
+					return this.referred_to_ovcpartner;
+				}
+				
+			    public java.util.Date date_referred_to_ovcpartner;
+
+				public java.util.Date getDate_referred_to_ovcpartner () {
+					return this.date_referred_to_ovcpartner;
+				}
+				
+			    public java.util.Date date_referred_from_ovcpartner;
+
+				public java.util.Date getDate_referred_from_ovcpartner () {
+					return this.date_referred_from_ovcpartner;
+				}
+				
+			    public String house_hold_number;
+
+				public String getHouse_hold_number () {
+					return this.house_hold_number;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.person_uuid == null) ? 0 : this.person_uuid.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final ovcStruct other = (ovcStruct) obj;
+		
+						if (this.person_uuid == null) {
+							if (other.person_uuid != null)
+								return false;
+						
+						} else if (!this.person_uuid.equals(other.person_uuid))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(ovcStruct other) {
+
+		other.person_uuid = this.person_uuid;
+	            other.referred_to_ovcpartner = this.referred_to_ovcpartner;
+	            other.date_referred_to_ovcpartner = this.date_referred_to_ovcpartner;
+	            other.date_referred_from_ovcpartner = this.date_referred_from_ovcpartner;
+	            other.house_hold_number = this.house_hold_number;
+	            
+	}
+
+	public void copyKeysDataTo(ovcStruct other) {
+
+		other.person_uuid = this.person_uuid;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_Enrollment.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HIV_Enrollment = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_Enrollment, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+	private java.util.Date readDate(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		java.util.Date dateReturn = null;
+		int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+	private void writeDate(java.util.Date date1, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+	}
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_Enrollment) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.person_uuid = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.referred_to_ovcpartner = readString(dis,ois);
+					
+						this.date_referred_to_ovcpartner = readDate(dis,ois);
+					
+						this.date_referred_from_ovcpartner = readDate(dis,ois);
+					
+						this.house_hold_number = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.referred_to_ovcpartner, dos, oos);
+					
+						writeDate(this.date_referred_to_ovcpartner, dos, oos);
+					
+						writeDate(this.date_referred_from_ovcpartner, dos, oos);
+					
+						writeString(this.house_hold_number, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("person_uuid="+person_uuid);
+		sb.append(",referred_to_ovcpartner="+referred_to_ovcpartner);
+		sb.append(",date_referred_to_ovcpartner="+String.valueOf(date_referred_to_ovcpartner));
+		sb.append(",date_referred_from_ovcpartner="+String.valueOf(date_referred_from_ovcpartner));
+		sb.append(",house_hold_number="+house_hold_number);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(ovcStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.person_uuid, other.person_uuid);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_18Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_18_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		ovcStruct ovc = new ovcStruct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_ovc begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_ovc", false);
+		start_Hash.put("tAdvancedHash_ovc", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_ovc";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ovc");
+					}
+				
+		int tos_count_tAdvancedHash_ovc = 0;
+		
+
+			   		// connection name:ovc
+			   		// source node:tDBInput_18 - inputs:(after_tDBInput_2) outputs:(ovc,ovc) | target node:tAdvancedHash_ovc - inputs:(ovc) outputs:()
+			   		// linked node: tMap_9 - inputs:(map_to_clinics,ovc) outputs:(copyOfexample)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_ovc = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ovcStruct> tHash_Lookup_ovc =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<ovcStruct>getLookup(matchingModeEnum_ovc);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_ovc", tHash_Lookup_ovc);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_ovc begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_18 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_18", false);
+		start_Hash.put("tDBInput_18", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_18";
+
+	
+		int tos_count_tDBInput_18 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_18 = 0;
+		    java.sql.Connection conn_tDBInput_18 = null;
+				String driverClass_tDBInput_18 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_18 = java.lang.Class.forName(driverClass_tDBInput_18);
+				String dbUser_tDBInput_18 = context.LAMIS3_Login;
+				
+				
+	final String decryptedPassword_tDBInput_18 = context.LAMIS3_Password; 
+				
+				String dbPwd_tDBInput_18 = decryptedPassword_tDBInput_18;
+				
+				String url_tDBInput_18 = "jdbc:postgresql://" + context.LAMIS3_Server + ":" + context.LAMIS3_Port + "/" + context.LAMIS3_Database + "?" + context.LAMIS3_AdditionalParams;
+				
+				conn_tDBInput_18 = java.sql.DriverManager.getConnection(url_tDBInput_18,dbUser_tDBInput_18,dbPwd_tDBInput_18);
+		        
+				conn_tDBInput_18.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_18 = conn_tDBInput_18.createStatement();
+
+		    String dbquery_tDBInput_18 = "SELECT  p.uuid as person_uuid,\np.extra->'ovc'->>'referredTo' as referred_to_ovcpartner,\nTO_DATE(p.extra->'ovc'->>'dat"
++"eReferredTo', 'YYYY-MM-DD') as date_referred_to_ovcpartner,\nTO_DATE(p.extra->'ovc'->>'dateReferredFrom', 'YYYY-MM-DD') "
++"as date_referred_from_ovcpartner,\np.extra->'ovc'->>'householdUniqueNo' as house_hold_number\nFROM patient p \nWHERE p.e"
++"xtra->>'art'='true'";
+			
+
+            	globalMap.put("tDBInput_18_QUERY",dbquery_tDBInput_18);
+		    java.sql.ResultSet rs_tDBInput_18 = null;
+
+		    try {
+		    	rs_tDBInput_18 = stmt_tDBInput_18.executeQuery(dbquery_tDBInput_18);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_18 = rs_tDBInput_18.getMetaData();
+		    	int colQtyInRs_tDBInput_18 = rsmd_tDBInput_18.getColumnCount();
+
+		    String tmpContent_tDBInput_18 = null;
+		    
+		    
+		    while (rs_tDBInput_18.next()) {
+		        nb_line_tDBInput_18++;
+		        
+							if(colQtyInRs_tDBInput_18 < 1) {
+								ovc.person_uuid = null;
+							} else {
+	                         		
+        	ovc.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_18, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_18 < 2) {
+								ovc.referred_to_ovcpartner = null;
+							} else {
+	                         		
+        	ovc.referred_to_ovcpartner = routines.system.JDBCUtil.getString(rs_tDBInput_18, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_18 < 3) {
+								ovc.date_referred_to_ovcpartner = null;
+							} else {
+										
+			ovc.date_referred_to_ovcpartner = routines.system.JDBCUtil.getDate(rs_tDBInput_18, 3);
+		                    }
+							if(colQtyInRs_tDBInput_18 < 4) {
+								ovc.date_referred_from_ovcpartner = null;
+							} else {
+										
+			ovc.date_referred_from_ovcpartner = routines.system.JDBCUtil.getDate(rs_tDBInput_18, 4);
+		                    }
+							if(colQtyInRs_tDBInput_18 < 5) {
+								ovc.house_hold_number = null;
+							} else {
+	                         		
+        	ovc.house_hold_number = routines.system.JDBCUtil.getString(rs_tDBInput_18, 5, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_18 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_18 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_18++;
+
+/**
+ * [tDBInput_18 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_18 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_18 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_ovc main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_ovc";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"ovc");
+					}
+					
+
+
+			   
+			   
+
+					ovcStruct ovc_HashRow = new ovcStruct();
+		   	   	   
+				
+				ovc_HashRow.person_uuid = ovc.person_uuid;
+				
+				ovc_HashRow.referred_to_ovcpartner = ovc.referred_to_ovcpartner;
+				
+				ovc_HashRow.date_referred_to_ovcpartner = ovc.date_referred_to_ovcpartner;
+				
+				ovc_HashRow.date_referred_from_ovcpartner = ovc.date_referred_from_ovcpartner;
+				
+				ovc_HashRow.house_hold_number = ovc.house_hold_number;
+				
+			tHash_Lookup_ovc.put(ovc_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_ovc++;
+
+/**
+ * [tAdvancedHash_ovc main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_ovc process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_ovc";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_ovc process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_ovc process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_ovc";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_ovc process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_18 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_18 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_18 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_18 != null) {
+		rs_tDBInput_18.close();
+	}
+	if (stmt_tDBInput_18 != null) {
+		stmt_tDBInput_18.close();
+	}
+	if(conn_tDBInput_18 != null && !conn_tDBInput_18.isClosed()) {
+		
+			conn_tDBInput_18.commit();
+			
+		
+			conn_tDBInput_18.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_18_NB_LINE",nb_line_tDBInput_18);
+ 
+
+ok_Hash.put("tDBInput_18", true);
+end_Hash.put("tDBInput_18", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_18 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_ovc end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_ovc";
+
+	
+
+tHash_Lookup_ovc.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"ovc");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_ovc", true);
+end_Hash.put("tAdvancedHash_ovc", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_ovc end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_18 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_18";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_18 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_ovc finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_ovc";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_ovc finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_18_SUBPROCESS_STATE", 1);
+	}
+	
     public String resuming_logs_dir_path = null;
     public String resuming_checkpoint_path = null;
     public String parent_part_launcher = null;
@@ -30815,6 +29509,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     757923 characters generated by Talend Open Studio for Big Data 
- *     on the December 12, 2022 7:56:26 PM WAT
+ *     713859 characters generated by Talend Open Studio for Big Data 
+ *     on the January 13, 2023 3:45:23 PM WAT
  ************************************************************************************************/

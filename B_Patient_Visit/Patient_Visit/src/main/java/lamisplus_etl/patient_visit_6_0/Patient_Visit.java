@@ -732,25 +732,7 @@ private class TalendException extends Exception {
 					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tUniqRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBOutput_9_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBOutput_10_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -15604,7 +15586,7 @@ end_Hash.put("tDBOutput_5", System.currentTimeMillis());
 	
 
 
-public static class Unique_clinicsStruct implements routines.system.IPersistableRow<Unique_clinicsStruct> {
+public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Patient_Visit = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -15704,7 +15686,7 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final Unique_clinicsStruct other = (Unique_clinicsStruct) obj;
+		final row7Struct other = (row7Struct) obj;
 		
 						if (this.id == null) {
 							if (other.id != null)
@@ -15718,7 +15700,7 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 		return true;
     }
 
-	public void copyDataTo(Unique_clinicsStruct other) {
+	public void copyDataTo(row7Struct other) {
 
 		other.id = this.id;
 	            other.person_uuid = this.person_uuid;
@@ -15734,7 +15716,7 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
 	            
 	}
 
-	public void copyKeysDataTo(Unique_clinicsStruct other) {
+	public void copyKeysDataTo(row7Struct other) {
 
 		other.id = this.id;
 	            	
@@ -15938,751 +15920,7 @@ public static class Unique_clinicsStruct implements routines.system.IPersistable
     /**
      * Compare keys
      */
-    public int compareTo(Unique_clinicsStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class Duplicate_clinicsStruct implements routines.system.IPersistableRow<Duplicate_clinicsStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Patient_Visit = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public Long id;
-
-				public Long getId () {
-					return this.id;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public Long facility_id;
-
-				public Long getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public java.util.Date visit_start_date;
-
-				public java.util.Date getVisit_start_date () {
-					return this.visit_start_date;
-				}
-				
-			    public java.util.Date visit_end_date;
-
-				public java.util.Date getVisit_end_date () {
-					return this.visit_end_date;
-				}
-				
-			    public int archived;
-
-				public int getArchived () {
-					return this.archived;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final Duplicate_clinicsStruct other = (Duplicate_clinicsStruct) obj;
-		
-						if (this.id == null) {
-							if (other.id != null)
-								return false;
-						
-						} else if (!this.id.equals(other.id))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(Duplicate_clinicsStruct other) {
-
-		other.id = this.id;
-	            other.person_uuid = this.person_uuid;
-	            other.facility_id = this.facility_id;
-	            other.visit_start_date = this.visit_start_date;
-	            other.visit_end_date = this.visit_end_date;
-	            other.archived = this.archived;
-	            other.created_date = this.created_date;
-	            other.last_modified_date = this.last_modified_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_by = this.last_modified_by;
-	            other.uuid = this.uuid;
-	            
-	}
-
-	public void copyKeysDataTo(Duplicate_clinicsStruct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_Patient_Visit.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_Patient_Visit.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_Patient_Visit, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_Patient_Visit, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Patient_Visit) {
-
-        	try {
-
-        		int length = 0;
-		
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.id = null;
-           				} else {
-           			    	this.id = dis.readLong();
-           				}
-					
-					this.person_uuid = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.facility_id = null;
-           				} else {
-           			    	this.facility_id = dis.readLong();
-           				}
-					
-					this.visit_start_date = readDate(dis);
-					
-					this.visit_end_date = readDate(dis);
-					
-			        this.archived = dis.readInt();
-					
-					this.created_date = readDate(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// Long
-				
-						if(this.id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.id);
-		            	}
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// Long
-				
-						if(this.facility_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.facility_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.visit_start_date,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.visit_end_date,dos);
-					
-					// int
-				
-		            	dos.writeInt(this.archived);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",visit_start_date="+String.valueOf(visit_start_date));
-		sb.append(",visit_end_date="+String.valueOf(visit_end_date));
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",uuid="+uuid);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Duplicate_clinicsStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class check_duplicatesStruct implements routines.system.IPersistableRow<check_duplicatesStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_Patient_Visit = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public Long id;
-
-				public Long getId () {
-					return this.id;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public Long facility_id;
-
-				public Long getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public java.util.Date visit_start_date;
-
-				public java.util.Date getVisit_start_date () {
-					return this.visit_start_date;
-				}
-				
-			    public java.util.Date visit_end_date;
-
-				public java.util.Date getVisit_end_date () {
-					return this.visit_end_date;
-				}
-				
-			    public int archived;
-
-				public int getArchived () {
-					return this.archived;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final check_duplicatesStruct other = (check_duplicatesStruct) obj;
-		
-						if (this.id == null) {
-							if (other.id != null)
-								return false;
-						
-						} else if (!this.id.equals(other.id))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(check_duplicatesStruct other) {
-
-		other.id = this.id;
-	            other.person_uuid = this.person_uuid;
-	            other.facility_id = this.facility_id;
-	            other.visit_start_date = this.visit_start_date;
-	            other.visit_end_date = this.visit_end_date;
-	            other.archived = this.archived;
-	            other.created_date = this.created_date;
-	            other.last_modified_date = this.last_modified_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_by = this.last_modified_by;
-	            other.uuid = this.uuid;
-	            
-	}
-
-	public void copyKeysDataTo(check_duplicatesStruct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_Patient_Visit.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_Patient_Visit.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_Patient_Visit = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_Patient_Visit, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_Patient_Visit, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_Patient_Visit) {
-
-        	try {
-
-        		int length = 0;
-		
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.id = null;
-           				} else {
-           			    	this.id = dis.readLong();
-           				}
-					
-					this.person_uuid = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.facility_id = null;
-           				} else {
-           			    	this.facility_id = dis.readLong();
-           				}
-					
-					this.visit_start_date = readDate(dis);
-					
-					this.visit_end_date = readDate(dis);
-					
-			        this.archived = dis.readInt();
-					
-					this.created_date = readDate(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// Long
-				
-						if(this.id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.id);
-		            	}
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// Long
-				
-						if(this.facility_id == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.facility_id);
-		            	}
-					
-					// java.util.Date
-				
-						writeDate(this.visit_start_date,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.visit_end_date,dos);
-					
-					// int
-				
-		            	dos.writeInt(this.archived);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",visit_start_date="+String.valueOf(visit_start_date));
-		sb.append(",visit_end_date="+String.valueOf(visit_end_date));
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",uuid="+uuid);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(check_duplicatesStruct other) {
+    public int compareTo(row7Struct other) {
 
 		int returnValue = -1;
 		
@@ -18050,9 +17288,7 @@ public void tDBInput_6Process(final java.util.Map<String, Object> globalMap) thr
 
 		extract_vistitsStruct extract_vistits = new extract_vistitsStruct();
 Sort_clinicsStruct Sort_clinics = new Sort_clinicsStruct();
-check_duplicatesStruct check_duplicates = new check_duplicatesStruct();
-Unique_clinicsStruct Unique_clinics = new Unique_clinicsStruct();
-Duplicate_clinicsStruct Duplicate_clinics = new Duplicate_clinicsStruct();
+row7Struct row7 = new row7Struct();
 
 
 
@@ -18831,7 +18067,6 @@ end_Hash.put("tSortRow_1_SortOut", System.currentTimeMillis());
  */
 
 
-
 	
 	/**
 	 * [tDBOutput_9 begin ] start
@@ -18849,7 +18084,7 @@ end_Hash.put("tSortRow_1_SortOut", System.currentTimeMillis());
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Unique_clinics");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row7");
 					}
 				
 		int tos_count_tDBOutput_9 = 0;
@@ -18930,218 +18165,6 @@ int count_tDBOutput_9=0;
 
 
 
-
-	
-	/**
-	 * [tDBOutput_10 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBOutput_10", false);
-		start_Hash.put("tDBOutput_10", System.currentTimeMillis());
-		
-	
-	currentComponent="tDBOutput_10";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Duplicate_clinics");
-					}
-				
-		int tos_count_tDBOutput_10 = 0;
-		
-
-
-
-
-
-String dbschema_tDBOutput_10 = null;
-	dbschema_tDBOutput_10 = context.LAMISPlus_Schema;
-	
-
-String tableName_tDBOutput_10 = null;
-if(dbschema_tDBOutput_10 == null || dbschema_tDBOutput_10.trim().length() == 0) {
-	tableName_tDBOutput_10 = ("patient_visit_duplicates");
-} else {
-	tableName_tDBOutput_10 = dbschema_tDBOutput_10 + "\".\"" + ("patient_visit_duplicates");
-}
-
-        int updateKeyCount_tDBOutput_10 = 1;
-        if(updateKeyCount_tDBOutput_10 < 1) {
-            throw new RuntimeException("For update, Schema must have a key");
-        }
-int nb_line_tDBOutput_10 = 0;
-int nb_line_update_tDBOutput_10 = 0;
-int nb_line_inserted_tDBOutput_10 = 0;
-int nb_line_deleted_tDBOutput_10 = 0;
-int nb_line_rejected_tDBOutput_10 = 0;
-
-int deletedCount_tDBOutput_10=0;
-int updatedCount_tDBOutput_10=0;
-int insertedCount_tDBOutput_10=0;
-int rejectedCount_tDBOutput_10=0;
-
-boolean whetherReject_tDBOutput_10 = false;
-
-java.sql.Connection conn_tDBOutput_10 = null;
-String dbUser_tDBOutput_10 = null;
-
-	
-    java.lang.Class.forName("org.postgresql.Driver");
-    
-        String url_tDBOutput_10 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
-    dbUser_tDBOutput_10 = context.LAMISPlus_Login;
-
-	final String decryptedPassword_tDBOutput_10 = context.LAMISPlus_Password; 
-
-    String dbPwd_tDBOutput_10 = decryptedPassword_tDBOutput_10;
-
-    conn_tDBOutput_10 = java.sql.DriverManager.getConnection(url_tDBOutput_10,dbUser_tDBOutput_10,dbPwd_tDBOutput_10);
-	
-	resourceMap.put("conn_tDBOutput_10", conn_tDBOutput_10);
-        conn_tDBOutput_10.setAutoCommit(false);
-        int commitEvery_tDBOutput_10 = 10000;
-        int commitCounter_tDBOutput_10 = 0;
-
-
-
-int count_tDBOutput_10=0;
-                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_10 = conn_tDBOutput_10.getMetaData();
-                                boolean whetherExist_tDBOutput_10 = false;
-                                try (java.sql.ResultSet rsTable_tDBOutput_10 = dbMetaData_tDBOutput_10.getTables(null, null, null, new String[]{"TABLE"})) {
-                                    String defaultSchema_tDBOutput_10 = "public";
-                                    if(dbschema_tDBOutput_10 == null || dbschema_tDBOutput_10.trim().length() == 0) {
-                                        try(java.sql.Statement stmtSchema_tDBOutput_10 = conn_tDBOutput_10.createStatement();
-                                            java.sql.ResultSet rsSchema_tDBOutput_10 = stmtSchema_tDBOutput_10.executeQuery("select current_schema() ")) {
-                                            while(rsSchema_tDBOutput_10.next()){
-                                                defaultSchema_tDBOutput_10 = rsSchema_tDBOutput_10.getString("current_schema");
-                                            }
-                                        }
-                                    }
-                                    while(rsTable_tDBOutput_10.next()) {
-                                        String table_tDBOutput_10 = rsTable_tDBOutput_10.getString("TABLE_NAME");
-                                        String schema_tDBOutput_10 = rsTable_tDBOutput_10.getString("TABLE_SCHEM");
-                                        if(table_tDBOutput_10.equals(("patient_visit_duplicates"))
-                                            && (schema_tDBOutput_10.equals(dbschema_tDBOutput_10) || ((dbschema_tDBOutput_10 ==null || dbschema_tDBOutput_10.trim().length() ==0) && defaultSchema_tDBOutput_10.equals(schema_tDBOutput_10)))) {
-                                            whetherExist_tDBOutput_10 = true;
-                                            break;
-                                        }
-                                    }
-                                }
-                                if(!whetherExist_tDBOutput_10) {
-                                    try (java.sql.Statement stmtCreate_tDBOutput_10 = conn_tDBOutput_10.createStatement()) {
-                                        stmtCreate_tDBOutput_10.execute("CREATE TABLE \"" + tableName_tDBOutput_10 + "\"(\"id\" INT4 ,\"person_uuid\" VARCHAR(230)  ,\"facility_id\" INT4 ,\"visit_start_date\" DATE ,\"visit_end_date\" TIMESTAMP ,\"archived\" INT4  not null ,\"created_date\" TIMESTAMP ,\"last_modified_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(230)  ,\"last_modified_by\" VARCHAR(239)  ,\"uuid\" VARCHAR ,primary key(\"id\"))");
-                                    }
-                                }
-	    java.sql.PreparedStatement pstmt_tDBOutput_10 = conn_tDBOutput_10.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_10 + "\" WHERE \"id\" = ?");
-	    resourceMap.put("pstmt_tDBOutput_10", pstmt_tDBOutput_10);
-	    String insert_tDBOutput_10 = "INSERT INTO \"" + tableName_tDBOutput_10 + "\" (\"id\",\"person_uuid\",\"facility_id\",\"visit_start_date\",\"visit_end_date\",\"archived\",\"created_date\",\"last_modified_date\",\"created_by\",\"last_modified_by\",\"uuid\") VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-	    java.sql.PreparedStatement pstmtInsert_tDBOutput_10 = conn_tDBOutput_10.prepareStatement(insert_tDBOutput_10);
-	    resourceMap.put("pstmtInsert_tDBOutput_10", pstmtInsert_tDBOutput_10);
-	    String update_tDBOutput_10 = "UPDATE \"" + tableName_tDBOutput_10 + "\" SET \"id\" = ?,\"person_uuid\" = ?,\"facility_id\" = ?,\"visit_start_date\" = ?,\"visit_end_date\" = ?,\"archived\" = ?,\"created_date\" = ?,\"last_modified_date\" = ?,\"created_by\" = ?,\"last_modified_by\" = ?,\"uuid\" = ? WHERE \"id\" = ?";
-	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_10 = conn_tDBOutput_10.prepareStatement(update_tDBOutput_10);
-	    resourceMap.put("pstmtUpdate_tDBOutput_10", pstmtUpdate_tDBOutput_10);
-	    
-
- 
-
-
-
-/**
- * [tDBOutput_10 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tUniqRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tUniqRow_1", false);
-		start_Hash.put("tUniqRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"check_duplicates");
-					}
-				
-		int tos_count_tUniqRow_1 = 0;
-		
-
-	
-		class KeyStruct_tUniqRow_1 {
-	
-			private static final int DEFAULT_HASHCODE = 1;
-		    private static final int PRIME = 31;
-		    private int hashCode = DEFAULT_HASHCODE;
-		    public boolean hashCodeDirty = true;
-	
-	        
-					String uuid;        
-	        
-		    @Override
-			public int hashCode() {
-				if (this.hashCodeDirty) {
-					final int prime = PRIME;
-					int result = DEFAULT_HASHCODE;
-			
-								result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
-								
-		    		this.hashCode = result;
-		    		this.hashCodeDirty = false;		
-				}
-				return this.hashCode;
-			}
-			
-			@Override
-			public boolean equals(Object obj) {
-				if (this == obj) return true;
-				if (obj == null) return false;
-				if (getClass() != obj.getClass()) return false;
-				final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
-				
-									if (this.uuid == null) {
-										if (other.uuid != null) 
-											return false;
-								
-									} else if (!this.uuid.equals(other.uuid))
-								 
-										return false;
-								
-				
-				return true;
-			}
-	  
-	        
-		}
-
-	
-int nb_uniques_tUniqRow_1 = 0;
-int nb_duplicates_tUniqRow_1 = 0;
-KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>(); 
-
- 
-
-
-
-/**
- * [tUniqRow_1 begin ] stop
- */
-
-
-
 	
 	/**
 	 * [tSortRow_1_SortIn begin ] start
@@ -19172,17 +18195,17 @@ Sort_clinicsStruct current_tSortRow_1_SortIn = null;
 
 for(int i_tSortRow_1_SortIn = 0; i_tSortRow_1_SortIn < array_tSortRow_1_SortIn.length; i_tSortRow_1_SortIn++){
 	current_tSortRow_1_SortIn = array_tSortRow_1_SortIn[i_tSortRow_1_SortIn];
-	check_duplicates.id = current_tSortRow_1_SortIn.id;
-	check_duplicates.person_uuid = current_tSortRow_1_SortIn.person_uuid;
-	check_duplicates.facility_id = current_tSortRow_1_SortIn.facility_id;
-	check_duplicates.visit_start_date = current_tSortRow_1_SortIn.visit_start_date;
-	check_duplicates.visit_end_date = current_tSortRow_1_SortIn.visit_end_date;
-	check_duplicates.archived = current_tSortRow_1_SortIn.archived;
-	check_duplicates.created_date = current_tSortRow_1_SortIn.created_date;
-	check_duplicates.last_modified_date = current_tSortRow_1_SortIn.last_modified_date;
-	check_duplicates.created_by = current_tSortRow_1_SortIn.created_by;
-	check_duplicates.last_modified_by = current_tSortRow_1_SortIn.last_modified_by;
-	check_duplicates.uuid = current_tSortRow_1_SortIn.uuid;
+	row7.id = current_tSortRow_1_SortIn.id;
+	row7.person_uuid = current_tSortRow_1_SortIn.person_uuid;
+	row7.facility_id = current_tSortRow_1_SortIn.facility_id;
+	row7.visit_start_date = current_tSortRow_1_SortIn.visit_start_date;
+	row7.visit_end_date = current_tSortRow_1_SortIn.visit_end_date;
+	row7.archived = current_tSortRow_1_SortIn.archived;
+	row7.created_date = current_tSortRow_1_SortIn.created_date;
+	row7.last_modified_date = current_tSortRow_1_SortIn.last_modified_date;
+	row7.created_by = current_tSortRow_1_SortIn.created_by;
+	row7.last_modified_by = current_tSortRow_1_SortIn.last_modified_by;
+	row7.uuid = current_tSortRow_1_SortIn.uuid;
 	// increase number of line sorted
 	nb_line_tSortRow_1_SortIn++;
 
@@ -19241,85 +18264,6 @@ for(int i_tSortRow_1_SortIn = 0; i_tSortRow_1_SortIn < array_tSortRow_1_SortIn.l
 
 	
 	/**
-	 * [tUniqRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"check_duplicates");
-					}
-					
-Duplicate_clinics = null;			Unique_clinics = null;			
-if(check_duplicates.uuid == null){
-	finder_tUniqRow_1.uuid = null;
-}else{
-	finder_tUniqRow_1.uuid = check_duplicates.uuid.toLowerCase();
-}	
-finder_tUniqRow_1.hashCodeDirty = true;
-if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-		KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
-
-		
-if(check_duplicates.uuid == null){
-	new_tUniqRow_1.uuid = null;
-}else{
-	new_tUniqRow_1.uuid = check_duplicates.uuid.toLowerCase();
-}
-		
-		keystUniqRow_1.add(new_tUniqRow_1);if(Unique_clinics == null){ 
-	
-	Unique_clinics = new Unique_clinicsStruct();
-}Unique_clinics.id = check_duplicates.id;			Unique_clinics.person_uuid = check_duplicates.person_uuid;			Unique_clinics.facility_id = check_duplicates.facility_id;			Unique_clinics.visit_start_date = check_duplicates.visit_start_date;			Unique_clinics.visit_end_date = check_duplicates.visit_end_date;			Unique_clinics.archived = check_duplicates.archived;			Unique_clinics.created_date = check_duplicates.created_date;			Unique_clinics.last_modified_date = check_duplicates.last_modified_date;			Unique_clinics.created_by = check_duplicates.created_by;			Unique_clinics.last_modified_by = check_duplicates.last_modified_by;			Unique_clinics.uuid = check_duplicates.uuid;					
-		nb_uniques_tUniqRow_1++;
-	} else {
-if(Duplicate_clinics == null){ 
-	
-	Duplicate_clinics = new Duplicate_clinicsStruct();
-}				Duplicate_clinics.id = check_duplicates.id;			Duplicate_clinics.person_uuid = check_duplicates.person_uuid;			Duplicate_clinics.facility_id = check_duplicates.facility_id;			Duplicate_clinics.visit_start_date = check_duplicates.visit_start_date;			Duplicate_clinics.visit_end_date = check_duplicates.visit_end_date;			Duplicate_clinics.archived = check_duplicates.archived;			Duplicate_clinics.created_date = check_duplicates.created_date;			Duplicate_clinics.last_modified_date = check_duplicates.last_modified_date;			Duplicate_clinics.created_by = check_duplicates.created_by;			Duplicate_clinics.last_modified_by = check_duplicates.last_modified_by;			Duplicate_clinics.uuid = check_duplicates.uuid;			
-	  nb_duplicates_tUniqRow_1++;
-	}
-
- 
-
-
-	tos_count_tUniqRow_1++;
-
-/**
- * [tUniqRow_1 main ] stop
- */
-	
-	/**
-	 * [tUniqRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_begin ] stop
- */
-// Start of branch "Unique_clinics"
-if(Unique_clinics != null) { 
-
-
-
-	
-	/**
 	 * [tDBOutput_9 main ] start
 	 */
 
@@ -19331,16 +18275,16 @@ if(Unique_clinics != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Unique_clinics");
+						runStat.updateStatOnConnection(iterateId,1,1,"row7");
 					}
 					
 
 
 
         whetherReject_tDBOutput_9 = false;
-                    if(Unique_clinics.id == null) {
+                    if(row7.id == null) {
 pstmt_tDBOutput_9.setNull(1, java.sql.Types.INTEGER);
-} else {pstmt_tDBOutput_9.setLong(1, Unique_clinics.id);
+} else {pstmt_tDBOutput_9.setLong(1, row7.id);
 }
 
             int checkCount_tDBOutput_9 = -1;
@@ -19350,65 +18294,65 @@ pstmt_tDBOutput_9.setNull(1, java.sql.Types.INTEGER);
                 }
             }
             if(checkCount_tDBOutput_9 > 0) {
-                        if(Unique_clinics.id == null) {
+                        if(row7.id == null) {
 pstmtUpdate_tDBOutput_9.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_9.setLong(1, Unique_clinics.id);
+} else {pstmtUpdate_tDBOutput_9.setLong(1, row7.id);
 }
 
-                        if(Unique_clinics.person_uuid == null) {
+                        if(row7.person_uuid == null) {
 pstmtUpdate_tDBOutput_9.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_9.setString(2, Unique_clinics.person_uuid);
+} else {pstmtUpdate_tDBOutput_9.setString(2, row7.person_uuid);
 }
 
-                        if(Unique_clinics.facility_id == null) {
+                        if(row7.facility_id == null) {
 pstmtUpdate_tDBOutput_9.setNull(3, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_9.setLong(3, Unique_clinics.facility_id);
+} else {pstmtUpdate_tDBOutput_9.setLong(3, row7.facility_id);
 }
 
-                        if(Unique_clinics.visit_start_date != null) {
-pstmtUpdate_tDBOutput_9.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.visit_start_date.getTime()));
+                        if(row7.visit_start_date != null) {
+pstmtUpdate_tDBOutput_9.setTimestamp(4, new java.sql.Timestamp(row7.visit_start_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_9.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.visit_end_date != null) {
-pstmtUpdate_tDBOutput_9.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.visit_end_date.getTime()));
+                        if(row7.visit_end_date != null) {
+pstmtUpdate_tDBOutput_9.setTimestamp(5, new java.sql.Timestamp(row7.visit_end_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_9.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtUpdate_tDBOutput_9.setInt(6, Unique_clinics.archived);
+                        pstmtUpdate_tDBOutput_9.setInt(6, row7.archived);
 
-                        if(Unique_clinics.created_date != null) {
-pstmtUpdate_tDBOutput_9.setTimestamp(7, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
+                        if(row7.created_date != null) {
+pstmtUpdate_tDBOutput_9.setTimestamp(7, new java.sql.Timestamp(row7.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_9.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.last_modified_date != null) {
-pstmtUpdate_tDBOutput_9.setTimestamp(8, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
+                        if(row7.last_modified_date != null) {
+pstmtUpdate_tDBOutput_9.setTimestamp(8, new java.sql.Timestamp(row7.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_9.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.created_by == null) {
+                        if(row7.created_by == null) {
 pstmtUpdate_tDBOutput_9.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_9.setString(9, Unique_clinics.created_by);
+} else {pstmtUpdate_tDBOutput_9.setString(9, row7.created_by);
 }
 
-                        if(Unique_clinics.last_modified_by == null) {
+                        if(row7.last_modified_by == null) {
 pstmtUpdate_tDBOutput_9.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_9.setString(10, Unique_clinics.last_modified_by);
+} else {pstmtUpdate_tDBOutput_9.setString(10, row7.last_modified_by);
 }
 
-                        if(Unique_clinics.uuid == null) {
+                        if(row7.uuid == null) {
 pstmtUpdate_tDBOutput_9.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_9.setString(11, Unique_clinics.uuid);
+} else {pstmtUpdate_tDBOutput_9.setString(11, row7.uuid);
 }
 
-                        if(Unique_clinics.id == null) {
+                        if(row7.id == null) {
 pstmtUpdate_tDBOutput_9.setNull(12 + count_tDBOutput_9, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_9.setLong(12 + count_tDBOutput_9, Unique_clinics.id);
+} else {pstmtUpdate_tDBOutput_9.setLong(12 + count_tDBOutput_9, row7.id);
 }
 
                 try {
@@ -19423,60 +18367,60 @@ pstmtUpdate_tDBOutput_9.setNull(12 + count_tDBOutput_9, java.sql.Types.INTEGER);
                             System.err.print(e.getMessage());
                 }
             } else {
-                        if(Unique_clinics.id == null) {
+                        if(row7.id == null) {
 pstmtInsert_tDBOutput_9.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_9.setLong(1, Unique_clinics.id);
+} else {pstmtInsert_tDBOutput_9.setLong(1, row7.id);
 }
 
-                        if(Unique_clinics.person_uuid == null) {
+                        if(row7.person_uuid == null) {
 pstmtInsert_tDBOutput_9.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_9.setString(2, Unique_clinics.person_uuid);
+} else {pstmtInsert_tDBOutput_9.setString(2, row7.person_uuid);
 }
 
-                        if(Unique_clinics.facility_id == null) {
+                        if(row7.facility_id == null) {
 pstmtInsert_tDBOutput_9.setNull(3, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_9.setLong(3, Unique_clinics.facility_id);
+} else {pstmtInsert_tDBOutput_9.setLong(3, row7.facility_id);
 }
 
-                        if(Unique_clinics.visit_start_date != null) {
-pstmtInsert_tDBOutput_9.setTimestamp(4, new java.sql.Timestamp(Unique_clinics.visit_start_date.getTime()));
+                        if(row7.visit_start_date != null) {
+pstmtInsert_tDBOutput_9.setTimestamp(4, new java.sql.Timestamp(row7.visit_start_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_9.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.visit_end_date != null) {
-pstmtInsert_tDBOutput_9.setTimestamp(5, new java.sql.Timestamp(Unique_clinics.visit_end_date.getTime()));
+                        if(row7.visit_end_date != null) {
+pstmtInsert_tDBOutput_9.setTimestamp(5, new java.sql.Timestamp(row7.visit_end_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_9.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtInsert_tDBOutput_9.setInt(6, Unique_clinics.archived);
+                        pstmtInsert_tDBOutput_9.setInt(6, row7.archived);
 
-                        if(Unique_clinics.created_date != null) {
-pstmtInsert_tDBOutput_9.setTimestamp(7, new java.sql.Timestamp(Unique_clinics.created_date.getTime()));
+                        if(row7.created_date != null) {
+pstmtInsert_tDBOutput_9.setTimestamp(7, new java.sql.Timestamp(row7.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_9.setNull(7, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.last_modified_date != null) {
-pstmtInsert_tDBOutput_9.setTimestamp(8, new java.sql.Timestamp(Unique_clinics.last_modified_date.getTime()));
+                        if(row7.last_modified_date != null) {
+pstmtInsert_tDBOutput_9.setTimestamp(8, new java.sql.Timestamp(row7.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_9.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_clinics.created_by == null) {
+                        if(row7.created_by == null) {
 pstmtInsert_tDBOutput_9.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_9.setString(9, Unique_clinics.created_by);
+} else {pstmtInsert_tDBOutput_9.setString(9, row7.created_by);
 }
 
-                        if(Unique_clinics.last_modified_by == null) {
+                        if(row7.last_modified_by == null) {
 pstmtInsert_tDBOutput_9.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_9.setString(10, Unique_clinics.last_modified_by);
+} else {pstmtInsert_tDBOutput_9.setString(10, row7.last_modified_by);
 }
 
-                        if(Unique_clinics.uuid == null) {
+                        if(row7.uuid == null) {
 pstmtInsert_tDBOutput_9.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_9.setString(11, Unique_clinics.uuid);
+} else {pstmtInsert_tDBOutput_9.setString(11, row7.uuid);
 }
 
                 try {
@@ -19547,271 +18491,6 @@ pstmtInsert_tDBOutput_9.setNull(11, java.sql.Types.VARCHAR);
  * [tDBOutput_9 process_data_end ] stop
  */
 
-} // End of branch "Unique_clinics"
-
-
-
-
-// Start of branch "Duplicate_clinics"
-if(Duplicate_clinics != null) { 
-
-
-
-	
-	/**
-	 * [tDBOutput_10 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_10";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Duplicate_clinics");
-					}
-					
-
-
-
-        whetherReject_tDBOutput_10 = false;
-                    if(Duplicate_clinics.id == null) {
-pstmt_tDBOutput_10.setNull(1, java.sql.Types.INTEGER);
-} else {pstmt_tDBOutput_10.setLong(1, Duplicate_clinics.id);
-}
-
-            int checkCount_tDBOutput_10 = -1;
-            try (java.sql.ResultSet rs_tDBOutput_10 = pstmt_tDBOutput_10.executeQuery()) {
-                while(rs_tDBOutput_10.next()) {
-                    checkCount_tDBOutput_10 = rs_tDBOutput_10.getInt(1);
-                }
-            }
-            if(checkCount_tDBOutput_10 > 0) {
-                        if(Duplicate_clinics.id == null) {
-pstmtUpdate_tDBOutput_10.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_10.setLong(1, Duplicate_clinics.id);
-}
-
-                        if(Duplicate_clinics.person_uuid == null) {
-pstmtUpdate_tDBOutput_10.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_10.setString(2, Duplicate_clinics.person_uuid);
-}
-
-                        if(Duplicate_clinics.facility_id == null) {
-pstmtUpdate_tDBOutput_10.setNull(3, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_10.setLong(3, Duplicate_clinics.facility_id);
-}
-
-                        if(Duplicate_clinics.visit_start_date != null) {
-pstmtUpdate_tDBOutput_10.setTimestamp(4, new java.sql.Timestamp(Duplicate_clinics.visit_start_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_10.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_clinics.visit_end_date != null) {
-pstmtUpdate_tDBOutput_10.setTimestamp(5, new java.sql.Timestamp(Duplicate_clinics.visit_end_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_10.setNull(5, java.sql.Types.TIMESTAMP);
-}
-
-                        pstmtUpdate_tDBOutput_10.setInt(6, Duplicate_clinics.archived);
-
-                        if(Duplicate_clinics.created_date != null) {
-pstmtUpdate_tDBOutput_10.setTimestamp(7, new java.sql.Timestamp(Duplicate_clinics.created_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_10.setNull(7, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_clinics.last_modified_date != null) {
-pstmtUpdate_tDBOutput_10.setTimestamp(8, new java.sql.Timestamp(Duplicate_clinics.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_10.setNull(8, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_clinics.created_by == null) {
-pstmtUpdate_tDBOutput_10.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_10.setString(9, Duplicate_clinics.created_by);
-}
-
-                        if(Duplicate_clinics.last_modified_by == null) {
-pstmtUpdate_tDBOutput_10.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_10.setString(10, Duplicate_clinics.last_modified_by);
-}
-
-                        if(Duplicate_clinics.uuid == null) {
-pstmtUpdate_tDBOutput_10.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_10.setString(11, Duplicate_clinics.uuid);
-}
-
-                        if(Duplicate_clinics.id == null) {
-pstmtUpdate_tDBOutput_10.setNull(12 + count_tDBOutput_10, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_10.setLong(12 + count_tDBOutput_10, Duplicate_clinics.id);
-}
-
-                try {
-					
-                    updatedCount_tDBOutput_10 = updatedCount_tDBOutput_10 + pstmtUpdate_tDBOutput_10.executeUpdate();
-                    nb_line_tDBOutput_10++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_10 = true;
-                        nb_line_tDBOutput_10++;
-                            System.err.print(e.getMessage());
-                }
-            } else {
-                        if(Duplicate_clinics.id == null) {
-pstmtInsert_tDBOutput_10.setNull(1, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_10.setLong(1, Duplicate_clinics.id);
-}
-
-                        if(Duplicate_clinics.person_uuid == null) {
-pstmtInsert_tDBOutput_10.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_10.setString(2, Duplicate_clinics.person_uuid);
-}
-
-                        if(Duplicate_clinics.facility_id == null) {
-pstmtInsert_tDBOutput_10.setNull(3, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_10.setLong(3, Duplicate_clinics.facility_id);
-}
-
-                        if(Duplicate_clinics.visit_start_date != null) {
-pstmtInsert_tDBOutput_10.setTimestamp(4, new java.sql.Timestamp(Duplicate_clinics.visit_start_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_10.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_clinics.visit_end_date != null) {
-pstmtInsert_tDBOutput_10.setTimestamp(5, new java.sql.Timestamp(Duplicate_clinics.visit_end_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_10.setNull(5, java.sql.Types.TIMESTAMP);
-}
-
-                        pstmtInsert_tDBOutput_10.setInt(6, Duplicate_clinics.archived);
-
-                        if(Duplicate_clinics.created_date != null) {
-pstmtInsert_tDBOutput_10.setTimestamp(7, new java.sql.Timestamp(Duplicate_clinics.created_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_10.setNull(7, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_clinics.last_modified_date != null) {
-pstmtInsert_tDBOutput_10.setTimestamp(8, new java.sql.Timestamp(Duplicate_clinics.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_10.setNull(8, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_clinics.created_by == null) {
-pstmtInsert_tDBOutput_10.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_10.setString(9, Duplicate_clinics.created_by);
-}
-
-                        if(Duplicate_clinics.last_modified_by == null) {
-pstmtInsert_tDBOutput_10.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_10.setString(10, Duplicate_clinics.last_modified_by);
-}
-
-                        if(Duplicate_clinics.uuid == null) {
-pstmtInsert_tDBOutput_10.setNull(11, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_10.setString(11, Duplicate_clinics.uuid);
-}
-
-                try {
-					
-                    insertedCount_tDBOutput_10 = insertedCount_tDBOutput_10 + pstmtInsert_tDBOutput_10.executeUpdate();
-                    nb_line_tDBOutput_10++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_10 = true;
-                        nb_line_tDBOutput_10++;
-                            System.err.print(e.getMessage());
-                }
-            }
-    		    commitCounter_tDBOutput_10++;
-                if(commitEvery_tDBOutput_10 <= commitCounter_tDBOutput_10) {
-                	conn_tDBOutput_10.commit();
-                	
-                	commitCounter_tDBOutput_10=0;
-                }
-
- 
-
-
-	tos_count_tDBOutput_10++;
-
-/**
- * [tDBOutput_10 main ] stop
- */
-	
-	/**
-	 * [tDBOutput_10 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_10";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_10 process_data_begin ] stop
- */
-	
-	/**
-	 * [tDBOutput_10 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_10";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_10 process_data_end ] stop
- */
-
-} // End of branch "Duplicate_clinics"
-
-
-
-
-	
-	/**
-	 * [tUniqRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_end ] stop
- */
-
 
 
 	
@@ -19870,38 +18549,6 @@ end_Hash.put("tSortRow_1_SortIn", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
-globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
-globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"check_duplicates");
-			  	}
-			  	
- 
-
-ok_Hash.put("tUniqRow_1", true);
-end_Hash.put("tUniqRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tUniqRow_1 end ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_9 end ] start
 	 */
 
@@ -19952,7 +18599,7 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Unique_clinics");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row7");
 			  	}
 			  	
  
@@ -19966,79 +18613,6 @@ end_Hash.put("tDBOutput_9", System.currentTimeMillis());
 /**
  * [tDBOutput_9 end ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_10 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_10";
-
-	
-
-
-
-        if(pstmtUpdate_tDBOutput_10 != null){
-            pstmtUpdate_tDBOutput_10.close();
-            resourceMap.remove("pstmtUpdate_tDBOutput_10");
-        }
-        if(pstmtInsert_tDBOutput_10 != null){
-            pstmtInsert_tDBOutput_10.close();
-            resourceMap.remove("pstmtInsert_tDBOutput_10");
-        }
-        if(pstmt_tDBOutput_10 != null) {
-            pstmt_tDBOutput_10.close();
-            resourceMap.remove("pstmt_tDBOutput_10");
-        }
-    resourceMap.put("statementClosed_tDBOutput_10", true);
-			
-			conn_tDBOutput_10.commit();
-			
-		
-    	conn_tDBOutput_10 .close();
-    	
-    	resourceMap.put("finish_tDBOutput_10", true);
-    	
-
-	nb_line_deleted_tDBOutput_10=nb_line_deleted_tDBOutput_10+ deletedCount_tDBOutput_10;
-	nb_line_update_tDBOutput_10=nb_line_update_tDBOutput_10 + updatedCount_tDBOutput_10;
-	nb_line_inserted_tDBOutput_10=nb_line_inserted_tDBOutput_10 + insertedCount_tDBOutput_10;
-	nb_line_rejected_tDBOutput_10=nb_line_rejected_tDBOutput_10 + rejectedCount_tDBOutput_10;
-	
-        globalMap.put("tDBOutput_10_NB_LINE",nb_line_tDBOutput_10);
-        globalMap.put("tDBOutput_10_NB_LINE_UPDATED",nb_line_update_tDBOutput_10);
-        globalMap.put("tDBOutput_10_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_10);
-        globalMap.put("tDBOutput_10_NB_LINE_DELETED",nb_line_deleted_tDBOutput_10);
-        globalMap.put("tDBOutput_10_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_10);
-    
-	
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Duplicate_clinics");
-			  	}
-			  	
- 
-
-ok_Hash.put("tDBOutput_10", true);
-end_Hash.put("tDBOutput_10", System.currentTimeMillis());
-
-
-
-
-/**
- * [tDBOutput_10 end ] stop
- */
-
-
-
 
 
 
@@ -20180,27 +18754,6 @@ end_Hash.put("tDBOutput_10", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 finally ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_9 finally ] start
 	 */
 
@@ -20249,63 +18802,6 @@ end_Hash.put("tDBOutput_10", System.currentTimeMillis());
 /**
  * [tDBOutput_9 finally ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_10 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_10";
-
-	
-
-
-
-    try {
-    if (resourceMap.get("statementClosed_tDBOutput_10") == null) {
-                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_10 = null;
-                if ((pstmtUpdateToClose_tDBOutput_10 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_10")) != null) {
-                    pstmtUpdateToClose_tDBOutput_10.close();
-                }
-                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_10 = null;
-                if ((pstmtInsertToClose_tDBOutput_10 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_10")) != null) {
-                    pstmtInsertToClose_tDBOutput_10.close();
-                }
-                java.sql.PreparedStatement pstmtToClose_tDBOutput_10 = null;
-                if ((pstmtToClose_tDBOutput_10 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_10")) != null) {
-                    pstmtToClose_tDBOutput_10.close();
-                }
-    }
-    } finally {
-        if(resourceMap.get("finish_tDBOutput_10") == null){
-            java.sql.Connection ctn_tDBOutput_10 = null;
-            if((ctn_tDBOutput_10 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_10")) != null){
-                try {
-                    ctn_tDBOutput_10.close();
-                } catch (java.sql.SQLException sqlEx_tDBOutput_10) {
-                    String errorMessage_tDBOutput_10 = "failed to close the connection in tDBOutput_10 :" + sqlEx_tDBOutput_10.getMessage();
-                    System.err.println(errorMessage_tDBOutput_10);
-                }
-            }
-        }
-    }
- 
-
-
-
-/**
- * [tDBOutput_10 finally ] stop
- */
-
-
-
 
 
 
@@ -24554,6 +23050,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     606548 characters generated by Talend Open Studio for Big Data 
- *     on the January 4, 2023 3:41:16 PM WAT
+ *     563412 characters generated by Talend Open Studio for Big Data 
+ *     on the January 13, 2023 3:43:55 PM WAT
  ************************************************************************************************/
