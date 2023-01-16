@@ -499,25 +499,7 @@ private class TalendException extends Exception {
 					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tUniqRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -715,6 +697,15 @@ private class TalendException extends Exception {
 					tDBInput_8_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_13_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_8_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tAdvancedHash_facilities_lookup_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -796,6 +787,15 @@ private class TalendException extends Exception {
 					tDBInput_8_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tAdvancedHash_row1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_8_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -842,1472 +842,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
-
-public static class Unique_enrollmentsStruct implements routines.system.IPersistableRow<Unique_enrollmentsStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public long id;
-
-				public long getId () {
-					return this.id;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public String hiv_enrollment_uuid;
-
-				public String getHiv_enrollment_uuid () {
-					return this.hiv_enrollment_uuid;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public Integer archived;
-
-				public Integer getArchived () {
-					return this.archived;
-				}
-				
-			    public String visit_id;
-
-				public String getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public java.util.Date visit_date;
-
-				public java.util.Date getVisit_date () {
-					return this.visit_date;
-				}
-				
-			    public Double cd_4;
-
-				public Double getCd_4 () {
-					return this.cd_4;
-				}
-				
-			    public Double cd_4_percentage;
-
-				public Double getCd_4_percentage () {
-					return this.cd_4_percentage;
-				}
-				
-			    public Boolean is_commencement;
-
-				public Boolean getIs_commencement () {
-					return this.is_commencement;
-				}
-				
-			    public String oi_screened;
-
-				public String getOi_screened () {
-					return this.oi_screened;
-				}
-				
-			    public String sti_ids;
-
-				public String getSti_ids () {
-					return this.sti_ids;
-				}
-				
-			    public String sti_treated;
-
-				public String getSti_treated () {
-					return this.sti_treated;
-				}
-				
-			    public String opportunistic_infections;
-
-				public String getOpportunistic_infections () {
-					return this.opportunistic_infections;
-				}
-				
-			    public String adr_screened;
-
-				public String getAdr_screened () {
-					return this.adr_screened;
-				}
-				
-			    public String adverse_drug_reactions;
-
-				public String getAdverse_drug_reactions () {
-					return this.adverse_drug_reactions;
-				}
-				
-			    public String adherence_level;
-
-				public String getAdherence_level () {
-					return this.adherence_level;
-				}
-				
-			    public String adheres;
-
-				public String getAdheres () {
-					return this.adheres;
-				}
-				
-			    public java.util.Date next_appointment;
-
-				public java.util.Date getNext_appointment () {
-					return this.next_appointment;
-				}
-				
-			    public java.util.Date lmp_date;
-
-				public java.util.Date getLmp_date () {
-					return this.lmp_date;
-				}
-				
-			    public long facility_id;
-
-				public long getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public long functional_status_id;
-
-				public long getFunctional_status_id () {
-					return this.functional_status_id;
-				}
-				
-			    public long clinical_stage_id;
-
-				public long getClinical_stage_id () {
-					return this.clinical_stage_id;
-				}
-				
-			    public String clinical_note;
-
-				public String getClinical_note () {
-					return this.clinical_note;
-				}
-				
-			    public Integer regimen_id;
-
-				public Integer getRegimen_id () {
-					return this.regimen_id;
-				}
-				
-			    public Integer regimen_type_id;
-
-				public Integer getRegimen_type_id () {
-					return this.regimen_type_id;
-				}
-				
-			    public Integer art_status_id;
-
-				public Integer getArt_status_id () {
-					return this.art_status_id;
-				}
-				
-			    public String vital_sign_uuid;
-
-				public String getVital_sign_uuid () {
-					return this.vital_sign_uuid;
-				}
-				
-			    public Integer who_staging_id;
-
-				public Integer getWho_staging_id () {
-					return this.who_staging_id;
-				}
-				
-			    public String tb_screen;
-
-				public String getTb_screen () {
-					return this.tb_screen;
-				}
-				
-			    public String extra;
-
-				public String getExtra () {
-					return this.extra;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.id;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final Unique_enrollmentsStruct other = (Unique_enrollmentsStruct) obj;
-		
-						if (this.id != other.id)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(Unique_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            other.created_date = this.created_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_date = this.last_modified_date;
-	            other.last_modified_by = this.last_modified_by;
-	            other.person_uuid = this.person_uuid;
-	            other.hiv_enrollment_uuid = this.hiv_enrollment_uuid;
-	            other.uuid = this.uuid;
-	            other.archived = this.archived;
-	            other.visit_id = this.visit_id;
-	            other.visit_date = this.visit_date;
-	            other.cd_4 = this.cd_4;
-	            other.cd_4_percentage = this.cd_4_percentage;
-	            other.is_commencement = this.is_commencement;
-	            other.oi_screened = this.oi_screened;
-	            other.sti_ids = this.sti_ids;
-	            other.sti_treated = this.sti_treated;
-	            other.opportunistic_infections = this.opportunistic_infections;
-	            other.adr_screened = this.adr_screened;
-	            other.adverse_drug_reactions = this.adverse_drug_reactions;
-	            other.adherence_level = this.adherence_level;
-	            other.adheres = this.adheres;
-	            other.next_appointment = this.next_appointment;
-	            other.lmp_date = this.lmp_date;
-	            other.facility_id = this.facility_id;
-	            other.functional_status_id = this.functional_status_id;
-	            other.clinical_stage_id = this.clinical_stage_id;
-	            other.clinical_note = this.clinical_note;
-	            other.regimen_id = this.regimen_id;
-	            other.regimen_type_id = this.regimen_type_id;
-	            other.art_status_id = this.art_status_id;
-	            other.vital_sign_uuid = this.vital_sign_uuid;
-	            other.who_staging_id = this.who_staging_id;
-	            other.tb_screen = this.tb_screen;
-	            other.extra = this.extra;
-	            
-	}
-
-	public void copyKeysDataTo(Unique_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.id = dis.readLong();
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.person_uuid = readString(dis);
-					
-					this.hiv_enrollment_uuid = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-						this.archived = readInteger(dis);
-					
-					this.visit_id = readString(dis);
-					
-					this.visit_date = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cd_4 = null;
-           				} else {
-           			    	this.cd_4 = dis.readDouble();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cd_4_percentage = null;
-           				} else {
-           			    	this.cd_4_percentage = dis.readDouble();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.is_commencement = null;
-           				} else {
-           			    	this.is_commencement = dis.readBoolean();
-           				}
-					
-					this.oi_screened = readString(dis);
-					
-					this.sti_ids = readString(dis);
-					
-					this.sti_treated = readString(dis);
-					
-					this.opportunistic_infections = readString(dis);
-					
-					this.adr_screened = readString(dis);
-					
-					this.adverse_drug_reactions = readString(dis);
-					
-					this.adherence_level = readString(dis);
-					
-					this.adheres = readString(dis);
-					
-					this.next_appointment = readDate(dis);
-					
-					this.lmp_date = readDate(dis);
-					
-			        this.facility_id = dis.readLong();
-					
-			        this.functional_status_id = dis.readLong();
-					
-			        this.clinical_stage_id = dis.readLong();
-					
-					this.clinical_note = readString(dis);
-					
-						this.regimen_id = readInteger(dis);
-					
-						this.regimen_type_id = readInteger(dis);
-					
-						this.art_status_id = readInteger(dis);
-					
-					this.vital_sign_uuid = readString(dis);
-					
-						this.who_staging_id = readInteger(dis);
-					
-					this.tb_screen = readString(dis);
-					
-					this.extra = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// long
-				
-		            	dos.writeLong(this.id);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// String
-				
-						writeString(this.hiv_enrollment_uuid,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.archived,dos);
-					
-					// String
-				
-						writeString(this.visit_id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.visit_date,dos);
-					
-					// Double
-				
-						if(this.cd_4 == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeDouble(this.cd_4);
-		            	}
-					
-					// Double
-				
-						if(this.cd_4_percentage == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeDouble(this.cd_4_percentage);
-		            	}
-					
-					// Boolean
-				
-						if(this.is_commencement == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.is_commencement);
-		            	}
-					
-					// String
-				
-						writeString(this.oi_screened,dos);
-					
-					// String
-				
-						writeString(this.sti_ids,dos);
-					
-					// String
-				
-						writeString(this.sti_treated,dos);
-					
-					// String
-				
-						writeString(this.opportunistic_infections,dos);
-					
-					// String
-				
-						writeString(this.adr_screened,dos);
-					
-					// String
-				
-						writeString(this.adverse_drug_reactions,dos);
-					
-					// String
-				
-						writeString(this.adherence_level,dos);
-					
-					// String
-				
-						writeString(this.adheres,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.next_appointment,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.lmp_date,dos);
-					
-					// long
-				
-		            	dos.writeLong(this.facility_id);
-					
-					// long
-				
-		            	dos.writeLong(this.functional_status_id);
-					
-					// long
-				
-		            	dos.writeLong(this.clinical_stage_id);
-					
-					// String
-				
-						writeString(this.clinical_note,dos);
-					
-					// Integer
-				
-						writeInteger(this.regimen_id,dos);
-					
-					// Integer
-				
-						writeInteger(this.regimen_type_id,dos);
-					
-					// Integer
-				
-						writeInteger(this.art_status_id,dos);
-					
-					// String
-				
-						writeString(this.vital_sign_uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.who_staging_id,dos);
-					
-					// String
-				
-						writeString(this.tb_screen,dos);
-					
-					// String
-				
-						writeString(this.extra,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",hiv_enrollment_uuid="+hiv_enrollment_uuid);
-		sb.append(",uuid="+uuid);
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",visit_id="+visit_id);
-		sb.append(",visit_date="+String.valueOf(visit_date));
-		sb.append(",cd_4="+String.valueOf(cd_4));
-		sb.append(",cd_4_percentage="+String.valueOf(cd_4_percentage));
-		sb.append(",is_commencement="+String.valueOf(is_commencement));
-		sb.append(",oi_screened="+oi_screened);
-		sb.append(",sti_ids="+sti_ids);
-		sb.append(",sti_treated="+sti_treated);
-		sb.append(",opportunistic_infections="+opportunistic_infections);
-		sb.append(",adr_screened="+adr_screened);
-		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
-		sb.append(",adherence_level="+adherence_level);
-		sb.append(",adheres="+adheres);
-		sb.append(",next_appointment="+String.valueOf(next_appointment));
-		sb.append(",lmp_date="+String.valueOf(lmp_date));
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",functional_status_id="+String.valueOf(functional_status_id));
-		sb.append(",clinical_stage_id="+String.valueOf(clinical_stage_id));
-		sb.append(",clinical_note="+clinical_note);
-		sb.append(",regimen_id="+String.valueOf(regimen_id));
-		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
-		sb.append(",art_status_id="+String.valueOf(art_status_id));
-		sb.append(",vital_sign_uuid="+vital_sign_uuid);
-		sb.append(",who_staging_id="+String.valueOf(who_staging_id));
-		sb.append(",tb_screen="+tb_screen);
-		sb.append(",extra="+extra);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Unique_enrollmentsStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class Duplicate_enrollmentsStruct implements routines.system.IPersistableRow<Duplicate_enrollmentsStruct> {
-    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
-    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public long id;
-
-				public long getId () {
-					return this.id;
-				}
-				
-			    public java.util.Date created_date;
-
-				public java.util.Date getCreated_date () {
-					return this.created_date;
-				}
-				
-			    public String created_by;
-
-				public String getCreated_by () {
-					return this.created_by;
-				}
-				
-			    public java.util.Date last_modified_date;
-
-				public java.util.Date getLast_modified_date () {
-					return this.last_modified_date;
-				}
-				
-			    public String last_modified_by;
-
-				public String getLast_modified_by () {
-					return this.last_modified_by;
-				}
-				
-			    public String person_uuid;
-
-				public String getPerson_uuid () {
-					return this.person_uuid;
-				}
-				
-			    public String hiv_enrollment_uuid;
-
-				public String getHiv_enrollment_uuid () {
-					return this.hiv_enrollment_uuid;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
-				}
-				
-			    public Integer archived;
-
-				public Integer getArchived () {
-					return this.archived;
-				}
-				
-			    public String visit_id;
-
-				public String getVisit_id () {
-					return this.visit_id;
-				}
-				
-			    public java.util.Date visit_date;
-
-				public java.util.Date getVisit_date () {
-					return this.visit_date;
-				}
-				
-			    public Double cd_4;
-
-				public Double getCd_4 () {
-					return this.cd_4;
-				}
-				
-			    public Double cd_4_percentage;
-
-				public Double getCd_4_percentage () {
-					return this.cd_4_percentage;
-				}
-				
-			    public Boolean is_commencement;
-
-				public Boolean getIs_commencement () {
-					return this.is_commencement;
-				}
-				
-			    public String oi_screened;
-
-				public String getOi_screened () {
-					return this.oi_screened;
-				}
-				
-			    public String sti_ids;
-
-				public String getSti_ids () {
-					return this.sti_ids;
-				}
-				
-			    public String sti_treated;
-
-				public String getSti_treated () {
-					return this.sti_treated;
-				}
-				
-			    public String opportunistic_infections;
-
-				public String getOpportunistic_infections () {
-					return this.opportunistic_infections;
-				}
-				
-			    public String adr_screened;
-
-				public String getAdr_screened () {
-					return this.adr_screened;
-				}
-				
-			    public String adverse_drug_reactions;
-
-				public String getAdverse_drug_reactions () {
-					return this.adverse_drug_reactions;
-				}
-				
-			    public String adherence_level;
-
-				public String getAdherence_level () {
-					return this.adherence_level;
-				}
-				
-			    public String adheres;
-
-				public String getAdheres () {
-					return this.adheres;
-				}
-				
-			    public java.util.Date next_appointment;
-
-				public java.util.Date getNext_appointment () {
-					return this.next_appointment;
-				}
-				
-			    public java.util.Date lmp_date;
-
-				public java.util.Date getLmp_date () {
-					return this.lmp_date;
-				}
-				
-			    public long facility_id;
-
-				public long getFacility_id () {
-					return this.facility_id;
-				}
-				
-			    public long functional_status_id;
-
-				public long getFunctional_status_id () {
-					return this.functional_status_id;
-				}
-				
-			    public long clinical_stage_id;
-
-				public long getClinical_stage_id () {
-					return this.clinical_stage_id;
-				}
-				
-			    public String clinical_note;
-
-				public String getClinical_note () {
-					return this.clinical_note;
-				}
-				
-			    public Integer regimen_id;
-
-				public Integer getRegimen_id () {
-					return this.regimen_id;
-				}
-				
-			    public Integer regimen_type_id;
-
-				public Integer getRegimen_type_id () {
-					return this.regimen_type_id;
-				}
-				
-			    public Integer art_status_id;
-
-				public Integer getArt_status_id () {
-					return this.art_status_id;
-				}
-				
-			    public String vital_sign_uuid;
-
-				public String getVital_sign_uuid () {
-					return this.vital_sign_uuid;
-				}
-				
-			    public Integer who_staging_id;
-
-				public Integer getWho_staging_id () {
-					return this.who_staging_id;
-				}
-				
-			    public String tb_screen;
-
-				public String getTb_screen () {
-					return this.tb_screen;
-				}
-				
-			    public String extra;
-
-				public String getExtra () {
-					return this.extra;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.id;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final Duplicate_enrollmentsStruct other = (Duplicate_enrollmentsStruct) obj;
-		
-						if (this.id != other.id)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(Duplicate_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            other.created_date = this.created_date;
-	            other.created_by = this.created_by;
-	            other.last_modified_date = this.last_modified_date;
-	            other.last_modified_by = this.last_modified_by;
-	            other.person_uuid = this.person_uuid;
-	            other.hiv_enrollment_uuid = this.hiv_enrollment_uuid;
-	            other.uuid = this.uuid;
-	            other.archived = this.archived;
-	            other.visit_id = this.visit_id;
-	            other.visit_date = this.visit_date;
-	            other.cd_4 = this.cd_4;
-	            other.cd_4_percentage = this.cd_4_percentage;
-	            other.is_commencement = this.is_commencement;
-	            other.oi_screened = this.oi_screened;
-	            other.sti_ids = this.sti_ids;
-	            other.sti_treated = this.sti_treated;
-	            other.opportunistic_infections = this.opportunistic_infections;
-	            other.adr_screened = this.adr_screened;
-	            other.adverse_drug_reactions = this.adverse_drug_reactions;
-	            other.adherence_level = this.adherence_level;
-	            other.adheres = this.adheres;
-	            other.next_appointment = this.next_appointment;
-	            other.lmp_date = this.lmp_date;
-	            other.facility_id = this.facility_id;
-	            other.functional_status_id = this.functional_status_id;
-	            other.clinical_stage_id = this.clinical_stage_id;
-	            other.clinical_note = this.clinical_note;
-	            other.regimen_id = this.regimen_id;
-	            other.regimen_type_id = this.regimen_type_id;
-	            other.art_status_id = this.art_status_id;
-	            other.vital_sign_uuid = this.vital_sign_uuid;
-	            other.who_staging_id = this.who_staging_id;
-	            other.tb_screen = this.tb_screen;
-	            other.extra = this.extra;
-	            
-	}
-
-	public void copyKeysDataTo(Duplicate_enrollmentsStruct other) {
-
-		other.id = this.id;
-	            	
-	}
-
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical.length) {
-				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical.length == 0) {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[1024];
-				} else {
-   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical, 0, length);
-			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.id = dis.readLong();
-					
-					this.created_date = readDate(dis);
-					
-					this.created_by = readString(dis);
-					
-					this.last_modified_date = readDate(dis);
-					
-					this.last_modified_by = readString(dis);
-					
-					this.person_uuid = readString(dis);
-					
-					this.hiv_enrollment_uuid = readString(dis);
-					
-					this.uuid = readString(dis);
-					
-						this.archived = readInteger(dis);
-					
-					this.visit_id = readString(dis);
-					
-					this.visit_date = readDate(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cd_4 = null;
-           				} else {
-           			    	this.cd_4 = dis.readDouble();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cd_4_percentage = null;
-           				} else {
-           			    	this.cd_4_percentage = dis.readDouble();
-           				}
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.is_commencement = null;
-           				} else {
-           			    	this.is_commencement = dis.readBoolean();
-           				}
-					
-					this.oi_screened = readString(dis);
-					
-					this.sti_ids = readString(dis);
-					
-					this.sti_treated = readString(dis);
-					
-					this.opportunistic_infections = readString(dis);
-					
-					this.adr_screened = readString(dis);
-					
-					this.adverse_drug_reactions = readString(dis);
-					
-					this.adherence_level = readString(dis);
-					
-					this.adheres = readString(dis);
-					
-					this.next_appointment = readDate(dis);
-					
-					this.lmp_date = readDate(dis);
-					
-			        this.facility_id = dis.readLong();
-					
-			        this.functional_status_id = dis.readLong();
-					
-			        this.clinical_stage_id = dis.readLong();
-					
-					this.clinical_note = readString(dis);
-					
-						this.regimen_id = readInteger(dis);
-					
-						this.regimen_type_id = readInteger(dis);
-					
-						this.art_status_id = readInteger(dis);
-					
-					this.vital_sign_uuid = readString(dis);
-					
-						this.who_staging_id = readInteger(dis);
-					
-					this.tb_screen = readString(dis);
-					
-					this.extra = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// long
-				
-		            	dos.writeLong(this.id);
-					
-					// java.util.Date
-				
-						writeDate(this.created_date,dos);
-					
-					// String
-				
-						writeString(this.created_by,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.last_modified_date,dos);
-					
-					// String
-				
-						writeString(this.last_modified_by,dos);
-					
-					// String
-				
-						writeString(this.person_uuid,dos);
-					
-					// String
-				
-						writeString(this.hiv_enrollment_uuid,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.archived,dos);
-					
-					// String
-				
-						writeString(this.visit_id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.visit_date,dos);
-					
-					// Double
-				
-						if(this.cd_4 == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeDouble(this.cd_4);
-		            	}
-					
-					// Double
-				
-						if(this.cd_4_percentage == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeDouble(this.cd_4_percentage);
-		            	}
-					
-					// Boolean
-				
-						if(this.is_commencement == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeBoolean(this.is_commencement);
-		            	}
-					
-					// String
-				
-						writeString(this.oi_screened,dos);
-					
-					// String
-				
-						writeString(this.sti_ids,dos);
-					
-					// String
-				
-						writeString(this.sti_treated,dos);
-					
-					// String
-				
-						writeString(this.opportunistic_infections,dos);
-					
-					// String
-				
-						writeString(this.adr_screened,dos);
-					
-					// String
-				
-						writeString(this.adverse_drug_reactions,dos);
-					
-					// String
-				
-						writeString(this.adherence_level,dos);
-					
-					// String
-				
-						writeString(this.adheres,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.next_appointment,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.lmp_date,dos);
-					
-					// long
-				
-		            	dos.writeLong(this.facility_id);
-					
-					// long
-				
-		            	dos.writeLong(this.functional_status_id);
-					
-					// long
-				
-		            	dos.writeLong(this.clinical_stage_id);
-					
-					// String
-				
-						writeString(this.clinical_note,dos);
-					
-					// Integer
-				
-						writeInteger(this.regimen_id,dos);
-					
-					// Integer
-				
-						writeInteger(this.regimen_type_id,dos);
-					
-					// Integer
-				
-						writeInteger(this.art_status_id,dos);
-					
-					// String
-				
-						writeString(this.vital_sign_uuid,dos);
-					
-					// Integer
-				
-						writeInteger(this.who_staging_id,dos);
-					
-					// String
-				
-						writeString(this.tb_screen,dos);
-					
-					// String
-				
-						writeString(this.extra,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+String.valueOf(id));
-		sb.append(",created_date="+String.valueOf(created_date));
-		sb.append(",created_by="+created_by);
-		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
-		sb.append(",last_modified_by="+last_modified_by);
-		sb.append(",person_uuid="+person_uuid);
-		sb.append(",hiv_enrollment_uuid="+hiv_enrollment_uuid);
-		sb.append(",uuid="+uuid);
-		sb.append(",archived="+String.valueOf(archived));
-		sb.append(",visit_id="+visit_id);
-		sb.append(",visit_date="+String.valueOf(visit_date));
-		sb.append(",cd_4="+String.valueOf(cd_4));
-		sb.append(",cd_4_percentage="+String.valueOf(cd_4_percentage));
-		sb.append(",is_commencement="+String.valueOf(is_commencement));
-		sb.append(",oi_screened="+oi_screened);
-		sb.append(",sti_ids="+sti_ids);
-		sb.append(",sti_treated="+sti_treated);
-		sb.append(",opportunistic_infections="+opportunistic_infections);
-		sb.append(",adr_screened="+adr_screened);
-		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
-		sb.append(",adherence_level="+adherence_level);
-		sb.append(",adheres="+adheres);
-		sb.append(",next_appointment="+String.valueOf(next_appointment));
-		sb.append(",lmp_date="+String.valueOf(lmp_date));
-		sb.append(",facility_id="+String.valueOf(facility_id));
-		sb.append(",functional_status_id="+String.valueOf(functional_status_id));
-		sb.append(",clinical_stage_id="+String.valueOf(clinical_stage_id));
-		sb.append(",clinical_note="+clinical_note);
-		sb.append(",regimen_id="+String.valueOf(regimen_id));
-		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
-		sb.append(",art_status_id="+String.valueOf(art_status_id));
-		sb.append(",vital_sign_uuid="+vital_sign_uuid);
-		sb.append(",who_staging_id="+String.valueOf(who_staging_id));
-		sb.append(",tb_screen="+tb_screen);
-		sb.append(",extra="+extra);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Duplicate_enrollmentsStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.id, other.id);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
 
 public static class load_art_clinicalsStruct implements routines.system.IPersistableRow<load_art_clinicalsStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
@@ -2520,16 +1054,22 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 					return this.who_staging_id;
 				}
 				
-			    public String tb_screen;
-
-				public String getTb_screen () {
-					return this.tb_screen;
-				}
-				
 			    public String extra;
 
 				public String getExtra () {
 					return this.extra;
+				}
+				
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
+			    public String tb_screen;
+
+				public String getTb_screen () {
+					return this.tb_screen;
 				}
 				
 
@@ -2597,8 +1137,9 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 	            other.art_status_id = this.art_status_id;
 	            other.vital_sign_uuid = this.vital_sign_uuid;
 	            other.who_staging_id = this.who_staging_id;
-	            other.tb_screen = this.tb_screen;
 	            other.extra = this.extra;
+	            other.tb_status = this.tb_status;
+	            other.tb_screen = this.tb_screen;
 	            
 	}
 
@@ -2771,9 +1312,11 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 					
 						this.who_staging_id = readInteger(dis);
 					
-					this.tb_screen = readString(dis);
-					
 					this.extra = readString(dis);
+					
+					this.tb_status = readString(dis);
+					
+					this.tb_screen = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2942,11 +1485,15 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 					
 					// String
 				
-						writeString(this.tb_screen,dos);
+						writeString(this.extra,dos);
 					
 					// String
 				
-						writeString(this.extra,dos);
+						writeString(this.tb_status,dos);
+					
+					// String
+				
+						writeString(this.tb_screen,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2994,8 +1541,9 @@ public static class load_art_clinicalsStruct implements routines.system.IPersist
 		sb.append(",art_status_id="+String.valueOf(art_status_id));
 		sb.append(",vital_sign_uuid="+vital_sign_uuid);
 		sb.append(",who_staging_id="+String.valueOf(who_staging_id));
-		sb.append(",tb_screen="+tb_screen);
 		sb.append(",extra="+extra);
+		sb.append(",tb_status="+tb_status);
+		sb.append(",tb_screen="+tb_screen);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3239,6 +1787,18 @@ public static class HIV_Art_clinicalStruct implements routines.system.IPersistab
 					return this.clinical_note;
 				}
 				
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
+			    public String tb_screen;
+
+				public String getTb_screen () {
+					return this.tb_screen;
+				}
+				
 
 
 
@@ -3399,6 +1959,10 @@ public static class HIV_Art_clinicalStruct implements routines.system.IPersistab
 					this.extra = readString(dis);
 					
 					this.clinical_note = readString(dis);
+					
+					this.tb_status = readString(dis);
+					
+					this.tb_screen = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -3561,6 +2125,14 @@ public static class HIV_Art_clinicalStruct implements routines.system.IPersistab
 				
 						writeString(this.clinical_note,dos);
 					
+					// String
+				
+						writeString(this.tb_status,dos);
+					
+					// String
+				
+						writeString(this.tb_screen,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -3606,6 +2178,8 @@ public static class HIV_Art_clinicalStruct implements routines.system.IPersistab
 		sb.append(",regimen_id="+String.valueOf(regimen_id));
 		sb.append(",extra="+extra);
 		sb.append(",clinical_note="+clinical_note);
+		sb.append(",tb_status="+tb_status);
+		sb.append(",tb_screen="+tb_screen);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3651,6 +2225,18 @@ public static class hiv_clinicalsStruct implements routines.system.IPersistableR
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
 
 	
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
+			    public String tb_screen;
+
+				public String getTb_screen () {
+					return this.tb_screen;
+				}
+				
 			    public int id;
 
 				public int getId () {
@@ -3840,27 +2426,6 @@ public static class hiv_clinicalsStruct implements routines.system.IPersistableR
 
 
 
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
 		int length = 0;
@@ -3888,6 +2453,27 @@ public static class hiv_clinicalsStruct implements routines.system.IPersistableR
             byte[] byteArray = str.getBytes(utf8Charset);
 	    	dos.writeInt(byteArray.length);
 			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
     	}
     }
 	private Integer readInteger(ObjectInputStream dis) throws IOException{
@@ -3919,6 +2505,10 @@ public static class hiv_clinicalsStruct implements routines.system.IPersistableR
 
         		int length = 0;
 		
+					this.tb_status = readString(dis);
+					
+					this.tb_screen = readString(dis);
+					
 			        this.id = dis.readInt();
 					
 					this.created_date = readDate(dis);
@@ -4014,6 +2604,14 @@ public static class hiv_clinicalsStruct implements routines.system.IPersistableR
         try {
 
 		
+					// String
+				
+						writeString(this.tb_status,dos);
+					
+					// String
+				
+						writeString(this.tb_screen,dos);
+					
 					// int
 				
 		            	dos.writeInt(this.id);
@@ -4166,7 +2764,9 @@ public static class hiv_clinicalsStruct implements routines.system.IPersistableR
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("id="+String.valueOf(id));
+		sb.append("tb_status="+tb_status);
+		sb.append(",tb_screen="+tb_screen);
+		sb.append(",id="+String.valueOf(id));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",created_by="+created_by);
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
@@ -4242,6 +2842,18 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
 
 	
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
+			    public String tb_screen;
+
+				public String getTb_screen () {
+					return this.tb_screen;
+				}
+				
 			    public int id;
 
 				public int getId () {
@@ -4431,27 +3043,6 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 
 
 
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
 		int length = 0;
@@ -4479,6 +3070,27 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
             byte[] byteArray = str.getBytes(utf8Charset);
 	    	dos.writeInt(byteArray.length);
 			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
     	}
     }
 	private Integer readInteger(ObjectInputStream dis) throws IOException{
@@ -4510,6 +3122,10 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 
         		int length = 0;
 		
+					this.tb_status = readString(dis);
+					
+					this.tb_screen = readString(dis);
+					
 			        this.id = dis.readInt();
 					
 					this.created_date = readDate(dis);
@@ -4605,6 +3221,14 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
         try {
 
 		
+					// String
+				
+						writeString(this.tb_status,dos);
+					
+					// String
+				
+						writeString(this.tb_screen,dos);
+					
 					// int
 				
 		            	dos.writeInt(this.id);
@@ -4757,7 +3381,9 @@ public static class after_tDBInput_2Struct implements routines.system.IPersistab
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("id="+String.valueOf(id));
+		sb.append("tb_status="+tb_status);
+		sb.append(",tb_screen="+tb_screen);
+		sb.append(",id="+String.valueOf(id));
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",created_by="+created_by);
 		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
@@ -4857,9 +3483,6 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		hiv_clinicalsStruct hiv_clinicals = new hiv_clinicalsStruct();
 HIV_Art_clinicalStruct HIV_Art_clinical = new HIV_Art_clinicalStruct();
 load_art_clinicalsStruct load_art_clinicals = new load_art_clinicalsStruct();
-Unique_enrollmentsStruct Unique_enrollments = new Unique_enrollmentsStruct();
-Duplicate_enrollmentsStruct Duplicate_enrollments = new Duplicate_enrollmentsStruct();
-
 
 
 
@@ -4883,7 +3506,7 @@ Duplicate_enrollmentsStruct Duplicate_enrollments = new Duplicate_enrollmentsStr
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Unique_enrollments");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"load_art_clinicals");
 					}
 				
 		int tos_count_tDBOutput_1 = 0;
@@ -4944,10 +3567,10 @@ String dbUser_tDBOutput_1 = null;
 
 
 int count_tDBOutput_1=0;
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"person_uuid\" = ?,\"hiv_enrollment_uuid\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_id\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"" + "opportunistic_infections" + "\" = " + "?::json" + ",\"adr_screened\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::json" + ",\"adherence_level\" = ?,\"" + "adheres" + "\" = " + "?::json" + ",\"next_appointment\" = ?,\"lmp_date\" = ?,\"facility_id\" = ?,\"functional_status_id\" = ?,\"clinical_stage_id\" = ?,\"clinical_note\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"art_status_id\" = ?,\"vital_sign_uuid\" = ?,\"who_staging_id\" = ?,\"" + "tb_screen" + "\" = " + "?::json" + ",\"" + "extra" + "\" = " + "?::json" + " WHERE \"uuid\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"person_uuid\" = ?,\"hiv_enrollment_uuid\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_id\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"" + "opportunistic_infections" + "\" = " + "?::json" + ",\"adr_screened\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::json" + ",\"adherence_level\" = ?,\"" + "adheres" + "\" = " + "?::json" + ",\"next_appointment\" = ?,\"lmp_date\" = ?,\"facility_id\" = ?,\"functional_status_id\" = ?,\"clinical_stage_id\" = ?,\"clinical_note\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"art_status_id\" = ?,\"vital_sign_uuid\" = ?,\"who_staging_id\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"tb_status\" = ?,\"" + "tb_screen" + "\" = " + "?::json" + " WHERE \"uuid\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"person_uuid\",\"hiv_enrollment_uuid\",\"uuid\",\"archived\",\"visit_id\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"" + "opportunistic_infections" + "\",\"adr_screened\",\"" + "adverse_drug_reactions" + "\",\"adherence_level\",\"" + "adheres" + "\",\"next_appointment\",\"lmp_date\",\"facility_id\",\"functional_status_id\",\"clinical_stage_id\",\"clinical_note\",\"regimen_id\",\"regimen_type_id\",\"art_status_id\",\"vital_sign_uuid\",\"who_staging_id\",\"" + "tb_screen" + "\",\"" + "extra" + "\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + ",?," + "?::json" + ",?," + "?::json" + ",?,?,?,?,?,?,?,?,?,?,?," + "?::json" + "," + "?::json" + ")";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"person_uuid\",\"hiv_enrollment_uuid\",\"uuid\",\"archived\",\"visit_id\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"" + "opportunistic_infections" + "\",\"adr_screened\",\"" + "adverse_drug_reactions" + "\",\"adherence_level\",\"" + "adheres" + "\",\"next_appointment\",\"lmp_date\",\"facility_id\",\"functional_status_id\",\"clinical_stage_id\",\"clinical_note\",\"regimen_id\",\"regimen_type_id\",\"art_status_id\",\"vital_sign_uuid\",\"who_staging_id\",\"" + "extra" + "\",\"tb_status\",\"" + "tb_screen" + "\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + ",?," + "?::json" + ",?," + "?::json" + ",?,?,?,?,?,?,?,?,?,?,?," + "?::json" + ",?," + "?::json" + ")";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
 	    
@@ -4958,171 +3581,6 @@ int count_tDBOutput_1=0;
 
 /**
  * [tDBOutput_1 begin ] stop
- */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBOutput_2", false);
-		start_Hash.put("tDBOutput_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tDBOutput_2";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Duplicate_enrollments");
-					}
-				
-		int tos_count_tDBOutput_2 = 0;
-		
-
-
-
-
-
-String dbschema_tDBOutput_2 = null;
-	dbschema_tDBOutput_2 = context.LAMISPlus_Schema;
-	
-
-String tableName_tDBOutput_2 = null;
-if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-	tableName_tDBOutput_2 = ("etl_hiv_art_clinicals_duplicates");
-} else {
-	tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("etl_hiv_art_clinicals_duplicates");
-}
-
-        int updateKeyCount_tDBOutput_2 = 1;
-        if(updateKeyCount_tDBOutput_2 < 1) {
-            throw new RuntimeException("For update, Schema must have a key");
-        }
-int nb_line_tDBOutput_2 = 0;
-int nb_line_update_tDBOutput_2 = 0;
-int nb_line_inserted_tDBOutput_2 = 0;
-int nb_line_deleted_tDBOutput_2 = 0;
-int nb_line_rejected_tDBOutput_2 = 0;
-
-int deletedCount_tDBOutput_2=0;
-int updatedCount_tDBOutput_2=0;
-int insertedCount_tDBOutput_2=0;
-int rejectedCount_tDBOutput_2=0;
-
-boolean whetherReject_tDBOutput_2 = false;
-
-java.sql.Connection conn_tDBOutput_2 = null;
-String dbUser_tDBOutput_2 = null;
-
-	
-    java.lang.Class.forName("org.postgresql.Driver");
-    
-        String url_tDBOutput_2 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
-    dbUser_tDBOutput_2 = context.LAMISPlus_Login;
-
-	final String decryptedPassword_tDBOutput_2 = context.LAMISPlus_Password; 
-
-    String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
-
-    conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2,dbUser_tDBOutput_2,dbPwd_tDBOutput_2);
-	
-	resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
-        conn_tDBOutput_2.setAutoCommit(false);
-        int commitEvery_tDBOutput_2 = 10000;
-        int commitCounter_tDBOutput_2 = 0;
-
-
-
-int count_tDBOutput_2=0;
-                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_2 = conn_tDBOutput_2.getMetaData();
-                                boolean whetherExist_tDBOutput_2 = false;
-                                try (java.sql.ResultSet rsTable_tDBOutput_2 = dbMetaData_tDBOutput_2.getTables(null, null, null, new String[]{"TABLE"})) {
-                                    String defaultSchema_tDBOutput_2 = "public";
-                                    if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-                                        try(java.sql.Statement stmtSchema_tDBOutput_2 = conn_tDBOutput_2.createStatement();
-                                            java.sql.ResultSet rsSchema_tDBOutput_2 = stmtSchema_tDBOutput_2.executeQuery("select current_schema() ")) {
-                                            while(rsSchema_tDBOutput_2.next()){
-                                                defaultSchema_tDBOutput_2 = rsSchema_tDBOutput_2.getString("current_schema");
-                                            }
-                                        }
-                                    }
-                                    while(rsTable_tDBOutput_2.next()) {
-                                        String table_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_NAME");
-                                        String schema_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_SCHEM");
-                                        if(table_tDBOutput_2.equals(("etl_hiv_art_clinicals_duplicates"))
-                                            && (schema_tDBOutput_2.equals(dbschema_tDBOutput_2) || ((dbschema_tDBOutput_2 ==null || dbschema_tDBOutput_2.trim().length() ==0) && defaultSchema_tDBOutput_2.equals(schema_tDBOutput_2)))) {
-                                            whetherExist_tDBOutput_2 = true;
-                                            break;
-                                        }
-                                    }
-                                }
-                                if(whetherExist_tDBOutput_2) {
-                                    try (java.sql.Statement stmtDrop_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
-                                        stmtDrop_tDBOutput_2.execute("DROP TABLE \"" + tableName_tDBOutput_2 + "\"" );
-                                    }
-                                }
-                                try(java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
-                                    stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"id\" BIGSERIAL  not null ,\"created_date\" TIMESTAMP(29)  ,\"created_by\" VARCHAR(255)  ,\"last_modified_date\" TIMESTAMP(29)  ,\"last_modified_by\" VARCHAR(255)  ,\"person_uuid\" VARCHAR(50)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)  ,\"uuid\" VARCHAR(50)   not null ,\"archived\" INT4 ,\"visit_id\" VARCHAR(50)   not null ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(2000)  ,\"sti_ids\" VARCHAR(2000)  ,\"sti_treated\" VARCHAR(2000)  ,\"opportunistic_infections\" VARCHAR(2000)  ,\"adr_screened\" VARCHAR(2000)  ,\"adverse_drug_reactions\" VARCHAR(2000)  ,\"adherence_level\" VARCHAR(2000)  ,\"adheres\" VARCHAR(2000)  ,\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"facility_id\" BIGSERIAL  not null ,\"functional_status_id\" BIGSERIAL  not null ,\"clinical_stage_id\" BIGSERIAL  not null ,\"clinical_note\" VARCHAR(2000)  ,\"regimen_id\" INT4 ,\"regimen_type_id\" INT4 ,\"art_status_id\" INT4 ,\"vital_sign_uuid\" VARCHAR ,\"who_staging_id\" INT4 ,\"tb_screen\" VARCHAR ,\"extra\" VARCHAR(2000)  ,primary key(\"id\"))");
-                                }
-	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
-	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
-	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"person_uuid\",\"hiv_enrollment_uuid\",\"uuid\",\"archived\",\"visit_id\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"opportunistic_infections\",\"adr_screened\",\"adverse_drug_reactions\",\"adherence_level\",\"adheres\",\"next_appointment\",\"lmp_date\",\"facility_id\",\"functional_status_id\",\"clinical_stage_id\",\"clinical_note\",\"regimen_id\",\"regimen_type_id\",\"art_status_id\",\"vital_sign_uuid\",\"who_staging_id\",\"tb_screen\",\"extra\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
-	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
-	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"person_uuid\" = ?,\"hiv_enrollment_uuid\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_id\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"opportunistic_infections\" = ?,\"adr_screened\" = ?,\"adverse_drug_reactions\" = ?,\"adherence_level\" = ?,\"adheres\" = ?,\"next_appointment\" = ?,\"lmp_date\" = ?,\"facility_id\" = ?,\"functional_status_id\" = ?,\"clinical_stage_id\" = ?,\"clinical_note\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"art_status_id\" = ?,\"vital_sign_uuid\" = ?,\"who_staging_id\" = ?,\"tb_screen\" = ?,\"extra\" = ? WHERE \"id\" = ?";
-	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
-	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
-	    
-
- 
-
-
-
-/**
- * [tDBOutput_2 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tUniqRow_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tUniqRow_1", false);
-		start_Hash.put("tUniqRow_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"load_art_clinicals");
-					}
-				
-		int tos_count_tUniqRow_1 = 0;
-		
-
-int nb_uniques_tUniqRow_1 = 0;
-int nb_duplicates_tUniqRow_1 = 0; 
-
- 
-
-
-
-/**
- * [tUniqRow_1 begin ] stop
  */
 
 
@@ -5342,11 +3800,13 @@ HIV_Art_clinicalStruct HIV_Art_clinical_tmp = new HIV_Art_clinicalStruct();
 		    
 			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-		    String dbquery_tDBInput_2 = "SELECT DISTINCT a.id,a.created_date, a.created_by, a.last_modified_date, \n    a.last_modified_by,a.person_uuid, a.uuid"
-+", a.archived, a.visit_id,\n    a.visit_date, a.cd_4, a.cd_4_percentage, a.is_commencement,a.oi_screened, \n    a.sti_ids"
-+", a.sti_treated, a.opportunistic_infections, a.adr_screened,  \n    a.adverse_drug_reactions, a.adherence_level,  a.adhe"
-+"res,  a.next_appointment,\n    a.lmp_date,  a.functional_status,  a.clinical_stage, a.datim_id,\n    hiv_enrollment_uuid"
-+", a.regimen_type_id, a.regimen_id, a.extra, a.notes\n\nFROM etl_hiv_art_clinical_stage as a";
+		    String dbquery_tDBInput_2 = "SELECT  \n(CASE\n WHEN a.tb_status = 0 THEN NULL\n ELSE\n a.tb_status::VARCHAR\n END\n )::VARCHAR as tb_status, \n  jso"
++"n_build_object('tbStatusId', (CASE\n WHEN a.tb_status = 0 THEN NULL\n ELSE\n a.tb_status::VARCHAR\n END)) tb_screen,\n "
++"\n a.id,a.created_date, a.created_by, a.last_modified_date, \n    a.last_modified_by,a.person_uuid, a.uuid, a.archived, a"
++".visit_id,\n    a.visit_date, a.cd_4, a.cd_4_percentage, a.is_commencement,a.oi_screened, \n    a.sti_ids, a.sti_treated"
++", a.opportunistic_infections, a.adr_screened,  \n    a.adverse_drug_reactions, a.adherence_level,  a.adheres,  a.next_ap"
++"pointment,\n    a.lmp_date,  a.functional_status,  a.clinical_stage, a.datim_id,\n    hiv_enrollment_uuid, a.regimen_typ"
++"e_id, a.regimen_id, a.extra, a.notes\n\nFROM etl_hiv_art_clinical_stage AS a";
 			
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -5364,211 +3824,223 @@ HIV_Art_clinicalStruct HIV_Art_clinical_tmp = new HIV_Art_clinicalStruct();
 		        nb_line_tDBInput_2++;
 		        
 							if(colQtyInRs_tDBInput_2 < 1) {
+								hiv_clinicals.tb_status = null;
+							} else {
+	                         		
+        	hiv_clinicals.tb_status = routines.system.JDBCUtil.getString(rs_tDBInput_2, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_2 < 2) {
+								hiv_clinicals.tb_screen = null;
+							} else {
+	                         		
+        	hiv_clinicals.tb_screen = routines.system.JDBCUtil.getString(rs_tDBInput_2, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_2 < 3) {
 								hiv_clinicals.id = 0;
 							} else {
 		                          
-            hiv_clinicals.id = rs_tDBInput_2.getInt(1);
+            hiv_clinicals.id = rs_tDBInput_2.getInt(3);
             if(rs_tDBInput_2.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 2) {
+							if(colQtyInRs_tDBInput_2 < 4) {
 								hiv_clinicals.created_date = null;
 							} else {
 										
-			hiv_clinicals.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 2);
+			hiv_clinicals.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 4);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 3) {
+							if(colQtyInRs_tDBInput_2 < 5) {
 								hiv_clinicals.created_by = null;
 							} else {
 	                         		
-        	hiv_clinicals.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_2, 3, false);
+        	hiv_clinicals.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_2, 5, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 4) {
+							if(colQtyInRs_tDBInput_2 < 6) {
 								hiv_clinicals.last_modified_date = null;
 							} else {
 										
-			hiv_clinicals.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 4);
+			hiv_clinicals.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 6);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 5) {
+							if(colQtyInRs_tDBInput_2 < 7) {
 								hiv_clinicals.last_modified_by = null;
 							} else {
 	                         		
-        	hiv_clinicals.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_2, 5, false);
+        	hiv_clinicals.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_2, 7, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 6) {
+							if(colQtyInRs_tDBInput_2 < 8) {
 								hiv_clinicals.person_uuid = null;
 							} else {
 	                         		
-        	hiv_clinicals.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_2, 6, false);
+        	hiv_clinicals.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_2, 8, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 7) {
+							if(colQtyInRs_tDBInput_2 < 9) {
 								hiv_clinicals.uuid = null;
 							} else {
 	                         		
-        	hiv_clinicals.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_2, 7, false);
+        	hiv_clinicals.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_2, 9, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 8) {
+							if(colQtyInRs_tDBInput_2 < 10) {
 								hiv_clinicals.archived = null;
 							} else {
 		                          
-            hiv_clinicals.archived = rs_tDBInput_2.getInt(8);
+            hiv_clinicals.archived = rs_tDBInput_2.getInt(10);
             if(rs_tDBInput_2.wasNull()){
                     hiv_clinicals.archived = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 9) {
+							if(colQtyInRs_tDBInput_2 < 11) {
 								hiv_clinicals.visit_id = null;
 							} else {
 	                         		
-        	hiv_clinicals.visit_id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 9, false);
+        	hiv_clinicals.visit_id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 11, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 10) {
+							if(colQtyInRs_tDBInput_2 < 12) {
 								hiv_clinicals.visit_date = null;
 							} else {
 										
-			hiv_clinicals.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 10);
+			hiv_clinicals.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 12);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 11) {
+							if(colQtyInRs_tDBInput_2 < 13) {
 								hiv_clinicals.cd_4 = null;
 							} else {
 	                         		
-            hiv_clinicals.cd_4 = rs_tDBInput_2.getDouble(11);
+            hiv_clinicals.cd_4 = rs_tDBInput_2.getDouble(13);
             if(rs_tDBInput_2.wasNull()){
                     hiv_clinicals.cd_4 = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 12) {
+							if(colQtyInRs_tDBInput_2 < 14) {
 								hiv_clinicals.cd_4_percentage = null;
 							} else {
 	                         		
-            hiv_clinicals.cd_4_percentage = rs_tDBInput_2.getDouble(12);
+            hiv_clinicals.cd_4_percentage = rs_tDBInput_2.getDouble(14);
             if(rs_tDBInput_2.wasNull()){
                     hiv_clinicals.cd_4_percentage = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 13) {
+							if(colQtyInRs_tDBInput_2 < 15) {
 								hiv_clinicals.is_commencement = null;
 							} else {
 	                         		
-            hiv_clinicals.is_commencement = rs_tDBInput_2.getBoolean(13);
+            hiv_clinicals.is_commencement = rs_tDBInput_2.getBoolean(15);
             if(rs_tDBInput_2.wasNull()){
                     hiv_clinicals.is_commencement = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 14) {
+							if(colQtyInRs_tDBInput_2 < 16) {
 								hiv_clinicals.oi_screened = null;
 							} else {
 	                         		
-        	hiv_clinicals.oi_screened = routines.system.JDBCUtil.getString(rs_tDBInput_2, 14, false);
+        	hiv_clinicals.oi_screened = routines.system.JDBCUtil.getString(rs_tDBInput_2, 16, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 15) {
+							if(colQtyInRs_tDBInput_2 < 17) {
 								hiv_clinicals.sti_ids = null;
 							} else {
 	                         		
-        	hiv_clinicals.sti_ids = routines.system.JDBCUtil.getString(rs_tDBInput_2, 15, false);
+        	hiv_clinicals.sti_ids = routines.system.JDBCUtil.getString(rs_tDBInput_2, 17, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 16) {
+							if(colQtyInRs_tDBInput_2 < 18) {
 								hiv_clinicals.sti_treated = null;
 							} else {
 	                         		
-        	hiv_clinicals.sti_treated = routines.system.JDBCUtil.getString(rs_tDBInput_2, 16, false);
+        	hiv_clinicals.sti_treated = routines.system.JDBCUtil.getString(rs_tDBInput_2, 18, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 17) {
+							if(colQtyInRs_tDBInput_2 < 19) {
 								hiv_clinicals.opportunistic_infections = null;
 							} else {
 	                         		
-        	hiv_clinicals.opportunistic_infections = routines.system.JDBCUtil.getString(rs_tDBInput_2, 17, false);
+        	hiv_clinicals.opportunistic_infections = routines.system.JDBCUtil.getString(rs_tDBInput_2, 19, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 18) {
+							if(colQtyInRs_tDBInput_2 < 20) {
 								hiv_clinicals.adr_screened = null;
 							} else {
 	                         		
-        	hiv_clinicals.adr_screened = routines.system.JDBCUtil.getString(rs_tDBInput_2, 18, false);
+        	hiv_clinicals.adr_screened = routines.system.JDBCUtil.getString(rs_tDBInput_2, 20, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 19) {
+							if(colQtyInRs_tDBInput_2 < 21) {
 								hiv_clinicals.adverse_drug_reactions = null;
 							} else {
 	                         		
-        	hiv_clinicals.adverse_drug_reactions = routines.system.JDBCUtil.getString(rs_tDBInput_2, 19, false);
+        	hiv_clinicals.adverse_drug_reactions = routines.system.JDBCUtil.getString(rs_tDBInput_2, 21, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 20) {
+							if(colQtyInRs_tDBInput_2 < 22) {
 								hiv_clinicals.adherence_level = null;
 							} else {
 	                         		
-        	hiv_clinicals.adherence_level = routines.system.JDBCUtil.getString(rs_tDBInput_2, 20, false);
+        	hiv_clinicals.adherence_level = routines.system.JDBCUtil.getString(rs_tDBInput_2, 22, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 21) {
+							if(colQtyInRs_tDBInput_2 < 23) {
 								hiv_clinicals.adheres = null;
 							} else {
 	                         		
-        	hiv_clinicals.adheres = routines.system.JDBCUtil.getString(rs_tDBInput_2, 21, false);
+        	hiv_clinicals.adheres = routines.system.JDBCUtil.getString(rs_tDBInput_2, 23, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 22) {
+							if(colQtyInRs_tDBInput_2 < 24) {
 								hiv_clinicals.next_appointment = null;
 							} else {
 										
-			hiv_clinicals.next_appointment = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 22);
+			hiv_clinicals.next_appointment = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 24);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 23) {
+							if(colQtyInRs_tDBInput_2 < 25) {
 								hiv_clinicals.lmp_date = null;
 							} else {
 										
-			hiv_clinicals.lmp_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 23);
+			hiv_clinicals.lmp_date = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 25);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 24) {
+							if(colQtyInRs_tDBInput_2 < 26) {
 								hiv_clinicals.functional_status = null;
 							} else {
 	                         		
-        	hiv_clinicals.functional_status = routines.system.JDBCUtil.getString(rs_tDBInput_2, 24, false);
+        	hiv_clinicals.functional_status = routines.system.JDBCUtil.getString(rs_tDBInput_2, 26, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 25) {
+							if(colQtyInRs_tDBInput_2 < 27) {
 								hiv_clinicals.clinical_stage = null;
 							} else {
 	                         		
-        	hiv_clinicals.clinical_stage = routines.system.JDBCUtil.getString(rs_tDBInput_2, 25, false);
+        	hiv_clinicals.clinical_stage = routines.system.JDBCUtil.getString(rs_tDBInput_2, 27, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 26) {
+							if(colQtyInRs_tDBInput_2 < 28) {
 								hiv_clinicals.datim_id = null;
 							} else {
 	                         		
-        	hiv_clinicals.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 26, false);
+        	hiv_clinicals.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 28, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 27) {
+							if(colQtyInRs_tDBInput_2 < 29) {
 								hiv_clinicals.hiv_enrollment_uuid = null;
 							} else {
 	                         		
-        	hiv_clinicals.hiv_enrollment_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_2, 27, false);
+        	hiv_clinicals.hiv_enrollment_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_2, 29, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 28) {
+							if(colQtyInRs_tDBInput_2 < 30) {
 								hiv_clinicals.regimen_type_id = null;
 							} else {
 		                          
-            hiv_clinicals.regimen_type_id = rs_tDBInput_2.getInt(28);
+            hiv_clinicals.regimen_type_id = rs_tDBInput_2.getInt(30);
             if(rs_tDBInput_2.wasNull()){
                     hiv_clinicals.regimen_type_id = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 29) {
+							if(colQtyInRs_tDBInput_2 < 31) {
 								hiv_clinicals.regimen_id = null;
 							} else {
 		                          
-            hiv_clinicals.regimen_id = rs_tDBInput_2.getInt(29);
+            hiv_clinicals.regimen_id = rs_tDBInput_2.getInt(31);
             if(rs_tDBInput_2.wasNull()){
                     hiv_clinicals.regimen_id = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 30) {
+							if(colQtyInRs_tDBInput_2 < 32) {
 								hiv_clinicals.extra = null;
 							} else {
 	                         		
-        	hiv_clinicals.extra = routines.system.JDBCUtil.getString(rs_tDBInput_2, 30, false);
+        	hiv_clinicals.extra = routines.system.JDBCUtil.getString(rs_tDBInput_2, 32, false);
 		                    }
-							if(colQtyInRs_tDBInput_2 < 31) {
+							if(colQtyInRs_tDBInput_2 < 33) {
 								hiv_clinicals.notes = null;
 							} else {
 	                         		
-        	hiv_clinicals.notes = routines.system.JDBCUtil.getString(rs_tDBInput_2, 31, false);
+        	hiv_clinicals.notes = routines.system.JDBCUtil.getString(rs_tDBInput_2, 33, false);
 		                    }
 					
 
@@ -5884,6 +4356,8 @@ HIV_Art_clinical_tmp.regimen_type_id = hiv_clinicals.regimen_type_id ;
 HIV_Art_clinical_tmp.regimen_id = hiv_clinicals.regimen_id ;
 HIV_Art_clinical_tmp.extra = hiv_clinicals.extra ;
 HIV_Art_clinical_tmp.clinical_note = hiv_clinicals.notes ;
+HIV_Art_clinical_tmp.tb_status = hiv_clinicals.tb_status ;
+HIV_Art_clinical_tmp.tb_screen = hiv_clinicals.tb_screen ;
 HIV_Art_clinical = HIV_Art_clinical_tmp;
 // ###############################
 
@@ -6194,8 +4668,9 @@ load_art_clinicals_tmp.regimen_type_id = HIV_Art_clinical.regimen_type_id ;
 load_art_clinicals_tmp.art_status_id = 0;
 load_art_clinicals_tmp.vital_sign_uuid = HIV_Art_clinical.vital_sign_uuid ;
 load_art_clinicals_tmp.who_staging_id = null;
-load_art_clinicals_tmp.tb_screen = null;
 load_art_clinicals_tmp.extra = HIV_Art_clinical.extra ;
+load_art_clinicals_tmp.tb_status = HIV_Art_clinical.tb_status ;
+load_art_clinicals_tmp.tb_screen = HIV_Art_clinical.tb_screen ;
 load_art_clinicals = load_art_clinicals_tmp;
 // ###############################
 
@@ -6247,57 +4722,6 @@ if(load_art_clinicals != null) {
 
 	
 	/**
-	 * [tUniqRow_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"load_art_clinicals");
-					}
-					
-Duplicate_enrollments.id = load_art_clinicals.id;			Duplicate_enrollments.created_date = load_art_clinicals.created_date;			Duplicate_enrollments.created_by = load_art_clinicals.created_by;			Duplicate_enrollments.last_modified_date = load_art_clinicals.last_modified_date;			Duplicate_enrollments.last_modified_by = load_art_clinicals.last_modified_by;			Duplicate_enrollments.person_uuid = load_art_clinicals.person_uuid;			Duplicate_enrollments.hiv_enrollment_uuid = load_art_clinicals.hiv_enrollment_uuid;			Duplicate_enrollments.uuid = load_art_clinicals.uuid;			Duplicate_enrollments.archived = load_art_clinicals.archived;			Duplicate_enrollments.visit_id = load_art_clinicals.visit_id;			Duplicate_enrollments.visit_date = load_art_clinicals.visit_date;			Duplicate_enrollments.cd_4 = load_art_clinicals.cd_4;			Duplicate_enrollments.cd_4_percentage = load_art_clinicals.cd_4_percentage;			Duplicate_enrollments.is_commencement = load_art_clinicals.is_commencement;			Duplicate_enrollments.oi_screened = load_art_clinicals.oi_screened;			Duplicate_enrollments.sti_ids = load_art_clinicals.sti_ids;			Duplicate_enrollments.sti_treated = load_art_clinicals.sti_treated;			Duplicate_enrollments.opportunistic_infections = load_art_clinicals.opportunistic_infections;			Duplicate_enrollments.adr_screened = load_art_clinicals.adr_screened;			Duplicate_enrollments.adverse_drug_reactions = load_art_clinicals.adverse_drug_reactions;			Duplicate_enrollments.adherence_level = load_art_clinicals.adherence_level;			Duplicate_enrollments.adheres = load_art_clinicals.adheres;			Duplicate_enrollments.next_appointment = load_art_clinicals.next_appointment;			Duplicate_enrollments.lmp_date = load_art_clinicals.lmp_date;			Duplicate_enrollments.facility_id = load_art_clinicals.facility_id;			Duplicate_enrollments.functional_status_id = load_art_clinicals.functional_status_id;			Duplicate_enrollments.clinical_stage_id = load_art_clinicals.clinical_stage_id;			Duplicate_enrollments.clinical_note = load_art_clinicals.clinical_note;			Duplicate_enrollments.regimen_id = load_art_clinicals.regimen_id;			Duplicate_enrollments.regimen_type_id = load_art_clinicals.regimen_type_id;			Duplicate_enrollments.art_status_id = load_art_clinicals.art_status_id;			Duplicate_enrollments.vital_sign_uuid = load_art_clinicals.vital_sign_uuid;			Duplicate_enrollments.who_staging_id = load_art_clinicals.who_staging_id;			Duplicate_enrollments.tb_screen = load_art_clinicals.tb_screen;			Duplicate_enrollments.extra = load_art_clinicals.extra;			Unique_enrollments.id = load_art_clinicals.id;			Unique_enrollments.created_date = load_art_clinicals.created_date;			Unique_enrollments.created_by = load_art_clinicals.created_by;			Unique_enrollments.last_modified_date = load_art_clinicals.last_modified_date;			Unique_enrollments.last_modified_by = load_art_clinicals.last_modified_by;			Unique_enrollments.person_uuid = load_art_clinicals.person_uuid;			Unique_enrollments.hiv_enrollment_uuid = load_art_clinicals.hiv_enrollment_uuid;			Unique_enrollments.uuid = load_art_clinicals.uuid;			Unique_enrollments.archived = load_art_clinicals.archived;			Unique_enrollments.visit_id = load_art_clinicals.visit_id;			Unique_enrollments.visit_date = load_art_clinicals.visit_date;			Unique_enrollments.cd_4 = load_art_clinicals.cd_4;			Unique_enrollments.cd_4_percentage = load_art_clinicals.cd_4_percentage;			Unique_enrollments.is_commencement = load_art_clinicals.is_commencement;			Unique_enrollments.oi_screened = load_art_clinicals.oi_screened;			Unique_enrollments.sti_ids = load_art_clinicals.sti_ids;			Unique_enrollments.sti_treated = load_art_clinicals.sti_treated;			Unique_enrollments.opportunistic_infections = load_art_clinicals.opportunistic_infections;			Unique_enrollments.adr_screened = load_art_clinicals.adr_screened;			Unique_enrollments.adverse_drug_reactions = load_art_clinicals.adverse_drug_reactions;			Unique_enrollments.adherence_level = load_art_clinicals.adherence_level;			Unique_enrollments.adheres = load_art_clinicals.adheres;			Unique_enrollments.next_appointment = load_art_clinicals.next_appointment;			Unique_enrollments.lmp_date = load_art_clinicals.lmp_date;			Unique_enrollments.facility_id = load_art_clinicals.facility_id;			Unique_enrollments.functional_status_id = load_art_clinicals.functional_status_id;			Unique_enrollments.clinical_stage_id = load_art_clinicals.clinical_stage_id;			Unique_enrollments.clinical_note = load_art_clinicals.clinical_note;			Unique_enrollments.regimen_id = load_art_clinicals.regimen_id;			Unique_enrollments.regimen_type_id = load_art_clinicals.regimen_type_id;			Unique_enrollments.art_status_id = load_art_clinicals.art_status_id;			Unique_enrollments.vital_sign_uuid = load_art_clinicals.vital_sign_uuid;			Unique_enrollments.who_staging_id = load_art_clinicals.who_staging_id;			Unique_enrollments.tb_screen = load_art_clinicals.tb_screen;			Unique_enrollments.extra = load_art_clinicals.extra;			
-
- 
-
-
-	tos_count_tUniqRow_1++;
-
-/**
- * [tUniqRow_1 main ] stop
- */
-	
-	/**
-	 * [tUniqRow_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_begin ] stop
- */
-// Start of branch "Unique_enrollments"
-if(Unique_enrollments != null) { 
-
-
-
-	
-	/**
 	 * [tDBOutput_1 main ] start
 	 */
 
@@ -6309,7 +4733,7 @@ if(Unique_enrollments != null) {
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Unique_enrollments");
+						runStat.updateStatOnConnection(iterateId,1,1,"load_art_clinicals");
 					}
 					
 
@@ -6317,178 +4741,183 @@ if(Unique_enrollments != null) {
 
         whetherReject_tDBOutput_1 = false;
             int updateFlag_tDBOutput_1=0;
-                    pstmtUpdate_tDBOutput_1.setLong(1, Unique_enrollments.id);
+                    pstmtUpdate_tDBOutput_1.setLong(1, load_art_clinicals.id);
 
-                    if(Unique_enrollments.created_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Unique_enrollments.created_date.getTime()));
+                    if(load_art_clinicals.created_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(load_art_clinicals.created_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.created_by == null) {
+                    if(load_art_clinicals.created_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(3, Unique_enrollments.created_by);
+} else {pstmtUpdate_tDBOutput_1.setString(3, load_art_clinicals.created_by);
 }
 
-                    if(Unique_enrollments.last_modified_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Unique_enrollments.last_modified_date.getTime()));
+                    if(load_art_clinicals.last_modified_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(load_art_clinicals.last_modified_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.last_modified_by == null) {
+                    if(load_art_clinicals.last_modified_by == null) {
 pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(5, Unique_enrollments.last_modified_by);
+} else {pstmtUpdate_tDBOutput_1.setString(5, load_art_clinicals.last_modified_by);
 }
 
-                    if(Unique_enrollments.person_uuid == null) {
+                    if(load_art_clinicals.person_uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(6, Unique_enrollments.person_uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(6, load_art_clinicals.person_uuid);
 }
 
-                    if(Unique_enrollments.hiv_enrollment_uuid == null) {
+                    if(load_art_clinicals.hiv_enrollment_uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(7, Unique_enrollments.hiv_enrollment_uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(7, load_art_clinicals.hiv_enrollment_uuid);
 }
 
-                    if(Unique_enrollments.uuid == null) {
+                    if(load_art_clinicals.uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(8, Unique_enrollments.uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(8, load_art_clinicals.uuid);
 }
 
-                    if(Unique_enrollments.archived == null) {
+                    if(load_art_clinicals.archived == null) {
 pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(9, Unique_enrollments.archived);
+} else {pstmtUpdate_tDBOutput_1.setInt(9, load_art_clinicals.archived);
 }
 
-                    if(Unique_enrollments.visit_id == null) {
+                    if(load_art_clinicals.visit_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(10, Unique_enrollments.visit_id);
+} else {pstmtUpdate_tDBOutput_1.setString(10, load_art_clinicals.visit_id);
 }
 
-                    if(Unique_enrollments.visit_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(11, new java.sql.Timestamp(Unique_enrollments.visit_date.getTime()));
+                    if(load_art_clinicals.visit_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(11, new java.sql.Timestamp(load_art_clinicals.visit_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.cd_4 == null) {
+                    if(load_art_clinicals.cd_4 == null) {
 pstmtUpdate_tDBOutput_1.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_1.setDouble(12, Unique_enrollments.cd_4);
+} else {pstmtUpdate_tDBOutput_1.setDouble(12, load_art_clinicals.cd_4);
 }
 
-                    if(Unique_enrollments.cd_4_percentage == null) {
+                    if(load_art_clinicals.cd_4_percentage == null) {
 pstmtUpdate_tDBOutput_1.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_1.setDouble(13, Unique_enrollments.cd_4_percentage);
+} else {pstmtUpdate_tDBOutput_1.setDouble(13, load_art_clinicals.cd_4_percentage);
 }
 
-                    if(Unique_enrollments.is_commencement == null) {
+                    if(load_art_clinicals.is_commencement == null) {
 pstmtUpdate_tDBOutput_1.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_1.setBoolean(14, Unique_enrollments.is_commencement);
+} else {pstmtUpdate_tDBOutput_1.setBoolean(14, load_art_clinicals.is_commencement);
 }
 
-                    if(Unique_enrollments.oi_screened == null) {
+                    if(load_art_clinicals.oi_screened == null) {
 pstmtUpdate_tDBOutput_1.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(15, Unique_enrollments.oi_screened);
+} else {pstmtUpdate_tDBOutput_1.setString(15, load_art_clinicals.oi_screened);
 }
 
-                    if(Unique_enrollments.sti_ids == null) {
+                    if(load_art_clinicals.sti_ids == null) {
 pstmtUpdate_tDBOutput_1.setNull(16, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(16, Unique_enrollments.sti_ids);
+} else {pstmtUpdate_tDBOutput_1.setString(16, load_art_clinicals.sti_ids);
 }
 
-                    if(Unique_enrollments.sti_treated == null) {
+                    if(load_art_clinicals.sti_treated == null) {
 pstmtUpdate_tDBOutput_1.setNull(17, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(17, Unique_enrollments.sti_treated);
+} else {pstmtUpdate_tDBOutput_1.setString(17, load_art_clinicals.sti_treated);
 }
 
-                    if(Unique_enrollments.opportunistic_infections == null) {
+                    if(load_art_clinicals.opportunistic_infections == null) {
 pstmtUpdate_tDBOutput_1.setNull(18, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(18, Unique_enrollments.opportunistic_infections);
+} else {pstmtUpdate_tDBOutput_1.setString(18, load_art_clinicals.opportunistic_infections);
 }
 
-                    if(Unique_enrollments.adr_screened == null) {
+                    if(load_art_clinicals.adr_screened == null) {
 pstmtUpdate_tDBOutput_1.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(19, Unique_enrollments.adr_screened);
+} else {pstmtUpdate_tDBOutput_1.setString(19, load_art_clinicals.adr_screened);
 }
 
-                    if(Unique_enrollments.adverse_drug_reactions == null) {
+                    if(load_art_clinicals.adverse_drug_reactions == null) {
 pstmtUpdate_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(20, Unique_enrollments.adverse_drug_reactions);
+} else {pstmtUpdate_tDBOutput_1.setString(20, load_art_clinicals.adverse_drug_reactions);
 }
 
-                    if(Unique_enrollments.adherence_level == null) {
+                    if(load_art_clinicals.adherence_level == null) {
 pstmtUpdate_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(21, Unique_enrollments.adherence_level);
+} else {pstmtUpdate_tDBOutput_1.setString(21, load_art_clinicals.adherence_level);
 }
 
-                    if(Unique_enrollments.adheres == null) {
+                    if(load_art_clinicals.adheres == null) {
 pstmtUpdate_tDBOutput_1.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(22, Unique_enrollments.adheres);
+} else {pstmtUpdate_tDBOutput_1.setString(22, load_art_clinicals.adheres);
 }
 
-                    if(Unique_enrollments.next_appointment != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(23, new java.sql.Timestamp(Unique_enrollments.next_appointment.getTime()));
+                    if(load_art_clinicals.next_appointment != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(23, new java.sql.Timestamp(load_art_clinicals.next_appointment.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(23, java.sql.Types.TIMESTAMP);
 }
 
-                    if(Unique_enrollments.lmp_date != null) {
-pstmtUpdate_tDBOutput_1.setTimestamp(24, new java.sql.Timestamp(Unique_enrollments.lmp_date.getTime()));
+                    if(load_art_clinicals.lmp_date != null) {
+pstmtUpdate_tDBOutput_1.setTimestamp(24, new java.sql.Timestamp(load_art_clinicals.lmp_date.getTime()));
 } else {
 pstmtUpdate_tDBOutput_1.setNull(24, java.sql.Types.TIMESTAMP);
 }
 
-                    pstmtUpdate_tDBOutput_1.setLong(25, Unique_enrollments.facility_id);
+                    pstmtUpdate_tDBOutput_1.setLong(25, load_art_clinicals.facility_id);
 
-                    pstmtUpdate_tDBOutput_1.setLong(26, Unique_enrollments.functional_status_id);
+                    pstmtUpdate_tDBOutput_1.setLong(26, load_art_clinicals.functional_status_id);
 
-                    pstmtUpdate_tDBOutput_1.setLong(27, Unique_enrollments.clinical_stage_id);
+                    pstmtUpdate_tDBOutput_1.setLong(27, load_art_clinicals.clinical_stage_id);
 
-                    if(Unique_enrollments.clinical_note == null) {
+                    if(load_art_clinicals.clinical_note == null) {
 pstmtUpdate_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(28, Unique_enrollments.clinical_note);
+} else {pstmtUpdate_tDBOutput_1.setString(28, load_art_clinicals.clinical_note);
 }
 
-                    if(Unique_enrollments.regimen_id == null) {
+                    if(load_art_clinicals.regimen_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(29, Unique_enrollments.regimen_id);
+} else {pstmtUpdate_tDBOutput_1.setInt(29, load_art_clinicals.regimen_id);
 }
 
-                    if(Unique_enrollments.regimen_type_id == null) {
+                    if(load_art_clinicals.regimen_type_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(30, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(30, Unique_enrollments.regimen_type_id);
+} else {pstmtUpdate_tDBOutput_1.setInt(30, load_art_clinicals.regimen_type_id);
 }
 
-                    if(Unique_enrollments.art_status_id == null) {
+                    if(load_art_clinicals.art_status_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(31, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(31, Unique_enrollments.art_status_id);
+} else {pstmtUpdate_tDBOutput_1.setInt(31, load_art_clinicals.art_status_id);
 }
 
-                    if(Unique_enrollments.vital_sign_uuid == null) {
+                    if(load_art_clinicals.vital_sign_uuid == null) {
 pstmtUpdate_tDBOutput_1.setNull(32, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(32, Unique_enrollments.vital_sign_uuid);
+} else {pstmtUpdate_tDBOutput_1.setString(32, load_art_clinicals.vital_sign_uuid);
 }
 
-                    if(Unique_enrollments.who_staging_id == null) {
+                    if(load_art_clinicals.who_staging_id == null) {
 pstmtUpdate_tDBOutput_1.setNull(33, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_1.setInt(33, Unique_enrollments.who_staging_id);
+} else {pstmtUpdate_tDBOutput_1.setInt(33, load_art_clinicals.who_staging_id);
 }
 
-                    if(Unique_enrollments.tb_screen == null) {
+                    if(load_art_clinicals.extra == null) {
 pstmtUpdate_tDBOutput_1.setNull(34, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(34, Unique_enrollments.tb_screen);
+} else {pstmtUpdate_tDBOutput_1.setString(34, load_art_clinicals.extra);
 }
 
-                    if(Unique_enrollments.extra == null) {
+                    if(load_art_clinicals.tb_status == null) {
 pstmtUpdate_tDBOutput_1.setNull(35, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(35, Unique_enrollments.extra);
+} else {pstmtUpdate_tDBOutput_1.setString(35, load_art_clinicals.tb_status);
+}
+
+                    if(load_art_clinicals.tb_screen == null) {
+pstmtUpdate_tDBOutput_1.setNull(36, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(36, load_art_clinicals.tb_screen);
 }
 
 
-                    if(Unique_enrollments.uuid == null) {
-pstmtUpdate_tDBOutput_1.setNull(36 + count_tDBOutput_1, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_1.setString(36 + count_tDBOutput_1, Unique_enrollments.uuid);
+                    if(load_art_clinicals.uuid == null) {
+pstmtUpdate_tDBOutput_1.setNull(37 + count_tDBOutput_1, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(37 + count_tDBOutput_1, load_art_clinicals.uuid);
 }
 
 
@@ -6499,172 +4928,177 @@ pstmtUpdate_tDBOutput_1.setNull(36 + count_tDBOutput_1, java.sql.Types.VARCHAR);
 				
             if(updateFlag_tDBOutput_1 == 0) {
             	
-                        pstmtInsert_tDBOutput_1.setLong(1, Unique_enrollments.id);
+                        pstmtInsert_tDBOutput_1.setLong(1, load_art_clinicals.id);
 
-                        if(Unique_enrollments.created_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(Unique_enrollments.created_date.getTime()));
+                        if(load_art_clinicals.created_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(2, new java.sql.Timestamp(load_art_clinicals.created_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.created_by == null) {
+                        if(load_art_clinicals.created_by == null) {
 pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(3, Unique_enrollments.created_by);
+} else {pstmtInsert_tDBOutput_1.setString(3, load_art_clinicals.created_by);
 }
 
-                        if(Unique_enrollments.last_modified_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(Unique_enrollments.last_modified_date.getTime()));
+                        if(load_art_clinicals.last_modified_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(4, new java.sql.Timestamp(load_art_clinicals.last_modified_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.last_modified_by == null) {
+                        if(load_art_clinicals.last_modified_by == null) {
 pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(5, Unique_enrollments.last_modified_by);
+} else {pstmtInsert_tDBOutput_1.setString(5, load_art_clinicals.last_modified_by);
 }
 
-                        if(Unique_enrollments.person_uuid == null) {
+                        if(load_art_clinicals.person_uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(6, Unique_enrollments.person_uuid);
+} else {pstmtInsert_tDBOutput_1.setString(6, load_art_clinicals.person_uuid);
 }
 
-                        if(Unique_enrollments.hiv_enrollment_uuid == null) {
+                        if(load_art_clinicals.hiv_enrollment_uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(7, Unique_enrollments.hiv_enrollment_uuid);
+} else {pstmtInsert_tDBOutput_1.setString(7, load_art_clinicals.hiv_enrollment_uuid);
 }
 
-                        if(Unique_enrollments.uuid == null) {
+                        if(load_art_clinicals.uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(8, Unique_enrollments.uuid);
+} else {pstmtInsert_tDBOutput_1.setString(8, load_art_clinicals.uuid);
 }
 
-                        if(Unique_enrollments.archived == null) {
+                        if(load_art_clinicals.archived == null) {
 pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(9, Unique_enrollments.archived);
+} else {pstmtInsert_tDBOutput_1.setInt(9, load_art_clinicals.archived);
 }
 
-                        if(Unique_enrollments.visit_id == null) {
+                        if(load_art_clinicals.visit_id == null) {
 pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(10, Unique_enrollments.visit_id);
+} else {pstmtInsert_tDBOutput_1.setString(10, load_art_clinicals.visit_id);
 }
 
-                        if(Unique_enrollments.visit_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(11, new java.sql.Timestamp(Unique_enrollments.visit_date.getTime()));
+                        if(load_art_clinicals.visit_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(11, new java.sql.Timestamp(load_art_clinicals.visit_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.cd_4 == null) {
+                        if(load_art_clinicals.cd_4 == null) {
 pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_1.setDouble(12, Unique_enrollments.cd_4);
+} else {pstmtInsert_tDBOutput_1.setDouble(12, load_art_clinicals.cd_4);
 }
 
-                        if(Unique_enrollments.cd_4_percentage == null) {
+                        if(load_art_clinicals.cd_4_percentage == null) {
 pstmtInsert_tDBOutput_1.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_1.setDouble(13, Unique_enrollments.cd_4_percentage);
+} else {pstmtInsert_tDBOutput_1.setDouble(13, load_art_clinicals.cd_4_percentage);
 }
 
-                        if(Unique_enrollments.is_commencement == null) {
+                        if(load_art_clinicals.is_commencement == null) {
 pstmtInsert_tDBOutput_1.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_1.setBoolean(14, Unique_enrollments.is_commencement);
+} else {pstmtInsert_tDBOutput_1.setBoolean(14, load_art_clinicals.is_commencement);
 }
 
-                        if(Unique_enrollments.oi_screened == null) {
+                        if(load_art_clinicals.oi_screened == null) {
 pstmtInsert_tDBOutput_1.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(15, Unique_enrollments.oi_screened);
+} else {pstmtInsert_tDBOutput_1.setString(15, load_art_clinicals.oi_screened);
 }
 
-                        if(Unique_enrollments.sti_ids == null) {
+                        if(load_art_clinicals.sti_ids == null) {
 pstmtInsert_tDBOutput_1.setNull(16, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(16, Unique_enrollments.sti_ids);
+} else {pstmtInsert_tDBOutput_1.setString(16, load_art_clinicals.sti_ids);
 }
 
-                        if(Unique_enrollments.sti_treated == null) {
+                        if(load_art_clinicals.sti_treated == null) {
 pstmtInsert_tDBOutput_1.setNull(17, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(17, Unique_enrollments.sti_treated);
+} else {pstmtInsert_tDBOutput_1.setString(17, load_art_clinicals.sti_treated);
 }
 
-                        if(Unique_enrollments.opportunistic_infections == null) {
+                        if(load_art_clinicals.opportunistic_infections == null) {
 pstmtInsert_tDBOutput_1.setNull(18, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(18, Unique_enrollments.opportunistic_infections);
+} else {pstmtInsert_tDBOutput_1.setString(18, load_art_clinicals.opportunistic_infections);
 }
 
-                        if(Unique_enrollments.adr_screened == null) {
+                        if(load_art_clinicals.adr_screened == null) {
 pstmtInsert_tDBOutput_1.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(19, Unique_enrollments.adr_screened);
+} else {pstmtInsert_tDBOutput_1.setString(19, load_art_clinicals.adr_screened);
 }
 
-                        if(Unique_enrollments.adverse_drug_reactions == null) {
+                        if(load_art_clinicals.adverse_drug_reactions == null) {
 pstmtInsert_tDBOutput_1.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(20, Unique_enrollments.adverse_drug_reactions);
+} else {pstmtInsert_tDBOutput_1.setString(20, load_art_clinicals.adverse_drug_reactions);
 }
 
-                        if(Unique_enrollments.adherence_level == null) {
+                        if(load_art_clinicals.adherence_level == null) {
 pstmtInsert_tDBOutput_1.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(21, Unique_enrollments.adherence_level);
+} else {pstmtInsert_tDBOutput_1.setString(21, load_art_clinicals.adherence_level);
 }
 
-                        if(Unique_enrollments.adheres == null) {
+                        if(load_art_clinicals.adheres == null) {
 pstmtInsert_tDBOutput_1.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(22, Unique_enrollments.adheres);
+} else {pstmtInsert_tDBOutput_1.setString(22, load_art_clinicals.adheres);
 }
 
-                        if(Unique_enrollments.next_appointment != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(23, new java.sql.Timestamp(Unique_enrollments.next_appointment.getTime()));
+                        if(load_art_clinicals.next_appointment != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(23, new java.sql.Timestamp(load_art_clinicals.next_appointment.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(23, java.sql.Types.TIMESTAMP);
 }
 
-                        if(Unique_enrollments.lmp_date != null) {
-pstmtInsert_tDBOutput_1.setTimestamp(24, new java.sql.Timestamp(Unique_enrollments.lmp_date.getTime()));
+                        if(load_art_clinicals.lmp_date != null) {
+pstmtInsert_tDBOutput_1.setTimestamp(24, new java.sql.Timestamp(load_art_clinicals.lmp_date.getTime()));
 } else {
 pstmtInsert_tDBOutput_1.setNull(24, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtInsert_tDBOutput_1.setLong(25, Unique_enrollments.facility_id);
+                        pstmtInsert_tDBOutput_1.setLong(25, load_art_clinicals.facility_id);
 
-                        pstmtInsert_tDBOutput_1.setLong(26, Unique_enrollments.functional_status_id);
+                        pstmtInsert_tDBOutput_1.setLong(26, load_art_clinicals.functional_status_id);
 
-                        pstmtInsert_tDBOutput_1.setLong(27, Unique_enrollments.clinical_stage_id);
+                        pstmtInsert_tDBOutput_1.setLong(27, load_art_clinicals.clinical_stage_id);
 
-                        if(Unique_enrollments.clinical_note == null) {
+                        if(load_art_clinicals.clinical_note == null) {
 pstmtInsert_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(28, Unique_enrollments.clinical_note);
+} else {pstmtInsert_tDBOutput_1.setString(28, load_art_clinicals.clinical_note);
 }
 
-                        if(Unique_enrollments.regimen_id == null) {
+                        if(load_art_clinicals.regimen_id == null) {
 pstmtInsert_tDBOutput_1.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(29, Unique_enrollments.regimen_id);
+} else {pstmtInsert_tDBOutput_1.setInt(29, load_art_clinicals.regimen_id);
 }
 
-                        if(Unique_enrollments.regimen_type_id == null) {
+                        if(load_art_clinicals.regimen_type_id == null) {
 pstmtInsert_tDBOutput_1.setNull(30, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(30, Unique_enrollments.regimen_type_id);
+} else {pstmtInsert_tDBOutput_1.setInt(30, load_art_clinicals.regimen_type_id);
 }
 
-                        if(Unique_enrollments.art_status_id == null) {
+                        if(load_art_clinicals.art_status_id == null) {
 pstmtInsert_tDBOutput_1.setNull(31, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(31, Unique_enrollments.art_status_id);
+} else {pstmtInsert_tDBOutput_1.setInt(31, load_art_clinicals.art_status_id);
 }
 
-                        if(Unique_enrollments.vital_sign_uuid == null) {
+                        if(load_art_clinicals.vital_sign_uuid == null) {
 pstmtInsert_tDBOutput_1.setNull(32, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(32, Unique_enrollments.vital_sign_uuid);
+} else {pstmtInsert_tDBOutput_1.setString(32, load_art_clinicals.vital_sign_uuid);
 }
 
-                        if(Unique_enrollments.who_staging_id == null) {
+                        if(load_art_clinicals.who_staging_id == null) {
 pstmtInsert_tDBOutput_1.setNull(33, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_1.setInt(33, Unique_enrollments.who_staging_id);
+} else {pstmtInsert_tDBOutput_1.setInt(33, load_art_clinicals.who_staging_id);
 }
 
-                        if(Unique_enrollments.tb_screen == null) {
+                        if(load_art_clinicals.extra == null) {
 pstmtInsert_tDBOutput_1.setNull(34, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(34, Unique_enrollments.tb_screen);
+} else {pstmtInsert_tDBOutput_1.setString(34, load_art_clinicals.extra);
 }
 
-                        if(Unique_enrollments.extra == null) {
+                        if(load_art_clinicals.tb_status == null) {
 pstmtInsert_tDBOutput_1.setNull(35, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_1.setString(35, Unique_enrollments.extra);
+} else {pstmtInsert_tDBOutput_1.setString(35, load_art_clinicals.tb_status);
+}
+
+                        if(load_art_clinicals.tb_screen == null) {
+pstmtInsert_tDBOutput_1.setNull(36, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(36, load_art_clinicals.tb_screen);
 }
 
 					
@@ -6736,489 +5170,6 @@ pstmtInsert_tDBOutput_1.setNull(35, java.sql.Types.VARCHAR);
 
 /**
  * [tDBOutput_1 process_data_end ] stop
- */
-
-} // End of branch "Unique_enrollments"
-
-
-
-
-// Start of branch "Duplicate_enrollments"
-if(Duplicate_enrollments != null) { 
-
-
-
-	
-	/**
-	 * [tDBOutput_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"Duplicate_enrollments");
-					}
-					
-
-
-
-        whetherReject_tDBOutput_2 = false;
-                    pstmt_tDBOutput_2.setLong(1, Duplicate_enrollments.id);
-
-            int checkCount_tDBOutput_2 = -1;
-            try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
-                while(rs_tDBOutput_2.next()) {
-                    checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
-                }
-            }
-            if(checkCount_tDBOutput_2 > 0) {
-                        pstmtUpdate_tDBOutput_2.setLong(1, Duplicate_enrollments.id);
-
-                        if(Duplicate_enrollments.created_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Duplicate_enrollments.created_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.created_by == null) {
-pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(3, Duplicate_enrollments.created_by);
-}
-
-                        if(Duplicate_enrollments.last_modified_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Duplicate_enrollments.last_modified_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.last_modified_by == null) {
-pstmtUpdate_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(5, Duplicate_enrollments.last_modified_by);
-}
-
-                        if(Duplicate_enrollments.person_uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(6, Duplicate_enrollments.person_uuid);
-}
-
-                        if(Duplicate_enrollments.hiv_enrollment_uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(7, Duplicate_enrollments.hiv_enrollment_uuid);
-}
-
-                        if(Duplicate_enrollments.uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(8, Duplicate_enrollments.uuid);
-}
-
-                        if(Duplicate_enrollments.archived == null) {
-pstmtUpdate_tDBOutput_2.setNull(9, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(9, Duplicate_enrollments.archived);
-}
-
-                        if(Duplicate_enrollments.visit_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(10, Duplicate_enrollments.visit_id);
-}
-
-                        if(Duplicate_enrollments.visit_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(11, new java.sql.Timestamp(Duplicate_enrollments.visit_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(11, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.cd_4 == null) {
-pstmtUpdate_tDBOutput_2.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_2.setDouble(12, Duplicate_enrollments.cd_4);
-}
-
-                        if(Duplicate_enrollments.cd_4_percentage == null) {
-pstmtUpdate_tDBOutput_2.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtUpdate_tDBOutput_2.setDouble(13, Duplicate_enrollments.cd_4_percentage);
-}
-
-                        if(Duplicate_enrollments.is_commencement == null) {
-pstmtUpdate_tDBOutput_2.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtUpdate_tDBOutput_2.setBoolean(14, Duplicate_enrollments.is_commencement);
-}
-
-                        if(Duplicate_enrollments.oi_screened == null) {
-pstmtUpdate_tDBOutput_2.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(15, Duplicate_enrollments.oi_screened);
-}
-
-                        if(Duplicate_enrollments.sti_ids == null) {
-pstmtUpdate_tDBOutput_2.setNull(16, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(16, Duplicate_enrollments.sti_ids);
-}
-
-                        if(Duplicate_enrollments.sti_treated == null) {
-pstmtUpdate_tDBOutput_2.setNull(17, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(17, Duplicate_enrollments.sti_treated);
-}
-
-                        if(Duplicate_enrollments.opportunistic_infections == null) {
-pstmtUpdate_tDBOutput_2.setNull(18, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(18, Duplicate_enrollments.opportunistic_infections);
-}
-
-                        if(Duplicate_enrollments.adr_screened == null) {
-pstmtUpdate_tDBOutput_2.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(19, Duplicate_enrollments.adr_screened);
-}
-
-                        if(Duplicate_enrollments.adverse_drug_reactions == null) {
-pstmtUpdate_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(20, Duplicate_enrollments.adverse_drug_reactions);
-}
-
-                        if(Duplicate_enrollments.adherence_level == null) {
-pstmtUpdate_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(21, Duplicate_enrollments.adherence_level);
-}
-
-                        if(Duplicate_enrollments.adheres == null) {
-pstmtUpdate_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(22, Duplicate_enrollments.adheres);
-}
-
-                        if(Duplicate_enrollments.next_appointment != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(23, new java.sql.Timestamp(Duplicate_enrollments.next_appointment.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(23, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.lmp_date != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(24, new java.sql.Timestamp(Duplicate_enrollments.lmp_date.getTime()));
-} else {
-pstmtUpdate_tDBOutput_2.setNull(24, java.sql.Types.TIMESTAMP);
-}
-
-                        pstmtUpdate_tDBOutput_2.setLong(25, Duplicate_enrollments.facility_id);
-
-                        pstmtUpdate_tDBOutput_2.setLong(26, Duplicate_enrollments.functional_status_id);
-
-                        pstmtUpdate_tDBOutput_2.setLong(27, Duplicate_enrollments.clinical_stage_id);
-
-                        if(Duplicate_enrollments.clinical_note == null) {
-pstmtUpdate_tDBOutput_2.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(28, Duplicate_enrollments.clinical_note);
-}
-
-                        if(Duplicate_enrollments.regimen_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(29, Duplicate_enrollments.regimen_id);
-}
-
-                        if(Duplicate_enrollments.regimen_type_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(30, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(30, Duplicate_enrollments.regimen_type_id);
-}
-
-                        if(Duplicate_enrollments.art_status_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(31, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(31, Duplicate_enrollments.art_status_id);
-}
-
-                        if(Duplicate_enrollments.vital_sign_uuid == null) {
-pstmtUpdate_tDBOutput_2.setNull(32, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(32, Duplicate_enrollments.vital_sign_uuid);
-}
-
-                        if(Duplicate_enrollments.who_staging_id == null) {
-pstmtUpdate_tDBOutput_2.setNull(33, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_2.setInt(33, Duplicate_enrollments.who_staging_id);
-}
-
-                        if(Duplicate_enrollments.tb_screen == null) {
-pstmtUpdate_tDBOutput_2.setNull(34, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(34, Duplicate_enrollments.tb_screen);
-}
-
-                        if(Duplicate_enrollments.extra == null) {
-pstmtUpdate_tDBOutput_2.setNull(35, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_2.setString(35, Duplicate_enrollments.extra);
-}
-
-                        pstmtUpdate_tDBOutput_2.setLong(36 + count_tDBOutput_2, Duplicate_enrollments.id);
-
-                try {
-					
-                    updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2 + pstmtUpdate_tDBOutput_2.executeUpdate();
-                    nb_line_tDBOutput_2++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_2 = true;
-                        nb_line_tDBOutput_2++;
-                            System.err.print(e.getMessage());
-                }
-            } else {
-                        pstmtInsert_tDBOutput_2.setLong(1, Duplicate_enrollments.id);
-
-                        if(Duplicate_enrollments.created_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Duplicate_enrollments.created_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.created_by == null) {
-pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(3, Duplicate_enrollments.created_by);
-}
-
-                        if(Duplicate_enrollments.last_modified_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Duplicate_enrollments.last_modified_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.last_modified_by == null) {
-pstmtInsert_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(5, Duplicate_enrollments.last_modified_by);
-}
-
-                        if(Duplicate_enrollments.person_uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(6, Duplicate_enrollments.person_uuid);
-}
-
-                        if(Duplicate_enrollments.hiv_enrollment_uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(7, Duplicate_enrollments.hiv_enrollment_uuid);
-}
-
-                        if(Duplicate_enrollments.uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(8, Duplicate_enrollments.uuid);
-}
-
-                        if(Duplicate_enrollments.archived == null) {
-pstmtInsert_tDBOutput_2.setNull(9, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(9, Duplicate_enrollments.archived);
-}
-
-                        if(Duplicate_enrollments.visit_id == null) {
-pstmtInsert_tDBOutput_2.setNull(10, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(10, Duplicate_enrollments.visit_id);
-}
-
-                        if(Duplicate_enrollments.visit_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(11, new java.sql.Timestamp(Duplicate_enrollments.visit_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(11, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.cd_4 == null) {
-pstmtInsert_tDBOutput_2.setNull(12, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_2.setDouble(12, Duplicate_enrollments.cd_4);
-}
-
-                        if(Duplicate_enrollments.cd_4_percentage == null) {
-pstmtInsert_tDBOutput_2.setNull(13, java.sql.Types.DOUBLE);
-} else {pstmtInsert_tDBOutput_2.setDouble(13, Duplicate_enrollments.cd_4_percentage);
-}
-
-                        if(Duplicate_enrollments.is_commencement == null) {
-pstmtInsert_tDBOutput_2.setNull(14, java.sql.Types.BOOLEAN);
-} else {pstmtInsert_tDBOutput_2.setBoolean(14, Duplicate_enrollments.is_commencement);
-}
-
-                        if(Duplicate_enrollments.oi_screened == null) {
-pstmtInsert_tDBOutput_2.setNull(15, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(15, Duplicate_enrollments.oi_screened);
-}
-
-                        if(Duplicate_enrollments.sti_ids == null) {
-pstmtInsert_tDBOutput_2.setNull(16, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(16, Duplicate_enrollments.sti_ids);
-}
-
-                        if(Duplicate_enrollments.sti_treated == null) {
-pstmtInsert_tDBOutput_2.setNull(17, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(17, Duplicate_enrollments.sti_treated);
-}
-
-                        if(Duplicate_enrollments.opportunistic_infections == null) {
-pstmtInsert_tDBOutput_2.setNull(18, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(18, Duplicate_enrollments.opportunistic_infections);
-}
-
-                        if(Duplicate_enrollments.adr_screened == null) {
-pstmtInsert_tDBOutput_2.setNull(19, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(19, Duplicate_enrollments.adr_screened);
-}
-
-                        if(Duplicate_enrollments.adverse_drug_reactions == null) {
-pstmtInsert_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(20, Duplicate_enrollments.adverse_drug_reactions);
-}
-
-                        if(Duplicate_enrollments.adherence_level == null) {
-pstmtInsert_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(21, Duplicate_enrollments.adherence_level);
-}
-
-                        if(Duplicate_enrollments.adheres == null) {
-pstmtInsert_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(22, Duplicate_enrollments.adheres);
-}
-
-                        if(Duplicate_enrollments.next_appointment != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(23, new java.sql.Timestamp(Duplicate_enrollments.next_appointment.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(23, java.sql.Types.TIMESTAMP);
-}
-
-                        if(Duplicate_enrollments.lmp_date != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(24, new java.sql.Timestamp(Duplicate_enrollments.lmp_date.getTime()));
-} else {
-pstmtInsert_tDBOutput_2.setNull(24, java.sql.Types.TIMESTAMP);
-}
-
-                        pstmtInsert_tDBOutput_2.setLong(25, Duplicate_enrollments.facility_id);
-
-                        pstmtInsert_tDBOutput_2.setLong(26, Duplicate_enrollments.functional_status_id);
-
-                        pstmtInsert_tDBOutput_2.setLong(27, Duplicate_enrollments.clinical_stage_id);
-
-                        if(Duplicate_enrollments.clinical_note == null) {
-pstmtInsert_tDBOutput_2.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(28, Duplicate_enrollments.clinical_note);
-}
-
-                        if(Duplicate_enrollments.regimen_id == null) {
-pstmtInsert_tDBOutput_2.setNull(29, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(29, Duplicate_enrollments.regimen_id);
-}
-
-                        if(Duplicate_enrollments.regimen_type_id == null) {
-pstmtInsert_tDBOutput_2.setNull(30, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(30, Duplicate_enrollments.regimen_type_id);
-}
-
-                        if(Duplicate_enrollments.art_status_id == null) {
-pstmtInsert_tDBOutput_2.setNull(31, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(31, Duplicate_enrollments.art_status_id);
-}
-
-                        if(Duplicate_enrollments.vital_sign_uuid == null) {
-pstmtInsert_tDBOutput_2.setNull(32, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(32, Duplicate_enrollments.vital_sign_uuid);
-}
-
-                        if(Duplicate_enrollments.who_staging_id == null) {
-pstmtInsert_tDBOutput_2.setNull(33, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_2.setInt(33, Duplicate_enrollments.who_staging_id);
-}
-
-                        if(Duplicate_enrollments.tb_screen == null) {
-pstmtInsert_tDBOutput_2.setNull(34, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(34, Duplicate_enrollments.tb_screen);
-}
-
-                        if(Duplicate_enrollments.extra == null) {
-pstmtInsert_tDBOutput_2.setNull(35, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_2.setString(35, Duplicate_enrollments.extra);
-}
-
-                try {
-					
-                    insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2 + pstmtInsert_tDBOutput_2.executeUpdate();
-                    nb_line_tDBOutput_2++;
-					
-                } catch(java.lang.Exception e) {
-					
-                    whetherReject_tDBOutput_2 = true;
-                        nb_line_tDBOutput_2++;
-                            System.err.print(e.getMessage());
-                }
-            }
-    		    commitCounter_tDBOutput_2++;
-                if(commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
-                	conn_tDBOutput_2.commit();
-                	
-                	commitCounter_tDBOutput_2=0;
-                }
-
- 
-
-
-	tos_count_tDBOutput_2++;
-
-/**
- * [tDBOutput_2 main ] stop
- */
-	
-	/**
-	 * [tDBOutput_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tDBOutput_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_2 process_data_end ] stop
- */
-
-} // End of branch "Duplicate_enrollments"
-
-
-
-
-	
-	/**
-	 * [tUniqRow_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 process_data_end ] stop
  */
 
 } // End of branch "load_art_clinicals"
@@ -7469,38 +5420,6 @@ end_Hash.put("tMap_4", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
-globalMap.put("tUniqRow_1_NB_UNIQUES",nb_uniques_tUniqRow_1);
-globalMap.put("tUniqRow_1_NB_DUPLICATES",nb_duplicates_tUniqRow_1);
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"load_art_clinicals");
-			  	}
-			  	
- 
-
-ok_Hash.put("tUniqRow_1", true);
-end_Hash.put("tUniqRow_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tUniqRow_1 end ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_1 end ] start
 	 */
 
@@ -7547,7 +5466,7 @@ end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Unique_enrollments");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"load_art_clinicals");
 			  	}
 			  	
  
@@ -7561,79 +5480,6 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 /**
  * [tDBOutput_1 end ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
-
-
-        if(pstmtUpdate_tDBOutput_2 != null){
-            pstmtUpdate_tDBOutput_2.close();
-            resourceMap.remove("pstmtUpdate_tDBOutput_2");
-        }
-        if(pstmtInsert_tDBOutput_2 != null){
-            pstmtInsert_tDBOutput_2.close();
-            resourceMap.remove("pstmtInsert_tDBOutput_2");
-        }
-        if(pstmt_tDBOutput_2 != null) {
-            pstmt_tDBOutput_2.close();
-            resourceMap.remove("pstmt_tDBOutput_2");
-        }
-    resourceMap.put("statementClosed_tDBOutput_2", true);
-			
-			conn_tDBOutput_2.commit();
-			
-		
-    	conn_tDBOutput_2 .close();
-    	
-    	resourceMap.put("finish_tDBOutput_2", true);
-    	
-
-	nb_line_deleted_tDBOutput_2=nb_line_deleted_tDBOutput_2+ deletedCount_tDBOutput_2;
-	nb_line_update_tDBOutput_2=nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
-	nb_line_inserted_tDBOutput_2=nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
-	nb_line_rejected_tDBOutput_2=nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
-	
-        globalMap.put("tDBOutput_2_NB_LINE",nb_line_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_UPDATED",nb_line_update_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_DELETED",nb_line_deleted_tDBOutput_2);
-        globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
-    
-	
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Duplicate_enrollments");
-			  	}
-			  	
- 
-
-ok_Hash.put("tDBOutput_2", true);
-end_Hash.put("tDBOutput_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tDBOutput_2 end ] stop
- */
-
-
-
 
 
 
@@ -7751,27 +5597,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 
 	
 	/**
-	 * [tUniqRow_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tUniqRow_1";
-
-	
-
- 
-
-
-
-/**
- * [tUniqRow_1 finally ] stop
- */
-
-	
-	/**
 	 * [tDBOutput_1 finally ] start
 	 */
 
@@ -7816,63 +5641,6 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 /**
  * [tDBOutput_1 finally ] stop
  */
-
-
-
-
-	
-	/**
-	 * [tDBOutput_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_2";
-
-	
-
-
-
-    try {
-    if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
-                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
-                if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_2")) != null) {
-                    pstmtUpdateToClose_tDBOutput_2.close();
-                }
-                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
-                if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_2")) != null) {
-                    pstmtInsertToClose_tDBOutput_2.close();
-                }
-                java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
-                if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_2")) != null) {
-                    pstmtToClose_tDBOutput_2.close();
-                }
-    }
-    } finally {
-        if(resourceMap.get("finish_tDBOutput_2") == null){
-            java.sql.Connection ctn_tDBOutput_2 = null;
-            if((ctn_tDBOutput_2 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_2")) != null){
-                try {
-                    ctn_tDBOutput_2.close();
-                } catch (java.sql.SQLException sqlEx_tDBOutput_2) {
-                    String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :" + sqlEx_tDBOutput_2.getMessage();
-                    System.err.println(errorMessage_tDBOutput_2);
-                }
-            }
-        }
-    }
- 
-
-
-
-/**
- * [tDBOutput_2 finally ] stop
- */
-
-
-
 
 
 
@@ -15575,6 +13343,12 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 					return this.notes;
 				}
 				
+			    public Integer tb_status;
+
+				public Integer getTb_status () {
+					return this.tb_status;
+				}
+				
 
 
 	@Override
@@ -15643,6 +13417,7 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 	            other.regimen_type_id = this.regimen_type_id;
 	            other.extra = this.extra;
 	            other.notes = this.notes;
+	            other.tb_status = this.tb_status;
 	            
 	}
 
@@ -15811,6 +13586,8 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 					
 					this.notes = readString(dis);
 					
+						this.tb_status = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -15968,6 +13745,10 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 				
 						writeString(this.notes,dos);
 					
+					// Integer
+				
+						writeInteger(this.tb_status,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -16012,6 +13793,7 @@ public static class clinic_stage_recordStruct implements routines.system.IPersis
 		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
 		sb.append(",extra="+extra);
 		sb.append(",notes="+notes);
+		sb.append(",tb_status="+String.valueOf(tb_status));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -16237,6 +14019,12 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 					return this.notes;
 				}
 				
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
 
 
 
@@ -16392,6 +14180,8 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 					
 					this.notes = readString(dis);
 					
+					this.tb_status = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -16541,6 +14331,10 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 				
 						writeString(this.notes,dos);
 					
+					// String
+				
+						writeString(this.tb_status,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -16583,6 +14377,7 @@ public static class hiv_art_clinic_dataStruct implements routines.system.IPersis
 		sb.append(",regimen_type_id="+String.valueOf(regimen_type_id));
 		sb.append(",extra="+extra);
 		sb.append(",notes="+notes);
+		sb.append(",tb_status="+tb_status);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -16628,6 +14423,12 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
 
 	
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
 			    public String description;
 
 				public String getDescription () {
@@ -16878,6 +14679,8 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
 
         		int length = 0;
 		
+					this.tb_status = readString(dis);
+					
 					this.description = readString(dis);
 					
 					this.composition = readString(dis);
@@ -16962,6 +14765,10 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
         try {
 
 		
+					// String
+				
+						writeString(this.tb_status,dos);
+					
 					// String
 				
 						writeString(this.description,dos);
@@ -17097,7 +14904,8 @@ public static class clinicStruct implements routines.system.IPersistableRow<clin
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("description="+description);
+		sb.append("tb_status="+tb_status);
+		sb.append(",description="+description);
 		sb.append(",composition="+composition);
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",created_by="+created_by);
@@ -17170,6 +14978,12 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
     static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
 
 	
+			    public String tb_status;
+
+				public String getTb_status () {
+					return this.tb_status;
+				}
+				
 			    public String description;
 
 				public String getDescription () {
@@ -17420,6 +15234,8 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
 
         		int length = 0;
 		
+					this.tb_status = readString(dis);
+					
 					this.description = readString(dis);
 					
 					this.composition = readString(dis);
@@ -17504,6 +15320,10 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
         try {
 
 		
+					// String
+				
+						writeString(this.tb_status,dos);
+					
 					// String
 				
 						writeString(this.description,dos);
@@ -17639,7 +15459,8 @@ public static class after_tDBInput_8Struct implements routines.system.IPersistab
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("description="+description);
+		sb.append("tb_status="+tb_status);
+		sb.append(",description="+description);
 		sb.append(",composition="+composition);
 		sb.append(",created_date="+String.valueOf(created_date));
 		sb.append(",created_by="+created_by);
@@ -17731,6 +15552,7 @@ public void tDBInput_8Process(final java.util.Map<String, Object> globalMap) thr
 		tDBInput_9Process(globalMap);
 		tDBInput_10Process(globalMap);
 		tDBInput_11Process(globalMap);
+		tDBInput_13Process(globalMap);
 
 		clinicStruct clinic = new clinicStruct();
 hiv_art_clinic_dataStruct hiv_art_clinic_data = new hiv_art_clinic_dataStruct();
@@ -17843,15 +15665,15 @@ int count_tDBOutput_3=0;
                                 }
                                 if(!whetherExist_tDBOutput_3) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_3 = conn_tDBOutput_3.createStatement()) {
-                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"created_date\" TIMESTAMP(29)   not null ,\"created_by\" VARCHAR(100)  ,\"last_modified_date\" TIMESTAMP(29)   not null ,\"last_modified_by\" VARCHAR(100)  ,\"uuid\" VARCHAR(100)  ,\"archived\" INT4 ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(2000)  ,\"sti_ids\" VARCHAR(2000)  ,\"sti_treated\" VARCHAR(2000)  ,\"" + "opportunistic_infections" + "\" VARCHAR(2000),\"adr_screened\" VARCHAR(2000)  ,\"" + "adverse_drug_reactions" + "\" VARCHAR(2000),\"adherence_level\" VARCHAR(2000)  ,\"" + "adheres" + "\" VARCHAR(2000),\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"functional_status\" VARCHAR(2000)  ,\"clinical_stage\" VARCHAR(2000)  ,\"datim_id\" VARCHAR(100)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)   not null ,\"visit_id\" VARCHAR(255)   not null ,\"person_uuid\" VARCHAR(255)   not null ,\"id\" INT4 ,\"regimen_id\" BIGSERIAL  not null ,\"regimen_type_id\" INT4  not null ,\"" + "extra" + "\" VARCHAR(2000),\"notes\" VARCHAR(2000)  ,primary key(\"id\"))");
+                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"created_date\" TIMESTAMP(29)   not null ,\"created_by\" VARCHAR(100)  ,\"last_modified_date\" TIMESTAMP(29)   not null ,\"last_modified_by\" VARCHAR(100)  ,\"uuid\" VARCHAR(100)  ,\"archived\" INT4 ,\"visit_date\" DATE ,\"cd_4\" FLOAT8 ,\"cd_4_percentage\" FLOAT8 ,\"is_commencement\" BOOL ,\"oi_screened\" VARCHAR(2000)  ,\"sti_ids\" VARCHAR(2000)  ,\"sti_treated\" VARCHAR(2000)  ,\"" + "opportunistic_infections" + "\" VARCHAR(2000),\"adr_screened\" VARCHAR(2000)  ,\"" + "adverse_drug_reactions" + "\" VARCHAR(2000),\"adherence_level\" VARCHAR(2000)  ,\"" + "adheres" + "\" VARCHAR(2000),\"next_appointment\" DATE ,\"lmp_date\" DATE ,\"functional_status\" VARCHAR(500)  ,\"clinical_stage\" VARCHAR(500)  ,\"datim_id\" VARCHAR(100)   not null ,\"hiv_enrollment_uuid\" VARCHAR(255)   not null ,\"visit_id\" VARCHAR(255)   not null ,\"person_uuid\" VARCHAR(255)   not null ,\"id\" INT4 ,\"regimen_id\" BIGSERIAL  not null ,\"regimen_type_id\" INT4  not null ,\"" + "extra" + "\" VARCHAR(2000),\"notes\" VARCHAR(2000)  ,\"tb_status\" INT4 ,primary key(\"id\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_3 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_3", pstmt_tDBOutput_3);
-	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"uuid\",\"archived\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"" + "opportunistic_infections" + "\",\"adr_screened\",\"" + "adverse_drug_reactions" + "\",\"adherence_level\",\"" + "adheres" + "\",\"next_appointment\",\"lmp_date\",\"functional_status\",\"clinical_stage\",\"datim_id\",\"hiv_enrollment_uuid\",\"visit_id\",\"person_uuid\",\"id\",\"regimen_id\",\"regimen_type_id\",\"" + "extra" + "\",\"notes\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?," + "?::jsonb" + ",?," + "?::jsonb" + ",?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?)";
+	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"uuid\",\"archived\",\"visit_date\",\"cd_4\",\"cd_4_percentage\",\"is_commencement\",\"oi_screened\",\"sti_ids\",\"sti_treated\",\"" + "opportunistic_infections" + "\",\"adr_screened\",\"" + "adverse_drug_reactions" + "\",\"adherence_level\",\"" + "adheres" + "\",\"next_appointment\",\"lmp_date\",\"functional_status\",\"clinical_stage\",\"datim_id\",\"hiv_enrollment_uuid\",\"visit_id\",\"person_uuid\",\"id\",\"regimen_id\",\"regimen_type_id\",\"" + "extra" + "\",\"notes\",\"tb_status\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?," + "?::jsonb" + ",?," + "?::jsonb" + ",?,?,?,?,?,?,?,?,?,?,?," + "?::jsonb" + ",?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(insert_tDBOutput_3);
 	    resourceMap.put("pstmtInsert_tDBOutput_3", pstmtInsert_tDBOutput_3);
-	    String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3 + "\" SET \"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"" + "opportunistic_infections" + "\" = " + "?::jsonb" + ",\"adr_screened\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::jsonb" + ",\"adherence_level\" = ?,\"" + "adheres" + "\" = " + "?::jsonb" + ",\"next_appointment\" = ?,\"lmp_date\" = ?,\"functional_status\" = ?,\"clinical_stage\" = ?,\"datim_id\" = ?,\"hiv_enrollment_uuid\" = ?,\"visit_id\" = ?,\"person_uuid\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"" + "extra" + "\" = " + "?::jsonb" + ",\"notes\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3 + "\" SET \"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"uuid\" = ?,\"archived\" = ?,\"visit_date\" = ?,\"cd_4\" = ?,\"cd_4_percentage\" = ?,\"is_commencement\" = ?,\"oi_screened\" = ?,\"sti_ids\" = ?,\"sti_treated\" = ?,\"" + "opportunistic_infections" + "\" = " + "?::jsonb" + ",\"adr_screened\" = ?,\"" + "adverse_drug_reactions" + "\" = " + "?::jsonb" + ",\"adherence_level\" = ?,\"" + "adheres" + "\" = " + "?::jsonb" + ",\"next_appointment\" = ?,\"lmp_date\" = ?,\"functional_status\" = ?,\"clinical_stage\" = ?,\"datim_id\" = ?,\"hiv_enrollment_uuid\" = ?,\"visit_id\" = ?,\"person_uuid\" = ?,\"regimen_id\" = ?,\"regimen_type_id\" = ?,\"" + "extra" + "\" = " + "?::jsonb" + ",\"notes\" = ?,\"tb_status\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(update_tDBOutput_3);
 	    resourceMap.put("pstmtUpdate_tDBOutput_3", pstmtUpdate_tDBOutput_3);
 	    
@@ -17904,6 +15726,16 @@ int count_tDBOutput_3=0;
 
 patient_visit_for_clinicStruct patient_visit_for_clinicHashKey = new patient_visit_for_clinicStruct();
 patient_visit_for_clinicStruct patient_visit_for_clinicDefault = new patient_visit_for_clinicStruct();
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct> tHash_Lookup_row1 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct>) 
+					globalMap.get( "tHash_Lookup_row1" ))
+					;					
+					
+	
+
+row1Struct row1HashKey = new row1Struct();
+row1Struct row1Default = new row1Struct();
 // ###############################        
 
 // ###############################
@@ -18071,13 +15903,14 @@ hiv_art_clinic_dataStruct hiv_art_clinic_data_tmp = new hiv_art_clinic_dataStruc
 		    
 			java.sql.Statement stmt_tDBInput_8 = conn_tDBInput_8.createStatement();
 
-		    String dbquery_tDBInput_8 = "SELECT r.description, r.composition, c.last_modified as created_date, 'ETL' as created_by, c.last_modified as last_modi"
-+"fied_date, \n'ETL' as last_modified_by,  \np.uuid as person_uuid, c.archived::integer, ''::VARCHAR as uuid,\nc.date_visi"
-+"t as visit_date,  c.cd4 as cd_4, c.cd4p as cd_4_percentage, c.commence as is_commencement, \nc.oi_screened, c.sti_ids,  "
-+"c.sti_treated, c.opportunistic_infections, c.adr_screened, \nc.adverse_drug_reactions, c.adherence_level, c.adheres, c.n"
-+"ext_appointment, c.lmp as lmp_date, \nc.func_status as functional_status, c.clinic_stage as clinical_stage,  n.datim_id "
-+"as datim_id, c.extra, c.notes\nFROM clinic c\n\nJOIN patient p ON p.id = c.patient_id \nINNER JOIN ndr_facility n ON n.i"
-+"d=p.facility_id\nLEFT JOIN regimen r ON r.id = c.regimen_id\nWHERE p.extra->>'art'='true'";
+		    String dbquery_tDBInput_8 = "SELECT LOWER(TRIM(c.tb_status)) as tb_status, r.description, r.composition, c.last_modified as created_date, 'ETL' as c"
++"reated_by, c.last_modified as last_modified_date, \n'ETL' as last_modified_by,  \np.uuid as person_uuid, c.archived::int"
++"eger, ''::VARCHAR as uuid,\nc.date_visit as visit_date,  c.cd4 as cd_4, c.cd4p as cd_4_percentage, c.commence as is_comm"
++"encement, \nc.oi_screened, c.sti_ids,  c.sti_treated, c.opportunistic_infections, c.adr_screened, \nc.adverse_drug_react"
++"ions, c.adherence_level, c.adheres, c.next_appointment, c.lmp as lmp_date, \nc.func_status as functional_status, c.clini"
++"c_stage as clinical_stage,  n.datim_id as datim_id, c.extra, c.notes\nFROM clinic c\n\nJOIN patient p ON p.id = c.patien"
++"t_id \nINNER JOIN ndr_facility n ON n.id=p.facility_id\nLEFT JOIN regimen r ON r.id = c.regimen_id\nWHERE p.extra->>'art"
++"'='true'";
 			
 
             	globalMap.put("tDBInput_8_QUERY",dbquery_tDBInput_8);
@@ -18095,184 +15928,190 @@ hiv_art_clinic_dataStruct hiv_art_clinic_data_tmp = new hiv_art_clinic_dataStruc
 		        nb_line_tDBInput_8++;
 		        
 							if(colQtyInRs_tDBInput_8 < 1) {
+								clinic.tb_status = null;
+							} else {
+	                         		
+        	clinic.tb_status = routines.system.JDBCUtil.getString(rs_tDBInput_8, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_8 < 2) {
 								clinic.description = null;
 							} else {
 	                         		
-        	clinic.description = routines.system.JDBCUtil.getString(rs_tDBInput_8, 1, false);
+        	clinic.description = routines.system.JDBCUtil.getString(rs_tDBInput_8, 2, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 2) {
+							if(colQtyInRs_tDBInput_8 < 3) {
 								clinic.composition = null;
 							} else {
 	                         		
-        	clinic.composition = routines.system.JDBCUtil.getString(rs_tDBInput_8, 2, false);
+        	clinic.composition = routines.system.JDBCUtil.getString(rs_tDBInput_8, 3, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 3) {
+							if(colQtyInRs_tDBInput_8 < 4) {
 								clinic.created_date = null;
 							} else {
 										
-			clinic.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 3);
+			clinic.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 4);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 4) {
+							if(colQtyInRs_tDBInput_8 < 5) {
 								clinic.created_by = null;
 							} else {
 	                         		
-        	clinic.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_8, 4, false);
+        	clinic.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_8, 5, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 5) {
+							if(colQtyInRs_tDBInput_8 < 6) {
 								clinic.last_modified_date = null;
 							} else {
 										
-			clinic.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 5);
+			clinic.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 6);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 6) {
+							if(colQtyInRs_tDBInput_8 < 7) {
 								clinic.last_modified_by = null;
 							} else {
 	                         		
-        	clinic.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_8, 6, false);
+        	clinic.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_8, 7, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 7) {
+							if(colQtyInRs_tDBInput_8 < 8) {
 								clinic.person_uuid = null;
 							} else {
 	                         		
-        	clinic.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_8, 7, false);
+        	clinic.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_8, 8, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 8) {
+							if(colQtyInRs_tDBInput_8 < 9) {
 								clinic.archived = null;
 							} else {
 		                          
-            clinic.archived = rs_tDBInput_8.getInt(8);
+            clinic.archived = rs_tDBInput_8.getInt(9);
             if(rs_tDBInput_8.wasNull()){
                     clinic.archived = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_8 < 9) {
+							if(colQtyInRs_tDBInput_8 < 10) {
 								clinic.uuid = null;
 							} else {
 	                         		
-        	clinic.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_8, 9, false);
+        	clinic.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_8, 10, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 10) {
+							if(colQtyInRs_tDBInput_8 < 11) {
 								clinic.visit_date = null;
 							} else {
 										
-			clinic.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 10);
+			clinic.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 11);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 11) {
+							if(colQtyInRs_tDBInput_8 < 12) {
 								clinic.cd_4 = null;
 							} else {
 	                         		
-            clinic.cd_4 = rs_tDBInput_8.getDouble(11);
+            clinic.cd_4 = rs_tDBInput_8.getDouble(12);
             if(rs_tDBInput_8.wasNull()){
                     clinic.cd_4 = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_8 < 12) {
+							if(colQtyInRs_tDBInput_8 < 13) {
 								clinic.cd_4_percentage = null;
 							} else {
 	                         		
-            clinic.cd_4_percentage = rs_tDBInput_8.getDouble(12);
+            clinic.cd_4_percentage = rs_tDBInput_8.getDouble(13);
             if(rs_tDBInput_8.wasNull()){
                     clinic.cd_4_percentage = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_8 < 13) {
+							if(colQtyInRs_tDBInput_8 < 14) {
 								clinic.is_commencement = false;
 							} else {
 	                         		
-            clinic.is_commencement = rs_tDBInput_8.getBoolean(13);
+            clinic.is_commencement = rs_tDBInput_8.getBoolean(14);
             if(rs_tDBInput_8.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_8 < 14) {
+							if(colQtyInRs_tDBInput_8 < 15) {
 								clinic.oi_screened = null;
 							} else {
 	                         		
-        	clinic.oi_screened = routines.system.JDBCUtil.getString(rs_tDBInput_8, 14, false);
+        	clinic.oi_screened = routines.system.JDBCUtil.getString(rs_tDBInput_8, 15, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 15) {
+							if(colQtyInRs_tDBInput_8 < 16) {
 								clinic.sti_ids = null;
 							} else {
 	                         		
-        	clinic.sti_ids = routines.system.JDBCUtil.getString(rs_tDBInput_8, 15, false);
+        	clinic.sti_ids = routines.system.JDBCUtil.getString(rs_tDBInput_8, 16, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 16) {
+							if(colQtyInRs_tDBInput_8 < 17) {
 								clinic.sti_treated = null;
 							} else {
 	                         		
-        	clinic.sti_treated = routines.system.JDBCUtil.getString(rs_tDBInput_8, 16, false);
+        	clinic.sti_treated = routines.system.JDBCUtil.getString(rs_tDBInput_8, 17, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 17) {
+							if(colQtyInRs_tDBInput_8 < 18) {
 								clinic.opportunistic_infections = null;
 							} else {
 	                         		
-        	clinic.opportunistic_infections = routines.system.JDBCUtil.getString(rs_tDBInput_8, 17, false);
+        	clinic.opportunistic_infections = routines.system.JDBCUtil.getString(rs_tDBInput_8, 18, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 18) {
+							if(colQtyInRs_tDBInput_8 < 19) {
 								clinic.adr_screened = null;
 							} else {
 	                         		
-        	clinic.adr_screened = routines.system.JDBCUtil.getString(rs_tDBInput_8, 18, false);
+        	clinic.adr_screened = routines.system.JDBCUtil.getString(rs_tDBInput_8, 19, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 19) {
+							if(colQtyInRs_tDBInput_8 < 20) {
 								clinic.adverse_drug_reactions = null;
 							} else {
 	                         		
-        	clinic.adverse_drug_reactions = routines.system.JDBCUtil.getString(rs_tDBInput_8, 19, false);
+        	clinic.adverse_drug_reactions = routines.system.JDBCUtil.getString(rs_tDBInput_8, 20, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 20) {
+							if(colQtyInRs_tDBInput_8 < 21) {
 								clinic.adherence_level = null;
 							} else {
 	                         		
-        	clinic.adherence_level = routines.system.JDBCUtil.getString(rs_tDBInput_8, 20, false);
+        	clinic.adherence_level = routines.system.JDBCUtil.getString(rs_tDBInput_8, 21, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 21) {
+							if(colQtyInRs_tDBInput_8 < 22) {
 								clinic.adheres = null;
 							} else {
 	                         		
-        	clinic.adheres = routines.system.JDBCUtil.getString(rs_tDBInput_8, 21, false);
+        	clinic.adheres = routines.system.JDBCUtil.getString(rs_tDBInput_8, 22, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 22) {
+							if(colQtyInRs_tDBInput_8 < 23) {
 								clinic.next_appointment = null;
 							} else {
 										
-			clinic.next_appointment = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 22);
+			clinic.next_appointment = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 23);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 23) {
+							if(colQtyInRs_tDBInput_8 < 24) {
 								clinic.lmp_date = null;
 							} else {
 										
-			clinic.lmp_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 23);
+			clinic.lmp_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 24);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 24) {
+							if(colQtyInRs_tDBInput_8 < 25) {
 								clinic.functional_status = null;
 							} else {
 	                         		
-        	clinic.functional_status = routines.system.JDBCUtil.getString(rs_tDBInput_8, 24, false);
+        	clinic.functional_status = routines.system.JDBCUtil.getString(rs_tDBInput_8, 25, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 25) {
+							if(colQtyInRs_tDBInput_8 < 26) {
 								clinic.clinical_stage = null;
 							} else {
 	                         		
-        	clinic.clinical_stage = routines.system.JDBCUtil.getString(rs_tDBInput_8, 25, false);
+        	clinic.clinical_stage = routines.system.JDBCUtil.getString(rs_tDBInput_8, 26, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 26) {
+							if(colQtyInRs_tDBInput_8 < 27) {
 								clinic.datim_id = null;
 							} else {
 	                         		
-        	clinic.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_8, 26, false);
+        	clinic.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_8, 27, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 27) {
+							if(colQtyInRs_tDBInput_8 < 28) {
 								clinic.extra = null;
 							} else {
 	                         		
-        	clinic.extra = routines.system.JDBCUtil.getString(rs_tDBInput_8, 27, false);
+        	clinic.extra = routines.system.JDBCUtil.getString(rs_tDBInput_8, 28, false);
 		                    }
-							if(colQtyInRs_tDBInput_8 < 28) {
+							if(colQtyInRs_tDBInput_8 < 29) {
 								clinic.notes = null;
 							} else {
 	                         		
-        	clinic.notes = routines.system.JDBCUtil.getString(rs_tDBInput_8, 28, false);
+        	clinic.notes = routines.system.JDBCUtil.getString(rs_tDBInput_8, 29, false);
 		                    }
 					
 
@@ -18585,6 +16424,7 @@ hiv_art_clinic_data_tmp.regimen_id = Compostion.id ;
 hiv_art_clinic_data_tmp.regimen_type_id = Compostion.regimen_type_id ;
 hiv_art_clinic_data_tmp.extra = clinic.extra ;
 hiv_art_clinic_data_tmp.notes = clinic.notes ;
+hiv_art_clinic_data_tmp.tb_status = clinic.tb_status ;
 hiv_art_clinic_data = hiv_art_clinic_data_tmp;
 // ###############################
 
@@ -18754,6 +16594,101 @@ if(hiv_art_clinic_data != null) {
 	                    		  	
 		                    
 	            	
+	           	
+	            	
+	            	
+	            
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row1" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLooprow1 = false;
+       		  	    	
+       		  	    	
+ 							row1Struct row1ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_6) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_6 = false;
+								
+                        		    		    row1HashKey.display = hiv_art_clinic_data.tb_status;
+                        		    		
+
+								
+		                        	row1HashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row1.lookup( row1HashKey );
+
+	  							
+
+	  							
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_row1 != null && tHash_Lookup_row1.getCount(row1HashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row1' and it contains more one result from keys :  row1.display = '" + row1HashKey.display + "'");
+								} // G 071
+							
+
+							row1Struct row1 = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row1Struct fromLookup_row1 = null;
+							row1 = row1Default;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_row1 !=null && tHash_Lookup_row1.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_row1 = tHash_Lookup_row1.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_row1 != null) {
+								row1 = fromLookup_row1;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
 	            	
 	            // ###############################
         { // start of Var scope
@@ -18800,6 +16735,7 @@ clinic_stage_record_tmp.regimen_id = hiv_art_clinic_data.regimen_id ;
 clinic_stage_record_tmp.regimen_type_id = hiv_art_clinic_data.regimen_type_id ;
 clinic_stage_record_tmp.extra = hiv_art_clinic_data.extra ;
 clinic_stage_record_tmp.notes = hiv_art_clinic_data.notes ;
+clinic_stage_record_tmp.tb_status = row1.id;
 clinic_stage_record = clinic_stage_record_tmp;
 // ###############################
 
@@ -19030,9 +16966,14 @@ pstmtUpdate_tDBOutput_3.setNull(30, java.sql.Types.VARCHAR);
 } else {pstmtUpdate_tDBOutput_3.setString(30, clinic_stage_record.notes);
 }
 
+                        if(clinic_stage_record.tb_status == null) {
+pstmtUpdate_tDBOutput_3.setNull(31, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_3.setInt(31, clinic_stage_record.tb_status);
+}
+
                         if(clinic_stage_record.id == null) {
-pstmtUpdate_tDBOutput_3.setNull(31 + count_tDBOutput_3, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_3.setInt(31 + count_tDBOutput_3, clinic_stage_record.id);
+pstmtUpdate_tDBOutput_3.setNull(32 + count_tDBOutput_3, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_3.setInt(32 + count_tDBOutput_3, clinic_stage_record.id);
 }
 
                 try {
@@ -19199,6 +17140,11 @@ pstmtInsert_tDBOutput_3.setNull(30, java.sql.Types.VARCHAR);
                         if(clinic_stage_record.notes == null) {
 pstmtInsert_tDBOutput_3.setNull(31, java.sql.Types.VARCHAR);
 } else {pstmtInsert_tDBOutput_3.setString(31, clinic_stage_record.notes);
+}
+
+                        if(clinic_stage_record.tb_status == null) {
+pstmtInsert_tDBOutput_3.setNull(32, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_3.setInt(32, clinic_stage_record.tb_status);
 }
 
                 try {
@@ -19485,6 +17431,14 @@ end_Hash.put("tMap_5", System.currentTimeMillis());
 					
 					
 				
+					if(tHash_Lookup_row1 != null) {
+						tHash_Lookup_row1.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row1" );
+
+					
+					
+				
 // ###############################      
 
 
@@ -19613,6 +17567,9 @@ end_Hash.put("tDBOutput_3", System.currentTimeMillis());
 				
 					     			//free memory for "tMap_6"
 					     			globalMap.remove("tHash_Lookup_patient_visit_for_clinic"); 
+				     			
+					     			//free memory for "tMap_6"
+					     			globalMap.remove("tHash_Lookup_row1"); 
 				     			
 					     			//free memory for "tMap_5"
 					     			globalMap.remove("tHash_Lookup_hiv_enrollment"); 
@@ -21091,7 +19048,7 @@ public void tDBInput_10Process(final java.util.Map<String, Object> globalMap) th
 
 			   		// connection name:patient_visit_for_clinic
 			   		// source node:tDBInput_10 - inputs:(after_tDBInput_8) outputs:(patient_visit_for_clinic,patient_visit_for_clinic) | target node:tAdvancedHash_patient_visit_for_clinic - inputs:(patient_visit_for_clinic) outputs:()
-			   		// linked node: tMap_6 - inputs:(hiv_art_clinic_data,patient_visit_for_clinic) outputs:(clinic_stage_record)
+			   		// linked node: tMap_6 - inputs:(hiv_art_clinic_data,patient_visit_for_clinic,row1) outputs:(clinic_stage_record)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_patient_visit_for_clinic = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -22280,6 +20237,756 @@ end_Hash.put("tAdvancedHash_Compostion", System.currentTimeMillis());
 		globalMap.put("tDBInput_11_SUBPROCESS_STATE", 1);
 	}
 	
+
+
+public static class row1Struct implements routines.system.IPersistableComparableLookupRow<row1Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public String display;
+
+				public String getDisplay () {
+					return this.display;
+				}
+				
+			    public String code;
+
+				public String getCode () {
+					return this.code;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.display == null) ? 0 : this.display.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row1Struct other = (row1Struct) obj;
+		
+						if (this.display == null) {
+							if (other.display != null)
+								return false;
+						
+						} else if (!this.display.equals(other.display))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(row1Struct other) {
+
+		other.id = this.id;
+	            other.display = this.display;
+	            other.code = this.code;
+	            
+	}
+
+	public void copyKeysDataTo(row1Struct other) {
+
+		other.display = this.display;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Clinical, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Clinical) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.display = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.display,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+			            this.id = dis.readInt();
+					
+						this.code = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+		            	dos.writeInt(this.id);
+					
+						writeString(this.code, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",display="+display);
+		sb.append(",code="+code);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.display, other.display);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_13Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_13_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row1Struct row1 = new row1Struct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_row1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_row1", false);
+		start_Hash.put("tAdvancedHash_row1", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
+		int tos_count_tAdvancedHash_row1 = 0;
+		
+
+			   		// connection name:row1
+			   		// source node:tDBInput_13 - inputs:(after_tDBInput_8) outputs:(row1,row1) | target node:tAdvancedHash_row1 - inputs:(row1) outputs:()
+			   		// linked node: tMap_6 - inputs:(hiv_art_clinic_data,patient_visit_for_clinic,row1) outputs:(clinic_stage_record)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row1 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row1Struct> tHash_Lookup_row1 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row1Struct>getLookup(matchingModeEnum_row1);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row1", tHash_Lookup_row1);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_13 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_13", false);
+		start_Hash.put("tDBInput_13", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_13";
+
+	
+		int tos_count_tDBInput_13 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_13 = 0;
+		    java.sql.Connection conn_tDBInput_13 = null;
+				String driverClass_tDBInput_13 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_13 = java.lang.Class.forName(driverClass_tDBInput_13);
+				String dbUser_tDBInput_13 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_13 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_13 = decryptedPassword_tDBInput_13;
+				
+				String url_tDBInput_13 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_13 = java.sql.DriverManager.getConnection(url_tDBInput_13,dbUser_tDBInput_13,dbPwd_tDBInput_13);
+		        
+				conn_tDBInput_13.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_13 = conn_tDBInput_13.createStatement();
+
+		    String dbquery_tDBInput_13 = "SELECT id, LOWER(TRIM(display)) as display, code FROM base_application_codeset \nWHERE codeset_group='TB_STATUS'";
+			
+
+            	globalMap.put("tDBInput_13_QUERY",dbquery_tDBInput_13);
+		    java.sql.ResultSet rs_tDBInput_13 = null;
+
+		    try {
+		    	rs_tDBInput_13 = stmt_tDBInput_13.executeQuery(dbquery_tDBInput_13);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_13 = rs_tDBInput_13.getMetaData();
+		    	int colQtyInRs_tDBInput_13 = rsmd_tDBInput_13.getColumnCount();
+
+		    String tmpContent_tDBInput_13 = null;
+		    
+		    
+		    while (rs_tDBInput_13.next()) {
+		        nb_line_tDBInput_13++;
+		        
+							if(colQtyInRs_tDBInput_13 < 1) {
+								row1.id = 0;
+							} else {
+		                          
+            row1.id = rs_tDBInput_13.getInt(1);
+            if(rs_tDBInput_13.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_13 < 2) {
+								row1.display = null;
+							} else {
+	                         		
+        	row1.display = routines.system.JDBCUtil.getString(rs_tDBInput_13, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_13 < 3) {
+								row1.code = null;
+							} else {
+	                         		
+        	row1.code = routines.system.JDBCUtil.getString(rs_tDBInput_13, 3, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_13 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_13 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_13";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_13++;
+
+/**
+ * [tDBInput_13 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_13 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_13";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_13 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
+
+
+			   
+			   
+
+					row1Struct row1_HashRow = new row1Struct();
+		   	   	   
+				
+				row1_HashRow.id = row1.id;
+				
+				row1_HashRow.display = row1.display;
+				
+				row1_HashRow.code = row1.code;
+				
+			tHash_Lookup_row1.put(row1_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_row1++;
+
+/**
+ * [tAdvancedHash_row1 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_13 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_13";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_13 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_13 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_13";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_13 != null) {
+		rs_tDBInput_13.close();
+	}
+	if (stmt_tDBInput_13 != null) {
+		stmt_tDBInput_13.close();
+	}
+	if(conn_tDBInput_13 != null && !conn_tDBInput_13.isClosed()) {
+		
+			conn_tDBInput_13.commit();
+			
+		
+			conn_tDBInput_13.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_13_NB_LINE",nb_line_tDBInput_13);
+ 
+
+ok_Hash.put("tDBInput_13", true);
+end_Hash.put("tDBInput_13", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_13 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+tHash_Lookup_row1.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_row1", true);
+end_Hash.put("tAdvancedHash_row1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row1 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_13 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_13";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_13 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row1";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row1 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_13_SUBPROCESS_STATE", 1);
+	}
+	
     public String resuming_logs_dir_path = null;
     public String resuming_checkpoint_path = null;
     public String parent_part_launcher = null;
@@ -22788,6 +21495,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     583671 characters generated by Talend Open Studio for Big Data 
- *     on the December 5, 2022 6:18:58 PM WAT
+ *     532668 characters generated by Talend Open Studio for Big Data 
+ *     on the January 16, 2023 10:25:00 PM WAT
  ************************************************************************************************/
