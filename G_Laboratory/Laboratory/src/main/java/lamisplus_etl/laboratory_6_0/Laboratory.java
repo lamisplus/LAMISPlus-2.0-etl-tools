@@ -7323,8 +7323,8 @@ laboratory_application_codeset_extractStruct laboratory_application_codeset_extr
 +"ratory.id, laboratory.patient_id, laboratory.labno, lab_object ->> 'result' as result, \nlab_object ->> 'comment' as com"
 +"ment, lab_object ->> 'indication' as indication, \nlab_object ->> 'lab_test_id' as lab_test_id \nFROM laboratory,jsonb_a"
 +"rray_elements(lines) with ordinality p(lab_object)) as line\nINNER JOIN lab_test lt ON line.lab_test_id::bigint=lt.id\nI"
-+"NNER JOIN lab_test_category ltc ON lt.lab_test_category_id = ltc.id\nINNER JOIN patient p ON p.id = line.patient_id\nORD"
-+"ER BY id ASC";
++"NNER JOIN lab_test_category ltc ON lt.lab_test_category_id = ltc.id\nINNER JOIN patient p ON p.id = line.patient_id\nWHE"
++"RE p.extra->>'art'='true'\nORDER BY id ASC";
 			
 
             	globalMap.put("tDBInput_4_QUERY",dbquery_tDBInput_4);
@@ -10782,7 +10782,7 @@ laboratory_sample_orderStruct laboratory_sample_order_tmp = new laboratory_sampl
 +"> 'comment' as comment, lab_object ->> 'indication' as indication, \nlab_object ->> 'lab_test_id' as lab_test_id \nFROM "
 +"laboratory,jsonb_array_elements(lines) with ordinality p(lab_object)) as line\nINNER JOIN lab_test lt ON line.lab_test_i"
 +"d::bigint=lt.id\nINNER JOIN lab_test_category ltc ON lt.lab_test_category_id = ltc.id\nINNER JOIN patient p ON p.id = li"
-+"ne.patient_id\nORDER BY id ASC";
++"ne.patient_id\nWHERE p.extra->>'art'='true'\nORDER BY id ASC";
 			
 
             	globalMap.put("tDBInput_13_QUERY",dbquery_tDBInput_13);
@@ -12265,6 +12265,12 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					return this.archived;
 				}
 				
+			    public java.util.Date date_result_received;
+
+				public java.util.Date getDate_result_received () {
+					return this.date_result_received;
+				}
+				
 
 
 	@Override
@@ -12310,6 +12316,7 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 	            other.test_id = this.test_id;
 	            other.patient_id = this.patient_id;
 	            other.archived = this.archived;
+	            other.date_result_received = this.date_result_received;
 	            
 	}
 
@@ -12427,6 +12434,8 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					
 						this.archived = readInteger(dis);
 					
+					this.date_result_received = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -12497,6 +12506,10 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 				
 						writeInteger(this.archived,dos);
 					
+					// java.util.Date
+				
+						writeDate(this.date_result_received,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -12523,6 +12536,7 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 		sb.append(",test_id="+String.valueOf(test_id));
 		sb.append(",patient_id="+String.valueOf(patient_id));
 		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",date_result_received="+String.valueOf(date_result_received));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -12646,6 +12660,12 @@ public static class laboratory_result_extractsStruct implements routines.system.
 					return this.archived;
 				}
 				
+			    public java.util.Date date_result_received;
+
+				public java.util.Date getDate_result_received () {
+					return this.date_result_received;
+				}
+				
 
 
 
@@ -12752,6 +12772,8 @@ public static class laboratory_result_extractsStruct implements routines.system.
 					
 						this.archived = readInteger(dis);
 					
+					this.date_result_received = readDate(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -12818,6 +12840,10 @@ public static class laboratory_result_extractsStruct implements routines.system.
 				
 						writeInteger(this.archived,dos);
 					
+					// java.util.Date
+				
+						writeDate(this.date_result_received,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -12843,6 +12869,7 @@ public static class laboratory_result_extractsStruct implements routines.system.
 		sb.append(",date_modified="+String.valueOf(date_modified));
 		sb.append(",test_id="+String.valueOf(test_id));
 		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",date_result_received="+String.valueOf(date_result_received));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -13402,10 +13429,10 @@ String dbUser_tDBOutput_4 = null;
 int count_tDBOutput_4=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_4 = conn_tDBOutput_4.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_4 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_4", pstmt_tDBOutput_4);
-	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"result_reported\",\"date_result_reported\",\"patient_uuid\",\"date_assayed\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"test_id\",\"patient_id\",\"archived\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"result_reported\",\"date_result_reported\",\"patient_uuid\",\"date_assayed\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"test_id\",\"patient_id\",\"archived\",\"date_result_received\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(insert_tDBOutput_4);
 	    resourceMap.put("pstmtInsert_tDBOutput_4", pstmtInsert_tDBOutput_4);
-	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"result_reported\" = ?,\"date_result_reported\" = ?,\"patient_uuid\" = ?,\"date_assayed\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"test_id\" = ?,\"patient_id\" = ?,\"archived\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"result_reported\" = ?,\"date_result_reported\" = ?,\"patient_uuid\" = ?,\"date_assayed\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"test_id\" = ?,\"patient_id\" = ?,\"archived\" = ?,\"date_result_received\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(update_tDBOutput_4);
 	    resourceMap.put("pstmtUpdate_tDBOutput_4", pstmtUpdate_tDBOutput_4);
 	    
@@ -13618,7 +13645,8 @@ laboratory_result_extractsStruct laboratory_result_extracts_tmp = new laboratory
 		    String dbquery_tDBInput_12 = "SELECT line.id, line.test_result as result_reported, line.date_result_received as date_result_reported,\np.uuid as pers"
 +"on_uuid, date_assay as date_assayed\nFROM (SELECT laboratory.id, laboratory.patient_id, lab_object ->> 'result' as test_"
 +"result, laboratory.date_result_received,\nlaboratory.date_assay, laboratory.labno\nFROM laboratory,jsonb_array_elements("
-+"lines) with ordinality p(lab_object)) as line\nINNER JOIN patient p ON p.id = line.patient_id\nORDER BY id ASC";
++"lines) with ordinality p(lab_object)) as line\nINNER JOIN patient p ON p.id = line.patient_id\nWHERE p.extra->>'art'='tr"
++"ue'\nORDER BY id ASC";
 			
 
             	globalMap.put("tDBInput_12_QUERY",dbquery_tDBInput_12);
@@ -13878,6 +13906,7 @@ laboratory_result_extracts_tmp.modified_by = laboratory_order_result.modified_by
 laboratory_result_extracts_tmp.date_modified = laboratory_order_result.date_modified ;
 laboratory_result_extracts_tmp.test_id = laboratory_order_result.test_id ;
 laboratory_result_extracts_tmp.archived = laboratory_order_result.archived ;
+laboratory_result_extracts_tmp.date_result_received = laboratory_result_records.date_result_reported ;
 laboratory_result_extracts = laboratory_result_extracts_tmp;
 // ###############################
 
@@ -14073,6 +14102,7 @@ laboratory_result_final_tmp.date_modified = laboratory_result_extracts.date_modi
 laboratory_result_final_tmp.test_id = laboratory_result_extracts.test_id ;
 laboratory_result_final_tmp.patient_id = patient_person_data.id ;
 laboratory_result_final_tmp.archived = laboratory_result_extracts.archived ;
+laboratory_result_final_tmp.date_result_received = laboratory_result_extracts.date_result_received ;
 laboratory_result_final = laboratory_result_final_tmp;
 // ###############################
 
@@ -14209,7 +14239,13 @@ pstmtUpdate_tDBOutput_4.setNull(12, java.sql.Types.INTEGER);
 } else {pstmtUpdate_tDBOutput_4.setInt(12, laboratory_result_final.archived);
 }
 
-                        pstmtUpdate_tDBOutput_4.setInt(13 + count_tDBOutput_4, laboratory_result_final.id);
+                        if(laboratory_result_final.date_result_received != null) {
+pstmtUpdate_tDBOutput_4.setTimestamp(13, new java.sql.Timestamp(laboratory_result_final.date_result_received.getTime()));
+} else {
+pstmtUpdate_tDBOutput_4.setNull(13, java.sql.Types.TIMESTAMP);
+}
+
+                        pstmtUpdate_tDBOutput_4.setInt(14 + count_tDBOutput_4, laboratory_result_final.id);
 
                 try {
 					
@@ -14281,6 +14317,12 @@ pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.TIMESTAMP);
                         if(laboratory_result_final.archived == null) {
 pstmtInsert_tDBOutput_4.setNull(13, java.sql.Types.INTEGER);
 } else {pstmtInsert_tDBOutput_4.setInt(13, laboratory_result_final.archived);
+}
+
+                        if(laboratory_result_final.date_result_received != null) {
+pstmtInsert_tDBOutput_4.setTimestamp(14, new java.sql.Timestamp(laboratory_result_final.date_result_received.getTime()));
+} else {
+pstmtInsert_tDBOutput_4.setNull(14, java.sql.Types.TIMESTAMP);
 }
 
                 try {
@@ -25878,6 +25920,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     606675 characters generated by Talend Open Studio for Big Data 
- *     on the November 13, 2022 10:29:24 PM WAT
+ *     608435 characters generated by Talend Open Studio for Big Data 
+ *     on the January 30, 2023 11:21:32 PM WAT
  ************************************************************************************************/
