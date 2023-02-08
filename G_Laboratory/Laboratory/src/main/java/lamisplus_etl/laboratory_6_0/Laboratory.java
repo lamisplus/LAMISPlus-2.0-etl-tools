@@ -12211,6 +12211,12 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					return this.patient_uuid;
 				}
 				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
 			    public java.util.Date date_assayed;
 
 				public java.util.Date getDate_assayed () {
@@ -12307,6 +12313,7 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 	            other.result_reported = this.result_reported;
 	            other.date_result_reported = this.date_result_reported;
 	            other.patient_uuid = this.patient_uuid;
+	            other.uuid = this.uuid;
 	            other.date_assayed = this.date_assayed;
 	            other.facility_id = this.facility_id;
 	            other.created_by = this.created_by;
@@ -12416,6 +12423,8 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					
 					this.patient_uuid = readString(dis);
 					
+					this.uuid = readString(dis);
+					
 					this.date_assayed = readDate(dis);
 					
 						this.facility_id = readInteger(dis);
@@ -12469,6 +12478,10 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 					// String
 				
 						writeString(this.patient_uuid,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
 					
 					// java.util.Date
 				
@@ -12527,6 +12540,7 @@ public static class laboratory_result_finalStruct implements routines.system.IPe
 		sb.append(",result_reported="+result_reported);
 		sb.append(",date_result_reported="+String.valueOf(date_result_reported));
 		sb.append(",patient_uuid="+patient_uuid);
+		sb.append(",uuid="+uuid);
 		sb.append(",date_assayed="+String.valueOf(date_assayed));
 		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",created_by="+created_by);
@@ -13429,10 +13443,10 @@ String dbUser_tDBOutput_4 = null;
 int count_tDBOutput_4=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_4 = conn_tDBOutput_4.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_4 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_4", pstmt_tDBOutput_4);
-	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"result_reported\",\"date_result_reported\",\"patient_uuid\",\"date_assayed\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"test_id\",\"patient_id\",\"archived\",\"date_result_received\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String insert_tDBOutput_4 = "INSERT INTO \"" + tableName_tDBOutput_4 + "\" (\"id\",\"result_reported\",\"date_result_reported\",\"patient_uuid\",\"uuid\",\"date_assayed\",\"facility_id\",\"created_by\",\"date_created\",\"modified_by\",\"date_modified\",\"test_id\",\"patient_id\",\"archived\",\"date_result_received\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(insert_tDBOutput_4);
 	    resourceMap.put("pstmtInsert_tDBOutput_4", pstmtInsert_tDBOutput_4);
-	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"result_reported\" = ?,\"date_result_reported\" = ?,\"patient_uuid\" = ?,\"date_assayed\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"test_id\" = ?,\"patient_id\" = ?,\"archived\" = ?,\"date_result_received\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_4 = "UPDATE \"" + tableName_tDBOutput_4 + "\" SET \"result_reported\" = ?,\"date_result_reported\" = ?,\"patient_uuid\" = ?,\"uuid\" = ?,\"date_assayed\" = ?,\"facility_id\" = ?,\"created_by\" = ?,\"date_created\" = ?,\"modified_by\" = ?,\"date_modified\" = ?,\"test_id\" = ?,\"patient_id\" = ?,\"archived\" = ?,\"date_result_received\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_4 = conn_tDBOutput_4.prepareStatement(update_tDBOutput_4);
 	    resourceMap.put("pstmtUpdate_tDBOutput_4", pstmtUpdate_tDBOutput_4);
 	    
@@ -14093,6 +14107,7 @@ laboratory_result_final_tmp.id = laboratory_result_extracts.id ;
 laboratory_result_final_tmp.result_reported = laboratory_result_extracts.result_reported ;
 laboratory_result_final_tmp.date_result_reported = laboratory_result_extracts.date_result_reported ;
 laboratory_result_final_tmp.patient_uuid = laboratory_result_extracts.person_uuid ;
+laboratory_result_final_tmp.uuid = java.util.UUID.randomUUID().toString() ;
 laboratory_result_final_tmp.date_assayed = laboratory_result_extracts.date_assayed ;
 laboratory_result_final_tmp.facility_id = laboratory_result_extracts.facility_id ;
 laboratory_result_final_tmp.created_by = laboratory_result_extracts.created_by ;
@@ -14197,55 +14212,60 @@ pstmtUpdate_tDBOutput_4.setNull(3, java.sql.Types.VARCHAR);
 } else {pstmtUpdate_tDBOutput_4.setString(3, laboratory_result_final.patient_uuid);
 }
 
+                        if(laboratory_result_final.uuid == null) {
+pstmtUpdate_tDBOutput_4.setNull(4, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_4.setString(4, laboratory_result_final.uuid);
+}
+
                         if(laboratory_result_final.date_assayed != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(4, new java.sql.Timestamp(laboratory_result_final.date_assayed.getTime()));
+pstmtUpdate_tDBOutput_4.setTimestamp(5, new java.sql.Timestamp(laboratory_result_final.date_assayed.getTime()));
 } else {
-pstmtUpdate_tDBOutput_4.setNull(4, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_4.setNull(5, java.sql.Types.TIMESTAMP);
 }
 
                         if(laboratory_result_final.facility_id == null) {
-pstmtUpdate_tDBOutput_4.setNull(5, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_4.setInt(5, laboratory_result_final.facility_id);
+pstmtUpdate_tDBOutput_4.setNull(6, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_4.setInt(6, laboratory_result_final.facility_id);
 }
 
                         if(laboratory_result_final.created_by == null) {
-pstmtUpdate_tDBOutput_4.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(6, laboratory_result_final.created_by);
+pstmtUpdate_tDBOutput_4.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_4.setString(7, laboratory_result_final.created_by);
 }
 
                         if(laboratory_result_final.date_created != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(7, new java.sql.Timestamp(laboratory_result_final.date_created.getTime()));
+pstmtUpdate_tDBOutput_4.setTimestamp(8, new java.sql.Timestamp(laboratory_result_final.date_created.getTime()));
 } else {
-pstmtUpdate_tDBOutput_4.setNull(7, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_4.setNull(8, java.sql.Types.TIMESTAMP);
 }
 
                         if(laboratory_result_final.modified_by == null) {
-pstmtUpdate_tDBOutput_4.setNull(8, java.sql.Types.VARCHAR);
-} else {pstmtUpdate_tDBOutput_4.setString(8, laboratory_result_final.modified_by);
+pstmtUpdate_tDBOutput_4.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_4.setString(9, laboratory_result_final.modified_by);
 }
 
                         if(laboratory_result_final.date_modified != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(9, new java.sql.Timestamp(laboratory_result_final.date_modified.getTime()));
+pstmtUpdate_tDBOutput_4.setTimestamp(10, new java.sql.Timestamp(laboratory_result_final.date_modified.getTime()));
 } else {
-pstmtUpdate_tDBOutput_4.setNull(9, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_4.setNull(10, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtUpdate_tDBOutput_4.setInt(10, laboratory_result_final.test_id);
+                        pstmtUpdate_tDBOutput_4.setInt(11, laboratory_result_final.test_id);
 
-                        pstmtUpdate_tDBOutput_4.setInt(11, laboratory_result_final.patient_id);
+                        pstmtUpdate_tDBOutput_4.setInt(12, laboratory_result_final.patient_id);
 
                         if(laboratory_result_final.archived == null) {
-pstmtUpdate_tDBOutput_4.setNull(12, java.sql.Types.INTEGER);
-} else {pstmtUpdate_tDBOutput_4.setInt(12, laboratory_result_final.archived);
+pstmtUpdate_tDBOutput_4.setNull(13, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_4.setInt(13, laboratory_result_final.archived);
 }
 
                         if(laboratory_result_final.date_result_received != null) {
-pstmtUpdate_tDBOutput_4.setTimestamp(13, new java.sql.Timestamp(laboratory_result_final.date_result_received.getTime()));
+pstmtUpdate_tDBOutput_4.setTimestamp(14, new java.sql.Timestamp(laboratory_result_final.date_result_received.getTime()));
 } else {
-pstmtUpdate_tDBOutput_4.setNull(13, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_4.setNull(14, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtUpdate_tDBOutput_4.setInt(14 + count_tDBOutput_4, laboratory_result_final.id);
+                        pstmtUpdate_tDBOutput_4.setInt(15 + count_tDBOutput_4, laboratory_result_final.id);
 
                 try {
 					
@@ -14277,52 +14297,57 @@ pstmtInsert_tDBOutput_4.setNull(4, java.sql.Types.VARCHAR);
 } else {pstmtInsert_tDBOutput_4.setString(4, laboratory_result_final.patient_uuid);
 }
 
+                        if(laboratory_result_final.uuid == null) {
+pstmtInsert_tDBOutput_4.setNull(5, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_4.setString(5, laboratory_result_final.uuid);
+}
+
                         if(laboratory_result_final.date_assayed != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(5, new java.sql.Timestamp(laboratory_result_final.date_assayed.getTime()));
+pstmtInsert_tDBOutput_4.setTimestamp(6, new java.sql.Timestamp(laboratory_result_final.date_assayed.getTime()));
 } else {
-pstmtInsert_tDBOutput_4.setNull(5, java.sql.Types.TIMESTAMP);
+pstmtInsert_tDBOutput_4.setNull(6, java.sql.Types.TIMESTAMP);
 }
 
                         if(laboratory_result_final.facility_id == null) {
-pstmtInsert_tDBOutput_4.setNull(6, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_4.setInt(6, laboratory_result_final.facility_id);
+pstmtInsert_tDBOutput_4.setNull(7, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_4.setInt(7, laboratory_result_final.facility_id);
 }
 
                         if(laboratory_result_final.created_by == null) {
-pstmtInsert_tDBOutput_4.setNull(7, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(7, laboratory_result_final.created_by);
+pstmtInsert_tDBOutput_4.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_4.setString(8, laboratory_result_final.created_by);
 }
 
                         if(laboratory_result_final.date_created != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(8, new java.sql.Timestamp(laboratory_result_final.date_created.getTime()));
+pstmtInsert_tDBOutput_4.setTimestamp(9, new java.sql.Timestamp(laboratory_result_final.date_created.getTime()));
 } else {
-pstmtInsert_tDBOutput_4.setNull(8, java.sql.Types.TIMESTAMP);
+pstmtInsert_tDBOutput_4.setNull(9, java.sql.Types.TIMESTAMP);
 }
 
                         if(laboratory_result_final.modified_by == null) {
-pstmtInsert_tDBOutput_4.setNull(9, java.sql.Types.VARCHAR);
-} else {pstmtInsert_tDBOutput_4.setString(9, laboratory_result_final.modified_by);
+pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_4.setString(10, laboratory_result_final.modified_by);
 }
 
                         if(laboratory_result_final.date_modified != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(10, new java.sql.Timestamp(laboratory_result_final.date_modified.getTime()));
+pstmtInsert_tDBOutput_4.setTimestamp(11, new java.sql.Timestamp(laboratory_result_final.date_modified.getTime()));
 } else {
-pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.TIMESTAMP);
+pstmtInsert_tDBOutput_4.setNull(11, java.sql.Types.TIMESTAMP);
 }
 
-                        pstmtInsert_tDBOutput_4.setInt(11, laboratory_result_final.test_id);
+                        pstmtInsert_tDBOutput_4.setInt(12, laboratory_result_final.test_id);
 
-                        pstmtInsert_tDBOutput_4.setInt(12, laboratory_result_final.patient_id);
+                        pstmtInsert_tDBOutput_4.setInt(13, laboratory_result_final.patient_id);
 
                         if(laboratory_result_final.archived == null) {
-pstmtInsert_tDBOutput_4.setNull(13, java.sql.Types.INTEGER);
-} else {pstmtInsert_tDBOutput_4.setInt(13, laboratory_result_final.archived);
+pstmtInsert_tDBOutput_4.setNull(14, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_4.setInt(14, laboratory_result_final.archived);
 }
 
                         if(laboratory_result_final.date_result_received != null) {
-pstmtInsert_tDBOutput_4.setTimestamp(14, new java.sql.Timestamp(laboratory_result_final.date_result_received.getTime()));
+pstmtInsert_tDBOutput_4.setTimestamp(15, new java.sql.Timestamp(laboratory_result_final.date_result_received.getTime()));
 } else {
-pstmtInsert_tDBOutput_4.setNull(14, java.sql.Types.TIMESTAMP);
+pstmtInsert_tDBOutput_4.setNull(15, java.sql.Types.TIMESTAMP);
 }
 
                 try {
@@ -25920,6 +25945,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     608435 characters generated by Talend Open Studio for Big Data 
- *     on the January 30, 2023 11:21:32 PM WAT
+ *     609233 characters generated by Talend Open Studio for Big Data 
+ *     on the February 8, 2023 9:12:47 AM WAT
  ************************************************************************************************/
