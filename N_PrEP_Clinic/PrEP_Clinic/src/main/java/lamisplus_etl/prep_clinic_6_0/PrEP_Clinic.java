@@ -507,7 +507,7 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tDBInput_7_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -516,7 +516,7 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tDBInput_8_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -525,7 +525,61 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tDBInput_9_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_facility_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_visit_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_regimen_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_enrollment_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_vital_sign_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_hiv_status_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -712,6 +766,24 @@ public static class prep_oneStruct implements routines.system.IPersistableRow<pr
 					return this.extra;
 				}
 				
+			    public String prep_enrollment_uuid;
+
+				public String getPrep_enrollment_uuid () {
+					return this.prep_enrollment_uuid;
+				}
+				
+			    public String vital_sign_uuid;
+
+				public String getVital_sign_uuid () {
+					return this.vital_sign_uuid;
+				}
+				
+			    public String hiv_test_result;
+
+				public String getHiv_test_result () {
+					return this.hiv_test_result;
+				}
+				
 
 
 	@Override
@@ -767,6 +839,9 @@ public static class prep_oneStruct implements routines.system.IPersistableRow<pr
 	            other.facility_id = this.facility_id;
 	            other.regimen_id = this.regimen_id;
 	            other.extra = this.extra;
+	            other.prep_enrollment_uuid = this.prep_enrollment_uuid;
+	            other.vital_sign_uuid = this.vital_sign_uuid;
+	            other.hiv_test_result = this.hiv_test_result;
 	            
 	}
 
@@ -924,6 +999,12 @@ public static class prep_oneStruct implements routines.system.IPersistableRow<pr
 					
 					this.extra = readString(dis);
 					
+					this.prep_enrollment_uuid = readString(dis);
+					
+					this.vital_sign_uuid = readString(dis);
+					
+					this.hiv_test_result = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -1054,6 +1135,18 @@ public static class prep_oneStruct implements routines.system.IPersistableRow<pr
 				
 						writeString(this.extra,dos);
 					
+					// String
+				
+						writeString(this.prep_enrollment_uuid,dos);
+					
+					// String
+				
+						writeString(this.vital_sign_uuid,dos);
+					
+					// String
+				
+						writeString(this.hiv_test_result,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -1090,6 +1183,9 @@ public static class prep_oneStruct implements routines.system.IPersistableRow<pr
 		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",regimen_id="+String.valueOf(regimen_id));
 		sb.append(",extra="+extra);
+		sb.append(",prep_enrollment_uuid="+prep_enrollment_uuid);
+		sb.append(",vital_sign_uuid="+vital_sign_uuid);
+		sb.append(",hiv_test_result="+hiv_test_result);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1249,6 +1345,12 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					return this.adherence_level;
 				}
 				
+			    public String hiv_test_result;
+
+				public String getHiv_test_result () {
+					return this.hiv_test_result;
+				}
+				
 			    public Integer duration;
 
 				public Integer getDuration () {
@@ -1405,6 +1507,8 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					
 					this.adherence_level = readString(dis);
 					
+					this.hiv_test_result = readString(dis);
+					
 						this.duration = readInteger(dis);
 					
 					this.pregnant = readString(dis);
@@ -1521,6 +1625,10 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 				
 						writeString(this.adherence_level,dos);
 					
+					// String
+				
+						writeString(this.hiv_test_result,dos);
+					
 					// Integer
 				
 						writeInteger(this.duration,dos);
@@ -1564,6 +1672,7 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 		sb.append(",next_appointment="+String.valueOf(next_appointment));
 		sb.append(",description="+description);
 		sb.append(",adherence_level="+adherence_level);
+		sb.append(",hiv_test_result="+hiv_test_result);
 		sb.append(",duration="+String.valueOf(duration));
 		sb.append(",pregnant="+pregnant);
 		sb.append(",datim_id="+datim_id);
@@ -1610,6 +1719,14 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
 
 	
 			    public String person_uuid;
@@ -1720,6 +1837,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.adherence_level;
 				}
 				
+			    public String hiv_test_result;
+
+				public String getHiv_test_result () {
+					return this.hiv_test_result;
+				}
+				
 			    public Integer duration;
 
 				public Integer getDuration () {
@@ -1738,6 +1861,74 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final after_tDBInput_1Struct other = (after_tDBInput_1Struct) obj;
+		
+						if (this.uuid == null) {
+							if (other.uuid != null)
+								return false;
+						
+						} else if (!this.uuid.equals(other.uuid))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(after_tDBInput_1Struct other) {
+
+		other.person_uuid = this.person_uuid;
+	            other.encounter_date = this.encounter_date;
+	            other.date_prep_given = this.date_prep_given;
+	            other.date_created = this.date_created;
+	            other.date_modified = this.date_modified;
+	            other.created_by = this.created_by;
+	            other.modified_by = this.modified_by;
+	            other.extra = this.extra;
+	            other.uuid = this.uuid;
+	            other.archived = this.archived;
+	            other.body_weight = this.body_weight;
+	            other.systolic = this.systolic;
+	            other.diastolic = this.diastolic;
+	            other.height = this.height;
+	            other.is_commencement = this.is_commencement;
+	            other.next_appointment = this.next_appointment;
+	            other.description = this.description;
+	            other.adherence_level = this.adherence_level;
+	            other.hiv_test_result = this.hiv_test_result;
+	            other.duration = this.duration;
+	            other.pregnant = this.pregnant;
+	            other.datim_id = this.datim_id;
+	            
+	}
+
+	public void copyKeysDataTo(after_tDBInput_1Struct other) {
+
+		other.uuid = this.uuid;
+	            	
+	}
+
 
 
 
@@ -1876,6 +2067,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.adherence_level = readString(dis);
 					
+					this.hiv_test_result = readString(dis);
+					
 						this.duration = readInteger(dis);
 					
 					this.pregnant = readString(dis);
@@ -1992,6 +2185,10 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.adherence_level,dos);
 					
+					// String
+				
+						writeString(this.hiv_test_result,dos);
+					
 					// Integer
 				
 						writeInteger(this.duration,dos);
@@ -2035,6 +2232,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",next_appointment="+String.valueOf(next_appointment));
 		sb.append(",description="+description);
 		sb.append(",adherence_level="+adherence_level);
+		sb.append(",hiv_test_result="+hiv_test_result);
 		sb.append(",duration="+String.valueOf(duration));
 		sb.append(",pregnant="+pregnant);
 		sb.append(",datim_id="+datim_id);
@@ -2050,6 +2248,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
 		int returnValue = -1;
 		
+						returnValue = checkNullsAndCompare(this.uuid, other.uuid);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
 	    return returnValue;
     }
 
@@ -2102,6 +2306,9 @@ public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) thr
 		tDBInput_4Process(globalMap);
 		tDBInput_5Process(globalMap);
 		tDBInput_2Process(globalMap);
+		tDBInput_7Process(globalMap);
+		tDBInput_8Process(globalMap);
+		tDBInput_9Process(globalMap);
 
 		row2Struct row2 = new row2Struct();
 prep_oneStruct prep_one = new prep_oneStruct();
@@ -2186,7 +2393,7 @@ String dbUser_tDBOutput_3 = null;
    int batchSizeCounter_tDBOutput_3=0;
 
 int count_tDBOutput_3=0;
-	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"person_uuid\",\"encounter_date\",\"date_prep_given\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"uuid\",\"archived\",\"weight\",\"systolic\",\"diastolic\",\"height\",\"is_commencement\",\"next_appointment\",\"adherence_level\",\"duration\",\"pregnant\",\"visit_uuid\",\"id\",\"facility_id\",\"regimen_id\",\"" + "extra" + "\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + ")";
+	    String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3 + "\" (\"person_uuid\",\"encounter_date\",\"date_prep_given\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"uuid\",\"archived\",\"weight\",\"systolic\",\"diastolic\",\"height\",\"is_commencement\",\"next_appointment\",\"adherence_level\",\"duration\",\"pregnant\",\"visit_uuid\",\"id\",\"facility_id\",\"regimen_id\",\"" + "extra" + "\",\"prep_enrollment_uuid\",\"vital_sign_uuid\",\"hiv_test_result\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + ",?,?,?)";
 	    
 	    java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(insert_tDBOutput_3);
 	    resourceMap.put("pstmt_tDBOutput_3", pstmt_tDBOutput_3);
@@ -2231,35 +2438,65 @@ int count_tDBOutput_3=0;
 // ###############################
 // # Lookup's keys initialization
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct> tHash_Lookup_row3 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct>) 
-					globalMap.get( "tHash_Lookup_row3" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<facilityStruct> tHash_Lookup_facility = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<facilityStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<facilityStruct>) 
+					globalMap.get( "tHash_Lookup_facility" ))
 					;					
 					
 	
 
-row3Struct row3HashKey = new row3Struct();
-row3Struct row3Default = new row3Struct();
+facilityStruct facilityHashKey = new facilityStruct();
+facilityStruct facilityDefault = new facilityStruct();
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct> tHash_Lookup_row4 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct>) 
-					globalMap.get( "tHash_Lookup_row4" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<visitStruct> tHash_Lookup_visit = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<visitStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<visitStruct>) 
+					globalMap.get( "tHash_Lookup_visit" ))
 					;					
 					
 	
 
-row4Struct row4HashKey = new row4Struct();
-row4Struct row4Default = new row4Struct();
+visitStruct visitHashKey = new visitStruct();
+visitStruct visitDefault = new visitStruct();
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) 
-					globalMap.get( "tHash_Lookup_row5" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<regimenStruct> tHash_Lookup_regimen = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<regimenStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<regimenStruct>) 
+					globalMap.get( "tHash_Lookup_regimen" ))
 					;					
 					
 	
 
-row5Struct row5HashKey = new row5Struct();
-row5Struct row5Default = new row5Struct();
+regimenStruct regimenHashKey = new regimenStruct();
+regimenStruct regimenDefault = new regimenStruct();
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<enrollmentStruct> tHash_Lookup_enrollment = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<enrollmentStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<enrollmentStruct>) 
+					globalMap.get( "tHash_Lookup_enrollment" ))
+					;					
+					
+	
+
+enrollmentStruct enrollmentHashKey = new enrollmentStruct();
+enrollmentStruct enrollmentDefault = new enrollmentStruct();
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<vital_signStruct> tHash_Lookup_vital_sign = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<vital_signStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<vital_signStruct>) 
+					globalMap.get( "tHash_Lookup_vital_sign" ))
+					;					
+					
+	
+
+vital_signStruct vital_signHashKey = new vital_signStruct();
+vital_signStruct vital_signDefault = new vital_signStruct();
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<hiv_statusStruct> tHash_Lookup_hiv_status = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<hiv_statusStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<hiv_statusStruct>) 
+					globalMap.get( "tHash_Lookup_hiv_status" ))
+					;					
+					
+	
+
+hiv_statusStruct hiv_statusHashKey = new hiv_statusStruct();
+hiv_statusStruct hiv_statusDefault = new hiv_statusStruct();
 // ###############################        
 
 // ###############################
@@ -2348,15 +2585,16 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 +"p_replace((case when length(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '"
 +"\\D','','g'), '')::double precision as diastolic, \n	  CASE\n    WHEN c.height is not null AND POSITION('.' IN c.height:"
 +":VARCHAR) > 0 THEN (c.height * 100)\n	WHEN LENGTH(c.height::VARCHAR) <= 2 THEN (c.height * 10)\n\n	ELSE\n	c.height\n  EN"
-+"D \n  AS height,\n  c.commence AS is_commencement,\n  c.next_appointment,\n  re.description,\n  c.adherence_level,\n  CA"
-+"ST(pr_ph.refill_period AS INTEGER) as duration,\n  (CASE WHEN c.pregnant IS NULL THEN NULL\n  WHEN c.pregnant IS true TH"
-+"EN 'PREGANACY_STATUS_PREGNANT'\n  ELSE 'PREGANACY_STATUS_NOT_PREGNANT'\n  END) pregnant,\n    n.datim_id AS datim_id\n  "
-+"  FROM clinic c \n    INNER JOIN patient p \n    ON p.id=c.patient_id\n	LEFT JOIN pharmacy ph ON ph.patient_id=c.patient"
-+"_id AND ph.date_visit = c.date_visit\n    INNER JOIN ndr_facility n \n    ON n.id=p.facility_id\n	\n	LEFT JOIN (SELECT D"
-+"ISTINCT id, arr.line->>'duration'::VARCHAR as refill_period, arr.line->>'regimen_id'::VARCHAR AS regimen_id\nFROM pharma"
-+"cy,\njsonb_array_elements(lines) with ordinality arr(line, position)) pr_ph ON pr_ph.id=ph.id\nLEFT JOIN regimen re ON p"
-+"r_ph.regimen_id=re.id::VARCHAR\nWHERE p.extra->>'art'!='true'\nGROUP BY p.uuid, c.id, c.uuid, c.date_visit, re.descripti"
-+"on, c.last_modified, c.extra,\npr_ph.refill_period, n.datim_id";
++"D \n  AS height,\n  c.commence AS is_commencement,\n  c.next_appointment,\n  re.description,\n  c.adherence_level,\n  lo"
++"wer(left(c.extra->'prep'->>'hivTestResult',3)) AS hiv_test_result,\n  CAST(pr_ph.refill_period AS INTEGER) as duration,"
++"\n  (CASE WHEN c.pregnant IS NULL THEN NULL\n  WHEN c.pregnant IS true THEN 'PREGANACY_STATUS_PREGNANT'\n  ELSE 'PREGANAC"
++"Y_STATUS_NOT_PREGNANT'\n  END) pregnant,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n   "
++" ON p.id=c.patient_id\n	LEFT JOIN pharmacy ph ON ph.patient_id=c.patient_id AND ph.date_visit = c.date_visit\n    INNER "
++"JOIN ndr_facility n \n    ON n.id=p.facility_id\n	\n	LEFT JOIN (SELECT DISTINCT id, arr.line->>'duration'::VARCHAR as re"
++"fill_period, arr.line->>'regimen_id'::VARCHAR AS regimen_id\nFROM pharmacy,\njsonb_array_elements(lines) with ordinality"
++" arr(line, position)) pr_ph ON pr_ph.id=ph.id\nLEFT JOIN regimen re ON pr_ph.regimen_id=re.id::VARCHAR\nWHERE p.extra->>"
++"'art'!='true'\nGROUP BY p.uuid, c.id, c.uuid, c.date_visit, re.description, c.last_modified, c.extra,\npr_ph.refill_peri"
++"od, n.datim_id";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2500,25 +2738,31 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
         	row2.adherence_level = routines.system.JDBCUtil.getString(rs_tDBInput_1, 18, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 19) {
+								row2.hiv_test_result = null;
+							} else {
+	                         		
+        	row2.hiv_test_result = routines.system.JDBCUtil.getString(rs_tDBInput_1, 19, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 20) {
 								row2.duration = null;
 							} else {
 		                          
-            row2.duration = rs_tDBInput_1.getInt(19);
+            row2.duration = rs_tDBInput_1.getInt(20);
             if(rs_tDBInput_1.wasNull()){
                     row2.duration = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_1 < 20) {
+							if(colQtyInRs_tDBInput_1 < 21) {
 								row2.pregnant = null;
 							} else {
 	                         		
-        	row2.pregnant = routines.system.JDBCUtil.getString(rs_tDBInput_1, 20, false);
+        	row2.pregnant = routines.system.JDBCUtil.getString(rs_tDBInput_1, 21, false);
 		                    }
-							if(colQtyInRs_tDBInput_1 < 21) {
+							if(colQtyInRs_tDBInput_1 < 22) {
 								row2.datim_id = null;
 							} else {
 	                         		
-        	row2.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 21, false);
+        	row2.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 22, false);
 		                    }
 					
 
@@ -2601,35 +2845,35 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 		
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row3" 
+				// Starting Lookup Table "facility" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow3 = false;
+ 					    boolean forceLoopfacility = false;
        		  	    	
        		  	    	
- 							row3Struct row3ObjectFromLookup = null;
+ 							facilityStruct facilityObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_1 = false;
 								
-                        		    		    row3HashKey.datim_id = row2.datim_id ;
+                        		    		    facilityHashKey.datim_id = row2.datim_id ;
                         		    		
 
 								
-		                        	row3HashKey.hashCodeDirty = true;
+		                        	facilityHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row3.lookup( row3HashKey );
+		  							tHash_Lookup_facility.lookup( facilityHashKey );
 
 	  							
 
@@ -2648,30 +2892,30 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							} // G_TM_M_020
 			           		  	  
 							
-				           		if(tHash_Lookup_row3 != null && tHash_Lookup_row3.getCount(row3HashKey) > 1) { // G 071
+				           		if(tHash_Lookup_facility != null && tHash_Lookup_facility.getCount(facilityHashKey) > 1) { // G 071
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row3' and it contains more one result from keys :  row3.datim_id = '" + row3HashKey.datim_id + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'facility' and it contains more one result from keys :  facility.datim_id = '" + facilityHashKey.datim_id + "'");
 								} // G 071
 							
 
-							row3Struct row3 = null;
+							facilityStruct facility = null;
                     		  	 
 							   
                     		  	 
-	       		  	    	row3Struct fromLookup_row3 = null;
-							row3 = row3Default;
+	       		  	    	facilityStruct fromLookup_facility = null;
+							facility = facilityDefault;
 										 
 							
 								 
 							
 							
-								if (tHash_Lookup_row3 !=null && tHash_Lookup_row3.hasNext()) { // G 099
+								if (tHash_Lookup_facility !=null && tHash_Lookup_facility.hasNext()) { // G 099
 								
 							
 								
-								fromLookup_row3 = tHash_Lookup_row3.next();
+								fromLookup_facility = tHash_Lookup_facility.next();
 
 							
 							
@@ -2679,8 +2923,8 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							
 							
 
-							if(fromLookup_row3 != null) {
-								row3 = fromLookup_row3;
+							if(fromLookup_facility != null) {
+								facility = fromLookup_facility;
 							}
 							
 							
@@ -2696,37 +2940,37 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 	            
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row4" 
+				// Starting Lookup Table "visit" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow4 = false;
+ 					    boolean forceLoopvisit = false;
        		  	    	
        		  	    	
- 							row4Struct row4ObjectFromLookup = null;
+ 							visitStruct visitObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_1 = false;
 								
-                        		    		    row4HashKey.person_uuid = row2.person_uuid ;
+                        		    		    visitHashKey.person_uuid = row2.person_uuid ;
                         		    		
-                        		    		    row4HashKey.visit_start_date = row2.encounter_date  == null ? null : new java.util.Date(row2.encounter_date .getTime());
+                        		    		    visitHashKey.visit_start_date = row2.encounter_date  == null ? null : new java.util.Date(row2.encounter_date .getTime());
                         		    		
 
 								
-		                        	row4HashKey.hashCodeDirty = true;
+		                        	visitHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row4.lookup( row4HashKey );
+		  							tHash_Lookup_visit.lookup( visitHashKey );
 
 	  							
 
@@ -2745,30 +2989,30 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							} // G_TM_M_020
 			           		  	  
 							
-				           		if(tHash_Lookup_row4 != null && tHash_Lookup_row4.getCount(row4HashKey) > 1) { // G 071
+				           		if(tHash_Lookup_visit != null && tHash_Lookup_visit.getCount(visitHashKey) > 1) { // G 071
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row4' and it contains more one result from keys :  row4.person_uuid = '" + row4HashKey.person_uuid + "', row4.visit_start_date = '" + row4HashKey.visit_start_date + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'visit' and it contains more one result from keys :  visit.person_uuid = '" + visitHashKey.person_uuid + "', visit.visit_start_date = '" + visitHashKey.visit_start_date + "'");
 								} // G 071
 							
 
-							row4Struct row4 = null;
+							visitStruct visit = null;
                     		  	 
 							   
                     		  	 
-	       		  	    	row4Struct fromLookup_row4 = null;
-							row4 = row4Default;
+	       		  	    	visitStruct fromLookup_visit = null;
+							visit = visitDefault;
 										 
 							
 								 
 							
 							
-								if (tHash_Lookup_row4 !=null && tHash_Lookup_row4.hasNext()) { // G 099
+								if (tHash_Lookup_visit !=null && tHash_Lookup_visit.hasNext()) { // G 099
 								
 							
 								
-								fromLookup_row4 = tHash_Lookup_row4.next();
+								fromLookup_visit = tHash_Lookup_visit.next();
 
 							
 							
@@ -2776,8 +3020,8 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							
 							
 
-							if(fromLookup_row4 != null) {
-								row4 = fromLookup_row4;
+							if(fromLookup_visit != null) {
+								visit = fromLookup_visit;
 							}
 							
 							
@@ -2793,35 +3037,35 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 	            
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row5" 
+				// Starting Lookup Table "regimen" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow5 = false;
+ 					    boolean forceLoopregimen = false;
        		  	    	
        		  	    	
- 							row5Struct row5ObjectFromLookup = null;
+ 							regimenStruct regimenObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_1 = false;
 								
-                        		    		    row5HashKey.regimen = row2.description ;
+                        		    		    regimenHashKey.regimen = row2.description ;
                         		    		
 
 								
-		                        	row5HashKey.hashCodeDirty = true;
+		                        	regimenHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row5.lookup( row5HashKey );
+		  							tHash_Lookup_regimen.lookup( regimenHashKey );
 
 	  							
 
@@ -2840,30 +3084,30 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							} // G_TM_M_020
 			           		  	  
 							
-				           		if(tHash_Lookup_row5 != null && tHash_Lookup_row5.getCount(row5HashKey) > 1) { // G 071
+				           		if(tHash_Lookup_regimen != null && tHash_Lookup_regimen.getCount(regimenHashKey) > 1) { // G 071
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row5' and it contains more one result from keys :  row5.regimen = '" + row5HashKey.regimen + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'regimen' and it contains more one result from keys :  regimen.regimen = '" + regimenHashKey.regimen + "'");
 								} // G 071
 							
 
-							row5Struct row5 = null;
+							regimenStruct regimen = null;
                     		  	 
 							   
                     		  	 
-	       		  	    	row5Struct fromLookup_row5 = null;
-							row5 = row5Default;
+	       		  	    	regimenStruct fromLookup_regimen = null;
+							regimen = regimenDefault;
 										 
 							
 								 
 							
 							
-								if (tHash_Lookup_row5 !=null && tHash_Lookup_row5.hasNext()) { // G 099
+								if (tHash_Lookup_regimen !=null && tHash_Lookup_regimen.hasNext()) { // G 099
 								
 							
 								
-								fromLookup_row5 = tHash_Lookup_row5.next();
+								fromLookup_regimen = tHash_Lookup_regimen.next();
 
 							
 							
@@ -2871,8 +3115,295 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							
 							
 
-							if(fromLookup_row5 != null) {
-								row5 = fromLookup_row5;
+							if(fromLookup_regimen != null) {
+								regimen = fromLookup_regimen;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	           	
+	            	
+	            	
+	            
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "enrollment" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLoopenrollment = false;
+       		  	    	
+       		  	    	
+ 							enrollmentStruct enrollmentObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								
+                        		    		    enrollmentHashKey.person_uuid = row2.person_uuid ;
+                        		    		
+
+								
+		                        	enrollmentHashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_enrollment.lookup( enrollmentHashKey );
+
+	  							
+
+	  							
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_enrollment != null && tHash_Lookup_enrollment.getCount(enrollmentHashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'enrollment' and it contains more one result from keys :  enrollment.person_uuid = '" + enrollmentHashKey.person_uuid + "'");
+								} // G 071
+							
+
+							enrollmentStruct enrollment = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	enrollmentStruct fromLookup_enrollment = null;
+							enrollment = enrollmentDefault;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_enrollment !=null && tHash_Lookup_enrollment.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_enrollment = tHash_Lookup_enrollment.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_enrollment != null) {
+								enrollment = fromLookup_enrollment;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	           	
+	            	
+	            	
+	            
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "vital_sign" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLoopvital_sign = false;
+       		  	    	
+       		  	    	
+ 							vital_signStruct vital_signObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								
+                        		    		    vital_signHashKey.person_uuid = row2.person_uuid ;
+                        		    		
+                        		    		    vital_signHashKey.capture_date = row2.encounter_date  == null ? null : new java.util.Date(row2.encounter_date .getTime());
+                        		    		
+
+								
+		                        	vital_signHashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_vital_sign.lookup( vital_signHashKey );
+
+	  							
+
+	  							
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_vital_sign != null && tHash_Lookup_vital_sign.getCount(vital_signHashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'vital_sign' and it contains more one result from keys :  vital_sign.person_uuid = '" + vital_signHashKey.person_uuid + "', vital_sign.capture_date = '" + vital_signHashKey.capture_date + "'");
+								} // G 071
+							
+
+							vital_signStruct vital_sign = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	vital_signStruct fromLookup_vital_sign = null;
+							vital_sign = vital_signDefault;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_vital_sign !=null && tHash_Lookup_vital_sign.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_vital_sign = tHash_Lookup_vital_sign.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_vital_sign != null) {
+								vital_sign = fromLookup_vital_sign;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	           	
+	            	
+	            	
+	            
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "hiv_status" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLoophiv_status = false;
+       		  	    	
+       		  	    	
+ 							hiv_statusStruct hiv_statusObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								
+                        		    		    hiv_statusHashKey.display = row2.hiv_test_result;
+                        		    		
+
+								
+		                        	hiv_statusHashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_hiv_status.lookup( hiv_statusHashKey );
+
+	  							
+
+	  							
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_hiv_status != null && tHash_Lookup_hiv_status.getCount(hiv_statusHashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'hiv_status' and it contains more one result from keys :  hiv_status.display = '" + hiv_statusHashKey.display + "'");
+								} // G 071
+							
+
+							hiv_statusStruct hiv_status = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	hiv_statusStruct fromLookup_hiv_status = null;
+							hiv_status = hiv_statusDefault;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_hiv_status !=null && tHash_Lookup_hiv_status.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_hiv_status = tHash_Lookup_hiv_status.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_hiv_status != null) {
+								hiv_status = fromLookup_hiv_status;
 							}
 							
 							
@@ -2915,11 +3446,14 @@ prep_one_tmp.next_appointment = row2.next_appointment ;
 prep_one_tmp.adherence_level = row2.adherence_level ;
 prep_one_tmp.duration = row2.duration ;
 prep_one_tmp.pregnant = row2.pregnant ;
-prep_one_tmp.visit_uuid = row4.visit_id ;
+prep_one_tmp.visit_uuid = visit.visit_id ;
 prep_one_tmp.id = Numeric.sequence("s1",1,1) ;
-prep_one_tmp.facility_id = row3.id ;
-prep_one_tmp.regimen_id = row5.id ;
+prep_one_tmp.facility_id = facility.id ;
+prep_one_tmp.regimen_id = regimen.id ;
 prep_one_tmp.extra = row2.extra ;
+prep_one_tmp.prep_enrollment_uuid = enrollment.prep_enrollment_uuid ;
+prep_one_tmp.vital_sign_uuid = vital_sign.vital_sign_uuid ;
+prep_one_tmp.hiv_test_result = hiv_status.code ;
 prep_one = prep_one_tmp;
 // ###############################
 
@@ -3095,6 +3629,21 @@ pstmt_tDBOutput_3.setNull(21, java.sql.Types.INTEGER);
                     if(prep_one.extra == null) {
 pstmt_tDBOutput_3.setNull(23, java.sql.Types.VARCHAR);
 } else {pstmt_tDBOutput_3.setString(23, prep_one.extra);
+}
+
+                    if(prep_one.prep_enrollment_uuid == null) {
+pstmt_tDBOutput_3.setNull(24, java.sql.Types.VARCHAR);
+} else {pstmt_tDBOutput_3.setString(24, prep_one.prep_enrollment_uuid);
+}
+
+                    if(prep_one.vital_sign_uuid == null) {
+pstmt_tDBOutput_3.setNull(25, java.sql.Types.VARCHAR);
+} else {pstmt_tDBOutput_3.setString(25, prep_one.vital_sign_uuid);
+}
+
+                    if(prep_one.hiv_test_result == null) {
+pstmt_tDBOutput_3.setNull(26, java.sql.Types.VARCHAR);
+} else {pstmt_tDBOutput_3.setString(26, prep_one.hiv_test_result);
 }
 
 			
@@ -3355,26 +3904,50 @@ end_Hash.put("tDBInput_1", System.currentTimeMillis());
 
 // ###############################
 // # Lookup hashes releasing
-					if(tHash_Lookup_row3 != null) {
-						tHash_Lookup_row3.endGet();
+					if(tHash_Lookup_facility != null) {
+						tHash_Lookup_facility.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row3" );
+					globalMap.remove( "tHash_Lookup_facility" );
 
 					
 					
 				
-					if(tHash_Lookup_row4 != null) {
-						tHash_Lookup_row4.endGet();
+					if(tHash_Lookup_visit != null) {
+						tHash_Lookup_visit.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row4" );
+					globalMap.remove( "tHash_Lookup_visit" );
 
 					
 					
 				
-					if(tHash_Lookup_row5 != null) {
-						tHash_Lookup_row5.endGet();
+					if(tHash_Lookup_regimen != null) {
+						tHash_Lookup_regimen.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row5" );
+					globalMap.remove( "tHash_Lookup_regimen" );
+
+					
+					
+				
+					if(tHash_Lookup_enrollment != null) {
+						tHash_Lookup_enrollment.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_enrollment" );
+
+					
+					
+				
+					if(tHash_Lookup_vital_sign != null) {
+						tHash_Lookup_vital_sign.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_vital_sign" );
+
+					
+					
+				
+					if(tHash_Lookup_hiv_status != null) {
+						tHash_Lookup_hiv_status.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_hiv_status" );
 
 					
 					
@@ -3530,13 +4103,22 @@ end_Hash.put("tDBOutput_3", System.currentTimeMillis());
 			}finally{
 				
 					     			//free memory for "tMap_1"
-					     			globalMap.remove("tHash_Lookup_row3"); 
+					     			globalMap.remove("tHash_Lookup_facility"); 
 				     			
 					     			//free memory for "tMap_1"
-					     			globalMap.remove("tHash_Lookup_row4"); 
+					     			globalMap.remove("tHash_Lookup_visit"); 
 				     			
 					     			//free memory for "tMap_1"
-					     			globalMap.remove("tHash_Lookup_row5"); 
+					     			globalMap.remove("tHash_Lookup_regimen"); 
+				     			
+					     			//free memory for "tMap_1"
+					     			globalMap.remove("tHash_Lookup_enrollment"); 
+				     			
+					     			//free memory for "tMap_1"
+					     			globalMap.remove("tHash_Lookup_vital_sign"); 
+				     			
+					     			//free memory for "tMap_1"
+					     			globalMap.remove("tHash_Lookup_hiv_status"); 
 				     			
 				try{
 					
@@ -5334,7 +5916,7 @@ end_Hash.put("tJava_1", System.currentTimeMillis());
 	
 
 
-public static class row3Struct implements routines.system.IPersistableComparableLookupRow<row3Struct> {
+public static class facilityStruct implements routines.system.IPersistableComparableLookupRow<facilityStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -5392,7 +5974,7 @@ public static class row3Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row3Struct other = (row3Struct) obj;
+		final facilityStruct other = (facilityStruct) obj;
 		
 						if (this.datim_id == null) {
 							if (other.datim_id != null)
@@ -5406,7 +5988,7 @@ public static class row3Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row3Struct other) {
+	public void copyDataTo(facilityStruct other) {
 
 		other.id = this.id;
 	            other.facility_name = this.facility_name;
@@ -5415,7 +5997,7 @@ public static class row3Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row3Struct other) {
+	public void copyKeysDataTo(facilityStruct other) {
 
 		other.datim_id = this.datim_id;
 	            	
@@ -5601,7 +6183,7 @@ public static class row3Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row3Struct other) {
+    public int compareTo(facilityStruct other) {
 
 		int returnValue = -1;
 		
@@ -5661,46 +6243,46 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 
 
 
-		row3Struct row3 = new row3Struct();
+		facilityStruct facility = new facilityStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row3 begin ] start
+	 * [tAdvancedHash_facility begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row3", false);
-		start_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_facility", false);
+		start_Hash.put("tAdvancedHash_facility", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row3";
+	currentComponent="tAdvancedHash_facility";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"facility");
 					}
 				
-		int tos_count_tAdvancedHash_row3 = 0;
+		int tos_count_tAdvancedHash_facility = 0;
 		
 
-			   		// connection name:row3
-			   		// source node:tDBInput_4 - inputs:(after_tDBInput_1) outputs:(row3,row3) | target node:tAdvancedHash_row3 - inputs:(row3) outputs:()
-			   		// linked node: tMap_1 - inputs:(row2,row3,row4,row5) outputs:(prep_one)
+			   		// connection name:facility
+			   		// source node:tDBInput_4 - inputs:(after_tDBInput_1) outputs:(facility,facility) | target node:tAdvancedHash_facility - inputs:(facility) outputs:()
+			   		// linked node: tMap_1 - inputs:(row2,facility,visit,regimen,enrollment,vital_sign,hiv_status) outputs:(prep_one)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_facility = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct> tHash_Lookup_row3 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row3Struct>getLookup(matchingModeEnum_row3);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<facilityStruct> tHash_Lookup_facility =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<facilityStruct>getLookup(matchingModeEnum_facility);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row3", tHash_Lookup_row3);
+		   	   	   globalMap.put("tHash_Lookup_facility", tHash_Lookup_facility);
 		   	   	   
 				
            
@@ -5710,7 +6292,7 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row3 begin ] stop
+ * [tAdvancedHash_facility begin ] stop
  */
 
 
@@ -5775,31 +6357,31 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 		        nb_line_tDBInput_4++;
 		        
 							if(colQtyInRs_tDBInput_4 < 1) {
-								row3.id = null;
+								facility.id = null;
 							} else {
 		                          
-            row3.id = rs_tDBInput_4.getInt(1);
+            facility.id = rs_tDBInput_4.getInt(1);
             if(rs_tDBInput_4.wasNull()){
-                    row3.id = null;
+                    facility.id = null;
             }
 		                    }
 							if(colQtyInRs_tDBInput_4 < 2) {
-								row3.facility_name = null;
+								facility.facility_name = null;
 							} else {
 	                         		
-        	row3.facility_name = routines.system.JDBCUtil.getString(rs_tDBInput_4, 2, false);
+        	facility.facility_name = routines.system.JDBCUtil.getString(rs_tDBInput_4, 2, false);
 		                    }
 							if(colQtyInRs_tDBInput_4 < 3) {
-								row3.lga_name = null;
+								facility.lga_name = null;
 							} else {
 	                         		
-        	row3.lga_name = routines.system.JDBCUtil.getString(rs_tDBInput_4, 3, false);
+        	facility.lga_name = routines.system.JDBCUtil.getString(rs_tDBInput_4, 3, false);
 		                    }
 							if(colQtyInRs_tDBInput_4 < 4) {
-								row3.datim_id = null;
+								facility.datim_id = null;
 							} else {
 	                         		
-        	row3.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 4, false);
+        	facility.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 4, false);
 		                    }
 					
 
@@ -5855,18 +6437,18 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 
 	
 	/**
-	 * [tAdvancedHash_row3 main ] start
+	 * [tAdvancedHash_facility main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row3";
+	currentComponent="tAdvancedHash_facility";
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+						runStat.updateStatOnConnection(iterateId,1,1,"facility");
 					}
 					
 
@@ -5874,18 +6456,18 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 			   
 			   
 
-					row3Struct row3_HashRow = new row3Struct();
+					facilityStruct facility_HashRow = new facilityStruct();
 		   	   	   
 				
-				row3_HashRow.id = row3.id;
+				facility_HashRow.id = facility.id;
 				
-				row3_HashRow.facility_name = row3.facility_name;
+				facility_HashRow.facility_name = facility.facility_name;
 				
-				row3_HashRow.lga_name = row3.lga_name;
+				facility_HashRow.lga_name = facility.lga_name;
 				
-				row3_HashRow.datim_id = row3.datim_id;
+				facility_HashRow.datim_id = facility.datim_id;
 				
-			tHash_Lookup_row3.put(row3_HashRow);
+			tHash_Lookup_facility.put(facility_HashRow);
 			
             
 
@@ -5895,21 +6477,21 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
  
 
 
-	tos_count_tAdvancedHash_row3++;
+	tos_count_tAdvancedHash_facility++;
 
 /**
- * [tAdvancedHash_row3 main ] stop
+ * [tAdvancedHash_facility main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row3 process_data_begin ] start
+	 * [tAdvancedHash_facility process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row3";
+	currentComponent="tAdvancedHash_facility";
 
 	
 
@@ -5918,18 +6500,18 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row3 process_data_begin ] stop
+ * [tAdvancedHash_facility process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row3 process_data_end ] start
+	 * [tAdvancedHash_facility process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row3";
+	currentComponent="tAdvancedHash_facility";
 
 	
 
@@ -5938,7 +6520,7 @@ public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row3 process_data_end ] stop
+ * [tAdvancedHash_facility process_data_end ] stop
  */
 
 
@@ -6015,33 +6597,33 @@ end_Hash.put("tDBInput_4", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row3 end ] start
+	 * [tAdvancedHash_facility end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row3";
+	currentComponent="tAdvancedHash_facility";
 
 	
 
-tHash_Lookup_row3.endPut();
+tHash_Lookup_facility.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"facility");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row3", true);
-end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_facility", true);
+end_Hash.put("tAdvancedHash_facility", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row3 end ] stop
+ * [tAdvancedHash_facility end ] stop
  */
 
 
@@ -6090,14 +6672,14 @@ end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row3 finally ] start
+	 * [tAdvancedHash_facility finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row3";
+	currentComponent="tAdvancedHash_facility";
 
 	
 
@@ -6106,7 +6688,7 @@ end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row3 finally ] stop
+ * [tAdvancedHash_facility finally ] stop
  */
 
 
@@ -6125,7 +6707,7 @@ end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
 	
 
 
-public static class row4Struct implements routines.system.IPersistableComparableLookupRow<row4Struct> {
+public static class visitStruct implements routines.system.IPersistableComparableLookupRow<visitStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -6179,7 +6761,7 @@ public static class row4Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row4Struct other = (row4Struct) obj;
+		final visitStruct other = (visitStruct) obj;
 		
 						if (this.person_uuid == null) {
 							if (other.person_uuid != null)
@@ -6201,7 +6783,7 @@ public static class row4Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row4Struct other) {
+	public void copyDataTo(visitStruct other) {
 
 		other.person_uuid = this.person_uuid;
 	            other.visit_start_date = this.visit_start_date;
@@ -6209,7 +6791,7 @@ public static class row4Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row4Struct other) {
+	public void copyKeysDataTo(visitStruct other) {
 
 		other.person_uuid = this.person_uuid;
 	            	other.visit_start_date = this.visit_start_date;
@@ -6394,7 +6976,7 @@ public static class row4Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row4Struct other) {
+    public int compareTo(visitStruct other) {
 
 		int returnValue = -1;
 		
@@ -6460,46 +7042,46 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 
 
 
-		row4Struct row4 = new row4Struct();
+		visitStruct visit = new visitStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row4 begin ] start
+	 * [tAdvancedHash_visit begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row4", false);
-		start_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_visit", false);
+		start_Hash.put("tAdvancedHash_visit", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row4";
+	currentComponent="tAdvancedHash_visit";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"visit");
 					}
 				
-		int tos_count_tAdvancedHash_row4 = 0;
+		int tos_count_tAdvancedHash_visit = 0;
 		
 
-			   		// connection name:row4
-			   		// source node:tDBInput_5 - inputs:(after_tDBInput_1) outputs:(row4,row4) | target node:tAdvancedHash_row4 - inputs:(row4) outputs:()
-			   		// linked node: tMap_1 - inputs:(row2,row3,row4,row5) outputs:(prep_one)
+			   		// connection name:visit
+			   		// source node:tDBInput_5 - inputs:(after_tDBInput_1) outputs:(visit,visit) | target node:tAdvancedHash_visit - inputs:(visit) outputs:()
+			   		// linked node: tMap_1 - inputs:(row2,facility,visit,regimen,enrollment,vital_sign,hiv_status) outputs:(prep_one)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_visit = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row4Struct> tHash_Lookup_row4 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row4Struct>getLookup(matchingModeEnum_row4);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<visitStruct> tHash_Lookup_visit =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<visitStruct>getLookup(matchingModeEnum_visit);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row4", tHash_Lookup_row4);
+		   	   	   globalMap.put("tHash_Lookup_visit", tHash_Lookup_visit);
 		   	   	   
 				
            
@@ -6509,7 +7091,7 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row4 begin ] stop
+ * [tAdvancedHash_visit begin ] stop
  */
 
 
@@ -6573,22 +7155,22 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 		        nb_line_tDBInput_5++;
 		        
 							if(colQtyInRs_tDBInput_5 < 1) {
-								row4.person_uuid = null;
+								visit.person_uuid = null;
 							} else {
 	                         		
-        	row4.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_5, 1, false);
+        	visit.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_5, 1, false);
 		                    }
 							if(colQtyInRs_tDBInput_5 < 2) {
-								row4.visit_start_date = null;
+								visit.visit_start_date = null;
 							} else {
 										
-			row4.visit_start_date = routines.system.JDBCUtil.getDate(rs_tDBInput_5, 2);
+			visit.visit_start_date = routines.system.JDBCUtil.getDate(rs_tDBInput_5, 2);
 		                    }
 							if(colQtyInRs_tDBInput_5 < 3) {
-								row4.visit_id = null;
+								visit.visit_id = null;
 							} else {
 	                         		
-        	row4.visit_id = routines.system.JDBCUtil.getString(rs_tDBInput_5, 3, false);
+        	visit.visit_id = routines.system.JDBCUtil.getString(rs_tDBInput_5, 3, false);
 		                    }
 					
 
@@ -6644,18 +7226,18 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 
 	
 	/**
-	 * [tAdvancedHash_row4 main ] start
+	 * [tAdvancedHash_visit main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row4";
+	currentComponent="tAdvancedHash_visit";
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+						runStat.updateStatOnConnection(iterateId,1,1,"visit");
 					}
 					
 
@@ -6663,16 +7245,16 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 			   
 			   
 
-					row4Struct row4_HashRow = new row4Struct();
+					visitStruct visit_HashRow = new visitStruct();
 		   	   	   
 				
-				row4_HashRow.person_uuid = row4.person_uuid;
+				visit_HashRow.person_uuid = visit.person_uuid;
 				
-				row4_HashRow.visit_start_date = row4.visit_start_date;
+				visit_HashRow.visit_start_date = visit.visit_start_date;
 				
-				row4_HashRow.visit_id = row4.visit_id;
+				visit_HashRow.visit_id = visit.visit_id;
 				
-			tHash_Lookup_row4.put(row4_HashRow);
+			tHash_Lookup_visit.put(visit_HashRow);
 			
             
 
@@ -6682,21 +7264,21 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
  
 
 
-	tos_count_tAdvancedHash_row4++;
+	tos_count_tAdvancedHash_visit++;
 
 /**
- * [tAdvancedHash_row4 main ] stop
+ * [tAdvancedHash_visit main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row4 process_data_begin ] start
+	 * [tAdvancedHash_visit process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row4";
+	currentComponent="tAdvancedHash_visit";
 
 	
 
@@ -6705,18 +7287,18 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row4 process_data_begin ] stop
+ * [tAdvancedHash_visit process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row4 process_data_end ] start
+	 * [tAdvancedHash_visit process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row4";
+	currentComponent="tAdvancedHash_visit";
 
 	
 
@@ -6725,7 +7307,7 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row4 process_data_end ] stop
+ * [tAdvancedHash_visit process_data_end ] stop
  */
 
 
@@ -6802,33 +7384,33 @@ end_Hash.put("tDBInput_5", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row4 end ] start
+	 * [tAdvancedHash_visit end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row4";
+	currentComponent="tAdvancedHash_visit";
 
 	
 
-tHash_Lookup_row4.endPut();
+tHash_Lookup_visit.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"visit");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row4", true);
-end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_visit", true);
+end_Hash.put("tAdvancedHash_visit", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row4 end ] stop
+ * [tAdvancedHash_visit end ] stop
  */
 
 
@@ -6877,14 +7459,14 @@ end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row4 finally ] start
+	 * [tAdvancedHash_visit finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row4";
+	currentComponent="tAdvancedHash_visit";
 
 	
 
@@ -6893,7 +7475,7 @@ end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row4 finally ] stop
+ * [tAdvancedHash_visit finally ] stop
  */
 
 
@@ -6912,7 +7494,7 @@ end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
 	
 
 
-public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
+public static class regimenStruct implements routines.system.IPersistableComparableLookupRow<regimenStruct> {
     final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
     static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -6958,7 +7540,7 @@ public static class row5Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row5Struct other = (row5Struct) obj;
+		final regimenStruct other = (regimenStruct) obj;
 		
 						if (this.regimen == null) {
 							if (other.regimen != null)
@@ -6972,14 +7554,14 @@ public static class row5Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row5Struct other) {
+	public void copyDataTo(regimenStruct other) {
 
 		other.id = this.id;
 	            other.regimen = this.regimen;
 	            
 	}
 
-	public void copyKeysDataTo(row5Struct other) {
+	public void copyKeysDataTo(regimenStruct other) {
 
 		other.regimen = this.regimen;
 	            	
@@ -7111,7 +7693,7 @@ public static class row5Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row5Struct other) {
+    public int compareTo(regimenStruct other) {
 
 		int returnValue = -1;
 		
@@ -7171,46 +7753,46 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 
 
 
-		row5Struct row5 = new row5Struct();
+		regimenStruct regimen = new regimenStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row5 begin ] start
+	 * [tAdvancedHash_regimen begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row5", false);
-		start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_regimen", false);
+		start_Hash.put("tAdvancedHash_regimen", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_regimen";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row5");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"regimen");
 					}
 				
-		int tos_count_tAdvancedHash_row5 = 0;
+		int tos_count_tAdvancedHash_regimen = 0;
 		
 
-			   		// connection name:row5
-			   		// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(row5,row5) | target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
-			   		// linked node: tMap_1 - inputs:(row2,row3,row4,row5) outputs:(prep_one)
+			   		// connection name:regimen
+			   		// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(regimen,regimen) | target node:tAdvancedHash_regimen - inputs:(regimen) outputs:()
+			   		// linked node: tMap_1 - inputs:(row2,facility,visit,regimen,enrollment,vital_sign,hiv_status) outputs:(prep_one)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_regimen = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row5Struct>getLookup(matchingModeEnum_row5);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<regimenStruct> tHash_Lookup_regimen =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<regimenStruct>getLookup(matchingModeEnum_regimen);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+		   	   	   globalMap.put("tHash_Lookup_regimen", tHash_Lookup_regimen);
 		   	   	   
 				
            
@@ -7220,7 +7802,7 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row5 begin ] stop
+ * [tAdvancedHash_regimen begin ] stop
  */
 
 
@@ -7284,19 +7866,19 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		        nb_line_tDBInput_2++;
 		        
 							if(colQtyInRs_tDBInput_2 < 1) {
-								row5.id = 0;
+								regimen.id = 0;
 							} else {
 		                          
-            row5.id = rs_tDBInput_2.getLong(1);
+            regimen.id = rs_tDBInput_2.getLong(1);
             if(rs_tDBInput_2.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_2 < 2) {
-								row5.regimen = null;
+								regimen.regimen = null;
 							} else {
 	                         		
-        	row5.regimen = routines.system.JDBCUtil.getString(rs_tDBInput_2, 2, false);
+        	regimen.regimen = routines.system.JDBCUtil.getString(rs_tDBInput_2, 2, false);
 		                    }
 					
 
@@ -7352,18 +7934,18 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 
 	
 	/**
-	 * [tAdvancedHash_row5 main ] start
+	 * [tAdvancedHash_regimen main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_regimen";
 
 	
 					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row5");
+						runStat.updateStatOnConnection(iterateId,1,1,"regimen");
 					}
 					
 
@@ -7371,14 +7953,14 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 			   
 			   
 
-					row5Struct row5_HashRow = new row5Struct();
+					regimenStruct regimen_HashRow = new regimenStruct();
 		   	   	   
 				
-				row5_HashRow.id = row5.id;
+				regimen_HashRow.id = regimen.id;
 				
-				row5_HashRow.regimen = row5.regimen;
+				regimen_HashRow.regimen = regimen.regimen;
 				
-			tHash_Lookup_row5.put(row5_HashRow);
+			tHash_Lookup_regimen.put(regimen_HashRow);
 			
             
 
@@ -7388,21 +7970,21 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
  
 
 
-	tos_count_tAdvancedHash_row5++;
+	tos_count_tAdvancedHash_regimen++;
 
 /**
- * [tAdvancedHash_row5 main ] stop
+ * [tAdvancedHash_regimen main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row5 process_data_begin ] start
+	 * [tAdvancedHash_regimen process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_regimen";
 
 	
 
@@ -7411,18 +7993,18 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row5 process_data_begin ] stop
+ * [tAdvancedHash_regimen process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row5 process_data_end ] start
+	 * [tAdvancedHash_regimen process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_regimen";
 
 	
 
@@ -7431,7 +8013,7 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 
 
 /**
- * [tAdvancedHash_row5 process_data_end ] stop
+ * [tAdvancedHash_regimen process_data_end ] stop
  */
 
 
@@ -7508,33 +8090,33 @@ end_Hash.put("tDBInput_2", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row5 end ] start
+	 * [tAdvancedHash_regimen end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_regimen";
 
 	
 
-tHash_Lookup_row5.endPut();
+tHash_Lookup_regimen.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row5");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"regimen");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row5", true);
-end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_regimen", true);
+end_Hash.put("tAdvancedHash_regimen", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row5 end ] stop
+ * [tAdvancedHash_regimen end ] stop
  */
 
 
@@ -7583,14 +8165,14 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row5 finally ] start
+	 * [tAdvancedHash_regimen finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_regimen";
 
 	
 
@@ -7599,7 +8181,7 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row5 finally ] stop
+ * [tAdvancedHash_regimen finally ] stop
  */
 
 
@@ -7614,6 +8196,2269 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 		
 
 		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class enrollmentStruct implements routines.system.IPersistableComparableLookupRow<enrollmentStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String prep_enrollment_uuid;
+
+				public String getPrep_enrollment_uuid () {
+					return this.prep_enrollment_uuid;
+				}
+				
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.person_uuid == null) ? 0 : this.person_uuid.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final enrollmentStruct other = (enrollmentStruct) obj;
+		
+						if (this.person_uuid == null) {
+							if (other.person_uuid != null)
+								return false;
+						
+						} else if (!this.person_uuid.equals(other.person_uuid))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(enrollmentStruct other) {
+
+		other.prep_enrollment_uuid = this.prep_enrollment_uuid;
+	            other.person_uuid = this.person_uuid;
+	            
+	}
+
+	public void copyKeysDataTo(enrollmentStruct other) {
+
+		other.person_uuid = this.person_uuid;
+	            	
+	}
+
+
+
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.person_uuid = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.prep_enrollment_uuid = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.prep_enrollment_uuid, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("prep_enrollment_uuid="+prep_enrollment_uuid);
+		sb.append(",person_uuid="+person_uuid);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(enrollmentStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.person_uuid, other.person_uuid);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_7_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		enrollmentStruct enrollment = new enrollmentStruct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_enrollment begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_enrollment", false);
+		start_Hash.put("tAdvancedHash_enrollment", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_enrollment";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"enrollment");
+					}
+				
+		int tos_count_tAdvancedHash_enrollment = 0;
+		
+
+			   		// connection name:enrollment
+			   		// source node:tDBInput_7 - inputs:(after_tDBInput_1) outputs:(enrollment,enrollment) | target node:tAdvancedHash_enrollment - inputs:(enrollment) outputs:()
+			   		// linked node: tMap_1 - inputs:(row2,facility,visit,regimen,enrollment,vital_sign,hiv_status) outputs:(prep_one)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_enrollment = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<enrollmentStruct> tHash_Lookup_enrollment =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<enrollmentStruct>getLookup(matchingModeEnum_enrollment);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_enrollment", tHash_Lookup_enrollment);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_enrollment begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_7 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_7", false);
+		start_Hash.put("tDBInput_7", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_7";
+
+	
+		int tos_count_tDBInput_7 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_7 = 0;
+		    java.sql.Connection conn_tDBInput_7 = null;
+				String driverClass_tDBInput_7 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_7 = java.lang.Class.forName(driverClass_tDBInput_7);
+				String dbUser_tDBInput_7 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_7 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_7 = decryptedPassword_tDBInput_7;
+				
+				String url_tDBInput_7 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_7 = java.sql.DriverManager.getConnection(url_tDBInput_7,dbUser_tDBInput_7,dbPwd_tDBInput_7);
+		        
+				conn_tDBInput_7.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_7 = conn_tDBInput_7.createStatement();
+
+		    String dbquery_tDBInput_7 = "SELECT pe.uuid  as prep_enrollment_uuid, pe.person_uuid FROM prep_enrollment pe\n			   INNER JOIN (SELECT MAX(date_star"
++"ted)date_started, person_uuid FROM prep_enrollment\n			   GROUP BY person_uuid)max ON max.date_started=pe.date_started "
++"\n			   AND max.person_uuid=pe.person_uuid";
+			
+
+            	globalMap.put("tDBInput_7_QUERY",dbquery_tDBInput_7);
+		    java.sql.ResultSet rs_tDBInput_7 = null;
+
+		    try {
+		    	rs_tDBInput_7 = stmt_tDBInput_7.executeQuery(dbquery_tDBInput_7);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_7 = rs_tDBInput_7.getMetaData();
+		    	int colQtyInRs_tDBInput_7 = rsmd_tDBInput_7.getColumnCount();
+
+		    String tmpContent_tDBInput_7 = null;
+		    
+		    
+		    while (rs_tDBInput_7.next()) {
+		        nb_line_tDBInput_7++;
+		        
+							if(colQtyInRs_tDBInput_7 < 1) {
+								enrollment.prep_enrollment_uuid = null;
+							} else {
+	                         		
+        	enrollment.prep_enrollment_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_7 < 2) {
+								enrollment.person_uuid = null;
+							} else {
+	                         		
+        	enrollment.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_7, 2, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_7 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_7 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_7";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_7++;
+
+/**
+ * [tDBInput_7 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_7 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_7";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_7 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_enrollment main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_enrollment";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"enrollment");
+					}
+					
+
+
+			   
+			   
+
+					enrollmentStruct enrollment_HashRow = new enrollmentStruct();
+		   	   	   
+				
+				enrollment_HashRow.prep_enrollment_uuid = enrollment.prep_enrollment_uuid;
+				
+				enrollment_HashRow.person_uuid = enrollment.person_uuid;
+				
+			tHash_Lookup_enrollment.put(enrollment_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_enrollment++;
+
+/**
+ * [tAdvancedHash_enrollment main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_enrollment process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_enrollment";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_enrollment process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_enrollment process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_enrollment";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_enrollment process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_7 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_7";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_7 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_7 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_7";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_7 != null) {
+		rs_tDBInput_7.close();
+	}
+	if (stmt_tDBInput_7 != null) {
+		stmt_tDBInput_7.close();
+	}
+	if(conn_tDBInput_7 != null && !conn_tDBInput_7.isClosed()) {
+		
+			conn_tDBInput_7.commit();
+			
+		
+			conn_tDBInput_7.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_7_NB_LINE",nb_line_tDBInput_7);
+ 
+
+ok_Hash.put("tDBInput_7", true);
+end_Hash.put("tDBInput_7", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_7 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_enrollment end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_enrollment";
+
+	
+
+tHash_Lookup_enrollment.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"enrollment");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_enrollment", true);
+end_Hash.put("tAdvancedHash_enrollment", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_enrollment end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_7 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_7";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_7 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_enrollment finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_enrollment";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_enrollment finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_7_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class vital_signStruct implements routines.system.IPersistableComparableLookupRow<vital_signStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String vital_sign_uuid;
+
+				public String getVital_sign_uuid () {
+					return this.vital_sign_uuid;
+				}
+				
+			    public String visit_id;
+
+				public String getVisit_id () {
+					return this.visit_id;
+				}
+				
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public java.util.Date capture_date;
+
+				public java.util.Date getCapture_date () {
+					return this.capture_date;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.person_uuid == null) ? 0 : this.person_uuid.hashCode());
+					
+						result = prime * result + ((this.capture_date == null) ? 0 : this.capture_date.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final vital_signStruct other = (vital_signStruct) obj;
+		
+						if (this.person_uuid == null) {
+							if (other.person_uuid != null)
+								return false;
+						
+						} else if (!this.person_uuid.equals(other.person_uuid))
+						
+							return false;
+					
+						if (this.capture_date == null) {
+							if (other.capture_date != null)
+								return false;
+						
+						} else if (!this.capture_date.equals(other.capture_date))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(vital_signStruct other) {
+
+		other.vital_sign_uuid = this.vital_sign_uuid;
+	            other.visit_id = this.visit_id;
+	            other.person_uuid = this.person_uuid;
+	            other.capture_date = this.capture_date;
+	            
+	}
+
+	public void copyKeysDataTo(vital_signStruct other) {
+
+		other.person_uuid = this.person_uuid;
+	            	other.capture_date = this.capture_date;
+	            	
+	}
+
+
+
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.person_uuid = readString(dis);
+					
+					this.capture_date = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.capture_date,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.vital_sign_uuid = readString(dis,ois);
+					
+						this.visit_id = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.vital_sign_uuid, dos, oos);
+					
+						writeString(this.visit_id, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("vital_sign_uuid="+vital_sign_uuid);
+		sb.append(",visit_id="+visit_id);
+		sb.append(",person_uuid="+person_uuid);
+		sb.append(",capture_date="+String.valueOf(capture_date));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(vital_signStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.person_uuid, other.person_uuid);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.capture_date, other.capture_date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_8Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_8_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		vital_signStruct vital_sign = new vital_signStruct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_vital_sign begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_vital_sign", false);
+		start_Hash.put("tAdvancedHash_vital_sign", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_vital_sign";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"vital_sign");
+					}
+				
+		int tos_count_tAdvancedHash_vital_sign = 0;
+		
+
+			   		// connection name:vital_sign
+			   		// source node:tDBInput_8 - inputs:(after_tDBInput_1) outputs:(vital_sign,vital_sign) | target node:tAdvancedHash_vital_sign - inputs:(vital_sign) outputs:()
+			   		// linked node: tMap_1 - inputs:(row2,facility,visit,regimen,enrollment,vital_sign,hiv_status) outputs:(prep_one)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_vital_sign = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<vital_signStruct> tHash_Lookup_vital_sign =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<vital_signStruct>getLookup(matchingModeEnum_vital_sign);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_vital_sign", tHash_Lookup_vital_sign);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_vital_sign begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_8 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_8", false);
+		start_Hash.put("tDBInput_8", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_8";
+
+	
+		int tos_count_tDBInput_8 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_8 = 0;
+		    java.sql.Connection conn_tDBInput_8 = null;
+				String driverClass_tDBInput_8 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_8 = java.lang.Class.forName(driverClass_tDBInput_8);
+				String dbUser_tDBInput_8 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_8 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_8 = decryptedPassword_tDBInput_8;
+				
+				String url_tDBInput_8 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_8 = java.sql.DriverManager.getConnection(url_tDBInput_8,dbUser_tDBInput_8,dbPwd_tDBInput_8);
+		        
+				conn_tDBInput_8.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_8 = conn_tDBInput_8.createStatement();
+
+		    String dbquery_tDBInput_8 = "SELECT uuid AS vital_sign_uuid, visit_id , person_uuid, capture_date  FROM triage_vital_sign";
+			
+
+            	globalMap.put("tDBInput_8_QUERY",dbquery_tDBInput_8);
+		    java.sql.ResultSet rs_tDBInput_8 = null;
+
+		    try {
+		    	rs_tDBInput_8 = stmt_tDBInput_8.executeQuery(dbquery_tDBInput_8);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_8 = rs_tDBInput_8.getMetaData();
+		    	int colQtyInRs_tDBInput_8 = rsmd_tDBInput_8.getColumnCount();
+
+		    String tmpContent_tDBInput_8 = null;
+		    
+		    
+		    while (rs_tDBInput_8.next()) {
+		        nb_line_tDBInput_8++;
+		        
+							if(colQtyInRs_tDBInput_8 < 1) {
+								vital_sign.vital_sign_uuid = null;
+							} else {
+	                         		
+        	vital_sign.vital_sign_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_8, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_8 < 2) {
+								vital_sign.visit_id = null;
+							} else {
+	                         		
+        	vital_sign.visit_id = routines.system.JDBCUtil.getString(rs_tDBInput_8, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_8 < 3) {
+								vital_sign.person_uuid = null;
+							} else {
+	                         		
+        	vital_sign.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_8, 3, false);
+		                    }
+							if(colQtyInRs_tDBInput_8 < 4) {
+								vital_sign.capture_date = null;
+							} else {
+										
+			vital_sign.capture_date = routines.system.JDBCUtil.getDate(rs_tDBInput_8, 4);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_8 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_8 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_8";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_8++;
+
+/**
+ * [tDBInput_8 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_8 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_8";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_8 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_vital_sign main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_vital_sign";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"vital_sign");
+					}
+					
+
+
+			   
+			   
+
+					vital_signStruct vital_sign_HashRow = new vital_signStruct();
+		   	   	   
+				
+				vital_sign_HashRow.vital_sign_uuid = vital_sign.vital_sign_uuid;
+				
+				vital_sign_HashRow.visit_id = vital_sign.visit_id;
+				
+				vital_sign_HashRow.person_uuid = vital_sign.person_uuid;
+				
+				vital_sign_HashRow.capture_date = vital_sign.capture_date;
+				
+			tHash_Lookup_vital_sign.put(vital_sign_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_vital_sign++;
+
+/**
+ * [tAdvancedHash_vital_sign main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_vital_sign process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_vital_sign";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_vital_sign process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_vital_sign process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_vital_sign";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_vital_sign process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_8 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_8";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_8 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_8 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_8";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_8 != null) {
+		rs_tDBInput_8.close();
+	}
+	if (stmt_tDBInput_8 != null) {
+		stmt_tDBInput_8.close();
+	}
+	if(conn_tDBInput_8 != null && !conn_tDBInput_8.isClosed()) {
+		
+			conn_tDBInput_8.commit();
+			
+		
+			conn_tDBInput_8.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_8_NB_LINE",nb_line_tDBInput_8);
+ 
+
+ok_Hash.put("tDBInput_8", true);
+end_Hash.put("tDBInput_8", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_8 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_vital_sign end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_vital_sign";
+
+	
+
+tHash_Lookup_vital_sign.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"vital_sign");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_vital_sign", true);
+end_Hash.put("tAdvancedHash_vital_sign", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_vital_sign end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_8 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_8";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_8 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_vital_sign finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_vital_sign";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_vital_sign finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_8_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class hiv_statusStruct implements routines.system.IPersistableComparableLookupRow<hiv_statusStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String display;
+
+				public String getDisplay () {
+					return this.display;
+				}
+				
+			    public String code;
+
+				public String getCode () {
+					return this.code;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.display == null) ? 0 : this.display.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final hiv_statusStruct other = (hiv_statusStruct) obj;
+		
+						if (this.display == null) {
+							if (other.display != null)
+								return false;
+						
+						} else if (!this.display.equals(other.display))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(hiv_statusStruct other) {
+
+		other.display = this.display;
+	            other.code = this.code;
+	            
+	}
+
+	public void copyKeysDataTo(hiv_statusStruct other) {
+
+		other.display = this.display;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.display = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.display,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.code = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.code, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("display="+display);
+		sb.append(",code="+code);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(hiv_statusStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.display, other.display);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_9_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		hiv_statusStruct hiv_status = new hiv_statusStruct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_hiv_status begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_hiv_status", false);
+		start_Hash.put("tAdvancedHash_hiv_status", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_hiv_status";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"hiv_status");
+					}
+				
+		int tos_count_tAdvancedHash_hiv_status = 0;
+		
+
+			   		// connection name:hiv_status
+			   		// source node:tDBInput_9 - inputs:(after_tDBInput_1) outputs:(hiv_status,hiv_status) | target node:tAdvancedHash_hiv_status - inputs:(hiv_status) outputs:()
+			   		// linked node: tMap_1 - inputs:(row2,facility,visit,regimen,enrollment,vital_sign,hiv_status) outputs:(prep_one)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_hiv_status = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<hiv_statusStruct> tHash_Lookup_hiv_status =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<hiv_statusStruct>getLookup(matchingModeEnum_hiv_status);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_hiv_status", tHash_Lookup_hiv_status);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_hiv_status begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_9 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_9", false);
+		start_Hash.put("tDBInput_9", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_9";
+
+	
+		int tos_count_tDBInput_9 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_9 = 0;
+		    java.sql.Connection conn_tDBInput_9 = null;
+				String driverClass_tDBInput_9 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_9 = java.lang.Class.forName(driverClass_tDBInput_9);
+				String dbUser_tDBInput_9 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_9 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_9 = decryptedPassword_tDBInput_9;
+				
+				String url_tDBInput_9 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_9 = java.sql.DriverManager.getConnection(url_tDBInput_9,dbUser_tDBInput_9,dbPwd_tDBInput_9);
+		        
+				conn_tDBInput_9.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_9 = conn_tDBInput_9.createStatement();
+
+		    String dbquery_tDBInput_9 = "SELECT  lower(left(display,3)) display, code FROM base_application_codeset WHERE codeset_group = 'HIV_TEST_RESULT'";
+			
+
+            	globalMap.put("tDBInput_9_QUERY",dbquery_tDBInput_9);
+		    java.sql.ResultSet rs_tDBInput_9 = null;
+
+		    try {
+		    	rs_tDBInput_9 = stmt_tDBInput_9.executeQuery(dbquery_tDBInput_9);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_9 = rs_tDBInput_9.getMetaData();
+		    	int colQtyInRs_tDBInput_9 = rsmd_tDBInput_9.getColumnCount();
+
+		    String tmpContent_tDBInput_9 = null;
+		    
+		    
+		    while (rs_tDBInput_9.next()) {
+		        nb_line_tDBInput_9++;
+		        
+							if(colQtyInRs_tDBInput_9 < 1) {
+								hiv_status.display = null;
+							} else {
+	                         		
+        	hiv_status.display = routines.system.JDBCUtil.getString(rs_tDBInput_9, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_9 < 2) {
+								hiv_status.code = null;
+							} else {
+	                         		
+        	hiv_status.code = routines.system.JDBCUtil.getString(rs_tDBInput_9, 2, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_9 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_9 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_9";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_9++;
+
+/**
+ * [tDBInput_9 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_9 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_9";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_9 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_hiv_status main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_hiv_status";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"hiv_status");
+					}
+					
+
+
+			   
+			   
+
+					hiv_statusStruct hiv_status_HashRow = new hiv_statusStruct();
+		   	   	   
+				
+				hiv_status_HashRow.display = hiv_status.display;
+				
+				hiv_status_HashRow.code = hiv_status.code;
+				
+			tHash_Lookup_hiv_status.put(hiv_status_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_hiv_status++;
+
+/**
+ * [tAdvancedHash_hiv_status main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_hiv_status process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_hiv_status";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_hiv_status process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_hiv_status process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_hiv_status";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_hiv_status process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_9 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_9";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_9 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_9 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_9";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_9 != null) {
+		rs_tDBInput_9.close();
+	}
+	if (stmt_tDBInput_9 != null) {
+		stmt_tDBInput_9.close();
+	}
+	if(conn_tDBInput_9 != null && !conn_tDBInput_9.isClosed()) {
+		
+			conn_tDBInput_9.commit();
+			
+		
+			conn_tDBInput_9.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_9_NB_LINE",nb_line_tDBInput_9);
+ 
+
+ok_Hash.put("tDBInput_9", true);
+end_Hash.put("tDBInput_9", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_9 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_hiv_status end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_hiv_status";
+
+	
+
+tHash_Lookup_hiv_status.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"hiv_status");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_hiv_status", true);
+end_Hash.put("tAdvancedHash_hiv_status", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_hiv_status end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_9 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_9";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_9 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_hiv_status finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_hiv_status";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_hiv_status finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_9_SUBPROCESS_STATE", 1);
 	}
 	
     public String resuming_logs_dir_path = null;
@@ -8086,6 +10931,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     197702 characters generated by Talend Open Studio for Big Data 
- *     on the February 8, 2023 4:51:47 PM WAT
+ *     262248 characters generated by Talend Open Studio for Big Data 
+ *     on the February 9, 2023 4:29:26 AM WAT
  ************************************************************************************************/

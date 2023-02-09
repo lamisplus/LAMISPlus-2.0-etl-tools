@@ -5,7 +5,7 @@
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:oPbapP8+FQTTWV5fxTPT0PFrUz3KJ+V2bgEhfNcGocub"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:0vUx3fMvqaUg/Ef2QQZ338TbqXryeqkFyVYSuIna2IDg"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
@@ -13,7 +13,7 @@
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:VZMneFuoH22YqHzC7/wCgDSW9RppmBQQJQRvNqFFFJPI"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:FKeLyIWg8MlIG7BwSIaHxOTLxlbB/luRMI17PDsw+DLI"/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
   </context>
   <context confirmationNeeded="false" name="LAMIS3">
@@ -21,7 +21,7 @@
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:M2G+ABIs3MzBSgUxDwrSYDMkWSGaKMu1s5QcO+Q2nah6"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:SZce9Ios2R/LCAvZJRhbmWcOJKUgULCPQojj/Agkd7hJ"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
@@ -29,7 +29,7 @@
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:o56uBDhIQuGm3j+hZih+CmUY7gRHWoRRwRN/zBRx3Glw"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:ekNx5OrwKcHboXm/n/iw/ArRoWVAyK+RZhvLnGktsYoe"/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
   </context>
   <context confirmationNeeded="false" name="Lamisplus">
@@ -38,13 +38,13 @@
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:RBp7q5bS7PEd/ceotVjyq1mAS5QdZzI95VF0KgPghWgx"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:qnP+LfQJXWzACq6pJOY/o4NLfMZh8levQu4QoCnwzDsR"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="lamis-aminu"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:XHTQXWkT6K7wZuf+KqDLaIGxSRiDMTzvbY4/jwcq9JjR"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:pAL5OLInogs8ffDnYIfB05WMRGbVtgwmRATMGrHZpN8y"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
   </context>
@@ -89,7 +89,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:zA5YzpDWbZMgIkNaoXEbnPvnQ6E7+z4CAvHHdYVX" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:aTf74kt+hxcLlRX05cgzU4KuJgTJ6FtENKxle+4/" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -124,7 +124,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xNQjRcaKo8S2dMeIRQz03+166BGkblFPJr0k3tmT" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MAYw6foc1ogrnTQkaA7uMCDppFXuWnWfPGXEVcM9" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -209,7 +209,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bvponrkhLfptynpcGHffakX1SkLJtHNMtv/NOhV5FQVvk1355/oJK8NAteqDiVD+rtdqVFon"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:TspNlEJ5xop0uOzhTzJIRXyZi84fUStPlMU+PpBMfE1YlW7TmOUYR6VDhWHqXvOGmYdJIW14"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -282,7 +282,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:FqnD7TRo6T9oO8u/uUo0pH71aeB2YwjNO12HD+2tUTijDRoslCFaTdQNbWHU/KRvIM97HeBn"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:B6ImCwoEo6kxm8boD3XZL8p1bvfCY1AaYrVYXIVqJDsgNq02e7BZ/6haw5TDxR4Fhe3gX/fG"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_sequence&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -353,13 +353,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:qzf5MM0VVzhFma5QmOWiXeQirLbnBX5+Q8e5whQ7p7TTG/YIuhHrVGhn/4cqlgBUW0oZ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:8T29PO6aDD+u/8+9bnx91/f2BzCTQiUdjxcvSD1oRy13GQ3E2xjZXqDJFQC+Dz5/+62j"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT p.id, p.unique_id, CONCAT(p.id, p.uuid) AS uuid, p.date_registration AS date_started,&#xD;&#xA;'' AS visit_uuid, p.uuid as person_uuid, p.status_at_registration AS status, &#xD;&#xA;CAST(p.archived AS INTEGER) archived, 'ETL' AS created_by, p.last_modified AS date_created, &#xD;&#xA;'ETL' AS modified_by, p.last_modified AS date_modified,&#xD;&#xA;nf.datim_id,&#xD;&#xA;p.extra FROM patient p&#xD;&#xA;INNER JOIN ndr_facility nf&#xD;&#xA;  ON nf.id=p.facility_id&#xD;&#xA;WHERE p.extra->>'art' !='true'&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT p.id, p.unique_id, CONCAT(p.id, p.uuid) AS uuid, p.date_registration AS date_started,&#xD;&#xA;'' AS visit_uuid, p.uuid as person_uuid, p.status_at_registration AS status, &#xD;&#xA;CAST(p.archived AS INTEGER) archived, 'ETL' AS created_by, p.last_modified AS date_created, &#xD;&#xA;'ETL' AS modified_by, p.last_modified AS date_modified,&#xD;&#xA;nf.datim_id,&#xD;&#xA; LOWER(LEFT(p.target_group, 3)) target_group,&#xD;&#xA;p.extra FROM patient p&#xD;&#xA;INNER JOIN ndr_facility nf&#xD;&#xA;  ON nf.id=p.facility_id&#xD;&#xA;WHERE p.extra->>'art' !='true'&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -397,6 +397,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="datim_id"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="target_group"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="extra"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
@@ -405,18 +407,19 @@
     <metadata connector="FLOW" name="tDBInput_1">
       <column comment="" defaultValue="" key="true" length="19" name="id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Long" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="unique_id" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_started" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="visit_uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="visit_uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="person_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="75" name="status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="created_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="created_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="date_created" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="modified_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="modified_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="100" usefulColumn="true"/>
       <column comment="" key="false" length="29" name="date_modified" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="32" name="datim_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2000" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="target_group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1000" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="1000" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="128">
@@ -449,9 +452,10 @@
       <column comment="" key="false" length="29" name="date_modified" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="2000" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="target_group" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="id" expression="row2.id " type="id_Long"/>
@@ -468,6 +472,7 @@
         <mapperTableEntries name="date_modified" expression="row2.date_modified " type="id_Date" nullable="true"/>
         <mapperTableEntries name="extra" expression="row2.extra " type="id_String" nullable="true"/>
         <mapperTableEntries name="facility_id" expression="row3.id " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="target_group" expression="codeset.code " type="id_String"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row2" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_Long"/>
@@ -483,6 +488,7 @@
         <mapperTableEntries name="modified_by" type="id_String" nullable="true"/>
         <mapperTableEntries name="date_modified" type="id_Date" nullable="true"/>
         <mapperTableEntries name="datim_id" type="id_String"/>
+        <mapperTableEntries name="target_group" type="id_String" nullable="true"/>
         <mapperTableEntries name="extra" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="row3" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -495,6 +501,10 @@
         <mapperTableEntries name="person_uuid" expression="row2.person_uuid " type="id_String" operator="="/>
         <mapperTableEntries name="visit_start_date" expression="row2.date_started " type="id_Date" operator="="/>
         <mapperTableEntries name="visit_id" type="id_String"/>
+      </inputTables>
+      <inputTables sizeState="INTERMEDIATE" name="codeset" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="display" expression="row2.target_group " type="id_String" operator="="/>
+        <mapperTableEntries name="code" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -511,7 +521,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XHuRGp2wiofhKm9/+0TiGJy0l+7A/s994qEnl3W6w4itTnCzc2pAfCONEIOTYGn0Fh5QGV/z"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5+N9+Tl8PepRW+MbryAdZRbERRXjKDe76rNJUvs3mx+dJErterxx/oUlqoVCad4abE2WaOUd"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -560,7 +570,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pmXL2sv5dZEbc1GyWMOdDwBeoXYjCXfEGpvAxEoV17uKVDUHsKFaR6mWkk6ZLX9EJ5O1QX5+"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:c48sJe52xrLWnIsL50W5zf43ChvthG/PN0dnzjdC+DxQZwx1FLMvOVTVGzhfNuT0NX/T9nT1"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;prep_enrollment&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -658,6 +668,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="target_group"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
@@ -672,15 +687,16 @@
       <column comment="" key="false" length="200" name="uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_started" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="visit_uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="36" name="person_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="36" name="person_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="75" name="status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="created_by" nullable="false" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="modified_by" nullable="false" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="created_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="29" name="date_created" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="modified_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="29" name="date_modified" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="2000" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="target_group" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" defaultValue="" key="true" length="19" name="id" nullable="false" pattern="" precision="0" sourceType="BIGSERIAL" type="id_Long" originalLength="-1" usefulColumn="true"/>
@@ -688,15 +704,16 @@
       <column comment="" key="false" length="200" name="uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="13" name="date_started" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="visit_uuid" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="36" name="person_uuid" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="36" name="person_uuid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="75" name="status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="created_by" nullable="false" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_created" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="modified_by" nullable="false" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="29" name="date_modified" nullable="false" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="archived" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="created_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="29" name="date_created" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="modified_by" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="29" name="date_modified" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="2000" name="extra" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="facility_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="target_group" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
@@ -714,7 +731,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4TQsiBmj3zABozn18jwo7wuPBUHFm0k0G8ivePwAWy+S9+tRLTaUXkgNDE50fUR2Gn6uyf0v"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:w+JfPjPsnuVfamcjmmwagyhFiTG25P7z9aPPzf0cxTr4bgSLNbm09kjuEaV4WK0WIoe8noiI"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -747,6 +764,48 @@
       <column comment="" key="true" length="255" name="visit_id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_2" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GLtG4BKfEe20h5qyoNwDwA" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.LAMISPlus_Server"/>
+    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="context.LAMISPlus_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:F8OHWxZSkSMgGq4mVgoljl+uVtf2o2CO5ZAZBd1ND6fZN0NprbNr8MqaMXTz4jZ1HWCWhNvG"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select LOWER(LEFT(display, 3)) display, code from base_application_codeset where codeset_group='TARGET_GROUP'&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.LAMISPlus_AdditionalParams"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="display"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="Traget_Group"/>
+    <metadata connector="FLOW" name="tDBInput_2">
+      <column comment="" key="false" length="100" name="display" nullable="false" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_3" offsetLabelX="-12" offsetLabelY="8" source="tDBInput_3" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
@@ -775,6 +834,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="If1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="target_group"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="out1" show="false"/>
   </connection>
@@ -785,6 +849,10 @@
   <connection connectorName="FLOW" label="row4" lineStyle="8" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="codeset" lineStyle="8" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="codeset" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
