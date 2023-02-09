@@ -558,6 +558,24 @@ private class TalendException extends Exception {
 					tJava_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_LAMISPlus_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -2204,12 +2222,6 @@ public static class XML_StatusStruct implements routines.system.IPersistableRow<
 					return this.id;
 				}
 				
-			    public int facility_id;
-
-				public int getFacility_id () {
-					return this.facility_id;
-				}
-				
 			    public int files;
 
 				public int getFiles () {
@@ -2220,6 +2232,12 @@ public static class XML_StatusStruct implements routines.system.IPersistableRow<
 
 				public java.util.Date getLast_modified () {
 					return this.last_modified;
+				}
+				
+			    public int facility_id;
+
+				public int getFacility_id () {
+					return this.facility_id;
 				}
 				
 
@@ -2255,9 +2273,9 @@ public static class XML_StatusStruct implements routines.system.IPersistableRow<
 	public void copyDataTo(XML_StatusStruct other) {
 
 		other.id = this.id;
-	            other.facility_id = this.facility_id;
 	            other.files = this.files;
 	            other.last_modified = this.last_modified;
+	            other.facility_id = this.facility_id;
 	            
 	}
 
@@ -2301,11 +2319,11 @@ public static class XML_StatusStruct implements routines.system.IPersistableRow<
 		
 			        this.id = dis.readInt();
 					
-			        this.facility_id = dis.readInt();
-					
 			        this.files = dis.readInt();
 					
 					this.last_modified = readDate(dis);
+					
+			        this.facility_id = dis.readInt();
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2331,15 +2349,15 @@ public static class XML_StatusStruct implements routines.system.IPersistableRow<
 					
 					// int
 				
-		            	dos.writeInt(this.facility_id);
-					
-					// int
-				
 		            	dos.writeInt(this.files);
 					
 					// java.util.Date
 				
 						writeDate(this.last_modified,dos);
+					
+					// int
+				
+		            	dos.writeInt(this.facility_id);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2355,9 +2373,9 @@ public static class XML_StatusStruct implements routines.system.IPersistableRow<
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",files="+String.valueOf(files));
 		sb.append(",last_modified="+String.valueOf(last_modified));
+		sb.append(",facility_id="+String.valueOf(facility_id));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2415,12 +2433,6 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					return this.id;
 				}
 				
-			    public int facility_id;
-
-				public int getFacility_id () {
-					return this.facility_id;
-				}
-				
 			    public int files;
 
 				public int getFiles () {
@@ -2431,6 +2443,12 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 
 				public java.util.Date getLast_modified () {
 					return this.last_modified;
+				}
+				
+			    public String datim_id;
+
+				public String getDatim_id () {
+					return this.datim_id;
 				}
 				
 
@@ -2457,6 +2475,36 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
     	}
     }
 
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
     public void readData(ObjectInputStream dis) {
 
 		synchronized(commonByteArrayLock_LAMISPLUS_ETL_NDR_Message_XML_Status) {
@@ -2467,11 +2515,11 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		
 			        this.id = dis.readInt();
 					
-			        this.facility_id = dis.readInt();
-					
 			        this.files = dis.readInt();
 					
 					this.last_modified = readDate(dis);
+					
+					this.datim_id = readString(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2497,15 +2545,15 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 					
 					// int
 				
-		            	dos.writeInt(this.facility_id);
-					
-					// int
-				
 		            	dos.writeInt(this.files);
 					
 					// java.util.Date
 				
 						writeDate(this.last_modified,dos);
+					
+					// String
+				
+						writeString(this.datim_id,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -2521,9 +2569,9 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("id="+String.valueOf(id));
-		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",files="+String.valueOf(files));
 		sb.append(",last_modified="+String.valueOf(last_modified));
+		sb.append(",datim_id="+datim_id);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2533,6 +2581,196 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
      * Compare keys
      */
     public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class after_tDBInput_2Struct implements routines.system.IPersistableRow<after_tDBInput_2Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[0];
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public int files;
+
+				public int getFiles () {
+					return this.files;
+				}
+				
+			    public java.util.Date last_modified;
+
+				public java.util.Date getLast_modified () {
+					return this.last_modified;
+				}
+				
+			    public String datim_id;
+
+				public String getDatim_id () {
+					return this.datim_id;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_NDR_Message_XML_Status) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.id = dis.readInt();
+					
+			        this.files = dis.readInt();
+					
+					this.last_modified = readDate(dis);
+					
+					this.datim_id = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.id);
+					
+					// int
+				
+		            	dos.writeInt(this.files);
+					
+					// java.util.Date
+				
+						writeDate(this.last_modified,dos);
+					
+					// String
+				
+						writeString(this.datim_id,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",files="+String.valueOf(files));
+		sb.append(",last_modified="+String.valueOf(last_modified));
+		sb.append(",datim_id="+datim_id);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(after_tDBInput_2Struct other) {
 
 		int returnValue = -1;
 		
@@ -2585,6 +2823,7 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 				globalResumeTicket = true;
 
 
+		tDBInput_6Process(globalMap);
 
 		row3Struct row3 = new row3Struct();
 XML_StatusStruct XML_Status = new XML_StatusStruct();
@@ -2673,10 +2912,10 @@ String dbUser_tDBOutput_2 = null;
 int count_tDBOutput_2=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
-	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"id\",\"facility_id\",\"files\",\"last_modified\") VALUES (?,?,?,?)";
+	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"id\",\"files\",\"last_modified\",\"facility_id\") VALUES (?,?,?,?)";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
 	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
-	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"facility_id\" = ?,\"files\" = ?,\"last_modified\" = ? WHERE \"id\" = ?";
+	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"files\" = ?,\"last_modified\" = ?,\"facility_id\" = ? WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
 	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
 	    
@@ -2719,6 +2958,16 @@ int count_tDBOutput_2=0;
 
 // ###############################
 // # Lookup's keys initialization
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<LAMISPlusStruct> tHash_Lookup_LAMISPlus = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<LAMISPlusStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<LAMISPlusStruct>) 
+					globalMap.get( "tHash_Lookup_LAMISPlus" ))
+					;					
+					
+	
+
+LAMISPlusStruct LAMISPlusHashKey = new LAMISPlusStruct();
+LAMISPlusStruct LAMISPlusDefault = new LAMISPlusStruct();
 // ###############################        
 
 // ###############################
@@ -2799,7 +3048,8 @@ XML_StatusStruct XML_Status_tmp = new XML_StatusStruct();
 		    
 			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-		    String dbquery_tDBInput_2 = "SELECT * FROM ndr_xml_status\nORDER BY id ASC ";
+		    String dbquery_tDBInput_2 = "SELECT nxs.id, nxs.files, nxs.last_modified, nf.datim_id FROM ndr_xml_status nxs\n	INNER JOIN ndr_facility nf\n  ON nf."
++"id=nxs.facility_id\nORDER BY id ASC";
 			
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -2826,28 +3076,25 @@ XML_StatusStruct XML_Status_tmp = new XML_StatusStruct();
             }
 		                    }
 							if(colQtyInRs_tDBInput_2 < 2) {
-								row3.facility_id = 0;
+								row3.files = 0;
 							} else {
 		                          
-            row3.facility_id = rs_tDBInput_2.getInt(2);
+            row3.files = rs_tDBInput_2.getInt(2);
             if(rs_tDBInput_2.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_2 < 3) {
-								row3.files = 0;
-							} else {
-		                          
-            row3.files = rs_tDBInput_2.getInt(3);
-            if(rs_tDBInput_2.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_2 < 4) {
 								row3.last_modified = null;
 							} else {
 										
-			row3.last_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 4);
+			row3.last_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_2, 3);
+		                    }
+							if(colQtyInRs_tDBInput_2 < 4) {
+								row3.datim_id = null;
+							} else {
+	                         		
+        	row3.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 4, false);
 		                    }
 					
 
@@ -2927,7 +3174,100 @@ XML_StatusStruct XML_Status_tmp = new XML_StatusStruct();
 		  boolean rejectedInnerJoin_tMap_3 = false;
 		  boolean mainRowRejected_tMap_3 = false;
             				    								  
-		// ###############################
+		
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "LAMISPlus" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLoopLAMISPlus = false;
+       		  	    	
+       		  	    	
+ 							LAMISPlusStruct LAMISPlusObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_3) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_3 = false;
+								
+                        		    		    LAMISPlusHashKey.datim_code = row3.datim_id ;
+                        		    		
+
+								
+		                        	LAMISPlusHashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_LAMISPlus.lookup( LAMISPlusHashKey );
+
+	  							
+
+	  							
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_LAMISPlus != null && tHash_Lookup_LAMISPlus.getCount(LAMISPlusHashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'LAMISPlus' and it contains more one result from keys :  LAMISPlus.datim_code = '" + LAMISPlusHashKey.datim_code + "'");
+								} // G 071
+							
+
+							LAMISPlusStruct LAMISPlus = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	LAMISPlusStruct fromLookup_LAMISPlus = null;
+							LAMISPlus = LAMISPlusDefault;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_LAMISPlus !=null && tHash_Lookup_LAMISPlus.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_LAMISPlus = tHash_Lookup_LAMISPlus.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_LAMISPlus != null) {
+								LAMISPlus = fromLookup_LAMISPlus;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	            	
+	            // ###############################
         { // start of Var scope
         
 	        // ###############################
@@ -2942,9 +3282,9 @@ XML_Status = null;
 
 // # Output table : 'XML_Status'
 XML_Status_tmp.id = row3.id ;
-XML_Status_tmp.facility_id = row3.facility_id ;
 XML_Status_tmp.files = row3.files ;
 XML_Status_tmp.last_modified = row3.last_modified ;
+XML_Status_tmp.facility_id = LAMISPlus.id ;
 XML_Status = XML_Status_tmp;
 // ###############################
 
@@ -3023,15 +3363,15 @@ if(XML_Status != null) {
                 }
             }
             if(checkCount_tDBOutput_2 > 0) {
-                        pstmtUpdate_tDBOutput_2.setInt(1, XML_Status.facility_id);
-
-                        pstmtUpdate_tDBOutput_2.setInt(2, XML_Status.files);
+                        pstmtUpdate_tDBOutput_2.setInt(1, XML_Status.files);
 
                         if(XML_Status.last_modified != null) {
-pstmtUpdate_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(XML_Status.last_modified.getTime()));
+pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(XML_Status.last_modified.getTime()));
 } else {
-pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
+pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
 }
+
+                        pstmtUpdate_tDBOutput_2.setInt(3, XML_Status.facility_id);
 
                         pstmtUpdate_tDBOutput_2.setInt(4 + count_tDBOutput_2, XML_Status.id);
 
@@ -3049,15 +3389,15 @@ pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
             } else {
                         pstmtInsert_tDBOutput_2.setInt(1, XML_Status.id);
 
-                        pstmtInsert_tDBOutput_2.setInt(2, XML_Status.facility_id);
-
-                        pstmtInsert_tDBOutput_2.setInt(3, XML_Status.files);
+                        pstmtInsert_tDBOutput_2.setInt(2, XML_Status.files);
 
                         if(XML_Status.last_modified != null) {
-pstmtInsert_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(XML_Status.last_modified.getTime()));
+pstmtInsert_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(XML_Status.last_modified.getTime()));
 } else {
-pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
+pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
 }
+
+                        pstmtInsert_tDBOutput_2.setInt(4, XML_Status.facility_id);
 
                 try {
 					
@@ -3243,6 +3583,14 @@ end_Hash.put("tDBInput_2", System.currentTimeMillis());
 
 // ###############################
 // # Lookup hashes releasing
+					if(tHash_Lookup_LAMISPlus != null) {
+						tHash_Lookup_LAMISPlus.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_LAMISPlus" );
+
+					
+					
+				
 // ###############################      
 
 
@@ -3370,6 +3718,9 @@ end_Hash.put("tDBOutput_2", System.currentTimeMillis());
 				throw error;
 			}finally{
 				
+					     			//free memory for "tMap_3"
+					     			globalMap.remove("tHash_Lookup_LAMISPlus"); 
+				     			
 				try{
 					
 	
@@ -6651,6 +7002,778 @@ end_Hash.put("tJava_1", System.currentTimeMillis());
 		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
 	}
 	
+
+
+public static class LAMISPlusStruct implements routines.system.IPersistableComparableLookupRow<LAMISPlusStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public String name;
+
+				public String getName () {
+					return this.name;
+				}
+				
+			    public String orgunit_name;
+
+				public String getOrgunit_name () {
+					return this.orgunit_name;
+				}
+				
+			    public String datim_code;
+
+				public String getDatim_code () {
+					return this.datim_code;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.datim_code == null) ? 0 : this.datim_code.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final LAMISPlusStruct other = (LAMISPlusStruct) obj;
+		
+						if (this.datim_code == null) {
+							if (other.datim_code != null)
+								return false;
+						
+						} else if (!this.datim_code.equals(other.datim_code))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(LAMISPlusStruct other) {
+
+		other.id = this.id;
+	            other.name = this.name;
+	            other.orgunit_name = this.orgunit_name;
+	            other.datim_code = this.datim_code;
+	            
+	}
+
+	public void copyKeysDataTo(LAMISPlusStruct other) {
+
+		other.datim_code = this.datim_code;
+	            	
+	}
+
+
+
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_NDR_Message_XML_Status, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_NDR_Message_XML_Status) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.datim_code = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.datim_code,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+			            this.id = dis.readInt();
+					
+						this.name = readString(dis,ois);
+					
+						this.orgunit_name = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+		            	dos.writeInt(this.id);
+					
+						writeString(this.name, dos, oos);
+					
+						writeString(this.orgunit_name, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",name="+name);
+		sb.append(",orgunit_name="+orgunit_name);
+		sb.append(",datim_code="+datim_code);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(LAMISPlusStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.datim_code, other.datim_code);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_6Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_6_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		LAMISPlusStruct LAMISPlus = new LAMISPlusStruct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_LAMISPlus begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_LAMISPlus", false);
+		start_Hash.put("tAdvancedHash_LAMISPlus", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_LAMISPlus";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"LAMISPlus");
+					}
+				
+		int tos_count_tAdvancedHash_LAMISPlus = 0;
+		
+
+			   		// connection name:LAMISPlus
+			   		// source node:tDBInput_6 - inputs:(after_tDBInput_2) outputs:(LAMISPlus,LAMISPlus) | target node:tAdvancedHash_LAMISPlus - inputs:(LAMISPlus) outputs:()
+			   		// linked node: tMap_3 - inputs:(row3,LAMISPlus) outputs:(XML_Status)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_LAMISPlus = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<LAMISPlusStruct> tHash_Lookup_LAMISPlus =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<LAMISPlusStruct>getLookup(matchingModeEnum_LAMISPlus);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_LAMISPlus", tHash_Lookup_LAMISPlus);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_LAMISPlus begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_6 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_6", false);
+		start_Hash.put("tDBInput_6", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_6";
+
+	
+		int tos_count_tDBInput_6 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_6 = 0;
+		    java.sql.Connection conn_tDBInput_6 = null;
+				String driverClass_tDBInput_6 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_6 = java.lang.Class.forName(driverClass_tDBInput_6);
+				String dbUser_tDBInput_6 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_6 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_6 = decryptedPassword_tDBInput_6;
+				
+				String url_tDBInput_6 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_6 = java.sql.DriverManager.getConnection(url_tDBInput_6,dbUser_tDBInput_6,dbPwd_tDBInput_6);
+		        
+				conn_tDBInput_6.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_6 = conn_tDBInput_6.createStatement();
+
+		    String dbquery_tDBInput_6 = "SELECT facility.id,\n	facility.name,\n	orgunit.name as orgunit_name,\n	oid.code as datim_code\nFROM base_organisation_u"
++"nit facility\nJOIN base_organisation_unit orgunit\nON facility.parent_organisation_unit_id = orgunit.id\nJOIN base_organ"
++"isation_unit_identifier oid\nON facility.id = oid.organisation_unit_id\nWHERE facility.organisation_unit_level_id=4 ";
+			
+
+            	globalMap.put("tDBInput_6_QUERY",dbquery_tDBInput_6);
+		    java.sql.ResultSet rs_tDBInput_6 = null;
+
+		    try {
+		    	rs_tDBInput_6 = stmt_tDBInput_6.executeQuery(dbquery_tDBInput_6);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_6 = rs_tDBInput_6.getMetaData();
+		    	int colQtyInRs_tDBInput_6 = rsmd_tDBInput_6.getColumnCount();
+
+		    String tmpContent_tDBInput_6 = null;
+		    
+		    
+		    while (rs_tDBInput_6.next()) {
+		        nb_line_tDBInput_6++;
+		        
+							if(colQtyInRs_tDBInput_6 < 1) {
+								LAMISPlus.id = 0;
+							} else {
+		                          
+            LAMISPlus.id = rs_tDBInput_6.getInt(1);
+            if(rs_tDBInput_6.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 2) {
+								LAMISPlus.name = null;
+							} else {
+	                         		
+        	LAMISPlus.name = routines.system.JDBCUtil.getString(rs_tDBInput_6, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 3) {
+								LAMISPlus.orgunit_name = null;
+							} else {
+	                         		
+        	LAMISPlus.orgunit_name = routines.system.JDBCUtil.getString(rs_tDBInput_6, 3, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 4) {
+								LAMISPlus.datim_code = null;
+							} else {
+	                         		
+        	LAMISPlus.datim_code = routines.system.JDBCUtil.getString(rs_tDBInput_6, 4, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_6 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_6++;
+
+/**
+ * [tDBInput_6 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_LAMISPlus main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_LAMISPlus";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"LAMISPlus");
+					}
+					
+
+
+			   
+			   
+
+					LAMISPlusStruct LAMISPlus_HashRow = new LAMISPlusStruct();
+		   	   	   
+				
+				LAMISPlus_HashRow.id = LAMISPlus.id;
+				
+				LAMISPlus_HashRow.name = LAMISPlus.name;
+				
+				LAMISPlus_HashRow.orgunit_name = LAMISPlus.orgunit_name;
+				
+				LAMISPlus_HashRow.datim_code = LAMISPlus.datim_code;
+				
+			tHash_Lookup_LAMISPlus.put(LAMISPlus_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_LAMISPlus++;
+
+/**
+ * [tAdvancedHash_LAMISPlus main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_LAMISPlus process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_LAMISPlus";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_LAMISPlus process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_LAMISPlus process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_LAMISPlus";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_LAMISPlus process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_6 != null) {
+		rs_tDBInput_6.close();
+	}
+	if (stmt_tDBInput_6 != null) {
+		stmt_tDBInput_6.close();
+	}
+	if(conn_tDBInput_6 != null && !conn_tDBInput_6.isClosed()) {
+		
+			conn_tDBInput_6.commit();
+			
+		
+			conn_tDBInput_6.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_6_NB_LINE",nb_line_tDBInput_6);
+ 
+
+ok_Hash.put("tDBInput_6", true);
+end_Hash.put("tDBInput_6", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_6 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_LAMISPlus end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_LAMISPlus";
+
+	
+
+tHash_Lookup_LAMISPlus.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"LAMISPlus");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_LAMISPlus", true);
+end_Hash.put("tAdvancedHash_LAMISPlus", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_LAMISPlus end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_LAMISPlus finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_LAMISPlus";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_LAMISPlus finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_6_SUBPROCESS_STATE", 1);
+	}
+	
     public String resuming_logs_dir_path = null;
     public String resuming_checkpoint_path = null;
     public String parent_part_launcher = null;
@@ -7121,6 +8244,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     172296 characters generated by Talend Open Studio for Big Data 
- *     on the February 8, 2023 9:15:01 AM WAT
+ *     197814 characters generated by Talend Open Studio for Big Data 
+ *     on the February 9, 2023 10:02:04 PM WAT
  ************************************************************************************************/
