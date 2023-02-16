@@ -6,13 +6,13 @@
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Server" prompt="LAMISPlus_Server?" promptNeeded="false" type="id_String" value="localhost"/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:yTUmijQPiA+1oY+4nPViO+uo2gtiiz2azzmTvIarvGKQ"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:BSVKFh1Em7iCcdLMRLShfgl9t5BCiULGjfku2un+V+Ih"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Database" prompt="LAMIS3_Database?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="lamis-aminu"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:UFNWDpoEwIDfNFSPhF7sBnCxWJbKWf87dU/MsHhJpfoa"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:1gipbL7B1aDYo3OPPtg+exZK/S3I19kZQkP2/qMHbUBX"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
   </context>
@@ -21,7 +21,7 @@
     <contextParameter comment="" name="LAMIS3_Port" prompt="LAMIS3_Port?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="5432"/>
     <contextParameter comment="" name="LAMIS3_AdditionalParams" prompt="LAMIS3_AdditionalParams?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value=""/>
     <contextParameter comment="" name="LAMIS3_Schema" prompt="LAMIS3_Schema?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="public"/>
-    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:cwl3Nzw5DUI3mJf4rVJicJRUYNuo7r/9xtuUceIdCwv1"/>
+    <contextParameter comment="" name="LAMIS3_Password" prompt="LAMIS3_Password?" promptNeeded="true" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_Password" value="enc:system.encryption.key.v1:4CK8N312ApUP9X26x5EKeeoCUn4enjkdtrN1fUYyPU9q"/>
     <contextParameter comment="" name="LAMIS3_Server" prompt="LAMIS3_Server?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="localhost"/>
     <contextParameter comment="" name="LAMIS3_Login" prompt="LAMIS3_Login?" promptNeeded="false" repositoryContextId="_SPt2gDlbEe2ZvsEhPaOC-Q" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_Port" prompt="LAMISPlus_Port?" promptNeeded="false" type="id_String" value="5432"/>
@@ -29,7 +29,7 @@
     <contextParameter comment="" name="LAMISPlus_Schema" prompt="LAMISPlus_Schema?" promptNeeded="false" type="id_String" value="public"/>
     <contextParameter comment="" name="LAMISPlus_Login" prompt="LAMISPlus_Login?" promptNeeded="false" type="id_String" value="postgres"/>
     <contextParameter comment="" name="LAMISPlus_AdditionalParams" prompt="LAMISPlus_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:PqqN0inPexxItdAw/xtma2+zG4lJpBs9LmfD2DCDAeTI"/>
+    <contextParameter comment="" name="LAMISPlus_Password" prompt="LAMISPlus_Password?" promptNeeded="true" type="id_Password" value="enc:system.encryption.key.v1:MdC3tBwg/m6NpLJHlVfeMjLfGB7MC/u9zeTHD8DopLsv"/>
     <contextParameter comment="" name="LAMISPlus_Database" prompt="LAMISPlus_Database?" promptNeeded="true" type="id_String" value="test"/>
   </context>
   <parameters>
@@ -73,7 +73,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:xPGyoa8UU0GowKuy/kSLgmo+hr+3TaWVGvm4OHyL" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:z1n/qd6muaJ0AS9/2sjpGvnvMkF9a0WnATQh0Jw0" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -108,7 +108,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:TzieQMIIUzrJWSMsGk3/J/ZquZB9OFe7Oh4leJ3K" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gqVP19c6wGg3M8uUM1swPCrxOjdQRBOcB11w2gFb" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -150,7 +150,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vuLZ19laKs3isdcTAI1Zx4xYAGWfmV0izjnBUSsz7XFn4TkSe5ehjGItkecybwuJTnvj5iax"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Mtcgg/VqPbSmjusla52EkgaLPR2ML22GOj5Q/WRGIiBAZops07SE3Ok52CQu8h24wVSRzgb+"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -322,9 +322,9 @@
         <mapperTableEntries name="id" expression="Patients_mapping.id " type="id_Integer"/>
         <mapperTableEntries name="hospital_number" expression="Patients_mapping.hospital_num " type="id_String"/>
         <mapperTableEntries name="uuid" expression="Patients_mapping.uuid " type="id_String" nullable="true"/>
-        <mapperTableEntries name="first_name" expression="(Patients_mapping.other_names==null)||(&quot;&quot;.equals(Patients_mapping.other_names))?null:Patients_mapping.other_names " type="id_String" nullable="true"/>
-        <mapperTableEntries name="surname" expression="Patients_mapping.surname " type="id_String" nullable="true"/>
-        <mapperTableEntries name="other_name" expression="(&quot;&quot;.equals(Patients_mapping.other_names))?null:Patients_mapping.other_names " type="id_String" nullable="true"/>
+        <mapperTableEntries name="first_name" expression="(Patients_mapping.other_names==null)||(&quot;&quot;.equals(Patients_mapping.other_names))?&quot;&quot;:Patients_mapping.other_names " type="id_String" nullable="true"/>
+        <mapperTableEntries name="surname" expression="(Patients_mapping.surname==null)||(&quot;&quot;.equals(Patients_mapping.surname))?&quot;&quot;:Patients_mapping.surname " type="id_String" nullable="true"/>
+        <mapperTableEntries name="other_name" expression="(Patients_mapping.other_names==null)||(&quot;&quot;.equals(Patients_mapping.other_names))?&quot;&quot;:Patients_mapping.other_names " type="id_String" nullable="true"/>
         <mapperTableEntries name="gender" expression="Patients_mapping.gender " type="id_String" nullable="true"/>
         <mapperTableEntries name="date_of_birth" expression="Patients_mapping.date_birth " type="id_Date" nullable="true"/>
         <mapperTableEntries name="is_date_of_birth_estimated" expression="Patients_mapping.dob_estimated " type="id_Boolean" nullable="true"/>
@@ -451,7 +451,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LqpyXsJMnueFuxMLme9OM9VgPFZtGHbqSCbR4zoxFraJ6IMlmSw5GugMi+sb9tENZrZ/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:q0i1gSLV/JvqXeV6qHrrIWw8MFFXGyHRIX0CxJZTxVVxH/MfqUfSszlr3xSDBQ5NUMak"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -503,7 +503,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Mp4BvIc1dpIWsFD9IUcapFPTjnP6+LRlz0epJZaXcX08FJ7LCWLoads+fukmaLppwOMy5PbV"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:KiiXGU2677OUadCL1/3Z4lbFYryYvMVvVSvbu/5yPpOGlwfxS8DbBo/qcNIDQwTKjPFlmy1N"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -560,7 +560,7 @@
       <column comment="" key="false" length="230" name="occupation_display" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" originalLength="230" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="Employment">
         <mapperTableEntries name="person_uuid" expression="Patient_employment_status_mapping.person_uuid " type="id_String" nullable="true"/>
@@ -592,7 +592,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:I8MsRmcpVRucn+RQYavNqcX6uMsNPqBVcdakeJPLZBXy48BhNQ9TINxUKJEa/+vyXwzvFZx+"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9xKm5CM+ojlvkAezRH3Ruh6Lb+C/hnCzupfKKHRScXMmE6cm8t8z4fHLUSQ7K3Ld/NWfI0Xx"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -681,7 +681,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:euozJh1GlMwyp+ucE5C5Q4ofwM3JuF29QtN8UoVjsJJMkeRoOHIOCdVdKwrKo+Imh3SV/aF0"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pP18VTBH07WjmK4Y8D3Ebibcp3dtWMAjy2JmoQP/CxKk9LHAioVMJhemEOXpyUhnPM+rOTdM"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -778,7 +778,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5ru9zkPEzCWYLIP2Zx8TL3p74cKOVpgUZYo0r2WW2MoqjdHIWw24e8562WSK3iW+mRniWGKJ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:umdfEekcEl2bMBxiqly2+IfRAp1GRT0oVNqgId/htVAaHbzzwiBGlCfzCcWSGRNVy9Chy7IR"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -871,7 +871,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PN5HE+2JX5mV2dxwwpD2ugfh1DAR/XG5uVKkEp/p0498rJQ1v8lF+u9Itzwfgdm6at9B/ref"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:EoQ1IjLlgoN2Lm11rzbBIFR761fXpMcam8Y8DB2rBQBM5RUJ6ERS5+uYHse9OlIsrv1MLZVp"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -920,7 +920,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:mdrPz2y1d17vFzjGrsrozjtKjFzxqbQU6nghhL/Ev3sI0cmEBzDjW4i3gKAXWEZWyLh1SC+1"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:U8ZWpnw0mJ3cmck8ZRoCCp7hD0HUmj9fL6tU2ARm6UcUxHHLRMWk3zUSvLgXFCmi8z22b234"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1993,7 +1993,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CF2FUTqm3qpgih1wm7Br0f49dNo9t9AeFsWG31TIdjzYaSG+7DTBRG0Yg9u/FxhEISFIHi6x"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2TE2CiGD8SR1R6mxOd3pIofDXVJq61W5E6yuaA6XROTqP6F1bw0EL+ibAGexkGshkaZx6qy6"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2036,7 +2036,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6GhejsKQwqX8mISiZtp7vrQLo7I2hqCLD/9iLrjx/bGQ30DDKrSh/NtyJDz7giIf1dhmUnhD"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:8YfTsarYpMZ4HtqfT7AoyCJMY/pJIxcsxI9q/F+EGpSpGUJAqs3C9YTT8ik9+bdYaa/jeRKh"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2079,7 +2079,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IcffX0Itc3W64mGLTuceujUmthbrljPa7J+aKhwBBeNxXWL4cs8IHVevG7BNuE7eetjVqr8b"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oY9Gn3v9i1zAWFF0FSI4dPDR4yRyxqL1HxpFoAWqtXB4YUU+X/ZNn+JGZsaDUvQY5K9NvbMu"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2128,7 +2128,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tiUiEVR3ah12+MU/HpOj6ouw3Aey1xV73sJVzTbvPXAZz6/CtbxOPxG1ko6s7ohHChccsAf/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:KK7dd8AXDolT2+7N5Eiy3eVZj7RiO7lNTex4nPHcAYCecaXZq5FggmU7SCUudv11VCFMIafK"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2171,7 +2171,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wrrVAfn7ub4UT+YQlszsQrkX0NLsi5TjWJ4Z37zKz94Fhq/Z7Lzdtmwv0TAgMaMmzsl1GVur"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:68PrPpACOwi3+O2QRA4Owc8UATrSEjbLOti4Adf7ij46pXDsI+mqkEoxr4jtzOjiOlUA+kp8"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2251,7 +2251,7 @@
       <column comment="" key="false" length="100" name="full_name" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="final_mapper">
         <mapperTableEntries name="id" expression="Unique_Patients.id " type="id_Integer"/>
@@ -2282,7 +2282,7 @@
         <mapperTableEntries name="facility_id" expression="Unique_Patients.facility_id " type="id_Long"/>
         <mapperTableEntries name="organization" expression="Unique_Patients.organization " type="id_String" nullable="true"/>
         <mapperTableEntries name="sex" expression="Character.toUpperCase(Unique_Patients.sex.toLowerCase().charAt(0)) + Unique_Patients.sex.toLowerCase().substring(1); " type="id_String" nullable="true"/>
-        <mapperTableEntries name="full_name" expression="Unique_Patients.first_name.trim() + Unique_Patients.surname.trim() " type="id_String" nullable="true"/>
+        <mapperTableEntries name="full_name" expression="((Unique_Patients.first_name == null)?&quot;&quot;:Unique_Patients.first_name.trim()) + &#xD;&#xA;((Unique_Patients.surname == null)?&quot;&quot;:Unique_Patients.surname.trim()) " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="Unique_Patients" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_Integer"/>
@@ -2329,7 +2329,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4tqtR4VGXMi+IEznh1EKbIOc0Uow25XvyrBFutcGkmC7po4OUflWm1BdmIQ9zb1E8Sp9ctXR"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:A+EEJ7C8tR+QvYGJk/C8G3Axnz/kdmo8s9iTqPtoiPqEkvvTkjGHbGV1i6sI4PpQ+kO+wWQI"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;patient_person&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -2628,7 +2628,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pjWwNcZJR0XUtyEHCNAA4FQVnR1s1Ne3Nzk4m8lsERuSkrfhd1iZCSoO5exdsn9HPFko"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GmpgxcRuX20UvOoh5VH5Hv/BnJ6yqaUWXaW68F5x5/RSIak9roklSJMKyewQCLGl+pUX"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2816,7 +2816,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XCMgUZgC+QXpen3mx3D95Q1uQcBgRvTPA66wgRSi0NYcKE3j4k8HSPdMTQ23d0LrX0C+b1dQ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ksIv17Fv2AB4goED8xtGD+17GYmwjgwP0QmkY+PuMXZDtMSiuH4106YKQsOcrhtv/3C0MqcN"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_patient_stage&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE_OR_INSERT"/>
@@ -2958,7 +2958,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMIS3_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMIS3_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMIS3_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ptQ0OO3glXmtAOt7DBqOYfcZEJfIsL4epj6dNZPYGTfURq4/vYmvSXMsmHNRgDFLmq16"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CHK0igRl0a+AtTyThYWfr3rNO5DOmUdGfgNg+58kggkf/ncL+WormaKEkQiPUtbAdZ3q"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -3007,7 +3007,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6j8pWiQ7O0FHX/1X7yLxEbaOElsgpY6A2YK0UTl/2Ye+sOuxcsl5zZEJELi9crjxGvoTg4RZ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:moYfJCtKdBZt1JUVHQf+RYRANzJCf5BFakAjTeDl2cxuZQxZQetoF4dTGI0itbzz9958+nAJ"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_facility&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
@@ -3106,7 +3106,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.LAMISPlus_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:d79TXRLTAmYuyDE+lWGTVDRO3IOPuaGjNQB8p2Ifxf+xO1ZHbpxLzFRgzMynKNc7PbSNJnc6"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ApzoR1rm9mWbmyVOB4WrLyrO0a2Nb36/b2c9CkfEtE3QpRvUkK5IqV93TvCqU8C4o6k2vPWN"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -3179,7 +3179,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LAMISPlus_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.LAMISPlus_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:58ZKFh9kbAlAS/o2S5gJOT2NJPOPdreZ/ULxSo2xFEGj1dD9+FT9WZNMnVPxBjTXqm6HhKJF"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yX626RGU8/rllT4qS07H10rlJR/10YFYgGDWh/DoLknOM5IZoAxFHXX0LI8pmQd+eaEGqTw8"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;etl_sequence&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
