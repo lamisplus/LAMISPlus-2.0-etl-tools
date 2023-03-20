@@ -44,6 +44,9 @@ If you want to change individual parameters in the context selection, edit the .
 --context_param LAMIS3_Database=lamis3
 ```
 
+## Further Documentation
+This can be found in the ```ETL Tools & Jobs Documentations folder```, extract and navigate inwards to see document for specific migration as html doc.
+
 ## License
 
 MIT
