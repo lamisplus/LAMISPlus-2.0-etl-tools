@@ -992,6 +992,12 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					return this.template_type;
 				}
 				
+			    public String device_name;
+
+				public String getDevice_name () {
+					return this.device_name;
+				}
+				
 			    public String biometric_type;
 
 				public String getBiometric_type () {
@@ -1034,9 +1040,9 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-			    public boolean version_iso_20;
+			    public Boolean version_iso_20;
 
-				public boolean getVersion_iso_20 () {
+				public Boolean getVersion_iso_20 () {
 					return this.version_iso_20;
 				}
 				
@@ -1152,6 +1158,8 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					
 					this.template_type = readString(dis);
 					
+					this.device_name = readString(dis);
+					
 					this.biometric_type = readString(dis);
 					
 					this.enrollment_date = readDate(dis);
@@ -1166,7 +1174,12 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
-			        this.version_iso_20 = dis.readBoolean();
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.version_iso_20 = null;
+           				} else {
+           			    	this.version_iso_20 = dis.readBoolean();
+           				}
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -1204,6 +1217,10 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 					
 					// String
 				
+						writeString(this.device_name,dos);
+					
+					// String
+				
 						writeString(this.biometric_type,dos);
 					
 					// java.util.Date
@@ -1230,9 +1247,14 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
-					// boolean
+					// Boolean
 				
-		            	dos.writeBoolean(this.version_iso_20);
+						if(this.version_iso_20 == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.version_iso_20);
+		            	}
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -1251,6 +1273,7 @@ public static class biometric_recordStruct implements routines.system.IPersistab
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",template_type="+template_type);
+		sb.append(",device_name="+device_name);
 		sb.append(",biometric_type="+biometric_type);
 		sb.append(",enrollment_date="+String.valueOf(enrollment_date));
 		sb.append(",last_modified="+String.valueOf(last_modified));
@@ -1336,6 +1359,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.template_type;
 				}
 				
+			    public String device_name;
+
+				public String getDevice_name () {
+					return this.device_name;
+				}
+				
 			    public String biometric_type;
 
 				public String getBiometric_type () {
@@ -1378,9 +1407,9 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
-			    public boolean version_iso_20;
+			    public Boolean version_iso_20;
 
-				public boolean getVersion_iso_20 () {
+				public Boolean getVersion_iso_20 () {
 					return this.version_iso_20;
 				}
 				
@@ -1425,6 +1454,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 	            other.person_uuid = this.person_uuid;
 	            other.facility_id = this.facility_id;
 	            other.template_type = this.template_type;
+	            other.device_name = this.device_name;
 	            other.biometric_type = this.biometric_type;
 	            other.enrollment_date = this.enrollment_date;
 	            other.last_modified = this.last_modified;
@@ -1554,6 +1584,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.template_type = readString(dis);
 					
+					this.device_name = readString(dis);
+					
 					this.biometric_type = readString(dis);
 					
 					this.enrollment_date = readDate(dis);
@@ -1568,7 +1600,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
-			        this.version_iso_20 = dis.readBoolean();
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.version_iso_20 = null;
+           				} else {
+           			    	this.version_iso_20 = dis.readBoolean();
+           				}
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -1606,6 +1643,10 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					// String
 				
+						writeString(this.device_name,dos);
+					
+					// String
+				
 						writeString(this.biometric_type,dos);
 					
 					// java.util.Date
@@ -1632,9 +1673,14 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
-					// boolean
+					// Boolean
 				
-		            	dos.writeBoolean(this.version_iso_20);
+						if(this.version_iso_20 == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.version_iso_20);
+		            	}
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -1653,6 +1699,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",person_uuid="+person_uuid);
 		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",template_type="+template_type);
+		sb.append(",device_name="+device_name);
 		sb.append(",biometric_type="+biometric_type);
 		sb.append(",enrollment_date="+String.valueOf(enrollment_date));
 		sb.append(",last_modified="+String.valueOf(last_modified));
@@ -1954,8 +2001,8 @@ extract_biometricStruct extract_biometric_tmp = new extract_biometricStruct();
 			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
 		    String dbquery_tDBInput_1 = "SELECT b.id as id, patient_id as person_uuid, facility_id, template_type, 'Secugen' AS device_name,\nbiometric_type, en"
-+"rollment_date, last_modified, template, archived::integer, iso, nf.datim_id, TRUE AS  version_iso_20\n	FROM biometric b"
-+"\n	INNER JOIN ndr_facility nf\n  ON nf.id=b.facility_id";
++"rollment_date, to_char(last_modified,'YYYY-MM-DD HH:SS:MM')::TIMESTAMP As last_modified, template, archived::integer, is"
++"o, nf.datim_id, TRUE AS  version_iso_20\n	FROM biometric b\n	INNER JOIN ndr_facility nf\n  ON nf.id=b.facility_id";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2000,63 +2047,69 @@ extract_biometricStruct extract_biometric_tmp = new extract_biometricStruct();
         	biometric_record.template_type = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 5) {
+								biometric_record.device_name = null;
+							} else {
+	                         		
+        	biometric_record.device_name = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 6) {
 								biometric_record.biometric_type = null;
 							} else {
 	                         		
-        	biometric_record.biometric_type = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
+        	biometric_record.biometric_type = routines.system.JDBCUtil.getString(rs_tDBInput_1, 6, false);
 		                    }
-							if(colQtyInRs_tDBInput_1 < 6) {
+							if(colQtyInRs_tDBInput_1 < 7) {
 								biometric_record.enrollment_date = null;
 							} else {
 										
-			biometric_record.enrollment_date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 6);
+			biometric_record.enrollment_date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 7);
 		                    }
-							if(colQtyInRs_tDBInput_1 < 7) {
+							if(colQtyInRs_tDBInput_1 < 8) {
 								biometric_record.last_modified = null;
 							} else {
 										
-			biometric_record.last_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 7);
+			biometric_record.last_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 8);
 		                    }
-							if(colQtyInRs_tDBInput_1 < 8) {
+							if(colQtyInRs_tDBInput_1 < 9) {
 								biometric_record.template = null;
 							} else {
 		                          
-            biometric_record.template = rs_tDBInput_1.getBytes(8);
+            biometric_record.template = rs_tDBInput_1.getBytes(9);
             if(rs_tDBInput_1.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_1 < 9) {
+							if(colQtyInRs_tDBInput_1 < 10) {
 								biometric_record.archived = null;
 							} else {
 		                          
-            biometric_record.archived = rs_tDBInput_1.getInt(9);
+            biometric_record.archived = rs_tDBInput_1.getInt(10);
             if(rs_tDBInput_1.wasNull()){
                     biometric_record.archived = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_1 < 10) {
+							if(colQtyInRs_tDBInput_1 < 11) {
 								biometric_record.iso = false;
 							} else {
 	                         		
-            biometric_record.iso = rs_tDBInput_1.getBoolean(10);
+            biometric_record.iso = rs_tDBInput_1.getBoolean(11);
             if(rs_tDBInput_1.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_1 < 11) {
+							if(colQtyInRs_tDBInput_1 < 12) {
 								biometric_record.datim_id = null;
 							} else {
 	                         		
-        	biometric_record.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 11, false);
+        	biometric_record.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 12, false);
 		                    }
-							if(colQtyInRs_tDBInput_1 < 12) {
-								biometric_record.version_iso_20 = false;
+							if(colQtyInRs_tDBInput_1 < 13) {
+								biometric_record.version_iso_20 = null;
 							} else {
 	                         		
-            biometric_record.version_iso_20 = rs_tDBInput_1.getBoolean(12);
+            biometric_record.version_iso_20 = rs_tDBInput_1.getBoolean(13);
             if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
+                    biometric_record.version_iso_20 = null;
             }
 		                    }
 					
@@ -4593,6 +4646,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     120913 characters generated by Talend Open Studio for Big Data 
- *     on the February 24, 2023 10:53:57 AM WAT
+ *     122490 characters generated by Talend Open Studio for Big Data 
+ *     on the March 20, 2023 2:09:05 PM WAT
  ************************************************************************************************/
