@@ -47,6 +47,9 @@ import java.util.Comparator;
 
 
 
+	//the import part of tJava_1
+	//import java.util.List;
+
 	//the import part of tJava_5
 	//import java.util.List;
 
@@ -56,9 +59,6 @@ import java.util.Comparator;
 	//the import part of tJava_3
 	//import java.util.List;
 
-	//the import part of tJava_1
-	//import java.util.List;
-
 	//the import part of tJava_4
 	//import java.util.List;
 
@@ -66,9 +66,9 @@ import java.util.Comparator;
 @SuppressWarnings("unused")
 
 /**
- * Job: HIV_ART_Pharmacy Purpose: F_HIV_ART_Pharmacy<br>
- * Description: F_HIV_ART_Pharmacy <br>
- * @author user@talend.com
+ * Job: HIV_ART_Pharmacy Purpose: ETL Tool for Pharmacy prescription<br>
+ * Description: This ETL tool is for the migration of Pharmacy data from LAMIS 3 pharmacy table to hiv_art_pharmacy & hiv_art_pharmacy_regimens tables <br>
+ * @author ilozuechukwuemeka@yahoo.com
  * @version 7.3.1.20200219_1130
  * @status 
  */
@@ -454,6 +454,42 @@ private class TalendException extends Exception {
 					tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tJava_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_11_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_11_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_11_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_11_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -544,15 +580,6 @@ private class TalendException extends Exception {
 					tJava_3_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tJava_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tDBInput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -616,6 +643,15 @@ private class TalendException extends Exception {
 					tDBInput_4_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_11_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tAdvancedHash_facilities_lookup_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -670,7 +706,26 @@ private class TalendException extends Exception {
 					tDBInput_4_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tAdvancedHash_row3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_11_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tJava_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tDBInput_11_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -696,11 +751,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tJava_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tJava_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -4313,7 +4363,7 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
 								} 
 							
-							tDBInput_4Process(globalMap); 
+							tDBInput_11Process(globalMap); 
 						
 
 
@@ -4477,6 +4527,3509 @@ end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 		
 
 		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 1);
+	}
+	
+
+public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+
+
+	
+	/**
+	 * [tJava_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tJava_1", false);
+		start_Hash.put("tJava_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tJava_1";
+
+	
+		int tos_count_tJava_1 = 0;
+		
+
+
+System.out.println("Total Pharmacy records fetched from LAMIS3 Pharmacy - "+globalMap.get("tDBInput_2_NB_LINE"));
+System.out.println("");
+ 
+
+
+
+/**
+ * [tJava_1 begin ] stop
+ */
+	
+	/**
+	 * [tJava_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+	tos_count_tJava_1++;
+
+/**
+ * [tJava_1 main ] stop
+ */
+	
+	/**
+	 * [tJava_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tJava_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tJava_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+ok_Hash.put("tJava_1", true);
+end_Hash.put("tJava_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tJava_1 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tJava_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_1 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
+	}
+	
+
+
+public static class Others_OutputStruct implements routines.system.IPersistableRow<Others_OutputStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public long id;
+
+				public long getId () {
+					return this.id;
+				}
+				
+			    public java.util.Date created_date;
+
+				public java.util.Date getCreated_date () {
+					return this.created_date;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public java.util.Date last_modified_date;
+
+				public java.util.Date getLast_modified_date () {
+					return this.last_modified_date;
+				}
+				
+			    public String last_modified_by;
+
+				public String getLast_modified_by () {
+					return this.last_modified_by;
+				}
+				
+			    public Long facility_id;
+
+				public Long getFacility_id () {
+					return this.facility_id;
+				}
+				
+			    public String visit_id;
+
+				public String getVisit_id () {
+					return this.visit_id;
+				}
+				
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public java.util.Date visit_date;
+
+				public java.util.Date getVisit_date () {
+					return this.visit_date;
+				}
+				
+			    public Boolean ard_screened;
+
+				public Boolean getArd_screened () {
+					return this.ard_screened;
+				}
+				
+			    public Boolean prescription_error;
+
+				public Boolean getPrescription_error () {
+					return this.prescription_error;
+				}
+				
+			    public Boolean adherence;
+
+				public Boolean getAdherence () {
+					return this.adherence;
+				}
+				
+			    public String mmd_type;
+
+				public String getMmd_type () {
+					return this.mmd_type;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public java.util.Date next_appointment;
+
+				public java.util.Date getNext_appointment () {
+					return this.next_appointment;
+				}
+				
+			    public String extra;
+
+				public String getExtra () {
+					return this.extra;
+				}
+				
+			    public String adverse_drug_reactions;
+
+				public String getAdverse_drug_reactions () {
+					return this.adverse_drug_reactions;
+				}
+				
+			    public Boolean is_devolve;
+
+				public Boolean getIs_devolve () {
+					return this.is_devolve;
+				}
+				
+			    public Integer refill_period;
+
+				public Integer getRefill_period () {
+					return this.refill_period;
+				}
+				
+			    public String dsd_model_type;
+
+				public String getDsd_model_type () {
+					return this.dsd_model_type;
+				}
+				
+			    public String refill;
+
+				public String getRefill () {
+					return this.refill;
+				}
+				
+			    public String refill_type;
+
+				public String getRefill_type () {
+					return this.refill_type;
+				}
+				
+			    public String delivery_point;
+
+				public String getDelivery_point () {
+					return this.delivery_point;
+				}
+				
+			    public String dsd_model;
+
+				public String getDsd_model () {
+					return this.dsd_model;
+				}
+				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
+			    public String ipt_type;
+
+				public String getIpt_type () {
+					return this.ipt_type;
+				}
+				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final Others_OutputStruct other = (Others_OutputStruct) obj;
+		
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(Others_OutputStruct other) {
+
+		other.id = this.id;
+	            other.created_date = this.created_date;
+	            other.created_by = this.created_by;
+	            other.last_modified_date = this.last_modified_date;
+	            other.last_modified_by = this.last_modified_by;
+	            other.facility_id = this.facility_id;
+	            other.visit_id = this.visit_id;
+	            other.person_uuid = this.person_uuid;
+	            other.visit_date = this.visit_date;
+	            other.ard_screened = this.ard_screened;
+	            other.prescription_error = this.prescription_error;
+	            other.adherence = this.adherence;
+	            other.mmd_type = this.mmd_type;
+	            other.uuid = this.uuid;
+	            other.next_appointment = this.next_appointment;
+	            other.extra = this.extra;
+	            other.adverse_drug_reactions = this.adverse_drug_reactions;
+	            other.is_devolve = this.is_devolve;
+	            other.refill_period = this.refill_period;
+	            other.dsd_model_type = this.dsd_model_type;
+	            other.refill = this.refill;
+	            other.refill_type = this.refill_type;
+	            other.delivery_point = this.delivery_point;
+	            other.dsd_model = this.dsd_model;
+	            other.archived = this.archived;
+	            other.ipt_type = this.ipt_type;
+	            other.ipt = this.ipt;
+	            
+	}
+
+	public void copyKeysDataTo(Others_OutputStruct other) {
+
+		other.id = this.id;
+	            	
+	}
+
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.id = dis.readLong();
+					
+					this.created_date = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.last_modified_date = readDate(dis);
+					
+					this.last_modified_by = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.facility_id = null;
+           				} else {
+           			    	this.facility_id = dis.readLong();
+           				}
+					
+					this.visit_id = readString(dis);
+					
+					this.person_uuid = readString(dis);
+					
+					this.visit_date = readDate(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.ard_screened = null;
+           				} else {
+           			    	this.ard_screened = dis.readBoolean();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.prescription_error = null;
+           				} else {
+           			    	this.prescription_error = dis.readBoolean();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.adherence = null;
+           				} else {
+           			    	this.adherence = dis.readBoolean();
+           				}
+					
+					this.mmd_type = readString(dis);
+					
+					this.uuid = readString(dis);
+					
+					this.next_appointment = readDate(dis);
+					
+					this.extra = readString(dis);
+					
+					this.adverse_drug_reactions = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.is_devolve = null;
+           				} else {
+           			    	this.is_devolve = dis.readBoolean();
+           				}
+					
+						this.refill_period = readInteger(dis);
+					
+					this.dsd_model_type = readString(dis);
+					
+					this.refill = readString(dis);
+					
+					this.refill_type = readString(dis);
+					
+					this.delivery_point = readString(dis);
+					
+					this.dsd_model = readString(dis);
+					
+						this.archived = readInteger(dis);
+					
+					this.ipt_type = readString(dis);
+					
+					this.ipt = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// long
+				
+		            	dos.writeLong(this.id);
+					
+					// java.util.Date
+				
+						writeDate(this.created_date,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.last_modified_date,dos);
+					
+					// String
+				
+						writeString(this.last_modified_by,dos);
+					
+					// Long
+				
+						if(this.facility_id == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.facility_id);
+		            	}
+					
+					// String
+				
+						writeString(this.visit_id,dos);
+					
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.visit_date,dos);
+					
+					// Boolean
+				
+						if(this.ard_screened == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.ard_screened);
+		            	}
+					
+					// Boolean
+				
+						if(this.prescription_error == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.prescription_error);
+		            	}
+					
+					// Boolean
+				
+						if(this.adherence == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.adherence);
+		            	}
+					
+					// String
+				
+						writeString(this.mmd_type,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.next_appointment,dos);
+					
+					// String
+				
+						writeString(this.extra,dos);
+					
+					// String
+				
+						writeString(this.adverse_drug_reactions,dos);
+					
+					// Boolean
+				
+						if(this.is_devolve == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.is_devolve);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.refill_period,dos);
+					
+					// String
+				
+						writeString(this.dsd_model_type,dos);
+					
+					// String
+				
+						writeString(this.refill,dos);
+					
+					// String
+				
+						writeString(this.refill_type,dos);
+					
+					// String
+				
+						writeString(this.delivery_point,dos);
+					
+					// String
+				
+						writeString(this.dsd_model,dos);
+					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
+					// String
+				
+						writeString(this.ipt_type,dos);
+					
+					// String
+				
+						writeString(this.ipt,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append(",created_by="+created_by);
+		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
+		sb.append(",last_modified_by="+last_modified_by);
+		sb.append(",facility_id="+String.valueOf(facility_id));
+		sb.append(",visit_id="+visit_id);
+		sb.append(",person_uuid="+person_uuid);
+		sb.append(",visit_date="+String.valueOf(visit_date));
+		sb.append(",ard_screened="+String.valueOf(ard_screened));
+		sb.append(",prescription_error="+String.valueOf(prescription_error));
+		sb.append(",adherence="+String.valueOf(adherence));
+		sb.append(",mmd_type="+mmd_type);
+		sb.append(",uuid="+uuid);
+		sb.append(",next_appointment="+String.valueOf(next_appointment));
+		sb.append(",extra="+extra);
+		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
+		sb.append(",is_devolve="+String.valueOf(is_devolve));
+		sb.append(",refill_period="+String.valueOf(refill_period));
+		sb.append(",dsd_model_type="+dsd_model_type);
+		sb.append(",refill="+refill);
+		sb.append(",refill_type="+refill_type);
+		sb.append(",delivery_point="+delivery_point);
+		sb.append(",dsd_model="+dsd_model);
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",ipt_type="+ipt_type);
+		sb.append(",ipt="+ipt);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(Others_OutputStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row8Struct implements routines.system.IPersistableRow<row8Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public java.util.Date created_date;
+
+				public java.util.Date getCreated_date () {
+					return this.created_date;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public java.util.Date last_modified_date;
+
+				public java.util.Date getLast_modified_date () {
+					return this.last_modified_date;
+				}
+				
+			    public String last_modified_by;
+
+				public String getLast_modified_by () {
+					return this.last_modified_by;
+				}
+				
+			    public Long facility_id;
+
+				public Long getFacility_id () {
+					return this.facility_id;
+				}
+				
+			    public String visit_id;
+
+				public String getVisit_id () {
+					return this.visit_id;
+				}
+				
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public java.util.Date visit_date;
+
+				public java.util.Date getVisit_date () {
+					return this.visit_date;
+				}
+				
+			    public Boolean ard_screened;
+
+				public Boolean getArd_screened () {
+					return this.ard_screened;
+				}
+				
+			    public Boolean prescription_error;
+
+				public Boolean getPrescription_error () {
+					return this.prescription_error;
+				}
+				
+			    public Boolean adherence;
+
+				public Boolean getAdherence () {
+					return this.adherence;
+				}
+				
+			    public String mmd_type;
+
+				public String getMmd_type () {
+					return this.mmd_type;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public java.util.Date next_appointment;
+
+				public java.util.Date getNext_appointment () {
+					return this.next_appointment;
+				}
+				
+			    public String extra;
+
+				public String getExtra () {
+					return this.extra;
+				}
+				
+			    public String adverse_drug_reactions;
+
+				public String getAdverse_drug_reactions () {
+					return this.adverse_drug_reactions;
+				}
+				
+			    public Boolean is_devolve;
+
+				public Boolean getIs_devolve () {
+					return this.is_devolve;
+				}
+				
+			    public Integer refill_period;
+
+				public Integer getRefill_period () {
+					return this.refill_period;
+				}
+				
+			    public String dsd_model_type;
+
+				public String getDsd_model_type () {
+					return this.dsd_model_type;
+				}
+				
+			    public String refill;
+
+				public String getRefill () {
+					return this.refill;
+				}
+				
+			    public String refill_type;
+
+				public String getRefill_type () {
+					return this.refill_type;
+				}
+				
+			    public String delivery_point;
+
+				public String getDelivery_point () {
+					return this.delivery_point;
+				}
+				
+			    public String dsd_model;
+
+				public String getDsd_model () {
+					return this.dsd_model;
+				}
+				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
+			    public String ipt_type;
+
+				public String getIpt_type () {
+					return this.ipt_type;
+				}
+				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.id = dis.readInt();
+					
+					this.created_date = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.last_modified_date = readDate(dis);
+					
+					this.last_modified_by = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.facility_id = null;
+           				} else {
+           			    	this.facility_id = dis.readLong();
+           				}
+					
+					this.visit_id = readString(dis);
+					
+					this.person_uuid = readString(dis);
+					
+					this.visit_date = readDate(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.ard_screened = null;
+           				} else {
+           			    	this.ard_screened = dis.readBoolean();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.prescription_error = null;
+           				} else {
+           			    	this.prescription_error = dis.readBoolean();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.adherence = null;
+           				} else {
+           			    	this.adherence = dis.readBoolean();
+           				}
+					
+					this.mmd_type = readString(dis);
+					
+					this.uuid = readString(dis);
+					
+					this.next_appointment = readDate(dis);
+					
+					this.extra = readString(dis);
+					
+					this.adverse_drug_reactions = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.is_devolve = null;
+           				} else {
+           			    	this.is_devolve = dis.readBoolean();
+           				}
+					
+						this.refill_period = readInteger(dis);
+					
+					this.dsd_model_type = readString(dis);
+					
+					this.refill = readString(dis);
+					
+					this.refill_type = readString(dis);
+					
+					this.delivery_point = readString(dis);
+					
+					this.dsd_model = readString(dis);
+					
+						this.archived = readInteger(dis);
+					
+					this.ipt_type = readString(dis);
+					
+					this.ipt = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.id);
+					
+					// java.util.Date
+				
+						writeDate(this.created_date,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.last_modified_date,dos);
+					
+					// String
+				
+						writeString(this.last_modified_by,dos);
+					
+					// Long
+				
+						if(this.facility_id == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.facility_id);
+		            	}
+					
+					// String
+				
+						writeString(this.visit_id,dos);
+					
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.visit_date,dos);
+					
+					// Boolean
+				
+						if(this.ard_screened == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.ard_screened);
+		            	}
+					
+					// Boolean
+				
+						if(this.prescription_error == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.prescription_error);
+		            	}
+					
+					// Boolean
+				
+						if(this.adherence == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.adherence);
+		            	}
+					
+					// String
+				
+						writeString(this.mmd_type,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.next_appointment,dos);
+					
+					// String
+				
+						writeString(this.extra,dos);
+					
+					// String
+				
+						writeString(this.adverse_drug_reactions,dos);
+					
+					// Boolean
+				
+						if(this.is_devolve == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.is_devolve);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.refill_period,dos);
+					
+					// String
+				
+						writeString(this.dsd_model_type,dos);
+					
+					// String
+				
+						writeString(this.refill,dos);
+					
+					// String
+				
+						writeString(this.refill_type,dos);
+					
+					// String
+				
+						writeString(this.delivery_point,dos);
+					
+					// String
+				
+						writeString(this.dsd_model,dos);
+					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
+					// String
+				
+						writeString(this.ipt_type,dos);
+					
+					// String
+				
+						writeString(this.ipt,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append(",created_by="+created_by);
+		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
+		sb.append(",last_modified_by="+last_modified_by);
+		sb.append(",facility_id="+String.valueOf(facility_id));
+		sb.append(",visit_id="+visit_id);
+		sb.append(",person_uuid="+person_uuid);
+		sb.append(",visit_date="+String.valueOf(visit_date));
+		sb.append(",ard_screened="+String.valueOf(ard_screened));
+		sb.append(",prescription_error="+String.valueOf(prescription_error));
+		sb.append(",adherence="+String.valueOf(adherence));
+		sb.append(",mmd_type="+mmd_type);
+		sb.append(",uuid="+uuid);
+		sb.append(",next_appointment="+String.valueOf(next_appointment));
+		sb.append(",extra="+extra);
+		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
+		sb.append(",is_devolve="+String.valueOf(is_devolve));
+		sb.append(",refill_period="+String.valueOf(refill_period));
+		sb.append(",dsd_model_type="+dsd_model_type);
+		sb.append(",refill="+refill);
+		sb.append(",refill_type="+refill_type);
+		sb.append(",delivery_point="+delivery_point);
+		sb.append(",dsd_model="+dsd_model);
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",ipt_type="+ipt_type);
+		sb.append(",ipt="+ipt);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row8Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class after_tDBInput_11Struct implements routines.system.IPersistableRow<after_tDBInput_11Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public java.util.Date created_date;
+
+				public java.util.Date getCreated_date () {
+					return this.created_date;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public java.util.Date last_modified_date;
+
+				public java.util.Date getLast_modified_date () {
+					return this.last_modified_date;
+				}
+				
+			    public String last_modified_by;
+
+				public String getLast_modified_by () {
+					return this.last_modified_by;
+				}
+				
+			    public Long facility_id;
+
+				public Long getFacility_id () {
+					return this.facility_id;
+				}
+				
+			    public String visit_id;
+
+				public String getVisit_id () {
+					return this.visit_id;
+				}
+				
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public java.util.Date visit_date;
+
+				public java.util.Date getVisit_date () {
+					return this.visit_date;
+				}
+				
+			    public Boolean ard_screened;
+
+				public Boolean getArd_screened () {
+					return this.ard_screened;
+				}
+				
+			    public Boolean prescription_error;
+
+				public Boolean getPrescription_error () {
+					return this.prescription_error;
+				}
+				
+			    public Boolean adherence;
+
+				public Boolean getAdherence () {
+					return this.adherence;
+				}
+				
+			    public String mmd_type;
+
+				public String getMmd_type () {
+					return this.mmd_type;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public java.util.Date next_appointment;
+
+				public java.util.Date getNext_appointment () {
+					return this.next_appointment;
+				}
+				
+			    public String extra;
+
+				public String getExtra () {
+					return this.extra;
+				}
+				
+			    public String adverse_drug_reactions;
+
+				public String getAdverse_drug_reactions () {
+					return this.adverse_drug_reactions;
+				}
+				
+			    public Boolean is_devolve;
+
+				public Boolean getIs_devolve () {
+					return this.is_devolve;
+				}
+				
+			    public Integer refill_period;
+
+				public Integer getRefill_period () {
+					return this.refill_period;
+				}
+				
+			    public String dsd_model_type;
+
+				public String getDsd_model_type () {
+					return this.dsd_model_type;
+				}
+				
+			    public String refill;
+
+				public String getRefill () {
+					return this.refill;
+				}
+				
+			    public String refill_type;
+
+				public String getRefill_type () {
+					return this.refill_type;
+				}
+				
+			    public String delivery_point;
+
+				public String getDelivery_point () {
+					return this.delivery_point;
+				}
+				
+			    public String dsd_model;
+
+				public String getDsd_model () {
+					return this.dsd_model;
+				}
+				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
+			    public String ipt_type;
+
+				public String getIpt_type () {
+					return this.ipt_type;
+				}
+				
+			    public String ipt;
+
+				public String getIpt () {
+					return this.ipt;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final after_tDBInput_11Struct other = (after_tDBInput_11Struct) obj;
+		
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(after_tDBInput_11Struct other) {
+
+		other.id = this.id;
+	            other.created_date = this.created_date;
+	            other.created_by = this.created_by;
+	            other.last_modified_date = this.last_modified_date;
+	            other.last_modified_by = this.last_modified_by;
+	            other.facility_id = this.facility_id;
+	            other.visit_id = this.visit_id;
+	            other.person_uuid = this.person_uuid;
+	            other.visit_date = this.visit_date;
+	            other.ard_screened = this.ard_screened;
+	            other.prescription_error = this.prescription_error;
+	            other.adherence = this.adherence;
+	            other.mmd_type = this.mmd_type;
+	            other.uuid = this.uuid;
+	            other.next_appointment = this.next_appointment;
+	            other.extra = this.extra;
+	            other.adverse_drug_reactions = this.adverse_drug_reactions;
+	            other.is_devolve = this.is_devolve;
+	            other.refill_period = this.refill_period;
+	            other.dsd_model_type = this.dsd_model_type;
+	            other.refill = this.refill;
+	            other.refill_type = this.refill_type;
+	            other.delivery_point = this.delivery_point;
+	            other.dsd_model = this.dsd_model;
+	            other.archived = this.archived;
+	            other.ipt_type = this.ipt_type;
+	            other.ipt = this.ipt;
+	            
+	}
+
+	public void copyKeysDataTo(after_tDBInput_11Struct other) {
+
+		other.id = this.id;
+	            	
+	}
+
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.id = dis.readInt();
+					
+					this.created_date = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.last_modified_date = readDate(dis);
+					
+					this.last_modified_by = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.facility_id = null;
+           				} else {
+           			    	this.facility_id = dis.readLong();
+           				}
+					
+					this.visit_id = readString(dis);
+					
+					this.person_uuid = readString(dis);
+					
+					this.visit_date = readDate(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.ard_screened = null;
+           				} else {
+           			    	this.ard_screened = dis.readBoolean();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.prescription_error = null;
+           				} else {
+           			    	this.prescription_error = dis.readBoolean();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.adherence = null;
+           				} else {
+           			    	this.adherence = dis.readBoolean();
+           				}
+					
+					this.mmd_type = readString(dis);
+					
+					this.uuid = readString(dis);
+					
+					this.next_appointment = readDate(dis);
+					
+					this.extra = readString(dis);
+					
+					this.adverse_drug_reactions = readString(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.is_devolve = null;
+           				} else {
+           			    	this.is_devolve = dis.readBoolean();
+           				}
+					
+						this.refill_period = readInteger(dis);
+					
+					this.dsd_model_type = readString(dis);
+					
+					this.refill = readString(dis);
+					
+					this.refill_type = readString(dis);
+					
+					this.delivery_point = readString(dis);
+					
+					this.dsd_model = readString(dis);
+					
+						this.archived = readInteger(dis);
+					
+					this.ipt_type = readString(dis);
+					
+					this.ipt = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.id);
+					
+					// java.util.Date
+				
+						writeDate(this.created_date,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.last_modified_date,dos);
+					
+					// String
+				
+						writeString(this.last_modified_by,dos);
+					
+					// Long
+				
+						if(this.facility_id == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeLong(this.facility_id);
+		            	}
+					
+					// String
+				
+						writeString(this.visit_id,dos);
+					
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.visit_date,dos);
+					
+					// Boolean
+				
+						if(this.ard_screened == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.ard_screened);
+		            	}
+					
+					// Boolean
+				
+						if(this.prescription_error == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.prescription_error);
+		            	}
+					
+					// Boolean
+				
+						if(this.adherence == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.adherence);
+		            	}
+					
+					// String
+				
+						writeString(this.mmd_type,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.next_appointment,dos);
+					
+					// String
+				
+						writeString(this.extra,dos);
+					
+					// String
+				
+						writeString(this.adverse_drug_reactions,dos);
+					
+					// Boolean
+				
+						if(this.is_devolve == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeBoolean(this.is_devolve);
+		            	}
+					
+					// Integer
+				
+						writeInteger(this.refill_period,dos);
+					
+					// String
+				
+						writeString(this.dsd_model_type,dos);
+					
+					// String
+				
+						writeString(this.refill,dos);
+					
+					// String
+				
+						writeString(this.refill_type,dos);
+					
+					// String
+				
+						writeString(this.delivery_point,dos);
+					
+					// String
+				
+						writeString(this.dsd_model,dos);
+					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
+					// String
+				
+						writeString(this.ipt_type,dos);
+					
+					// String
+				
+						writeString(this.ipt,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",created_date="+String.valueOf(created_date));
+		sb.append(",created_by="+created_by);
+		sb.append(",last_modified_date="+String.valueOf(last_modified_date));
+		sb.append(",last_modified_by="+last_modified_by);
+		sb.append(",facility_id="+String.valueOf(facility_id));
+		sb.append(",visit_id="+visit_id);
+		sb.append(",person_uuid="+person_uuid);
+		sb.append(",visit_date="+String.valueOf(visit_date));
+		sb.append(",ard_screened="+String.valueOf(ard_screened));
+		sb.append(",prescription_error="+String.valueOf(prescription_error));
+		sb.append(",adherence="+String.valueOf(adherence));
+		sb.append(",mmd_type="+mmd_type);
+		sb.append(",uuid="+uuid);
+		sb.append(",next_appointment="+String.valueOf(next_appointment));
+		sb.append(",extra="+extra);
+		sb.append(",adverse_drug_reactions="+adverse_drug_reactions);
+		sb.append(",is_devolve="+String.valueOf(is_devolve));
+		sb.append(",refill_period="+String.valueOf(refill_period));
+		sb.append(",dsd_model_type="+dsd_model_type);
+		sb.append(",refill="+refill);
+		sb.append(",refill_type="+refill_type);
+		sb.append(",delivery_point="+delivery_point);
+		sb.append(",dsd_model="+dsd_model);
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",ipt_type="+ipt_type);
+		sb.append(",ipt="+ipt);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(after_tDBInput_11Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_11Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_11_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+		tDBInput_6Process(globalMap);
+
+		row8Struct row8 = new row8Struct();
+Others_OutputStruct Others_Output = new Others_OutputStruct();
+
+
+
+
+
+	
+	/**
+	 * [tDBOutput_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBOutput_2", false);
+		start_Hash.put("tDBOutput_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBOutput_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Others_Output");
+					}
+				
+		int tos_count_tDBOutput_2 = 0;
+		
+
+
+
+
+
+String dbschema_tDBOutput_2 = null;
+	dbschema_tDBOutput_2 = context.LAMISPlus_Schema;
+	
+
+String tableName_tDBOutput_2 = null;
+if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+	tableName_tDBOutput_2 = ("hiv_art_pharmacy");
+} else {
+	tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("hiv_art_pharmacy");
+}
+
+        int updateKeyCount_tDBOutput_2 = 1;
+        if(updateKeyCount_tDBOutput_2 < 1) {
+            throw new RuntimeException("For update, Schema must have a key");
+        }
+int nb_line_tDBOutput_2 = 0;
+int nb_line_update_tDBOutput_2 = 0;
+int nb_line_inserted_tDBOutput_2 = 0;
+int nb_line_deleted_tDBOutput_2 = 0;
+int nb_line_rejected_tDBOutput_2 = 0;
+
+int deletedCount_tDBOutput_2=0;
+int updatedCount_tDBOutput_2=0;
+int insertedCount_tDBOutput_2=0;
+int rejectedCount_tDBOutput_2=0;
+
+boolean whetherReject_tDBOutput_2 = false;
+
+java.sql.Connection conn_tDBOutput_2 = null;
+String dbUser_tDBOutput_2 = null;
+
+	
+    java.lang.Class.forName("org.postgresql.Driver");
+    
+        String url_tDBOutput_2 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+    dbUser_tDBOutput_2 = context.LAMISPlus_Login;
+
+	final String decryptedPassword_tDBOutput_2 = context.LAMISPlus_Password; 
+
+    String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
+
+    conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2,dbUser_tDBOutput_2,dbPwd_tDBOutput_2);
+	
+	resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
+        conn_tDBOutput_2.setAutoCommit(false);
+        int commitEvery_tDBOutput_2 = 10000;
+        int commitCounter_tDBOutput_2 = 0;
+
+
+
+int count_tDBOutput_2=0;
+	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
+	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
+	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"id\",\"created_date\",\"created_by\",\"last_modified_date\",\"last_modified_by\",\"facility_id\",\"visit_id\",\"person_uuid\",\"visit_date\",\"ard_screened\",\"prescription_error\",\"adherence\",\"mmd_type\",\"uuid\",\"next_appointment\",\"" + "extra" + "\",\"" + "adverse_drug_reactions" + "\",\"is_devolve\",\"refill_period\",\"dsd_model_type\",\"refill\",\"refill_type\",\"delivery_point\",\"dsd_model\",\"archived\",\"ipt_type\",\"" + "ipt" + "\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + "," + "?::json" + ",?,?,?,?,?,?,?,?,?," + "?::json" + ")";
+	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
+	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
+	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"id\" = ?,\"created_date\" = ?,\"created_by\" = ?,\"last_modified_date\" = ?,\"last_modified_by\" = ?,\"facility_id\" = ?,\"visit_id\" = ?,\"person_uuid\" = ?,\"visit_date\" = ?,\"ard_screened\" = ?,\"prescription_error\" = ?,\"adherence\" = ?,\"mmd_type\" = ?,\"uuid\" = ?,\"next_appointment\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"" + "adverse_drug_reactions" + "\" = " + "?::json" + ",\"is_devolve\" = ?,\"refill_period\" = ?,\"dsd_model_type\" = ?,\"refill\" = ?,\"refill_type\" = ?,\"delivery_point\" = ?,\"dsd_model\" = ?,\"archived\" = ?,\"ipt_type\" = ?,\"" + "ipt" + "\" = " + "?::json" + " WHERE \"id\" = ?";
+	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
+	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
+	    
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_4 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_4", false);
+		start_Hash.put("tMap_4", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_4";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row8");
+					}
+				
+		int tos_count_tMap_4 = 0;
+		
+
+
+
+
+// ###############################
+// # Lookup's keys initialization
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct> tHash_Lookup_row3 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct>) 
+					globalMap.get( "tHash_Lookup_row3" ))
+					;					
+					
+	
+
+row3Struct row3HashKey = new row3Struct();
+row3Struct row3Default = new row3Struct();
+// ###############################        
+
+// ###############################
+// # Vars initialization
+class  Var__tMap_4__Struct  {
+}
+Var__tMap_4__Struct Var__tMap_4 = new Var__tMap_4__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+Others_OutputStruct Others_Output_tmp = new Others_OutputStruct();
+// ###############################
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_4 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_11 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_11", false);
+		start_Hash.put("tDBInput_11", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_11";
+
+	
+		int tos_count_tDBInput_11 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_11 = 0;
+		    java.sql.Connection conn_tDBInput_11 = null;
+				String driverClass_tDBInput_11 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_11 = java.lang.Class.forName(driverClass_tDBInput_11);
+				String dbUser_tDBInput_11 = context.LAMISPlus_Login;
+				
+				
+	final String decryptedPassword_tDBInput_11 = context.LAMISPlus_Password; 
+				
+				String dbPwd_tDBInput_11 = decryptedPassword_tDBInput_11;
+				
+				String url_tDBInput_11 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+				
+				conn_tDBInput_11 = java.sql.DriverManager.getConnection(url_tDBInput_11,dbUser_tDBInput_11,dbPwd_tDBInput_11);
+		        
+				conn_tDBInput_11.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_11 = conn_tDBInput_11.createStatement();
+
+		    String dbquery_tDBInput_11 = "SELECT * FROM hiv_art_pharmacy WHERE refill_period is null";
+			
+
+            	globalMap.put("tDBInput_11_QUERY",dbquery_tDBInput_11);
+		    java.sql.ResultSet rs_tDBInput_11 = null;
+
+		    try {
+		    	rs_tDBInput_11 = stmt_tDBInput_11.executeQuery(dbquery_tDBInput_11);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_11 = rs_tDBInput_11.getMetaData();
+		    	int colQtyInRs_tDBInput_11 = rsmd_tDBInput_11.getColumnCount();
+
+		    String tmpContent_tDBInput_11 = null;
+		    
+		    
+		    while (rs_tDBInput_11.next()) {
+		        nb_line_tDBInput_11++;
+		        
+							if(colQtyInRs_tDBInput_11 < 1) {
+								row8.id = 0;
+							} else {
+		                          
+            row8.id = rs_tDBInput_11.getInt(1);
+            if(rs_tDBInput_11.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 2) {
+								row8.created_date = null;
+							} else {
+										
+			row8.created_date = routines.system.JDBCUtil.getDate(rs_tDBInput_11, 2);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 3) {
+								row8.created_by = null;
+							} else {
+	                         		
+        	row8.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_11, 3, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 4) {
+								row8.last_modified_date = null;
+							} else {
+										
+			row8.last_modified_date = routines.system.JDBCUtil.getDate(rs_tDBInput_11, 4);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 5) {
+								row8.last_modified_by = null;
+							} else {
+	                         		
+        	row8.last_modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_11, 5, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 6) {
+								row8.facility_id = null;
+							} else {
+		                          
+            row8.facility_id = rs_tDBInput_11.getLong(6);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.facility_id = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 7) {
+								row8.visit_id = null;
+							} else {
+	                         		
+        	row8.visit_id = routines.system.JDBCUtil.getString(rs_tDBInput_11, 7, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 8) {
+								row8.person_uuid = null;
+							} else {
+	                         		
+        	row8.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_11, 8, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 9) {
+								row8.visit_date = null;
+							} else {
+										
+			row8.visit_date = routines.system.JDBCUtil.getDate(rs_tDBInput_11, 9);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 10) {
+								row8.ard_screened = null;
+							} else {
+	                         		
+            row8.ard_screened = rs_tDBInput_11.getBoolean(10);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.ard_screened = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 11) {
+								row8.prescription_error = null;
+							} else {
+	                         		
+            row8.prescription_error = rs_tDBInput_11.getBoolean(11);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.prescription_error = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 12) {
+								row8.adherence = null;
+							} else {
+	                         		
+            row8.adherence = rs_tDBInput_11.getBoolean(12);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.adherence = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 13) {
+								row8.mmd_type = null;
+							} else {
+	                         		
+        	row8.mmd_type = routines.system.JDBCUtil.getString(rs_tDBInput_11, 13, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 14) {
+								row8.uuid = null;
+							} else {
+	                         		
+        	row8.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_11, 14, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 15) {
+								row8.next_appointment = null;
+							} else {
+										
+			row8.next_appointment = routines.system.JDBCUtil.getDate(rs_tDBInput_11, 15);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 16) {
+								row8.extra = null;
+							} else {
+	                         		
+        	row8.extra = routines.system.JDBCUtil.getString(rs_tDBInput_11, 16, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 17) {
+								row8.adverse_drug_reactions = null;
+							} else {
+	                         		
+        	row8.adverse_drug_reactions = routines.system.JDBCUtil.getString(rs_tDBInput_11, 17, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 18) {
+								row8.is_devolve = null;
+							} else {
+	                         		
+            row8.is_devolve = rs_tDBInput_11.getBoolean(18);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.is_devolve = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 19) {
+								row8.refill_period = null;
+							} else {
+		                          
+            row8.refill_period = rs_tDBInput_11.getInt(19);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.refill_period = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 20) {
+								row8.dsd_model_type = null;
+							} else {
+	                         		
+        	row8.dsd_model_type = routines.system.JDBCUtil.getString(rs_tDBInput_11, 20, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 21) {
+								row8.refill = null;
+							} else {
+	                         		
+        	row8.refill = routines.system.JDBCUtil.getString(rs_tDBInput_11, 21, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 22) {
+								row8.refill_type = null;
+							} else {
+	                         		
+        	row8.refill_type = routines.system.JDBCUtil.getString(rs_tDBInput_11, 22, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 23) {
+								row8.delivery_point = null;
+							} else {
+	                         		
+        	row8.delivery_point = routines.system.JDBCUtil.getString(rs_tDBInput_11, 23, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 24) {
+								row8.dsd_model = null;
+							} else {
+	                         		
+        	row8.dsd_model = routines.system.JDBCUtil.getString(rs_tDBInput_11, 24, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 25) {
+								row8.archived = null;
+							} else {
+		                          
+            row8.archived = rs_tDBInput_11.getInt(25);
+            if(rs_tDBInput_11.wasNull()){
+                    row8.archived = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_11 < 26) {
+								row8.ipt_type = null;
+							} else {
+	                         		
+        	row8.ipt_type = routines.system.JDBCUtil.getString(rs_tDBInput_11, 26, false);
+		                    }
+							if(colQtyInRs_tDBInput_11 < 27) {
+								row8.ipt = null;
+							} else {
+	                         		
+        	row8.ipt = routines.system.JDBCUtil.getString(rs_tDBInput_11, 27, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_11 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_11 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_11";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_11++;
+
+/**
+ * [tDBInput_11 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_11 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_11";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_11 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_4 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_4";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row8");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_4 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_4 = false;
+		  boolean mainRowRejected_tMap_4 = false;
+            				    								  
+		
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row3" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLooprow3 = false;
+       		  	    	
+       		  	    	
+ 							row3Struct row3ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_4) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_4 = false;
+								
+	                        		    	Object exprKeyValue_row3__id = row8.id ;
+	                        		    	if(exprKeyValue_row3__id == null) {
+	                        		    		hasCasePrimitiveKeyWithNull_tMap_4 = true;
+	                        		    	} else {
+                        		    			row3HashKey.id = (int)(Integer) exprKeyValue_row3__id;
+                        		    		}
+                        		    		
+
+								
+		                        	row3HashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+	
+		  							if(!hasCasePrimitiveKeyWithNull_tMap_4) { // G_TM_M_091
+		  							
+			  					
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row3.lookup( row3HashKey );
+
+	  							
+
+	  							
+
+			  						} // G_TM_M_091
+			  						
+			  					
+
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_row3 != null && tHash_Lookup_row3.getCount(row3HashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row3' and it contains more one result from keys :  row3.id = '" + row3HashKey.id + "'");
+								} // G 071
+							
+
+							row3Struct row3 = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row3Struct fromLookup_row3 = null;
+							row3 = row3Default;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_row3 !=null && tHash_Lookup_row3.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_row3 = tHash_Lookup_row3.next();
+
+							
+							
+								} // G 099
+							
+							
+
+							if(fromLookup_row3 != null) {
+								row3 = fromLookup_row3;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	            	
+	            // ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_4__Struct Var = Var__tMap_4;// ###############################
+        // ###############################
+        // # Output tables
+
+Others_Output = null;
+
+
+// # Output table : 'Others_Output'
+Others_Output_tmp.id = row8.id ;
+Others_Output_tmp.created_date = row8.created_date ;
+Others_Output_tmp.created_by = row8.created_by ;
+Others_Output_tmp.last_modified_date = row8.last_modified_date ;
+Others_Output_tmp.last_modified_by = row8.last_modified_by ;
+Others_Output_tmp.facility_id = row8.facility_id ;
+Others_Output_tmp.visit_id = row8.visit_id ;
+Others_Output_tmp.person_uuid = row8.person_uuid ;
+Others_Output_tmp.visit_date = row8.visit_date ;
+Others_Output_tmp.ard_screened = row8.ard_screened ;
+Others_Output_tmp.prescription_error = row8.prescription_error ;
+Others_Output_tmp.adherence = row8.adherence ;
+Others_Output_tmp.mmd_type = row8.mmd_type ;
+Others_Output_tmp.uuid = row8.uuid ;
+Others_Output_tmp.next_appointment = row8.next_appointment ;
+Others_Output_tmp.extra = row8.extra ;
+Others_Output_tmp.adverse_drug_reactions = row8.adverse_drug_reactions ;
+Others_Output_tmp.is_devolve = row8.is_devolve ;
+Others_Output_tmp.refill_period = (row3.refill_period != null && row3.refill_period.matches("[0-9.]+"))
+? Integer.valueOf(row3.refill_period) : null ;
+Others_Output_tmp.dsd_model_type = row8.dsd_model_type ;
+Others_Output_tmp.refill = row8.refill ;
+Others_Output_tmp.refill_type = row8.refill_type ;
+Others_Output_tmp.delivery_point = row8.delivery_point ;
+Others_Output_tmp.dsd_model = row8.dsd_model ;
+Others_Output_tmp.archived = row8.archived ;
+Others_Output_tmp.ipt_type = row8.ipt_type ;
+Others_Output_tmp.ipt = row8.ipt ;
+Others_Output = Others_Output_tmp;
+// ###############################
+
+} // end of Var scope
+
+rejectedInnerJoin_tMap_4 = false;
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_4++;
+
+/**
+ * [tMap_4 main ] stop
+ */
+	
+	/**
+	 * [tMap_4 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_4";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_4 process_data_begin ] stop
+ */
+// Start of branch "Others_Output"
+if(Others_Output != null) { 
+
+
+
+	
+	/**
+	 * [tDBOutput_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"Others_Output");
+					}
+					
+
+
+
+        whetherReject_tDBOutput_2 = false;
+                    pstmt_tDBOutput_2.setLong(1, Others_Output.id);
+
+            int checkCount_tDBOutput_2 = -1;
+            try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
+                while(rs_tDBOutput_2.next()) {
+                    checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
+                }
+            }
+            if(checkCount_tDBOutput_2 > 0) {
+                        pstmtUpdate_tDBOutput_2.setLong(1, Others_Output.id);
+
+                        if(Others_Output.created_date != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Others_Output.created_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.created_by == null) {
+pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(3, Others_Output.created_by);
+}
+
+                        if(Others_Output.last_modified_date != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Others_Output.last_modified_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.last_modified_by == null) {
+pstmtUpdate_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(5, Others_Output.last_modified_by);
+}
+
+                        if(Others_Output.facility_id == null) {
+pstmtUpdate_tDBOutput_2.setNull(6, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setLong(6, Others_Output.facility_id);
+}
+
+                        if(Others_Output.visit_id == null) {
+pstmtUpdate_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(7, Others_Output.visit_id);
+}
+
+                        if(Others_Output.person_uuid == null) {
+pstmtUpdate_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(8, Others_Output.person_uuid);
+}
+
+                        if(Others_Output.visit_date != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(9, new java.sql.Timestamp(Others_Output.visit_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(9, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.ard_screened == null) {
+pstmtUpdate_tDBOutput_2.setNull(10, java.sql.Types.BOOLEAN);
+} else {pstmtUpdate_tDBOutput_2.setBoolean(10, Others_Output.ard_screened);
+}
+
+                        if(Others_Output.prescription_error == null) {
+pstmtUpdate_tDBOutput_2.setNull(11, java.sql.Types.BOOLEAN);
+} else {pstmtUpdate_tDBOutput_2.setBoolean(11, Others_Output.prescription_error);
+}
+
+                        if(Others_Output.adherence == null) {
+pstmtUpdate_tDBOutput_2.setNull(12, java.sql.Types.BOOLEAN);
+} else {pstmtUpdate_tDBOutput_2.setBoolean(12, Others_Output.adherence);
+}
+
+                        if(Others_Output.mmd_type == null) {
+pstmtUpdate_tDBOutput_2.setNull(13, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(13, Others_Output.mmd_type);
+}
+
+                        if(Others_Output.uuid == null) {
+pstmtUpdate_tDBOutput_2.setNull(14, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(14, Others_Output.uuid);
+}
+
+                        if(Others_Output.next_appointment != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(15, new java.sql.Timestamp(Others_Output.next_appointment.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(15, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.extra == null) {
+pstmtUpdate_tDBOutput_2.setNull(16, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(16, Others_Output.extra);
+}
+
+                        if(Others_Output.adverse_drug_reactions == null) {
+pstmtUpdate_tDBOutput_2.setNull(17, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(17, Others_Output.adverse_drug_reactions);
+}
+
+                        if(Others_Output.is_devolve == null) {
+pstmtUpdate_tDBOutput_2.setNull(18, java.sql.Types.BOOLEAN);
+} else {pstmtUpdate_tDBOutput_2.setBoolean(18, Others_Output.is_devolve);
+}
+
+                        if(Others_Output.refill_period == null) {
+pstmtUpdate_tDBOutput_2.setNull(19, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setInt(19, Others_Output.refill_period);
+}
+
+                        if(Others_Output.dsd_model_type == null) {
+pstmtUpdate_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(20, Others_Output.dsd_model_type);
+}
+
+                        if(Others_Output.refill == null) {
+pstmtUpdate_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(21, Others_Output.refill);
+}
+
+                        if(Others_Output.refill_type == null) {
+pstmtUpdate_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(22, Others_Output.refill_type);
+}
+
+                        if(Others_Output.delivery_point == null) {
+pstmtUpdate_tDBOutput_2.setNull(23, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(23, Others_Output.delivery_point);
+}
+
+                        if(Others_Output.dsd_model == null) {
+pstmtUpdate_tDBOutput_2.setNull(24, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(24, Others_Output.dsd_model);
+}
+
+                        if(Others_Output.archived == null) {
+pstmtUpdate_tDBOutput_2.setNull(25, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setInt(25, Others_Output.archived);
+}
+
+                        if(Others_Output.ipt_type == null) {
+pstmtUpdate_tDBOutput_2.setNull(26, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(26, Others_Output.ipt_type);
+}
+
+                        if(Others_Output.ipt == null) {
+pstmtUpdate_tDBOutput_2.setNull(27, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(27, Others_Output.ipt);
+}
+
+                        pstmtUpdate_tDBOutput_2.setLong(28 + count_tDBOutput_2, Others_Output.id);
+
+                try {
+					
+                    updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2 + pstmtUpdate_tDBOutput_2.executeUpdate();
+                    nb_line_tDBOutput_2++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_2 = true;
+                        nb_line_tDBOutput_2++;
+                            System.err.print(e.getMessage());
+                }
+            } else {
+                        pstmtInsert_tDBOutput_2.setLong(1, Others_Output.id);
+
+                        if(Others_Output.created_date != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(Others_Output.created_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.created_by == null) {
+pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(3, Others_Output.created_by);
+}
+
+                        if(Others_Output.last_modified_date != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(Others_Output.last_modified_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.last_modified_by == null) {
+pstmtInsert_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(5, Others_Output.last_modified_by);
+}
+
+                        if(Others_Output.facility_id == null) {
+pstmtInsert_tDBOutput_2.setNull(6, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setLong(6, Others_Output.facility_id);
+}
+
+                        if(Others_Output.visit_id == null) {
+pstmtInsert_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(7, Others_Output.visit_id);
+}
+
+                        if(Others_Output.person_uuid == null) {
+pstmtInsert_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(8, Others_Output.person_uuid);
+}
+
+                        if(Others_Output.visit_date != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(9, new java.sql.Timestamp(Others_Output.visit_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(9, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.ard_screened == null) {
+pstmtInsert_tDBOutput_2.setNull(10, java.sql.Types.BOOLEAN);
+} else {pstmtInsert_tDBOutput_2.setBoolean(10, Others_Output.ard_screened);
+}
+
+                        if(Others_Output.prescription_error == null) {
+pstmtInsert_tDBOutput_2.setNull(11, java.sql.Types.BOOLEAN);
+} else {pstmtInsert_tDBOutput_2.setBoolean(11, Others_Output.prescription_error);
+}
+
+                        if(Others_Output.adherence == null) {
+pstmtInsert_tDBOutput_2.setNull(12, java.sql.Types.BOOLEAN);
+} else {pstmtInsert_tDBOutput_2.setBoolean(12, Others_Output.adherence);
+}
+
+                        if(Others_Output.mmd_type == null) {
+pstmtInsert_tDBOutput_2.setNull(13, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(13, Others_Output.mmd_type);
+}
+
+                        if(Others_Output.uuid == null) {
+pstmtInsert_tDBOutput_2.setNull(14, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(14, Others_Output.uuid);
+}
+
+                        if(Others_Output.next_appointment != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(15, new java.sql.Timestamp(Others_Output.next_appointment.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(15, java.sql.Types.TIMESTAMP);
+}
+
+                        if(Others_Output.extra == null) {
+pstmtInsert_tDBOutput_2.setNull(16, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(16, Others_Output.extra);
+}
+
+                        if(Others_Output.adverse_drug_reactions == null) {
+pstmtInsert_tDBOutput_2.setNull(17, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(17, Others_Output.adverse_drug_reactions);
+}
+
+                        if(Others_Output.is_devolve == null) {
+pstmtInsert_tDBOutput_2.setNull(18, java.sql.Types.BOOLEAN);
+} else {pstmtInsert_tDBOutput_2.setBoolean(18, Others_Output.is_devolve);
+}
+
+                        if(Others_Output.refill_period == null) {
+pstmtInsert_tDBOutput_2.setNull(19, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setInt(19, Others_Output.refill_period);
+}
+
+                        if(Others_Output.dsd_model_type == null) {
+pstmtInsert_tDBOutput_2.setNull(20, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(20, Others_Output.dsd_model_type);
+}
+
+                        if(Others_Output.refill == null) {
+pstmtInsert_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(21, Others_Output.refill);
+}
+
+                        if(Others_Output.refill_type == null) {
+pstmtInsert_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(22, Others_Output.refill_type);
+}
+
+                        if(Others_Output.delivery_point == null) {
+pstmtInsert_tDBOutput_2.setNull(23, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(23, Others_Output.delivery_point);
+}
+
+                        if(Others_Output.dsd_model == null) {
+pstmtInsert_tDBOutput_2.setNull(24, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(24, Others_Output.dsd_model);
+}
+
+                        if(Others_Output.archived == null) {
+pstmtInsert_tDBOutput_2.setNull(25, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setInt(25, Others_Output.archived);
+}
+
+                        if(Others_Output.ipt_type == null) {
+pstmtInsert_tDBOutput_2.setNull(26, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(26, Others_Output.ipt_type);
+}
+
+                        if(Others_Output.ipt == null) {
+pstmtInsert_tDBOutput_2.setNull(27, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(27, Others_Output.ipt);
+}
+
+                try {
+					
+                    insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2 + pstmtInsert_tDBOutput_2.executeUpdate();
+                    nb_line_tDBOutput_2++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_2 = true;
+                        nb_line_tDBOutput_2++;
+                            System.err.print(e.getMessage());
+                }
+            }
+    		    commitCounter_tDBOutput_2++;
+                if(commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
+                	conn_tDBOutput_2.commit();
+                	
+                	commitCounter_tDBOutput_2=0;
+                }
+
+ 
+
+
+	tos_count_tDBOutput_2++;
+
+/**
+ * [tDBOutput_2 main ] stop
+ */
+	
+	/**
+	 * [tDBOutput_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBOutput_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 process_data_end ] stop
+ */
+
+} // End of branch "Others_Output"
+
+
+
+
+	
+	/**
+	 * [tMap_4 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_4";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_4 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_11 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_11";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_11 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_11 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_11";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_11 != null) {
+		rs_tDBInput_11.close();
+	}
+	if (stmt_tDBInput_11 != null) {
+		stmt_tDBInput_11.close();
+	}
+	if(conn_tDBInput_11 != null && !conn_tDBInput_11.isClosed()) {
+		
+			conn_tDBInput_11.commit();
+			
+		
+			conn_tDBInput_11.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_11_NB_LINE",nb_line_tDBInput_11);
+ 
+
+ok_Hash.put("tDBInput_11", true);
+end_Hash.put("tDBInput_11", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_11 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_4 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_4";
+
+	
+
+
+// ###############################
+// # Lookup hashes releasing
+					if(tHash_Lookup_row3 != null) {
+						tHash_Lookup_row3.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row3" );
+
+					
+					
+				
+// ###############################      
+
+
+
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row8");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tMap_4", true);
+end_Hash.put("tMap_4", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tMap_4 end ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+
+
+        if(pstmtUpdate_tDBOutput_2 != null){
+            pstmtUpdate_tDBOutput_2.close();
+            resourceMap.remove("pstmtUpdate_tDBOutput_2");
+        }
+        if(pstmtInsert_tDBOutput_2 != null){
+            pstmtInsert_tDBOutput_2.close();
+            resourceMap.remove("pstmtInsert_tDBOutput_2");
+        }
+        if(pstmt_tDBOutput_2 != null) {
+            pstmt_tDBOutput_2.close();
+            resourceMap.remove("pstmt_tDBOutput_2");
+        }
+    resourceMap.put("statementClosed_tDBOutput_2", true);
+			
+			conn_tDBOutput_2.commit();
+			
+		
+    	conn_tDBOutput_2 .close();
+    	
+    	resourceMap.put("finish_tDBOutput_2", true);
+    	
+
+	nb_line_deleted_tDBOutput_2=nb_line_deleted_tDBOutput_2+ deletedCount_tDBOutput_2;
+	nb_line_update_tDBOutput_2=nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
+	nb_line_inserted_tDBOutput_2=nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
+	nb_line_rejected_tDBOutput_2=nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
+	
+        globalMap.put("tDBOutput_2_NB_LINE",nb_line_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_UPDATED",nb_line_update_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_DELETED",nb_line_deleted_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
+    
+	
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Others_Output");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tDBOutput_2", true);
+end_Hash.put("tDBOutput_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBOutput_2 end ] stop
+ */
+
+
+
+
+
+
+				}//end the resume
+
+				
+				    			if(resumeEntryMethodName == null || globalResumeTicket){
+				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBInput_11:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
+								}	    				    			
+					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk3", 0, "ok");
+								} 
+							
+							tDBInput_4Process(globalMap); 
+						
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+					     			//free memory for "tMap_4"
+					     			globalMap.remove("tHash_Lookup_row3"); 
+				     			
+				try{
+					
+	
+	/**
+	 * [tDBInput_11 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_11";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_11 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_4 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_4";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_4 finally ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+
+
+    try {
+    if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
+                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
+                if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_2")) != null) {
+                    pstmtUpdateToClose_tDBOutput_2.close();
+                }
+                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
+                if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_2")) != null) {
+                    pstmtInsertToClose_tDBOutput_2.close();
+                }
+                java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
+                if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_2")) != null) {
+                    pstmtToClose_tDBOutput_2.close();
+                }
+    }
+    } finally {
+        if(resourceMap.get("finish_tDBOutput_2") == null){
+            java.sql.Connection ctn_tDBOutput_2 = null;
+            if((ctn_tDBOutput_2 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_2")) != null){
+                try {
+                    ctn_tDBOutput_2.close();
+                } catch (java.sql.SQLException sqlEx_tDBOutput_2) {
+                    String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :" + sqlEx_tDBOutput_2.getMessage();
+                    System.err.println(errorMessage_tDBOutput_2);
+                }
+            }
+        }
+    }
+ 
+
+
+
+/**
+ * [tDBOutput_2 finally ] stop
+ */
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_11_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -8982,199 +12535,6 @@ end_Hash.put("tJava_3", System.currentTimeMillis());
 		
 
 		globalMap.put("tJava_3_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tJava_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tJava_1", false);
-		start_Hash.put("tJava_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tJava_1";
-
-	
-		int tos_count_tJava_1 = 0;
-		
-
-
-System.out.println("Total Pharmacy records fetched from LAMIS3 Pharmacy - "+globalMap.get("tDBInput_2_NB_LINE"));
-System.out.println("");
- 
-
-
-
-/**
- * [tJava_1 begin ] stop
- */
-	
-	/**
-	 * [tJava_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-	tos_count_tJava_1++;
-
-/**
- * [tJava_1 main ] stop
- */
-	
-	/**
-	 * [tJava_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tJava_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tJava_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-ok_Hash.put("tJava_1", true);
-end_Hash.put("tJava_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tJava_1 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tJava_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -13863,6 +17223,702 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 		globalMap.put("tDBInput_5_SUBPROCESS_STATE", 1);
 	}
 	
+
+
+public static class row3Struct implements routines.system.IPersistableComparableLookupRow<row3Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_HIV_ART_Pharmacy = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
+			    public String refill_period;
+
+				public String getRefill_period () {
+					return this.refill_period;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.id;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row3Struct other = (row3Struct) obj;
+		
+						if (this.id != other.id)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(row3Struct other) {
+
+		other.id = this.id;
+	            other.refill_period = this.refill_period;
+	            
+	}
+
+	public void copyKeysDataTo(row3Struct other) {
+
+		other.id = this.id;
+	            	
+	}
+
+
+
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_HIV_ART_Pharmacy) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.id = dis.readInt();
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.id);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.refill_period = readString(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.refill_period, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+String.valueOf(id));
+		sb.append(",refill_period="+refill_period);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_6Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_6_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row3Struct row3 = new row3Struct();
+
+
+
+
+	
+	/**
+	 * [tAdvancedHash_row3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAdvancedHash_row3", false);
+		start_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row3";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+					}
+				
+		int tos_count_tAdvancedHash_row3 = 0;
+		
+
+			   		// connection name:row3
+			   		// source node:tDBInput_6 - inputs:(after_tDBInput_11) outputs:(row3,row3) | target node:tAdvancedHash_row3 - inputs:(row3) outputs:()
+			   		// linked node: tMap_4 - inputs:(row8,row3) outputs:(Others_Output)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct> tHash_Lookup_row3 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row3Struct>getLookup(matchingModeEnum_row3);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row3", tHash_Lookup_row3);
+		   	   	   
+				
+           
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row3 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_6 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_6", false);
+		start_Hash.put("tDBInput_6", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_6";
+
+	
+		int tos_count_tDBInput_6 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_6 = 0;
+		    java.sql.Connection conn_tDBInput_6 = null;
+				String driverClass_tDBInput_6 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_6 = java.lang.Class.forName(driverClass_tDBInput_6);
+				String dbUser_tDBInput_6 = context.LAMIS3_Login;
+				
+				
+	final String decryptedPassword_tDBInput_6 = context.LAMIS3_Password; 
+				
+				String dbPwd_tDBInput_6 = decryptedPassword_tDBInput_6;
+				
+				String url_tDBInput_6 = "jdbc:postgresql://" + context.LAMIS3_Server + ":" + context.LAMIS3_Port + "/" + context.LAMIS3_Database + "?" + context.LAMIS3_AdditionalParams;
+				
+				conn_tDBInput_6 = java.sql.DriverManager.getConnection(url_tDBInput_6,dbUser_tDBInput_6,dbPwd_tDBInput_6);
+		        
+				conn_tDBInput_6.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_6 = conn_tDBInput_6.createStatement();
+
+		    String dbquery_tDBInput_6 = "SELECT DISTINCT id, arr.line->>'duration'::VARCHAR as refill_period\nFROM pharmacy,\njsonb_array_elements(lines) with o"
++"rdinality arr(line, position) \nWHERE arr.line->>'regimen_type_id'::VARCHAR NOT IN ('1','2','3','4','14')";
+			
+
+            	globalMap.put("tDBInput_6_QUERY",dbquery_tDBInput_6);
+		    java.sql.ResultSet rs_tDBInput_6 = null;
+
+		    try {
+		    	rs_tDBInput_6 = stmt_tDBInput_6.executeQuery(dbquery_tDBInput_6);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_6 = rs_tDBInput_6.getMetaData();
+		    	int colQtyInRs_tDBInput_6 = rsmd_tDBInput_6.getColumnCount();
+
+		    String tmpContent_tDBInput_6 = null;
+		    
+		    
+		    while (rs_tDBInput_6.next()) {
+		        nb_line_tDBInput_6++;
+		        
+							if(colQtyInRs_tDBInput_6 < 1) {
+								row3.id = 0;
+							} else {
+		                          
+            row3.id = rs_tDBInput_6.getInt(1);
+            if(rs_tDBInput_6.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 2) {
+								row3.refill_period = null;
+							} else {
+	                         		
+        	row3.refill_period = routines.system.JDBCUtil.getString(rs_tDBInput_6, 2, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_6 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_6++;
+
+/**
+ * [tDBInput_6 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row3";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
+
+
+			   
+			   
+
+					row3Struct row3_HashRow = new row3Struct();
+		   	   	   
+				
+				row3_HashRow.id = row3.id;
+				
+				row3_HashRow.refill_period = row3.refill_period;
+				
+			tHash_Lookup_row3.put(row3_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_row3++;
+
+/**
+ * [tAdvancedHash_row3 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row3";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row3 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row3";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row3 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_6 != null) {
+		rs_tDBInput_6.close();
+	}
+	if (stmt_tDBInput_6 != null) {
+		stmt_tDBInput_6.close();
+	}
+	if(conn_tDBInput_6 != null && !conn_tDBInput_6.isClosed()) {
+		
+			conn_tDBInput_6.commit();
+			
+		
+			conn_tDBInput_6.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_6_NB_LINE",nb_line_tDBInput_6);
+ 
+
+ok_Hash.put("tDBInput_6", true);
+end_Hash.put("tDBInput_6", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_6 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row3";
+
+	
+
+tHash_Lookup_row3.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_row3", true);
+end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row3 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row3";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row3 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_6_SUBPROCESS_STATE", 1);
+	}
+	
     public String resuming_logs_dir_path = null;
     public String resuming_checkpoint_path = null;
     public String parent_part_launcher = null;
@@ -14333,6 +18389,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     337986 characters generated by Talend Open Studio for Big Data 
- *     on the January 4, 2023 4:40:32 PM WAT
+ *     440461 characters generated by Talend Open Studio for Big Data 
+ *     on the March 23, 2023 11:29:20 PM WAT
  ************************************************************************************************/
