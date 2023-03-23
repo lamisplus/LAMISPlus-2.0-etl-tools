@@ -408,6 +408,33 @@ private class TalendException extends Exception {
 	}
 }
 
+			public void tDBInput_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBOutput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_6_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -588,6 +615,11 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tDBInput_6_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
 			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -613,6 +645,2394 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
+
+
+public static class prep_clinic_stage_outStruct implements routines.system.IPersistableRow<prep_clinic_stage_outStruct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public java.util.Date encounter_date;
+
+				public java.util.Date getEncounter_date () {
+					return this.encounter_date;
+				}
+				
+			    public java.util.Date date_prep_given;
+
+				public java.util.Date getDate_prep_given () {
+					return this.date_prep_given;
+				}
+				
+			    public java.util.Date date_created;
+
+				public java.util.Date getDate_created () {
+					return this.date_created;
+				}
+				
+			    public java.util.Date date_modified;
+
+				public java.util.Date getDate_modified () {
+					return this.date_modified;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public String modified_by;
+
+				public String getModified_by () {
+					return this.modified_by;
+				}
+				
+			    public String extra;
+
+				public String getExtra () {
+					return this.extra;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
+			    public Double body_weight;
+
+				public Double getBody_weight () {
+					return this.body_weight;
+				}
+				
+			    public Double systolic;
+
+				public Double getSystolic () {
+					return this.systolic;
+				}
+				
+			    public Double diastolic;
+
+				public Double getDiastolic () {
+					return this.diastolic;
+				}
+				
+			    public Double height;
+
+				public Double getHeight () {
+					return this.height;
+				}
+				
+			    public boolean is_commencement;
+
+				public boolean getIs_commencement () {
+					return this.is_commencement;
+				}
+				
+			    public java.util.Date next_appointment;
+
+				public java.util.Date getNext_appointment () {
+					return this.next_appointment;
+				}
+				
+			    public String description;
+
+				public String getDescription () {
+					return this.description;
+				}
+				
+			    public String adherence_level;
+
+				public String getAdherence_level () {
+					return this.adherence_level;
+				}
+				
+			    public String hiv_test_result;
+
+				public String getHiv_test_result () {
+					return this.hiv_test_result;
+				}
+				
+			    public Integer duration;
+
+				public Integer getDuration () {
+					return this.duration;
+				}
+				
+			    public String pregnant;
+
+				public String getPregnant () {
+					return this.pregnant;
+				}
+				
+			    public String datim_id;
+
+				public String getDatim_id () {
+					return this.datim_id;
+				}
+				
+			    public Integer id;
+
+				public Integer getId () {
+					return this.id;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final prep_clinic_stage_outStruct other = (prep_clinic_stage_outStruct) obj;
+		
+						if (this.id == null) {
+							if (other.id != null)
+								return false;
+						
+						} else if (!this.id.equals(other.id))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(prep_clinic_stage_outStruct other) {
+
+		other.person_uuid = this.person_uuid;
+	            other.encounter_date = this.encounter_date;
+	            other.date_prep_given = this.date_prep_given;
+	            other.date_created = this.date_created;
+	            other.date_modified = this.date_modified;
+	            other.created_by = this.created_by;
+	            other.modified_by = this.modified_by;
+	            other.extra = this.extra;
+	            other.uuid = this.uuid;
+	            other.archived = this.archived;
+	            other.body_weight = this.body_weight;
+	            other.systolic = this.systolic;
+	            other.diastolic = this.diastolic;
+	            other.height = this.height;
+	            other.is_commencement = this.is_commencement;
+	            other.next_appointment = this.next_appointment;
+	            other.description = this.description;
+	            other.adherence_level = this.adherence_level;
+	            other.hiv_test_result = this.hiv_test_result;
+	            other.duration = this.duration;
+	            other.pregnant = this.pregnant;
+	            other.datim_id = this.datim_id;
+	            other.id = this.id;
+	            
+	}
+
+	public void copyKeysDataTo(prep_clinic_stage_outStruct other) {
+
+		other.id = this.id;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.person_uuid = readString(dis);
+					
+					this.encounter_date = readDate(dis);
+					
+					this.date_prep_given = readDate(dis);
+					
+					this.date_created = readDate(dis);
+					
+					this.date_modified = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.modified_by = readString(dis);
+					
+					this.extra = readString(dis);
+					
+					this.uuid = readString(dis);
+					
+						this.archived = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.body_weight = null;
+           				} else {
+           			    	this.body_weight = dis.readDouble();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.systolic = null;
+           				} else {
+           			    	this.systolic = dis.readDouble();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.diastolic = null;
+           				} else {
+           			    	this.diastolic = dis.readDouble();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.height = null;
+           				} else {
+           			    	this.height = dis.readDouble();
+           				}
+					
+			        this.is_commencement = dis.readBoolean();
+					
+					this.next_appointment = readDate(dis);
+					
+					this.description = readString(dis);
+					
+					this.adherence_level = readString(dis);
+					
+					this.hiv_test_result = readString(dis);
+					
+						this.duration = readInteger(dis);
+					
+					this.pregnant = readString(dis);
+					
+					this.datim_id = readString(dis);
+					
+						this.id = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.encounter_date,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_prep_given,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_created,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_modified,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// String
+				
+						writeString(this.modified_by,dos);
+					
+					// String
+				
+						writeString(this.extra,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
+					// Double
+				
+						if(this.body_weight == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.body_weight);
+		            	}
+					
+					// Double
+				
+						if(this.systolic == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.systolic);
+		            	}
+					
+					// Double
+				
+						if(this.diastolic == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.diastolic);
+		            	}
+					
+					// Double
+				
+						if(this.height == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.height);
+		            	}
+					
+					// boolean
+				
+		            	dos.writeBoolean(this.is_commencement);
+					
+					// java.util.Date
+				
+						writeDate(this.next_appointment,dos);
+					
+					// String
+				
+						writeString(this.description,dos);
+					
+					// String
+				
+						writeString(this.adherence_level,dos);
+					
+					// String
+				
+						writeString(this.hiv_test_result,dos);
+					
+					// Integer
+				
+						writeInteger(this.duration,dos);
+					
+					// String
+				
+						writeString(this.pregnant,dos);
+					
+					// String
+				
+						writeString(this.datim_id,dos);
+					
+					// Integer
+				
+						writeInteger(this.id,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("person_uuid="+person_uuid);
+		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",date_prep_given="+String.valueOf(date_prep_given));
+		sb.append(",date_created="+String.valueOf(date_created));
+		sb.append(",date_modified="+String.valueOf(date_modified));
+		sb.append(",created_by="+created_by);
+		sb.append(",modified_by="+modified_by);
+		sb.append(",extra="+extra);
+		sb.append(",uuid="+uuid);
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",body_weight="+String.valueOf(body_weight));
+		sb.append(",systolic="+String.valueOf(systolic));
+		sb.append(",diastolic="+String.valueOf(diastolic));
+		sb.append(",height="+String.valueOf(height));
+		sb.append(",is_commencement="+String.valueOf(is_commencement));
+		sb.append(",next_appointment="+String.valueOf(next_appointment));
+		sb.append(",description="+description);
+		sb.append(",adherence_level="+adherence_level);
+		sb.append(",hiv_test_result="+hiv_test_result);
+		sb.append(",duration="+String.valueOf(duration));
+		sb.append(",pregnant="+pregnant);
+		sb.append(",datim_id="+datim_id);
+		sb.append(",id="+String.valueOf(id));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(prep_clinic_stage_outStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.id, other.id);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+    final static byte[] commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+    static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
+
+	
+			    public String person_uuid;
+
+				public String getPerson_uuid () {
+					return this.person_uuid;
+				}
+				
+			    public java.util.Date encounter_date;
+
+				public java.util.Date getEncounter_date () {
+					return this.encounter_date;
+				}
+				
+			    public java.util.Date date_prep_given;
+
+				public java.util.Date getDate_prep_given () {
+					return this.date_prep_given;
+				}
+				
+			    public java.util.Date date_created;
+
+				public java.util.Date getDate_created () {
+					return this.date_created;
+				}
+				
+			    public java.util.Date date_modified;
+
+				public java.util.Date getDate_modified () {
+					return this.date_modified;
+				}
+				
+			    public String created_by;
+
+				public String getCreated_by () {
+					return this.created_by;
+				}
+				
+			    public String modified_by;
+
+				public String getModified_by () {
+					return this.modified_by;
+				}
+				
+			    public String extra;
+
+				public String getExtra () {
+					return this.extra;
+				}
+				
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
+			    public Integer archived;
+
+				public Integer getArchived () {
+					return this.archived;
+				}
+				
+			    public Double body_weight;
+
+				public Double getBody_weight () {
+					return this.body_weight;
+				}
+				
+			    public Double systolic;
+
+				public Double getSystolic () {
+					return this.systolic;
+				}
+				
+			    public Double diastolic;
+
+				public Double getDiastolic () {
+					return this.diastolic;
+				}
+				
+			    public Double height;
+
+				public Double getHeight () {
+					return this.height;
+				}
+				
+			    public boolean is_commencement;
+
+				public boolean getIs_commencement () {
+					return this.is_commencement;
+				}
+				
+			    public java.util.Date next_appointment;
+
+				public java.util.Date getNext_appointment () {
+					return this.next_appointment;
+				}
+				
+			    public String description;
+
+				public String getDescription () {
+					return this.description;
+				}
+				
+			    public String adherence_level;
+
+				public String getAdherence_level () {
+					return this.adherence_level;
+				}
+				
+			    public String hiv_test_result;
+
+				public String getHiv_test_result () {
+					return this.hiv_test_result;
+				}
+				
+			    public Integer duration;
+
+				public Integer getDuration () {
+					return this.duration;
+				}
+				
+			    public String pregnant;
+
+				public String getPregnant () {
+					return this.pregnant;
+				}
+				
+			    public String datim_id;
+
+				public String getDatim_id () {
+					return this.datim_id;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length) {
+				if(length < 1024 && commonByteArray_LAMISPLUS_ETL_PrEP_Clinic.length == 0) {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[1024];
+				} else {
+   					commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length);
+			strReturn = new String(commonByteArray_LAMISPLUS_ETL_PrEP_Clinic, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LAMISPLUS_ETL_PrEP_Clinic) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.person_uuid = readString(dis);
+					
+					this.encounter_date = readDate(dis);
+					
+					this.date_prep_given = readDate(dis);
+					
+					this.date_created = readDate(dis);
+					
+					this.date_modified = readDate(dis);
+					
+					this.created_by = readString(dis);
+					
+					this.modified_by = readString(dis);
+					
+					this.extra = readString(dis);
+					
+					this.uuid = readString(dis);
+					
+						this.archived = readInteger(dis);
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.body_weight = null;
+           				} else {
+           			    	this.body_weight = dis.readDouble();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.systolic = null;
+           				} else {
+           			    	this.systolic = dis.readDouble();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.diastolic = null;
+           				} else {
+           			    	this.diastolic = dis.readDouble();
+           				}
+					
+			            length = dis.readByte();
+           				if (length == -1) {
+           	    			this.height = null;
+           				} else {
+           			    	this.height = dis.readDouble();
+           				}
+					
+			        this.is_commencement = dis.readBoolean();
+					
+					this.next_appointment = readDate(dis);
+					
+					this.description = readString(dis);
+					
+					this.adherence_level = readString(dis);
+					
+					this.hiv_test_result = readString(dis);
+					
+						this.duration = readInteger(dis);
+					
+					this.pregnant = readString(dis);
+					
+					this.datim_id = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.person_uuid,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.encounter_date,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_prep_given,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_created,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date_modified,dos);
+					
+					// String
+				
+						writeString(this.created_by,dos);
+					
+					// String
+				
+						writeString(this.modified_by,dos);
+					
+					// String
+				
+						writeString(this.extra,dos);
+					
+					// String
+				
+						writeString(this.uuid,dos);
+					
+					// Integer
+				
+						writeInteger(this.archived,dos);
+					
+					// Double
+				
+						if(this.body_weight == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.body_weight);
+		            	}
+					
+					// Double
+				
+						if(this.systolic == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.systolic);
+		            	}
+					
+					// Double
+				
+						if(this.diastolic == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.diastolic);
+		            	}
+					
+					// Double
+				
+						if(this.height == null) {
+			                dos.writeByte(-1);
+						} else {
+               				dos.writeByte(0);
+           			    	dos.writeDouble(this.height);
+		            	}
+					
+					// boolean
+				
+		            	dos.writeBoolean(this.is_commencement);
+					
+					// java.util.Date
+				
+						writeDate(this.next_appointment,dos);
+					
+					// String
+				
+						writeString(this.description,dos);
+					
+					// String
+				
+						writeString(this.adherence_level,dos);
+					
+					// String
+				
+						writeString(this.hiv_test_result,dos);
+					
+					// Integer
+				
+						writeInteger(this.duration,dos);
+					
+					// String
+				
+						writeString(this.pregnant,dos);
+					
+					// String
+				
+						writeString(this.datim_id,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("person_uuid="+person_uuid);
+		sb.append(",encounter_date="+String.valueOf(encounter_date));
+		sb.append(",date_prep_given="+String.valueOf(date_prep_given));
+		sb.append(",date_created="+String.valueOf(date_created));
+		sb.append(",date_modified="+String.valueOf(date_modified));
+		sb.append(",created_by="+created_by);
+		sb.append(",modified_by="+modified_by);
+		sb.append(",extra="+extra);
+		sb.append(",uuid="+uuid);
+		sb.append(",archived="+String.valueOf(archived));
+		sb.append(",body_weight="+String.valueOf(body_weight));
+		sb.append(",systolic="+String.valueOf(systolic));
+		sb.append(",diastolic="+String.valueOf(diastolic));
+		sb.append(",height="+String.valueOf(height));
+		sb.append(",is_commencement="+String.valueOf(is_commencement));
+		sb.append(",next_appointment="+String.valueOf(next_appointment));
+		sb.append(",description="+description);
+		sb.append(",adherence_level="+adherence_level);
+		sb.append(",hiv_test_result="+hiv_test_result);
+		sb.append(",duration="+String.valueOf(duration));
+		sb.append(",pregnant="+pregnant);
+		sb.append(",datim_id="+datim_id);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_6Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_6_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+		row3Struct row3 = new row3Struct();
+prep_clinic_stage_outStruct prep_clinic_stage_out = new prep_clinic_stage_outStruct();
+
+
+
+
+
+	
+	/**
+	 * [tDBOutput_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBOutput_2", false);
+		start_Hash.put("tDBOutput_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBOutput_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"prep_clinic_stage_out");
+					}
+				
+		int tos_count_tDBOutput_2 = 0;
+		
+
+
+
+
+
+String dbschema_tDBOutput_2 = null;
+	dbschema_tDBOutput_2 = context.LAMISPlus_Schema;
+	
+
+String tableName_tDBOutput_2 = null;
+if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+	tableName_tDBOutput_2 = ("etl_prep_clinic_stage");
+} else {
+	tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("etl_prep_clinic_stage");
+}
+
+        int updateKeyCount_tDBOutput_2 = 1;
+        if(updateKeyCount_tDBOutput_2 < 1) {
+            throw new RuntimeException("For update, Schema must have a key");
+        }
+int nb_line_tDBOutput_2 = 0;
+int nb_line_update_tDBOutput_2 = 0;
+int nb_line_inserted_tDBOutput_2 = 0;
+int nb_line_deleted_tDBOutput_2 = 0;
+int nb_line_rejected_tDBOutput_2 = 0;
+
+int deletedCount_tDBOutput_2=0;
+int updatedCount_tDBOutput_2=0;
+int insertedCount_tDBOutput_2=0;
+int rejectedCount_tDBOutput_2=0;
+
+boolean whetherReject_tDBOutput_2 = false;
+
+java.sql.Connection conn_tDBOutput_2 = null;
+String dbUser_tDBOutput_2 = null;
+
+	
+    java.lang.Class.forName("org.postgresql.Driver");
+    
+        String url_tDBOutput_2 = "jdbc:postgresql://"+context.LAMISPlus_Server+":"+context.LAMISPlus_Port+"/"+context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
+    dbUser_tDBOutput_2 = context.LAMISPlus_Login;
+
+	final String decryptedPassword_tDBOutput_2 = context.LAMISPlus_Password; 
+
+    String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
+
+    conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2,dbUser_tDBOutput_2,dbPwd_tDBOutput_2);
+	
+	resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
+        conn_tDBOutput_2.setAutoCommit(false);
+        int commitEvery_tDBOutput_2 = 10000;
+        int commitCounter_tDBOutput_2 = 0;
+
+
+
+int count_tDBOutput_2=0;
+                                java.sql.DatabaseMetaData dbMetaData_tDBOutput_2 = conn_tDBOutput_2.getMetaData();
+                                boolean whetherExist_tDBOutput_2 = false;
+                                try (java.sql.ResultSet rsTable_tDBOutput_2 = dbMetaData_tDBOutput_2.getTables(null, null, null, new String[]{"TABLE"})) {
+                                    String defaultSchema_tDBOutput_2 = "public";
+                                    if(dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+                                        try(java.sql.Statement stmtSchema_tDBOutput_2 = conn_tDBOutput_2.createStatement();
+                                            java.sql.ResultSet rsSchema_tDBOutput_2 = stmtSchema_tDBOutput_2.executeQuery("select current_schema() ")) {
+                                            while(rsSchema_tDBOutput_2.next()){
+                                                defaultSchema_tDBOutput_2 = rsSchema_tDBOutput_2.getString("current_schema");
+                                            }
+                                        }
+                                    }
+                                    while(rsTable_tDBOutput_2.next()) {
+                                        String table_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_NAME");
+                                        String schema_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_SCHEM");
+                                        if(table_tDBOutput_2.equals(("etl_prep_clinic_stage"))
+                                            && (schema_tDBOutput_2.equals(dbschema_tDBOutput_2) || ((dbschema_tDBOutput_2 ==null || dbschema_tDBOutput_2.trim().length() ==0) && defaultSchema_tDBOutput_2.equals(schema_tDBOutput_2)))) {
+                                            whetherExist_tDBOutput_2 = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if(!whetherExist_tDBOutput_2) {
+                                    try (java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
+                                        stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2 + "\"(\"person_uuid\" VARCHAR(36)  ,\"encounter_date\" TIMESTAMP(29)  ,\"date_prep_given\" TIMESTAMP(29)  ,\"date_created\" TIMESTAMP(29)  ,\"date_modified\" TIMESTAMP(29)  ,\"created_by\" TEXT ,\"modified_by\" TEXT ,\"extra\" VARCHAR(5000)  ,\"uuid\" VARCHAR(5000)  ,\"archived\" INT4 ,\"body_weight\" FLOAT8 ,\"systolic\" FLOAT8 ,\"diastolic\" FLOAT8 ,\"height\" FLOAT8 ,\"is_commencement\" BOOL  not null ,\"next_appointment\" DATE ,\"description\" VARCHAR(100)   not null ,\"adherence_level\" VARCHAR(15)  ,\"hiv_test_result\" TEXT ,\"duration\" INT4 ,\"pregnant\" TEXT ,\"datim_id\" VARCHAR(32)   not null ,\"id\" INT4 ,primary key(\"id\"))");
+                                    }
+                                }
+	    java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
+	    resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
+	    String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2 + "\" (\"person_uuid\",\"encounter_date\",\"date_prep_given\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"extra\",\"uuid\",\"archived\",\"body_weight\",\"systolic\",\"diastolic\",\"height\",\"is_commencement\",\"next_appointment\",\"description\",\"adherence_level\",\"hiv_test_result\",\"duration\",\"pregnant\",\"datim_id\",\"id\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(insert_tDBOutput_2);
+	    resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
+	    String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2 + "\" SET \"person_uuid\" = ?,\"encounter_date\" = ?,\"date_prep_given\" = ?,\"date_created\" = ?,\"date_modified\" = ?,\"created_by\" = ?,\"modified_by\" = ?,\"extra\" = ?,\"uuid\" = ?,\"archived\" = ?,\"body_weight\" = ?,\"systolic\" = ?,\"diastolic\" = ?,\"height\" = ?,\"is_commencement\" = ?,\"next_appointment\" = ?,\"description\" = ?,\"adherence_level\" = ?,\"hiv_test_result\" = ?,\"duration\" = ?,\"pregnant\" = ?,\"datim_id\" = ? WHERE \"id\" = ?";
+	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(update_tDBOutput_2);
+	    resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
+	    
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_3", false);
+		start_Hash.put("tMap_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_3";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+					}
+				
+		int tos_count_tMap_3 = 0;
+		
+
+
+
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+class  Var__tMap_3__Struct  {
+}
+Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+prep_clinic_stage_outStruct prep_clinic_stage_out_tmp = new prep_clinic_stage_outStruct();
+// ###############################
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_3 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_6 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_6", false);
+		start_Hash.put("tDBInput_6", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_6";
+
+	
+		int tos_count_tDBInput_6 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_6 = 0;
+		    java.sql.Connection conn_tDBInput_6 = null;
+				String driverClass_tDBInput_6 = "org.postgresql.Driver";
+			    java.lang.Class jdbcclazz_tDBInput_6 = java.lang.Class.forName(driverClass_tDBInput_6);
+				String dbUser_tDBInput_6 = context.LAMIS3_Login;
+				
+				
+	final String decryptedPassword_tDBInput_6 = context.LAMIS3_Password; 
+				
+				String dbPwd_tDBInput_6 = decryptedPassword_tDBInput_6;
+				
+				String url_tDBInput_6 = "jdbc:postgresql://" + context.LAMIS3_Server + ":" + context.LAMIS3_Port + "/" + context.LAMIS3_Database + "?" + context.LAMIS3_AdditionalParams;
+				
+				conn_tDBInput_6 = java.sql.DriverManager.getConnection(url_tDBInput_6,dbUser_tDBInput_6,dbPwd_tDBInput_6);
+		        
+				conn_tDBInput_6.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_6 = conn_tDBInput_6.createStatement();
+
+		    String dbquery_tDBInput_6 = "SELECT p.uuid as person_uuid, \n	c.date_visit::timestamp as encounter_date, \n	CASE WHEN re.description IS NOT NULL THE"
++"N c.date_visit::timestamp ELSE NULL END AS date_prep_given,\n	c.last_modified as date_created, \n	c.last_modified as dat"
++"e_modified,\n	'ETL' AS created_by,\n	'ETL' AS modified_by,\nc.extra,\n	CONCAT(c.id, c.uuid, c.id)::VARCHAR as uuid,\n   "
++" c.archived::integer, \n	c.body_weight, \n	NULLIF(regexp_replace((case when length(split_part(c.bp, '/', 1))>1 then cast"
++"(split_part(c.bp, '/', 1)as varchar) else null end), '\\D','','g'), '')::double precision as systolic,\n   	NULLIF(regex"
++"p_replace((case when length(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '"
++"\\D','','g'), '')::double precision as diastolic, \n	  CASE\n    WHEN c.height is not null AND POSITION('.' IN c.height:"
++":VARCHAR) > 0 THEN (c.height * 100)\n	WHEN LENGTH(c.height::VARCHAR) <= 2 THEN (c.height * 10)\n\n	ELSE\n	c.height\n  EN"
++"D \n  AS height,\n  c.commence AS is_commencement,\n  c.next_appointment,\n  re.description,\n  c.adherence_level,\n  lo"
++"wer(left(c.extra->'prep'->>'hivTestResult',3)) AS hiv_test_result,\n  CAST(pr_ph.refill_period AS INTEGER) as duration,"
++"\n  (CASE WHEN c.pregnant IS NULL THEN NULL\n  WHEN c.pregnant IS true THEN 'PREGANACY_STATUS_PREGNANT'\n  ELSE 'PREGANAC"
++"Y_STATUS_NOT_PREGNANT'\n  END) pregnant,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n   "
++" ON p.id=c.patient_id\n	INNER JOIN pharmacy ph ON ph.patient_id=c.patient_id AND ph.date_visit = c.date_visit\n    INNER"
++" JOIN ndr_facility n \n    ON n.id=p.facility_id\n	\n	INNER JOIN (SELECT DISTINCT id, arr.line->>'duration'::VARCHAR as "
++"refill_period, arr.line->>'regimen_id'::VARCHAR AS regimen_id\nFROM pharmacy,\njsonb_array_elements(lines) with ordinali"
++"ty arr(line, position)) pr_ph ON pr_ph.id=ph.id\nINNER JOIN regimen re ON pr_ph.regimen_id=re.id::VARCHAR\nWHERE p.extra"
++"->>'art'!='true' AND re.regimen_type_id IN (30)\nGROUP BY p.uuid, c.id, c.uuid, c.date_visit, re.description, c.last_mod"
++"ified, c.extra,\npr_ph.refill_period, n.datim_id\nORDER BY person_uuid ASC";
+			
+
+            	globalMap.put("tDBInput_6_QUERY",dbquery_tDBInput_6);
+		    java.sql.ResultSet rs_tDBInput_6 = null;
+
+		    try {
+		    	rs_tDBInput_6 = stmt_tDBInput_6.executeQuery(dbquery_tDBInput_6);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_6 = rs_tDBInput_6.getMetaData();
+		    	int colQtyInRs_tDBInput_6 = rsmd_tDBInput_6.getColumnCount();
+
+		    String tmpContent_tDBInput_6 = null;
+		    
+		    
+		    while (rs_tDBInput_6.next()) {
+		        nb_line_tDBInput_6++;
+		        
+							if(colQtyInRs_tDBInput_6 < 1) {
+								row3.person_uuid = null;
+							} else {
+	                         		
+        	row3.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_6, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 2) {
+								row3.encounter_date = null;
+							} else {
+										
+			row3.encounter_date = routines.system.JDBCUtil.getDate(rs_tDBInput_6, 2);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 3) {
+								row3.date_prep_given = null;
+							} else {
+										
+			row3.date_prep_given = routines.system.JDBCUtil.getDate(rs_tDBInput_6, 3);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 4) {
+								row3.date_created = null;
+							} else {
+										
+			row3.date_created = routines.system.JDBCUtil.getDate(rs_tDBInput_6, 4);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 5) {
+								row3.date_modified = null;
+							} else {
+										
+			row3.date_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_6, 5);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 6) {
+								row3.created_by = null;
+							} else {
+	                         		
+        	row3.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_6, 6, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 7) {
+								row3.modified_by = null;
+							} else {
+	                         		
+        	row3.modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_6, 7, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 8) {
+								row3.extra = null;
+							} else {
+	                         		
+        	row3.extra = routines.system.JDBCUtil.getString(rs_tDBInput_6, 8, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 9) {
+								row3.uuid = null;
+							} else {
+	                         		
+        	row3.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_6, 9, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 10) {
+								row3.archived = null;
+							} else {
+		                          
+            row3.archived = rs_tDBInput_6.getInt(10);
+            if(rs_tDBInput_6.wasNull()){
+                    row3.archived = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 11) {
+								row3.body_weight = null;
+							} else {
+	                         		
+            row3.body_weight = rs_tDBInput_6.getDouble(11);
+            if(rs_tDBInput_6.wasNull()){
+                    row3.body_weight = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 12) {
+								row3.systolic = null;
+							} else {
+	                         		
+            row3.systolic = rs_tDBInput_6.getDouble(12);
+            if(rs_tDBInput_6.wasNull()){
+                    row3.systolic = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 13) {
+								row3.diastolic = null;
+							} else {
+	                         		
+            row3.diastolic = rs_tDBInput_6.getDouble(13);
+            if(rs_tDBInput_6.wasNull()){
+                    row3.diastolic = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 14) {
+								row3.height = null;
+							} else {
+	                         		
+            row3.height = rs_tDBInput_6.getDouble(14);
+            if(rs_tDBInput_6.wasNull()){
+                    row3.height = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 15) {
+								row3.is_commencement = false;
+							} else {
+	                         		
+            row3.is_commencement = rs_tDBInput_6.getBoolean(15);
+            if(rs_tDBInput_6.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 16) {
+								row3.next_appointment = null;
+							} else {
+										
+			row3.next_appointment = routines.system.JDBCUtil.getDate(rs_tDBInput_6, 16);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 17) {
+								row3.description = null;
+							} else {
+	                         		
+        	row3.description = routines.system.JDBCUtil.getString(rs_tDBInput_6, 17, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 18) {
+								row3.adherence_level = null;
+							} else {
+	                         		
+        	row3.adherence_level = routines.system.JDBCUtil.getString(rs_tDBInput_6, 18, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 19) {
+								row3.hiv_test_result = null;
+							} else {
+	                         		
+        	row3.hiv_test_result = routines.system.JDBCUtil.getString(rs_tDBInput_6, 19, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 20) {
+								row3.duration = null;
+							} else {
+		                          
+            row3.duration = rs_tDBInput_6.getInt(20);
+            if(rs_tDBInput_6.wasNull()){
+                    row3.duration = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_6 < 21) {
+								row3.pregnant = null;
+							} else {
+	                         		
+        	row3.pregnant = routines.system.JDBCUtil.getString(rs_tDBInput_6, 21, false);
+		                    }
+							if(colQtyInRs_tDBInput_6 < 22) {
+								row3.datim_id = null;
+							} else {
+	                         		
+        	row3.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_6, 22, false);
+		                    }
+					
+
+
+ 
+
+
+
+/**
+ * [tDBInput_6 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+	tos_count_tDBInput_6++;
+
+/**
+ * [tDBInput_6 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_3 = false;
+		  boolean mainRowRejected_tMap_3 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
+        // ###############################
+        // # Output tables
+
+prep_clinic_stage_out = null;
+
+
+// # Output table : 'prep_clinic_stage_out'
+prep_clinic_stage_out_tmp.person_uuid = row3.person_uuid ;
+prep_clinic_stage_out_tmp.encounter_date = row3.encounter_date ;
+prep_clinic_stage_out_tmp.date_prep_given = row3.date_prep_given ;
+prep_clinic_stage_out_tmp.date_created = row3.date_created ;
+prep_clinic_stage_out_tmp.date_modified = row3.date_modified ;
+prep_clinic_stage_out_tmp.created_by = row3.created_by ;
+prep_clinic_stage_out_tmp.modified_by = row3.modified_by ;
+prep_clinic_stage_out_tmp.extra = row3.extra ;
+prep_clinic_stage_out_tmp.uuid = row3.uuid ;
+prep_clinic_stage_out_tmp.archived = row3.archived ;
+prep_clinic_stage_out_tmp.body_weight = row3.body_weight ;
+prep_clinic_stage_out_tmp.systolic = row3.systolic ;
+prep_clinic_stage_out_tmp.diastolic = row3.diastolic ;
+prep_clinic_stage_out_tmp.height = row3.height ;
+prep_clinic_stage_out_tmp.is_commencement = row3.is_commencement ;
+prep_clinic_stage_out_tmp.next_appointment = row3.next_appointment ;
+prep_clinic_stage_out_tmp.description = row3.description ;
+prep_clinic_stage_out_tmp.adherence_level = row3.adherence_level ;
+prep_clinic_stage_out_tmp.hiv_test_result = row3.hiv_test_result ;
+prep_clinic_stage_out_tmp.duration = row3.duration ;
+prep_clinic_stage_out_tmp.pregnant = row3.pregnant ;
+prep_clinic_stage_out_tmp.datim_id = row3.datim_id ;
+prep_clinic_stage_out_tmp.id = Numeric.sequence("s1",1,1) ;
+prep_clinic_stage_out = prep_clinic_stage_out_tmp;
+// ###############################
+
+} // end of Var scope
+
+rejectedInnerJoin_tMap_3 = false;
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_3++;
+
+/**
+ * [tMap_3 main ] stop
+ */
+	
+	/**
+	 * [tMap_3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 process_data_begin ] stop
+ */
+// Start of branch "prep_clinic_stage_out"
+if(prep_clinic_stage_out != null) { 
+
+
+
+	
+	/**
+	 * [tDBOutput_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"prep_clinic_stage_out");
+					}
+					
+
+
+
+        whetherReject_tDBOutput_2 = false;
+                    if(prep_clinic_stage_out.id == null) {
+pstmt_tDBOutput_2.setNull(1, java.sql.Types.INTEGER);
+} else {pstmt_tDBOutput_2.setInt(1, prep_clinic_stage_out.id);
+}
+
+            int checkCount_tDBOutput_2 = -1;
+            try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
+                while(rs_tDBOutput_2.next()) {
+                    checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
+                }
+            }
+            if(checkCount_tDBOutput_2 > 0) {
+                        if(prep_clinic_stage_out.person_uuid == null) {
+pstmtUpdate_tDBOutput_2.setNull(1, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(1, prep_clinic_stage_out.person_uuid);
+}
+
+                        if(prep_clinic_stage_out.encounter_date != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(prep_clinic_stage_out.encounter_date.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.date_prep_given != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(prep_clinic_stage_out.date_prep_given.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.date_created != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(prep_clinic_stage_out.date_created.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.date_modified != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(5, new java.sql.Timestamp(prep_clinic_stage_out.date_modified.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(5, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.created_by == null) {
+pstmtUpdate_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(6, prep_clinic_stage_out.created_by);
+}
+
+                        if(prep_clinic_stage_out.modified_by == null) {
+pstmtUpdate_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(7, prep_clinic_stage_out.modified_by);
+}
+
+                        if(prep_clinic_stage_out.extra == null) {
+pstmtUpdate_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(8, prep_clinic_stage_out.extra);
+}
+
+                        if(prep_clinic_stage_out.uuid == null) {
+pstmtUpdate_tDBOutput_2.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(9, prep_clinic_stage_out.uuid);
+}
+
+                        if(prep_clinic_stage_out.archived == null) {
+pstmtUpdate_tDBOutput_2.setNull(10, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setInt(10, prep_clinic_stage_out.archived);
+}
+
+                        if(prep_clinic_stage_out.body_weight == null) {
+pstmtUpdate_tDBOutput_2.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_2.setDouble(11, prep_clinic_stage_out.body_weight);
+}
+
+                        if(prep_clinic_stage_out.systolic == null) {
+pstmtUpdate_tDBOutput_2.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_2.setDouble(12, prep_clinic_stage_out.systolic);
+}
+
+                        if(prep_clinic_stage_out.diastolic == null) {
+pstmtUpdate_tDBOutput_2.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_2.setDouble(13, prep_clinic_stage_out.diastolic);
+}
+
+                        if(prep_clinic_stage_out.height == null) {
+pstmtUpdate_tDBOutput_2.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtUpdate_tDBOutput_2.setDouble(14, prep_clinic_stage_out.height);
+}
+
+                        pstmtUpdate_tDBOutput_2.setBoolean(15, prep_clinic_stage_out.is_commencement);
+
+                        if(prep_clinic_stage_out.next_appointment != null) {
+pstmtUpdate_tDBOutput_2.setTimestamp(16, new java.sql.Timestamp(prep_clinic_stage_out.next_appointment.getTime()));
+} else {
+pstmtUpdate_tDBOutput_2.setNull(16, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.description == null) {
+pstmtUpdate_tDBOutput_2.setNull(17, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(17, prep_clinic_stage_out.description);
+}
+
+                        if(prep_clinic_stage_out.adherence_level == null) {
+pstmtUpdate_tDBOutput_2.setNull(18, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(18, prep_clinic_stage_out.adherence_level);
+}
+
+                        if(prep_clinic_stage_out.hiv_test_result == null) {
+pstmtUpdate_tDBOutput_2.setNull(19, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(19, prep_clinic_stage_out.hiv_test_result);
+}
+
+                        if(prep_clinic_stage_out.duration == null) {
+pstmtUpdate_tDBOutput_2.setNull(20, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setInt(20, prep_clinic_stage_out.duration);
+}
+
+                        if(prep_clinic_stage_out.pregnant == null) {
+pstmtUpdate_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(21, prep_clinic_stage_out.pregnant);
+}
+
+                        if(prep_clinic_stage_out.datim_id == null) {
+pstmtUpdate_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_2.setString(22, prep_clinic_stage_out.datim_id);
+}
+
+                        if(prep_clinic_stage_out.id == null) {
+pstmtUpdate_tDBOutput_2.setNull(23 + count_tDBOutput_2, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_2.setInt(23 + count_tDBOutput_2, prep_clinic_stage_out.id);
+}
+
+                try {
+					
+                    updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2 + pstmtUpdate_tDBOutput_2.executeUpdate();
+                    nb_line_tDBOutput_2++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_2 = true;
+                        nb_line_tDBOutput_2++;
+                            System.err.print(e.getMessage());
+                }
+            } else {
+                        if(prep_clinic_stage_out.person_uuid == null) {
+pstmtInsert_tDBOutput_2.setNull(1, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(1, prep_clinic_stage_out.person_uuid);
+}
+
+                        if(prep_clinic_stage_out.encounter_date != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(2, new java.sql.Timestamp(prep_clinic_stage_out.encounter_date.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.date_prep_given != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(3, new java.sql.Timestamp(prep_clinic_stage_out.date_prep_given.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.date_created != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(4, new java.sql.Timestamp(prep_clinic_stage_out.date_created.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.date_modified != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(5, new java.sql.Timestamp(prep_clinic_stage_out.date_modified.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(5, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.created_by == null) {
+pstmtInsert_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(6, prep_clinic_stage_out.created_by);
+}
+
+                        if(prep_clinic_stage_out.modified_by == null) {
+pstmtInsert_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(7, prep_clinic_stage_out.modified_by);
+}
+
+                        if(prep_clinic_stage_out.extra == null) {
+pstmtInsert_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(8, prep_clinic_stage_out.extra);
+}
+
+                        if(prep_clinic_stage_out.uuid == null) {
+pstmtInsert_tDBOutput_2.setNull(9, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(9, prep_clinic_stage_out.uuid);
+}
+
+                        if(prep_clinic_stage_out.archived == null) {
+pstmtInsert_tDBOutput_2.setNull(10, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setInt(10, prep_clinic_stage_out.archived);
+}
+
+                        if(prep_clinic_stage_out.body_weight == null) {
+pstmtInsert_tDBOutput_2.setNull(11, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_2.setDouble(11, prep_clinic_stage_out.body_weight);
+}
+
+                        if(prep_clinic_stage_out.systolic == null) {
+pstmtInsert_tDBOutput_2.setNull(12, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_2.setDouble(12, prep_clinic_stage_out.systolic);
+}
+
+                        if(prep_clinic_stage_out.diastolic == null) {
+pstmtInsert_tDBOutput_2.setNull(13, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_2.setDouble(13, prep_clinic_stage_out.diastolic);
+}
+
+                        if(prep_clinic_stage_out.height == null) {
+pstmtInsert_tDBOutput_2.setNull(14, java.sql.Types.DOUBLE);
+} else {pstmtInsert_tDBOutput_2.setDouble(14, prep_clinic_stage_out.height);
+}
+
+                        pstmtInsert_tDBOutput_2.setBoolean(15, prep_clinic_stage_out.is_commencement);
+
+                        if(prep_clinic_stage_out.next_appointment != null) {
+pstmtInsert_tDBOutput_2.setTimestamp(16, new java.sql.Timestamp(prep_clinic_stage_out.next_appointment.getTime()));
+} else {
+pstmtInsert_tDBOutput_2.setNull(16, java.sql.Types.TIMESTAMP);
+}
+
+                        if(prep_clinic_stage_out.description == null) {
+pstmtInsert_tDBOutput_2.setNull(17, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(17, prep_clinic_stage_out.description);
+}
+
+                        if(prep_clinic_stage_out.adherence_level == null) {
+pstmtInsert_tDBOutput_2.setNull(18, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(18, prep_clinic_stage_out.adherence_level);
+}
+
+                        if(prep_clinic_stage_out.hiv_test_result == null) {
+pstmtInsert_tDBOutput_2.setNull(19, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(19, prep_clinic_stage_out.hiv_test_result);
+}
+
+                        if(prep_clinic_stage_out.duration == null) {
+pstmtInsert_tDBOutput_2.setNull(20, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setInt(20, prep_clinic_stage_out.duration);
+}
+
+                        if(prep_clinic_stage_out.pregnant == null) {
+pstmtInsert_tDBOutput_2.setNull(21, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(21, prep_clinic_stage_out.pregnant);
+}
+
+                        if(prep_clinic_stage_out.datim_id == null) {
+pstmtInsert_tDBOutput_2.setNull(22, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_2.setString(22, prep_clinic_stage_out.datim_id);
+}
+
+                        if(prep_clinic_stage_out.id == null) {
+pstmtInsert_tDBOutput_2.setNull(23, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_2.setInt(23, prep_clinic_stage_out.id);
+}
+
+                try {
+					
+                    insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2 + pstmtInsert_tDBOutput_2.executeUpdate();
+                    nb_line_tDBOutput_2++;
+					
+                } catch(java.lang.Exception e) {
+					
+                    whetherReject_tDBOutput_2 = true;
+                        nb_line_tDBOutput_2++;
+                            System.err.print(e.getMessage());
+                }
+            }
+    		    commitCounter_tDBOutput_2++;
+                if(commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
+                	conn_tDBOutput_2.commit();
+                	
+                	commitCounter_tDBOutput_2=0;
+                }
+
+ 
+
+
+	tos_count_tDBOutput_2++;
+
+/**
+ * [tDBOutput_2 main ] stop
+ */
+	
+	/**
+	 * [tDBOutput_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tDBOutput_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBOutput_2 process_data_end ] stop
+ */
+
+} // End of branch "prep_clinic_stage_out"
+
+
+
+
+	
+	/**
+	 * [tMap_3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_6 != null) {
+		rs_tDBInput_6.close();
+	}
+	if (stmt_tDBInput_6 != null) {
+		stmt_tDBInput_6.close();
+	}
+	if(conn_tDBInput_6 != null && !conn_tDBInput_6.isClosed()) {
+		
+			conn_tDBInput_6.commit();
+			
+		
+			conn_tDBInput_6.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_6_NB_LINE",nb_line_tDBInput_6);
+ 
+
+ok_Hash.put("tDBInput_6", true);
+end_Hash.put("tDBInput_6", System.currentTimeMillis());
+
+   			if (globalMap.get("tDBInput_6_NB_LINE") != null) {
+   				
+					if(execStat){
+   	 					runStat.updateStatOnConnection("If1", 0, "true");
+					}
+				tJava_1Process(globalMap);
+			}
+
+			   
+   				else{
+					if(execStat){   
+   	 					runStat.updateStatOnConnection("If1", 0, "false");
+					}   	 
+   				}
+
+
+
+/**
+ * [tDBInput_6 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+
+
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tMap_3", true);
+end_Hash.put("tMap_3", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tMap_3 end ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+
+
+        if(pstmtUpdate_tDBOutput_2 != null){
+            pstmtUpdate_tDBOutput_2.close();
+            resourceMap.remove("pstmtUpdate_tDBOutput_2");
+        }
+        if(pstmtInsert_tDBOutput_2 != null){
+            pstmtInsert_tDBOutput_2.close();
+            resourceMap.remove("pstmtInsert_tDBOutput_2");
+        }
+        if(pstmt_tDBOutput_2 != null) {
+            pstmt_tDBOutput_2.close();
+            resourceMap.remove("pstmt_tDBOutput_2");
+        }
+    resourceMap.put("statementClosed_tDBOutput_2", true);
+			
+			conn_tDBOutput_2.commit();
+			
+		
+    	conn_tDBOutput_2 .close();
+    	
+    	resourceMap.put("finish_tDBOutput_2", true);
+    	
+
+	nb_line_deleted_tDBOutput_2=nb_line_deleted_tDBOutput_2+ deletedCount_tDBOutput_2;
+	nb_line_update_tDBOutput_2=nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
+	nb_line_inserted_tDBOutput_2=nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
+	nb_line_rejected_tDBOutput_2=nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
+	
+        globalMap.put("tDBOutput_2_NB_LINE",nb_line_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_UPDATED",nb_line_update_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_DELETED",nb_line_deleted_tDBOutput_2);
+        globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
+    
+	
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"prep_clinic_stage_out");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tDBOutput_2", true);
+end_Hash.put("tDBOutput_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBOutput_2 end ] stop
+ */
+
+
+
+
+
+
+				}//end the resume
+
+				
+				    			if(resumeEntryMethodName == null || globalResumeTicket){
+				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBInput_6:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
+								}	    				    			
+					    	
+								if(execStat){    	
+									runStat.updateStatOnConnection("OnSubjobOk2", 0, "ok");
+								} 
+							
+							tDBInput_1Process(globalMap); 
+						
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_6 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 finally ] stop
+ */
+
+	
+	/**
+	 * [tDBOutput_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBOutput_2";
+
+	
+
+
+
+    try {
+    if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
+                java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
+                if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtUpdate_tDBOutput_2")) != null) {
+                    pstmtUpdateToClose_tDBOutput_2.close();
+                }
+                java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
+                if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmtInsert_tDBOutput_2")) != null) {
+                    pstmtInsertToClose_tDBOutput_2.close();
+                }
+                java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
+                if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_2")) != null) {
+                    pstmtToClose_tDBOutput_2.close();
+                }
+    }
+    } finally {
+        if(resourceMap.get("finish_tDBOutput_2") == null){
+            java.sql.Connection ctn_tDBOutput_2 = null;
+            if((ctn_tDBOutput_2 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_2")) != null){
+                try {
+                    ctn_tDBOutput_2.close();
+                } catch (java.sql.SQLException sqlEx_tDBOutput_2) {
+                    String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :" + sqlEx_tDBOutput_2.getMessage();
+                    System.err.println(errorMessage_tDBOutput_2);
+                }
+            }
+        }
+    }
+ 
+
+
+
+/**
+ * [tDBOutput_2 finally ] stop
+ */
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tDBInput_6_SUBPROCESS_STATE", 1);
+	}
+	
 
 
 public static class prep_oneStruct implements routines.system.IPersistableRow<prep_oneStruct> {
@@ -1237,6 +3657,12 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
     static byte[] commonByteArray_LAMISPLUS_ETL_PrEP_Clinic = new byte[0];
 
 	
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
 			    public String person_uuid;
 
 				public String getPerson_uuid () {
@@ -1283,12 +3709,6 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 
 				public String getExtra () {
 					return this.extra;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
 				}
 				
 			    public Integer archived;
@@ -1367,6 +3787,12 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 
 				public String getDatim_id () {
 					return this.datim_id;
+				}
+				
+			    public int id;
+
+				public int getId () {
+					return this.id;
 				}
 				
 
@@ -1451,6 +3877,8 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 
         		int length = 0;
 		
+					this.uuid = readString(dis);
+					
 					this.person_uuid = readString(dis);
 					
 					this.encounter_date = readDate(dis);
@@ -1466,8 +3894,6 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					this.modified_by = readString(dis);
 					
 					this.extra = readString(dis);
-					
-					this.uuid = readString(dis);
 					
 						this.archived = readInteger(dis);
 					
@@ -1515,6 +3941,8 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					
 					this.datim_id = readString(dis);
 					
+			        this.id = dis.readInt();
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -1533,6 +3961,10 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
         try {
 
 		
+					// String
+				
+						writeString(this.uuid,dos);
+					
 					// String
 				
 						writeString(this.person_uuid,dos);
@@ -1564,10 +3996,6 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 					// String
 				
 						writeString(this.extra,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
 					
 					// Integer
 				
@@ -1641,6 +4069,10 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 				
 						writeString(this.datim_id,dos);
 					
+					// int
+				
+		            	dos.writeInt(this.id);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -1654,7 +4086,8 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("person_uuid="+person_uuid);
+		sb.append("uuid="+uuid);
+		sb.append(",person_uuid="+person_uuid);
 		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",date_prep_given="+String.valueOf(date_prep_given));
 		sb.append(",date_created="+String.valueOf(date_created));
@@ -1662,7 +4095,6 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 		sb.append(",created_by="+created_by);
 		sb.append(",modified_by="+modified_by);
 		sb.append(",extra="+extra);
-		sb.append(",uuid="+uuid);
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",body_weight="+String.valueOf(body_weight));
 		sb.append(",systolic="+String.valueOf(systolic));
@@ -1676,6 +4108,7 @@ public static class row2Struct implements routines.system.IPersistableRow<row2St
 		sb.append(",duration="+String.valueOf(duration));
 		sb.append(",pregnant="+pregnant);
 		sb.append(",datim_id="+datim_id);
+		sb.append(",id="+String.valueOf(id));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1729,6 +4162,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
 
 	
+			    public String uuid;
+
+				public String getUuid () {
+					return this.uuid;
+				}
+				
 			    public String person_uuid;
 
 				public String getPerson_uuid () {
@@ -1775,12 +4214,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
 				public String getExtra () {
 					return this.extra;
-				}
-				
-			    public String uuid;
-
-				public String getUuid () {
-					return this.uuid;
 				}
 				
 			    public Integer archived;
@@ -1861,6 +4294,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
+			    public int id;
+
+				public int getId () {
+					return this.id;
+				}
+				
 
 
 	@Override
@@ -1869,8 +4308,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 			final int prime = PRIME;
 			int result = DEFAULT_HASHCODE;
 	
-						result = prime * result + ((this.uuid == null) ? 0 : this.uuid.hashCode());
-					
+							result = prime * result + (int) this.id;
+						
     		this.hashCode = result;
     		this.hashCodeDirty = false;
 		}
@@ -1884,12 +4323,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		if (getClass() != obj.getClass()) return false;
 		final after_tDBInput_1Struct other = (after_tDBInput_1Struct) obj;
 		
-						if (this.uuid == null) {
-							if (other.uuid != null)
-								return false;
-						
-						} else if (!this.uuid.equals(other.uuid))
-						
+						if (this.id != other.id)
 							return false;
 					
 
@@ -1898,7 +4332,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
 	public void copyDataTo(after_tDBInput_1Struct other) {
 
-		other.person_uuid = this.person_uuid;
+		other.uuid = this.uuid;
+	            other.person_uuid = this.person_uuid;
 	            other.encounter_date = this.encounter_date;
 	            other.date_prep_given = this.date_prep_given;
 	            other.date_created = this.date_created;
@@ -1906,7 +4341,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 	            other.created_by = this.created_by;
 	            other.modified_by = this.modified_by;
 	            other.extra = this.extra;
-	            other.uuid = this.uuid;
 	            other.archived = this.archived;
 	            other.body_weight = this.body_weight;
 	            other.systolic = this.systolic;
@@ -1920,12 +4354,13 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 	            other.duration = this.duration;
 	            other.pregnant = this.pregnant;
 	            other.datim_id = this.datim_id;
+	            other.id = this.id;
 	            
 	}
 
 	public void copyKeysDataTo(after_tDBInput_1Struct other) {
 
-		other.uuid = this.uuid;
+		other.id = this.id;
 	            	
 	}
 
@@ -2011,6 +4446,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
         		int length = 0;
 		
+					this.uuid = readString(dis);
+					
 					this.person_uuid = readString(dis);
 					
 					this.encounter_date = readDate(dis);
@@ -2026,8 +4463,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					this.modified_by = readString(dis);
 					
 					this.extra = readString(dis);
-					
-					this.uuid = readString(dis);
 					
 						this.archived = readInteger(dis);
 					
@@ -2075,6 +4510,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
+			        this.id = dis.readInt();
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -2093,6 +4530,10 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
         try {
 
 		
+					// String
+				
+						writeString(this.uuid,dos);
+					
 					// String
 				
 						writeString(this.person_uuid,dos);
@@ -2124,10 +4565,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					// String
 				
 						writeString(this.extra,dos);
-					
-					// String
-				
-						writeString(this.uuid,dos);
 					
 					// Integer
 				
@@ -2201,6 +4638,10 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
+					// int
+				
+		            	dos.writeInt(this.id);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -2214,7 +4655,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append("[");
-		sb.append("person_uuid="+person_uuid);
+		sb.append("uuid="+uuid);
+		sb.append(",person_uuid="+person_uuid);
 		sb.append(",encounter_date="+String.valueOf(encounter_date));
 		sb.append(",date_prep_given="+String.valueOf(date_prep_given));
 		sb.append(",date_created="+String.valueOf(date_created));
@@ -2222,7 +4664,6 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",created_by="+created_by);
 		sb.append(",modified_by="+modified_by);
 		sb.append(",extra="+extra);
-		sb.append(",uuid="+uuid);
 		sb.append(",archived="+String.valueOf(archived));
 		sb.append(",body_weight="+String.valueOf(body_weight));
 		sb.append(",systolic="+String.valueOf(systolic));
@@ -2236,6 +4677,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",duration="+String.valueOf(duration));
 		sb.append(",pregnant="+pregnant);
 		sb.append(",datim_id="+datim_id);
+		sb.append(",id="+String.valueOf(id));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2248,7 +4690,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 
 		int returnValue = -1;
 		
-						returnValue = checkNullsAndCompare(this.uuid, other.uuid);
+						returnValue = checkNullsAndCompare(this.id, other.id);
 						if(returnValue != 0) {
 							return returnValue;
 						}
@@ -2561,14 +5003,14 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 		    java.sql.Connection conn_tDBInput_1 = null;
 				String driverClass_tDBInput_1 = "org.postgresql.Driver";
 			    java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
-				String dbUser_tDBInput_1 = context.LAMIS3_Login;
+				String dbUser_tDBInput_1 = context.LAMISPlus_Login;
 				
 				
-	final String decryptedPassword_tDBInput_1 = context.LAMIS3_Password; 
+	final String decryptedPassword_tDBInput_1 = context.LAMISPlus_Password; 
 				
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 				
-				String url_tDBInput_1 = "jdbc:postgresql://" + context.LAMIS3_Server + ":" + context.LAMIS3_Port + "/" + context.LAMIS3_Database + "?" + context.LAMIS3_AdditionalParams;
+				String url_tDBInput_1 = "jdbc:postgresql://" + context.LAMISPlus_Server + ":" + context.LAMISPlus_Port + "/" + context.LAMISPlus_Database + "?" + context.LAMISPlus_AdditionalParams;
 				
 				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1,dbUser_tDBInput_1,dbPwd_tDBInput_1);
 		        
@@ -2577,24 +5019,9 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 		    
 			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-		    String dbquery_tDBInput_1 = "SELECT p.uuid as person_uuid, \n	c.date_visit::timestamp as encounter_date, \n	CASE WHEN re.description IS NOT NULL THE"
-+"N c.date_visit::timestamp ELSE NULL END AS date_prep_given,\n	c.last_modified as date_created, \n	c.last_modified as dat"
-+"e_modified,\n	'ETL' AS created_by,\n	'ETL' AS modified_by,\nc.extra,\n	CONCAT(c.id, c.uuid, c.id)::VARCHAR as uuid,\n   "
-+" c.archived::integer, \n	c.body_weight, \n	NULLIF(regexp_replace((case when length(split_part(c.bp, '/', 1))>1 then cast"
-+"(split_part(c.bp, '/', 1)as varchar) else null end), '\\D','','g'), '')::double precision as systolic,\n   	NULLIF(regex"
-+"p_replace((case when length(split_part(c.bp, '/', 2))>1 then cast(split_part(c.bp, '/', 2)as varchar) else null end), '"
-+"\\D','','g'), '')::double precision as diastolic, \n	  CASE\n    WHEN c.height is not null AND POSITION('.' IN c.height:"
-+":VARCHAR) > 0 THEN (c.height * 100)\n	WHEN LENGTH(c.height::VARCHAR) <= 2 THEN (c.height * 10)\n\n	ELSE\n	c.height\n  EN"
-+"D \n  AS height,\n  c.commence AS is_commencement,\n  c.next_appointment,\n  re.description,\n  c.adherence_level,\n  lo"
-+"wer(left(c.extra->'prep'->>'hivTestResult',3)) AS hiv_test_result,\n  CAST(pr_ph.refill_period AS INTEGER) as duration,"
-+"\n  (CASE WHEN c.pregnant IS NULL THEN NULL\n  WHEN c.pregnant IS true THEN 'PREGANACY_STATUS_PREGNANT'\n  ELSE 'PREGANAC"
-+"Y_STATUS_NOT_PREGNANT'\n  END) pregnant,\n    n.datim_id AS datim_id\n    FROM clinic c \n    INNER JOIN patient p \n   "
-+" ON p.id=c.patient_id\n	INNER JOIN pharmacy ph ON ph.patient_id=c.patient_id AND ph.date_visit = c.date_visit\n    INNER"
-+" JOIN ndr_facility n \n    ON n.id=p.facility_id\n	\n	INNER JOIN (SELECT DISTINCT id, arr.line->>'duration'::VARCHAR as "
-+"refill_period, arr.line->>'regimen_id'::VARCHAR AS regimen_id\nFROM pharmacy,\njsonb_array_elements(lines) with ordinali"
-+"ty arr(line, position)) pr_ph ON pr_ph.id=ph.id\nINNER JOIN regimen re ON pr_ph.regimen_id=re.id::VARCHAR\nWHERE p.extra"
-+"->>'art'!='true' AND re.regimen_type_id IN (30)\nGROUP BY p.uuid, c.id, c.uuid, c.date_visit, re.description, c.last_mod"
-+"ified, c.extra,\npr_ph.refill_period, n.datim_id";
+		    String dbquery_tDBInput_1 = "SELECT DISTINCT ON (uuid) uuid, person_uuid, encounter_date, date_prep_given, date_created, date_modified, created_by, "
++"modified_by, extra, \narchived, body_weight, systolic, diastolic, height, is_commencement, next_appointment, \ndescripti"
++"on, adherence_level, hiv_test_result, duration, pregnant, datim_id, id\n	FROM etl_prep_clinic_stage;";
 			
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -2612,58 +5039,58 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 		        nb_line_tDBInput_1++;
 		        
 							if(colQtyInRs_tDBInput_1 < 1) {
-								row2.person_uuid = null;
-							} else {
-	                         		
-        	row2.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_1, 1, false);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 2) {
-								row2.encounter_date = null;
-							} else {
-										
-			row2.encounter_date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 2);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 3) {
-								row2.date_prep_given = null;
-							} else {
-										
-			row2.date_prep_given = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 3);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 4) {
-								row2.date_created = null;
-							} else {
-										
-			row2.date_created = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 4);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 5) {
-								row2.date_modified = null;
-							} else {
-										
-			row2.date_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 5);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 6) {
-								row2.created_by = null;
-							} else {
-	                         		
-        	row2.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_1, 6, false);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 7) {
-								row2.modified_by = null;
-							} else {
-	                         		
-        	row2.modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_1, 7, false);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 8) {
-								row2.extra = null;
-							} else {
-	                         		
-        	row2.extra = routines.system.JDBCUtil.getString(rs_tDBInput_1, 8, false);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 9) {
 								row2.uuid = null;
 							} else {
 	                         		
-        	row2.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_1, 9, false);
+        	row2.uuid = routines.system.JDBCUtil.getString(rs_tDBInput_1, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 2) {
+								row2.person_uuid = null;
+							} else {
+	                         		
+        	row2.person_uuid = routines.system.JDBCUtil.getString(rs_tDBInput_1, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 3) {
+								row2.encounter_date = null;
+							} else {
+										
+			row2.encounter_date = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 3);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 4) {
+								row2.date_prep_given = null;
+							} else {
+										
+			row2.date_prep_given = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 4);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 5) {
+								row2.date_created = null;
+							} else {
+										
+			row2.date_created = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 5);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 6) {
+								row2.date_modified = null;
+							} else {
+										
+			row2.date_modified = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 6);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 7) {
+								row2.created_by = null;
+							} else {
+	                         		
+        	row2.created_by = routines.system.JDBCUtil.getString(rs_tDBInput_1, 7, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 8) {
+								row2.modified_by = null;
+							} else {
+	                         		
+        	row2.modified_by = routines.system.JDBCUtil.getString(rs_tDBInput_1, 8, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 9) {
+								row2.extra = null;
+							} else {
+	                         		
+        	row2.extra = routines.system.JDBCUtil.getString(rs_tDBInput_1, 9, false);
 		                    }
 							if(colQtyInRs_tDBInput_1 < 10) {
 								row2.archived = null;
@@ -2763,6 +5190,15 @@ prep_oneStruct prep_one_tmp = new prep_oneStruct();
 							} else {
 	                         		
         	row2.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 22, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 23) {
+								row2.id = 0;
+							} else {
+		                          
+            row2.id = rs_tDBInput_1.getInt(23);
+            if(rs_tDBInput_1.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
 		                    }
 					
 
@@ -3867,20 +6303,6 @@ globalMap.put("tDBInput_1_NB_LINE",nb_line_tDBInput_1);
 ok_Hash.put("tDBInput_1", true);
 end_Hash.put("tDBInput_1", System.currentTimeMillis());
 
-   			if (globalMap.get("tDBInput_1_NB_LINE") != null) {
-   				
-					if(execStat){
-   	 					runStat.updateStatOnConnection("If1", 0, "true");
-					}
-				tJava_1Process(globalMap);
-			}
-
-			   
-   				else{
-					if(execStat){   
-   	 					runStat.updateStatOnConnection("If1", 0, "false");
-					}   	 
-   				}
 
 
 
@@ -5768,7 +8190,7 @@ java.time.LocalDateTime startTime = java.time.LocalDateTime.now();
 globalMap.put("startTime", startTime);
 System.out.println("Start time - "+ startTime);
 
-System.out.println("Total latest PrEP clinic records fetched from LAMIS3 clinic - "+globalMap.get("tDBInput_1_NB_LINE"));
+System.out.println("Total latest PrEP clinic records fetched from LAMIS3 clinic - "+globalMap.get("tDBInput_6_NB_LINE"));
  
 
 
@@ -10749,12 +13171,12 @@ this.globalResumeTicket = true;//to run tPreJob
 this.globalResumeTicket = false;//to run others jobs
 
 try {
-errorCode = null;tDBInput_1Process(globalMap);
+errorCode = null;tDBInput_6Process(globalMap);
 if(!"failure".equals(status)) { status = "end"; }
-}catch (TalendException e_tDBInput_1) {
-globalMap.put("tDBInput_1_SUBPROCESS_STATE", -1);
+}catch (TalendException e_tDBInput_6) {
+globalMap.put("tDBInput_6_SUBPROCESS_STATE", -1);
 
-e_tDBInput_1.printStackTrace();
+e_tDBInput_6.printStackTrace();
 
 }
 
@@ -10931,6 +13353,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     262282 characters generated by Talend Open Studio for Big Data 
- *     on the March 8, 2023 10:39:11 AM WAT
+ *     329380 characters generated by Talend Open Studio for Big Data 
+ *     on the March 23, 2023 9:55:40 AM WAT
  ************************************************************************************************/
