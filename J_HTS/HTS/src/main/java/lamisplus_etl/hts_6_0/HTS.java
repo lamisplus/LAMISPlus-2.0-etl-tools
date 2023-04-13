@@ -1995,6 +1995,12 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					return this.recency;
 				}
 				
+			    public String cd4;
+
+				public String getCd4 () {
+					return this.cd4;
+				}
+				
 
 
 	@Override
@@ -2058,6 +2064,7 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 	            other.type_counseling = this.type_counseling;
 	            other.facility_id = this.facility_id;
 	            other.recency = this.recency;
+	            other.cd4 = this.cd4;
 	            
 	}
 
@@ -2226,6 +2233,8 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 					
 					this.recency = readString(dis);
 					
+					this.cd4 = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -2383,6 +2392,10 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 				
 						writeString(this.recency,dos);
 					
+					// String
+				
+						writeString(this.cd4,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -2427,6 +2440,7 @@ public static class hts_finalStruct implements routines.system.IPersistableRow<h
 		sb.append(",type_counseling="+String.valueOf(type_counseling));
 		sb.append(",facility_id="+String.valueOf(facility_id));
 		sb.append(",recency="+recency);
+		sb.append(",cd4="+cd4);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -2664,6 +2678,12 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					return this.recency;
 				}
 				
+			    public String cd4;
+
+				public String getCd4 () {
+					return this.cd4;
+				}
+				
 
 
 
@@ -2823,6 +2843,8 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 					
 					this.recency = readString(dis);
 					
+					this.cd4 = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -2980,6 +3002,10 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 				
 						writeString(this.recency,dos);
 					
+					// String
+				
+						writeString(this.cd4,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -3024,6 +3050,7 @@ public static class hts_extract_before_finalStruct implements routines.system.IP
 		sb.append(",type_counseling="+String.valueOf(type_counseling));
 		sb.append(",datim_id="+datim_id);
 		sb.append(",recency="+recency);
+		sb.append(",cd4="+cd4);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3255,6 +3282,12 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					return this.recency;
 				}
 				
+			    public String cd4;
+
+				public String getCd4 () {
+					return this.cd4;
+				}
+				
 
 
 
@@ -3414,6 +3447,8 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 					
 					this.recency = readString(dis);
 					
+					this.cd4 = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -3571,6 +3606,10 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 				
 						writeString(this.recency,dos);
 					
+					// String
+				
+						writeString(this.cd4,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -3615,6 +3654,7 @@ public static class hts_target_group_setting_mapStruct implements routines.syste
 		sb.append(",testing_setting="+testing_setting);
 		sb.append(",datim_id="+datim_id);
 		sb.append(",recency="+recency);
+		sb.append(",cd4="+cd4);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -3846,6 +3886,12 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 					return this.datim_id;
 				}
 				
+			    public String cd4;
+
+				public String getCd4 () {
+					return this.cd4;
+				}
+				
 
 
 
@@ -4005,6 +4051,8 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 					
 					this.datim_id = readString(dis);
 					
+					this.cd4 = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -4162,6 +4210,10 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 				
 						writeString(this.datim_id,dos);
 					
+					// String
+				
+						writeString(this.cd4,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -4206,6 +4258,7 @@ public static class hts_extractStruct implements routines.system.IPersistableRow
 		sb.append(",risk_assessment="+risk_assessment);
 		sb.append(",recency="+recency);
 		sb.append(",datim_id="+datim_id);
+		sb.append(",cd4="+cd4);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -4437,6 +4490,12 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					return this.datim_id;
 				}
 				
+			    public String cd4;
+
+				public String getCd4 () {
+					return this.cd4;
+				}
+				
 
 
 
@@ -4596,6 +4655,8 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 					
 					this.datim_id = readString(dis);
 					
+					this.cd4 = readString(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -4753,6 +4814,10 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 				
 						writeString(this.datim_id,dos);
 					
+					// String
+				
+						writeString(this.cd4,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -4797,6 +4862,7 @@ public static class after_tDBInput_1Struct implements routines.system.IPersistab
 		sb.append(",risk_assessment="+risk_assessment);
 		sb.append(",recency="+recency);
 		sb.append(",datim_id="+datim_id);
+		sb.append(",cd4="+cd4);
 	    sb.append("]");
 
 	    return sb.toString();
@@ -4955,10 +5021,10 @@ String dbUser_tDBOutput_1 = null;
 int count_tDBOutput_1=0;
 	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ?");
 	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"" + "test1" + "\",\"" + "confirmatory_test" + "\",\"" + "tie_breaker_test" + "\",\"client_code\",\"date_visit\",\"archived\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"captured_by\",\"uuid\",\"previously_tested\",\"index_client\",\"num_children\",\"num_wives\",\"first_time_visit\",\"index_client_code\",\"" + "extra" + "\",\"" + "post_test_counseling" + "\",\"" + "knowledge_assessment" + "\",\"" + "tb_screening" + "\",\"" + "sti_screening" + "\",\"" + "risk_assessment" + "\",\"target_group\",\"testing_setting\",\"referred_from\",\"type_counseling\",\"facility_id\",\"" + "recency" + "\") VALUES (?," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?," + "?::json" + ")";
+	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"id\",\"" + "test1" + "\",\"" + "confirmatory_test" + "\",\"" + "tie_breaker_test" + "\",\"client_code\",\"date_visit\",\"archived\",\"date_created\",\"date_modified\",\"created_by\",\"modified_by\",\"captured_by\",\"uuid\",\"previously_tested\",\"index_client\",\"num_children\",\"num_wives\",\"first_time_visit\",\"index_client_code\",\"" + "extra" + "\",\"" + "post_test_counseling" + "\",\"" + "knowledge_assessment" + "\",\"" + "tb_screening" + "\",\"" + "sti_screening" + "\",\"" + "risk_assessment" + "\",\"target_group\",\"testing_setting\",\"referred_from\",\"type_counseling\",\"facility_id\",\"" + "recency" + "\",\"" + "cd4" + "\") VALUES (?," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + "," + "?::json" + ",?,?,?,?,?," + "?::json" + "," + "?::json" + ")";
 	    java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
 	    resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"" + "test1" + "\" = " + "?::json" + ",\"" + "confirmatory_test" + "\" = " + "?::json" + ",\"" + "tie_breaker_test" + "\" = " + "?::json" + ",\"client_code\" = ?,\"date_visit\" = ?,\"archived\" = ?,\"date_created\" = ?,\"date_modified\" = ?,\"created_by\" = ?,\"modified_by\" = ?,\"captured_by\" = ?,\"uuid\" = ?,\"previously_tested\" = ?,\"index_client\" = ?,\"num_children\" = ?,\"num_wives\" = ?,\"first_time_visit\" = ?,\"index_client_code\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"" + "post_test_counseling" + "\" = " + "?::json" + ",\"" + "knowledge_assessment" + "\" = " + "?::json" + ",\"" + "tb_screening" + "\" = " + "?::json" + ",\"" + "sti_screening" + "\" = " + "?::json" + ",\"" + "risk_assessment" + "\" = " + "?::json" + ",\"target_group\" = ?,\"testing_setting\" = ?,\"referred_from\" = ?,\"type_counseling\" = ?,\"facility_id\" = ?,\"" + "recency" + "\" = " + "?::json" + " WHERE \"id\" = ?";
+	    String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1 + "\" SET \"" + "test1" + "\" = " + "?::json" + ",\"" + "confirmatory_test" + "\" = " + "?::json" + ",\"" + "tie_breaker_test" + "\" = " + "?::json" + ",\"client_code\" = ?,\"date_visit\" = ?,\"archived\" = ?,\"date_created\" = ?,\"date_modified\" = ?,\"created_by\" = ?,\"modified_by\" = ?,\"captured_by\" = ?,\"uuid\" = ?,\"previously_tested\" = ?,\"index_client\" = ?,\"num_children\" = ?,\"num_wives\" = ?,\"first_time_visit\" = ?,\"index_client_code\" = ?,\"" + "extra" + "\" = " + "?::json" + ",\"" + "post_test_counseling" + "\" = " + "?::json" + ",\"" + "knowledge_assessment" + "\" = " + "?::json" + ",\"" + "tb_screening" + "\" = " + "?::json" + ",\"" + "sti_screening" + "\" = " + "?::json" + ",\"" + "risk_assessment" + "\" = " + "?::json" + ",\"target_group\" = ?,\"testing_setting\" = ?,\"referred_from\" = ?,\"type_counseling\" = ?,\"facility_id\" = ?,\"" + "recency" + "\" = " + "?::json" + ",\"" + "cd4" + "\" = " + "?::json" + " WHERE \"id\" = ?";
 	    java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(update_tDBOutput_1);
 	    resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 	    
@@ -5336,7 +5402,10 @@ hts_target_group_setting_mapStruct hts_target_group_setting_map_tmp = new hts_ta
 +"oPCRLab',  h.recency_testing->>'dateSampleSent',\n	'rencencyInterpretation',  h.recency_testing->>'recencyInterpretation"
 +"',\n	'viralLoadResultClassification',  h.recency_testing->>'viralLoadClassification',\n	'viralLoadConfirmationTestDate',"
 +"  h.recency_testing->>'viralLoadConfirmationTestDate',\n	'viralLoadConfirmationResult',  h.recency_testing->>'viralLoadC"
-+"onfirmationResult',\n	'rapidRecencyAssay',  h.recency_testing->>'rapidRecencyAssay'\n	) as recency,\nn.datim_id\n				  "
++"onfirmationResult',\n	'rapidRecencyAssay',  h.recency_testing->>'rapidRecencyAssay'\n	) as recency,\nn.datim_id,\n\n(CAS"
++"E WHEN h.cd4_testing IS NOT NULL \nAND h.cd4_testing='Semi-Quantitative' \n THEN json_build_object('cd4Count', h.cd4_tes"
++"ting,\n'cd4SemiQuantitative', h.cd4_test_result)\nWHEN h.cd4_testing IS NOT NULL AND h.cd4_testing='FlowCyteometry' \n T"
++"HEN json_build_object('cd4Count', h.cd4_testing,\n'cd4FlowCyteometry', h.cd4_test_result) ELSE NULL END) AS cd4\n				  "
 +"\nfrom hts_new h\nINNER JOIN state s ON h.state_of_residence = s.id\nINNER JOIN lga l ON h.lga_of_residence = l.id\nINNER"
 +" JOIN ndr_facility n ON n.id=h.facility_id";
 			
@@ -5561,6 +5630,12 @@ hts_target_group_setting_mapStruct hts_target_group_setting_map_tmp = new hts_ta
 							} else {
 	                         		
         	hts_extract.datim_id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 31, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 32) {
+								hts_extract.cd4 = null;
+							} else {
+	                         		
+        	hts_extract.cd4 = routines.system.JDBCUtil.getString(rs_tDBInput_1, 32, false);
 		                    }
 					
 
@@ -5873,6 +5948,7 @@ hts_target_group_setting_map_tmp.target_group = Target_Group_Codeset.code ;
 hts_target_group_setting_map_tmp.testing_setting = Testing_Setting_Codeset.code ;
 hts_target_group_setting_map_tmp.datim_id = hts_extract.datim_id ;
 hts_target_group_setting_map_tmp.recency = hts_extract.recency ;
+hts_target_group_setting_map_tmp.cd4 = hts_extract.cd4 ;
 hts_target_group_setting_map = hts_target_group_setting_map_tmp;
 // ###############################
 
@@ -6181,6 +6257,7 @@ hts_extract_before_final_tmp.referred_from = referred_from_codeset.codeset_id ;
 hts_extract_before_final_tmp.type_counseling = row1.codeset_id ;
 hts_extract_before_final_tmp.datim_id = hts_target_group_setting_map.datim_id ;
 hts_extract_before_final_tmp.recency = hts_target_group_setting_map.recency ;
+hts_extract_before_final_tmp.cd4 = hts_target_group_setting_map.cd4 ;
 hts_extract_before_final = hts_extract_before_final_tmp;
 // ###############################
 
@@ -6394,6 +6471,7 @@ hts_final_tmp.referred_from = (hts_extract_before_final.referred_from==null ||ht
 hts_final_tmp.type_counseling = (hts_extract_before_final.type_counseling==0)?null: hts_extract_before_final.type_counseling; ;
 hts_final_tmp.facility_id = (row3.id==null)?0:row3.id ;
 hts_final_tmp.recency = hts_extract_before_final.recency ;
+hts_final_tmp.cd4 = hts_extract_before_final.cd4 ;
 hts_final = hts_final_tmp;
 // ###############################
 
@@ -6622,7 +6700,12 @@ pstmtUpdate_tDBOutput_1.setNull(30, java.sql.Types.VARCHAR);
 } else {pstmtUpdate_tDBOutput_1.setString(30, hts_final.recency);
 }
 
-                        pstmtUpdate_tDBOutput_1.setLong(31 + count_tDBOutput_1, hts_final.id);
+                        if(hts_final.cd4 == null) {
+pstmtUpdate_tDBOutput_1.setNull(31, java.sql.Types.VARCHAR);
+} else {pstmtUpdate_tDBOutput_1.setString(31, hts_final.cd4);
+}
+
+                        pstmtUpdate_tDBOutput_1.setLong(32 + count_tDBOutput_1, hts_final.id);
 
                 try {
 					
@@ -6786,6 +6869,11 @@ pstmtInsert_tDBOutput_1.setNull(30, java.sql.Types.INTEGER);
                         if(hts_final.recency == null) {
 pstmtInsert_tDBOutput_1.setNull(31, java.sql.Types.VARCHAR);
 } else {pstmtInsert_tDBOutput_1.setString(31, hts_final.recency);
+}
+
+                        if(hts_final.cd4 == null) {
+pstmtInsert_tDBOutput_1.setNull(32, java.sql.Types.VARCHAR);
+} else {pstmtInsert_tDBOutput_1.setString(32, hts_final.cd4);
 }
 
                 try {
@@ -13488,6 +13576,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     341598 characters generated by Talend Open Studio for Big Data 
- *     on the April 13, 2023 1:25:50 PM WAT
+ *     343995 characters generated by Talend Open Studio for Big Data 
+ *     on the April 13, 2023 4:39:45 PM WAT
  ************************************************************************************************/
